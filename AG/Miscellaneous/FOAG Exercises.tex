@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Solution Manual to Ravi Vakil's FOAG}
+\author{by Vector\_Cat} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\section{Chap 1}
+\section{Chap 2}
+\section{Chap 3}
+\begin{dfn}
+The set $\text{Spec}\cala$ is the set of  prime ideals of $\cala$. The prime ideals $\scp$ of $\cala$ when considered as an element of $\text{Spec}\cala$ will be denoted $[\scp]$, to avoid confusion. Element $a\in\cala$ will be called \textbf{functions on} $\text{Spec}\cala$, and their \textbf{value} at the point $[\scp]$ will be $a\mod \scp$.
+
+If $\cala$ is generated over a base field or base ring by element $x_1,...,x_r,$ the elements are often called \textbf{coordinates}
+\end{dfn}
+
+Afterwards, we will interpret functions on $\text{Spec}\cala$ as global sections of the structure sheaf, i.e., as a function on a ringed space.
+\begin{ex}\ 
+\begin{itemize}
+\item $\text{Spec }\cplx[x]=\mathbb{A}^1_\cplx$
+\item $\text{Spec }k[x]=\mathbb{A}^1_k$, where $k$ is an algebraically closed field. This is called the affine line over $k$.
+\item $\text{Spec }\intg$. Isomorphic to the set of prime numbers union with $\{(0)\}$
+\end{itemize}
+\end{ex}
+\begin{exercise}
+aaa
+\end{exercise}
+\begin{exercise}
+ IMPORTANT EXERCISE FOR THOSE WITH A LITTLE EXPERIENCE WITH MANIFOLDS. Suppose that $\pi: X\lrta Y$ is a continuous map of differentiable manifolds (as topological spaces — not a priori differentiable). Show that π is differentiable if differentiable functions pull back to differentiable functions, i.e., if pullback by π gives a map $\calo_Y\rta \pi_*\calo_X$. (Hint: check this on small patches. Once you figure out waht your trying to show you will find realize that the resuilt is immediate.)
+\end{exercise}
+\begin{proof}
+aaa
+\end{proof}
+\end{document}

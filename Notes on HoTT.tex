@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{stmaryrd}
+\usepackage{MnSymbol}
+\usepackage{geometry}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{bbm}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=red,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\pd}{\partial}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak D}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\calj}{{\cal J}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\pd #1\over\pd #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\bibliographystyle{plain}
+\title{\bf Notes for HoTT}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Crash Course in Type Theory}
+Orginary set theory has two layers:
+\begin{enumerate}
+	\item deductive system of first order logic
+	\item axioms of a particular theory?
+\end{enumerate}
+
+By contrast, type theory is its own deductive system. Instead of set and proposition, there is only one basic notion :\textbf{type} in type theory. Propositions are also types. Thus, proving a theorem is equivalent to constructing a type that represents the proposition.
+
+We use deductive system to refer to a collection of rules for deriving thing called \textbf{judgment.} Inside the deductive system of first order logic, there is only one kind of judgment:``A proposition $A$ has a proof''. Notice that ``$A$ has a proof'' exists at a different level from the proposition itself.
+
+Analogous to ``$A$ has  proof'', in type theory, a basic judgment is written $a:A$ and read as ``the term $a$ has type $A$''. When $A$ is a type that represents a proposition, $a$ may be called a \text{witness} or \textbf{evidence} of $A$. In this case, $a:A$ is derivable iff ``$A$ has  proof'' is derivable in first logic. 
+
+One important feature of type theory is that $x:A$ is the atomic statement. we cannot introduce a variable without specifying its type.
+
+Treatment of equality. Equality in math are propositions, then we have to treat equality as types as well. $a=_A b$ is a \textbf{propositional equality} 
+
+We also need a equality judgment at the same level as $x:A$. It is called \textbf{judgmental equality} (Tautology?)
+\end{document}

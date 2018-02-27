@@ -1,0 +1,90 @@
+\ifglsentryexists{aardvark}{}%
+{%
+\gls@defglossaryentry{aardvark}%
+{%
+name={aardvark},%
+sort={aardvark},%
+type={main},%
+first={aardvark},%
+firstplural={aardvarks},%
+text={aardvark},%
+plural={aardvarks},%
+description={an animal},%
+descriptionplural={an animal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lion}{}%
+{%
+\gls@defglossaryentry{lion}%
+{%
+name={lion},%
+sort={lion},%
+type={main},%
+first={lion},%
+firstplural={lions},%
+text={lion},%
+plural={lions},%
+description={another animal, but with a really long description that spills over many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many lines},%
+descriptionplural={another animal, but with a really long description that spills over many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many, many lines},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{zebra}{}%
+{%
+\gls@defglossaryentry{zebra}%
+{%
+name={zebra},%
+sort={zebra},%
+type={main},%
+first={zebra},%
+firstplural={zebras},%
+text={zebra},%
+plural={zebras},%
+description={yet another animal},%
+descriptionplural={yet another animal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

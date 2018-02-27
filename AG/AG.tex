@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\pagestyle{headings}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage{cmbright}
+%\usepackage{concmath}
+%\usepackage{sansmathfonts}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{pdfrender,xcolor,scrpage2}
+%\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}},
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+  }
+}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmkt}[thm]{Remark by TeXer}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nex}[thm]{Non-example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\hom}{\text{ Hom}}
+\newcommand{\affn}{\mathbb A}
+\newcommand{\proj}{\mathbb P}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Lecture Notes for Algebraic Geomtry I}
+\author{Lecture delivered by Emmanuel Kowalski\\
+Notes by Lin-Da Xiao}
+\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Feb 27th: Algebraic sets and morphisms}
+\href{https://imaginary.org/programs}{https://imaginary.org/programs}
+
+Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
+
+\begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
+Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
+$$
+\begin{aligned}
+&\hom_{K-alg}(\calo(Y_2),\calo(Y_1))
+\\
+&\overset{(*)}{\llrta}\{(f_1,...,f_m)\in K[X]^m|\forall x\in Y_1,(f_1(x),...,f_m(x))\in Y_2) \}\\
+&\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}
+\end{aligned}
+$$
+\end{thm}
+\begin{proof}
+\underline{Key observation}
+
+To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$, which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
+$$
+g_1: K[T]\lrta \calo(Y_1)
+$$
+which has a factorization
+\[
+\begin{tikzcd}
+K[T] \arrow[r,"g_1"] \arrow[d,"\pi_2"]  & \calo(Y_1)  \\
+   \calo(Y_2) \arrow[ur,"g"] & 
+\end{tikzcd}
+\]
+iff $g_1(I(Y_2))=0$, which means iff 
+$$
+g_1(\varphi)=\text{ ``replace $T_i$ by $f_i$ in $\varphi$''}
+$$
+belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$, which means if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
+
+
+For the bijection $(**)$, suppose 
+$$
+g:Y_1\overset{g}{\lrta} Y_2\overset{\varphi}{\lrta} K
+$$
+sends $\varphi(Y_2)$ to $\varphi\circ g\in\calo(Y_1)$. Then we get 
+$$
+\begin{aligned}
+& \calo(Y_2)\lrta \calo(Y_1)\\
+&\varphi\longmapsto \varphi\circ g,
+\end{aligned}
+$$
+which is a $K$-algebra morphism.
+
+As for the reverse direction, given $g$. From $\calo(Y_2)\lrta \calo(Y_1)$ to get a $g:Y_1\lrta Y_2$. We get a $\tilde{g}:Y_1\lrta Y_2$ in the second set
+$$
+\tilde{g}(x)=(f_1(x),...,f_m(x))
+$$
+then we have $\varphi\circ g\in\calo(Y_1)$ for $\varphi\in \calo(Y_2)$. One checks that this shows that the first and third sets are the same.
+\end{proof}
+
+Define morphism $Y_1\lrta Y_2$ by the second(and third) set.  Composition in the obvious way and identity is a morphism.
+$\Lrta$ get a category $(Alg_K)$ of affine algebraic sets over $K$.
+
+\begin{cor}
+$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K-Alg)^{opp}$.
+\end{cor}
+
+\underline{Facts}: The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
+\begin{proof}
+$A$ finitely generated reduced $K$-algebra. ($\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
+$\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
+\end{proof}
+
+\begin{cor}
+There is a equivalence of categories between 
+$$
+(Alg_K)\llrta (\text{fin. gen. reduced.} K-Algs.)
+$$
+\end{cor}
+
+\begin{ex}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item $\affn^1\lrta V(Y^2-X^3-X^2)\subset \affn^2$, $t\mapsto (t^2-1,t(t^2-1))$
+\item $\affn^1\lrta V(Y^2-X^3)\subset \affn^2$: $t\longmapsto (t^2,t^3)$ is a bijection but \underline{Not} an isomorphism.
+\item Assume $K$ with characteristic $p>0$, $K\supset \mathbb{F}_p$. $Y=V(f_1,...,f_m)$ where $f_i\in \mathbb{F}_p[X]\subset K[X]$. Consider the morphism:
+$$
+\begin{aligned}
+&Y\lrta Y\\
+& (x_1,..,x_n)\longmapsto (x_1^p,...,x_n^p).
+\end{aligned}
+$$
+It is bijective and homeomorphism but not an isomorphism if $dim(Y)\geq 1$.
+\end{enumerate}
+\end{ex}
+\begin{prop}
+$Y=V(I)\subset \affn^n$
+\begin{enumerate}[label=(\arabic*)]
+\item The points of $Y$ are in bijection with maximal ideals $I\subset \calo(Y)$ by 
+$$
+Y\ni x\longmapsto \{f\in \calo(Y)|f(x)=0\}
+$$
+\item We have a bijection 
+$$
+\calo(Y)\llrta \hom_{Alg_K}(Y,\affn^1)
+$$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(1) $I_x:=Ker(\calo(Y)\lrta K)$, $f\mapsto f(x)$, since the evaluation map is surjective $[1\mapsto 1]$, we get an isomorphism 
+$$
+\calo(Y)/I_x\overset{\sim}{\lrta} K,
+$$
+so $I_x$ is maximal in $\calo(Y)$.
+
+Conversely, if $I\subset \calo(Y)$ is maximal, we get $I=I'/I(Y)$ for $I'\subset K[X]$ maximal. 
+
+Nullstellensatz says $\exists (x_1,...,x_n)\in\affn^n$ s.t., $I'=(X_1-x_1,...,X_n-x_n)$. 
+
+Since $I'\supset I(Y)$, we get $(x_1,..,x_n)\in Y$. Then we check that $\calo(Y)\lrta\calo(Y)/I\cong K$ is just given by $f\mapsto f(x_1,...,x_n)$. That means $I=I_x$.
+
+(2) We saw in~\ref{thm:equivalence_of_categories_algebraic_sets_K_algebras}, that there is a bijection between sets
+$$
+\hom_{Alg_k}(Y,\affn^1)\llrta \hom_{K-alg}(\calo(\affn^1),\calo(Y)).
+$$
+But $\hom_{K-alg}(\calo(\affn^1),\calo(Y))=\hom_{K-alg}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
+\end{proof}
+\section*{Projective Algebraic sets}
+
+Projective sets can have a good notion of ``compactness''.
+
+N.B. Any $Y\in (Alg_K)$ is \textbf{quasi-compact}( open cover have a finite subcover).
+
+\begin{dfn}
+$\proj^n_K=\proj^n$ can be either defined as 
+
+``the set of  lines in $\affn^{n+1}$ that pass through the origin''
+
+or
+
+``the equivalence classes of points in $K^{n+1}\backslash \{0\}$ with the equivalence relation $x\sim y$ iff $x=\lambda y$ for some $\lambda \in K$'' and we use the notion $[x_0:...:x_n]$ for the equivalence class of $(x_0,..,x_n)$
+\end{dfn}
+
+These two definitions are equivalent: 
+
+Given a line $l\in \affn^1\llrta $ hyperplane in $K^{n+1}$, corresponds to a equation
+$$
+a_0X_0+....+a_n X_n=0
+$$
+with at least one of $a_i$ non-zero.
+
+Conversely, from $[x_0:..:x_n]$, we  we get the corresponding hyperplane/line trivially.
+
+
+Notes the following fact:
+
+$$
+\proj^n=\cup_{0\leq i\leq n} H_i,
+$$
+where $H_i=\{[x_0,...,x_n]|x_i\neq 0\}$ and there is a bijection 
+$$
+\begin{aligned}
+&H_i\lrta K^n\\
+&[x_0:...:x_n]\longmapsto\left(\frac{x_0}{x_i},...,\widehat{\frac{x_i}{x_i}},..,\frac{x_n}{x_i}\right)\\
+&
+[y_1:...:y_{i-1}:1:y_{i}:...:y_n]\mapsfrom(y_1,...,y_n)
+\end{aligned}
+$$
+We define from linear algebra some notions in $\proj^n$ a line in $\proj^n$ is the image by the projection $K^{n+1}\backslash \{0\}\lrta \proj^n$ of the two dimensional affine subspace.
+
+\begin{ex}
+$l_1,l_2\subset \proj^2$ lines $\l_1\cap l_2$ is a line if $l_1$ and $l_2$ are identical and would be a single point otherwise.
+\end{ex}
+
+Observation: If $f\in K[X_0,...,X_{n+1}]$ is homogeneous, then for $x\in \proj^n$, it makes no sense to speak of ``$f(x)\in K$'', but the zero-loci or the set where $f(x)\neq 0$ does make sense.
+
+\begin{dfn}
+ A  \textbf{projective algebraic set} $S\subset \proj^n$ is 
+ $$
+  S=\{ x\in \proj^n|f_1(x)=...=f_m(x)=0\},
+ $$
+ where $f_1,...,f_m$ are homogeneous of some degrees.
+\end{dfn}
+
+\underline{Notation}: $V(f_1,..,f_n)$
+
+\begin{ex}
+$V(Y^2 Z-X^3-X Z^2)\subset \proj^2$. 
+\end{ex}
+Let $0\leq i\leq n$, then $S\cap H_i=\{[x_0:...:x_n]\in S| x_i\neq 0\}$ is , via the bijection  $H_i\lrta K^n$, in bijection with an affine algebraic set $S_1\subset \affn^n$ given by $\tilde{f_1}(y)=...=\tilde{f}_m(y)=0$, where $\tilde{f}_i(y_1,..,y_n)=f_i(y_1,...,y_{i-1},1, y_i,...,y_n)$
+
+
+
+
+\end{document}

@@ -1,0 +1,468 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\pagestyle{headings}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage{cmbright}
+%\usepackage{concmath}
+%\usepackage{sansmathfonts}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{pdfrender,xcolor,scrpage2}
+%\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}
+    },
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+  }
+}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmkt}[thm]{Remark by TeXer}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nex}[thm]{Non-example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.1}
+\newcommand{\mor}{{\text Mor\,}}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\pd}{{\partial}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\llta}{\longleftarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Notes of Readings in Topology and Geometry}
+\author{\\
+Notes by Lin-Da Xiao}
+\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{About the Notes:}
+This notes is a summary of personal reading  of Topology and geometry.
+\section{Complex manifold}
+\subsection{Complex structure, almost complex structure}
+\begin{dfn}
+A complex valued function $f:\cplx^m\lrta\cplx$ is \textbf{holomorphic} if  $f=f_1+i f_2$ it satisfies the \textbf{Cauchy-Riemann relations} for $z^\mu=x^\mu+i y^\mu$,
+$$
+\frac{\pd f_1}{\pd x^\mu}=\frac{\pd f_2}{\pd y^{\mu}}
+$$
+$$
+\frac{\pd f_2}{\pd x^\mu}=-\frac{\pd f_1}{\pd y^{\mu}}
+$$
+\end{dfn}
+
+\section{Spectral sequences}
+\begin{dfn}
+An \textbf{exact couple} is an exact sequence of Abelian groups of the form
+\begin{center}
+\begin{tikzcd}
+A \arrow[rr, "i"] &  & A \arrow[ld, "j"] \\
+ & B \arrow[lu, "k"] & 
+\end{tikzcd}
+\end{center}
+where $i,j,k$ are group homomorphisms. Define $d:B\lrta B$ by $d=j\circ k$. Then $d^2=j(jk)k=0$, so the homology group $H(B)=ker(d)/im(d)$ is wel-defined Abelian group. 
+\end{dfn}
+Out of the exact couple, we can construct a \textbf{derived couple}
+\begin{center}
+\begin{tikzcd}
+A' \arrow[rr, "i'"] &  & A' \arrow[ld, "j'"] \\
+ & B' \arrow[lu, "k'"] & 
+\end{tikzcd}
+\end{center}
+by setting
+\begin{enumerate}[label=(\roman*)]
+\item $A':=i(A)$; $B':=H(B)$.
+\item $i'$ induced from $i$, i.e., $i'(i(a))=i(i(a))$
+\item If $a'=i(a)\in A'$ with $a\in A$, then $j'(a'):=[j(a)]\in H(B)$.
+\item $k'$ is induced from $k$. Consider a comology calss $[b]$, $d b=0\Llrta jkb=0$, then $kb\in i(A)$. Define $k'[b]:=kb\in i(A)$.
+\end{enumerate}
+\begin{proof}
+We can check that $j'$ is wel-defined : $ia=i a_1\Lrta [j(a)]=[j(a_1)]$. Indeed $i(a-a_1)=0\Lrta (a-a_1)\in im(k)$. $\exists z\in B$ s.t. $k(z)=a-a_1\Lrta [j(a-a_1)]=[jk(z)]=[dz]$. Also $k'$ is well defined: $[b]=[b_1]\Lrta b-b_1=d z\Lrta k(b-b_1)=k j kz=0$.
+
+The derived sequence is indeed exact:
+
+{Exactness at $\overset{k'}{\lrta}A'\overset{i'}{\lrta}$}: $i'\circ k'[b]=i'kb=ikb=0$, we know $ker(i')\supseteq im(k')$. For the reverse inclusion, $i(a)\in ker(i')\Lrta iia=0$ then $ia\in im(k)$ because the original exact couple is exact. $ia=kb\Lrta k'[b]$, hence $im(k')\supseteq ker(i')$.
+
+Exactness at $\overset{i'}{\lrta}A'\overset{j'}{\lrta}$: $j'\circ i'(ia)=j'(iia)=[jia]=0$. For the reverse inclusion, consider $ia\in ker(j'), j'(ia)=[ja]=0\Lrta ja=db\in B\Lrta j(a-kb)=0\Lrta a-kb=i(a_1)\Lrta i(a-kb)=ia=ii(a_1)=i'(ia_1)$.
+
+Exactness at $B'$: $k'j'(ia)=k'[ja]=kja=0\Lrta ker(k')\supseteq im(j')$. 
+For the reverse inclusion, we can pick $[b]\in ker(k')\Lrta k'[b]=kb=0\Lrta b=ja$ for some $a\in A$. $[b]=j'(ia)\in im(j')$.
+
+\end{proof}
+
+\section{Fundamental groups}
+\begin{dfn}
+Let $X$ and $Y$ be topological spaces and $f, g:X\lrta Y$ continuous maps. A \textbf{homotopy} from $f$ to $g$ is a continuous map
+$$
+H:X\times [0,1]\lrta Y, (x,t)\longmapsto H(x,t)=H_t(x)
+$$
+such that $f(x)=H(x,0)$ and $g(x)=H(x,1)$ $\forall x\in X$. $f=H_0$ and $g=H_1$, $f\simeq g$
+\end{dfn}
+The homotopy relation is an equivalence relation on the set o f continuous maps $X\lrta Y$. Given two homotopy $K:f\simeq g$ and $L:g\simeq h$, the product homotopy $K*L$
+$$
+(K*L)(x,t)=\left\{
+\begin{matrix*}
+K(x,2t), & 0\leq t\leq 1/2,\\
+L(x,2t-1), & 1/2\leq t\leq 1,
+\end{matrix*}
+\right.
+$$
+and shows $f\simeq h$.
+
+The inverse homotopy is defined to be $H^{-}(x,t):=H(x,1-t)$. Notice that product of homotopy and inverse homotopy is not constant homotopy.
+
+The equivalence class of $f$ is denoted $[f]$   and called the homotopy class of $f$ . We denote by $[X,Y]$  the set of homotopy classes $[f]$  of maps $f : X \lrta Y$. A homotopy $H_t:  X \lrta  Y$ is said to be relative to $A\subset X$   if the restriction $H_t|_A $ does not dependont(is constant on $A$).We use the notation $H:f \lrta g(rel A)$in this case.
+
+Quotient category means we identify some of the morphism. For each $\mor (X,Y)$, we quotient a  relation $R_{X,Y}$.
+\begin{dfn}
+Topological spaces and homotopy classes of maps form a quotient category of \textit{Top}, which is called \textbf{homotopy category}, denoted \textit{h-Top}. The composition of homotopy class is induced by composition of representing maps. The isomorphism in this category is homotopy equivalence.
+\end{dfn}
+
+In the category of \textit{h-Top}. Consider the $Hom$-functors. Given $f:X\lrta Y$.
+$$
+Hom(Z,\_)(f)=f_*:[Z,X]\lrta [Z,Y]: g\longmapsto f g
+$$
+$$
+Hom(\_,Z)(f)=f^*:[Z,X]\lrta [Z,Y]: h\longmapsto  hf
+$$
+$f$ is h-equivalence (isomorphism in the category \textit{h-Top}) iff $Hom(\_,Z)(f)$ is always bijective. (Yoneda Lemma), similarly for $Hom(Z,\_)(f)$. Because we know for $f_*,g_*,g_*f_*$, 2 of the three maps are bijective implies that the third is bijective. This can be translated into homotopy category, where $f,g,fg$ two of the three homotopy class being homotopy equivalence implies the third is also a homotopy equivalence.
+
+Let $P$ be a point. A map $P\lrta Y$ can be identified as its image and a homotopy can be identified with path. Then the Hom-functor $[P,\_]$ can be identified as $\pi_0$
+
+\begin{prop}
+The product of paths has the following properties:
+\begin{enumerate}[label=(\roman*)]
+\item Let $\alpha:I\lrta I$ be continuous and $\alpha(0)=0$, $\alpha(1)=1$. Then $u\simeq u\alpha$.
+\item $u_1*(u_2*u_3)=(u_1*u_2)*u_3$
+\item $u_1\simeq u_1'$ and $u_2\simeq u_2'$ implies $u_1*u_2\simeq u_1'*u_2'$.
+\item $u*u^-$ is always defined and homotopic to the constant path.
+\item $k_{u(0)}*u\simeq u\simeq u*k_{u(1)}$.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[label=(\roman*)]
+\item Let $H:(s,t)\mapsto u(s(1-t)+t\alpha(s))$ is homotopy from $u$ to $u\alpha$.
+\item choose 
+$$
+\alpha(t)=\left\{
+\begin{matrix*}
+2t, & t\leq \frac{1}{4}\\
+t+\frac{1}{4} & \frac{1}{4}\leq t\leq \frac{1}{2}\\
+\frac{t+1}{2}, & \frac{1}{2}\leq t\leq 1
+\end{matrix*}
+\right.
+$$
+we have $u_1*(u_2*u_3)\alpha=(u_1*u_2)*u_3$, then we can apply (i)
+\item Given $F_i:u_i\simeq U_i'$, then we can define the homotopy $G:u_1*u_2\simeq u_1'u_2'$ 
+$$
+G(s,t)=\left\{
+\begin{matrix*}
+F_1(2s,t), & 0\leq t\leq \frac{1}{2}\\
+F_2(2s-1,t) & \frac{1}{2}\leq t\leq 1\\
+\end{matrix*}
+\right.
+$$
+\item The map $F: I \times  I \lrta X$ defined as 
+$$
+F(s,t)=\left\{
+\begin{matrix*}
+u(2s(1-t)), & 0\leq t\leq \frac{1}{2}\\
+u(2(1-s)(1-t)) & \frac{1}{2}\leq t\leq 1\\
+\end{matrix*}
+\right.
+$$
+is the homotopy from $u*u^-$ to the constant path.
+\item use (i) again.
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+This basically says that the homotopy class of path with a fixed point is a group.
+
+From homotopy classes of paths in $X$, we obtain again a category denote $\Pi(X)$. The objects are the points of $X$. A morphism from $x$ to $y$ is a homotopy class of paths. It is called \textbf{Fundamental groupoid} of $X$. The automorphism group of the object $x$ in this category is the fundamental group of $X$ with base point $x$.
+
+\begin{prop}
+Let $H : X  \times I \lrta Y$ be a homotopy from $f$ to $g$. Each $x \in X$ yields the path $H^x:t\mapto H(x,t)$ and the morphism $[H^x]$ in $\Pi(Y)$ from $f(x)$ to $g(x)$. The $H^x$ constitute a natural transformation $\Pi(H)$
+\end{prop}
+\begin{prop}
+ Let $f : X \lrta Y$ be a homotopy equivalence. Then the functor $\Pi(f):\Pi(X)\lrta \Pi(Y)$ is an equivalence of categories. The induced maps between morphism sets $f_*:\Pi X(x,y)\lrta \Pi Y(fx,fy)$ are bijections. IN particular,
+ $$
+ \pi_1(f):\pi_1(X,x)\lrta \pi_1(Y,f(x)), [\omega]\mapsto [f\omega]
+ $$
+ is an isomorphism for each $x\in X$
+\end{prop}
+
+\begin{thm}
+(R. Brown). Let $X_0$ and $X_1$ be a subspace of $X$ such that the interiors cover $X$. Let $i_\nu:X_{01}\inj X_\nu$ and $j_\nu:X_\nu\inj X$ be the inclusions. Then 
+\[
+\begin{tikzcd}
+\Pi(X_{01}) \arrow[r, "\Pi(i_0)"] \arrow[d, "\Pi(i_1)"'] & \Pi(X_0) \arrow[d, "\Pi(j_0)"] \\
+\Pi(X_1) \arrow[r, "\Pi(j_1)"] & \Pi(X)
+\end{tikzcd}
+\]
+ is a pushout (fibered coproduct) in the category of groupoids. Or $\Pi(X)$  is the colimit of diagrams indexed by $X_0\supset X_{01}\subset X_1$
+ \end{thm}
+
+
+\subsection{Spectral sequences of filtered complexes}
+Now, we want to construct the spectral sequence of a filtered complex.
+\begin{dfn}
+Let $K$ be differential complex with differential operator $D$. A subcomplex $K'$ is a subgroup in $K$ such that $DK'\subseteq K'$. A sequence of subcomplex 
+$$K=K_0\supseteq K_1\supseteq K_2...$$
+is called a filtration of $K$. A differential complex with specified filtration is called a filtered complex with  
+\textbf{associated graded complex}
+$$
+Gr_{\bullet} K=\oplus^\infty_{p=0} K_p/K_{p+1}
+$$
+\end{dfn} 
+
+For filtered complex $K$, let $A$ be the group
+$$
+A=\oplus_{p\in\intg} K_p.
+$$
+$A$ is again a differential complex with differential operator $\oplus D$. Define $\iota$ to be the inclusion $A\inj A$ induced by $K_{p+1}\inj K_p$. Then we have a short exact sequence
+$$
+0\lrta A\overset{\iota}{\lrta} A\overset{j}{\lrta} B:=Gr_\bullet K\lrta 0.
+$$
+If $A$, $K$ are themselves graded chain complex (A different grading from the associated grading w.r.t. to filtration, we use upper index to distinguish it from the filtration index), we have a long exact sequence of cohomology groups
+$$
+\lrta H^k(A^{\bullet})\overset{i}{\lrta} H^{k}(A)\overset{j_1}{\lrta}H^{k}(B)\overset{k_1}{\lrta}H^{k+1}(A)\lrta..
+$$
+Consider that $H(A)=\oplus_{k}H^{k}(A)$, we have the exact couple
+\begin{center}
+\begin{tikzcd}
+H(A) \arrow[rr, "i"] &  & H(A) \arrow[ld, "j_1"] \\
+ & H(B) \arrow[lu, "k_1"] & 
+\end{tikzcd}:=
+\begin{tikzcd}
+A_1 \arrow[rr, "i"] &  & A_1 \arrow[ld, "j_1"] \\
+ & B_1 \arrow[lu, "k_1"] & 
+\end{tikzcd}
+\end{center}
+From now on we will suppress the subscript of $i_n$ because by definition, $i_n(i_{n-1}...(i(a)))=i^n(a)$. Even if they are not graded, we can still artificially construct the short exact sequence of chain complex
+\begin{center}
+\begin{tikzcd}
+0\ar[r] & A \arrow[r, "i"]\arrow[d, "D"] & A\arrow[d, "D"]\arrow[r, "j"] & B \arrow[d, "D"]\ar[r] & 0
+\\
+0\ar[r] & A \arrow[r, "i"]\arrow[d, "D"] & A\arrow[d, "D"]\arrow[r, "j"] & B \arrow[d, "D"]\ar[r] & 0
+\\
+0\ar[r] & \vdots \arrow[r, "i"] & \vdots\arrow[r, "j"] & \vdots \ar[r] & 0
+\end{tikzcd}
+\end{center}
+And it still gives the above exact couple. 
+
+Then we have all the derived exact couples and label it  with $r$ meaning it is the $r$-th derived exact couple of the first one:
+\begin{center}
+\begin{tikzcd}
+A_r \arrow[rr, "i"] &  & A_r \arrow[ld, "j_r"] \\
+ & B_r \arrow[lu, "k_r"] & 
+\end{tikzcd}.
+\end{center}
+Consider the special case where 
+the filtration terminates after $K_3$.
+$$
+K_{-1}=K_0\supseteq K_1\supseteq K_2\supseteq K_3\supseteq 0
+$$
+\begin{center}
+\begin{tikzcd}
+A_1:= & H(K_0)\ar[d, equal] \arrow[r, phantom, "\oplus"] &  H(K_1)\ar[l, bend right, "i"'] \arrow[r, phantom, "\oplus"] &  H(K_2) \ar[l, bend right, "i"'] \arrow[r, phantom, "\oplus"] &  H(K_3) \ar[l, bend right, "i"']\\
+A_2:=i(A_1)= & i H(K_0)\ar[d, equal] \arrow[r, phantom, "\oplus"] &  iH(K_1)\ar[l, bend right, "\supseteq"']\ar[d, equal] \arrow[r, phantom, "\oplus"] &  iH(K_2)\ar[l, bend right, "i"'] \arrow[r, phantom, "\oplus"] &  iH(K_3)\ar[l, bend right, "i"'] \\
+A_3:=i(A_2)= & i^2 H(K_0)\ar[d, equal] \arrow[r, phantom, "\oplus"] &  i^2H(K_1)\ar[d, equal]\ar[l, bend right, "\supseteq"'] \arrow[r, phantom, "\oplus"] &  i^2H(K_2)\ar[d, equal]\ar[l, bend right, "\supseteq"'] \arrow[r, phantom, "\oplus"] &  i^2H(K_3)\ar[l, bend right, "i"'] \\
+A_4:=i(A_3)= & i^3 H(K_0) \arrow[r, phantom, "\oplus"] &  i^3H(K_1)\ar[l, bend right, "\supseteq"'] \arrow[r, phantom, "\oplus"] &  i^3H(K_2)\ar[l, bend right, "\supseteq"'] \arrow[r, phantom, "\oplus"] &  i^3H(K_3)\ar[l, bend right, "\supseteq"']. 
+\end{tikzcd}
+\end{center}
+Because $iH(K_1)\subseteq H(K_0)$ and $i$ act as identity on $H(K_0)$, we know $i$ act as inclusion on $iH(K_1)$, hence $iH(K_1)=i^2H(K_1)$. Similarly, we can say $i^n(K_i)$ stabilizes when $n\geq 3$, hence $A_4=A_5=...A_\infty$.
+\begin{center}
+\begin{tikzcd}
+A_4 \arrow[rr, "i"] &  & A_4 \arrow[ld, "j_4"] \\
+ & B_4 \arrow[lu, "k_4"] & 
+\end{tikzcd}.
+\end{center}
+Furthermore, since $i: A_4\lrta A_4$ is the inclusion, the map $k_4:B_4\lrta A_4$ must be a zero map, hence the differential $d_4:=j_4k_4=0$ and $B_5=H_{d_4}(B_4)=B_4$. $B-r$ also stabilize after $B_4$. $B_4=B_5=...=B_\infty$.
+\begin{center}
+\begin{tikzcd}
+A_\infty \arrow[rr, "i_\infty:\subseteq"] &  & A_\infty \arrow[ld, "j_\infty"] \\
+ & B_\infty \arrow[lu, "k_\infty=0"] & 
+\end{tikzcd}.
+\end{center}
+$k_\infty=0\Lrta$ $B_\infty$ is the quotient of $i_\infty$. In other words, $B_\infty$ is the associated graded complex of the filtration
+$$
+H(K)=H(K_0)\supseteq iH(K_1)\supseteq iiH(K_2)\supseteq iiiH(K_3).
+$$
+
+In general consider a filtration of complex $K$ with differential $D$. 
+$$
+K=K_0\supseteq K_1\supseteq K_2\supseteq K_3\supseteq...
+$$
+
+It induces a sequence in cohomology
+$$
+H(K)=H(K_0)\overset{i}{\llta} H(K_1)\overset{i}{\llta} H(K_2)\overset{i}{\llta} H(K_3)\overset{i}{\llta}...
+$$
+Set $F_p:=i^pH(K_p)$ be the image of $H(K_p)$ in $H(K)$. It gives a filtration of $H(K)$
+$$
+H(K)=F_0\supseteq F_1\supseteq F_2\supseteq F_3\supseteq...
+$$
+A filtration $K_\bullet$ is of \textbf{length} $l$ if the descending chain terminates after $K_l$. If $K_\bullet$ is of finite length, then $A_r$ and $B_r$ eventually stabilize and $B_\infty$ is the associated graded complex $\oplus F_p/F_{p+1}$ of $F_\bullet H(K)$. 
+\begin{dfn}
+It is customary to write $E_r$ for $B_r$. A sequence of differential complex $\{E_r,d_r\}$ in which $E_{r+1}=H_{d_r}(E_r)$ is called a \textbf{spectral sequence}. If $E_r$ eventually stabilize, we denote the stationary value $E_\infty$. If $E_\infty\cong Gr_\bullet H$ of some filtered complex $H$. 
+\end{dfn}
+Now assume $K$ is a graded differential complex $K=\oplus_n K^n$, with filtration $K_\bullet$. Then each graded piece $K^n$ is filtered complex with filtration $K^{n}_p=K^n\cap K_p$.
+\begin{thm}
+If $K=\oplus_n K^n$ is a graded filtered complex with filtration $\{K_p\}$ and let $H_D(K)$ denote the cohomology of $K$ with a filtration $\{F_p\}$ induced by $\{K_p\}$. Suppose that for each fixed grading index $n$, the filtration $\{K^{n}_p\}$ is of finite length. Then the short exact sequence 
+$$
+0\lrta \oplus_{p\in\intg} K_{p+1}\lrta \oplus_{p\in\intg} K_{p}\lrta \oplus_{p\in\intg} K_{p}/K_{p+1}\lrta 0
+$$
+induces a spectral sequence converging to $H_D(K)$.
+\end{thm}
+\begin{proof}
+We have the exact couple
+\begin{center}
+\begin{tikzcd}
+A_r \arrow[rr, "i"] &  & A_r \arrow[ld, "j_r"] \\
+ & B_r \arrow[lu, "k_r"] & 
+\end{tikzcd},
+\end{center}
+where $A_r=i^{r-1}H(K_p)$, if $r\geq p$, $i^rH(K_p)=F_p$. (When $r\geq p+1$, the map $i:i^rH(K_p)\lrta i^rH(K_p)$ is an inclusion).
+
+Recall that $k_1$ is the connecting map $k_1:H^{*}(B)\lrta H^{*+1}(A)$. $k_r$ would send $B_r^d\lrta A_r^{n+1}$, while $i,j_r$ would fix $n$.
+
+For a fixed grading index $n$, assume the length of the filtration $\{K_p^n\}$ is $l(n)$. When $r\geq l(n+1)+1$, for every $p$ we have
+$$
+i^rH^{n+1}(K_p)=F_p^{n+1}
+$$
+$$
+A_r^{n+1}=\oplus_p F_p^{n+1}
+$$
+and the map
+$$
+i: i^rH^{n+1}(K_p)\lrta i^rH^{n+1}(K_p)
+$$
+is inclusion. Hence 
+$$
+i:A_r^{n+1}\lrta A_r^{n+1}\ \ \ i:F_{p+1}^{n+1}\lrta F_{p}^{n+1}
+$$
+is injective and 
+$$
+k_r:B_r^{n}\lrta A_r^{n+1}
+$$
+is zero map. We have
+$$
+0\lrta \oplus_p F_{p+1}^{n}\overset{i}{\lrta} \oplus_p F_{p}^{n}\lrta B_\infty^n\lrta 0 
+$$
+
+Then we know
+$$
+B_\infty^n=\oplus_{p\leq l(n)}F^{n}_p/F^n_{p+1}
+$$
+and 
+$$
+B_\infty=\oplus_n B_\infty^n=\oplus_p F_p/F_{p+1}=Gr_\bullet H_D(K)
+$$
+
+\subsection{Spectral sequences of double complex}
+\end{proof}
+
+
+\end{document}

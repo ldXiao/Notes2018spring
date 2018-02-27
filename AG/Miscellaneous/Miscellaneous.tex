@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{glossaries}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Personal Notes All the information I need}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Affine Group Scheme, Hopf Algebra}
+\begin{dfn}
+Let $A$ be a commutative $K$-algebra. The corresponding affine $K$-scheme $G=\text{Spec}(A)$ is said to be a group scheme if it is endowed with algebraic operations
+$$
+\begin{aligned}
+&\mu:G\times G\lrta G\ (\text{product}),\\
+&e: \text{Spec}(K)\lrta G (\text{unit}),\\
+& \iota: G\lrta G (\text{inverse}),
+\end{aligned}
+$$
+satisfying the usual axioms of a group, which are expressed by the commutativity of the following three diagrams
+\begin{enumerate}[label=(\arabic*)]
+\item Associativity:
+    \[
+    \begin{tikzcd}
+    G\times G\times G\ar[r,"\mu\times Id"]\ar[d,"Id\times \mu"]& G\times G\ar[d,"\mu"]\\
+    G\times G\ar[r,swap,"\mu"] & G
+    \end{tikzcd}
+    \]
+
+\item Unit:
+    \[
+    \begin{tikzcd}
+    G\times Spec(K)\ar[r,"Id\times e"]\ar[dr,"pr_1"]& G\times G\ar[d,"\mu"]& Spec(K)\times G\ar[l,swap,"e\times Id"]\ar[dl,"pr_2"]\\
+     & G &
+    \end{tikzcd}
+    \]
+\item Inverse:
+    \[
+    \begin{tikzcd}
+    & G\times G\ar[dr,"\mu"]& \\
+    G\ar[r,"\pi"]\ar[ur,"Id\times\iota"]\ar[dr,"\iota\times Id"]& Spec(K)\ar[r,"e"] &G\\
+     & G\times G \ar[ur,"\mu"]&
+    \end{tikzcd},
+    \]    
+    where $\pi $ denotes the structural map of $G$ as a $K$-scheme. If the algebra $A$ is finitely generated, we say that $G$ is algebraic. We will see below that every affine group scheme is in fact a projective limit of affine group schemes. 
+\end{enumerate}
+\end{dfn}
+{\color{red}
+Equivalent definition: A group scheme over $K$ is a functor between the categories of commutative $K$-algebras and abstract groups. Namely, given $G=\text{Spec}(A)$ $A,P,Q$ are $K$-algebras, one considers the functor:
+    \[
+    \begin{tikzcd}
+    P\ar[r,"f"]\ar[d,"G"]& Q\ar[d,"G"] \\
+    Hom_{K-alg}(A,P)=G(P)\ar[r,"g\mapsto G(g)=f\circ g"] & G(Q)=Hom_{K-alg}(A,Q)
+    \end{tikzcd},
+    \]}
+\subsection{Hopf Algebra}
+The category of affine schemes over $K$ is equivalent to the category of the commutative $K$-algebras through the contravariant functors
+$$
+A\mapsto \text{Spec}(A)
+$$
+$$
+G\mapsto \calo(G),
+$$
+where $\calo(G)$ is the ring of regular functions on $G$. Thus the defining properties of a group scheme can be transfered to the corresponding algebra, yielding the concept of Hopf algebra.
+
+\begin{dfn}
+Let $H$ be an associative (not necessarily commutative) $K$-algebra. Let $\nabla:H\otimes H\lrta H$ be the product of $H$ and $\eta :k\lrta H$ the unit.
+\begin{enumerate}[label=(\arabic*)]
+\item We say that  $H$ is a \textbf{bialgebra} if it is provided with two morphisms of algebras
+$$
+\begin{aligned}
+& \Delta:H\lrta H\otimes H(\text{coproduct}),\\
+& \epsilon: H\lrta k(\text{counit})
+\end{aligned}
+$$
+such that the following diagrams commute:
+\begin{enumerate}[label=(\alph*)]
+\item Coassociativity:
+    \[
+    \begin{tikzcd}
+    H\ar[r,"\Delta"]\ar[d," \Delta"]& H\otimes H\ar[d,"Id\otimes \Delta"] \\
+    H\otimes H\ar[r,"\Delta\otimes Id"] & H\otimes H\otimes H,
+    \end{tikzcd}
+    \]
+\item Counit.
+    \[
+    \begin{tikzcd}
+    H\otimes K & H\otimes H\ar[l,"Id\otimes\epsilon"] \ar[r,"\epsilon\otimes Id"] & K\otimes H \\
+    & H\ar[ul]\ar[ur]\ar[u,"\Delta"] &
+    \end{tikzcd}
+    \]
+\end{enumerate}
+\item A bialgebra $H$ is called a \textbf{Hopf algebra} if it is further equipped witha morphism of algebras
+$$
+S:H\lrta H \ (\text{antipode})
+$$
+such that the following diagram commutes:
+\begin{enumerate}[label=(c)]
+\item Antipode.
+    \[
+    \begin{tikzcd}
+        & H\otimes H\ar[rr,"S\otimes Id"] &\ & H\otimes H\ar[dr,"\nabla"] & \\
+    H\ar[rr,"\epsilon"]\ar[ur,"\Delta"]\ar[dr,"\Delta"]& & k\ar[rr,"\eta"] & & H\\
+    & H\otimes H\ar[rr,"Id\otimes S"] & & H\otimes H\ar[ur, "\nabla"] &
+    \end{tikzcd}
+    \]
+\end{enumerate}
+\item A bialgebra $H$ is called commutative if the product is commutative, and cocommutative if the coproduct satisfies $\Delta=\tau\circ \Delta$, where $\tau:H\otimes H\lrta H\otimes H$ is the flip of the factors.
+\end{enumerate}
+\end{dfn}
+
+\section{Tannakian Categories}
+$K$ is a field of characteristic 0, $\cala$ rigid tensor $\bbk$-linear abelian category, $L$ is an extension of $K$.
+\begin{dfn}
+An $L$-valued \textbf{fibre functor }is a tensor functor $\omega:\cala\lrta Vec_L$ which is faithful and exact.
+\end{dfn}
+\begin{dfn}
+$\cala$ is 
+\begin{itemize}
+    \item \textbf{Neutralized Tannakian} if one can  endow it with a $K$-valued fibre functor.
+    \item \textbf{Neutral Tannakian} if $\exists$ $K$-valued fibre functor.
+    \item \textbf{Tannakian } if $\exists L$-valued fibre functor for some $L$.
+\end{itemize}
+\end{dfn}
+\begin{ex}
+$G$ is an affine $K$-group scheme, $\cala=Rep_K(G),\omega:\cala\lrta Vec_K$ the forgetful functor.
+\end{ex}
+
+
+
+
+
+
+
+
+
+
+\end{document}

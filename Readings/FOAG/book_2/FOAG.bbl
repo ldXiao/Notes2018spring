@@ -1,0 +1,91 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{nyt}{nyt}
+    \entry{gortz2010algebraic}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6ce6acdb0fb322d897f757dab4854fa0}{Görtz}{G\bibinitperiod}{Ulrich}{U\bibinitperiod}{}{}{}{}}%
+        {{hash=19a9170cb8e6a605aacaaf60dcce3a64}{Wedhorn}{W\bibinitperiod}{Torsten}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \strng{fullhash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic geometry}
+      \field{year}{2010}
+    \endentry
+    \entry{mac1998categories}{book}{}
+      \name{author}{1}{}{%
+        {{hash=412e255483e0d09fd0b0895d355a28a8}{Mac\bibnamedelima Lane}{M\bibinitperiod\bibinitdelim L\bibinitperiod}{Saunders}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{412e255483e0d09fd0b0895d355a28a8}
+      \strng{fullhash}{412e255483e0d09fd0b0895d355a28a8}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Categories for the Working Mathematician}
+      \field{volume}{5}
+      \field{year}{1978}
+    \endentry
+    \entry{neeman2007algebraic}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b0653a87bc1b4236dc840bab79449849}{Neeman}{N\bibinitperiod}{Amnon}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{fullhash}{b0653a87bc1b4236dc840bab79449849}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic and analytic geometry}
+      \field{volume}{345}
+      \field{year}{2007}
+    \endentry
+    \entry{stacks-project}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4cbef342f832f67d2565c5773283e977}{{Stacks\bibnamedelimb Project\bibnamedelimb Authors}}{S\bibinitperiod}{The}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{4cbef342f832f67d2565c5773283e977}
+      \strng{fullhash}{4cbef342f832f67d2565c5773283e977}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://stacks.math.columbia.edu}}
+      \field{shorthand}{Stacks}
+      \field{title}{\textit{Stacks Project}}
+      \field{year}{2018}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,0 +1,124 @@
+\documentclass[11pt,fleqn]{book}
+\input{structure} 
+\begin{document}
+%\chapterimage{structure_sheaf.jpg}
+%\chapter{The structure sheaf, definition of schemes}
+\section{The structure sheaf of an affine scheme
+}
+\begin{definition}
+Define $\calo_{\spec A}(D(f))$ to be localization of $A$ at the multiplicative set $S$, where
+$$
+S:=\{\text{All functions that do not vanish outside $V(f)$ (Do not vanish on $D(f))$}\}.
+$$
+(i.e., those $g\in A$ such that $V(g)\subset V(f)$ or equivalently $D(f)\subset D(g)$)
+\end{definition}
+In particular, $\calo_{\spec A}(\emptyset)=\{0\}$, where localize at the multiplicative set of functions $g$ such that $V(g)\subset \spec A$. This multiplicative set includes $0$, hence the localization is $\{0\}$ ring.
+
+\begin{exr}
+Show that the natural map $A_f \lrta \calo_{\spec A}(D(f))$ is an isomorphism.
+\end{exr}
+\begin{proof}
+In particular, $S_f:=\{1,f,f^2,...\}$ is a multiplicative subset of the multiplicative set $T$ in the definition of $\calo_{\spec A}(D(f))$, where 
+$$
+T:=\{\text{All functions that do not vanish outside $V(f)$ (Do not vanish on $D(f))$}\}.
+$$
+$S_f\subset T$.
+There is a natural homomorphism 
+$$
+A\overset{S_f^{-1}}{\lrta}A_f\overset{\tilde{T}^{-1}}{\lrta}\calo_{\spec A}(D(f)), 
+$$
+where we have denoted the image of $T$ in $A_f$ by $\tilde{T}$. $g\in S\Llrta D(f)\subset D(g)$
+
+$\Llrta T^{-1}g$ is invertible in $A_f$ by Exercise~\ref{chap3exr:inclusion_distinguished_open}.
+
+$\Llrta$ $\tilde{T}\subseteq A_f^\times$
+
+$\Llrta$ $\tilde{T}^{-1}$ is an isomorphism. $A_f\cong \calo_{\spec A}(D(f))$.
+\end{proof}
+
+\begin{exr}
+Prove the base identity axiom for any distinguished open $D(f)$. 
+\end{exr}
+\begin{proof}
+Consider the $D(f)=\cup_{i\in I}D(f_i)$. We already showed that $\spec A_f\cong D(f)$ as topological spaces~\ref{chap3exr:specA_f_and_specA/I}. If $D(f)=\cup_{i\in I}D(f_i)=\cup_{i\in I}D(f_i)\cap D(f)=\cup_{i\in I}D(f_if)$.
+
+$D(f_i f)\cong\spec A_{ff_i}$ $A_{ff_i}$ is the localization of $A_f$ at the image of $f_i$. $D(f_i f)$ corresponds to the point $[\scq]\in \spec A_f$ such that $\scq\not\in \frac{f_i}{1}$.
+
+Then $D(f)=\cup_{i\in I}D(f_i)\subset \spec A$ $\Llrta$ $\spec A_f=\cup_{i\in I} D(f_i/1)$
+
+$\calo_{\spec A}(D(f))\cong A_f=\calo_{\spec A_f}(\spec A_f)$. The function restricts to $0$ on each $D(f_i)$ iff its restriction to $D(f_i/1)$ vanishes.
+
+Then the problem reduces to the proved case $D(f)=\spec A$.
+\end{proof}
+
+\begin{exr}
+Alter this argument appropriately to show base gluability for any distinguished open $D(f)$.
+\end{exr}
+\begin{proof}
+Again, we regard $D(f)\cong \spec A_f$. 
+
+Then $D(f)=\cup_{i\in I}D(f_i)\subset \spec A$ $\Llrta$ $\spec A_f=\cup_{i\in I} D(f_i/1)$.
+
+$\calo_{\spec A}(D(f))\cong A_f=\calo_{\spec A_f}(\spec A_f)$.
+
+The base gluability follows from the special case we have proved for $\spec A=D(f)$.
+\end{proof}
+\begin{exr}
+Suppose $M$ is an $A$-module. Show that the following construction describes a sheaf $M$  on the distinguished base. Define $ \tilde{M}(D(f))$ to be the localization of $M$ at the multiplicative set of all functions that do not vanish outside of $ V(f)$. Define restriction maps $\res_{D(f),D(g)}$ in the analogous way to $\calo_{\spec A}$. Show that this defines a sheaf on the distinguished base, and hence a sheaf on $\spec A$. Then show that this is an $\calo_{\spec A}$-module.
+\end{exr}
+\begin{proof}
+Define $\tilde{M}_{\spec A}(D(f))$ to be localization of $M$ at the multiplicative set $S$, where
+
+$$
+S:=\{\text{All functions that do not vanish outside $V(f)$ (Do not vanish on $D(f)$}\}.
+$$
+
+\underline{Claim}: $\tilde{M}(D(f))\cong M_f$.
+
+ In particular, $S_f:=\{1,f,f^2,...\}$ is a multiplicative subset of the multiplicative set $S$.
+
+ There is a natural homomorphism 
+$$
+M\overset{S_f^{-1}}{\lrta}M_f\overset{\tilde{S}^{-1}}{\lrta}\tilde{M}(D(f)), 
+$$
+where we have denoted the image of $S$ in $A_f$ by $\tilde{S}$. $g\in S\Llrta D(f)\subset D(g)$
+
+$\Llrta T^{-1}g$ is invertible in $A_f$ by Exercise~\ref{chap3exr:inclusion_distinguished_open}.
+
+$\Llrta$ $\tilde{S}\subseteq A_f^\times$
+
+$\Llrta$ $\tilde{S}^{-1}$ is an isomorphism. $M_f\cong \tilde{M}(D(f))$.
+\end{proof}
+
+\begin{exr}
+The disjoint union of schemes is defined as you would expect: it is the disjoint union of sets, with the expected topology, with the expected sheaf.
+\begin{enumerate}[label=(\alph*)]
+\item Show that the disjoint union of a finite number of affine schemes is also an affine scheme.
+\item (a first example of a non-affine scheme) Show that an infinite disjoint union of (nonempty) affine schemes is not an affine scheme. 
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item In Exercise~\ref{exr:nonconnected_scheme}, we see that for finite index set $I$:
+$$
+\coprod_{i\in I}\spec A_i\cong\spec \prod_i A_i
+$$
+and we only need to describe the structure sheaf and verify that
+$$
+\calo_{\coprod_i \spec A_i}\cong \calo_{\spec \prod_i A_i}
+$$
+
+ Consider the inclusion map $\iota_i: \spec A_i\inj \spec \coprod A_i$
+$$
+\calo_{\spec \prod_i A_i}:= \coprod_i (\iota_{i})_*\calo_{\spec A_i}
+$$
+For $U=\coprod_i U_i\subset \coprod \spec A_i$,
+$$
+\left(\coprod_i (\iota_{i})_* \calo_{\spec A_i}\right)(U)=\coprod_i \calo_{\spec A_i}(\iota_i^{-1}U)=\coprod_{i}\calo_{\spec A_i}(U_i).
+$$ 
+The later coproduct means disjoint union in \textit{Set}-value valued case and means tensor product in the case of \textit{Mod} and so on.
+
+\item 
+\end{enumerate}
+\end{proof}
+\end{document}
