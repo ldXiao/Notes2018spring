@@ -1,15 +1,15 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'FOAG.blg'
-[63] biber-darwin:276> INFO - === Sat Feb 17, 2018, 14:09:58
-[64] Biber.pm:333> INFO - Reading 'FOAG.bcf'
-[257] Biber.pm:645> INFO - Found 4 citekeys in bib section 0
-[285] Biber.pm:2977> INFO - Processing section 0
-[316] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[318] 6ce97eef.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[322] 6ce97eef.pm:895> INFO - Found BibTeX data source 'bibliography.bib'
-[413] 76c5e630.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[413] 76c5e630.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[413] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[413] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[419] bbl.pm:505> INFO - Writing 'FOAG.bbl' with encoding 'UTF-8'
-[419] bbl.pm:596> INFO - Output to FOAG.bbl
+[60] biber-darwin:276> INFO - === Tue Feb 27, 2018, 20:58:49
+[61] Biber.pm:333> INFO - Reading 'FOAG.bcf'
+[225] Biber.pm:645> INFO - Found 4 citekeys in bib section 0
+[250] Biber.pm:2977> INFO - Processing section 0
+[269] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[272] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[275] bibtex.pm:895> INFO - Found BibTeX data source 'bibliography.bib'
+[326] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[326] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[326] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[327] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[332] bbl.pm:505> INFO - Writing 'FOAG.bbl' with encoding 'UTF-8'
+[333] bbl.pm:596> INFO - Output to FOAG.bbl

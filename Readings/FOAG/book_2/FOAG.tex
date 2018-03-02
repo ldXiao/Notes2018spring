@@ -42,7 +42,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\documentclass[11pt]{book} % Default font size and left-justified equations
 
 %----------------------------------------------------------------------------------------
 
@@ -5192,7 +5192,7 @@ Show that the following schemes are normal:
 \item  $\spec\intg[x]/(x^2-n)$ where $n$ is a square-free integer congruent to $3$ modulo $4$. Caution: the hypotheses of Exercise~\ref{chap5exr:handy_characterization_normal_scheme} do not apply, so you will have to do this directly. (Your argument may also show the result when $3$ is replaced by $2$. A similar argument shows that $\intg[(1+\sqrt{n})/2]$ is integrally closed if $n \equiv 1 (\mod 4)$ is square-free.)
 \item
  $\spec k[x_1,...,x_n]/(x^2_1+x_2^2+\cdots+x^2_m)$ where $\char k\neq 2, n\geq m\geq 3$.
-\item $\spec k[w, x, y, z]/(wz - xy)$ where $\char\ k\neq  2$. This is our cone over a quadric surface example from Example 4.4.12 and Exercise~\ref{chap5exr:5.4.D}. Hint: Exercise 5.4.J may help. (The result also holds for $\char k = 2$, but don’t worry about this.)
+\item $\spec k[w, x, y, z]/(wz - xy)$ where $\char\ k\neq  2$. This is our cone over a quadric surface example from Example 4.4.12 and Exercise~\ref{chap5exr:5.4.D}. Hint: Exercise~\ref{chap5exr:quadratic_forms_diagonalization} may help. (The result also holds for $\char k = 2$, but don’t worry about this.)
 \end{enumerate}
 \end{exr}
 \begin{proof}
@@ -5238,7 +5238,7 @@ Then it reduces to a special case of $(b)$ above.
 
 \end{enumerate}
 \end{proof}
-\begin{exr}
+\begin{exr}\label{chap5exr:quadratic_forms_diagonalization}
 Suppose $k$ is an algebraically closed field of characteristic not $2$. (The hypothesis that $k$ is algebraically closed is not necessary, so feel free to deal with this more general case.)
 \begin{enumerate}[label=(\alph*)]
 \item Show that any quadratic form in $n$ variables can be ``diagonalized'' by changing coordinates to be a sum of at most $n$ squares.
@@ -5293,9 +5293,56 @@ Assume $\mathbf{v}$ is in the null space of $M$, then $A^{-1}v$ is  in the null 
 \begin{proof}
 This is a classical counter-example.
 
- $A:=\intg[\sqrt{-5}]$ is integrally closed by~\ref{chap5exr:normal_schemes_examples}. 
+ $A:=\intg[\sqrt{-5}]$ is integrally closed by~\ref{chap5exr:normal_schemes_examples}(a) because 
+ $$-5\equiv 3\mod 4.
+ $$
 
  It is not unique factorization domain because for example $6=2\times 3$ and $6=(1-\sqrt{-5})(1+\sqrt{-5})$.
+\end{proof}
+
+\begin{exr}
+(RINGS CAN BE INTEGRALLY CLOSED BUT NOT UNIQUE FACTORIZATION DOMAINS, GEOMETRIC VERSION). Suppose $\char k \neq 2$. Let $A = k[w, x, y, z]/(wz - xy)$, so $\spec A$ is the cone over the smooth quadric surface (cf. Exercises 4.4.12 and~\ref{chap5exr:5.4.D}).
+\begin{enumerate}[label=(\alph*)]
+\item Show that $A$ is integrally closed. (Hint: Exercises~\ref{chap5exr:normal_schemes_examples}(c) and~\ref{chap5exr:quadratic_forms_diagonalization})
+\item Show that $A$ is not a unique factorization domain. (Clearly $wz = xy$. But why are $w, x, y$, and $z$ irreducible? Hint: $A$ is a graded integral domain. Show that if a homogeneous element factors, the factors must be homogeneous.)
+\end{enumerate}
+\end{exr}
+\begin{proof}
+For (a), we can diagonalize the quadratic form $wz-xy$.
+$$
+wz-xy=\left(\frac{w+z}{2}\right)^2-\left(\frac{w-z}{2}\right)^2-\left(\frac{x+y}{2}\right)^2+\left(\frac{x-y}{2}\right)^2.
+$$
+We know $A\cong k[x_1,x_2,x_3,x_4]/(x_1^2-x_2^2-x_3^2+x_4^2)$, then we know it is integrally closed by~\ref{chap5exr:normal_schemes_examples}(b).
+
+As for $(b)$, we clearly have $wz=xy$. Then it suffices to prove $w,x,y,z$ are irreducible.  
+
+Indeed, we can regard $A$ as a graded integral domain because it is a quotient of the polynomial ring by a homogeneous prime ideal. 
+
+\underline{Claim}: If a homogeneous element factors, the factors must be homogeneous. 
+
+An element $f$ is of homogeneous degree $n$ iff each monomial of $f$ is of degree $n$.
+
+Now assume $f=gh$, where $g,h$ are not homogeneous. Assume $g=g_{0}+g_1$, where $g_0$ is the highest degree term in $g$ and $g_1$ is the rest. The degree of monomials in $g_0$ is strictly higher than those in $g_1$. We have $f=g_0 h+g_1 h$, but it is impossible for the two summands to have same highest degrees.
+
+Then we know $x$ is irreducible, because the only degree 
+$1$ homogeneous terms are $x,y,z,w$ and we won't have the relation $w=\lambda x$. 
+\end{proof}
+
+\begin{exr}
+Suppose $A$ is a $k$-algebra, and $l/k$ is a finite extension of fields. (Most likely your proof will not use finiteness; this hypothesis is included to avoid distraction by infinite-dimensional vector spaces.) Show that if $A\otimes_k l$ is a normal integral domain, then $A$ is a normal integral domain as well.
+\end{exr}
+\begin{proof}
+Here the notion ``normal integral domain'' is the same as ``integrally closed''.
+
+The proof is sketched in the hint, we just follow it step by step.
+
+ Fix a $k$-basis for $l$, $b_1=1,...,b_d$.
+
+ \underline{Claim}: $1\otimes b_1,...,1\otimes b_d$ forms a free $A$-basis for $A\otimes_k l$. 
+
+ Assume an element $a\otimes x\in A\otimes_k l$, where $x=\sum_i x_i b_i$. We have 
+ $a\otimes x=a\otimes \sum_i x_i b_i$ and it equals to $\sum_i (x_i a) (1\otimes b_i)$. It indeed forms an generating set of  $A$-module $A\otimes_k l$. And we can show that $A\otimes_k l$ is a free $A$-module with this basis. Assume $\sum_i r_i(1\otimes b_i)=0$, $\sum_i r_i\otimes b_i=0$, because $A$ is a $k$-algebra
+
 \end{proof}
 \section{The crucial points of a scheme: Associated points and primes}
 %---------------------------------------------------------------------------------------

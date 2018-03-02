@@ -1,0 +1,9 @@
+[0] Config.pm:324> INFO - This is Biber 2.1
+[0] Config.pm:327> INFO - Logfile is 'Chap3.blg'
+[74] biber-darwin:276> INFO - === Mon Feb  5, 2018, 18:26:47
+[74] Biber.pm:333> INFO - Reading 'Chap3.bcf'
+[240] Biber.pm:645> INFO - Found 0 citekeys in bib section 0
+[241] Utils.pm:146> WARN - The file 'Chap3.bcf' does not contain any citations!
+[290] bbl.pm:505> INFO - Writing 'Chap3.bbl' with encoding 'UTF-8'
+[290] bbl.pm:596> INFO - Output to Chap3.bbl
+[291] Biber.pm:106> INFO - WARNINGS: 1

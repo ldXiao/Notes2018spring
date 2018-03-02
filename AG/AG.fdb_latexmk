@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1519751941 "AG.tex" "AG.pdf" "AG" 1519751942
+["pdflatex"] 1519981433 "AG.tex" "AG.pdf" "AG" 1519981435
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -203,13 +203,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "AG.aux" 1519751942 846 a1fe57d77a49843dfa1c4a07b6430d65 ""
-  "AG.out" 1519751942 88 7d6dca99da8d658acbc6c49b16bbbee4 ""
-  "AG.tex" 1519751940 11723 18c134334e886974f3b730ee59176a66 ""
-  "AG.toc" 1519751942 93 a34305e1deee0d39537995f60772a45a ""
+  "AG.aux" 1519981434 975 6f5c8ff41a2aee7f8be212360d9ce7cd ""
+  "AG.out" 1519981434 200 515038f48a36a7cd4c4ce90eeb19d1bf ""
+  "AG.tex" 1519981433 18886 e18f2a0c8c66219f7917ec2b649880c4 ""
+  "AG.toc" 1519981434 204 262980be7021a9e9df1452f16835e4b1 ""
   (generated)
-  "AG.pdf"
-  "AG.log"
   "AG.out"
   "AG.toc"
   "AG.aux"
+  "AG.pdf"
+  "AG.log"

@@ -1,0 +1,1401 @@
+\chapterimage{scheme.jpg} % Chapter heading image
+\chapter{Toward affine schemes: the underlying set, and topological space}
+%\documentclass[11pt,fleqn]{book}
+%\input{structure} 
+%\begin{document}
+\section{Towards schemes}
+\begin{exr}
+Suppose that $\pi: X\longrightarrow Y$ is a continuous map of differentiable manifolds (as topological spaces — not a priori differentiable). Show that $\pi$ is differentiable if differentiable functions pull back to differentiable functions, i.e., if pullback by $\pi$ gives a map $\calo_Y \longrightarrow \pi_*\calo_X$. (Hint: check this on small patches. Once you figure out what you are trying to show, you will realize that the result is immediate.)
+\end{exr}
+\begin{proof}
+Recall the definition of differentiable maps: At every point $p\in X$, local charts $(U,\varphi)\ni p$ and $(V,\phi)\ni \pi(p)$, where $\varphi: U\lrta \reals^n$ and $\phi:V\lrta \reals^m$ are homeomorphisms. We say $\pi$ is differentiable iff $\phi\circ\pi\circ\varphi^{-1}:\reals^n\lrta \reals^m$ is differentiable. And check that if $\forall g$, $g\circ \pi$ is differentiable at $p$. $g\circ \phi^{-1}\circ(\phi\circ \pi\circ \varphi^{-1})$ is differentiable for all $g$. We can choose $g=\phi_i$ such that $\phi_i\circ \phi^{-1}=pr_i:\reals^m\lrta\reals$ is the projection map to the $i$-th coordinate. Then the map $\phi\circ\pi\varphi^{-1}=(pr_1\circ\phi\circ\pi\varphi^{-1},...,pr_m\circ\phi\circ\pi\varphi^{-1})$ is differentiable.
+\end{proof}
+
+\begin{exr}
+Show that a morphism of differentiable manifolds $\pi: X\lrta Y$ with $\pi(p)=q$ induces a morphism of stalks $\pi^\#:\calo_{Y,q}\lrta \calo_{X,p}$. Show that $\pi^\# (\scm_{Y,q})\subset \scm_{X,\scp}$ . In other words, if you pull back a function that vanishes at $q$, you get a function that vanishes at $p$. 
+\end{exr}
+\begin{proof}
+$\calo_{X,p}$ is the germ of smooth functions at $p$. $\pi^{\#}:\calo_{Y,q}\lrta \calo_{X,p}; [(f,U)]\longmapsto [(f\circ \pi, \pi^{-1} U)]$. If $[(f,U)]\in \scm_{Y,q}$, $(f,U)\sim (0, V) $. In particulr, there is an open set $W\subseteq U\cap V$, so that $f|_W=0$. $f\circ\pi|_{\pi^{-1}W}=0\Lrta [f\circ\pi, \pi^{-1}W]\in \scm_{X,p}$.
+\end{proof}
+\section{The underlying sets of affine schemes}
+\begin{exr}
+A SMALL EXERCISE ABOUT SMALL SCHEMES
+\begin{enumerate}[label=(\alph*)]
+\item Describe the set $\Spec(k[\epsilon]/(\epsilon^2)) $. The ring $k[\epsilon]/(\epsilon^2)$ is called the ring of \textbf{dual numbers}, and will turn out to be quite useful. You should think of ε as a very small number, so small that its square is $0$ (although it itself is not $0$). It is a nonzero function whose value at all points is zero, thus giving our first example of functions not being determined by their values at points.
+\item Describe the set $k[x]_{(x)}$
+\end{enumerate}
+\end{exr}
+\begin{proof}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Recall the isomorphism theorem, there is a one to one correspondence between \{$\scp\in \Spec(A),\scp\supseteq \sca$\} and \{$\scq\in \Spec(A/\sca)$\}. The only prime in $k[\epsilon]$ that contains $(\epsilon^2)$ is $(\epsilon)$. Hence, $\Spec(k[\epsilon]/(\epsilon^2))$ $=\{[(\epsilon)]\}$
+\item  There is a one to one correspondence,
+$$
+\{\scp\in \Spec(A):\scp\cap S=\emptyset \}\llrta\{\scq\in Spec(S^{-1}A)\}.
+$$
+In this specific case, the multiplicative set is $S:=k[x]-(x)$. Then the primes in $k[x]_{(x)}$ corresponds to those primes ideals contained in $(x)$, which is just $(x)\cdot k[x]_{(x)},(0)$  
+
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Show that for $\reals[X]/(p(X))\cong\cplx$, where $p(x)$ is an irreducible quadratic polynomial.
+\end{exr}
+\begin{proof}
+For example, consider $p(X)=X^2+aX+b$, where $a^2-4b<0$. Then 
+$$
+A=\reals[X]/(X^2+aX+b)\cong \{f\in\reals[x]: x^2+ax+b=0\},
+$$
+hence every element in $A$ can be written as  $cx+d$, with $c,d\in\reals$. However we know $\cplx\cong\reals\oplus\reals i$ as $\reals$-algebra. Consider an $\reals$-linear morphism of vector space 
+$$
+\varphi:x\longmapsto -\frac{a}{2}+\frac{\sqrt{4b-a^2}}{2} i, 1\longmapsto 1
+$$ 
+is surjective and injective. Check that $\varphi$ is in fact a well-defined ring morphism. It suffices to check it on basis, we only need to check 
+$$
+-a\varphi(x)+b=\varphi(x^2)=\varphi(x)\varphi(x).
+$$
+\end{proof}
+
+\begin{exr}
+Describe the set $\affn^1_\ratl=\spec(\ratl[X])$.
+\end{exr}
+\begin{proof}
+Each irreducible polynomial $p(X)\in\ratl[X]$ corresponds to a splitting field. And $\ratl[X]/(p(X))\cong \ratl[\alpha]$ where $\alpha\in\overline{Q}$ s.t. $p(\alpha)=0$. $\spec(\ratl[X])$ contains a generic point $(0)$, closed point corresponding to $(x-q)$, where $q\in\ratl$, and $p(X)$ irreducible, where $(p(X))$ corresponds an equivalent class of algebraic number and their Galois conjugates. 
+\end{proof}
+
+\begin{exr}
+If $k$ is a field, show that $\spec k[X]$ has infinitely many points. (Hint: Euclid’s proof of the infinitude of primes of $\intg$.)
+\end{exr}
+\begin{proof}
+Polynomial ring over a field is Euclidean domain, which means every polynomial has a unique factorization as product of irreducible polynomials. Assume there are only finitely many prime ideals in $k[X]$, which means there are only finitely many irreducible polynomials $p_1,...,p_n\in k[X]$. We can set $p=p_1\cdot\cdot\cdot p_n+1$. Assume $p$ is reducible, then it must contain some $p_i$, but then we have a contradiction that $p_i|1$. Then $p$ is irreducible and we have infinite prime ideals (points).
+\end{proof}
+
+\begin{exr}
+Show that we have identified all the prime ideals of $\cplx[x,y]$. (Show that all prime ideals in $\cplx[x,y]$ are either of the form $(0)$, $(x-a,y-b)$,$(f(x,y))$ where $f(x,y)$ is irreducible)
+\end{exr}
+\begin{proof} $\cplx[x,y]$ is a UFD. Then, a nonzero principal ideal is prime if and only if it is generated by a irreducible element.
+
+Then it suffices to check the  non-principal case. Suppose a prime $\scp\subseteq \cplx[x,y]$ is not principal ideal. We can find at least two elements $f(x,y), g(x,y)$ in $\scp$ with no common factor. We can regard $f(x,y)$ and $g(x,y)$ as polynomials of $y$ with coefficients in $c(x)$.
+$$
+f(x,y)=f_n(x)y^n+f_{n-1}(x)y^{n-1}+...+f_0
+$$
+$$
+g(x,y)=g_m(x)y^m+g_{m-1}(x)y^{m-1}+...+g_0
+$$
+Consider the Euclidean algorithm in $\cplx(x)[y]$, we can calculate the greatest common divisor of $f,g$ when regard then as elements in $\cplx(x)[y]$. \\
+\underline{Claim}: Let $R$ be a Euclidean domain, and $f,g\in\calr[y]$ such that $gcd(f,g)=1$ (in $R[y]$). They $gcd(f,g)=1$ in $K[y]$, where $K$ is the field of fractions of $R$.
+ c
+Let $h\in K[y]$ such that $h|f$ and $h|g$ in $K[y]$. We wan to show that $deg (h)=0$.
+
+Let $d$ be the product of all denominators of the coefficients of $h$, and $k=dh\in R[y]$. Then $k|df$ and $k|dg$ in $K[y]$, so there are $a,b\in R\backslash\{0\}$ such that $k|(ad)f$ and $k|bdg$ in $R[y]$. Write $adf=kp$ and $bdg=kq$ with $p,q\in R[y]$.
+
+In the following, one denotes by $c(r)$ the greatest common divisor of the coefficients of $r\in R[y]$, and write $r=c(r)r_1$ where $r_1$ is primitive, that is , the greatest common divisor of its coefficients is $1$.
+
+From $adf=kp$ and $bdg=kq$ we get $ad c(f)=c(k)c(p)$ and $bd c(g)=c(k)c(q)$. But $(ad)c(f)f_1=c(k)c(p)k_1p_1$ and $bd c(g)g_1=c(k)c(q)k_1q_1$, so $f_1=k_1p_1$ and $g_1=k_1q_1$. Thus we get $k_1 |f_1|f$ and $k_1|g_1|g$, so $k_1=1$, and we are done.
+
+$\cplx(x)$ is such a Euclidean domain. $f,g$ has no common factor in $\cplx[x][y]\Lrta gcd(f,g)=1\in \cplx(x)[y]$.
+$\exists u,v\in \cplx(x)[y]$ s.t. 
+$$
+u f+vg=1.
+$$
+Multiplying the product of denominators of coefficients in $u,v$, we can get an equality in $\cplx[x,y]$
+$$
+u'f+v'g=h(x).
+$$
+$h(x)\in (f(x,y),g(x,y))\subseteq\scp$. $h(x)$ can split into product of linear polynomials in $\cplx[x]$, because $\scp$ is prime, at least one the linear factor $x-a$ is in $\scp$. Similarly we can prove that at least one linear factor $y-b\in \scp$. Thus, $(x-a,y-b)\in\scp$, but because $(x-a,y-b)$ is already maximal, we have every non-principal prime ideal is of the form $(x-a,y-b)$.
+\end{proof}
+
+\begin{exr}
+Show that the Nullstellensatz(Zariski's Lemma) implies the Weak Nullstellensatz.
+\end{exr}
+\begin{proof} Set $A:=k[X_1,...,X_d]$, with $k$ being a algebraically closed field.
+Let $\scm\subseteq {A}$ be any maximal ideal, then $ L={A}/\scm$ is a field.
+\begin{center}
+\begin{tikzcd}
+k\ar[r]\ar[rr,bend right,"j"]&k[X_1,...,X_d]={A}\ar[r,two heads,"q"]& L={A}/\scm  
+\end{tikzcd}
+\end{center}
+Note: $ L$ is a finitely generated $k$-algebra, generated by $q(X_1),...,q(X_d)$
+$$
+\begin{aligned}
+\text{Zariski's Lemma}&\Lrta  L/j(k)\text{ is finite field extension}\\
+ & \Lrta
+ L\cong k \text{($k$ algebraically closed)}
+\end{aligned}
+$$
+Set $x:=(j^{-1}(q(X_1)),...,j^{-1}(q(X_d)))\in \cplx^d$. Check $\scm=\scm_x:=(X_1-x_1,...,X_d-x_d)$.
+We know $j$ is surjective because $q$ is, and $j$ is always injective because $k$ is a field (ring morpihsm of fields are injective). Suppose $P\in \scm\Lrta q(P)=0\Lrta j^{-1}(P(q(X)))=0\Lrta P(j^{-1}(q(X)))=P(x)=0$, hence $\scm_x\in \scm$, but we already know $\scm_x$ is maximal, then $\scm=\scm_x$.
+\end{proof}
+
+\begin{exr}\label{exr:chap3_fin-dim_k_domain_is_field}
+Any integral domain $A$ which is a finite $k$-algebra (i.e., a $k$-algebra that is a finite-dimensional vector space over $k$) must be a field. 
+\end{exr}
+\begin{proof}
+For a nonzero element $x\in A$, we $xA$ is a finite dimensional subspace of $A$. If $\dim xA\subsetneq \dim A$, then $x^2A\subsetneq xA$ otherwise $\forall z\in A, \exists y \in A xz=x^2 y$, $\Lrta x(z-xy)=0\Lrta z=xy$ because $A$ is an integral domain contradicting to $xA\neq A$. Then we have a descending chain of vector spaces $\cdots x^3A\subsetneq x^2 A\subsetneq xA\subsetneq A$. Because $A$ is finite dimensional, there is an $n\in \intg$ so that $x^nA=0\Lrta x^n=0$ contradiction. Therefore, multiplying $x$ must be an isomorphism.
+
+In particular, the above argument is not true for general finitely generated $k$-algebras. $k[X]$ is not Artinian, there exists an infinitely descending chain of ideals $(X)\supsetneq (X^2)\supsetneq (X^3)\supsetneq ...$ Multiplying $X$ is not an isomorphism on $k[X]$.
+
+Now, assume $A=k[X_1,...,X_d]/\scp$  for some prime ideal $\scp$ so that the residue ring $A$ is finite $k$-algebra. Such $\scp$ exists by Nullstellensatz. We already proved that $0\neq x\in A$ multiplies as an isomorphism, hence $x$ is not contained in any proper ideal in $A$. $\scp$ must be maximal ideal. Hence $A$ is a field.
+\end{proof}
+
+\begin{exr}
+Describe the maximal ideal of  $\ratl[x,y]$ corresponding to points $(\sqrt 2,\sqrt 2)$
+and $(-\sqrt2, -\sqrt 2)$. Describe the maximal ideal of $\ratl[x, y]$ corresponding to points $( \sqrt 2, -\sqrt 2)$ and $(-\sqrt2, \sqrt 2)$. What are the residue fields in each case?
+\end{exr}
+\begin{proof}
+ $(x^2-2,y^2-2)$ is not a maximal ideal, geometrically it consists of two points.
+
+$(\sqrt 2,\sqrt 2)\sim(-\sqrt 2,-\sqrt 2)$ correspond to $(x-y,x^2-2)=(x-y,y^2-2)$.
+
+$(-\sqrt 2,\sqrt 2)\sim(\sqrt 2,-\sqrt 2)$ correspond to $(x+y,x^2-2)=(x+y,y^2-2)$.
+
+The residue field in both case is $\ratl[x,y]/(x-y,y^2-2)=\ratl[y]/[y^2-2]\cong \ratl[\sqrt 2]\cong \ratl[x,y]/(x+y,y^2-2)$. And in particular, the quotient ring of $(x^2-2,y^2-2)$ is
+$$
+\ratl[x,y]/(x^2-2,y^2-2)\cong \ratl[\sqrt2]\times \ratl[\sqrt 2]
+$$
+
+\end{proof}
+
+\begin{exr}
+Consider the map of sets $\phi: \cplx^2\lrta \mathbb{A}_\ratl^{2}$ defined as follows. $(z_1,z_2)$ is sent to the prime ideal of $\ratl[x,y]$ consisting of polynomials vanishing at $(z_1,z_2)$.
+\begin{enumerate}[label=(\alph*)]
+\item What is the image of $(\pi,\pi^2)$
+\item Show that $\phi$ is surjective.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item 
+There is an injective morphism from $\varphi:\ratl[x,y]\inj \cplx[x,y]$, it induces a morphism on $\spec \cplx[x,y]\lrta \spec \ratl[x,y]$. In particular, the point $(\pi,\pi^2)$ maps as 
+$$
+(x-\pi,y-\pi^2)\lrta (x-\pi,y-\pi^2)\cap \ratl[x,y]
+$$
+The problem reduces to find two polynomials $p(x,y),q(x,y)\in\cplx[x,y]$ what is the polynomial
+$$
+p(x,y)(x-\pi)+q(x,y)(y-\pi^2)\in \ratl[x,y].
+$$
+We can find 
+$$
+(x+\pi)(x-\pi)-(y-\pi^2)=x^2-y\in \ratl[x,y]
+$$
+$(x^2-y)\subseteq (x-\pi,y-\pi^2)\cap\ratl[x,y]$. The tricky part is the reverse inclusion. 
+
+Suppose there is a polynomial 
+$$
+P(x,y)=\sum_{m,n}a_{m,n}x^{m}y^{n}, a_{m,n}\in \ratl
+$$
+so that $P(\pi,\pi^2)=0$. $P(\pi,\pi^2)$ is equal to rational polynomial $F$ of $\pi$ alone. 
+$$
+F(\pi)=\sum_k(\sum_{m+2n=k} a_{m,n})\pi^{k} 
+$$
+Because $\pi$ is transcendental, each coefficients of $F$ should be zero.
+$$
+\sum_n a_{k-2n,n}=0
+$$
+ Then we reorder the summation of $P$
+$$
+\begin{aligned}
+P(x,y)&=\sum_{k}\left(\sum_{n}a_{k-2n,n}x^{k-2n}y^{n}\right)\\
+&=\sum_{k}\left(\sum_{n}a_{k-2n,n}x^{k-2n}(y-x^2+x^2)^{n}\right)\\
+&=\sum_{k}\left(\sum_{n}a_{k-2n,n}x^{k}\right)+\sum_{k}\left(\sum_{n}a_{k-2n,n}\sum_{j=1}\binom{n}{j} x^{k-2j}(y-x^2)^{j}\right)\\
+&=0+\sum_{k}\left(\sum_{n}a_{k-2n,n}\sum_{j=1}\binom{n}{j} x^{k-2j}(y-x^2)^{j}\right)
+\end{aligned}
+$$
+
+All such $P(x,y)\in (x^2-y)$.
+
+\item $\phi$ is basically $\varphi^*$ for $\varphi:\ratl[x,y]\inj \cplx[x,y]$. 
+
+\underline{Want}: $\varphi^*$ is surjective.
+
+Consider the special case where $\scp$ is maximal. Then $\ratl[x,y]/\scp$ is a finitely generated field extension, hence is finite algebraic field extension by Nullstellensatz. It embeds into $\cplx$, with $a,b$ being the images of $x,y$.
+$$
+(x-a,y-b)\cap \ratl[x,y]=\scp
+$$
+$\scp\subseteq (x-a,y-b)\cap \ratl[x,y]$ is trivially true since $\scp\subseteq \varphi_*\varphi^*(\scp)$. And the reverse inclusion holds because $\scp$ is maximal.
+
+For the prime ideal $(0)\subseteq \ratl[x,y]$, we can find two algebraically independent transcendental number $\xi,\delta$ s.t., $p(\xi,\delta)=0\lrta p=0$ given that $p\in \ratl[x,y]$.
+
+For non-zero non-maximal ideal $\scp$, we consider the residue field
+$$
+K:=Frac\left(\ratl[x,y]/\scp\right)\cong \ratl[x,y]_\scp/\scp\ratl[x,y]_\scp,
+$$
+where $\scp\ratl[x,y]_\scp$ is the maximal ideal in the local ring $\ratl[x,y]_\scp$ and we have
+$$
+\scp=\scp\ratl[x,y]_\scp\cap \ratl[x,y]
+$$
+We have a chain of injections
+$$
+\ratl[x,y]\inj\ratl[x,y]_\scp\inj K\inj \cplx\inj\cplx[x,y].
+$$
+
+By the similar argument, let $\xi,\delta\in \cplx$ be the images of $\frac{x}{1},\frac{y}{1}$, we have 
+$$
+(x-\xi,y-\delta)\cap \scp\ratl[x,y]_\scp=\scp\ratl[x,y]_\scp\cap \ratl[x,y]
+$$ 
+because $\scp\ratl[x,y]_\scp\cap \ratl[x,y]$ is maximal. Hence,
+$$
+(x-\xi,y-\delta)\cap \ratl[x,y]=\scp\ratl[x,y]_\scp\cap \ratl[x,y]\cap \ratl[x,y]=\scp.
+$$
+
+
+
+\end{enumerate}
+\end{proof}
+
+\begin{exr}\label{exr:spec_quotient}
+Suppose $A$ is a ring, and $I$ an ideal of $A$. Let $\varphi:A\lrta A/I$. Show that $\varphi^{-1}$ gives an inclusion-preserving bijection between prime ideals of $A/I$ and prime ideals of $A$ containing $I$. Thus we can picture $\spec A/I$ as a subset of $\spec A$.
+\end{exr}
+\begin{proof}
+\underline{Claim1}: $\scp\subseteq A/I$ is prime iff 
+$\varphi^{-1}(\scp)$ is prime.
+
+$\varphi(x)\varphi(y)=\varphi(xy)\in \scp$, $xy\in\varphi^{-1}\scp$. If $\varphi^{-1}\scp$ is prime, at least one of $x,y$ is contained in $\varphi^{-1}\scp\Lrta $ at least one of $\varphi(x),\varphi(y)$ is contained in $\scp$.
+
+$xy\in \varphi^{-1}\scp$ $\Lrta \varphi(xy)\in \scp$. If $\scp$ is prime  at least one of $\varphi(x)$ and $\varphi(y)$ is contained in $\scp$ $\Lrta x$ or $y$ is  contained in $\scp$.
+
+\underline{Claim2}: $\varphi$ induces a inclusion-preserving bijection between ideals of $A/I$ and ideals of $A$ containing $I$.
+
+Consider an ideal $\sca\in A/I$. $\varphi^{-1}\sca$ is  an ideal in $A$. In particular, because $\varphi(I)=[0]\in\sca$ $\Lrta I\subseteq \sca$.
+
+$$
+\sca\longmapsto \varphi^{-1}\sca
+$$
+is an bijection because we have the inverse, for $I\subseteq\scq\subseteq A$ $\varphi:\scq\longmapsto \scq/I$, where $\scq/I$ is a well-defined ideal in $A/I$.
+
+And $\varphi^{-1}$ preserves the inclusion of ideals (it preserves the proper inclusion in fact). 
+
+Consider $\sca\subsetneq \scb\subseteq A/I\Lrta \exists [x]\in \scb$ s.t. $[x]\notin \sca\Lrta$ the representative element $x\in \varphi^{-1}\scb, x\notin\varphi^{-1}\sca$.
+\end{proof}
+
+\begin{exr}\label{exr:spec_localization}
+Suppose $S$ is a multiplicative subset of $A$. Describe an order-preserving bijection of the prime ideals of $S^{-1}A$ with the prime ideals of $A$ that don’t meet the multiplicative set $S$.
+
+The claim should contain the following points
+\begin{enumerate}[label=(\alph*)]
+\item $\scp$ prime $\Llrta \iota_*\scp$ prime,
+\item $\iota^*\iota_*\scp=\scp$, (True for only prime ideal $\scp$ which satisfies $\scp\cap S=\emptyset$. If $\scp\cap S\neq \emptyset$, $\iota^*\iota_*\scp={A}$)
+\item $\iota_*(\sca)= S^{-1}{A}\Llrta\sca\cap S\neq \emptyset$, (True for any ideals)
+\item  $\iota_*\iota^*\scq=\scq$ (True for any ideal of $S^{-1}{A}$, not necessarily prime)
+\end{enumerate}
+\end{exr}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+   % \item Choose an ideal $\scq\subseteq S^{-1}{A}$, $\iota^*(\scq)=\iota^{-1}(\scq)$, $\iota(S)\subseteq (S^{-1}{A})^\times,\Lrta \iota(S)\cap\scq=\emptyset$ otherwise $1\in \scq$ (In fact this part of proof also works for other ideals.) and the remaining part for proof of (a) is postponed until the next lecture.
+\item 
+ As for point $(a)$, $\scp$ \text{ prime} $\overset{?}{\Lrta}\iota_*\scp$ prime. Consider $\frac{a}{s}\cdot \frac{b}{t}\in \iota_*\scp$, then $\frac{ab}{st}=\frac{c}{u},c\in\scp, u\in S$, then $\exists v\in S:abuv=cstv$, where $uv\in S$ $cstv\in\scp$, $uv\not\in \scp\Lrta ab\in\scp\Lrta$ at least one of $a, b\in\scp\Lrta$ at least one of $\frac{a}{s},\frac{b}{t}\in \iota_*\scp$.
+\item 
+ $\iota^*\iota_*\scp\supseteq\scp$ is a general fact.
+ For the converse inclusion, $\iota^*\iota_*\scp=\iota^{-1}(\iota_*\scp)\overset{?}{\subseteq}\scp$, choose an $a\in \iota^{-1}(\iota_*\scp)$. $\iota(a)=\frac{a}{1}\in\iota_*\scp\Lrta\exists b\in \scp, s\in S$ s.t. $\frac{a}{1}=\frac{b}{s}\Lrta ast=bt\in \scp$ and $s,t \in S\subseteq {A}-\scp\Lrta a\in \scp$ because $\scp$ is a prime ideal.
+\item
+ $\iota_*(\sca)=S^{-1}{A}\Llrta \exists a\in \sca, s\in S$ s.t. $a/s=1/1$
+$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, exists an $a\in \sca, a=s\in S$, then $a/s=1/1$. 
+\item 
+$\iota_*(\iota^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \iota^{*}(\scb)\Lrta a/s\in \iota_{*}(\iota^*(\scb))$. This claims means every ideal in $S^{-1}{A}$ is extension of an ideal in ${A}$. 
+\end{enumerate}
+The fact that $\iota^*\iota_*\scp=\scp$ and $\iota_*\iota^*\scq$ means that the correspondence preserves the inclusion and proper inclusion.
+\end{proof}
+
+\begin{exr}\label{chap3exr:3.2.L}
+Show that these two rings are isomorphic. 
+$$
+\left(\cplx[x,y]/(xy)\right)_{[x]}\cong \cplx[x]_x
+$$
+\end{exr}
+\begin{proof}
+$A:=\cplx[x,y]/(xy)$, $S:=\{[x]^n|n\geq 0,n\in\intg\}$. For the morphism $\iota:A\lrta S^{-1}A$,
+$$
+a\longmapsto \frac{a}{1}
+$$
+$$
+\frac{a}{1}\sim \frac{0}{1}\Llrta \exists s\in S \text{ s.t. } sa=0
+$$
+ the kernel is $\{a\in A|\exists n\geq 0 \text{ s.t. } [x]^na=0\}$. $[y]\in \ker \iota$. A general element $\frac{a}{s}\in S^{-1}A$ should be 
+ $$
+\frac{a}{s}=\frac{p([x],[y])}{[x]^n}\sim \frac{1}{[x]^n}p\left(\frac{[x]}{1},\frac{[y]}{1}\right)=\frac{1}{[x]^n}p\left(\frac{[x]}{1},0\right)=\frac{q([x])}{[x]^n},
+ $$
+ where polynomial $q(X):=p(X,0)$.
+And then we can define the isomorphism 
+$$
+\begin{aligned}
+\phi: (\cplx[x,y]/(xy))_{[x]}&\lrta \cplx[x]_x\\
+ \frac{q([x])}{[x]^n}&\longmapsto \frac{q(x)}{x^n}
+\end{aligned}
+$$
+\end{proof}
+
+\begin{exr}
+If $\phi: B\lrta A$ is a map of rings, and $\scp$ is a prime ideal of $A$, show that $\phi^{-1}\scp$ is a prime ideal of $B$.
+\end{exr}
+\begin{proof}
+Consider two elements $x,y\in B$ s.t. $xy\in \phi^{-1}\scp$. Then $\phi(xy)\in B\Lrta \phi(x)\phi(y)\in\scp$. Because $\scp$ is prime ideal, at least one of $\phi(x),\phi(y)\in\scp\Lrta $ at least one of $x,y$ is contained in $\phi^{-1}\scp$.
+\end{proof}
+
+\begin{exr}
+Let $B$ be a ring.
+\begin{enumerate}[label=(\alph*)]
+	\item  Suppose $I\subseteq B$ is an ideal. Show that the map $\spec B/I\lrta \spec B$ is the inclusion of  prime ideals that containing $I$.
+    \item  Suppose $S\subseteq B$ is a multiplicative set. Show that the map $\spec S^{-1}B\lrta \spec B$ is the inclusion of prime ideals that does not intersect with $S$.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+The detailed proof of the correspondences are already contained in~\ref{exr:spec_quotient} and~\ref{exr:spec_localization}.
+\end{proof}
+
+\begin{exr}
+Consider the map of complex manifolds sending $\cplx\lrta \cplx$ via $x\mapsto y=x^2$. We interpret the “source” $\cplx$ as the “$x$-line”, and the “target” $\cplx$ the “$y$-line”. You can picture it as the projection of the parabola $y=x^2$ in the $xy$-plane to the $y$-axis. Interpret the corresponding map of rings as given by ${\cplx[y] \lrta \cplx[x]}$ by  $y\mapsto x^2$. Verify that the preimage (the fiber) above the point $a\in\cplx$ is the point(s) $\pm\sqrt a\in\cplx$, using the definition given above.
+\end{exr}
+\begin{proof}
+We have defined the morphism of rings
+$$
+\begin{aligned}
+\phi:\cplx[y]&\lrta\cplx[x]\\
+ p(y)&\longmapsto p(x^2)
+\end{aligned}.
+$$
+The only prime ideals in $\cplx[x]$ are $(0)$ and $(x-b)$. 
+$$
+\phi^*(0)=\{p\in \cplx[y]: p(x^2)=0\}=(0)
+$$
+$$
+\phi^*(x-b)=\{p\in\cplx[y]: p(x^2)\in (x-b)\}=\{p\in\cplx[y]: p(b^2)=0\}=(y-b^2).
+$$
+Then $\phi^*: \spec\cplx[x]\lrta\spec \cplx[y]$  is totally described. On each traditional point $y-a$, there are two points $(x-\pm \sqrt a)$ in the preimage.
+\end{proof}
+
+\begin{exr}
+Suppose $k$ is a field,and $f_1,...,f_n \in k[x_1,...,x_m]$are given. Let $\phi: k[y_1,...,y_n] \lrta k[x_1,...,x_m]$ be the ring morphism defined by $y_i  \mapsto f_i$.
+\begin{enumerate}[label=(\alph*)]
+\item  Show that $\phi$ induces a map of sets $\spec k[x_1,...,x_m]/I \lrta \spec k[y_1,...,y_n]/J$ for any ideals $I \subseteq k[x_1,...,x_m]$ and $J \subseteq k[y_1,...,y_n]$ such that $\phi(J) \subseteq I$. 
+\item Show that the map of part (a) sends the point $(a_1,...,a_m) \in k^m$ (or more
+precisely, $[(x_1 -a_1,...,x_m - a_m)] \in \spec k[x_1,...,x_m])$ to
+$$
+(f_1(a_1,...,a_m),...,f_n(a_1,...,a_m)) \in k^n
+$$
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item In fact, part (a) has nothing to do with $k$-algebras. We can choose any two rings $\phi:B\lrta A$ and two ideals $J\subseteq B, I\subseteq A$ and $\phi(J)\subseteq I$ and prove that $\phi$ induces a morphism $\spec (A/I)\lrta \spec (B/J)$. 
+
+We direct define a ring morphism induced by $\phi$
+$$
+\begin{aligned}
+\tilde{\phi}:B/J&\lrta A/I\\
+b+J&\longmapsto \phi(b)+I.
+\end{aligned}
+$$
+$\tilde{\phi}$ is well-defined because if we choose another representative $b'$ s.t. $b-b'\in J$, we have $\phi(b)-\phi(b')=\phi(b-b')\in I\Lrta \phi(b)+I=\phi(b')+I$. Then problem reduces to the basic case, where $\tilde{\phi}$ induces morphism
+$$
+\tilde{\phi}^*:\spec(A/I)\lrta \spec (B/J).
+$$
+\item The point (maximal ideal) $(x_1-a_1,...,x_m-a_m)$  is mapped to $\phi^{-1}(x_1-a_1,...,x_m-a_m)$
+$$
+\begin{aligned}
+\phi^{-1}(x_1-a_1,...,x_m-a_m)&=\{p\in k[y_1,...,y_n]:\phi(p)=p[f_1,...,f_n]\in (x_1-a_1,...,x_m-a_m)\}\\
+&=\{p\in k[y_1,...,y_n]: p\left(f_1(a_1,...,a_m),...,f_n(a_1,...a_m)\right)=0\}\\
+&=(y_1-f_1(a_1,..,a_m),...,y_n-f_n(a_1,...,a_m)).
+\end{aligned}
+$$ 
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Consider the map of sets $\pi: \mathbb{A}^n_\intg \lrta  \spec \intg$,
+given by the ring map $\intg \lrta \intg[x_1,..., x_n]$. If $p$ is prime, describe a bijection between the fiber $\pi^{-1}([(p)])$ and $\mathbb{A}^n_{\bbf_p}$.
+(Can you interpret the fiber over $[(0)]$ as $\mathbb{A}^n_{k}$ for some field $k$?)
+\end{exr}
+\begin{proof}
+$\pi$ is induced by the canonical inclusion $\iota:\intg\inj \intg[x_1,..,x_n]$. In particular, for each prime ideal $\scq\in \mathbb{A}^n_\intg$
+$$
+\pi(\scq)=\scq\cap\intg.
+$$
+Hence $\mathbb{A}^{n}_\intg$ can be partitioned as 
+$$\mathbb{A}^n_\intg
+=\pi^{-1}([(0)])\cup \left(\bigcup_{p\text{ prime }}\pi^{-1}([(p)])\right).
+$$
+For each $\scp\in \mathbb{A}^n_\intg$, $\scp\in \pi^{-1}([(p)])\Llrta \scp\cap\intg=(p)$.\\
+$\overset{(*)}{\Llrta}\scp\supseteq (p)\intg[x_1,...,x_n]=:\iota_*((p))$.
+$$
+\intg[x_1,...,x_n]/(p)\intg[x_1...,x_n]\cong \bbf_p[x_1,...,x_n].
+$$
+There is a one to one correspondence of prime ideals in $\bbf_p[x_1,...,x_n]$ and prime ideals in $\intg[x_1,...,x_n]$ that containing $(p)\intg[x_1,...,x_n]$. Hence $\pi^{-1}([(p)])=\spec \bbf_p[x_1,...,x_n]=\affn_{\bbf_p}^n$.
+
+The $\Llta$ part of $(*)$ is questionable. We have to prove each prime ideal $\scq$ that contains $(p)\intg[x_1,..,x_n]$ must have the property that $\scq\cap\intg=(p)$. $\scq$ is such a prime ideal, $\iota_*\scq\supseteq\iota_*((p)\intg[x_1,..,x_n])$ but $(p)$ is already maximal in $\intg$, hence $\iota_*\scq=\scq\cap\intg=(p)$.
+
+As for the fiber over $[(0)]$, $\scp\in\pi^{-1}([(0)])\Llrta \scp\cap \intg=0$.
+ Considering the multiplicative set $S:=\intg^\times$, it is equivalent to $S\cap\scp=\emptyset$. There is a one to one correspondence between the primes $S^{-1}\intg[x_1,..,x_n]$ and the primes in $\intg[x_1,..,x_n]$ which does not intersect $S$ and 
+ $
+S^{-1}\intg[x_1,...,x_n]\cong \ratl[x_1,...,x_n],
+ $   
+ thus 
+ $$
+\pi^{-1}([(0)])\cong \affn^n_\ratl.
+ $$
+
+\end{proof}
+
+\begin{exr}\label{exr:nilpotents_bijection}
+Ring elements that have a power that is $0$ are called \textbf{nilpotents}. 
+\begin{enumerate}[label=(\alph*)]
+\item 
+ Show that if $I$ is an ideal of nilpotents, then the inclusion $\spec B/I \lrta \spec B$ of Exercise~\ref{exr:spec_quotient} is a bijection. Thus nilpotents don’t affect the underlying set. 
+\item Show that the nilpotents of a ring $B$ form an ideal. This ideal is called the \textbf{nilradical}, and is denoted $\mathfrak{N} = \mathfrak{N}(B)$.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+(a) Each element of $I$ is nilpotent $x\in I$, $x^n=0\in\scp$. $\Lrta x\in\scp$ because $\scp$ is prime. $I\subseteq\scp$. Each prime ideals contain $I$, hence $\spec B/I\lrta \spec B$ is a bijection.
+
+(b) Two nilpotents $x,y\in B$.
+$x^n=0$ and $y^m=0$. $\forall a\in A, (ax)^n=0$ and $(ax+by)^{n+m}=0$. Hence, all nilpotents form an ideal.
+\end{proof}
+
+\begin{exr}
+Prove : 
+$$
+\mathfrak{N}(A)=\bigcap_{\text{primes in }A}\scp
+$$
+\end{exr}
+\begin{proof}
+Denote by $\mathfrak{N}'$ the intersection of all prime ideals of ${A}$.
+For any nilpotent element $f\in {A}$ with $n>0$ s.t. $f^n=0$,
+We have $f^n\in \scp$ for every prime ideal $\scp$. Hence $f\in \scp\Lrta$ conclude $f\in \mathfrak{N}'$.
+
+Conversely, suppose $f\in {A}$ is not nilpotent 
+Define $\Sigma:=\{ \sca \subset A\text{ ideals} | \forall n>0: f^n\notin \sca\}$.
+We will apply Zorn's lemma. 
+We have 
+
+    1.  $(0)\in \Sigma$, so $\Sigma$ is nonempty,
+
+    2.  $\Sigma$ is partially ordered by inclusion.
+
+    3.  For any chain $(\sca_i)_{i\in I}\subset \Sigma$, the set $\sca :=\cup_{i\in I}\sca_i$ is an ideal and 
+
+    for all $n>0$, 
+    we have $f^n \notin \sca$, hence $\sca \in \Sigma$.
+By Zorn's lemma we conclude that there is a maximal element $\scp\in \Sigma$.
+
+We show that $\scp$ is a prime ideal.
+For any $x,y \notin \scp$, consider the ideals
+$\scp+(x), \scp+(y)$. They strictly contain $\scp$ and are thus not in $\Sigma$.
+Let $n,m>0$ s.t. $f^n\in \scp+(x), f^m\in \scp+(y)$.
+We conclude that $f^{n+m}\in \scp+(xy)$, so $\scp+(xy) \notin \Sigma$.
+Hence $xy \notin \scp$, which means, $\scp $ is a prime ideal so $f \notin \mathfrak{N}'$.
+\end{proof}
+
+\begin{exr}
+Suppose we have a polynomial $ f(x) \in k[x]$. Instead, we work in $k[x, \epsilon]/(\epsilon^2)$. What then is $f(x + \epsilon)$?
+\end{exr}
+\begin{proof}
+First we check what happens to simple examples like $x^2$ and $x^3$
+$$
+(x+\epsilon)^2=x^2+2x\epsilon +\epsilon^2=x^2+2x \epsilon
+$$
+and
+$$
+(x+\epsilon)^3=x^3+3x^2\epsilon.
+$$
+For general term $x^n$, we have $(x+\epsilon)^n=x^n+nx^{n-1}\epsilon$, which can be linearly extended to general polynomial $f$.
+$$
+f(x+\epsilon)=f(x)+f'(x)\epsilon
+$$
+
+\end{proof}
+
+\section{Visualizing schemes I: generic points}
+\section{The underlying topological space of an affine scheme}
+\begin{exr}
+Check that the $x$-axis is contained in $V(xy, yz)\subseteq \spec\cplx[x,y,z]$.
+\end{exr}
+\begin{proof}
+$x$-axis is defined to be $(y-0,z-0)$. $\{xy,yz\}\subset (xy,yz)\subseteq (y,z)$ by definition $(y,z)\in V(xy,yz)$.
+\end{proof}
+
+\begin{exr}
+Show that if $(S)$ is the ideal generated by $S$, then $V(S) =
+V ((S))$.
+\end{exr}
+\begin{proof}
+$V(S):=\{[\scp]\in \spec A: S\subset\scp\}$ and $V((S):=\{[\scp]\in \spec A: (S)\subset\scp\}$.
+
+ If $\scq\in V(S)\Lrta S\subset\scq\Lrta (S)\subset\scq\Lrta \scq\in V((S))$, we have $V(S)\subseteq V((S))$.
+
+ If $\scq\in V((S))\Lrta (S)\subset\scq\Lrta S\subseteq \scq\Lrta \scq\in V(S)$, we have $V((S))\subseteq V(S)$.
+\end{proof}
+
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Show that $\emptyset$ and $\spec A$ are both open subsets of $\spec A$.
+\item If $I_i$ is a collection of ideals (as $i$ runs over some index set), show that $\cap_i V(I_i) =
+V(\sum_i I_i)$. Hence the union of any collection of open sets is open.
+\item  Show that $V(I_1) \cup V(I_2) = V(I_1\cdot I_2)$. Hence the intersection of any finite number of open sets is open.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item $\emptyset=\spec A-V((0))$ and $\spec A=\spec A-V((1))$, hence they are both open sets.
+\item $\scp\in\cap_iV(I_i)\Lrta \scp\supseteq I_i\forall i$. Recall that $\sum_i I_i$ is defined to be $\sum_i a_i$, where $a_i\in I_i$ and only finitely many of they are non-zero. (this is basically the smallest ideal that contains $\cup_i I_i$). Hence, $\scp\supseteq \sum_i I_i$. Then, we have $\cap_i V(I_i)\subseteq V(\sum_i I_i)$.
+
+The reverse inclusion is easier. $\scp\supseteq \sum_i I_i\supseteq \cup_iI_i$. We can conclude that $\cap_i V(I_i)=V(\sum_i I_i)$ and consider the de morgen law, union of arbitrary collection of open set is still open.
+\item $\scp\in V(I_1)\cup V(I_2)\Lrta \scp\in V(I_1)$ or $\scp\in V(I_2)$. $\Lrta \scp\supseteq I_1$ or $\scp\supseteq I_2$. In either case $\scp\supseteq I_1I_2$ because $I_1I_2$ is a subset in $I_1\cap I_2$. $V(I_1)\cup V(I_2)\subseteq V(I_1\cdot I_2)$.
+
+For the reverse inclusion, $\scp\in V(I_1\cdot I_2)$, we have $\scp\supseteq I_1\cdot I_2$.\\
+\underline{Want}: $\scp\supseteq I_1$ or $\scp\supseteq I_2$.
+
+Suppose it is not the case, $\scp\notsupset I_1$ and $\scp\notsupset I_2$. Then there are $x_1\in I_1$ and $x_2\in I_2$ such that both are not in $\scp$. $x_1x_2\in I_1\cdot I_2 \subseteq \scp$ but $\scp$ is prime ideal, contradiction.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Show that $\sqrt I$ is an ideal and
+$$
+\sqrt {\sqrt I}=\sqrt I.
+$$
+Show that prime ideals are radical
+$$
+\sqrt \scp=\scp
+$$
+\end{exr}
+\begin{proof}
+Two element $x,y\in \sqrt I$.
+$x^n\in I$ and $y^m\in I$. $\forall a\in A, (ax)^n\in I$ and $(ax+by)^{n+m}\in I$. Hence, radical is an ideal.
+
+$\sqrt{\sca}\supseteq \sca$ is trivially true. For the reverse inclusion, consider an element $x\in \sqrt{\sqrt I}$. $x^n\in \sqrt I$, then $(x^n)^m\in I\Lrta x\in \sqrt I$.
+
+$x^n\in\scp\Lrta x\in \scp$ because $\scp$ is prime ideal. 
+In fact we have $\sqrt{\scq^n}=\scq$ because 
+$$
+\scp\subseteq \sqrt{\scq^n}\subseteq\sqrt{\scp}=\scp.$$
+\end{proof}
+
+\begin{exr}
+Prove that taking radical commutes with finite intersection of ideals.
+\end{exr}
+
+\begin{exr}
+Prove that 
+$$
+\sqrt{\sca}=\bigcap_{\text{primes}\supseteq \sca }\scp
+$$
+\end{exr}
+
+\begin{exr}
+Describe the topological space $\affn^1_k$
+\end{exr}
+\begin{proof}
+The points of the topological space is$[(0)]$ and $[(x-a)],\forall a\in k$. It is almost the cofinite topology on $k^1$ but there is a new point $[(0)]$. 
+
+\underline{Claim}: Every point $[\scp]\in \affn^1_n$, every open neighborhood of $[\scp]$ contains $[(0)]$.
+
+The claim holds for the case $\scp=(0)$. For $\scp=(x-a)$. An open neighborhood of $[\scp]=[(x-a)]$ is of the form $\affn^1_k-V(S)$. which means $[\scp]\notin V(S)\Lrta S\notsubset\scp$.
+
+\underline{Want}: $\affn^1_k-V(S)\ni [(0)]\Llrta S\notsubset (0)$, which is a direct fact from $S\notsubset \scp$ and $(0)\subset \scp$
+
+Then we know every open neighborhood of every point in $\spec k[x]$ contains $(0)$. In other words, the closure of $(0)$ is the whole affine line.
+\end{proof}
+
+\begin{exr}\label{exr:spec_functor} A ring morphism
+$\phi: B\lrta A$ induces a map $\pi$ on the spectrum. By showing that closed sets pull back to closed sets, show that $\pi=\phi^*:\spec A\lrta \spec B$ is a continuous map. Interpret $\spec$ as a contravariant functor \textit{Rings}$\lrta$\textit{Top}.
+\end{exr}
+\begin{proof}
+Assume $S$ is a subset in $B$. Consider a closed set $V(S)$ in $\spec B$, we will verify that $\pi^{-1}V(S)$ is also closed.
+$$
+\pi^{-1}V(S)=\{[\scp]\in \spec A: \pi(\scp)\supset S\}=\{[\scp]\in \spec A: \phi^*(\scp)\supset S\}
+$$
+\underline{Claim}: $\pi^{-1}V(S)=V(\phi(S))$
+
+In fact $\scp\supset \phi(S)\Llrta \phi^{-1}(\scp)\supset S$, therefore,
+$$
+\pi^{-1}V(S)=\{[\scp]\in \spec A: \phi^*(\scp)\supset S\}=\{[\scp]\in \spec A: \scp\supset \phi(S)\}=V(\phi(S)).
+$$
+The preimage of a closed set is always closed. $\pi$ is continuous.
+
+Now, we can interpret $\spec$ as a contravariant functor form $Rings$ to $Top$
+
+\begin{center}
+\begin{tikzcd}
+B\ar[r, "\phi"]\ar[d, "\spec"] &A  \arrow[d,"\spec"] \\
+\spec B & \spec A\ar[l,"\spec(\phi)=\pi"]       
+\end{tikzcd}
+\end{center}
+\end{proof}
+
+
+\begin{exr}\label{chap3exr:specA_f_and_specA/I}
+Suppose that $I, S \subset B$ are an ideal and multiplicative subset respectively.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $\spec B/I$ is naturally a closed subset of $\spec B$. If $S = {1,f,f^2,...} (f \in B)$, show that $\spec S^{-1}B$ is naturally an open subset of $\spec B$. Show that for arbitrary $S$, $\spec S^{-1}B$ need not be open or closed. (Hint:$ \spec \ratl \subset \spec \intg$, or possibly Figure 3.5.)
+\item  Show that the Zariski topology on $\spec B/I$ (resp. $\spec S^{-1}B$) is the subspace topology induced by inclusion in $\spec B$. (Hint: compare closed subsets.)
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item Prime ideals in $B/I$ are the prime ideals in $B$ that  contains $I$ by~\ref{exr:spec_quotient}.
+$$
+\spec B/I=\{[\scp]\in B:\scp\supset I\}=V(I)
+$$
+which a closed set in $\spec B$.
+For multiplicative set generated by one element $S:=\{1,f,f^2,...\}$. Recall~\ref{exr:spec_localization}. The prime ideals in $S^{-1}B$ are just the prime ideals in $B$ that do not intersect $S$. 
+Because $\scp$ is prime, and $1\notin \scp$, $\scp\cap S\neq \emptyset\Lrta f^n\in \scp\Lrta f\in \scp$, thus $\scp\supset S-\{1\}$. Then we know
+$$
+\spec S^{-1}B=\spec B-\{[\scp]\in \spec B: \scp\ni f\}=D(f),
+$$
+which is an open set.
+
+In general, $\spec S^{-1}B$ is neither open nor closed in $\spec B$. For example consider $\spec\ratl \subset\spec \intg$.
+$\spec\ratl$ corresponds to the generic point $[(0)]$ in $\scp$, which is neither open nor closed. Or we can consider the morphism $\spec \cplx[x,y]_{(x,y)}$, which corresponds to prime ideals in $\cplx[x,y]$ that are contained in $(x,y)$, which is neither open nor closed.
+\item Denote the projection $\phi:B\lrta B/I$. Consider a closed set in $\spec B/I$, call it $V_{B/I}(D)$, where $D$ is a subset in $B$.
+$$
+\begin{aligned}
+V_{B/I}(D)&=\{[\scp]\in B/I:\scp\supset D\}\\
+&\cong \{[\scq]\in B:\scq\supset I\text{ and }\scq\supset \phi^{-1}D\}\\
+&=\{[\scq]\in B:\scq\supset I+(\phi^{-1}D)\}\\
+&=\spec(B/I)\cap V_{B}(\phi^{-1}D).
+\end{aligned}
+$$
+For the localization map $\iota:B\lrta S^{-1}B$. Consider a closed set in $\spec B$, call it $V_{S^{-1}B}(P)$, where $P$ is a subset in $S^{-1}B$.
+$$
+\begin{aligned}
+V_{S^{-1}B}(P)&=\{[\scp]\in \spec (S^{-1}B):\scp\supset P\}\\
+&\cong\{[\scq]\in B: \scq\cap S=\emptyset,\text{ and } \scq\supset \iota^{-1} P\}\\
+&=\{[\scq]\in B: \scq\cap S=\emptyset\}\cap\{[\scq]\in B: \scq\supset \iota^{-1} P\}\\
+&=\spec S^{-1}B\cap V_B(\iota^{-1}P).
+\end{aligned}
+$$
+We have verified that Zariski topologies on $\spec B/I$ and $\spec S^{-1}B$ are the induced topology on by Zariski topology on $\spec B$.
+\end{enumerate}
+\end{proof}
+\begin{remark}
+In particular, if $I$ is an ideal in the nilradical, the $\spec B$ and $\spec B/I$ are homeomorphic. $\iota:\spec B/I\lrta \spec B$. It is continuous~\ref{exr:spec_functor} and bijective~\ref{exr:nilpotents_bijection}.
+A continuous bijection is not necessarily homeomorphism. But we have a theorem that \textbf{bijective continuous map is homeomorphism iff it is closed or open}. In our case, $\iota$ is closed. 
+\end{remark}
+\begin{exr}\label{exr:vanishing_set_radical}
+Suppose $ I \subset B$ is an ideal. Show that $f$ vanishes on $V(I)$ if and only if $f \in \sqrt I$
+\end{exr}
+\begin{proof}
+Assume $f$ vanishes on $V(I)$, then
+$$
+f\mod \scp=0,\ \forall  \scp\supset I,
+$$
+which is equivalent to 
+$$
+f\in \bigcap_{\scp\supset I}\scp=\sqrt{I}
+$$
+
+\end{proof}
+
+\begin{exr}
+Describe the topological space $\spec k[x]_{(x)}$.
+\end{exr}
+\begin{proof}
+The only two prime ideals in $k[x]_{(x)}$ are $(0)$ and $\scm:=(x)k[x]_{(x)}$, of which $[(0)]$ is generic point and $[\scm]$ is closed point.
+\end{proof}
+
+
+\section{A base of the Zariski topology on schemes: Distinguished open sets}
+\begin{exr}
+Show that the distinguished open sets form a base for the (Zariski) topology. (Hint: Given a subset $ S \subset A$, show that the complement of $V(S)$ is $\cup_{f\in S}D(f).$)
+\end{exr}
+\begin{proof}
+Recall one of the equivalent definitions of base of topology:
+
+Base of a topology is a subset $B$ of topology $\tau$ such that every open set in $\tau$ can be obtained by union of some elements of $B$.
+
+Each open set in the Zariski topology is the complement of some closed set $V(S)$.
+
+\underline{Claim}: $\spec A-V(S)=\cup_{f\in S} D(f)$\\
+$[\scp]\in \cup_{f\in S} D(f)\Llrta [\scp]\in D(f)$ for some $f\in S$.\\
+$ \Llrta\exists f\in S, f\notin \scp\Lrta \scp\notsupset S$ $\Llrta [\scp]\in\spec A-V(S)$.
+\end{proof}
+
+\begin{exr}\label{exr:open_cover_distinguished}
+Suppose $f_i \in A$ as $i$ runs over some index set $J$. Show that $\cup_{i\in J}D(f_i) = \spec A$ if and only if $(\{f_i\}_{i\in J}) = A$, or equivalently and very usefully,
+if there are $ \{a_i\}_{i\in J} $, all but finitely many $0$, such that 
+$\sum_{i\in J}a_if_i = 1$.
+\end{exr}
+\begin{proof}
+``$\Lrta$'': We know by definition $D(f_i)=\spec A-V((f_i))$.
+
+$\cup_{i\in J}D(f_i)=A\Lrta \cap V((f_i))=\emptyset$. $\Lrta V(\sum_i(f_i))=\emptyset$.
+
+In particular, for principal ideals 
+$\sum_i(f_i)=(f_1,f_2,...f_i,..)$.
+
+Any proper ideal is contained in some maximal ideal $\scm$, hence $\sum_i(f_i)$ can be a proper ideal, other wise there is at least one element $[\scm]\in V(\sum_i (f_i))$. We know $\sum_i(f_i)=(f_1,f_2,...f_i,..)=A=(1)$, which means there exists a summation such that $\sum_{i\in J}a_if_i = 1$ with finitely many $a_i$ nonzero.
+
+``$\Llta$'': We know $\sum_{i\in J}a_if_i = 1$ and hence $\sum_{i\in J} (f_i)=A$. Then we know
+$$
+\spec A-\cup_i D(f_i)=\cap_i (\spec A-D(f_i))=\cap_i V((f_i))=V(\sum_{i\in J} (f_i))=\emptyset.
+$$
+\end{proof}
+
+
+\begin{exr}\label{exr:distinguished_open_cover}
+Show that if $\spec A $ is an infinite union of distinguished open sets $\cup_{i\in J}D(f_j)$, then in fact it is a union of a finite number of these, i.e., there is a finite subset $J'$ so that $\spec A = \cup_{j\in J'}  D(f_j)$. 
+\end{exr}
+\begin{proof}
+Recall~\ref{exr:open_cover_distinguished},
+$$
+\cup_{i\in J}D(f_i) = \spec A\Llrta \sum_{j\in J}a_j f_i=1.
+$$
+There are only finitely many of $a_j$ nonzero. We can choose a finite subset $J'\subset J$ such that $\sum_{j\in J'}a_j f_i=1$. Then we have $\cup_{i\in J'}D(f_i) = \spec A$.
+\end{proof}
+
+\begin{exr}
+Show that $D(f) \cap D(g) = D(fg)$.
+\end{exr}
+\begin{proof}
+Pick $[\scp]\in D(f) \cap D(g)$, then $[\scp]\in D(f)$ and $D(g)$ $f\notin \scp$ and $g\notin \scp$, then by $\scp$ being prime, we have $fg\notin\scp\Lrta [\scp]\in D(fg)$. $D(f) \cap D(g)\subset D(fg)$.
+
+For the reverse inclusion, pick $\scq\in D(fg)$, then $fg\notin \scp$, again by primality, we have $f\notin\scp$ and $g\notin\scp$, hence $[\scp]\in D(f)\cap D(g)$.
+\end{proof}
+
+
+\begin{exr}\label{chap3exr:inclusion_distinguished_open}
+Show that $D(f) \subset D(g)$ if and
+only if $f^n \in(g)$ for some $n\geq 1$, or equivalently, if and  only if the image of $g$ is an invertible element of $A_f$.
+\end{exr}
+\begin{proof}
+$D(f)\subset D(g)\Llrta V((f))\supset V((g))$. $V((g))$ is the closed set where $g$ vanishes. The derived inclusion means is equivalent to saying that $f$ vanishes on $V((g))$. By Exercise~\ref{exr:vanishing_set_radical}, we know it is equivalent to 
+$$
+f\in \sqrt{(g)}
+$$
+$$
+\Llrta (g)\cap S_f\neq \emptyset,
+$$
+where $S_f:=\{1,f,f^2,...,\}$.
+$$
+\Llrta S_f^{-1}(g)=A_f
+$$
+which is equivalent to ``the image of $g$ is invertible in $A_f$''.
+\end{proof}
+
+\begin{exr}
+Show that $D(f) = \emptyset$ if and only if $f\in \mathfrak{N}(A)$
+\end{exr}
+\begin{proof}
+$D(f) = \emptyset\Lrta \forall \scp\in \spec A$, $f\mod\scp=0\Lrta f\in \cap_{\text{prime}}\scp=\mathfrak{N}(A)$.
+
+For $\Llta$ direction, consider an element $g\in \mathfrak{N}(A)$,  $(0)\subset (g)\subset \mathfrak{N}(A)$. 
+$$
+\spec A=V((0))\supset V((g))\supset V\left(\sqrt{(0)}\right)=\spec A
+$$
+ $D(g)=\spec A- V((g))=\emptyset$.
+\end{proof}
+
+\section{Topological (and Noetherian) properties}
+\begin{exr}\label{exr:nonconnected_scheme}
+$A = A_1 \times A_2 \times\cdots \times A_n$, describe $
+\spec A_1\coprod \spec A_2\coprod \cdots \coprod\spec A_n\lrta \spec A$ as a homeomorphism for which each $\spec A_i $ is mapped onto a distinguished open subset $D(f_i)$ of $\spec A$. Thus $\spec \prod^n_{i=1}A_i=\coprod^n_{i=1}\spec A_i$ as topological spaces.
+\end{exr}
+\begin{proof}
+We can induct on $n$ and reduce to the spacial case $n=2$. Consider $A=A_1\times A_2$. 
+
+\underline{Claim}: $\sca\in A$ is an ideal iff $\sca=\sca_1\times \sca_2$, for some ideals $\sca_1\in A_1$ and $\sca_2\in A_2$.
+
+``$\Llta$'' direction is trivial. Let's consider the ``$\Lrta$'' direction. $\sca$ is an ideal in $A$, therefore $\sca=S\times T$, where $S,T$ are general subset in $A_1,A_2$. $\sca$ should be closed under multiplication and linear summation of $A_1\times 0$, which implies that $S$ is an ideal in $A_1$, similarly we can prove that $T$ is an ideal in $A_2$.
+
+\underline{Claim}: $\scp\in A$ is a prime ideal iff $\scp=\scp_1\times A_2$ or $\scp=A_1\times \scp_2$.
+
+We already know that the ideal $\scp=\scq_1\times \scq_2$ and the quotient ring $A/\scp=A_1/\scq_1\times A_2/\scq_2$ is integral domain. Recall that $(1,0)\times (0,1)=(0,0)$, We must have $\scq_1=A_2$ or $\scq_2=A_2$. The reverse direction is trivial.
+
+Now, set $f_1=(1,0)$ and $f_2=(0,1)$ and denote the two canonical projections $\phi_i:A_1\times A_2\lrta A_i$. We have
+$$
+\begin{aligned}
+D(f_1)&=\{[\scp]\in \spec A: f_1=(1,0)\notin\scp\}\\
+&=\{\scp_1\times A_2:\scp_1\in \spec A_1\}
+\end{aligned}
+$$ 
+and 
+$$
+\begin{aligned}
+\pi_1:=\spec(\phi_1):\spec A_i&\lrta \spec A\\
+[\scp_1]&\longmapsto \phi_1^{-1}(\scp_1)=\scp_1\times A_2.\\
+V(S)&\lrta V(S)\times A_2
+\end{aligned}
+$$
+Hence,
+$$
+D(f_i)=\pi_i(\spec A_i).
+$$
+Each $\pi_i$ is continuous bijective. Furthermore, $\pi_i$ is closed map as shown above. Then $\pi_i$ is homeomorphism. 
+Recall the universal property of coproduct (disjoint union in \textit{Top}), there is a unique morphism from $\spec A_1\coprod\spec A_2$ to $\spec A$, which is denoted by $\pi_1\coprod \pi_2$. This morphism is also continuous bijective and closed.
+
+These proof can be generalized to finite product and finite coproduct without much difficulty.
+\end{proof}
+\begin{theorem}
+$\spec A$ is not connected if and only if $A$ is isomorphic to the product of nonzero rings $A_1$ and $A_2$.
+\end{theorem}
+\begin{proof}
+One direction has been proved in~\ref{exr:nonconnected_scheme}. Now we just focus on the other direction. Follow the hint, we call a pair of idempotents $a_1,a_2$ such that $a_1^2=a_1$, $a_2^2=a_2$, $a_1+a_2=1$ and $a_1a_2=0$ \textbf{complimentary idempotents}. 
+
+We can see there are a pair of complimentary idempotents in $A_1\times A_2$, $(1,0)$ and $(0,1)$.
+
+\underline{Claim}: If $\spec A$ not connected, there is a pair of complimentary idempotents in $A$.
+
+$A$ is not connected, it can decompose into disjoint union of two open sets or equivalently two closed sets. Suppose they are $V(I_1)$ and $V(I_2)$, we have
+$$
+V(I_1)\cup V(I_2)=V(I_1I_2)=\spec A
+$$
+and 
+$$
+V(I_1)\cap V(I_2)=V(I_1+I_2)=\emptyset.
+$$
+At most can find a pair of element $f_1\in I_1$ and $f_2\in I_2$, such that 
+$f_1+f_2=1$ and $f_1f_2$ is nilpotent. 
+
+\underline{Lemma}: Every nontrivial idempotent in $A/\mathfrak{N}$ lifts to a unique nontrivial idempotents in $A$.
+
+With this lemma, assume $e_1,e_2$ are the nontrivial idempotents in $A$. We have $(e_1)\cap (e_2)=(e_1)\cdot (e_2)$ and $(e_1)+(e_2)=(1)$, we can use the Chinese remainder theorem
+$$
+A=A/((e_1)\cdot(e_2))\cong\frac{A}{(e_1)}\times \frac{A}{(e_2)}\cong (e_2)\times (e_1)
+$$
+
+Now, we prove the lemma. $f\neq 0,1$ $f(1-f)$ is nilpotent. $\exists n\geq 0, f^n(1-f)^n=0$. Because $f^n$ and $(1-f)^n$ are coprime, we can still use the Chinese remainder theorem
+$$
+A\cong \frac{A}{(f^n)}\times \frac{A}{(1-f)^n}.
+$$
+The preimage of $(1,0)$ is unique and idempotent.
+(This step in fact gives us the desired proof that $A$ should be a product of rings but we want to reduce it to the simplest case)
+
+
+Or simpler, start with $x+y=1$ and $xy$ nilpotent. $(xy)^m=0$.
+$$
+1 = (x + y)^{2m} = \underbrace{x^{2m} + \cdots + \binom{2m}{m+1} x^{m+1}y^{m-1}}_{e_1} + \underbrace{\binom{2m}{m}x^my^m + \cdots + y^{2m}}_{e_2}
+$$
+and these $e_1,e_2$ satisfies
+$$
+e_1e_2 = 0, \quad e_1^2 = e_1, \quad e_2^2 = e_2.
+$$
+\end{proof}
+
+\begin{exr}\label{chap3exr:irreducible_subset_dense_open_irreducible_closure}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Show that in an irreducible topological space, any nonempty open set is dense. (For this reason, you will see that unlike in the classical topology, in the Zariski topology, nonempty open sets are all “huge”.)
+\item If $X$ is a topological space, and $Z$ (with the subspace topology) is an irreducible subset, then the closure $\overline{Z}$ in $X$ is irreducible as well.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item Recall that in topology $\overline{U\cup V}=\overline{U}\cup \overline{V}$. (The analogous statement for intersection of closure is not true.) In an irreducible topological space $X$, consider an open set $U$, if $\overline{U}$ is not the whole space $X$, we have $V:=X-\overline{U}\neq \emptyset$, then we have $\overline{U}\cup \overline{V}=X$, contradiction. 
+
+Also an open subset $U$ in a irreducible space $X$ is irreducible with the subset topology. If $U=A\cup B$ with $A,B$ closed in $U$, then taking the closure in $X$ yields $X=\overline{U}=\overline{A}\cup \overline{B}$ because $U$ is dense in $X$. This forces $\overline{A}=X$. By assumption $A$ is closed in $U$ and this means $A=\overline{A}\cap U=X\cap U=U$. It follows that $U$ is irreducible in subspace topology on it.
+
+
+In the special case $X=\spec A$. We only need to verify that every nonempty distinguished open set is dense in Zariski's topology.
+
+Consider a point $[\scp]\in V((f))=\spec A-D(f)$, then without loss of generality, there is  an open neighborhood of the form $D(g)\ni[\scp]$. 
+
+\underline{Claim}: $D(f)\cap D(g)\neq \emptyset$.
+
+Assume $D(f)\cap D(g)=\emptyset$, then $\spec A-D(f)\cap D(g)=(\spec A-D(f))\cup(\spec A-D(g))=V((f))\cup V((g))=\spec A$ contradicting to our assumption that $\spec A$ is irreducible.
+
+A by-product of this fact is that every product of non-nilpotent is non-nilpotent.
+
+ \item If the closure of $Z$ in $X$ is reducible, $\overline{Z}=U\cup V$, where $U,V$ are closed set with induced topology in $\overline{Z}$ (They are not necessarily closed in $X$. Denote the closure of $U$, $V$ in $X$ by $\overline{U}$, $\overline{V}$. We can write $Z=(\overline{U}\cap Z)\cup (\overline{V}\cap Z)$, where $\overline{U}\cap Z$ and $\overline{V}\cap Z$ are closed set because $Z$ is endowed with subset topology.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}\label{chap3exr:Integral_domain_irreducible}
+If $A$ is an integral domain, show that $\spec A$ is irreducible. (Hint: pay attention to the generic point $[(0)]$.)
+\end{exr}
+\begin{proof}
+Assume $\spec A$ is reducible and can be written as $\spec A=V(I_1)\cup V(I_2)$.
+$\spec A=V(I_1)\cup V(I_2)=V(I_1 I_2)$, which means all $I_1I_2$ vanishes on each point $[\scp]$, i.e. $I_1I_2\subseteq\cap \scp=\mathfrak{N}$. $V(I_1)$ and $V(I_2)$ are proper closed subsets, none of $I_1$, $I_2$ is contained in $\mathfrak{N}$. In particular they are non-zero ideals. There exist non-nilpotents $x,y\in I_1,I_2$ such that $xy$ is nilpotent. In particular $x^ny^n=0$, where $x^n, y^n$ are non-zero zero-divisors. Which contradicts the hypothesis that $A$ is integral domain.
+\end{proof}
+
+\begin{exr}\label{chap3exr:irreducible_topological_space_connected}
+Show that an irreducible topological space is connected.
+\end{exr}
+\begin{proof}
+Assume a topological space $X$ is not connected. Then $X=U\coprod V$ where $U, V$ are both closed and open. Hence we also have $X=U\cup V$, which means $X$ is reducible. 
+\end{proof}
+
+\begin{exr}
+Give (with proof!) an example of a ring $A$ where $\spec A$ is connected but reducible.
+\end{exr}
+\begin{proof}
+Follow the hint, consider the ring 
+$$
+A:=\cplx[x,y]/(xy)
+$$
+$\spec A$ is connected because $A$ is not of the form $A_1\times A_2$. The only idempotents in $A$ are $0$ and $1$.
+
+It is reducible. Indeed,
+$$
+\spec A=V((x))\cup V((y)),
+$$
+each is proper closed subset.
+\end{proof}
+
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+	\item 
+Suppose $I = (wz-xy, wy-x^2 , xz-y^2 ) \subset k[w, x, y, z]$. Show that $\spec k[w, x, y, z]/I$ is irreducible, by showing that $k[w, x, y, z]/I$ is an integral domain.
+\item Note that the generators of the ideal of part (a) may be rewritten as the equations ensuring that
+$$
+\text{rank}
+\begin{pmatrix}
+w & x & y\\
+x & y & z
+\end{pmatrix}
+\leq 1
+$$
+i.e., as the determinants of submatrices. Generalize this to $2\times n$ variables.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+	\item 
+Follow the hint, consider an morphism
+$$
+\begin{aligned}
+&k[w,x,y,z]\lrta k[a,b] \\
+& w\longmapsto a^3, y\longmapsto ab^2,\\
+& x\longmapsto a^2b, z\longmapsto b^3.\\
+\end{aligned}
+$$
+The kernel is just $I$, and the image is $k[a^3,a^2b, ab^2,b^3]$. Thus, we have established the isomorphism
+$$
+k[w,x,y,z]/I\cong k[a^3,a^2b, ab^2,b^3]\subset k[a,b]
+$$
+a subring of integral domain is always an integral domain.
+\item Generalize this to $2\times n$ matrices
+$$
+\text{rank}
+\begin{pmatrix}
+x_0 & x_1 & \cdots &x_{n-1}\\
+x_1 & x_2 & \cdots &x_{n}
+\end{pmatrix}
+\leq 1
+$$
+and the ideal $I$ is generated by the determinants of submatrices. 
+$$
+\begin{aligned}
+k[x_0,...,x_{n}]/I&\cong k[a^n,a^{n-1}b,...,b^{n}]\\
+x_i&\longmapsto a^{n-i}b^i
+\end{aligned}
+$$
+\end{enumerate}
+$A:=k[x_0,...,x_{n}]/I$ is again integral domain and hence $\spec A$ is irreducible
+
+\end{proof}
+\begin{exr}\label{chap3exr:affine_scheme_quasicompact}\ 
+\begin{enumerate}[label=(\alph*)]
+\item  Show that $\spec A$ is quasicompact.
+\item Show that in general $\spec A$ can have nonquasicompact open sets.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item
+Consider an open cover of $\spec A=\cup_{i\in J}U_i$. Recall the definition of base of topology, each open set $U_i$ is a union of $\cup_{j\in J^{(i)}}D(f^{(i)}_j)$. 
+$$
+\spec A=\cup_{i\in J}\cup_{j\in J^{(i)}}D(f^{(i)}_j)
+$$
+by Exercise~\ref{exr:distinguished_open_cover}, there is a finite subcover
+$$
+\spec A=\cup_{(i,j)\in J'}D(f^{(i)}_j),
+$$
+where $J'$ is a finite index subset in $\cup_{i\in J}J^{(i)}$. Then there are finitely many $i\in J$ s.t., $(i,j)\in J'$, denote it by $I'$. Then because $U_i\supset D(f^{(i)}_j)$, we have a finite subcover of the initial cover
+$$
+\spec A=\cup_{i\in I'} U_i.
+$$
+\item Consider the ring $A:=k[x_1,x_2,...]$ and the maximal ideal $\scm=(x_1,x_2,...)$. There is an open subset 
+$$
+U=\spec A-V(\scm)
+$$
+with open cover
+$$
+U=\cup_{i\in\intg} D(x_i)=\{[\scp]\in\spec A\text{ s.t. at least one of $x_i\notin \scp$}\}
+$$
+There is no finite subcover because $[\scp_i]:=[(x_1,...,x_{i-1},x_{i+1},...)]\in U$ but $[\scp_i]\notin U-D(x_i)$.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item 
+ If $X$ is a topological space that is a finite union of quasicompact spaces, show that $X$ is quasicompact.
+\item  Show that every closed subset of a quasicompact topological space is quasicompact.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item Assume $X=\cup_{0\leq i\leq n} X_i$, every open cover of $X$ is in particular an open cover of $X_i$. Then we can select finite subcovers such that they cover each $X_i$. It is also a finite sub cover that covers $X$.
+\item $Y\subset X$ is closed subspace of X. Given any cover of $Y=\cup_i U_i$. For each $U_i$ we can find open subset $V_i\subset X$ such that $V_i\cap Y=U_i$, which is a consequence of subset topology. Then we adjoint the complement of $Y$. $\cup_{i} V_i\cup (X-Y)$ is an open cover of $X$, it has a finite subcover because $X$ is quasicompact. This finite subcover of $\cup_{i} V_i\cup (X-Y)$ induces a finite subcover of $\cup_{i} U_i$.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Show that the closed points of $\spec A$ correspond to the maximal ideals.
+\end{exr}
+\begin{proof}
+$\{[\scp]\}$ is a closed subset of $\spec A$, which means $[\scp]=V(S)$, where $S$ is a subset of $A$.
+
+$V(S)$ consists of only one point. By definition it is equivalent to ``$\scp$ is the only prime such that $\scp\supset S$''. $(S)$ the the ideal generated by $S$, we have $V(S)=V((S))$. Each ideal is contained in some maximal ideals. The only possibility is that $(S)$ is maximal and $\scp=(S)$.
+\end{proof}
+
+\begin{exr}\label{chap3exr:closed_point_dense}\ 
+\begin{enumerate}[label=(\alph*)]
+\item 
+Suppose that $k$ is a field, and $A$ is a finitely generated $k$-algebra. Show that closed points of $\spec A $ are dense, by showing that if $f \in A$, and $D(f)$ is a nonempty (distinguished) open subset of $\spec A$, then $D(f)$ contains a closed point of $\spec A$. 
+\item Show that if $A$ is a $k$-algebra that is not finitely generated the closed points need not be dense. 
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item 
+We already showed that $\spec A_f\cong D(f)\subset \spec A$. A every nonzero ring has a maximal ideal, There is a closed point in $\spec A_f$, we have to prove that the pull back of this closed point is also a closed point in $\spec A$.
+
+Assume $\scp\subset A$ such that $\scp A_f$ is  maximal ideal in $A_f$. $\scp A_f$ contains no units $f/1\notin\scp A_f\Lrta f\notin\scp$. We have the isomorphism 
+$$
+\frac{A_f}{\scp A_f}\cong (A/\scp)_{f}.
+$$
+Notice that $A_f$ is also finitely generated $k$-algebra, by Nullstellensatz, $(A_f/\scp_f)$ is the finite field extension of $k$, hence so is $(A/\scp)_f$.
+
+The $k$-integral domain $A/\scp$ is a subring of $(A/\scp)_f$. (It is a $k$-vector space of a finite dimensional $k$-vector space). Then we know $k$-integral domain $A/\scp$ must be a finite dimensional $k$-vector space. Then it must be a field by exercise~\ref{exr:chap3_fin-dim_k_domain_is_field}.
+$\scp$ is also a maximal ideal and $[\scp]\in D(f)$. Hence, the closed points is dense in $\spec A$.
+\item Consider the ring $A:=k[x]_{(x)}$, it has only one maximal ideal $\scm=(x)k[x]_{(x)}$ and one generic point $[(0)]$. The closed point $[\scm]$ is not dense because ${[0]}$ is open. This ring is not finitely generated. Consider the set $1/(1+x), 1/(1+x+x^2),1/(1+x+x^2+x^3),...$, each can not be expressed as a polynomial. (In fact $k[x]_{(x)}$ is not even a finitely generated $k[x]$-algebra.)
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Suppose $k$ is an algebraically closed field, and $A=k[x_1,...,x_n]/I$ is a finitely generated $k$-algebra with $\mathfrak{N}(A) = \{0\}$. Consider the set $X = \spec A$ as a subset of $\affn^n_k$ . The space $\affn^n_k$ contains the “classical” points $k^n$. Show that functions on $X$ are determined by their values on the closed points.
+\end{exr}
+\begin{proof}
+Suppose $f,g$ are two distinct functions on $X$.
+
+$f-g\neq 0$ , i.e., $f-g\notin \mathfrak{N}(A)=\{0\}$. functions are determined by their value at points. \underline{Want}: Functions are determined by their value at closed points.
+
+\underline{Claim}: If $f$ and $g$ are distinct functions, then $f-g$ is nowhere zero on an open set $D(f-g)$.
+
+By definition, $D(f-g)$ is an the set of points on which $f-g$ does not vanish. It is not empty because $f-g\neq 0$ implies $f-g$ is not nilpotents in our setting. 
+
+In particular, $A$ is finitely generated $k$-algebra, the closed point is dense. $D(f-g)$ contains at least one closed point because closed points is dense in $\spec A$. Hence we know distinct function $f$, $g$ must have different values on at least one closed point.
+
+Without the hypothesis $\mathfrak{N}(A)=\{0\}$, we can not argue like in topology `` functions agreeing on a dense subset must agree on the whole set''.
+\end{proof}
+
+\begin{exr}
+If $ X = \spec A$, show that $[\scq]$ is a specialization of $[\scp]$ if and only if $\scp \subset \scq$. Hence show that $V(\scp) = \overline{\{[\scp]\}}$.
+\end{exr}
+\begin{proof}
+By definition, ``$[\scq]$ is a specialization of $[\scp]$'' means
+
+ $[\scq]\in\overline{\{[\scp]\}}$.
+
+$\Llrta$ every open neighborhood of $[\scq]$ contains $[\scp]$.
+
+$\Llrta$ every distinguished open $D(f)$ containing $[\scq]$ contains $[\scp]$.
+
+$\Llrta$ every $f$ not vanishing on $[\scq]$ neither vanishes on $[\scp]$.
+
+$\Llrta$ $A-\scq\subset A-\scp$.
+
+$\Llrta$ $\scq\supset \scp$.
+
+$\Llrta$ $[\scq]\in V(\scp)$.
+\end{proof}
+
+\begin{exr}
+Verify that $[(y - x^2)]\in\affn^2$  is a generic point for $V(y - x^2)$
+\end{exr}
+\begin{proof}
+$\overline{\{[(y-x^2)]\}}=V(y-x^2)$ as $(y-x^2)$ is prime ideal.
+\end{proof}
+
+\begin{exr}
+Suppose $[\scp]$ is a generic point for the closed subset $K$. Show that it is ``near every point $[\scq]$ of $K$ ''(every neighborhood of $[\scq]$ contains $[\scp]$), and ``not near any point $[\scn]$ not in $K$'' (there is a neighborhood of $[\scn]$ not containing $[\scp]$).
+\end{exr}
+\begin{proof}
+$\overline{\{[\scp]\}}=K$ topologically means every open neighborhood of $[\scq]\in K$ contains $[\scp]$. On the other hand assume, $[\scn]\notin K$ hence $[\scn]\notin \overline{\{[\scp]\}}$ topologically means there is an open neighborhood of $[\scn]$ that does not contain $[\scp]$.
+\end{proof}
+
+\begin{exr}\label{chap3exr:UNION_OF IRREDUCIBLE_COMPONENTS}
+(EVERY TOPOLOGICAL SPACE IS THE UNION OF IRREDUCIBLE COMPONENTS). Show that every point $x$ of a topological space $X$ is contained in an irreducible component of $X$.
+\end{exr}
+\begin{proof}
+The point $\{x\}$ as a subset is irreducible. 
+
+\underline{Claim}: Every irreducible subset $Z\subset X$ is contained in an irreducible component.
+
+Let $Z\subset X$ be irreducible. Consider the set $\Sigma$ of irreducible subsets $Z\subset Z_\alpha\subset X$. Note that $\Sigma$ is nonempty since $Z\in \Sigma$. There is a partial ordering on $\Sigma$ coming from inclusion: $\alpha\leq \alpha'\Llrta Z_\alpha\subset Z_{\alpha'}$. Choose a maximal totally ordered subset $\Sigma' \subset \Sigma$, and let $Z'=\cup_{\alpha\in \Sigma'}Z_\alpha$. We claim that $Z'$ is irreducible. Namely, suppose that $Z'=T_1\cup T_2$ is a union of two closed subsets of $Z'$. For each $\alpha\in \Sigma'$ we have either $Z_\alpha\subset T_1$ or $Z_\alpha\subset T_2$, by irreducibility of $Z_\alpha$. Suppose that for some $\alpha_0\in \Sigma'$ we have $Z_{\alpha_0}\subset T_2$ (say, if not we're done anyway). Then, since $\Sigma'$ is totally ordered we see immediately that $Z_\alpha\subset T_2$ for all $\alpha\in \Sigma'$. Hence $Z=T_2$.
+
+Unlike connected component, a point $x$ does not determine a unique connected component.
+\end{proof}
+
+\begin{exr}
+Show that $\affn^2_\cplx$ is a Noetherian topological space: any decreasing sequence of closed subsets of $\affn^2_\cplx = \spec \cplx[x, y]$ must eventually stabilize. Note that it can take arbitrarily long to stabilize.  Show that $\cplx^2$ with the classical topology is not a Noetherian topological space.
+\end{exr}
+\begin{proof}
+Consider a chain of closed subsets $V(S_0)\supset V(S_1)\supset V(S_2)\supset \cdots $. If it does not stabilize, w.l.o.g, we can assume each inclusion is strict inclusion. Assume there is a strictly descending chain $V(I_0)\supsetneq V(I_1)\supsetneq V(I_2)\supsetneq \cdots$. W.l.o.g. we assume each $I_i$ is radical ideal.
+
+$\forall \scq\supset I_1, \scq\supset I_0$, and $\exists \scp\supset I_0, \scp\notsupset I_1$
+
+$
+I_1=\sqrt{I_1}\supset I_0
+$
+and $I_1\notsubset \sqrt{I_0}=I_0$. $I_1\supsetneq I_0$. We have a strictly ascending chain of radical ideals.
+
+But this is impossible for $\cplx[x,y]$. We intensionally prove this without using Noetherian property of $\cplx[x,y]$. Our proof is basically the special case of Hilbert Basis theorem.
+
+\underline{Claim}: each ideal $\sca$ in $A:=\cplx[x,y]$ is finitely generated.
+
+Pick an element $\sca\ni f=\sum a_{n,m} x^ny^m$. Denote the maximal power of $x$ by $N$ and maximal power of $y$ by $M$.
+
+Construct an $A$-module 
+$$
+M:=\oplus_{i\leq N,j\leq M}Ax^i y^j
+$$
+it is a finite dimensional $\cplx$-vector space.
+$$
+M\cap \sca+(f)=\sca
+$$
+$\supset$ is trivial.
+Consider an element $\sca\ni g=bx^{k_1}y^{l_1}+cx^{k_2}y^{l_2}...,b,c\neq 0$ with $k_i>N$ or $l_i>M$ and $k_1$ is maximal among $k_i$, $l_2$ is maximal among $l_i$
+$$
+g-\left(\frac{b}{a}x^{k_1-n}y^{l_1-m}+\frac{c}{a}x^{k_2-n}y^{l_2-m}\right)f=0+\text{terms with lower powers in $x$, $y$}.
+$$
+We can induct on $k_1$, $l_2$ until they finally goes down to $N,M$. $g\in (f)+M\cap\sca$.
+
+Then we claim: if the each ideal is finitely generated, then every ascending chain of ideal stabilize
+
+Let $I_0\subseteq I_1\subseteq I_2\subseteq ...$ \underline{Want:}show that $\exists n_0,I_n=I_{n_0}\forall n\geq n_0$.
+Define $I':=\cup_n I_n$. We know that every ideal of ${A}$ is finitely generated. Then Assume $I'$ to be finitely generated by $r$ elements $\{x_1,...,x_r\}$, with $x_j\in I_{n_j}$. Choose $n_0=\text{max}\{n_1,...,n_r\}$, then we have $x_1,...,x_r\in I_{n_0}\Lrta I=I_{n_0}$. $\Lrta I_n=I_{n_0},\forall n\geq n_0$.
+
+$\cplx^2$ under traditional topology is not Noetherian, we can consider the a chain of balls
+$$
+B_n:=\left\{|x^2|+|y^2|\leq \frac{1}{n^2}\right\},
+$$
+which gives a strictly descending chain of closed sets.
+\end{proof}
+
+\begin{exr}\label{chap3exr:topology_irreducible_components_connected_components}
+Show that every connected component of a topological space $X$ is the union of irreducible components of $X$. Show that any subset of $X$ that is simultaneously open and closed must be the union of some of the connected components of $X$. If $X$ is a Noetherian topological space, show that the union of any subset of the connected components of $X$ is always open and closed in $X$.
+\end{exr}
+\begin{proof}
+``Every connected component of a topological space $X$ is the union of irreducible components of $X$:'' By~\ref{chap3exr:irreducible_topological_space_connected}, a irreducible component is connected, hence it is contained in some connected component. But every point in $X$ is contained in some irreducible component. A point $x$ in a connected component $C\subset X$. Every $x$ is contained in some irreducible component $Z_x$~\ref{chap3exr:UNION_OF IRREDUCIBLE_COMPONENTS}. Every connected set containing $x$ is a subset of the connected component $C$. Hence, $Z_x\subset C$ and $C=\cup_{x\in C} Z_x$.
+
+``A clopen subset in $X$ must be some union of connected component'': If $C$ is a clopen subset in $X$, then $C\subset \cup_{x\in C}C_x$, where $C_x$ is the connected component in $X$ that contains $x$. (This inclusion is true for arbitrary subset $C$). For the reverse inclusion, consider an element $y\in C_x$. If $y\notin C$, because $C$ is closed, there is an open neighborhood $U_y$ of $y$ such that $U_y\cap C=\emptyset$. $U_y\cap C_x$ is open, and $A:=\cup_y U_y\cap C_x$ is open, $B:=C_x\cap C$ is also open, and $A\cap B=\emptyset, A\cup B=C_x$, which contradicts the fact that $C_x$ is connected. Then we know every point $y$ of $C_x$ must be contained in $C$. A clopen set is the union of the connected components that intersect $C$.
+
+The reverse statement is not true for general topological space, but when the topological space is in addition Noetherian, we have ``union of arbitrary connected components in $X$ is clopen'': Any union of open set is always open, we only need to prove that $\cup_i C_i$ is closed. Consider $X-C_0\supset X-C_0\cup C_1\supset...$, is a descending chain of closed subsets, it will stabilize after $n_0$, In other words, $\cup_i C_i=\cup_{0\leq i\leq n_0} C_i$. A finite union of closed sets in closed. Done.
+
+\end{proof}
+
+\begin{exr}
+Show that a ring $A$ is Noetherian if and only if every ideal of $A$ is finitely generated.
+\end{exr}
+\begin{proof}
+In fact we have,
+
+\textbf{(Lemma)} The following characterizations are equivalent:
+\begin{enumerate}[label=(\alph*)]
+\item ${A}$ satisfies the \textbf{ascending chain condition on ideals (ACC)} (All the sequence $\sca_1\subseteq \sca_2\subseteq ...$ stabilizes, i.e. $\exists n_0$ s.t. $\sca_n=\sca_{n_0} \forall n\geq 0$)
+\item Every ideal of ${A}$ is finitely generated.
+\item $\{\text{ideals in ${A}$}\}$ satisfies the \textbf{maximal property}: i.e. Every subset contains a maximal element. That is : For any nonempty collection $S$ of ideals in ${A}$, $\exists \sca\in S$ s.t. $\forall \scb\in S\Lrta \scb\not \supset \sca$
+\end{enumerate}
+
+(a)$\Lrta$(b). Let $\sca$ be an ideal. we may assume that $\sca$ is \textbf{NOT} finitely generated. Inductively construct $x_1, x_2,x_3...\in \sca$ such that $(x_1)\neq 0$ and $\sca\supsetneqq(x_1,x_2)\supsetneqq(x_1)$ an also $\sca\supsetneqq(x_1,x_2,x_3)\supsetneqq(x_1,x_2)$, but then this sequence contradict the \textbf{ACC}.
+
+(a)$\Lrta$(c). Let $\emptyset \neq S\subseteq \{\text{ideals in }{A}\}$. If $S$ violates the maximal property, then start from arbitrary ideal $\sca_1$, we can find $\sca_1\subsetneq \sca_2\in S$. Similarly, we can find $\sca_{j+1}\supsetneq \sca_j,\forall j\in\intg_{\geq 0}$ by the countable choice axiom. Then the ACC fails.
+
+(c)$\Lrta $(a). If ACC fails, $\exists \sca_1\subsetneq \sca_2\subsetneq ...$ Take $S:=\{\sca_1,\sca_2,\sca_3...\}$. Then $S$ violates maximal property.
+
+(b)$\Lrta$(a). Let $\sca_1\subseteq\sca_2\subseteq ...$ \underline{Want:}show that $\exists n_0,\sca_n=\sca_{n_0}\forall n\geq n_0$.
+Define $\sca:=\cup_n \sca_n$. We know that every ideal of ${A}$ is finitely generated. Then $\sca$ is also finitely generated by assumption (b). Then Assume it to be finitely generated by $r$ elements $\{x_1,...,x_r\}$, with $x_j\in\sca_{n_j}$. Choose $n_0=\text{max}\{n_1,...,n_r\}$, then we have $x_1,...,x_r\in \sca_{n_0}\Lrta \sca=\sca_{n_0}$. $\Lrta \sca_n=\sca_{n_0},\forall n\geq n_0$.
+\end{proof}
+
+\begin{exr}\label{chap3exr:Noetherian_rings_Noetherian_topological_spaces}
+If $A$ is Noetherian, show that $\spec A$ is a Noetherian topological space. Describe a ring $A$ such that $\spec A$ is not a Noetherian topological space.
+\end{exr}
+\begin{proof}
+Let $(V_i)_{i\in \mathbb{N}}$ be a descending chain of closed subsets of $\spec A$. For every $i\in\mathbb{N}$, let $I_i\in A$ be an ideal such that $V(I_i)=V_i$. We conclude that $V(I_i)\supset V(I_{i+1})$ for all $i\in \mathbb{N}$. W.l.o.g. we assume each $I_i$ is radical ideal.
+
+$\forall \scq\supset I_{i+1}, \scq\supset I_i$
+
+$
+I_{i+1}=\sqrt{I_{i+1}}\supset I_i.
+$
+We have an ascending chain of radical ideals.
+
+By the Noetherian property of $A$, this chain of ideals must stabilize. Hence the descending chain of closed subsets also stabilize, therefore $\spec A$ is a Noetherian topological space.
+
+The converse is not true. Consider the ring $A:=k[x_1,x_2,...]/(x^2_1,x^2_2,...)$ for a field $k$. Let $\scp\subset A$ be prime idal. Then the ideal $(x_1,x_2,...)$ is contained in $\scp$. But the ideal $(x_1,x_2,...)$ is already maximal. Hence $\spec A$ is only one point and trivially Noetherian topological space. But $A$ is not Noetherian because $(x_1,x_2,..)$ is not finitely generated.
+
+As for an example of non-Noetherian topological space, we can consider the ring $A:=k[x_1,x_2,...]$. $A$ is not a Noetherian ring and there is a strictly ascending chain of ideals $(x_1)\subsetneq (x_1,x_2)\subsetneq ...$. It give rise to a strictly descending chain of closed subsets
+$$
+V(x_1)\supsetneq V(x_1,x_2)\supsetneq\cdots
+$$
+\end{proof}
+\begin{exr}\label{chap3exr:open_subset_Noetherian_space_quasicompact}
+Show that every open subset of a Noetherian topological space is quasicompact. Hence if $A$ is Noetherian, every open subset of $\spec A$ is quasicompact.
+\end{exr}
+\begin{proof}
+Let $Y\subset X$ be an open subset of $X$ with the induced topology on $Y$, Then $Y$ is also Noetherian. Consider an open covering $\cup_{i\in I}V_i=Y$ of $Y$. {\color{red}is it true that every cover has countable subcover?}. Without loss of generality, we assume $I=\mathbb{N}$ and define
+$$
+U_n=\bigcup_{0\leq i\leq n} V_i.
+$$
+$U_n$ form an ascending chain of open subsets. Since Y is Noetherian, we conclude the chain stabilizes
+and we find the finite subcover.
+\end{proof}
+
+\begin{remark}
+A closed subset of Noetherian space is always quasicompact, because a Noetherian space is itself quasicompact.
+\end{remark}
+
+\begin{exr}\label{chap3exr:submodule_Notherian}
+Show that if $ M$ is a Noetherian $A$-module, then any submodule of $M$ is a finitely generated $A$-module.
+\end{exr}
+\begin{proof}
+The proof is just identical to the different characterization of Noetherian rings.
+
+If the submodule $M'$ of $M$ is not finitely generated, then we can inductively construct $M'\supsetneq A x_1$, $M'\supsetneq A x_1\oplus Ax_2...$. But this violate the ascending chain condition on $M$.
+\end{proof}
+
+\begin{exr}\label{chap3exr:Noetherian_module_SES}
+If $0\lrta M' \lrta M\lrta M'' \lrta 0$ is exact, show that $M'$ and $M''$ are Noetherian if and only if $M$ is Noetherian.
+\end{exr}
+\begin{proof}
+``$\Lrta$'' Use ACC. Let $N_1\subseteq N_2\subseteq ...$ be submodules of $M$. \underline{Want:}  show that $\exists n_0 :(n\geq n_0)\Lrta N_n=N_{n_0}$.
+Consider $N''_j:=$ Image of $N_j$ in $M''$. $ N_1''\subseteq N_2''\subseteq ...$ By ACC of $M''$, $N''_{n_0}=N''_{n}\forall n\geq n_0$. Do the same for $N'_j:=M'\cap N_j$ ($M'\inj M$)\\
+Need: if $N_i\subseteq N_j\subseteq M$ and $N_i''=N''_j, N'_i=N'_j$, then $N_i=N_j$. (Five Lemma)
+\begin{center}
+\begin{tikzcd}
+0\ar[r] & N_i'\ar[r]\ar[d,equal] & N_i\ar[r]\ar[d] & N_i''\ar[r]\ar[d,equal] & 0\\
+0\ar[r] & N_j'\ar[r] & N_j\ar[r] & N_j''\ar[r] & 0
+\end{tikzcd}
+\end{center}
+
+For the $\Llta$ direction, $M$ is Noetherian. Because every ascending chain in $M'$ can be identified as ascending chain in $M$, $M'$ is Noetherian. Also for every ascending chain of submodules in $M''$, it's preimage is an ascending chain of submodule in $M$, hence the preimage chain will stabilize, hence the chain in $M''$ would also stabilize.
+\end{proof}
+
+\begin{exr}
+Show that if $A$ is a Noetherian ring, then $A^{\oplus n}$ is a Noetherian
+$A$-module.
+\end{exr}
+\begin{proof}
+When we regard $A$ as an $A$-module, the submodule of $A$ is just the ideals in $A$. Hence $A$ is a Noetherian ring iff $A$ is a Noetherian $A$-module. Then $A\oplus A$ is Noetherian $A$-module by~\ref{chap3exr:Noetherian_module_SES} because
+$$
+0\lrta A\lrta A\oplus A\lrta A\lrta 0
+$$
+and then we can induct on $n$, by 
+$$
+0\lrta A^{\oplus{n-1}}\lrta A^{\oplus n}\lrta A\lrta 0
+$$
+\end{proof}
+
+\begin{exr}
+Show that if $A$ is a Noetherian ring and M is a finitely generated $A$-module, then $M$ is a Noetherian module. Hence by Exercise~\ref{chap3exr:submodule_Notherian}, any submodule of a finitely generated module over a Noetherian ring is finitely generated.
+\end{exr}
+\begin{proof}
+Suppose $M$ is generated by $\{x_1,...,x_n\}$
+We always have a SES
+$$
+0\lrta Ker(\varphi)\lrta {A}^n\overset{\varphi}{\lrta} M\lrta 0,
+$$
+then apply~\ref{chap3exr:Noetherian_module_SES}.
+\end{proof}
+\section{The function $I(\cdot),$ taking subsets of $\spec A$ to ideals of $A$}
+
+\begin{exr}
+Let $A = k[x, y]$. If $S = \{[(y)], [(x, y - 1)]\} $ , then $I(S)$ consists of those polynomials vanishing on the $y$-axis, and at the point $(0, 1)$. Give generators for this ideal.
+\end{exr}
+\begin{proof}
+By definition, $I(S)=\cap_{[\scp]\in S}\scp= (y)\cap (x,y-1)$. Hence $I(S)$ can be identified as polynomials in $k[x,y]$ that vanishes on the both $y$-axis and $(0,1)$. The generators of this ideal are $\{xy,y(y-1)\}$
+\end{proof}
+
+\begin{exr}
+Suppose $S \subset \affn^3_\cplx$ is the union of the three axes. Give generators for the ideal $I(S)$. We will see in Chapter 12 that this ideal is not generated by less than three elements.
+\end{exr}
+\begin{proof}
+$S$ geometrically is the union of three axes. $I(S)$ is the polynomial that vanishes on all the three axis. The points in $S$ are of the form $[(0)],[(x,y)],[(y,z)], [(x,z)],[(x-a,y,z)],[(x,y-b,z)],[(x,y,z-c)]$. The union of corresponding ideals would be $(x,y)\cap (y,z)\cap (x,z)$. The ideal is finitely generated by $(xy,yz,zx)$.
+The inclusion $(x,y)\cap (y,z)\cap (x,z)\supset (xy,yz,zx)$ is trivial. For the reverse inclusion. Consider an element $g\in (x,y)\cap (y,z)\cap (x,z)$, $g$ can't contain terms like $x,y,z,x^n,y^n,z^n$ because they are not element in the intersection. Then the  lowest degree terms of $g$ should be $xy,yz,xz$, and all other terms can be generated by $xy,yz,zx$.
+\end{proof}
+
+\begin{exr}
+Show that $V(I(S)) = \overline{S}$. Hence $V(I(S)) = S$ for a closed set $S$.
+\end{exr}
+\begin{proof}
+``$V(I(S))\supset \overline{S}$'':
+By definition, $V(I(S))$ is closed set. And $S\subset V(I(S))$, because $[\scp]\in S, I(S)=\cap_{[\scq]\in S}\scq$ $I(S)\mod \scp=0,\Lrta I(S)\subset \scp\Lrta [\scp]\in V(I(S))$. Closure $\overline{S}$ is the smallest closed set that contains $S$, therefore $\overline{S}\subset V(I(S))$.
+
+ ``$V(I(S))\subset \overline{S}$'': We need to verify that open neighborhood of each point in $V(I(S))$ intersects with $S$. Consider a point $[\scq]\in V(I(S))$, we have $\scq\supset I(S)$. Assume  a non-empty distinguished open $D(f)$ contains $[\scq]\Llrta f\notin\scq \Lrta f\notin I(S)\Lrta$ $f $ does not vanish on every point in $S$, $\exists[\scn]\in S$, s.t. $f\notin [\scn]\Llrta$ $D(f)\ni [\scn]$, therefore $D(f)\cap V(I(S))\neq \emptyset$. Hence $V(I(S))\subset \overline{S}$.
+\end{proof}
+
+\begin{exr}
+Prove that if $J \subset A$ is an ideal, then $I(V(J)) = \sqrt J$.
+\end{exr}
+\begin{proof}
+Suppose $J\subset A$ is an ideal. By definition, $I(V(J))$ is the set of functions that vanish on $V(J)$, 
+$
+I(V(J))=\cap_{[\scp]\in V(J)}\scp.
+$
+Also recall that $[\scp]\in V(J)\Llrta\scp\supset J$, we have
+$$
+I(V(J))=\cap_{[\scp]\in V(J)}\scp=\cap_{\scp\supset J}\scp=\sqrt J.
+$$
+\end{proof}
+
+\begin{exr}\label{chap3exr:bijection_closed_subsets_points_affine}
+Show that $V(\cdot)$ and $I(\cdot)$ give a bijection between irreducible closed subsets of $\spec A$ and prime ideals of $A$. From this conclude that in $\spec A$ there is a bijection between points of $\spec A$ and irreducible closed subsets of $\spec A$ (where a point determines an irreducible closed subset by taking the closure). Hence each irreducible closed subset of $\spec A$ has precisely one generic point  any irreducible closed subset $Z$ can be written uniquely as $\overline{\{z\}}$.
+\end{exr}
+\begin{proof}
+``$S$ irreducible closed $\Lrta$ $I(S)$ is prime'':
+
+Assume $I(S)$ is not prime. $\Llrta \exists x,y\notin I(S)$ but $xy\in I(S)$, which means $x,y$ each does not vanish on every point in $S$ but $xy$ vanishes on each point in $S$.
+$$
+V((x))\notsupset S
+$$
+$$
+V((y))\notsupset S
+$$
+but 
+$$
+V((xy))=V((x))\cup V((y))\supset S
+$$
+Then 
+$$
+S=(V((x))\cap S)\cup (V((y))\cap S),
+$$
+where $(V((x))\cap S)$ and $ (V((y))\cap S)$ are non-empty and closed. Contradiction.
+
+
+``$\scp$ is prime $\Lrta V(\scp)$ is irreducible closed.''
+
+Assume $V(\scp)$ is reducible, it can be written as union of two non-empty closed subsets, $V(\scp)=W\cup Z$. Assume $\sca,\scb$ radical ideals such that $W=V(\sca)$, $Z=V(\scb)$, we have $\sca\supsetneq \scp$ and $\scb\supsetneq \scp$
+$$
+V(\sca)\cup V(\scb)=V(\sca\scb)=V(\scp)
+$$
+By the theorem about bijection between closed sets and radical ideals in $A$.
+$$
+\sca\scb\subset\sca\cap\scb=\sqrt{\sca\scb}=\scp.
+$$
+But $\sca\scb\subset \scp$ implies $\sca\subset \scp$ and $\sca\subset\scp$. Then we find elements $x\in \sca\backslash\scp$, $y\in \scb\backslash\scp$, but $xy\in\scp$. Contradiction.
+
+
+This bijection is also inclusion reversing (just consider them as ordinary closed subsets and radical ideals).
+
+
+\end{proof}
+
+
+\begin{exr}\label{chap3exr:irreducible_components_minimal_pirmes_bij}
+A prime ideal of a ring $A$ is a \textbf{minimal prime ideal} (or more simply, \textbf{minimal prime}) if it is minimal with respect to inclusion. (For example, the only minimal prime of $k[x, y] $ is $(0).$) If $A$ is any ring, show that the irreducible components of $\spec A$ are in bijection with the minimal prime ideals of $A$. In particular, $\spec A$ is irreducible if and only if $A$ has only one minimal prime ideal; this generalizes Exercise~\ref{chap3exr:Integral_domain_irreducible}.
+\end{exr}
+\begin{proof}
+$\scn$ is minimal prime\\
+$\Llrta$ there is no strictly smaller prime $\scp\subset\scn$.\\
+$\Llrta$ There is no strictly bigger irreducible closed subset that contains $V(\scn)$. By the bijection in~\ref{chap3exr:bijection_closed_subsets_points_affine}. \\
+$\Llrta$ $V(\scn)$ is maximal irreducible closed subset (irreducible component)
+
+In particular $\spec A$ is irreducible iff $\spec A$ is itself the unique irreducible component. Then $I(\spec A)$ is prime and contained in any other irreducible sets.
+\end{proof}
+
+\begin{exr}
+What are the minimal prime ideals of $A:=k[x, y]/(xy)$ (where $k$ is a field)?
+\end{exr}
+\begin{proof}
+Geometrically, three are two irreducible components of $\spec A$, the $x$-axis and $y$-axis, corresponding to $(y)$ and $(x)$ respectively.
+\end{proof}

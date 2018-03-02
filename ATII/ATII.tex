@@ -1,0 +1,320 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\pagestyle{headings}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage{cmbright}
+%\usepackage{concmath}
+%\usepackage{sansmathfonts}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{pdfrender,xcolor,scrpage2}
+%\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}},
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+  }
+}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmkt}[thm]{Remark by TeXer}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nex}[thm]{Non-example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\hom}{\text{ Hom}}
+\newcommand{\tor}{\text{ Tor}}
+\newcommand{\affn}{\mathbb A}
+\newcommand{\proj}{\mathbb P}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\pd}{\partial}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Summary for Algebraic Topology II}
+\author{Notes by Lin-Da Xiao}
+\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{21th Feb: Tor functor}
+\begin{dfn}
+Suppose $A$ is an abelian group, A \textbf{Free resolution} is an exact sequence of the form
+$$
+\cdots\lrta F_2\overset{f_2}{\lrta}F_1\overset{f_1}{\lrta}F_0\overset{f_0}{\lrta}A\lrta 0,
+$$
+where each $F_i$ is a free abelian group. If moreover $F_i=0,\forall i\geq 2$, we call it \textbf{Short free resolution} 
+$$
+0\lrta K\lrta F\lrta A\lrta 0
+$$
+\end{dfn}
+(We can easily generalize this definition to $R$-modules)
+\begin{prop}
+Let $A$ be an abelian group. Then there exists a short free resolution of $A$.
+\end{prop}
+\begin{proof}
+Let $F$ be the free abelian group generated by all elements in $A$. There is a surjection from $F$ to $A$ by linearly extending the map sending basis element to itself. Let $K$ denote the kernel of this map. $K$ is an abelian subgroup of a free abelian group ($\intg$-module).  A subgroup of a free abelian group is torsion free as a module. $\intg$ is a $PID$. If $R$ is a $PID$, then an  $R$-module is free iff it is torsion free (See Bosch section 4.2). Then we know in particular, $K$ is a free abelian group.
+\end{proof}
+With this construction, we can define the $\tor$ functor now:
+\begin{dfn}
+Let $A$ be an abelian group. Let $0\rta K\overset{f}{\rta}F\rta A\rta 0$ be a short free resolution of $A$. Given any other abelian group $B$, we define 
+$$
+\tor(A,B):=\ker(f\otimes id_B)
+$$
+\tor(A,B)
+\end{dfn}
+
+This definition is independent on the choice of short free resolution.
+
+\section{28th Feb:}
+
+\underline{Question}: Given $X, Y$ what is the cohomology of $X\times Y$?
+
+\underline{Answer}:
+$$
+H_n(X\times Y)\cong \bigoplus_{i+j=n}H_i(X)\otimes H_j (Y)+\bigoplus_{k+\ell=n-1} \tor(H_k,(X),H_\ell(Y)
+$$
+We will discuss Elenberg-Zilber theorem along this line the next lecture.
+
+Today, we will prove the Algebraic Kueneth Theorem
+\begin{dfn}
+Suppose $(C_\bullet,\pd)$ and $(C'_\bullet,\pd')$ are two non-negative chain complexes. We define the  \textbf{tensor complex} $(C_\bullet\otimes C_\bullet',\Delta)$, where
+$$
+(C_\bullet\otimes C'_\bullet)_n=\oplus_{i+j=n}C_i\otimes C_j'
+$$
+and the differential $\Delta$ is defined by 
+$$
+\Delta(c_i\otimes c'_j)=\pd c_i\otimes c'_j+(-1)^{i}c_i\otimes \pd' c_j
+$$
+\end{dfn}
+First, note that $\Delta(c_i\otimes c'_j)$ does indeed belong to $(C_\bullet\otimes C_\bullet')_{n-1}$. The reason for $(-1)^i$ is to make $\Delta^2=0$.
+$C_\bullet\otimes C'_\bullet$ is another  non-negative chain complex.
+\begin{dfn}
+Suppose $f_\bullet:C_\bullet\lrta D_\bullet$ and $g_\bullet: C'_\bullet\lrta D'_\bullet$ are two morphism of chain complexes. Then we can define a chain map
+$$
+f\otimes g: C\otimes C'\lrta D\otimes D'
+$$
+by 
+$$
+(f\otimes g)_n=\sum_{i+j=n}f_i\otimes g_j
+$$
+It is easy to check this is indeed a chain map.
+\end{dfn}
+\begin{lemma}
+If $f':C\lrta C'$  and $g':D\lrta D'$ are two more chain maps with $f$ homotopic to $f'$ and $g$ homotopic to $g'$. Then $f'\otimes g'$ is homotopic to $f\otimes g$.
+\end{lemma}
+\begin{thm}
+(Algebraic Kuenneth Theorem) Let $(C,\pd)$ and $(D,\pd')$ be two non-negative free complex. Then for every $n\geq 0$, there is a split exact sequence
+$$
+0\lrta \oplus_{i+j=n}H_i(C)\otimes H_j(D)\lrta H_N(C\otimes D)\lrta \oplus_{k+\ell=n-1}\tor(H_k(C),H_\ell(D))\lrta 0
+$$
+where $\omega$ is the map $\langle c_i\rangle\otimes \lgl d_j\rgl\mapsto \lgl c_i\otimes d_j\rgl$. 
+Thus there also exists a (non-natural) isomorphism 
+$$
+H_n(C\times D)\cong \oplus_{i+j=n}H_i(C)\otimes H_j (D)+\oplus_{k+\ell=n-1} \tor(H_k,(C),H_\ell(D)
+$$
+\end{thm}
+The proof requires two auxiliary results.
+\begin{prop}
+Let $(E_\bullet,0)$ be a non-negative chain complex with all differential zero and $(D_\bullet,\pd)$ be any non-negative chain complex. Given $i\geq 0$, let $D^i_\bullet$ denote the chain complex where $D^i_n=D_{n-i}$ and the boundary map 
+$$
+D^i_n\lrta D^i_{n-1}
+$$
+is just the map: $D_{n-i}\lrta D_{n-i-1}$.
+
+Then
+$$
+H_n(E_\bullet\otimes D_\bullet)\cong \bigoplus_{i\geq 0} H_n(E_i\otimes D^i_\bullet)
+$$
+\end{prop}
+\begin{proof}(of the Proposition)
+Since $E_\bullet$ has no differentials
+$$
+\begin{aligned}
+\Delta(e_i\otimes d_{n-i})&=(-1)^{i} e_i \otimes \pd d_{n-i}\\
+&=(-1)^i (id_E\otimes \pd)[e_i\otimes d_{n-i}]
+\end{aligned}
+$$
+$$
+\begin{aligned}
+H_n(E_\bullet\otimes D_\bullet)&=\frac{ker\Delta}{im \Delta}\\
+&=\bigoplus_{i\geq 0}\frac{ker(id_E\otimes \pd|_{D_{n-i}})}{im(id_E\otimes \pd|_{D_{n-i+1}})}\\
+&=\bigoplus_{i\geq 0} H_n(E_i\otimes D^i_\bullet)
+\end{aligned}
+$$
+\end{proof}
+
+\begin{proof}(of Theorem) We will prove it in three steps:
+
+Let's use the same notation as we did in the proof of the universal coefficient theorem.
+$B_n\subset Z_n\subset C_n$. $(Z_\bullet,0)$ and $(B^+_\bullet,0)$  are chain complexes with no differentials, where $B^+_n= B_{n-1}$. $(H_\bullet,0)$ be the chain complex.
+$i:Z_n\inj C_n$, $j:B_n\inj Z_n$, $d: C_n\lrta B_{n-1}$, where $d$ is the just the differential $\pd$ of $C_\bullet$ and we use $p$ to denote the projection $Z_n\surj H_n$. Then we have two short exact sequence of chain complexes
+$$
+0\lrta Z_\bullet\overset{i_\bullet}{\lrta}C_\bullet\overset{D_\bullet}{\lrta} B^+_\bullet\lrta 0
+$$
+$$
+0\lrta B_\bullet\overset{j_\bullet}{\lrta}Z_\bullet\overset{p_\bullet}{\lrta} H_\bullet\lrta 0.
+$$
+We tensor it with $D_\bullet$.
+$$
+0\lrta Z_\bullet\otimes D_\bullet\overset{i_\bullet}{\lrta}C_\bullet\otimes D_\bullet\overset{D_\bullet}{\lrta} B^+_\bullet\otimes D_\bullet\lrta 0
+$$
+$$
+0\lrta B_\bullet\otimes D_\bullet\overset{j_\bullet}{\lrta}Z_\bullet\otimes D_\bullet\overset{p_\bullet}{\lrta} H_\bullet\otimes D_\bullet\lrta 0.
+$$
+They are again short exact sequence of chain complexes because $D$ is free Abelian group thus flat module.
+\[
+\begin{tikzcd}
+0 \arrow[r] & Z_n \arrow[r, "i", bend left] & C_n \arrow[l, "r", bend left] \arrow[r, "d"] & B_{n-1} \arrow[r] & 0
+\end{tikzcd}
+\]
+This sequence splits as $B_{n-1}$ is free abelian. Thus $\exists$ a map $r:C_n\lrta Z_n$ such that $r|_{Z_n}$ is the identity
+$r_\bullet:C_\bullet \lrta Z_\bullet$. 
+
+Denote by $\mu$ the composition $p\circ r: C_\bullet \lrta H$.
+
+Claim: $\mu$ is a chain map from $(C_\bullet,\pd)\lrta (H_\bullet,0)$. Take $c\in C_{n+1}$ and check it commutes
+$$
+\mu\circ \pd c=\mu\pd c=p\circ r\pd c=\lgl \pd c\rgl=0
+$$
+and
+$0\circ \mu c=0$
+
+Step 2: Define
+$\varphi=H_n(\mu\otimes id)$. $H_n(C_\bullet\otimes D_\bullet)\lrta H_n(H_\bullet\otimes D_\bullet)$.
+
+\underline{Claim}: $\varphi$ is an isomorphism.
+
+It suffices to prove the diagram commutes and conclude by five lemma.
+\[
+\tiny
+\begin{tikzcd}
+H_{n+1}(B^+_\bullet\otimes D_\bullet) \arrow[d, "id"] \arrow[r, "\delta"] & H_n(Z_\bullet\otimes D_\bullet) \arrow[d, "id"] \arrow[r] & H_n(C_\bullet\otimes D_\bullet) \arrow[d, "\varphi"] \arrow[r] & H_n(B^+_\bullet\otimes D_\bullet) \arrow[d, "id"] \arrow[r, "\delta" description] & H_{n-1}(Z_\bullet\otimes D_\bullet) \arrow[d, "id"] \\
+H_n(B_\bullet\otimes D_\bullet) \arrow[r] & H_n(Z_\bullet\otimes D_\bullet) \arrow[r] & H_n(H_\bullet\otimes D_\bullet) \arrow[r, "\delta'"] & H_{n-1}(B_\bullet\otimes D_\bullet) \arrow[r] & H_{n-1}(Z_\bullet\otimes D_\bullet)
+\end{tikzcd}
+\]
+
+Step 3: We complete the proof
+$$
+\begin{aligned}
+H_n(C_\bullet \otimes \otimes D_\bullet)&\cong H_n(H_\bullet\otimes D_\bullet)\\
+&\cong \bigoplus_{i\geq 0} H_n(H_i(C_\bullet)\otimes D_\bullet^i)
+\end{aligned}
+$$
+By the universal coefficient theorem, there is a split exact sequence
+$$
+0\lrta H_i(C_\bullet)\otimes H_n(D^i_\bullet)\lrta H_n(H_i(C_\bullet)\otimes D^i_\bullet)\lrta \tor(H_i (C_\bullet),H_{n-1}(D^i_\bullet))\lrta 0
+$$
+If we get rid of the notation $D^i_\bullet$.
+$$0\lrta H_i(C_\bullet)\otimes H_n(D^i_\bullet)\lrta H_n(H_i(C_\bullet)\otimes D^i_\bullet)\lrta \tor(H_i (C_\bullet),H_{n-1-i}(D_\bullet))\lrta 0
+$$
+Take the direct sum over $i$ and use the fact that 
+
+
+\end{proof}
+
+
+
+
+\end{document}

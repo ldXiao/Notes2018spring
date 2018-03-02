@@ -1,0 +1,18 @@
+# Fdb version 3
+["pdflatex"] 1518551385 "Chap3.tex" "Chap3.pdf" "Chap3" 1518551390
+  "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
+  "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
+  "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
+  "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
+  "Chap3.aux" 1518551168 13806 91da173be47c619c0a089b8c7b44c110 ""
+  "Chap3.tex" 1518551384 78311 5428a9686caa195afc65fb9dbd27c422 ""
+  (generated)
+  "Chap3.idx"
+  "Chap3.run.xml"
+  "Chap3.aux"
+  "Chap3.log"
+  "Chap3.pdf"
+  "Chap3.bcf"

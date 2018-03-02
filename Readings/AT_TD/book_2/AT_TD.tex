@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.3 (8/8/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{blue_background}};
+\draw (7,-5) node{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Algebraic Topology\\[15pt] % Book title
+{\Large  A solution manual by and for stupid student}\\[20pt] % Subtitle
+{\huge Vector\_Cat }}}; % Author name
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+\noindent \textsc{Published by Publisher}\\ % Publisher
+
+\noindent \textsc{book-website.com}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{blue_chap_head.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+%\part{Homotopy theories}
+\chapter{Topological spaces}
+\chapter{Fundamental groups}
+\chapter{Covering spaces}
+\chapter{Elementary homotopy theory}
+\section{The mapping cylinder}
+\begin{definition}
+Given a continuous map $f:X\lrta Y$ of topological spaces, one can define its \textbf{mapping cylinder} as a pushout (fibered coproduct) 
+\[
+\tiny
+\begin{tikzcd}
+B &  &  &  \\
+ & Z(f) \arrow[lu, "\exists!", dashed] &  & X\times I \arrow[ll] \arrow[ld, "f\times id"'] \arrow[lllu] \\
+ &  & Y\times I \arrow[lu, "r"] &  \\
+ & Y \arrow[uu] \arrow[ru, "i_0"] \arrow[luuu] &  & X \arrow[ll, "f"] \arrow[uu, "i_0"'],
+\end{tikzcd}
+\]
+Set-theoretically, the mapping cylinder is usually represented as the quotient space $(X\times I \coprod Y)/\sim$, where $f(x)\sim (x,0)$.
+We use $Mf$ to denote it. (other notations are used including $Mf$, $M_f$ and $\text{Cyl}(f)$.)
+\end{definition}
+Notice that it is $Mf$ rather than $Y\times I$ that plays the role of pushout because the map $r$ is not unique. Our only restriction on $r$ is $r\circ j=id$, where $j: Mf\lrta Y\times I$ is the map that restricts to $f\times id$ on $X\times I$ and restricts to $i_0$ on $Y$.
+\begin{remark}
+Another equivalent definition is used in tom Dieck.
+\end{remark}
+
+In the following, we consider $X\coprod Y$ as subspace of $Z(f)$ via the map $J:J(x)=[(x,0)]$ and $J(y)=[y]$. Then we consider a homotopy commutative diagram
+\[
+\begin{tikzcd}
+X \arrow[r, "f"] \arrow[d, "\alpha"'] & Y \arrow[d, "\beta"] \\
+X' \arrow[r, "f'"] & Y',
+\end{tikzcd}
+\]
+where the diagram commutes up to a homotopy $\Psi: f'\circ \alpha\simeq \beta \circ f$. 
+\chapter{Cofibrations and fibrations}
+\chapter{Homotopy groups}
+\chapter{Stable homotopy. Daulity}
+\chapter{Cell complexes}
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------------------
+
+%\part{Homologies}
+
+\chapter{Singular homology}
+\chapter{Homology}
+\section{The Axioms of Eilenberg and Steenrod}
+
+
+\chapter{Homological algebra}
+\section{Diagrams}
+\section{Exact sequences}
+\section{Chain complex}
+\section{Cochain complex}
+\section{Natural chain maps and homotopies}
+\section{Linear algebra of chain complexes}
+\begin{exr}
+Tensor product is compatible with chain homotopy. Let $s:  f \simeq g: C\lrta C'$  be a chain homotopy. Then $s\otimes id :f\otimes id  \simeq g \otimes id : C\otimes D \lrta C' \otimes D$ is a chain homotopy.
+\end{exr}
+\begin{proof}
+\underline{Know}: $ s\pd_{C}+\pd_{C'} s=f-g$
+
+\underline{Want}: $(s\otimes id_D)\pd_{C\otimes D} +\pd_{C'\otimes D} (s\otimes id_D)=f\otimes id_D-g\otimes id_D$. 
+
+$C\otimes D$ is generated by pure tensors like $c'_n\otimes d_m$, therefore we can  check the formula on element $c_n\otimes d_m\in C_n\otimes D_m$
+$$
+\begin{aligned}
+&(s\otimes id_D)\pd_{C\otimes D}(c_n\otimes d_m)\\
+&=(s\otimes id_D)\left(\pd_C c_n\otimes d_m +(-1)^n c_n\otimes\pd_D d_m\right)\\
+&=s\circ \pd_C c_n\otimes d_m+(-1)^n s c_n\otimes \pd_D d_m
+\end{aligned}
+$$
+and
+$$
+\begin{aligned}
+&\pd_{C'\otimes D} (s\otimes id_D)(c_n\otimes d_m)\\
+&=\pd_{C'\otimes D} (s c_n\otimes d_m)\\
+&= \pd_{C'} s c_n \otimes d_m+(-1)^{\deg(sc_n)}sc_n\otimes \pd_D d_m,
+\end{aligned}
+$$
+where $\deg (sc_n)=n-1$. Then we have
+$$
+\begin{aligned}
+&\left(\pd_{C'\otimes D} (s\otimes id_D)+(s\otimes id_D)\pd_{C\otimes D}\right) (c_n\otimes d_m)\\
+&=(s\pd_C+\pd_{C'} s)c_n \otimes d_m+0\\
+&=(f\otimes id_D-g\otimes id_D)(c_n\otimes d_m)
+\end{aligned}
+$$
+We are done. Also we can generalize this statemnt to 
+
+ Let $s:  f \simeq g: C\lrta C'$ and  $t:  p \simeq q: D\lrta D'$ be chain homotopies. Then $s\otimes t :f\otimes p  \simeq g \otimes q : C\otimes D \lrta C' \otimes D'$ is a chain homotopy. We easily conclude by $s\otimes id$ and $id\otimes s$ are chain homotopy and composition of chain homotopies is a chain homotopy.
+\end{proof}
+\section{Tor and Ext}
+\section{Universal coeffcients}
+\section{The K\"unneth Formula}
+\chapter{Cellular homology}
+\chapter{Partition of unity in homotopy}
+\part{More}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
+%------------------------------------------------
+
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+%------------------------------------------------
+
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

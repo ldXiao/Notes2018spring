@@ -1,0 +1,9 @@
+[0] Config.pm:324> INFO - This is Biber 2.1
+[0] Config.pm:327> INFO - Logfile is 'AT_TD.blg'
+[43] biber-darwin:276> INFO - === Thu Mar  1, 2018, 16:37:02
+[44] Biber.pm:333> INFO - Reading 'AT_TD.bcf'
+[142] Biber.pm:645> INFO - Found 0 citekeys in bib section 0
+[142] Utils.pm:146> WARN - The file 'AT_TD.bcf' does not contain any citations!
+[161] bbl.pm:505> INFO - Writing 'AT_TD.bbl' with encoding 'UTF-8'
+[161] bbl.pm:596> INFO - Output to AT_TD.bbl
+[162] Biber.pm:106> INFO - WARNINGS: 1
