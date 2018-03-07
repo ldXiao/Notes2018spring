@@ -1,0 +1,135 @@
+% PT3guide.tex
+% for the suite of standard Cambridge designs
+% 2010/12/03, v1.20
+
+  \NeedsTeXFormat{LaTeX2e}[1996/06/01]
+
+% \documentclass[multi]{PT3}  % multi-contributor option
+% \documentclass[prodtf]{PT3} % production option (used to produce PT3guide.pdf);
+                              % can only be used if you have the Adobe Myriad Pro
+                              % Condensed font
+  \documentclass{PT3}
+  \usepackage{tikz}           % coding for topic boxes
+                              %   (also calls in graphicx.sty)
+  \usepackage{tikz-cd}
+  \usepackage{natbib}
+  \usepackage[figuresright]{rotating}
+  \usepackage{floatpag}
+    \rotfloatpagestyle{empty}
+
+% \usepackage{amsmath}        % if you are using this package,
+                              % it must be loaded before amsthm.sty
+  \usepackage{amsthm}
+
+% \usepackage{txfonts}        % times font (used to produce PT3guide.pdf)
+\usepackage{hyperref}
+% indexes
+% uncomment the relevant set of commands
+
+% for a single index
+% \usepackage{makeidx}
+% \makeindex
+
+% for multiple indexes using multind.sty
+  \usepackage{multind}\ProvidesPackage{multind}
+  \makeindex{authors}
+  \makeindex{subject}
+
+% for multiple indexes using index.sty
+% \usepackage{index}
+% \newindex{aut}{adx}{and}{Author index}
+% \makeindex
+
+  \newcommand\cambridge{PT3}
+
+% see chapter 3 for details
+  \theoremstyle{plain}% default
+  \newtheorem{theorem}{Theorem}[chapter]
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem*{corollary}{Corollary}
+
+  \theoremstyle{definition}
+  \newtheorem{definition}[theorem]{Definition}
+  \newtheorem{condition}[theorem]{Condition}
+  \newtheorem{example-norules}[theorem]{Example}%
+
+  \theoremstyle{remark}
+  \newtheorem*{remark}{Remark}
+  \newtheorem*{case}{Case}
+
+  \hyphenation{line-break line-breaks docu-ment triangle cambridge
+    amsthdoc cambridgemods baseline-skip author authors
+    cambridgestyle en-vir-on-ment polar astron-omers solu-tion}
+
+  \setcounter{tocdepth}{2}    % the toc normally lists sections; for the purposes of
+                              % this document, this has been extended to subsections
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \includeonly{chap2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{document}
+
+  \title[A personal notes]
+    {Algebraic Topology}
+
+  \author{Vector\_Cat}
+
+  \details{This notes was compiled using \cambridge.cls \version\\[\baselineskip]}
+
+  \frontmatter
+  \maketitle
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \listoffloatingboxes
+  \listofcontributors
+
+  \mainmatter
+  \partquote{I have called this principle, by which each slight variation,
+    if useful, is preserved, by the term of Natural Selection.}{Charles Darwin}
+    \label{partquote}
+  \part{Getting started}
+  \include{chap1}% introduction
+  \include{chap2}% features of the \cambridge\ class file
+  \include{chap3}% mathematical solutions
+
+  \part{Closing features}
+  \include{chap4}% references and bibliographies
+  \include{chap5}% single and multiple indexes
+
+  \backmatter
+% if you only have one appendix, use \oneappendix instead of \appendix
+
+  \appendix
+  \include{appendixA}
+  \include{appendixB}
+  \include{appendixC}
+  \endappendix
+
+% insert a blank line to the toc list
+  \addtocontents{toc}{\vspace{\baselineskip}}
+  \theendnotes
+
+% \renewcommand{\refname}{Bibliography}% if you prefer this heading
+  \bibliography{percolation}\label{refs}
+  \bibliographystyle{cambridgeauthordate}
+
+  \cleardoublepage
+
+% indexes
+
+% for a single index
+% \printindex
+
+% for multiple indexes using multind.sty
+  \printindex{authors}{Author index}
+  \printindex{subject}{Subject index}
+
+% for multiple indexes using index.sty
+% \printindex[aut]
+% \printindex
+
+\end{document}

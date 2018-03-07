@@ -132,24 +132,38 @@
 \title{\bf Lecture Notes for Algebraic Geomtry I}
 \author{Lecture delivered by Emmanuel Kowalski\\
 Notes by Lin-Da Xiao}
-\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\date{2018 ETH} 
+%\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
 \begin{document}
 \maketitle
 \tableofcontents
+\section*{About the notes}
+In this notes we mainly focus on the algebraically closed fields.
 \newpage
-\section{Feb 27th: Algebraic sets and morphisms}
+\section{Classical varieties}
+\subsection{Feb 27th: Algebraic sets and morphisms}
 \href{https://imaginary.org/programs}{https://imaginary.org/programs}
 
 Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
-
+\begin{dfn}
+Closed subspaces of $\affn^n$ are called \textbf{affine algebraic sets} and irreducible algebraic sets are called \textbf{affine algebraic varieties}
+\end{dfn}
+\begin{dfn}
+Given $Y$ an affine algebraic set in $\affn^n$, we define the \textbf{coordinate ring} $\calo(Y)$ as $K[X_1,...,X_n]/I(Y)$
+\end{dfn}
+\begin{dfn}
+Let $X\subset \affn^m$ and $Y \subset \affn^n$ be affine algebraic sets. A \textbf{morphism} $X \lrta Y$ of affine algebraic sets is a map $f : X \lrta Y$ of the underlying sets such that there exist polynomials $f_1,...,f_n \in k[T_1,...,T_m]$ with $f(x) = (f_1(x),...,f_n(x))$ for all $x\in X$. 
+\end{dfn}
+We denote the category of affine algebraic sets over $K$ as $Alg_K$
 \begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
 Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
 $$
 \begin{aligned}
-&\hom_{K-alg}(\calo(Y_2),\calo(Y_1))
+&\hom_{K\text{-alg}}(\calo(Y_2),\calo(Y_1))
 \\
 &\overset{(*)}{\llrta}\{(f_1,...,f_m)\in K[X]^m|\forall x\in Y_1,(f_1(x),...,f_m(x))\in Y_2) \}\\
-&\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}
+&\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}\\
+&=\hom_{Alg_K}(Y_1,Y_2)
 \end{aligned}
 $$
 \end{thm}
@@ -198,7 +212,7 @@ Define morphism $Y_1\lrta Y_2$ by the second(and third) set.  Composition in the
 $\Lrta$ get a category $(Alg_K)$ of affine algebraic sets over $K$.
 
 \begin{cor}
-$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K-Alg)^{opp}$.
+$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K\text{-Alg})^{opp}$.
 \end{cor}
 
 \underline{Facts}: The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
@@ -210,7 +224,7 @@ $\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
 \begin{cor}
 There is a equivalence of categories between 
 $$
-(Alg_K)\llrta (\text{fin. gen. reduced.} K-Algs.)
+(\text{Algebraic sets over $K$})\llrta (\text{finitely generated reduced } K\text{-Algebras}.)
 $$
 \end{cor}
 
@@ -315,6 +329,8 @@ Observation: If $f\in K[X_0,...,X_{n+1}]$ is homogeneous, then for $x\in \proj^n
   S=\{ x\in \proj^n|f_1(x)=...=f_m(x)=0\},
  $$
  where $f_1,...,f_m$ are homogeneous of some degrees.
+
+ An irreducible projective algebraic set is called a \textbf{projective variety}
 \end{dfn}
 
 \underline{Notation}: $V(f_1,..,f_n)$
@@ -325,7 +341,7 @@ $V(Y^2 Z-X^3-X Z^2)\subset \proj^2$.
 Let $0\leq i\leq n$, then $S\cap H_i=\{[x_0:...:x_n]\in S| x_i\neq 0\}$ is , via the bijection  $H_i\lrta K^n$, in bijection with an affine algebraic set $S_1\subset \affn^n$ given by $\tilde{f_1}(y)=...=\tilde{f}_m(y)=0$, where $\tilde{f}_i(y_1,..,y_n)=f_i(y_1,...,y_{i-1},1, y_i,...,y_n)$
 
 
-\section{Mar 2nd: Projective algebraic sets and regular functions}
+\subsection{Mar 2nd: Projective algebraic sets and regular functions}
 Recall: $\proj^n_K=K^{n-1}-\{0\}/\sim$, and $H_i:=\{[x_0:...:x_n]|x_i\neq 0\}$ is in bijection with $\affn^n$. $V(f_1,...,f_m)=\{x\in \proj^n|\forall i,f_i(x)=0\}$, where $f_1,..f_m$ are homogeneous.
 
 More generally, we can define 
@@ -422,7 +438,7 @@ $$
 \underline{Claim}, this is a morphism of projective sets.
 \\
 This means that there is no solution to $Y^2Z-X^3-XZ^2=0$ with $Y=Z=0$. (But $[x:y:z]\mapsto [x:z]$ is not a morphism because $[0:1:0]\in S$). $f$ is surjective but not injective $[x:y:z]$ and $[x:-y:z]$ have same image. This works in field $k$ with $\text{char} k\neq 2$.
-\item $\proj^1\overset{v}{\lrta \proj^2}$, $[x:y]\mapsto [x^2:xy:y^2]$ (special case of Veronese embedding). This is a morphism. The image of $v$ is equal to $[y_0:y_1:y_2], \proj^2$. $S=V(Y_1^2-Y_0Y_2)$.  In fact, $\sigma$ gives an isomorphism
+\item $\proj^1\overset{v}{\lrta} \proj^2$, $[x:y]\mapsto [x^2:xy:y^2]$ (special case of Veronese embedding). This is a morphism. The image of $v$ is equal to $[y_0:y_1:y_2], \proj^2$. $S=V(Y_1^2-Y_0Y_2)$.  In fact, $\sigma$ gives an isomorphism
 $\sigma: \proj^1\lrta S$ with inverse given by 
 $$
 \tau: S\lrta \proj^1
@@ -451,9 +467,9 @@ One can not find $f_0:f_1$ in $K[Y_0,Y_1,Y_2]$ s.t. $\tau([y_0:y_1:y_2]=[f_0(Y):
 \end{enumerate}
 \end{ex}
 
-\section*{Rational/birational maps}
+\subsection{Mar 6th: Rational/birational maps}
 
-$Y\subset \affn^n$ algebraic if $Y$ is irreducible, then $\calo(Y)$ is an integral domain. Let $K(Y)$ be its quotient field. What is the geometric meaning of $K(Y)$? It is called the function field of $Y$.
+$Y\subset \affn^n$ algebraic if $Y$ is irreducible, then $\calo(Y)$ is an integral domain. Let $K(Y)$ be its quotient field. What is the geometric meaning of $K(Y)$? It is called the \textbf{function field} of $Y$.
 
 We will see
 \begin{thm}
@@ -461,8 +477,224 @@ For $Y_1,Y_2$ affine varieties (irreducible) $K(Y_1)\cong K(Y_2)$ as fields
 
 $\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$ open dense subset such that $U_1$ and $U_2$ are isomorphic.
 \end{thm}
+\begin{dfn}
+(Quasi-affine  and quasi-projective) varieties)
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{quasi-affine variety} $V$ is an open subset $V\subset Y$, where $Y\subset \affn^n$ is an affine variety. $[V\neq \emptyset\Lrta V\text{ dense in } Y\Lrta V\text{ irreducible }]$. It is given by the Zariski's topology from $Y$.\\
+  (1') $V\subset Y\subset \proj^n$ where $V$ is an open subset of $Y$ is \textbf{quasi-projective}, where $Y$ is projective variety.
+  \item A regular function $f:V\lrta K=\affn^1$, where $V$ is quasi-affine is an $f$ such that for all $x\in V$, $\exists U\subset V$ open containing $x$ s.t., $\forall x\in V$, $f(x)=\frac{f_1(x)}{f_2(x)}$ where $f_1,f_2\in\calo(\affn^n)$ and $f_2(x)\neq 0$ on $U$.\\
+  (2') $V$ is quasi-projective variety a regular function $f$ is $\frac{f_1(x)}{f_2(x)}$ $f_i$ homogeneous of same degrees.
+  \item If $V_1,V_2$ are \underline{Varieties} (of any of the four types), then $f:V_1\lrta V_2$ is a \textbf{morphism} if for al open $U\subset V_2$ all $\varphi:U\lrta K$ regular, the composition $\varphi\circ f: f^{-1}U\lrta K$ is also regular.
+  \end{enumerate}
+\end{dfn}
 
+N.B. \begin{enumerate}
+\item This makes sense because if $U\subset V_2$, where $V_2$ is quasi affine $U$ open, $\Lrta$ $U\subset V_2\subset Y$ so $U$ is also quasi-affine in $\affn^n$
+\item \underline{Exercise} If $f$ is regular on $V$, then $f$ is continuous $V\lrta \affn^1$. (check that $f^{-1}(\{a\})$ is closed, use hat closd ness is a local condition.)
+\item In the (quasi)-affine case, it is enoufh to check that $\varphi\circ f$ is regular on $V_1$ for $\varphi$ regular on $V_2$.
+\item \underline{Notation}:
+$$\calo(V)=\{f:V\lrta K|\text{ regular}\}$$
+This is a ring of with unit, and because of the condition that open $V\subset Y$ in a variety, either $\calo(V)=0,V\neq \emptyset$ or $V$ is dense in $Y$, $\Lrta \calo(V)$ integral domain. 
+\end{enumerate}
 
+\begin{ex}\ 
+\begin{enumerate}
+\item $GL_n(K)=\{x\in M_{n\times n}(K)|\det(x)\neq 0\}\subset \affn^{n^2}$ is quasi-affine since $\det:M_{n\times n}(K)\lrta K$ is continuous and ont emptyset.
+
+\item In fact, for any $0\neq f\in \calo(\affn^n)$
+$$
+U_f=\{x\in \affn^n|f(x)\neq 0\}
+$$
+is a quasi-affine variety.
+
+\underline{Fact}: There is an isomorphism
+$$
+\left\{\begin{aligned}
+U_f&\overset{\sigma}{\lrta} Y=\{(x,y)\in\affn^{n+1}|yf(x)=1\}\\
+x&\longmapsto \left(x,\frac{1}{f(x)}\right)
+\end{aligned}
+\right.
+$$
+with inverse
+$(x,y)\overset{\pi}{\lrta}x$.
+(Indeed, $\pi\circ \sigma=Id_{U_f}$, $\sigma\circ \pi=Id_Y$) and $\pi$ is a morphism: consider $\varphi\in\calo(U_f)$
+$$
+Y\overset{u}{\lrta}U_f\overset{\varphi}{\lrta}K
+$$
+then $\varphi\circ \pi(x,y)=\varphi(x)$; This is regular. 
+
+Indeed, for any $x\in U_f$, $\exists f_1,f_2\in \calo(\affn^2)\varphi(x)=\frac{f_1(x)}{f_2(x)}, f_2(x)\neq 0$, one can show: assume $f_2(x)=f(x)^d$ then 
+$$
+\varphi(x)=\frac{f_1(x)}{f(x)^d}=f_1(x)y^d
+$$
+for $(x,y)\in Y$, so this is regular.
+
+(2) $\sigma$ is a morphism
+$$
+U_f\overset{\sigma}{\lrta}Y\overset{\varphi}{\lrta}K
+$$
+$\varphi\in\calo(Y)=K[X_1,...,X_n,Y]/(Yf(x)=1)$
+$$
+\begin{aligned}
+\varphi\circ \sigma(x)&=\varphi(x,1/f(x))=\left(\sum_j a_j Y^j\right)|_{Y=1/f(X)}\\
+&=\sum_j a_j (x)/f(x)^j\in \calo(U_f)
+\end{aligned}
+$$
+\item $\proj^n=\cup_{0\leq i\leq n}H_i$, with $H_i=\{[x_0:...:x_n]|x_{i}\neq 0\}$, $H_i\subset \proj^n\}$ open , so quasi-projective. The map
+$$
+\left\{\begin{aligned}
+H_i&\overset{f_i}{\lrta} \affn^n\\
+[x_0:...:x_n]&\longmapsto (\frac{x_0}{x_1},...,\frac{x_{i-1}}{x_i},\frac{x_{i+1}{x_i}},...,\frac{x_n}{x_i})
+\end{aligned}
+\right.
+$$
+is an isomorphism.
+\end{enumerate}
+\end{ex}
+
+\begin{dfn}
+$Y$ variety, $K(Y)=\{(U,f)|\emptyset\neq U\subset Y\text{ open },f\in \calo(U)\}/\sim$, where $(U_1,f_1)\sim (U_2,f_2)$ iff $f_1|_{U_1\cap U_2}=f_2|_{U_1\cap U_2}$
+\end{dfn}
+
+\underline{Fact}: $\sim$ is an equivalence relation. We define
+$$
+(U_1,f_1)+(U_2,f_2)=(U_1\cap U_2,f_1+f_2)
+$$
+$$
+0:=(Y,0),\ \ 1:=(Y,1)
+$$
+\begin{prop}
+$Y$ is quasi-affine, $U\subset Y$ open nonempty.
+\begin{enumerate}
+\item $\calo(Y)\inj\calo(U)\inj K(Y)$\\
+$f\longmapsto f|_U\mapsto (U,f)$
+\item $K(Y)$ is a field, and identifies with the fraction field of $\calo(Y)$ and of $\calo(U)$.
+\item if $Y$ is an affine variety, then $\calo(Y)$ as defined above coincides with $\calo(Y)=K[X_1,...,X_n]/I(Y)$ as defined in previous sections.\\
+
+(3') If $Y=U_f$ for $0\neq f$ in $\calo(\affn^n)$, then $\calo(Y)=\{f_1/f^d|f_1\in \calo(\affn^n, d\geq 0\}=\calo(\affn^n)_f$ the localization at $f$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(1), The morphism $\calo(Y)\lrta \calo(U)\lrta K(Y)$ are injective because any $U\subset Y,\neq \emptyset$ is dense.
+
+(2) Let $(U,f)\neq 0$ in $K(Y)$, then $\exists x_0\in U$, $f(x_0)\neq 0$ in a $V\subset U$, $x_0\in V$
+$$
+f(x)=\frac{f_1(x)}{f_2(x)}, f_1,f_2\in\calo(\affn^n), f_2\neq 0\text{ in }V
+$$
+in particular, $f_1(x_0)\neq 0$ and $( U\cap\{f_1(x)\neq 0\},\frac{f_2(x)}{f_1(x)})\in K(Y)$, where $U\cap\{f_1(x)\neq 0\}\neq \emptyset$ is the inverse of $(U,f)$ in $K(Y)$. 
+
+By $(1)$, $K(Y)\supset \calo(Y)$.
+
+Let $(U,f)\in K(Y)$, pick $x\in Y$ so that around $x$, $f(x)=\frac{f_1}{f_2}$, $f_i\in\calo(\affn^n)$, then $(U,f)=\frac{(Y,f_1)}{(Y,f_2)}$, so $K(Y)$ is the fraction field of $\calo(Y)$.
+
+(3) Write $\calo'(Y)=K[X]/I(Y)$.  Note $K[X..,Y]/I(Y)$ identifies to a ring of functions on $Y$, the claim is that this ring is $\calo(Y)$.
+
+Observation:
+For $x\in Y$, to say that $f: Y\lrta K$ is ``regular at $x$'' means precisely that $f\in \calo'(Y)_{I_x}$, where $I_x=\{f\in\calo'(Y)|f(x)=0\}$. (Localization at  a maximal ideal)
+
+So $$
+\begin{aligned}
+\calo(Y)&=\bigcap_{x\in Y}\calo'(Y)_{I_x}\\
+&=\bigcap_{\scm\subset\calo'(Y)}\calo'(Y)_\scm\\
+&=\calo'(Y)
+\end{aligned}
+$$
+the second equality from Nullstellensatz and the third from commutative algebra.
+
+(3') Similarly, using characterization of maximal ideals in $A_f, f\neq 0$
+\end{proof}
+
+\begin{dfn}
+K(Y) is called the fraction or function field of $Y$
+\end{dfn}
+
+\begin{ex}
+$K(\affn^n)=K(\proj^n)=K(X_1,..,X_n)$
+\end{ex}
+
+\begin{dfn}
+(Rational maps) $Y_1,Y_2$ varieties. A \textbf{rational map} $f: Y_1\lrta Y_2$ is a pair $(U,\tilde{f})$ where $U\neq \emptyset$ in $Y_1$ and $\tilde{f}:U\lrta Y_2$ is a morphism with $(U,\tilde{f})=(U',\tilde{f}'')$ iff 
+$$
+\tilde{f}|_{U\cap U'}=\tilde{f}'|_{U\cap U'}
+$$
+[Check: this is coherent, i.e., this is an equivalence relation]
+\end{dfn}
+
+\begin{dfn}
+$f:Y_1\dashrightarrow Y_2$ is a dominant if its image $\tilde{f}(U)\subset Y_2$ is dense.
+\end{dfn}
+
+\begin{ex}\ 
+(1) there is a bijection $\{Y\dashrightarrow \affn^1\}=K(Y)$
+$$
+\begin{matrix}
+(U,\tilde{f}) & (U,f)\\
+\tilde{f}:U\lrta \affn^1\text{ morphism } & f: U\lrta K\text{ regular}
+\end{matrix}
+$$
+So it is enough to check 
+$$
+\hom_{Var}(U,\affn^1)=\calo(U)
+$$
+Left as exercise
+
+(2) $Y,f_1,f_2,f_3\in\calo(Y)$
+$$
+\left\{\begin{aligned}
+Y&\dashrightarrow \proj^2\\
+x&\longmapsto [f_1(x):f_2(x):f_2(x)]
+\end{aligned}\right.
+$$
+defined on $\{x|f_i (x) \text{ are not all zero}\}$, which is open if any of the $3$ sections is non-zero.
+\end{ex}
+\begin{thm}
+$Y_1,Y_2$ varieties
+
+$\exists \{Y_1\overset{f}{\dashrightarrow} Y_2|f \text{ dominant}\}$
+
+$\overset{bij}{\llrta}$
+
+$K(Y_2)\lrta K(Y_1)$
+\end{thm}
+
+\begin{cor}
+$Y_1, Y_2$ varieties. $Y_1$ and $Y_2$ are birational 
+
+iff $K(Y_1)$ is isomorphic to $K(Y_2)$
+
+iff $\exists U\subset Y_1$ open $\neq \emptyset$
+$\exists V\subset Y_2$, open $\neq \emptyset$ so that $U$ and $V$ are isomorphic as varieties.
+\end{cor}
+
+\begin{cor}
+Any variety $Y$ of dimension $d\geq 0$ is birational to a hypersurface $V\subset \proj^{d+1}$
+\end{cor}
+\begin{proof}
+(1) Given $Y_1\overset{f}{\dashrightarrow}Y_2$ dominant, we want a morphism
+$K(Y_2)\lrta K(Y_1)$.
+
+ Let $(U,\tilde{f})=f$, $(V,\varphi),\varphi:V\lrta K$ in $K(Y_2)$
+$$
+\varphi\circ f: \tilde{f}^{-1}(V)\lrta K
+$$ 
+ is in $K(Y_1)$, provided $\tilde{f}^{-1}(V)$ is dense, it is enough that $\tilde{f}^{-1}(V)\neq \emptyset$, $\tilde{f}(U)\cap V\neq \emptyset$, since $V$ is open and $\tilde{f}(U)$ is dense.
+
+ (2) Given $i: K(Y_2)\lrta K(Y_1)$. Let $\tilde{Y_2}\subset Y_2\subset \affn^n$ open quasi-affine so that $K(Y_2)=K(\tilde{Y_2})=Frac(\calo(\tilde{Y}_2))$
+
+ Let $X_1,..,X_n$ be the coordinates  in $\affn^n$ as elements of $\calo(\tilde{Y}_2)$, then let
+ $$
+f_j =i (X_j)\in K(Y_1)
+ $$
+ $f_j\llrta (U_j,\tilde{f}_j)$ with $U_j\subset Y_1$ dense and $\tilde{f}_j\in\calo(U_j)$. Then 
+ $f_j\llrta (U,\tilde{f}_j)$, $U:=U_1\cap ...\cap U_n$ still dense.
+
+ Define $U\lrta \tilde{Y}_2\inj Y_2$ by
+ $$
+x\longmapsto (\tilde{f}_1(x),...,\tilde{f}_n(x)).
+ $$
+This is a rational map $Y_1\dashrightarrow Y_2$
+
+\end{proof}
 
 
 \end{document}

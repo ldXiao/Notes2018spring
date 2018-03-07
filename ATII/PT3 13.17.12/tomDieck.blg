@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tomDieck.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: chap3.aux
+A level-1 auxiliary file: chap4.aux
+A level-1 auxiliary file: chap5.aux
+A level-1 auxiliary file: appendixA.aux
+A level-1 auxiliary file: appendixB.aux
+A level-1 auxiliary file: appendixC.aux
+The style file: cambridgeauthordate.bst
+Database file #1: percolation.bib
+You've used 8 entries,
+            2465 wiz_defined-function locations,
+            648 strings with 5838 characters,
+and the built_in function-call counts, 3631 in all, are:
+= -- 365
+> -- 104
+< -- 28
++ -- 37
+- -- 29
+* -- 292
+:= -- 577
+add.period$ -- 35
+call.type$ -- 8
+change.case$ -- 50
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 142
+empty$ -- 286
+format.name$ -- 39
+if$ -- 749
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 50
+num.names$ -- 26
+pop$ -- 51
+preamble$ -- 2
+purify$ -- 58
+quote$ -- 0
+skip$ -- 131
+stack$ -- 0
+substring$ -- 297
+swap$ -- 38
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 60
+warning$ -- 0
+while$ -- 35
+width$ -- 0
+write$ -- 114

@@ -1,0 +1,100 @@
+\contentsline {schapter}{List of illustrations}{vi}{chapter*.2}
+\contentsline {schapter}{List of tables}{vii}{chapter*.3}
+\contentsline {schapter}{List of boxes}{viii}{chapter*.4}
+\contentsline {schapter}{List of contributors}{ix}{chapter*.5}
+\contentsline {part}{{Part\nobreakspace {}I}\hspace *{6pt}{Getting started}}{1}{part.1}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}The \LaTeXe \ book document class}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}The \hbox {PT3} document class}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Implementing the \hbox {PT3} class file}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Implementing the multi-contributor option}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Fonts}{5}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Times}{5}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Adobe Myriad Pro Condensed}{6}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}Submission of files}{6}{section.1.6}
+\contentsline {section}{\numberline {1.7}Make-up}{6}{section.1.7}
+\contentsline {chapter}{\numberline {2}The PT3\ class file in detail}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Topic boxes}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Frenchspacing}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}Adding a subtitle to the front page}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}Adding a blank page to your document}{8}{section.2.4}
+\contentsline {section}{\numberline {2.5}Chapter numbering}{8}{section.2.5}
+\contentsline {section}{\numberline {2.6}Section numbering}{9}{section.2.6}
+\contentsline {section}{\numberline {2.7}Specifying running heads and toc entries}{9}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Single-contributor books}{9}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Multi-contributor books}{10}{subsection.2.7.2}
+\contentsline {section}{\numberline {2.8}Adding author(s) name(s) and affiliation(s)}{11}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Single-contributor books}{11}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Multi-contributor books}{11}{subsection.2.8.2}
+\contentsline {section}{\numberline {2.9}Changing the level of entries in the table of\nobreakspace {}contents}{12}{section.2.9}
+\contentsline {section}{\numberline {2.10}List of contributors}{12}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}Note to editors regarding the list of contributors}{13}{subsection.2.10.1}
+\contentsline {section}{\numberline {2.11}Adding a Part quotation}{13}{section.2.11}
+\contentsline {section}{\numberline {2.12}Adding a Chapter quotation}{14}{section.2.12}
+\contentsline {section}{\numberline {2.13}Adding a `copyright' line to a chapter opening\nobreakspace {}page}{14}{section.2.13}
+\contentsline {section}{\numberline {2.14}Lists}{14}{section.2.14}
+\contentsline {section}{\numberline {2.15}Extracts}{15}{section.2.15}
+\contentsline {section}{\numberline {2.16}Endnotes}{16}{section.2.16}
+\contentsline {subsection}{\numberline {2.16.1}Single-contributor books}{16}{subsection.2.16.1}
+\contentsline {subsection}{\numberline {2.16.2}Multi-contributor books}{16}{subsection.2.16.2}
+\contentsline {section}{\numberline {2.17}Examples}{17}{section.2.17}
+\contentsline {section}{\numberline {2.18}Exercises}{18}{section.2.18}
+\contentsline {subsection}{\numberline {2.18.1}Exercises at the end of sections}{18}{subsection.2.18.1}
+\contentsline {subsection}{\numberline {2.18.2}Exercises at the end of chapters}{18}{subsection.2.18.2}
+\contentsline {section}{\numberline {2.19}Problems}{19}{section.2.19}
+\contentsline {subsection}{\numberline {2.19.1}Problems at the end of sections}{19}{subsection.2.19.1}
+\contentsline {subsection}{\numberline {2.19.2}Problems at the end of chapters}{19}{subsection.2.19.2}
+\contentsline {section}{\numberline {2.20}Margin boxes}{20}{section.2.20}
+\contentsline {section}{\numberline {2.21}Floating boxes}{20}{section.2.21}
+\contentsline {section}{\numberline {2.22}Figures}{20}{section.2.22}
+\contentsline {subsection}{\numberline {2.22.1}Wide figures 28--35pc}{21}{subsection.2.22.1}
+\contentsline {section}{\numberline {2.23}Tables}{21}{section.2.23}
+\contentsline {subsection}{\numberline {2.23.1}My vertical rules have disappeared}{22}{subsection.2.23.1}
+\contentsline {subsection}{\numberline {2.23.2}Reinstating the vertical rules}{23}{subsection.2.23.2}
+\contentsline {subsection}{\numberline {2.23.3}There is very little space around the rules in my\nobreakspace {}table}{23}{subsection.2.23.3}
+\contentsline {subsection}{\numberline {2.23.4}Adding space between columns}{24}{subsection.2.23.4}
+\contentsline {subsection}{\numberline {2.23.5}Adding space between rows}{25}{subsection.2.23.5}
+\contentsline {section}{\numberline {2.24}Landscape figures and tables, using rotating.sty}{25}{section.2.24}
+\contentsline {subsection}{\numberline {2.24.1}Coding for landscape figures}{25}{subsection.2.24.1}
+\contentsline {subsection}{\numberline {2.24.2}Coding for landscape tables}{26}{subsection.2.24.2}
+\contentsline {section}{\numberline {2.25}Summary}{26}{section.2.25}
+\contentsline {chapter}{\numberline {3}Mathematical solutions}{30}{chapter.3}
+\contentsline {section}{\numberline {3.1}Why are we using amsthm.sty?}{30}{section.3.1}
+\contentsline {section}{\numberline {3.2}amsthm styles}{31}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}amsthm \texttt {plain} style}{31}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}amsthm \texttt {definition} style}{32}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}amsthm \texttt {remark} style}{32}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Proofs}{33}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Changing the word `Proof' to something else}{33}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Typesetting a proof without a \hbox {\unhbox \voidb@x \hbox to.77778em{\hfil \vrule \vbox to.675em{\hrule width.6em\vfil \hrule }\vrule \hfil }}}{34}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Placing the \hbox {\unhbox \voidb@x \hbox to.77778em{\hfil \vrule \vbox to.675em{\hrule width.6em\vfil \hrule }\vrule \hfil }} after a displayed equation}{34}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Placing the \hbox {\unhbox \voidb@x \hbox to.77778em{\hfil \vrule \vbox to.675em{\hrule width.6em\vfil \hrule }\vrule \hfil }} after a displayed eqnarray}{35}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Boxed equations}{35}{section.3.4}
+\contentsline {part}{{Part\nobreakspace {}II}\hspace *{6pt}{Closing features}}{37}{part.2}
+\contentsline {chapter}{\numberline {4}Reference and bibliography lists}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Automatic lists using BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Citations using natbib commands}{39}{section.4.2}
+\contentsline {section}{\numberline {4.3}How to change reference entries from author--date to\nobreakspace {}numbers}{40}{section.4.3}
+\contentsline {section}{\numberline {4.4}Keying in your reference list for an author--date system}{40}{section.4.4}
+\contentsline {section}{\numberline {4.5}Keying in your reference list for a numbered system}{42}{section.4.5}
+\contentsline {chapter}{\numberline {5}Indexes}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Creating a single index using makeidx.sty}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Creating multiple indexes using multind.sty}{43}{section.5.2}
+\contentsline {section}{\numberline {5.3}Creating multiple indexes using index.sty}{44}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Caution -- from the authors of index.sty}{45}{subsection.5.3.1}
+\contentsline {chapter}{\AJW@numberline {A}Typesetting appendices}{47}{appendix.A}
+\contentsline {section}{\numberline {A.1}Single-contributor books}{47}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}How to typeset one appendix}{47}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}How to typeset several appendices}{47}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Multi-contributor books}{47}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}How to typeset one appendix}{47}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}How to typeset several appendices}{48}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Numbering systems}{48}{section.A.3}
+\setcounter {tocdepth}{0}
+\contentsline {chapter}{\AJW@numberline {B}amsthm commands}{49}{appendix.B}
+\contentsline {chapter}{\AJW@numberline {C}The root file for this\nobreakspace {}guide}{50}{appendix.C}
+\vspace {\baselineskip }
+\contentsline {schapter}{Notes}{53}{appendix*.9}
+\contentsline {schapter}{References}{54}{appendix*.11}
+\contentsline {schapter}{Author index}{55}{appendix*.11}
+\contentsline {schapter}{Subject index}{56}{appendix*.11}

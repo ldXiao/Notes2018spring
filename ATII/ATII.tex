@@ -315,6 +315,307 @@ Take the direct sum over $i$ and use the fact that
 \end{proof}
 
 
+\section{2nd Mar: Eilenberg-Zilber}
+
+\begin{thm}
+(Eilenberg-Zilber) if $X$ and $Y$ are two topological spaces. There is a nontrivial chain equivalence
+$$
+\Omega_\bullet: C_\bullet(X\times Y)\lrta C_\bullet(X)\otimes C_\bullet (Y)
+$$
+
+which is unique up to chain homotopy
+\end{thm}
+
+Digression on chain equivalences
+\begin{lemma}
+Let $(C_\bullet,\pd)$ be a free chain complex. Then $C_\bullet$ is acyclic iff it  has contracting chain homotopy
+\end{lemma}
+\begin{proof}
+A contracting homotopy means $Q:C_n\lrta C_{n+1}$ s.t. $Q\pd+\pd Q=id$. 
+
+If such $Q$ exists then $H_n(C_\bullet)=0\forall n$. That direction doesn't require $C_\bullet$ to be free
+$$
+B_n\subseteq Z_n\subseteq C_n
+$$
+If we assume $C_\bullet$ is acyclic then
+$$
+B_n=Z_n,\forall n
+$$ 
+$$
+0\lrta Z_n \overset{i}{\lrta} C_n\overset{\pd}{\lrta}Z_{n_1}\lrta 0
+$$
+
+Since $Z_{n-1}$ is free abelian  the sequence splits $\exists r_n:Z_{n-1}\lrta C_n$ s.t. $\pd\circ r_n=id$. Note that $id- r_{n-1}\circ \pd$ jas image in $Z_{n-1}$, $c\in C_n$. $\pd(c-r_n\pd c)=\pd c-\pd c=0$
+
+Now define 
+$Q_n:C_n\lrta C_{n+1}$ by $Q_{n}=r_n (id-r_{n-1}\circ\pd)$. This works.
+$$
+\begin{aligned}
+\pd Q_n +Q_{n-1}\pd
+&=\pd r_n (id -r_{n-1}\pd)+r_{n-1}( id-r_{n-2}\pd )\pd\\
+&=id -r_{n-1}\pd+r_{n-1}\pd -r_{n-1}r_{n-2}\pd^2\\
+&=0
+\end{aligned}
+$$
+\end{proof}
+\begin{dfn}
+Suppose $f:(C_\bullet,\pd)\lrta (D_\bullet,\pd')$. The \textbf{mapping cone } of $f$ is the chain complex $Cone_\bullet(f),\pd^f$, where $Cone_n(f)=C_{n-1}\otimes D_n$ and 
+$\pd^f:Cone_n(f)\lrta Cone_{n-1}(f)$
+$$
+\pd^f(c,d)=(-\pd c,f c+\pd' d)
+$$
+$$
+\pd^f=
+\begin{pmatrix}
+&-\pd & 0\\
+& f &\pd'
+\end{pmatrix}
+$$
+\end{dfn}
+
+Note if $C_\bullet$ and $D_\bullet$ are free chain complex, so is the cone.
+
+\begin{lemma}
+If $f:C_\bullet\lrta D_\bullet$ is a chain map between two free chain complexes and $Cone_\bullet(f)$ is acyclic then $f$ is  a chain equivalence.
+\end{lemma}
+\begin{proof}
+If $Cone_\bullet(f)$ is acyclic, there exists $Q$ s.t.
+$$
+Q\pd^f+\pd^f Q=id
+$$
+$$
+Q=
+\begin{pmatrix*}
+p & g\\
+r & -p'
+\end{pmatrix*}
+$$
+$$
+\begin{pmatrix*}
+\pd & 0\\
+f & -\pd'
+\end{pmatrix*}
+\begin{pmatrix*}
+p & g\\
+r & -p'
+\end{pmatrix*}
++
+\begin{pmatrix*}
+p & g\\
+r & -p'
+\end{pmatrix*}
+\begin{pmatrix*}
+\pd & 0\\
+f & -\pd'
+\end{pmatrix*}
+=\begin{pmatrix*}
+id & 0\\
+0 & id
+\end{pmatrix*}
+$$
+$$
+\begin{pmatrix*}
+-\pd p-p\pd +gf & -\pd g+g \pd'\\
+* & fg-\pd' p'-p'\pd'
+\end{pmatrix*}
+\begin{pmatrix*}
+id & 0\\
+0 & id
+\end{pmatrix*}
+$$
+Then we know 
+$g:D_\bullet \lrta D_\bullet$ is a chain map
+
+$p\pd +\pd p=gf-id$
+
+$p'\pd'+\pd'p=fg-id$. Thus $f$ is a chain equivalence with inverse $g$.
+\end{proof}
+
+\begin{lemma}
+Let $f: C_\bullet\lrta D_\bullet$. Then there is a LES
+$$
+\cdots\lrta H_{n+1}(Cone_\bullet(f))\lrta H_n(C_\bullet)\overset{H_{n}(f)}{\lrta} H_n (D_\bullet)\lrta H_n(Cone_\bullet(f))\lrta \cdots
+$$
+\end{lemma}
+\begin{proof}
+Denote by $C^+_\bullet$ the chain complex $C^+_n=C_{n-1}$. There is a SES
+$$
+0\lrta D_\bullet\overset{i}{\lrta} Cone_\bullet(f)\overset{p}{\lrta} C^+_\bullet\lrta 0
+$$
+with $i(d)=(0,d)$ and $p (c,d)=c$
+
+Pass to the LES in homology
+\[
+\begin{tikzcd}
+\cdots  \arrow[r] & H_{n+1}(Cone_\bullet(f)) \arrow[r] & H_{n+1}(C^+_\bullet) \arrow[r] \arrow[d, equal] & H_n(D_\bullet) \arrow[r] & H_n(Cone_\bullet(f)) \arrow[r] & \cdots \\
+ &  & H_n(C_\bullet) &  &  & 
+\end{tikzcd}
+\]
+
+It remains to check $\delta=H_n(f)$.
+
+
+Note if $c$ is a cycle in $C_n$. Then 
+$$
+\pd^f\circ p^{-1}(c)=(-\pd c, fc)=(0,fc)=i(fc)
+$$
+$$
+\delta:\lgl c\rgl\longmapsto \lgl i^{-1}\pd^fp^{-1}c\rgl=\lgl fc\rgl= H_{n}(f)\lgl c\rgl
+$$
+\end{proof}
+
+\begin{prop}
+Suppose $F:C_\bullet\lrta D_\bullet$ is  a chain map between the two free chain complex . Then $F$ is a chain equivalence iff 
+$$
+H_n(f): H_n(C_\bullet)\lrta H_n(D_\bullet)
+$$
+is an isomorphism for all $n$,
+\end{prop}
+\begin{proof}
+If $f$ is a chain equivalence then $H_n (f)$ is always a isomorphism. This does not require any freeness assumptions and we proved in last semester.
+
+For the converse, if $H_n(f)$ is always an isomorphism, then the LES
+$$
+\cdots\lrta H_{n+1}(Cone_\bullet(f))\lrta H_n(C_\bullet)\overset{\cong}{\lrta} H_n (D_\bullet)\lrta H_n(Cone_\bullet(f))\lrta \cdots
+$$
+This implies $H_n(Cone_\bullet (f))=0,\forall n$. Then $Cone_\bullet(f)$ is acyclic, and we can conclude by the previous lemma.
+\end{proof}
+
+\underline{Recap on Acyclic models.}
+
+\begin{dfn}
+Suppose $\calc$ is a category and $T_\bullet:\calc\lrta Comp$ is a functor. A family of \textbf{models} in $\calc$ is simply a subset of $obj(\calc)$
+
+Fix $n\in \intg$ and consider  $T_n:\calc\lrta Ab$
+$$
+T_n(\calc)=(T_\bullet(\calc))_{n \text{th group}}
+$$
+
+A $T_n$ model set $\chi$ is simply a choice of element $x_\lambda\in T_n(M_\lambda)$ for each $\lambda$ $\mathcal{M}=\{M_\lambda|\lambda\in \Lambda\}$
+
+We say that the model is free if the following condition holds.
+\begin{enumerate}
+\item $T_n(C)$ is a free abelian group $\forall C\in \calc$
+\item There is a $T_n$-model set $\{x_\lambda|\lambda\in \Lambda\}$ s..t
+$$
+\{T_n(f)()x_\lambda|f\in Hom(M_\lambda,C), \lambda\in \Lambda\}
+$$
+is a basis for the free abelian group $T_n(C)$.
+\end{enumerate}
+$f: M_\lambda\lrta C$ is a  morphism in $\calc$ $T_n (f): T(M_\lambda)\lrta T_n(C)$ is a  homomorphism between two abelian groups. $T(M_\lambda)\in T_n(f)(x_\lambda)$ does indeed belong to $T_n(C)$. A baissi for $T_n(C)$ is obtained by letting $f$ run over all of $Hom(M_\lambda, C)$ and letting $\lambda$ run over $\Lambda$. 
+
+We say $T_\bullet:\calc\lrta Comp$ if free with basis in $\mathcal{M}$ if each $T_n$ is free with basis in $\mathcal{M}$
+\end{dfn}
+
+\begin{dfn}
+$T_\bullet\calc\lrta Comp$, we say $T_\bullet$ is\textbf{non-negative} if $T_n(C)=0$ forall $n<0$ and $\forall C$. $T_\bullet$ is \textbf{acyclic in the positive degrees on $C$} if $H_n(T_\bullet(C))=0,\forall n>0$. 
+\end{dfn}
+Suppose $T_\bullet C\lrta Comp$. $H_0\circ T_\bullet \calc\lrta Ab$.
+\begin{thm}
+Suppose $\calc$ is a categroy with omdels $\mathcal{M}$. Supose $S_\bullet, T_\bullet:\calc\lrta Comp$ are 2 functors such that $S$ and $T$ are non-negative and acyclic in positive degree on every model, and 
+both $S$ and $T$ are free with basis in $\mathcal{M}$.
+
+Suppose 
+$$
+\Theta: H_0\circ S_\bullet\lrta H_0\circ T_\bullet
+$$
+ is a natural equivalence. $\exists $ a  natural cahin equivalence $\Psi_\bullet:S_\bullet\lrta T_\bullet$ which isn unique up to chain homotopy and has $H_0(\Psi_\bullet)=\Theta$
+\end{thm}
+\begin{ex}
+Take $\calc=Top$, $\mathcal{M}=\{\Delta^n|n\geq 0\}$.  $T$ is the singular chain functor.
+$$
+\calc_\bullet: Top\lrta Comp
+$$
+$$
+X\mapsto C_\bullet(X)
+$$
+$C_\bullet$ is non-negative, \checkmark.
+$H_n(C_\bullet(\Delta^i))=H_n(\Delta^i)=$.
+
+
+\end{ex}
+\underline{Claim}: $C_n$ is free with basis in $\Delta^n$
+
+Choose an element $x\in C_n(\Delta^n)$. Take $x$ to be the identity map $\Delta^n\lrta \Delta^n$, write this as $\ell_n:\Delta^n\lrta \Delta^n$. Think of the identity map as an element of $C_n(\Delta^n)$ if $\sigma$ is any $n-$simplex in any topological space
+$C_n(\sigma)(\ell_n)=\sigma\circ \ell_n=\sigma$
+
+$\{C_n(\sigma)(\ell_n)|\sigma: \Delta^n\lrta X\}$ is basis for the free abelian group $C_n(X)$.
+
+Eilenberg-Zilber
+$Top\times Top$ is the category of pairs $(X,Y)$ of topological spaces.
+
+We will define two functor from $Top\times Top\lrta Comp$
+$S_\bullet(X,Y)=C_\bullet(X,Y)$. $T_\bullet (X,Y)=C_\bullet(X)\otimes C_\bullet(Y)$
+
+For models
+$$
+\mathcal{M}=\{(\Delta^i,\Delta^j), i,j \geq 0\}
+$$ 
+\underline{Claim}: $S$ and $T$ are both acyclic in positive degree on $\mathcal{M}$ and free with basis in $\mathcal{M}$
+
+$S_\bullet$, $H_n(S_\bullet(\Delta^i, \Delta^j))=H_n(\Delta^i\times \Delta^j)=0$, $\forall n>0, \forall i,j$
+
+$S_i: Top\times Top\lrta Ab$
+
+$S_i(X, Y)=C_i (X\times Y)$
+
+\underline{Claim}: $\{(\Delta^i,\Delta^i)\}$ is a $S_i$-model set and a basis is $d_i:\Delta^i\otimes \Delta^i$ the diagonal map $x\mapsto (x,x)$ gives a basis
+$$
+\sigma: \Delta^i\lrta X\times Y
+$$
+we can write 
+$\sigma=(\sigma_x,\sigma_y)\circ d_i$,  where $\sigma_x=p_X\circ \sigma$ be the composition of $\sigma$ with $p_X:X\times Y\lrta X$.
+
+$\sigma=S_i(\sigma)(d_i)$ so that
+$\{s_i(\sigma )(d_i\|\sigma: \Delta^i\lrta X\times Y\}$ is a basis of the free abelian group $C_i(X\times Y)$. $T_i(X\times Y)=(C_\bullet(X)\otimes C_\bullet(Y))$. $T_i(X, Y)$ is the tensor product of the free groups and so is free.
+$\{(\ell_i,\ell_j)|i+j=n\}$ is a $T_n$-model basis.
+
+The last thing to check is that $T_\bullet(\Delta^i, \Delta^j)$ is acyclic in positive degrees
+$$
+H_n(C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j))=0,\forall n>0.
+$$
+We can not compute this! However we can cheat
+$$
+H_n(C_\bullet(\Delta^i))=H_n(\Delta^i)=\left\{\begin{matrix*}
+ \intg & n=0\\
+ 0 & n\neq 0
+\end{matrix*}\right.
+$$
+
+Consider the chain complex
+$$
+0\lrta 0\lrta \cdots\lrta 0\lrta \intg\lrta 0\cdots
+$$
+$C_\bullet(\Delta^i)$ has the same homology as this complex. Thus $C_\bullet(\Delta^i)$ is equivalenct to the complex and $C_\bullet(\Delta^j)$ is also chain equivalent to it. $C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j)$ is chain equivalent to 
+$$
+0\lrta 0\lrta \cdots\lrta 0\lrta \intg\otimes \intg\lrta 0\cdots
+$$
+Thus $H_n(C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j))=H_n(0\lrta \intg\otimes \intg\lrta 0\cdots)$
+
+\underline{Want}: 
+$\Theta:H_0\circ S_\bullet\lrta H_0\circ T_\bullet$ is a natural equivalence.
+$$
+(x,y)\mapsto x\otimes y
+$$
+$$
+H_0(C_\bullet(X\times Y))\lrta H_0(C_\bullet(X)\otimes C_\bullet (Y))
+$$
+By the Acylic model theorem
+$$
+\Omega_\bullet: S_\bullet\lrta T_\bullet
+$$
+ is a natural chain equivalence
+ $$
+\Omega_\bullet:C_\bullet(X\times Y)\lrta C_\bullet(X)\otimes C_\bullet(Y)
+ $$
+
+\begin{cor}
+Kueneth formula.
+Let $X$ and $Y$  be otpological spaces then for $n\geq0$
+
+There is a split exact sequence
+\end{cor}
+
 
 
 \end{document}

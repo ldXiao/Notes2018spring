@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  1 MAR 2018 11:55
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  5 MAR 2018 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -941,21 +941,26 @@ mr/m/n/10.95 (\OML/cmm/m/it/10.95 H[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C[
 /10.95 D[]\OT1/cmr/m/n/10.95 )) [][]\OMS/cmsy/m/n/10.95 ! \OT1/cmr/m/n/10.95 0
  []
 
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
+[5] [6]
+Overfull \hbox (62.0053pt too wide) detected at line 451
+[]
+ []
+
+[7] [8] [9] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
  (./ATII.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 320.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 320.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 320.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 619.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 619.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
  ) 
 Here is how much of TeX's memory you used:
- 30758 strings out of 493706
- 694283 string characters out of 6145769
- 823214 words of memory out of 5000000
- 33619 multiletter control sequences out of 15000+600000
+ 30838 strings out of 493706
+ 696281 string characters out of 6145769
+ 825214 words of memory out of 5000000
+ 33699 multiletter control sequences out of 15000+600000
  16356 words of font info for 64 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,14n,84p,721b,1036s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ATII.pdf (5 pages).
+Output written on ATII.pdf (10 pages).

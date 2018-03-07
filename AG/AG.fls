@@ -303,10 +303,6 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT AG.toc
 INPUT AG.toc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT AG.toc
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -314,7 +310,13 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam1
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+OUTPUT AG.toc
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
@@ -323,5 +325,9 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT AG.aux

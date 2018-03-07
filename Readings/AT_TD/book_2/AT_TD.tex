@@ -59,7 +59,7 @@
 \begin{tikzpicture}[remember picture, overlay]
 \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{blue_background}};
 \draw (7,-5) node{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Algebraic Topology\\[15pt] % Book title
-{\Large  A solution manual by and for stupid student}\\[20pt] % Subtitle
+{\Large  An exercise-oriented notes}\\[20pt] % Subtitle
 {\huge Vector\_Cat }}}; % Author name
 \end{tikzpicture}
 \vfill
@@ -150,6 +150,17 @@ where the diagram commutes up to a homotopy $\Psi: f'\circ \alpha\simeq \beta \c
 %\part{Homologies}
 
 \chapter{Singular homology}
+\section{Singular Homology Groups}
+\section{The Fundamental Group
+}
+
+\section{Homotopy
+}
+\section{Barycentric Subdivision. Excision}
+\section{Weak Equivalences and Homology}
+\section{Homology with Coefficients}
+\section{The Theorem of Eilenberg and Zilber}
+\section{The Homology Product}
 \chapter{Homology}
 \section{The Axioms of Eilenberg and Steenrod}
 
@@ -161,8 +172,29 @@ where the diagram commutes up to a homotopy $\Psi: f'\circ \alpha\simeq \beta \c
 \section{Cochain complex}
 \section{Natural chain maps and homotopies}
 \section{Linear algebra of chain complexes}
+\begin{definition}
+Suppose $(C_\bullet,\pd)$ and $(C'_\bullet,\pd')$ are two non-negative chain complexes. We define the  \textbf{tensor complex} $(C_\bullet\otimes C_\bullet',\Delta)$, where
+$$
+(C_\bullet\otimes C'_\bullet)_n=\oplus_{i+j=n}C_i\otimes C_j'
+$$
+and the differential $\Delta$ is defined by 
+$$
+\Delta(c_i\otimes c'_j)=\pd c_i\otimes c'_j+(-1)^{i}c_i\otimes \pd' c_j
+$$
+\end{definition}
+\begin{definition}
+Suppose $f_\bullet:C_\bullet\lrta D_\bullet$ and $g_\bullet: C'_\bullet\lrta D'_\bullet$ are two morphism of chain complexes. Then we can define a chain map
+$$
+f\otimes g: C_\bullet\otimes C_\bullet'\lrta D_\bullet\otimes D_\bullet'
+$$
+by 
+$$
+(f\otimes g)_n=\sum_{i+j=n}f_i\otimes g_j
+$$
+It is easy to check this is indeed a chain map.
+\end{definition}
 \begin{exr}
-Tensor product is compatible with chain homotopy. Let $s:  f \simeq g: C\lrta C'$  be a chain homotopy. Then $s\otimes id :f\otimes id  \simeq g \otimes id : C\otimes D \lrta C' \otimes D$ is a chain homotopy.
+Tensor product is compatible with chain homotopy. Let $s:  f \simeq g: C_\bullet\lrta C_\bullet'$  be a chain homotopy. Then $s\otimes id :f\otimes id  \simeq g \otimes id : C_\bullet\otimes D_\bullet \lrta C_\bullet' \otimes D_\bullet$ is a chain homotopy.
 \end{exr}
 \begin{proof}
 \underline{Know}: $ s\pd_{C}+\pd_{C'} s=f-g$
@@ -193,17 +225,556 @@ $$
 &=(f\otimes id_D-g\otimes id_D)(c_n\otimes d_m)
 \end{aligned}
 $$
-We are done. Also we can generalize this statemnt to 
+We are done. Also we can generalize this statement to 
 
- Let $s:  f \simeq g: C\lrta C'$ and  $t:  p \simeq q: D\lrta D'$ be chain homotopies. Then $s\otimes t :f\otimes p  \simeq g \otimes q : C\otimes D \lrta C' \otimes D'$ is a chain homotopy. We easily conclude by $s\otimes id$ and $id\otimes s$ are chain homotopy and composition of chain homotopies is a chain homotopy.
+ Let $s:  f \simeq g: C\lrta C'$ and  $t:  p \simeq q: D\lrta D'$ be chain homotopies. Then $s\otimes t :f\otimes p  \simeq g \otimes q : C\otimes D \lrta C' \otimes D'$ is a chain homotopy. We easily conclude by $s\otimes id$ and $id\otimes t$ are chain homotopy and composition of chain homotopies is a chain homotopy.
+\end{proof}
+
+\begin{exr}\label{chap11exr:free_acyclic_contracting_chain_homotopy}
+Let $(C_\bullet,\pd)$ be a free chain complex. Then $C_\bullet$ is acyclic iff it  has contracting chain homotopy
+\end{exr}
+\begin{proof}
+A contracting homotopy means $Q:C_n\lrta C_{n+1}$ s.t. $Q\pd+\pd Q=id$. 
+
+If such $Q$ exists then $H_n(C_\bullet)=0\forall n$. That direction doesn't require $C_\bullet$ to be free.
+
+As for the reverse direction, consider
+$$
+B_n\subseteq Z_n\subseteq C_n
+$$
+If we assume $C_\bullet$ is acyclic then
+$$
+B_n=Z_n,\forall n
+$$ 
+$$
+0\lrta Z_n \overset{i}{\lrta} C_n\overset{\pd}{\lrta}Z_{n-1}\lrta 0
+$$
+
+Since $Z_{n-1}$ is free abelian  the sequence splits $\exists r_n:Z_{n-1}\lrta C_n$ s.t. $\pd\circ r_n=id$. Note that $id- r_{n-1}\circ \pd$ has image in $Z_{n-1}$, $c\in C_n$. $\pd(c-r_n\pd c)=\pd c-\pd c=0$
+
+Now define 
+$Q_n:C_n\lrta C_{n+1}$ by $Q_{n}=r_n (id-r_{n-1}\circ\pd)$. This works.
+$$
+\begin{aligned}
+\pd Q_n +Q_{n-1}\pd
+&=\pd r_n (id -r_{n-1}\pd)+r_{n-1}( id-r_{n-2}\pd )\pd\\
+&=id -r_{n-1}\pd+r_{n-1}\pd -r_{n-1}r_{n-2}\pd^2\\
+&=id
+\end{aligned}
+$$
+\end{proof}
+\begin{definition}
+Suppose $f:(C_\bullet,\pd)\lrta (D_\bullet,\pd')$. The \textbf{mapping cone } of $f$ is the chain complex $Cone_\bullet(f),\pd^f$, where $Cone_n(f)=C_{n-1}\otimes D_n$ and 
+$\pd^f:Cone_n(f)\lrta Cone_{n-1}(f)$
+$$
+\pd^f(c,d)=(-\pd c,f c+\pd' d)
+$$
+$$
+\pd^f=
+\begin{pmatrix}
+&-\pd & 0\\
+& f &\pd'
+\end{pmatrix}
+$$
+\end{definition}
+\begin{exr}\label{chap11exr:acyclic_mapping_cone_chain_equivalence}
+If $f:C_\bullet\lrta D_\bullet$ is a chain map between two free chain complexes and $Cone_\bullet(f)$ is acyclic then prove $f$ is  a chain equivalence.
+\end{exr}
+\begin{proof}
+Note that the definition of mapping cone implies $Cone_\bullet(f)$ to be a free chain complex. Then we can apply Exercise~\ref{chap11exr:free_acyclic_contracting_chain_homotopy} and there is a contracting chain homotopy
+$Q$ such that $$
+Q\pd^f+\pd^f Q=id
+$$
+$$
+Q=
+\begin{pmatrix}
+p & g\\
+r & -p'
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+\pd & 0\\
+f & -\pd'
+\end{pmatrix}
+\begin{pmatrix}
+p & g\\
+r & -p'
+\end{pmatrix}
++
+\begin{pmatrix}
+p & g\\
+r & -p'
+\end{pmatrix}
+\begin{pmatrix}
+\pd & 0\\
+f & -\pd'
+\end{pmatrix}
+=\begin{pmatrix}
+id & 0\\
+0 & id
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+-\pd p-p\pd +gf & -\pd g+g \pd'\\
+* & fg-\pd' p'-p'\pd'
+\end{pmatrix}=
+\begin{pmatrix}
+id & 0\\
+0 & id
+\end{pmatrix}
+$$
+Then we know 
+$g:D_\bullet \lrta D_\bullet$ is a chain map
+
+$p\pd +\pd p=gf-id$
+
+$p'\pd'+\pd'p'=fg-id$. Thus $f$ is a chain equivalence with inverse $g$.
+\end{proof}
+\begin{lemma}
+Let $f: C_\bullet\lrta D_\bullet$. Then there is a LES
+$$
+\cdots\lrta H_{n+1}(Cone_\bullet(f))\lrta H_n(C_\bullet)\overset{H_{n}(f)}{\lrta} H_n (D_\bullet)\lrta H_n(Cone_\bullet(f))\lrta \cdots
+$$
+\end{lemma}
+\begin{proof}
+Denote by $C^+_\bullet$ the chain complex $C^+_n=C_{n-1}$. There is a SES
+$$
+0\lrta D_\bullet\overset{i}{\lrta} Cone_\bullet(f)\overset{p}{\lrta} C^+_\bullet\lrta 0
+$$
+with $i(d)=(0,d)$ and $p (c,d)=c$
+
+Pass to the LES in homology
+\[
+\begin{tikzcd}
+\cdots  \arrow[r] & H_{n+1}(Cone_\bullet(f)) \arrow[r] & H_{n+1}(C^+_\bullet) \arrow[r,"\delta"] \arrow[d, equal] & H_n(D_\bullet) \arrow[r] & H_n(Cone_\bullet(f)) \arrow[r] & \cdots \\
+ &  & H_n(C_\bullet) &  &  & 
+\end{tikzcd}
+\]
+
+It remains to check $\delta=H_n(f)$.
+
+
+Note if $c$ is a cycle in $C_n$. Then 
+$$
+\pd^f\circ p^{-1}(c)=(-\pd c, fc)=(0,fc)=i(fc)
+$$
+$$
+\delta:\lgl c\rgl\longmapsto \lgl i^{-1}\pd^fp^{-1}c\rgl=\lgl fc\rgl= H_{n}(f)\lgl c\rgl
+$$
+\end{proof}
+\begin{exr}\label{chap11exr:free_chain_equivalence_isomorphic_homology}
+Suppose $f:C_\bullet\lrta D_\bullet$ is  a chain map between the two free chain complex . Then $f$ is a chain equivalence iff 
+$$
+H_n(f): H_n(C_\bullet)\lrta H_n(D_\bullet)
+$$
+is an isomorphism for all $n$,
+\end{exr}
+\begin{proof}
+If $f$ is a chain equivalence then $H_n (f)$ is always a isomorphism. This does not require any freeness assumptions and we proved in last semester.
+
+For the converse, if $H_n(f)$ is always an isomorphism, then the LES
+$$
+\cdots\lrta H_{n+1}(Cone_\bullet(f))\lrta H_n(C_\bullet)\overset{\cong}{\lrta} H_n (D_\bullet)\lrta H_n(Cone_\bullet(f))\lrta \cdots
+$$
+This implies $H_n(Cone_\bullet (f))=0,\forall n$. Then $Cone_\bullet(f)$ is acyclic, and we can conclude by Exercise~\ref{chap11exr:acyclic_mapping_cone_chain_equivalence}.
 \end{proof}
 \section{Tor and Ext}
-\section{Universal coeffcients}
-\section{The K\"unneth Formula}
+\begin{definition}
+Suppose $A$ is an abelian group, A \textbf{Free resolution} is an exact sequence of the form
+$$
+\cdots\lrta F_2\overset{f_2}{\lrta}F_1\overset{f_1}{\lrta}F_0\overset{f_0}{\lrta}A\lrta 0,
+$$
+where each $F_i$ is a free abelian group. If moreover $F_i=0,\forall i\geq 2$, we call it \textbf{Short free resolution} 
+$$
+0\lrta K\lrta F\lrta A\lrta 0
+$$
+\end{definition}
+(We can easily generalize this definition to $R$-modules)
+\begin{proposition}
+Let $A$ be an abelian group. Then there exists a short free resolution of $A$.
+\end{propposition}
+\begin{proof}
+Let $F$ be the free abelian group generated by all elements in $A$. There is a surjection from $F$ to $A$ by linearly extending the map sending basis element to itself. Let $K$ denote the kernel of this map. $K$ is an abelian subgroup of a free abelian group ($\intg$-module).  A subgroup of a free abelian group is torsion free as a module. $\intg$ is a $PID$. If $R$ is a $PID$, then an  $R$-module is free iff it is torsion free (See Bosch section 4.2). Then we know in particular, $K$ is a free abelian group.
+\end{proof}
+With this construction, we can define the $\tor$ functor now:
+\begin{definition}
+Let $A$ be an abelian group. Let $0\rta K\overset{f}{\rta}F\rta A\rta 0$ be a short free resolution of $A$. Given any other abelian group $B$, we define 
+$$
+\tor(A,B):=\ker(f\otimes id_B)
+$$
+\tor(A,B) can be more generally defined in the category of $R$-modules, where $R$ is a principal ideal ring, where short free resolution does exist. 
+\end{definition}
+\section{Universal coefficients}
+\section{Algebraic K\"unneth formula}
+In this section
+we would prove an algebraic version of K\"unneth formula for free chain complexes. In the next section we would prove Eilenber-Zilber theorem and then derive the general K\"unneth formula as a corollary of the algebraic one. 
+\begin{theorem}\label{chap11thm:Algebraic_Kuenneth_formula}
+(Algebraic K\"unneth Theorem) Let $(C,\pd)$ and $(D,\pd')$ be two non-negative free complex. Then for every $n\geq 0$, there is a split exact sequence
+$$
+0\lrta \oplus_{i+j=n}H_i(C_\bullet)\otimes H_j(D_\bullet)\overset{\omega}{\lrta} H_n(C_\bullet\otimes D_\bullet)\lrta \oplus_{k+\ell=n-1}\tor(H_k(C_\bullet),H_\ell(D_\bullet))\lrta 0
+$$
+where $\omega$ is the map $\langle c_i\rangle\otimes \lgl d_j\rgl\mapsto \lgl c_i\otimes d_j\rgl$. 
+Thus there also exists a (non-natural) isomorphism 
+$$
+H_n(C_\bullet\times D_\bullet)\cong \left(\bigoplus_{i+j=n}H_i(C_\bullet)\otimes H_j (D_\bullet)\right)\oplus\left(\bigoplus_{k+\ell=n-1} \tor(H_k(C_\bullet),H_\ell(D_\bullet))\right)
+$$
+\end{theorem}
+\section{Eilenberg-Zilber theorem and K\"unneth formula}
+\begin{theorem}
+(Eilenberg-Zilber) if $X$ and $Y$ are two topological spaces. There is a nontrivial chain equivalence
+$$
+\Omega_\bullet: C_\bullet(X\times Y)\lrta C_\bullet(X)\otimes C_\bullet (Y)
+$$
+
+which is unique up to chain homotopy.
+\end{theorem}
+\begin{proof}
+$Top\times Top$ is the category of pairs $(X,Y)$ of topological spaces.
+
+We will define two functor from $Top\times Top\lrta Comp$
+$$S_\bullet(X,Y)=C_\bullet(X,Y),\ \  T_\bullet (X,Y)=C_\bullet(X)\otimes C_\bullet(Y)$$
+
+For models
+$$
+\pzm=\{(\Delta^i,\Delta^j), i,j \geq 0\}
+$$ 
+\underline{Claim}: $S_\bullet$ and $T_\bullet$ are both acyclic in positive degree on $\pzm$ and free with basis contained in $\pzm$
+
+$S_\bullet$, $H_n(S_\bullet(\Delta^i, \Delta^j))=H_n(\Delta^i\times \Delta^j)=0$, $\forall n>0, \forall i,j$ (Acyclic in positive degrees)
+
+$S_i: Top\times Top\lrta Ab$
+
+$S_i(X, Y)=C_i (X\times Y)$\\
+\underline{subclaim}: $\{(\Delta^i,\Delta^i)\}$ is a $S_i$-model set and the diagonal map $d_i:\Delta^i\lrta\Delta^i\otimes \Delta^i$  $x\mapsto (x,x)$ gives a model basis.
+
+Indeed, if $(X,Y)$ is any object in $Top\times Top$ and if $
+\sigma: \Delta^i\lrta X\times Y
+$ is any singular simplex in $S_i(X\times Y)=C_i(X\times Y)$, then we can write 
+$\sigma=(\sigma_x,\sigma_y)\circ d_i$,  where $\sigma_x=p_X\circ \sigma$ be the composition of $\sigma$ with $p_X:X\times Y\lrta X$.
+$S_i(\tau)(d_i), \tau\in \hom(\Delta^i\times \Delta^i,X\times Y)$ forms a basis of the free abelian group $S_i(X\times Y)=C_i(X\times Y)$.
+
+As for $T_i$, we quote the exercise, for any $(X,Y)\in Top\times Top$, $C_i(X)\otimes C_j(Y)$ is free abelian with ba
+
+ $T_i(X\times Y)=(C_\bullet(X)\otimes C_\bullet(Y))$. $T_i(X, Y)$ is the tensor product of the free groups and thus is free.
+$\{(\ell_i,\ell_j)|i+j=n\}$ is a $T_n$-model basis.
+
+The last thing to check is that $T_\bullet(\Delta^i, \Delta^j)$ is acyclic in positive degrees
+$$
+H_n(C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j))=0,\forall n>0.
+$$
+We can not compute this! However we can cheat
+$$
+H_n(C_\bullet(\Delta^i))=H_n(\Delta^i)=\left\{\begin{matrix}
+ \intg & n=0\\
+ 0 & n\neq 0
+\end{matrix}\right.
+$$
+
+Consider the chain complex
+$$
+0\lrta 0\lrta \cdots\lrta 0\lrta \intg\lrta 0\cdots
+$$
+$C_\bullet(\Delta^i)$ has the same homology as this complex. Thus $C_\bullet(\Delta^i)$ is equivalent to the complex and $C_\bullet(\Delta^j)$ is also chain equivalent to it (By Exercise~\ref{chap11exr:free_chain_equivalence_isomorphic_homology}). $C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j)$ is chain equivalent to 
+$$
+0\lrta 0\lrta \cdots\lrta 0\lrta \intg\otimes \intg\lrta 0\cdots
+$$
+Thus $H_n(C_\bullet(\Delta^i)\otimes C_\bullet(\Delta^j))=H_n(\cdots\lrta0\lrta \intg\otimes \intg\lrta 0\cdots)$. We then know $T_\bullet(\Delta^i,\Delta^j)$ is indeed acyclic in positive degrees. 
+
+We have now verified that the hypotheses of the Acyclic Models Theorem and
+its corollary are satisfied.
+Define  
+$\Theta:H_0\circ S_\bullet\lrta H_0\circ T_\bullet$ is a natural equivalence.
+$$
+\Theta(X\times Y):H_0(C_\bullet(X\times Y))\lrta H_0(C_\bullet(X)\otimes C_\bullet (Y))
+$$
+$$
+\lgl c_{(x,y)}\rgl\mapsto \lgl c_x\rgl\otimes\lgl c_y\rgl
+$$
+where $c_{(x,y)}:\Delta^0\lrta (x,y)$ is the constant map to point $(x,y)$. It is indeed a natural transformation
+\[
+\begin{tikzcd}
+H_0(S_\bullet(X\times Y)) \arrow[d, "{H_0(S_\bullet(f,g))}"'] \arrow[r, "\Theta(X\times Y)"] & H_0(T_\bullet(X\times Y)) \arrow[d, "{H_0(T_\bullet(f, g))}"] \\
+H_0(S_\bullet(W\times Z)) \arrow[r, "\Theta(W\times Z)"] & H_0(T_\bullet(W\times Z))
+\end{tikzcd}
+\]
+By algebraic K\"unneth formula~\ref{chap11thm:Algebraic_Kuenneth_formula}, we know $H_0(C_\bullet(X\times Y))\cong H_0(C_\bullet(X)\otimes C_\bullet (Y))$ and $\Theta(X,Y)$ is an isomorphism of abelian groups.
+The map $ \lgl c_x\rgl\otimes\lgl c_y\rgl\mapsto \lgl c_{(x,y)}\rgl$ gives the inverse of $\Theta(X,Y)$, therefore we know $\Theta$ is a natural equivalence.
+
+By the acyclic models theorem~\ref{apendix:thm:Acyclic_models_theorem}
+$$
+\Omega_\bullet: S_\bullet\lrta T_\bullet
+$$
+ is a natural chain equivalence such that $H_0(\Omega_\bullet)=\Theta$
+
+ We therefore find a chain equivalence when apply it to $X\times Y$
+ $$
+\Omega_\bullet(X,Y):C_\bullet(X\times Y)\lrta C_\bullet(X)\otimes C_\bullet(Y)
+ $$
+ These two chain complex have isomorphic homologies.
+\end{proof}
+\begin{corollary}(K\"unneth formula)
+As a result, we can apply the algebraic K\"unneth formula here and derive the K\"unneth formula for product of topological spaces.
+
+Then for every $n\geq 0$, there is a split exact sequence
+$$
+{\scriptstyle
+0\lrta \oplus_{i+j=n}H_i(C_\bullet(X))\otimes H_j(C_\bullet(Y))\overset{\omega}{\lrta} H_n(C_\bullet(X)\otimes C_\bullet(Y))\lrta \oplus_{k+\ell=n-1}\tor(H_k(C_\bullet(X)),H_\ell(C_\bullet(Y)))\lrta 0}
+$$
+where $\omega$ is the map $\langle c_x\rangle\otimes \lgl c_y\rgl\mapsto \lgl c_x\otimes c_y\rgl$. 
+Thus there also exists a (non-natural) isomorphism 
+$$
+\begin{aligned}
+H_n(X\times Y)&=H_n(C_\bullet(X\times Y))\\
+&\cong H_n(C_\bullet(X)\otimes C_\bullet(Y))\\
+&\cong \left(\bigoplus_{i+j=n}H_i(C_\bullet(X))\otimes H_j (C_\bullet(Y))\right)\oplus\left(\bigoplus_{k+\ell=n-1} \tor(H_k(C_\bullet(X)),H_\ell(C_\bullet(Y)))\right)
+\end{aligned}
+$$
+
+\end{corollary}
 \chapter{Cellular homology}
 \chapter{Partition of unity in homotopy}
-\part{More}
+%----------------------------------------------------------------------------------------
+%  Appendix
+%----------------------------------------------------------------------------------------
+\appendix
+  %\include{Chaps/appendixA}
+\chapter{\text{Acyclic models and model categories}}
+\section{Acyclic models theorem}
+In algebraic topology, the acyclic models theorem can be used to show that two homology theories are isomorphic and usually applying it would great simplify the proof. It can be thought of as a ``universal pattern'' of homology theories.
+\begin{definition}Let $\calc$ be a category.
+A family of \textbf{models} in $\calc$ is simply an indexed subset $\pzm=\{M_\lambda|\lambda\in \Lambda\}$ of $obj(\calc)$.
+\end{definition}
 
+\begin{definition}
+Let $\calc$ be a category with family of models $\pzm=\{M_\lambda|\lambda\in \Lambda\}$.  Suppose $T:\calc\lrta Ab$ is a functor. A $T$-\textbf{model set} $\chi$ is a choice of elements $x_\lambda\in T(M_\lambda)$ for each $\lambda$:
+$$
+\chi=\{x_\lambda\in T(M_\lambda)|\lambda\in \Lambda\}
+$$
+\end{definition}
+
+\begin{definition}
+Let $\calc$ be a category with family of models $\pzm=\{M_\lambda|\lambda\in \Lambda\}$. Suppose $T:\calc\lrta Ab$ is a functor. We say that $T$ is \textbf{free with basis in} $\pzm$ if the following condition holds:
+\begin{enumerate}
+\item $T(C)$ is a free abelian group $\forall C\in \calc$
+\item There is a $T$-model set $\chi=\{x_\lambda\in T(M_\lambda)|\lambda\in \Lambda\}$ s.t.
+$$
+\{T(f)(x_\lambda)|f\in \hom(M_\lambda,C), \lambda\in \Lambda\}
+$$
+is a basis for the free abelian group $T(C)$.
+\end{enumerate}
+We call $\chi$ a \textbf{model basis} for $T$.
+\end{definition}
+We say $T_\bullet:\calc\lrta Comp$ if free with basis in $\pzm$ if each $T_n$ is free with basis in $\pzm$.
+
+\begin{definition}
+$T_\bullet:\calc\lrta Comp$, we say $T_\bullet$ is \textbf{non-negative} if $T_n(C)=0$ for all $n<0$ and $\forall C$. $T_\bullet$ is \textbf{acyclic in the positive degrees on $C$} or $C$ \textbf{is $T_\bullet$-acyclic } if $H_n(T_\bullet(C))=0,\forall n>0$. 
+\end{definition}
+
+\begin{example}
+Take $\calc=Top$, $\pzm=\{\Delta^n|n\geq 0\}$.  $T_\bullet$ is the singular chain functor.
+$$
+\calc_\bullet: Top\lrta Comp
+$$
+$$
+X\mapsto C_\bullet(X)
+$$
+By definition, $T_\bullet$ is free with basis in $\pzm$.
+Then $T_\bullet$ is non-negative because
+$C_\bullet$ is non-negative, \checkmark. Also, $\Delta^n$ is $T_\bullet$-acyclic
+$H_n(C_\bullet(\Delta^i))=H_n(\Delta^i)=0,\forall n>0$\checkmark. (We say $\pzm$ is $T_\bullet$-acyclic)
+\end{example}
+\begin{theorem}\label{apendix:thm:Acyclic_models_theorem}
+Suppose $\calc$ is a category with models $\pzm$. Suppose $T_\bullet, S_\bullet:\calc\lrta Comp$ are two functors such that both $T_\bullet$ and $S_\bullet$ are non-negative. Assume further $T_\bullet$ is free with basis in $\pzm$ and $S_\bullet$ is acyclic in the positive degree on each element $M\in\pzm$.
+
+Suppose 
+$$
+\Theta: H_0\circ T_\bullet\lrta H_0\circ S_\bullet
+$$
+ is a natural transformation. $\exists $ a  natural chain morphism $\Psi_\bullet:T_\bullet\lrta S_\bullet$ which is unique up to natural chain homotopy and has $H_0(\Psi_\bullet)=\Theta$.
+\end{theorem}
+\begin{corollary}
+We will be mostly interested in the case where both $S_\bullet$ and $T_\bullet$ are free with basis $\pzm$ and that each model $M\in\pzm$ is both $S_\bullet$-acyclic and $T_\bullet$-acyclic. In this case if $\Theta: H_0\circ T_\bullet\lrta H_0\circ S_\bullet$ is a natural equivalence then every natural chain map $\Phi_\bullet$ inducing $\Theta$ is natural chain equivalence.
+\end{corollary}
+
+To prove Theorem~\ref{apendix:thm:Acyclic_models_theorem}, we need to first quote some two lemmas
+\begin{lemma}\label{apendixA:lem:A.1.3}
+Let $\calc$ be a category with family of models $\pzm=\{M_\lambda|\lambda\in \Lambda\}$. Assume $S,T:\calc\lrta Ab$ are functors and assume $T$ is free with basis in $\pzm$. Let
+$\chi:=\{x_\lambda\in T(M_\lambda)|\lambda\in \Lambda\}$ denote the model basis for $T$. Choose element $y_\lambda\in S(M_\lambda)$ for each $\lambda\in \Lambda$, and set $\Upsilon:=\{y_\lambda\in S(M_\lambda)|\lambda\in\Lambda\}$. Then there exists a unique natural transformation $\Phi:T\lrta S$ such that 
+$$
+\Phi(M_\lambda)(x_\lambda)=y_\lambda,\forall \lambda\in \Lambda
+$$
+\end{lemma}
+\begin{proof}
+Because $T$ is free with basis $\pzm$, we know for each $C\in\calc$, $T(C)$ is free abelian group and
+$$
+\{T(f)(x_\lambda)|f\in \hom(M_\lambda,C), \lambda\in \Lambda\}
+$$
+is a basis for the free abelian group $T(C)$. For fixed $\lambda\in \Lambda$ and fixed object $C\in obj(\calc)$, we have a commutative diagram for every morphism $f: M_\lambda\lrta C$
+\[
+\begin{tikzcd}
+T(M_\lambda) \arrow[r, "T(f)"] \arrow[d, "\Phi(M_\lambda)"'] & T(C) \arrow[d, "\Phi(C)"] \\
+S(M_\lambda) \arrow[r, "S(f)"'] & S(C)
+\end{tikzcd}
+\]
+We have $\Phi(C)\circ T(f)(x_\lambda)=S(f)(y_\lambda)$. Since $T(f)(x_\lambda)$ forms a basis of $T(C)$, we know $\Phi(C)$ is uniquely determined, therefore $\Phi$ is unique if it exists.
+
+It indeed exists. Fix any object $C\in \calc$, then by assumption $\{T(f)(x_\lambda)\}$ form a basis of $T(C)$ and $\Phi(C)(T(f)(x_\lambda))=S(f)(x_\lambda)$ by the universal property of free abelian group, there exists a unique homomorphism $\Phi(C):T(C)\lrta S(C)$ that restricts to it on basis. 
+
+We have proved each individual $\Phi(C)$ exists and is unique. It only lefts to check that such specified $\Phi$ is indeed a natural transformation
+\[
+\begin{tikzcd}
+T(A) \arrow[r, "T(g)"] \arrow[d, "\Phi(A)"'] & T(B) \arrow[d, "\Phi(B)"] \\
+S(A) \arrow[r, "S(g)"'] & S(B)
+\end{tikzcd}
+\]
+Given a typical basis element $T(f)(x_\lambda)$ for some $\lambda\in \Lambda$ and $f\in \hom(M_\lambda,A)$. Then 
+$$
+S(g)\circ \Phi(A)(T(f)(x_\lambda))=S(g)S(f)y_\lambda=S(g\circ f) y_\lambda.
+$$
+But also going the other way round:
+$$
+\Phi(B)\circ T(g) (T(f)(x_\lambda))=\Phi(B)(Tg\circ f)(x_\lambda)=S(g\circ f)(x_\lambda).
+$$
+Thus  $\Phi$ is indeed a natural transformation.
+\end{proof}
+\begin{lemma}\label{appendixA:lem:A.1.4}
+Let $\calc$ be category with family of models $\pzm$. Suppose given six functors
+$T_i,S_i:\calc\lrta Ab$, $i=0,1,2$. together with six natural transformations as pictured below
+\[
+\begin{tikzcd}
+T_2 \arrow[r, "\Phi_2"] & T_1 \arrow[r, "\Phi_1"] \arrow[d, "\Theta_1"] & T_0 \arrow[d, "\Theta_0"] \\
+S_2 \arrow[r, "\Psi_2"'] & S_1 \arrow[r, "\Psi_1"'] & S_0
+\end{tikzcd}
+\]
+Assume that 
+\begin{enumerate}
+	\item For every object $C\in obj(\calc)$, the composition $\Phi_1(C)\circ \Phi_2(C):T_2(C)\lrta T_0(C)$ is the zero homomorphism.
+	\item The bottom row is exact on $\pzm$, in the sense that for every model $M\in\pzm$, one has $\im \Psi_2(M)=\ker \Psi_1(M)$.
+	\item The diagram commutes for every object $C\in obj(\calc)$.
+	\item $T_2$ is free with basis in $M$.
+\end{enumerate}
+Then there exists a natural transformation $\Gamma:T_2\lrta S_2$ such the the first square commutes for every object of $\calc$.
+\[
+\begin{tikzcd}
+T_2\ar[d, dashed, "\Gamma"] \arrow[r, "\Phi_2"] & T_1 \arrow[r, "\Phi_1"] \arrow[d, "\Theta_1"] & T_0 \arrow[d, "\Theta_0"] \\
+S_2 \arrow[r, "\Psi_2"'] & S_1 \arrow[r, "\Psi_1"'] & S_0
+\end{tikzcd}
+\]
+\end{lemma}
+\begin{proof}
+Let $\chi=\{x_\lambda\in T_2(M_\lambda)|\lambda\in \Lambda\}$ denote a model basis for $T_2$. Then for each $\lambda\in \Lambda$ we have a commutative diagram in $Ab$ such that both top row and bottom row are chain complex and the bottom row is exact. Also $T_2(M_\lambda)$ is free 
+\[
+\begin{tikzcd}
+T_2(M_\lambda)\ar[d, dashed, "\gamma"] \arrow[r, "f_2"] & T_1(M_\lambda) \arrow[r, "f_1"] \arrow[d, "t_1"] & T_0(M_\lambda) \arrow[d, "t_0"] \\
+S_2(M_\lambda) \arrow[r, "g_2"'] & S_1(M_\lambda) \arrow[r, "g_1"'] & S_0(M_\lambda)
+\end{tikzcd}
+\]
+$\im t_1\circ f_2\subset \im g_2$ because $g_1\circ t_1\circ f_2=h\circ f_1\circ f_2=0$, hence $\im t_1\circ f_2\subset \ker g_1=\im g_2$. For each $x_\lambda$, there is a $y_\lambda\in S_2(M_\lambda)$ such that $g_2(y_\lambda)=t_1\circ f_2(x_\lambda)$ because $g_2$ is surjective. By universal property of free module, we get a unique morphism $\gamma:T_2(M_\lambda)\lrta S_2(M_\lambda)$ such that $\gamma(x_\lambda)=y_\lambda$. (But because $y_\lambda$ are not unique, $\gamma$ is not the unique morphism that makes the triangle commute)
+\[
+\begin{tikzcd}
+ & T_2(M_\lambda) \arrow[d, "t_1\circ f_2"] \arrow[ld, "\exists \gamma"', dashed] &  \\
+S_2(M_\lambda) \arrow[r, "g_2"] & \im g_2 \arrow[r] & 0.
+\end{tikzcd}
+\]
+(It also makes the first square of the previous diagram commutes).
+We then know by~\ref{apendixA:lem:A.1.3} there exists a unique natural transformation $\Gamma: T_2\lrta S_2$ such that
+$$
+\Gamma(M_\lambda)(x_\lambda)=y_\lambda, \forall \lambda\in \Lambda.
+$$ 
+
+It remains to check thus constructed $\Gamma$ makes the functor diagram commutes. If we define $z_\lambda:=\Psi_2(M_\lambda)(y_\lambda)=\Theta_1(M_\lambda)(\Phi(M_\lambda)(x_\lambda))$, $\Theta_1\circ\Phi_2$ and $\Psi\circ \Gamma$ are two natural transformations that sends $x_\lambda$ to $z_\lambda$. Then we know the first square of functor diagram commutes by the uniqueness in~\ref{apendixA:lem:A.1.3}.
+\end{proof}
+Finally we come back to the proof of Theorem~\ref{apendix:thm:Acyclic_models_theorem}.
+\begin{proof}{of theorem A.1.1}
+
+1. \underline{Such $\Phi_\bullet$ exists}: 
+We need to construct natural transformations $\Phi_n:S_n\lrta T_n$ such that the following diagram commutes.
+\[\begin{tikzcd}
+\cdots \arrow[r, "\pd"] & T_2 \arrow[r, "\pd"] \arrow[d, "\Phi_2", dashed] & T_1 \arrow[r, "\pd"] \arrow[d, "\Phi_1", dashed] & T_0 \arrow[r] \arrow[d, "\Phi_0", dashed] & H_0(T_\bullet) \arrow[r] \arrow[d, "\Theta"] & 0 \\
+\cdots \arrow[r, "\pd'"] & S_2 \arrow[r, "\pd'"] & S_1 \arrow[r, "\pd'"] & S_0 \arrow[r] & H_0(S_\bullet) \arrow[r] & 0
+\end{tikzcd}
+\]
+With Lemma~\ref{appendixA:lem:A.1.4} in hand, we can induct on $n$ to concatenate the ``ladders''.
+
+For $n=0$, we have
+\[
+\begin{tikzcd}
+T_0 \arrow[r] \arrow[d, "\exists \Phi_0"', dashed] & H_0(T_\bullet) \arrow[r] \arrow[d] & 0 \arrow[d] \\
+S_0 \arrow[r] & H_0(S_\bullet) \arrow[r] & 0
+\end{tikzcd}
+\]
+\end{proof}
+
+If we find $\Phi_i, 0\leq i\leq n$ such that makes the first $n$ ladder commute, we can find a $\Phi_{n+1}$ that makes the diagram commute
+\[
+\begin{tikzcd}
+T_{n+1} \arrow[r] \arrow[d, "\exists \Phi_{n+1}"', dashed] & T_n \arrow[r] \arrow[d, "\Phi_n"] & T_{n-1} \arrow[d, "\Phi_{n-1}"] \\
+S_{n+1} \arrow[r] & S_n \arrow[r] & S_{n-1}
+\end{tikzcd}
+\]
+
+2. \underline{$H_0(\Phi_\bullet)=\Theta$}: This is a direct result of the corresponding diagram of  chain complexes. On each object $C$, $H_0(\Phi_\bullet)(C): H_0(T_\bullet(C))\lrta H_0(S_\bullet(C)):\lgl c\rgl\mapsto \lgl \Phi_0(c)\rgl$
+Then we have $H_0(\Phi_\bullet)(C)=\Theta(C)$ because the right most square commutes when applied to object $C$.
+
+3. \underline{$\Phi_\bullet$ is unique up to natural chain homotopy} Suppose now we have two such maps $\Psi_\bullet,\Phi_\bullet: T_\bullet\lrta S_\bullet$. We need to find natural transformation $\Upsilon_n: T_{n}\lrta S_{n+1}$ for $n\geq -1$ such that 
+$$
+\pd'\Upsilon_n+\Upsilon_{n-1}\pd=\Phi_n-\Psi_n.
+$$
+Denote the difference $\Phi_n-\Psi_n=:\Xi_n$. We define $\Upsilon_{-1}=0$ and proceed inductively. We have a diagram
+\[
+\begin{tikzcd}
+T_0 \arrow[r] \arrow[d, "\exists\Upsilon_0"', dashed] & T_0 \arrow[d, "\Xi_0"] \arrow[r] & 0 \arrow[d, "0"] \\
+S_1 \arrow[r] & S_0 \arrow[r] & H_0(S_\bullet),
+\end{tikzcd}
+\]
+where we have used~\ref{appendixA:lem:A.1.4} again. Inductively, If we have constructed $\Upsilon_{n-1}$, we have the following diagram
+\[
+\begin{tikzcd}
+T_n \arrow[r, "id"] \arrow[d, "\exists \Upsilon_{n}"', dashed] & T_n \arrow[d, "\Xi_n-\Upsilon_{n-1}\circ\pd"] \arrow[r] & 0 \arrow[d, "0"] \\
+S_{n+1} \arrow[r, "\pd'"] & S_n \arrow[r] & S_{n-1}
+\end{tikzcd}
+\] 
+By induction hypothesis, the above diagram commutes because
+$$
+\begin{aligned}
+\pd'(\Xi_n-\Upsilon_{n-1}\pd)\\
+&=\pd'\Xi_n-\pd'\Upsilon_{n-1}\pd\\
+&=\pd'\Xi_n-(\Xi_{n-1}-\Upsilon_{n-1}\pd)\pd\\
+&=\pd'\Xi_n-\Xi_{n-1}\pd\\
+&=0.
+\end{aligned}
+$$
+Hence, we can construct $\Upsilon_{n}$ by~\ref{appendixA:lem:A.1.4}.
+
+
+
+
+
+\section{Model categories}
+Model categories catch the essence of homotopy. In order to study homotopic invariant, we need machinery to construct (weak) homotopy invariant functors.
+
+\begin{definition}
+A \textbf{model category} on a category $\calc$ consists of three distinguished classes of morphisms:\textbf{weak equivalences, fibrations} and \textbf{cofibrations} and two functorial factorizations $(\alpha,\beta)$ and $(\gamma,\delta)$ subject to the following axioms. Each classes of morphisms contain all the identities and are closed under composition of morphisms.
+\begin{enumerate}[label=MC\arabic*:]
+\item Finite limits and colimits exists in $\calc$
+\item If $f,g$ are maps in $\calc$ such that $g\circ f$ is defined and if two of the three maps $f,g,g\circ f$ are weak equivalences, then so is the third.
+\item If $f$ is a retract of $g$ and $g$ is a fibration, cofibration or weak equivalence, then so if $f$.
+\item Given a commutative diagram of the 
+\end{enumerate} 
+\end{definition}
+
+Similar with the localization of rings, we can inverse morphisms for some collection of morphisms.
+\begin{definition}\textbf{Localization of a category}:
+Given a category $\calc$ and some class $W$ of morphisms in $\calc$. (similar to localization of rings, we don't need $W$ to be multiplicatively closed, because the construction will naturally lead to multiplicative closure of $W$). We can define it by universal property: there is a natural localization functor $\calc\lrta W^{-1}\calc$ and given any other category $\mathcal{D}$, a functor $F:\calc\lrta\mathcal{D}$ factors uniquely through $\calc\lrta W^{-1}\calc$ iff $F$ sends every morphism in $W$ to an isomorphism in $\mathcal{D}$
+\[
+\begin{tikzcd}
+\calc \arrow[d, "\iota_W"'] \arrow[r, "F"] & \mathcal{D} \\
+W^{-1}\calc \arrow[ru, "\exists!"', dashed] & 
+\end{tikzcd}
+\]
+\end{definition}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
