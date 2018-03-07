@@ -492,7 +492,7 @@ We also know $Y\cup Z\supset U$. Hence $\overline{Y\cup Z}=\overline{Y}\cup \ove
 Given $f,g\in\calo_X(U)$ and $fg=0\in\calo_X(U)$. Recall~\ref{chap3exr:locally_ringed_space_function_value}, the set where $f,g$ vanishes is closed. (Notice here vanishes means $f_pg_p\in\scm_p$). $U$  could be covered by the closed set $V$ $f$ vanishes and the closed set $W$ where $g$ vanishes. Then because $X$ is irreducible, we know $W$ or $V$ must be the whole space $X$. Assume $f$ vanishes on every point in $X$, we know $f=0\in \calo_X(U)$ because $U$ is a reduced scheme~\ref{chap5exr:reducedness_stalk_local}.
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap5exr:affine_integral_scheme}
 Show that an affine scheme $\spec A$ is integral if and only if $A$ integral domain.
 \end{exr}
 \begin{proof}
@@ -1157,17 +1157,44 @@ q(\bar{x})+a\bar{y},
 $$
 where $q$ is a polynomial in $k[X]$, $a$ is a constant in $k$ and $\bar{x}\bar{y}=0$ and $\bar{y}^2=0$. 
 
-Assume $q=0$ and $a=0$, then $f=0$. In this trivial case the support of $f$ is empty set because $fs=0$ for whatever $s\in A$.
+1. Assume $q=0$ and $a=0$, then $f=0$. In this trivial case the support of $f$ is empty set because $fs=0$ for whatever $s\in A$.
 
-In the case $f=q(\bar{x})+a \bar{y}$, $q\neq 0,a\neq 0$ 
+2. In the case $f=q(\bar{x})+a \bar{y}$, $q\neq 0,a\neq 0$ 
 $$
 \bar{y}^2f=0
 $$
-which implies $\bar{y}^2\in\scp$ for $[\scp]\in \supp f$. But in fact, all the prime ideals in $A$ has contains $\bar{y}$. 
+which implies $\bar{y}^2\in\scp$ for $[\scp]\in \supp f$. But in fact, all the prime ideals in $A$  contains $\bar{y}$. 
 
 \underline{Claim}: if $f=q(\bar{x})+a\bar{y}$ with $q\neq 0, a\neq 0$, then $\supp f=\spec A$.
 
-Indeed, for any $\scp_b=(\bar{x}-b,\bar{y})$, the  multiplicative subset $S_b=A-\scp_b$ consists of all $g(\bar{x})+c\bar{y}$ where $g(b)\neq 0$.
+Indeed the point of $\spec A$ is of the form $(\bar{x}-b,\bar{y}) $ or $(\bar{y})$, for any $\scp_b=(\bar{x}-b,\bar{y})$, the elements in multiplicative subset $S_b=A-\scp_b$ are of  the form $g(\bar{x})+c\bar{y}$ where $g(b)\neq 0$. $(g(\bar{x})+c\bar{y})(q(\bar{x})+a\bar{y})\neq 0$. For $\scp=(\bar{y})$, the multiplicative set are of the form $g(\bar{x})$ and $g(\bar{x})(q(\bar{x})+c\bar{y})\neq 0$.
+
+3. Assume $f$ is $a\bar{y}$, $f$ is not supported on $(\bar{y})$ because $\bar{x}\in A-(\bar{y})$. $f$ is neither supported over $(\bar{x}-b,\bar{y})$ since $\bar{x}\in A-(\bar{x}-b,\bar{y})$.
+
+$f$ is only supported on the origin $(\bar{x},\bar{y})$, where the multiplicative set are just the constants.
+
+We have discussed all the possible cases thus finished the proof.
+\end{proof}
+
+\begin{exr}(ASSUMING \textbf{(A)})
+Suppose $A$ is an integral domain. Show that the generic point is the only associated point of $\spec A$
+\end{exr}
+\begin{proof}
+\textbf{Confusion: when we talk about the associated point of $\spec A$, does it mean we choose $M=A$?}
+ We use the definition \textbf{(A)} in page 167 in the case $M=A$ and always assume $A$ to be Noetherian when discussing associated points.
+
+Given $A$  a Noetherian integral domain, $(\spec A,\calo_{\spec A})$ is a Noetherian integral scheme by~\ref{chap5exr:affine_integral_scheme}, which means it is irreducible and reduced by~\ref{chap5exr:integral=irreducible+reduced}. 
+
+The global sections of $\spec A,\calo_{\spec A}$ are just elements in $A$. 
+\end{proof}
+
+\begin{exr}(ASSUMING \textbf{(A)})
+Show that if $A$ is reduced, $\spec A$ has no embedded points.
+\end{exr}
+\begin{proof}
+What we want to show is 
+
+``the associated points of a reduced scheme is are of generic points''
 \end{proof}
 %---------------------------------------------------------------------------------------
 
