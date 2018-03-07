@@ -17,13 +17,13 @@
 \usepackage{geometry}
 \geometry{left=4cm,right=4cm}
 \pgfplotsset{every axis/.append style={
-                    axis x line=middle,    % put the x axis in the middle
-                    axis y line=middle,    % put the y axis in the middle
-                    axis line style={<->}, % arrows on the axis
-                    xlabel={$x$},          % default put x on x-axis
-                    ylabel={$y$},          % default put y on y-axis
-                    ticks=none,
-                    }}
+		axis x line=middle,    % put the x axis in the middle
+		axis y line=middle,    % put the y axis in the middle
+		axis line style={<->}, % arrows on the axis
+		xlabel={$x$},          % default put x on x-axis
+		ylabel={$y$},          % default put y on y-axis
+		ticks=none,
+}}
 %\usepackage[urw-garamond]{mathdesign}
 %\usepackage{cmbright}
 %\usepackage{concmath}
@@ -33,32 +33,32 @@
 %\usepackage{pdfrender,xcolor,scrpage2}
 %\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
 \tikzset{
-  subseteq/.style={
-    draw=none,
-    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}},
-  Subseteq/.style={
-    draw=none,
-    every to/.append style={
-      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
-    },
-    Subsetneq/.style={
-    draw=none,
-    every to/.append style={
-      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
-    },
-  Supseteq/.style={
-    draw=none,
-    every to/.append style={
-      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
-  }
+	subseteq/.style={
+		draw=none,
+		edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}},
+	Subseteq/.style={
+		draw=none,
+		every to/.append style={
+			edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+	},
+	Subsetneq/.style={
+		draw=none,
+		every to/.append style={
+			edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+	},
+	Supseteq/.style={
+		draw=none,
+		every to/.append style={
+			edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+	}
 }
 
 \hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=blue,
-    linkcolor=blue,
-    urlcolor=blue
+	colorlinks,
+	citecolor=blue,
+	filecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue
 }
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
@@ -131,338 +131,332 @@
 \bibliographystyle{plain}
 \title{\bf Lecture Notes for Algebraic Geomtry I}
 \author{Lecture delivered by Emmanuel Kowalski\\
-Notes by Lin-Da Xiao}
+	Notes by Lin-Da Xiao}
 \date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
 \begin{document}
-\maketitle
-\tableofcontents
-\newpage
-\section{Feb 27th: Algebraic sets and morphisms}
-\href{https://imaginary.org/programs}{https://imaginary.org/programs}
-
-Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
-
-\begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
-Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
-$$
-\begin{aligned}
-&\hom_{K-alg}(\calo(Y_2),\calo(Y_1))
-\\
-&\overset{(*)}{\llrta}\{(f_1,...,f_m)\in K[X]^m|\forall x\in Y_1,(f_1(x),...,f_m(x))\in Y_2) \}\\
-&\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}
-\end{aligned}
-$$
-\end{thm}
-\begin{proof}
-\underline{Key observation}
-
-To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$, which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
-$$
-g_1: K[T]\lrta \calo(Y_1)
-$$
-which has a factorization
-\[
-\begin{tikzcd}
-K[T] \arrow[r,"g_1"] \arrow[d,"\pi_2"]  & \calo(Y_1)  \\
-   \calo(Y_2) \arrow[ur,"g"] & 
-\end{tikzcd}
-\]
-iff $g_1(I(Y_2))=0$, which means iff 
-$$
-g_1(\varphi)=\text{ ``replace $T_i$ by $f_i$ in $\varphi$''}
-$$
-belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$, which means if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
-
-
-For the bijection $(**)$, suppose 
-$$
-g:Y_1\overset{g}{\lrta} Y_2\overset{\varphi}{\lrta} K
-$$
-sends $\varphi(Y_2)$ to $\varphi\circ g\in\calo(Y_1)$. Then we get 
-$$
-\begin{aligned}
-& \calo(Y_2)\lrta \calo(Y_1)\\
-&\varphi\longmapsto \varphi\circ g,
-\end{aligned}
-$$
-which is a $K$-algebra morphism.
-
-As for the reverse direction, given $g$. From $\calo(Y_2)\lrta \calo(Y_1)$ to get a $g:Y_1\lrta Y_2$. We get a $\tilde{g}:Y_1\lrta Y_2$ in the second set
-$$
-\tilde{g}(x)=(f_1(x),...,f_m(x))
-$$
-then we have $\varphi\circ g\in\calo(Y_1)$ for $\varphi\in \calo(Y_2)$. One checks that this shows that the first and third sets are the same.
-\end{proof}
-
-Define morphism $Y_1\lrta Y_2$ by the second(and third) set.  Composition in the obvious way and identity is a morphism.
-$\Lrta$ get a category $(Alg_K)$ of affine algebraic sets over $K$.
-
-\begin{cor}
-$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K-Alg)^{opp}$.
-\end{cor}
-
-\underline{Facts}: The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
-\begin{proof}
-$A$ finitely generated reduced $K$-algebra. ($\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
-$\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
-\end{proof}
-
-\begin{cor}
-There is a equivalence of categories between 
-$$
-(Alg_K)\llrta (\text{fin. gen. reduced.} K-Algs.)
-$$
-\end{cor}
-
-\begin{ex}\ 
-\begin{enumerate}[label=(\arabic*)]
-\item $\affn^1\lrta V(Y^2-X^3-X^2)\subset \affn^2$, $t\mapsto (t^2-1,t(t^2-1))$
-\item $\affn^1\lrta V(Y^2-X^3)\subset \affn^2$: $t\longmapsto (t^2,t^3)$ is a bijection but \underline{Not} an isomorphism.
-\item Assume $K$ with characteristic $p>0$, $K\supset \mathbb{F}_p$. $Y=V(f_1,...,f_m)$ where $f_i\in \mathbb{F}_p[X]\subset K[X]$. Consider the morphism:
-$$
-\begin{aligned}
-&Y\lrta Y\\
-& (x_1,..,x_n)\longmapsto (x_1^p,...,x_n^p).
-\end{aligned}
-$$
-It is bijective and homeomorphism but not an isomorphism if $dim(Y)\geq 1$.
-\end{enumerate}
-\end{ex}
-\begin{prop}
-$Y=V(I)\subset \affn^n$
-\begin{enumerate}[label=(\arabic*)]
-\item The points of $Y$ are in bijection with maximal ideals $I\subset \calo(Y)$ by 
-$$
-Y\ni x\longmapsto \{f\in \calo(Y)|f(x)=0\}
-$$
-\item We have a bijection 
-$$
-\calo(Y)\llrta \hom_{Alg_K}(Y,\affn^1)
-$$
-\end{enumerate}
-\end{prop}
-\begin{proof}
-(1) $I_x:=Ker(\calo(Y)\lrta K)$, $f\mapsto f(x)$, since the evaluation map is surjective $[1\mapsto 1]$, we get an isomorphism 
-$$
-\calo(Y)/I_x\overset{\sim}{\lrta} K,
-$$
-so $I_x$ is maximal in $\calo(Y)$.
-
-Conversely, if $I\subset \calo(Y)$ is maximal, we get $I=I'/I(Y)$ for $I'\subset K[X]$ maximal. 
-
-Nullstellensatz says $\exists (x_1,...,x_n)\in\affn^n$ s.t., $I'=(X_1-x_1,...,X_n-x_n)$. 
-
-Since $I'\supset I(Y)$, we get $(x_1,..,x_n)\in Y$. Then we check that $\calo(Y)\lrta\calo(Y)/I\cong K$ is just given by $f\mapsto f(x_1,...,x_n)$. That means $I=I_x$.
-
-(2) We saw in~\ref{thm:equivalence_of_categories_algebraic_sets_K_algebras}, that there is a bijection between sets
-$$
-\hom_{Alg_k}(Y,\affn^1)\llrta \hom_{K-alg}(\calo(\affn^1),\calo(Y)).
-$$
-But $\hom_{K-alg}(\calo(\affn^1),\calo(Y))=\hom_{K-alg}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
-\end{proof}
-\section*{Projective Algebraic sets}
-
-Projective sets can have a good notion of ``compactness''.
-
-N.B. Any $Y\in (Alg_K)$ is \textbf{quasi-compact}( open cover have a finite subcover).
-
-\begin{dfn}
-$\proj^n_K=\proj^n$ can be either defined as 
-
-``the set of  lines in $\affn^{n+1}$ that pass through the origin''
-
-or
-
-``the equivalence classes of points in $K^{n+1}\backslash \{0\}$ with the equivalence relation $x\sim y$ iff $x=\lambda y$ for some $\lambda \in K$'' and we use the notion $[x_0:...:x_n]$ for the equivalence class of $(x_0,..,x_n)$
-\end{dfn}
-
-These two definitions are equivalent: 
-
-Given a line $l\in \affn^1\llrta $ hyperplane in $K^{n+1}$, corresponds to a equation
-$$
-a_0X_0+....+a_n X_n=0
-$$
-with at least one of $a_i$ non-zero.
-
-Conversely, from $[x_0:..:x_n]$, we  we get the corresponding hyperplane/line trivially.
-
-
-Notes the following fact:
-
-$$
-\proj^n=\cup_{0\leq i\leq n} H_i,
-$$
-where $H_i=\{[x_0,...,x_n]|x_i\neq 0\}$ and there is a bijection 
-$$
-\begin{aligned}
-&H_i\lrta K^n\\
-&[x_0:...:x_n]\longmapsto\left(\frac{x_0}{x_i},...,\widehat{\frac{x_i}{x_i}},..,\frac{x_n}{x_i}\right)\\
-&
-[y_1:...:y_{i-1}:1:y_{i}:...:y_n]\mapsfrom(y_1,...,y_n)
-\end{aligned}
-$$
-We define from linear algebra some notions in $\proj^n$ a line in $\proj^n$ is the image by the projection $K^{n+1}\backslash \{0\}\lrta \proj^n$ of the two dimensional affine subspace.
-
-\begin{ex}
-$l_1,l_2\subset \proj^2$ lines $\l_1\cap l_2$ is a line if $l_1$ and $l_2$ are identical and would be a single point otherwise.
-\end{ex}
-
-Observation: If $f\in K[X_0,...,X_{n+1}]$ is homogeneous, then for $x\in \proj^n$, it makes no sense to speak of ``$f(x)\in K$'', but the zero-loci or the set where $f(x)\neq 0$ does make sense.
-
-\begin{dfn}
- A  \textbf{projective algebraic set} $S\subset \proj^n$ is 
- $$
-  S=\{ x\in \proj^n|f_1(x)=...=f_m(x)=0\},
- $$
- where $f_1,...,f_m$ are homogeneous of some degrees.
-\end{dfn}
-
-\underline{Notation}: $V(f_1,..,f_n)$
-
-\begin{ex}
-$V(Y^2 Z-X^3-X Z^2)\subset \proj^2$. 
-\end{ex}
-Let $0\leq i\leq n$, then $S\cap H_i=\{[x_0:...:x_n]\in S| x_i\neq 0\}$ is , via the bijection  $H_i\lrta K^n$, in bijection with an affine algebraic set $S_1\subset \affn^n$ given by $\tilde{f_1}(y)=...=\tilde{f}_m(y)=0$, where $\tilde{f}_i(y_1,..,y_n)=f_i(y_1,...,y_{i-1},1, y_i,...,y_n)$
-
-
-\section{Mar 2nd: Projective algebraic sets and regular functions}
-Recall: $\proj^n_K=K^{n-1}-\{0\}/\sim$, and $H_i:=\{[x_0:...:x_n]|x_i\neq 0\}$ is in bijection with $\affn^n$. $V(f_1,...,f_m)=\{x\in \proj^n|\forall i,f_i(x)=0\}$, where $f_1,..f_m$ are homogeneous.
-
-More generally, we can define 
-$$
-V(I)=V(\text{homogeneous element of $I$=})=V(\cup_{d\geq 0} I_d)
-$$
-where $I$ is an homogeneous ideal of $K[X_0,...,X_n]$ that is  $I=\oplus_{d\geq 0} I_d$, $I_d$ the the degree $d$ piece of $K[X_0,...,X_n]$.
-
-Conversely, given $S\subset \proj^n$, we can define 
-$$
-I(S):=\text{ideal generated by homogeneous polynomials that vanishes on $S$}
-$$
-\begin{lemma}
-This is a homogeneous ideal
-\end{lemma}
-\begin{proof}
-$f\in I(s)\Lrta f=\sum_{i\in I}g_i f_i$, where $f_i$ is homogeneous and vanishes on $S$. We can expand each $g_i$ as $\sum_j g_{ij}$, where each $g_{ij}$ is homogeneous in $I(S)$. Then we know $f\in \otimes I(S)_d$ and the converse is clear.
-\end{proof}
-\begin{lemma}
-The projective sets $V(I)$ where $I$ is homogeneous form the closed sets of a topology. It is called the Zariski topology (same name for the induced topology on projective sets).
-\end{lemma}
-\begin{ex}
-$H_0\subset \proj^n$ and $\sigma: H_0\cong \affn^n$. Under this bijection, the Zariski topologies correspond $\sigma $ is a homeomorphism
-$$
-f\in K[X_0,...,X_n]\text{ homogeneous} \leadsto V(f)\subset \proj^n
-$$
-$$
-\tilde{f}=f(1,X_1,...,X_n)\in K[X_1,..,X_n]\leadsto V(\tilde{f})\subset \affn^n
-$$
-and $\sigma(V(f))=V(\tilde{f})$.
-\end{ex}
-\begin{dfn}
-$Y\subset \proj^n$ projective $S(Y)=K[X_0,...,X_n]/I(Y)$, \textbf{homogeneous coordinate ring}
-\end{dfn}
-\underline{Note} elements in $S(Y)$ are not functions on $Y$. The geometric meaning of $S(Y)$ will be explained latter with the language of schemes.
-
-We now want to define morphisms of  projective algebraic sets. We have to look at it more carefully because we can not simply copy the affine definition.
-\begin{dfn}
-$Y\subset \proj^n$ projective, let $V\subset Y $ be an open subsets of $Y$.
-\begin{enumerate}[label=(\arabic*)]
-\item $f: V\lrta K$ continuous is called \textbf{regular} on $Y$ if $\forall x\in Y$, $\exists U$ open $x\in U$, $\exists f_1,f_2\in K[X_0,...,X_n]$ homogeneous of same degree such that $f_2(x)\neq 0$ for all $x\in U$ and $f(x)=\frac{f_1(x)}{f_2(x)}$ for $x\in U\cap Y$
-\item $Y_1,Y_2$ are projective sets in $\proj^n,\proj^m$, $f: Y_1\lrta Y_2$ is a \textbf{morphism} if $f$ is continuous and for any $U\subset Y_1$ open and any $\varphi:U\lrta K$ regular, the composite $\varphi\circ f: f^{-1}(U)\lrta K$ is regular.
-\end{enumerate}
-\end{dfn}
-\underline{Note}: IN $(2)$, one can not restrict to $\varphi$ regular on $Y_2$ because often the space of such function is reduced to $K$
-\begin{prop}
-For $\proj^n$, the space of functions regular on $\proj^n$ is $K$.
-\end{prop}
-\begin{proof}
-The case $n=1$ implies the general case: if $f:\proj^n\lrta K$ regular, and $x\neq y$ in $\proj^n$, the line joining $x$ to $y$ in $\proj^n$ is ``isomorphic'' to $\proj^1$ and $f|_L$ is regular so constant, hence $f(x)=f(y)$.
-
-
-For $n=1$, $f|_{H_0}$ (respectively $f|_{H_1}$)identifies to a function $f$, $[x:y]\mapsto \frac{f_0(x,y)}{x^d}$ for $f_0$ homogeneous of degree $d$, $x\neq 0$. Respectively, $[x:y]\mapsto \frac{f_1(x,y)}{y^e}$, where $f_1$ is homogeneous of degree $e$. According to assumption, $f$ is defined everywhere, we can compatibly glue the two pieces. 
-
-For $[x:y]\in H_0\cap H_1$, we get 
-$$
-\begin{aligned}
-&y^ef_0(x,y)=x^df_1(x,y)\\
-& Y^e f_0=X^df_1\in K[X,Y].
-\end{aligned}
-$$
-By expanding it to power series and compare term by term, we can check the only possibility is $d=e=0$, and this means $f_0,f_1$ are constants, therefore $f$ is a constant.
-\end{proof}
-\underline{Concretely}: To say that $f: Y_1\subset \proj^n\lrta Y_2\subset \proj^m$  is a morphism of projective algebraic sets. It reduces to 
-$\forall x\in Y_1,\exists U$ open containing $x$ s.t. there exists $f_0,...,f_m\in K[X_0,...,X_{n+1}]$
-homogeneous of same degree, with no common zero in $U$, such that
-$\forall y\in U\cap Y_1$, $f(y)=[f_0(y):...:f_m(y)]$. It is easy to see that if $f$ is of this form, then it is a morphism.
-
-The converse is left as an exercise.
-
-\begin{ex}
-\begin{enumerate}[label=(\arabic*)]
-\item Let $g\in Gl_n(K), n\geq 1$. Define 
-$$
-f_g:\proj^n\lrta \proj^n
-$$
-$$
-[x_0:...:x_n]\longmapsto [g(x_0,...,x_n)]
-$$
-is a morphism. In fact, it is an isomorphism. $f^{-1}_g=f_{g^{-1}}$.
-It also has some other properties: $f_{g}=f_{\lambda g},\lambda\neq 0$ and we get an induced group morphism
-\[
-\begin{tikzcd}
-PGL_{n+1}(K) \arrow[d] \arrow[r, equal] & GL_{n+1}(K)/K^\times \\
-Aut_{proj}(\proj^n) & 
-\end{tikzcd}
-\]
-which is an isomorphism. A special case is $Aut_{hol}(\cplx \proj^1)=PGL_2(\cplx)$
-$$
-g\longmapsto \left[z\mapsto \frac{az+b}{cz+d}\right]
-$$
-\item  $K=\cplx$. One can do  holomorphic geometry (using holomorphic functions instead of polynomials). IN $\cplx^n$,we get a  much more complicated picture [e.g. $V(\sin z)$] is a an infinite sets in $\proj^n_\cplx$, however Chow proved that the holomorphic sets and the projective algebraic sets are the same (Serre ``GAGA'' principle compares many different invariant of both categories.)
-\item Consider the map $S:=V(Y^2Z-X^3-XZ^2)\overset{f}{\lrta} \proj^1$, $[x:y:z]\mapsto [y:z]$. \\
-\underline{Claim}, this is a morphism of projective sets.
-\\
-This means that there is no solution to $Y^2Z-X^3-XZ^2=0$ with $Y=Z=0$. (But $[x:y:z]\mapsto [x:z]$ is not a morphism because $[0:1:0]\in S$). $f$ is surjective but not injective $[x:y:z]$ and $[x:-y:z]$ have same image. This works in field $k$ with $\text{char} k\neq 2$.
-\item $\proj^1\overset{v}{\lrta \proj^2}$, $[x:y]\mapsto [x^2:xy:y^2]$ (special case of Veronese embedding). This is a morphism. The image of $v$ is equal to $[y_0:y_1:y_2], \proj^2$. $S=V(Y_1^2-Y_0Y_2)$.  In fact, $\sigma$ gives an isomorphism
-$\sigma: \proj^1\lrta S$ with inverse given by 
-$$
-\tau: S\lrta \proj^1
-$$
-$$
-[y_0:y_1:y_2]\mapsto\left\{\begin{matrix*}
-&[Y_1:Y_2] \text{ if } Y_2\neq 0\\
-&[Y_0:Y_1]\text{ if } Y_0\neq 0
-\end{matrix*}
-\right.
-$$
-$\tau$ is a morphism defined on all of $S$, because if $[y_0:y_1:y_2]\in S$ satisfies $y_0=y_2=0$, it would implie $y^2_1=y_0y_2=0\Lrta y_1=0$ 
-$$
-\begin{aligned}
-\tau\circ \sigma([x:y])&=\tau([x^2:xy:y^2])
-&=\left\{\begin{matrix*}
-&[xy:y^2]=[x:y], y\neq 0
-\\
-&[x^2:xy]=[x:y], x\neq 0
-\end{matrix*}\right.
-\end{aligned}
-$$
-therefore $\tau\circ \sigma= id_{\proj^1}$ and $\sigma\circ \tau=id_S$ can proved similarly
-
-One can not find $f_0:f_1$ in $K[Y_0,Y_1,Y_2]$ s.t. $\tau([y_0:y_1:y_2]=[f_0(Y):f_1(Y)]$ for all $Y\in S$
-\end{enumerate}
-\end{ex}
-
-\section*{Rational/birational maps}
-
-$Y\subset \affn^n$ algebraic if $Y$ is irreducible, then $\calo(Y)$ is an integral domain. Let $K(Y)$ be its quotient field. What is the geometric meaning of $K(Y)$? It is called the function field of $Y$.
-
-We will see
-\begin{thm}
-For $Y_1,Y_2$ affine varieties (irreducible) $K(Y_1)\cong K(Y_2)$ as fields
-
-$\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$ open dense subset such that $U_1$ and $U_2$ are isomorphic.
-\end{thm}
-
-
-
-
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Feb 27th: Algebraic sets and morphisms}
+	\href{https://imaginary.org/programs}{https://imaginary.org/programs}
+	
+	Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
+	
+	\begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
+		Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
+		$$
+		\begin{aligned}
+		&\hom_{K-alg}(\calo(Y_2),\calo(Y_1))
+		\\
+		&\overset{(*)}{\llrta}\{(f_1,...,f_m)\in K[X]^m|\forall x\in Y_1,(f_1(x),...,f_m(x))\in Y_2) \}\\
+		&\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}
+		\end{aligned}
+		$$
+	\end{thm}
+	\begin{proof}
+		\underline{Key observation}
+		
+		To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$, which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
+		$$
+		g_1: K[T]\lrta \calo(Y_1)
+		$$
+		which has a factorization
+		\[
+		\begin{tikzcd}
+		K[T] \arrow[r,"g_1"] \arrow[d,"\pi_2"]  & \calo(Y_1)  \\
+		\calo(Y_2) \arrow[ur,"g"] & 
+		\end{tikzcd}
+		\]
+		iff $g_1(I(Y_2))=0$, which means iff 
+		$$
+		g_1(\varphi)=\text{ ``replace $T_i$ by $f_i$ in $\varphi$''}
+		$$
+		belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$, which means if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
+		
+		
+		For the bijection $(**)$, suppose 
+		$$
+		g:Y_1\overset{g}{\lrta} Y_2\overset{\varphi}{\lrta} K
+		$$
+		sends $\varphi(Y_2)$ to $\varphi\circ g\in\calo(Y_1)$. Then we get 
+		$$
+		\begin{aligned}
+		& \calo(Y_2)\lrta \calo(Y_1)\\
+		&\varphi\longmapsto \varphi\circ g,
+		\end{aligned}
+		$$
+		which is a $K$-algebra morphism.
+		
+		As for the reverse direction, given $g$. From $\calo(Y_2)\lrta \calo(Y_1)$ to get a $g:Y_1\lrta Y_2$. We get a $\tilde{g}:Y_1\lrta Y_2$ in the second set
+		$$
+		\tilde{g}(x)=(f_1(x),...,f_m(x))
+		$$
+		then we have $\varphi\circ g\in\calo(Y_1)$ for $\varphi\in \calo(Y_2)$. One checks that this shows that the first and third sets are the same.
+	\end{proof}
+	
+	Define morphism $Y_1\lrta Y_2$ by the second(and third) set.  Composition in the obvious way and identity is a morphism.
+	$\Lrta$ get a category $(Alg_K)$ of affine algebraic sets over $K$.
+	
+	\begin{cor}
+		$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K-Alg)^{opp}$.
+	\end{cor}
+	
+	\underline{Facts}: The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
+	\begin{proof}
+		$A$ finitely generated reduced $K$-algebra. ($\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
+		$\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
+	\end{proof}
+	
+	\begin{cor}
+		There is a equivalence of categories between 
+		$$
+		(Alg_K)\llrta (\text{fin. gen. reduced.} K-Algs.)
+		$$
+	\end{cor}
+	
+	\begin{ex}\ 
+		\begin{enumerate}[label=(\arabic*)]
+			\item $\affn^1\lrta V(Y^2-X^3-X^2)\subset \affn^2$, $t\mapsto (t^2-1,t(t^2-1))$
+			\item $\affn^1\lrta V(Y^2-X^3)\subset \affn^2$: $t\longmapsto (t^2,t^3)$ is a bijection but \underline{Not} an isomorphism.
+			\item Assume $K$ with characteristic $p>0$, $K\supset \mathbb{F}_p$. $Y=V(f_1,...,f_m)$ where $f_i\in \mathbb{F}_p[X]\subset K[X]$. Consider the morphism:
+			$$
+			\begin{aligned}
+			&Y\lrta Y\\
+			& (x_1,..,x_n)\longmapsto (x_1^p,...,x_n^p).
+			\end{aligned}
+			$$
+			It is bijective and homeomorphism but not an isomorphism if $dim(Y)\geq 1$.
+		\end{enumerate}
+	\end{ex}
+	\begin{prop}
+		$Y=V(I)\subset \affn^n$
+		\begin{enumerate}[label=(\arabic*)]
+			\item The points of $Y$ are in bijection with maximal ideals $I\subset \calo(Y)$ by 
+			$$
+			Y\ni x\longmapsto \{f\in \calo(Y)|f(x)=0\}
+			$$
+			\item We have a bijection 
+			$$
+			\calo(Y)\llrta \hom_{Alg_K}(Y,\affn^1)
+			$$
+		\end{enumerate}
+	\end{prop}
+	\begin{proof}
+		(1) $I_x:=Ker(\calo(Y)\lrta K)$, $f\mapsto f(x)$, since the evaluation map is surjective $[1\mapsto 1]$, we get an isomorphism 
+		$$
+		\calo(Y)/I_x\overset{\sim}{\lrta} K,
+		$$
+		so $I_x$ is maximal in $\calo(Y)$.
+		
+		Conversely, if $I\subset \calo(Y)$ is maximal, we get $I=I'/I(Y)$ for $I'\subset K[X]$ maximal. 
+		
+		Nullstellensatz says $\exists (x_1,...,x_n)\in\affn^n$ s.t., $I'=(X_1-x_1,...,X_n-x_n)$. 
+		
+		Since $I'\supset I(Y)$, we get $(x_1,..,x_n)\in Y$. Then we check that $\calo(Y)\lrta\calo(Y)/I\cong K$ is just given by $f\mapsto f(x_1,...,x_n)$. That means $I=I_x$.
+		
+		(2) We saw in~\ref{thm:equivalence_of_categories_algebraic_sets_K_algebras}, that there is a bijection between sets
+		$$
+		\hom_{Alg_k}(Y,\affn^1)\llrta \hom_{K-alg}(\calo(\affn^1),\calo(Y)).
+		$$
+		But $\hom_{K-alg}(\calo(\affn^1),\calo(Y))=\hom_{K-alg}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
+	\end{proof}
+	\section*{Projective Algebraic sets}
+	
+	Projective sets can have a good notion of ``compactness''.
+	
+	N.B. Any $Y\in (Alg_K)$ is \textbf{quasi-compact}( open cover have a finite subcover).
+	
+	\begin{dfn}
+		$\proj^n_K=\proj^n$ can be either defined as 
+		
+		``the set of  lines in $\affn^{n+1}$ that pass through the origin''
+		
+		or
+		
+		``the equivalence classes of points in $K^{n+1}\backslash \{0\}$ with the equivalence relation $x\sim y$ iff $x=\lambda y$ for some $\lambda \in K$'' and we use the notion $[x_0:...:x_n]$ for the equivalence class of $(x_0,..,x_n)$
+	\end{dfn}
+	
+	These two definitions are equivalent: 
+	
+	Given a line $l\in \affn^1\llrta $ hyperplane in $K^{n+1}$, corresponds to a equation
+	$$
+	a_0X_0+....+a_n X_n=0
+	$$
+	with at least one of $a_i$ non-zero.
+	
+	Conversely, from $[x_0:..:x_n]$, we  we get the corresponding hyperplane/line trivially.
+	
+	
+	Notes the following fact:
+	
+	$$
+	\proj^n=\cup_{0\leq i\leq n} H_i,
+	$$
+	where $H_i=\{[x_0,...,x_n]|x_i\neq 0\}$ and there is a bijection 
+	$$
+	\begin{aligned}
+	&H_i\lrta K^n\\
+	&[x_0:...:x_n]\longmapsto\left(\frac{x_0}{x_i},...,\widehat{\frac{x_i}{x_i}},..,\frac{x_n}{x_i}\right)\\
+	&
+	[y_1:...:y_{i-1}:1:y_{i}:...:y_n]\mapsfrom(y_1,...,y_n)
+	\end{aligned}
+	$$
+	We define from linear algebra some notions in $\proj^n$ a line in $\proj^n$ is the image by the projection $K^{n+1}\backslash \{0\}\lrta \proj^n$ of the two dimensional affine subspace.
+	
+	\begin{ex}
+		$l_1,l_2\subset \proj^2$ lines $\l_1\cap l_2$ is a line if $l_1$ and $l_2$ are identical and would be a single point otherwise.
+	\end{ex}
+	
+	Observation: If $f\in K[X_0,...,X_{n+1}]$ is homogeneous, then for $x\in \proj^n$, it makes no sense to speak of ``$f(x)\in K$'', but the zero-loci or the set where $f(x)\neq 0$ does make sense.
+	
+	\begin{dfn}
+		A  \textbf{projective algebraic set} $S\subset \proj^n$ is 
+		$$
+		S=\{ x\in \proj^n|f_1(x)=...=f_m(x)=0\},
+		$$
+		where $f_1,...,f_m$ are homogeneous of some degrees.
+	\end{dfn}
+	
+	\underline{Notation}: $V(f_1,..,f_n)$
+	
+	\begin{ex}
+		$V(Y^2 Z-X^3-X Z^2)\subset \proj^2$. 
+	\end{ex}
+	Let $0\leq i\leq n$, then $S\cap H_i=\{[x_0:...:x_n]\in S| x_i\neq 0\}$ is , via the bijection  $H_i\lrta K^n$, in bijection with an affine algebraic set $S_1\subset \affn^n$ given by $\tilde{f_1}(y)=...=\tilde{f}_m(y)=0$, where $\tilde{f}_i(y_1,..,y_n)=f_i(y_1,...,y_{i-1},1, y_i,...,y_n)$
+	
+	
+	\section{Mar 2nd: Projective algebraic sets and regular functions}
+	Recall: $\proj^n_K=K^{n-1}-\{0\}/\sim$, and $H_i:=\{[x_0:...:x_n]|x_i\neq 0\}$ is in bijection with $\affn^n$. $V(f_1,...,f_m)=\{x\in \proj^n|\forall i,f_i(x)=0\}$, where $f_1,..f_m$ are homogeneous.
+	
+	More generally, we can define 
+	$$
+	V(I)=V(\text{homogeneous element of $I$=})=V(\cup_{d\geq 0} I_d)
+	$$
+	where $I$ is an homogeneous ideal of $K[X_0,...,X_n]$ that is  $I=\oplus_{d\geq 0} I_d$, $I_d$ the the degree $d$ piece of $K[X_0,...,X_n]$.
+	
+	Conversely, given $S\subset \proj^n$, we can define 
+	$$
+	I(S):=\text{ideal generated by homogeneous polynomials that vanishes on $S$}
+	$$
+	\begin{lemma}
+		This is a homogeneous ideal
+	\end{lemma}
+	\begin{proof}
+		$f\in I(s)\Lrta f=\sum_{i\in I}g_i f_i$, where $f_i$ is homogeneous and vanishes on $S$. We can expand each $g_i$ as $\sum_j g_{ij}$, where each $g_{ij}$ is homogeneous in $I(S)$. Then we know $f\in \otimes I(S)_d$ and the converse is clear.
+	\end{proof}
+	\begin{lemma}
+		The projective sets $V(I)$ where $I$ is homogeneous form the closed sets of a topology. It is called the Zariski topology (same name for the induced topology on projective sets).
+	\end{lemma}
+	\begin{ex}
+		$H_0\subset \proj^n$ and $\sigma: H_0\cong \affn^n$. Under this bijection, the Zariski topologies correspond $\sigma $ is a homeomorphism
+		$$
+		f\in K[X_0,...,X_n]\text{ homogeneous} \leadsto V(f)\subset \proj^n
+		$$
+		$$
+		\tilde{f}=f(1,X_1,...,X_n)\in K[X_1,..,X_n]\leadsto V(\tilde{f})\subset \affn^n
+		$$
+		and $\sigma(V(f))=V(\tilde{f})$.
+	\end{ex}
+	\begin{dfn}
+		$Y\subset \proj^n$ projective $S(Y)=K[X_0,...,X_n]/I(Y)$, \textbf{homogeneous coordinate ring}
+	\end{dfn}
+	\underline{Note} elements in $S(Y)$ are not functions on $Y$. The geometric meaning of $S(Y)$ will be explained latter with the language of schemes.
+	
+	We now want to define morphisms of  projective algebraic sets. We have to look at it more carefully because we can not simply copy the affine definition.
+	\begin{dfn}
+		$Y\subset \proj^n$ projective, let $V\subset Y $ be an open subsets of $Y$.
+		\begin{enumerate}[label=(\arabic*)]
+			\item $f: V\lrta K$ continuous is called \textbf{regular} on $Y$ if $\forall x\in Y$, $\exists U$ open $x\in U$, $\exists f_1,f_2\in K[X_0,...,X_n]$ homogeneous of same degree such that $f_2(x)\neq 0$ for all $x\in U$ and $f(x)=\frac{f_1(x)}{f_2(x)}$ for $x\in U\cap Y$
+			\item $Y_1,Y_2$ are projective sets in $\proj^n,\proj^m$, $f: Y_1\lrta Y_2$ is a \textbf{morphism} if $f$ is continuous and for any $U\subset Y_1$ open and any $\varphi:U\lrta K$ regular, the composite $\varphi\circ f: f^{-1}(U)\lrta K$ is regular.
+		\end{enumerate}
+	\end{dfn}
+	\underline{Note}: IN $(2)$, one can not restrict to $\varphi$ regular on $Y_2$ because often the space of such function is reduced to $K$
+	\begin{prop}
+		For $\proj^n$, the space of functions regular on $\proj^n$ is $K$.
+	\end{prop}
+	\begin{proof}
+		The case $n=1$ implies the general case: if $f:\proj^n\lrta K$ regular, and $x\neq y$ in $\proj^n$, the line joining $x$ to $y$ in $\proj^n$ is ``isomorphic'' to $\proj^1$ and $f|_L$ is regular so constant, hence $f(x)=f(y)$.
+		
+		For $n=1$, suppose $x$, $y$ are arbitrary points and let $U \ni x$, $V\ni y$ be open neighbourhoods such that $f|_U = \frac{f_1(x)}{f_2(x)}$ and $f|_V = \frac{g_1(x)}{g_2(x)}$ where $f_1$, $f_2$, $g_1$, $g_2$ are homogeneous polynomials and $f_1$, $f_2$ have the same degree as well as $g_1$, $g_2$. We may assume that $f_1$ and $f_2$ are coprime and also $g_1$, $g_2$ are coprime. Hence on $U \cap V$,
+		$$
+		f_1 g_2 = g_1 f_2.
+		$$
+		We know that $U \cap V$ is infinite so this implies $f_1 = g_1$ and $ f_2 = g_2$. Since $x$ and $y$ were arbitrary points we conclude that $f = \frac{f_1(x)}{f_2(x)}$ on all of $\proj^1$ hence $f$ is a constant.
+	\end{proof}
+	\underline{Concretely}: To say that $f: Y_1\subset \proj^n\lrta Y_2\subset \proj^m$  is a morphism of projective algebraic sets. It reduces to 
+	$\forall x\in Y_1,\exists U$ open containing $x$ s.t. there exists $f_0,...,f_m\in K[X_0,...,X_{n+1}]$
+	homogeneous of same degree, with no common zero in $U$, such that
+	$\forall y\in U\cap Y_1$, $f(y)=[f_0(y):...:f_m(y)]$. It is easy to see that if $f$ is of this form, then it is a morphism.
+	
+	The converse is left as an exercise.
+	
+	\begin{ex}
+		\begin{enumerate}[label=(\arabic*)]
+			\item Let $g\in Gl_n(K), n\geq 1$. Define 
+			$$
+			f_g:\proj^n\lrta \proj^n
+			$$
+			$$
+			[x_0:...:x_n]\longmapsto [g(x_0,...,x_n)]
+			$$
+			is a morphism. In fact, it is an isomorphism. $f^{-1}_g=f_{g^{-1}}$.
+			It also has some other properties: $f_{g}=f_{\lambda g},\lambda\neq 0$ and we get an induced group morphism
+			\[
+			\begin{tikzcd}
+			PGL_{n+1}(K) \arrow[d] \arrow[r, equal] & GL_{n+1}(K)/K^\times \\
+			Aut_{proj}(\proj^n) & 
+			\end{tikzcd}
+			\]
+			which is an isomorphism. A special case is $Aut_{hol}(\cplx \proj^1)=PGL_2(\cplx)$
+			$$
+			g\longmapsto \left[z\mapsto \frac{az+b}{cz+d}\right]
+			$$
+			\item  $K=\cplx$. One can do  holomorphic geometry (using holomorphic functions instead of polynomials). IN $\cplx^n$,we get a  much more complicated picture [e.g. $V(\sin z)$] is a an infinite sets in $\proj^n_\cplx$, however Chow proved that the holomorphic sets and the projective algebraic sets are the same (Serre ``GAGA'' principle compares many different invariant of both categories.)
+			\item Consider the map $S:=V(Y^2Z-X^3-XZ^2)\overset{f}{\lrta} \proj^1$, $[x:y:z]\mapsto [y:z]$. \\
+			\underline{Claim}, this is a morphism of projective sets.
+			\\
+			This means that there is no solution to $Y^2Z-X^3-XZ^2=0$ with $Y=Z=0$. (But $[x:y:z]\mapsto [x:z]$ is not a morphism because $[0:1:0]\in S$). $f$ is surjective but not injective $[x:y:z]$ and $[x:-y:z]$ have same image. This works in field $k$ with $\text{char} k\neq 2$.
+			\item $\proj^1\overset{v}{\lrta \proj^2}$, $[x:y]\mapsto [x^2:xy:y^2]$ (special case of Veronese embedding). This is a morphism. The image of $v$ is equal to $[y_0:y_1:y_2], \proj^2$. $S=V(Y_1^2-Y_0Y_2)$.  In fact, $\sigma$ gives an isomorphism
+			$\sigma: \proj^1\lrta S$ with inverse given by 
+			$$
+			\tau: S\lrta \proj^1
+			$$
+			$$
+			[y_0:y_1:y_2]\mapsto\left\{\begin{matrix*}
+			&[Y_1:Y_2] \text{ if } Y_2\neq 0\\
+			&[Y_0:Y_1]\text{ if } Y_0\neq 0
+			\end{matrix*}
+			\right.
+			$$
+			$\tau$ is a morphism defined on all of $S$, because if $[y_0:y_1:y_2]\in S$ satisfies $y_0=y_2=0$, it would implie $y^2_1=y_0y_2=0\Lrta y_1=0$ 
+			$$
+			\begin{aligned}
+			\tau\circ \sigma([x:y])&=\tau([x^2:xy:y^2])
+			&=\left\{\begin{matrix*}
+			&[xy:y^2]=[x:y], y\neq 0
+			\\
+			&[x^2:xy]=[x:y], x\neq 0
+			\end{matrix*}\right.
+			\end{aligned}
+			$$
+			therefore $\tau\circ \sigma= id_{\proj^1}$ and $\sigma\circ \tau=id_S$ can proved similarly
+			
+			One can not find $f_0:f_1$ in $K[Y_0,Y_1,Y_2]$ s.t. $\tau([y_0:y_1:y_2]=[f_0(Y):f_1(Y)]$ for all $Y\in S$
+		\end{enumerate}
+	\end{ex}
+	
+	\section*{Rational/birational maps}
+	
+	$Y\subset \affn^n$ algebraic if $Y$ is irreducible, then $\calo(Y)$ is an integral domain. Let $K(Y)$ be its quotient field. What is the geometric meaning of $K(Y)$? It is called the function field of $Y$.
+	
+	We will see
+	\begin{thm}
+		For $Y_1,Y_2$ affine varieties (irreducible) $K(Y_1)\cong K(Y_2)$ as fields
+		
+		$\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$ open dense subset such that $U_1$ and $U_2$ are isomorphic.
+	\end{thm}
+	
+	
+	
+	
 \end{document}
