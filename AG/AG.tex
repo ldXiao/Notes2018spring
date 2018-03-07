@@ -393,17 +393,11 @@ For $\proj^n$, the space of functions regular on $\proj^n$ is $K$.
 \begin{proof}
 The case $n=1$ implies the general case: if $f:\proj^n\lrta K$ regular, and $x\neq y$ in $\proj^n$, the line joining $x$ to $y$ in $\proj^n$ is ``isomorphic'' to $\proj^1$ and $f|_L$ is regular so constant, hence $f(x)=f(y)$.
 
-
-For $n=1$, $f|_{H_0}$ (respectively $f|_{H_1}$)identifies to a function $f$, $[x:y]\mapsto \frac{f_0(x,y)}{x^d}$ for $f_0$ homogeneous of degree $d$, $x\neq 0$. Respectively, $[x:y]\mapsto \frac{f_1(x,y)}{y^e}$, where $f_1$ is homogeneous of degree $e$. According to assumption, $f$ is defined everywhere, we can compatibly glue the two pieces. 
-
-For $[x:y]\in H_0\cap H_1$, we get 
+For $n=1$, suppose $x$, $y$ are arbitrary points and let $U \ni x$, $V\ni y$ be open neighbourhoods such that $f|_U =f_1(x)/f_2(x)$ and $f|_V = g_1(x)/g_2(x)$ where $f_1$, $f_2$, $g_1$, $g_2$ are homogeneous polynomials and $f_1$, $f_2$ have the same degree as well as $g_1$, $g_2$. We may assume that $f_1$ and $f_2$ are coprime and also $g_1$, $g_2$ are coprime. Hence on $U \cap V$,
 $$
-\begin{aligned}
-&y^ef_0(x,y)=x^df_1(x,y)\\
-& Y^e f_0=X^df_1\in K[X,Y].
-\end{aligned}
+f_1 g_2 = g_1 f_2.
 $$
-By expanding it to power series and compare term by term, we can check the only possibility is $d=e=0$, and this means $f_0,f_1$ are constants, therefore $f$ is a constant.
+We know that $U \cap V$ is infinite so this implies $f_1 = g_1$ and $ f_2 = g_2$. Since $x$ and $y$ were arbitrary points we conclude that $f = f_1(x)/f_2(x)$ on all of $\proj^1$ hence $f$ is a constant.
 \end{proof}
 \underline{Concretely}: To say that $f: Y_1\subset \proj^n\lrta Y_2\subset \proj^m$  is a morphism of projective algebraic sets. It reduces to 
 $\forall x\in Y_1,\exists U$ open containing $x$ s.t. there exists $f_0,...,f_m\in K[X_0,...,X_{n+1}]$
@@ -479,7 +473,7 @@ $\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$
 \end{thm}
 \begin{dfn}
 (Quasi-affine  and quasi-projective) varieties)
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}%[label=(\arabic*)]
   \item \textbf{quasi-affine variety} $V$ is an open subset $V\subset Y$, where $Y\subset \affn^n$ is an affine variety. $[V\neq \emptyset\Lrta V\text{ dense in } Y\Lrta V\text{ irreducible }]$. It is given by the Zariski's topology from $Y$.\\
   (1') $V\subset Y\subset \proj^n$ where $V$ is an open subset of $Y$ is \textbf{quasi-projective}, where $Y$ is projective variety.
   \item A regular function $f:V\lrta K=\affn^1$, where $V$ is quasi-affine is an $f$ such that for all $x\in V$, $\exists U\subset V$ open containing $x$ s.t., $\forall x\in V$, $f(x)=\frac{f_1(x)}{f_2(x)}$ where $f_1,f_2\in\calo(\affn^n)$ and $f_2(x)\neq 0$ on $U$.\\
@@ -490,16 +484,16 @@ $\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$
 
 N.B. \begin{enumerate}
 \item This makes sense because if $U\subset V_2$, where $V_2$ is quasi affine $U$ open, $\Lrta$ $U\subset V_2\subset Y$ so $U$ is also quasi-affine in $\affn^n$
-\item \underline{Exercise} If $f$ is regular on $V$, then $f$ is continuous $V\lrta \affn^1$. (check that $f^{-1}(\{a\})$ is closed, use hat closd ness is a local condition.)
-\item In the (quasi)-affine case, it is enoufh to check that $\varphi\circ f$ is regular on $V_1$ for $\varphi$ regular on $V_2$.
+\item \underline{Exercise} If $f$ is regular on $V$, then $f$ is continuous $V\lrta \affn^1$. (check that $f^{-1}(\{a\})$ is closed, use that closedness is a local condition.)
+\item In the (quasi)-affine case, it is enough to check that $\varphi\circ f$ is regular on $V_1$ for $\varphi$ regular on $V_2$.
 \item \underline{Notation}:
 $$\calo(V)=\{f:V\lrta K|\text{ regular}\}$$
-This is a ring of with unit, and because of the condition that open $V\subset Y$ in a variety, either $\calo(V)=0,V\neq \emptyset$ or $V$ is dense in $Y$, $\Lrta \calo(V)$ integral domain. 
+This is a ring of with unity, and because of the condition that for open $V\subset Y$ in a variety $Y$, either $\calo(V)=0,V\neq \emptyset$ or $V$ is dense in $Y$, $\Lrta \calo(V)$ integral domain. 
 \end{enumerate}
 
 \begin{ex}\ 
 \begin{enumerate}
-\item $GL_n(K)=\{x\in M_{n\times n}(K)|\det(x)\neq 0\}\subset \affn^{n^2}$ is quasi-affine since $\det:M_{n\times n}(K)\lrta K$ is continuous and ont emptyset.
+\item $GL_n(K)=\{x\in M_{n\times n}(K)|\det(x)\neq 0\}\subset \affn^{n^2}$ is quasi-affine since $\det:M_{n\times n}(K)\lrta K$ is continuous and not emptyset.
 
 \item In fact, for any $0\neq f\in \calo(\affn^n)$
 $$
@@ -509,6 +503,7 @@ is a quasi-affine variety.
 
 \underline{Fact}: There is an isomorphism
 $$
+\sigma(x) = 
 \left\{\begin{aligned}
 U_f&\overset{\sigma}{\lrta} Y=\{(x,y)\in\affn^{n+1}|yf(x)=1\}\\
 x&\longmapsto \left(x,\frac{1}{f(x)}\right)
@@ -516,12 +511,12 @@ x&\longmapsto \left(x,\frac{1}{f(x)}\right)
 \right.
 $$
 with inverse
-$(x,y)\overset{\pi}{\lrta}x$.
-(Indeed, $\pi\circ \sigma=Id_{U_f}$, $\sigma\circ \pi=Id_Y$) and $\pi$ is a morphism: consider $\varphi\in\calo(U_f)$
+$(x,y)\overset{\pi}{\longmapsto}x$.
+(Indeed, $\pi\circ \sigma=Id_{U_f}$, $\sigma\circ \pi=Id_Y$) and $\pi$ is a morphism: Consider $\varphi\in\calo(U_f)$
 $$
 Y\overset{u}{\lrta}U_f\overset{\varphi}{\lrta}K
 $$
-then $\varphi\circ \pi(x,y)=\varphi(x)$; This is regular. 
+then $\varphi\circ \pi(x,y)=\varphi(x)$.
 
 Indeed, for any $x\in U_f$, $\exists f_1,f_2\in \calo(\affn^2)\varphi(x)=\frac{f_1(x)}{f_2(x)}, f_2(x)\neq 0$, one can show: assume $f_2(x)=f(x)^d$ then 
 $$
@@ -613,7 +608,7 @@ $K(\affn^n)=K(\proj^n)=K(X_1,..,X_n)$
 \end{ex}
 
 \begin{dfn}
-(Rational maps) $Y_1,Y_2$ varieties. A \textbf{rational map} $f: Y_1\lrta Y_2$ is a pair $(U,\tilde{f})$ where $U\neq \emptyset$ in $Y_1$ and $\tilde{f}:U\lrta Y_2$ is a morphism with $(U,\tilde{f})=(U',\tilde{f}'')$ iff 
+(Rational maps) $Y_1,Y_2$ varieties. A \textbf{rational map} $f: Y_1\dashrightarrow Y_2$ is a pair $(U,\tilde{f})$ where $U\neq \emptyset$ in $Y_1$ and $\tilde{f}:U\lrta Y_2$ is a morphism with $(U,\tilde{f})=(U',\tilde{f}')$ iff 
 $$
 \tilde{f}|_{U\cap U'}=\tilde{f}'|_{U\cap U'}
 $$
@@ -621,7 +616,7 @@ $$
 \end{dfn}
 
 \begin{dfn}
-$f:Y_1\dashrightarrow Y_2$ is a dominant if its image $\tilde{f}(U)\subset Y_2$ is dense.
+$f:Y_1\dashrightarrow Y_2$ is a \textbf{dominant} if its image $\tilde{f}(U)\subset Y_2$ is dense.
 \end{dfn}
 
 \begin{ex}\ 
