@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  6 MAR 2018 21:31
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  8 MAR 2018 23:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1921,9 +1921,39 @@ Package mdframed Info: mdframed works in twoside mode on input line 1144.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1144.
-[30] [31] [32
+[30]
+Package mdframed Info: mdframed works in twoside mode on input line 1179.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1179.
+Package mdframed Info: mdframed works in twoside mode on input line 1192.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1192.
+ [31]
 
-] (./FOAG.ptc) [33] [34]
+LaTeX Warning: Reference `chap3exr:3.5.D' on page 32 undefined on input line 12
+09.
+
+
+LaTeX Warning: Reference `chap3exr:3.5.F' on page 32 undefined on input line 12
+09.
+
+
+LaTeX Warning: Reference `chap3exr:bijection_closed_subsets_points_affine' on p
+age 32 undefined on input line 1216.
+
+
+LaTeX Warning: Reference `chap3exr:open_subset_Noetherian_space_quasicompact' o
+n page 32 undefined on input line 1223.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1240.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1240.
+[32] (./FOAG.ptc) [33
+
+] [34]
 Chapter 2.
 File: Pictures/chapter_head_1.pdf Graphic file (type QTm)
 <use  "Pictures/chapter_head_1.pdf" > [35
@@ -1960,16 +1990,16 @@ File: Pictures/chapter_head_1.pdf Graphic file (type QTm)
 
 <use  "Pictures/chapter_head_1.pdf" >
 
-Package biblatex Warning: Type 'article' not found on input line 1197.
+Package biblatex Warning: Type 'article' not found on input line 1268.
 
 
-LaTeX Warning: Empty bibliography on input line 1197.
+LaTeX Warning: Empty bibliography on input line 1268.
 
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
 
-Overfull \hbox (9.52834pt too wide) in paragraph at lines 1203--1203
+Overfull \hbox (9.52834pt too wide) in paragraph at lines 1274--1274
 []\T1/ptm/m/n/10.95 Ulrich Görtz and Torsten Wed-horn. \T1/ptm/m/it/10.95 Al-ge
 -braic ge-om-e-try\T1/ptm/m/n/10.95 . Springer, 2010 (cited on page [][]21[][])
 . 
@@ -1983,11 +2013,11 @@ Overfull \hbox (9.52834pt too wide) in paragraph at lines 1203--1203
 \tf@ptc=\write7
 \openout7 = `FOAG.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1217.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1217.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1288.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1288.
  (./FOAG.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1217.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1217.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1288.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1288.
 
 
 LaTeX Warning: There were undefined references.
@@ -1997,10 +2027,10 @@ Package logreq Info: Writing requests to 'FOAG.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35749 strings out of 493706
- 666329 string characters out of 6145769
- 1187918 words of memory out of 5000000
- 38548 multiletter control sequences out of 15000+600000
+ 35756 strings out of 493706
+ 666504 string characters out of 6145769
+ 1188055 words of memory out of 5000000
+ 38555 multiletter control sequences out of 15000+600000
  104507 words of font info for 164 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  58i,13n,84p,10507b,2602s stack positions out of 5000i,500n,10000p,200000b,80000s

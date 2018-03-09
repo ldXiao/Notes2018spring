@@ -492,7 +492,7 @@ We also know $Y\cup Z\supset U$. Hence $\overline{Y\cup Z}=\overline{Y}\cup \ove
 Given $f,g\in\calo_X(U)$ and $fg=0\in\calo_X(U)$. Recall~\ref{chap3exr:locally_ringed_space_function_value}, the set where $f,g$ vanishes is closed. (Notice here vanishes means $f_pg_p\in\scm_p$). $U$  could be covered by the closed set $V$ $f$ vanishes and the closed set $W$ where $g$ vanishes. Then because $X$ is irreducible, we know $W$ or $V$ must be the whole space $X$. Assume $f$ vanishes on every point in $X$, we know $f=0\in \calo_X(U)$ because $U$ is a reduced scheme~\ref{chap5exr:reducedness_stalk_local}.
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap5exr:affine_integral_scheme}
 Show that an affine scheme $\spec A$ is integral if and only if $A$ integral domain.
 \end{exr}
 \begin{proof}
@@ -1157,18 +1157,89 @@ q(\bar{x})+a\bar{y},
 $$
 where $q$ is a polynomial in $k[X]$, $a$ is a constant in $k$ and $\bar{x}\bar{y}=0$ and $\bar{y}^2=0$. 
 
-Assume $q=0$ and $a=0$, then $f=0$. In this trivial case the support of $f$ is empty set because $fs=0$ for whatever $s\in A$.
+1. Assume $q=0$ and $a=0$, then $f=0$. In this trivial case the support of $f$ is empty set because $fs=0$ for whatever $s\in A$.
 
-In the case $f=q(\bar{x})+a \bar{y}$, $q\neq 0,a\neq 0$ 
+2. In the case $f=q(\bar{x})+a \bar{y}$, $q\neq 0,a\neq 0$ 
 $$
 \bar{y}^2f=0
 $$
-which implies $\bar{y}^2\in\scp$ for $[\scp]\in \supp f$. But in fact, all the prime ideals in $A$ has contains $\bar{y}$. 
+which implies $\bar{y}^2\in\scp$ for $[\scp]\in \supp f$. But in fact, all the prime ideals in $A$  contains $\bar{y}$. 
 
 \underline{Claim}: if $f=q(\bar{x})+a\bar{y}$ with $q\neq 0, a\neq 0$, then $\supp f=\spec A$.
 
-Indeed, for any $\scp_b=(\bar{x}-b,\bar{y})$, the  multiplicative subset $S_b=A-\scp_b$ consists of all $g(\bar{x})+c\bar{y}$ where $g(b)\neq 0$.
+Indeed the point of $\spec A$ is of the form $(\bar{x}-b,\bar{y}) $ or $(\bar{y})$, for any $\scp_b=(\bar{x}-b,\bar{y})$, the elements in multiplicative subset $S_b=A-\scp_b$ are of  the form $g(\bar{x})+c\bar{y}$ where $g(b)\neq 0$. $(g(\bar{x})+c\bar{y})(q(\bar{x})+a\bar{y})\neq 0$. For $\scp=(\bar{y})$, the multiplicative set are of the form $g(\bar{x})$ and $g(\bar{x})(q(\bar{x})+c\bar{y})\neq 0$.
+
+3. Assume $f$ is $a\bar{y}$, $f$ is not supported on $(\bar{y})$ because $\bar{x}\in A-(\bar{y})$. $f$ is neither supported over $(\bar{x}-b,\bar{y})$ since $\bar{x}\in A-(\bar{x}-b,\bar{y})$.
+
+$f$ is only supported on the origin $(\bar{x},\bar{y})$, where the multiplicative set are just the constants.
+
+We have discussed all the possible cases thus finished the proof.
 \end{proof}
+
+\begin{exr}\label{chap5exr:integral_associated_point_generic_point}(ASSUMING \textbf{(A)})
+Suppose $A$ is an integral domain. Show that the generic point $[0]$ is the only associated point of $\spec A$
+\end{exr}
+\begin{proof}
+\textbf{Confusion: when we talk about the associated point of $\spec A$, does it mean we choose $M=A$?}
+ 
+We use the definition \textbf{(A)} in page 167 in the case $M=A$ and always assume $A$ to be Noetherian when discussing associated points.
+
+Given $A$  a Noetherian integral domain, $(\spec A,\calo_{\spec A})$ is a Noetherian integral scheme by~\ref{chap5exr:affine_integral_scheme}, which means it is irreducible and reduced by~\ref{chap5exr:integral=irreducible+reduced}. 
+
+The global sections of $\spec A,\calo_{\spec A}$ are just elements in $A$. Now each section $a$ is supported on the whole scheme $\spec A$. The only irreducible component is $\spec A$ itself. Hence the generic point is the only associated point of $\spec A$.
+\end{proof}
+
+\begin{exr}(ASSUMING \textbf{(A)})
+Show that if $A$ is reduced, $\spec A$ has no embedded points.
+\end{exr}
+\begin{proof}
+What we want to show is 
+
+``the associated points of a scheme $\spec A$ for a reduced ring $A$ are generic points of the irreducible components of $\spec A$''
+
+Follow the hint.
+
+(i): In the case where $A$ is integral domain, we know the only associated point is the generic point of $\spec A$ by Exercise~\ref{chap5exr:integral_associated_point_generic_point}.
+
+(ii) For a general reduced ring $A$, we \underline{Claim}:
+
+If $f$ is a nonzero function on a reduced affine scheme,  then $\supp f = \overline{D(f)}$
+
+Indeed, $D(f)=\{[\scq]\in\spec A|f\notin \scq\}$, $[\scp]\in D(f)\Llrta$ $f\in A-\scp$, $f/1\neq 0\in A_\scp$ because $A-\scp$ is multiplicatively closed and $A-\scp$ does not contain $0$. Then we know $D(f)\subset \supp f$, therefore $\overline{D(f)}\subset\supp f$ because $\supp f$ is closed. 
+For the reverse inclusion, consider $[\scp]\in\supp f$ $\Lrta fs\neq 0, \forall s\in A-\scp$. Suppose $[\scp]\in D(g)$ for some $g\in A$, $g\notin \scp$($g\in A-\scp$), $D(f)\cap D(g)=D(fg)$. Then we know $fg\neq 0$. $fq$ is not nilpotent because $A$ is a reduced ring, therefore $D(fg)\neq \emptyset$. Useful exercises are~\ref{chap3exr:3.5.D} and~\ref{chap3exr:3.5.F}
+
+\underline{Claim}: $\overline{D(f)}$ is the union of irreducible component that intersects $D(f)$. 
+
+By Proposition 3.6.15, we know in Noetherian topological space, a non-empty closed set can be expressed uniquely as a finite union of irreducible closed subsets.
+
+ Apply it to $\overline{D(f)}$, it can be expressed as union of $\cup_i D_i$. What we need to prove is that the irreducible closed subset $D_i$ are in fact a irreducible components $X_i$ in $\spec A$. 
+Assume by contradiction, $D_i\subsetneq Z_i\subset X_i$ is not a maximal irreducible subset, where $Z_i$ is a minimal irreducible closed subset that contains $D_i$. (i.e. there is no intermediate irreducible closed subset between $D_i$ and $Z_i$). By~\ref{chap3exr:bijection_closed_subsets_points_affine}, there is a reverse inclusion of generic point $\scp_d\supsetneq \scp_z$, where $\overline{\scp_d}=D_i$ and $\overline{\scp_z}=Z_i$. (This also means $\scp_d$ is one of  associated primes of $A$ corresponding to $f$)
+
+ Consider the ring $A/\scp_z$, $\scp_d/\scp_z$ is a non-zero prime ideal in the quotient ring. 
+
+The canonical projection $A\lrta A/\scp_z$ induces a continuous map $\spec A/\scp_z\lrta \spec A$, which can be identified as the inclusion of a closed subset.
+
+We know $\overline{\scp_d/\scp_z}=\overline{\scp_d}\cap \spec A/\scp_z$. On the other hand
+$\overline{\scp_d}\subset \overline{D(f)}$, $\overline{\scp_d/\scp_z}=\overline{\scp_d}\cap \spec A/\scp_z\cap \overline{D(f)}=\overline{\scp_d}\cap \overline{D([f])}$, where $[f]$ is the equivalence class of $f$ in $A/\scp_z$. Every subspace of Noetherian space is also Noetherian by~\ref{chap3exr:open_subset_Noetherian_space_quasicompact}. We know $\overline{D([f])}$ is a subspace of Noetherian space $\overline{D(f)}$. Still by Proposition 3.6.15, both $\overline{D([f])}$ and $\overline{D(f)}$
+can expressed uniquely as a union of their irreducible components. Also because each irreducible closed subset is contained in an irreducible component. 
+
+We then know
+\underline{Lemma:}
+\textbf{ the irreducible component $Y_i$ of a subspace $Y$ in Noetherian space $X$ is the intersection of $Y\cap X_i$ with the irreducible component of $X$}.
+
+As a result, $\overline{\scp_d/\scp_z}$ is the irreducible component of $\overline{D([f])}=\supp [f]$.
+
+$\scp_d/\scp_z$ is an associated point of $A/\scp_z$, where $A/\scp_z$ is an integral domain, we then apply $(i)$. $\scp_d/\scp_z$ can not be an embedded point ($\scp_d/\scp_z=0$) contradicting to our setting $\scp_d\subsetneq \scp_z$.
+
+Now we are done.
+
+ 
+
+\end{proof}
+
+\begin{exr}
+(ASSUMING \textbf{(A)}). Suppose $m \in M$. Show that $\supp m$ is the closure of those associated points of $M$ where $m$ has non-zero germ.(Hint: $\supp m$ is a closed set containing the points described, and thus their closure. Why does it contain no other points?)
+\end{exr}
 %---------------------------------------------------------------------------------------
 
 \part{Morphisms}

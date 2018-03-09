@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1520367127 "AG.tex" "AG.pdf" "AG" 1520367128
+["pdflatex"] 1520590826 "AG.tex" "AG.pdf" "AG" 1520590828
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -157,6 +157,7 @@
   "/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty" 1362954379 2637 846ebe982d3549c7ede7ce135456f54a ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls" 1428932888 20708 96f8bca6e380179cada1d49716376167 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty" 1428932888 2854 ddffcda515af28aa9e61fdd101872736 ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo" 1428932888 9195 b429d9ae04d88356fbd16a7b811e600f ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd" 1428932888 2020 3b0fd77961c09bb31521c65d6da482b9 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/dsfont.sty" 1137110062 230 7bc61880b468bfd38aedc173be7c3486 ""
@@ -206,13 +207,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "AG.aux" 1520367128 1203 9e3d35a81ff9fc21b6f870d87010afb8 ""
-  "AG.out" 1520367128 376 f3e3faf6e84bab5c080e454e3b397f6e ""
-  "AG.tex" 1520367127 28511 0cc90fb7e2f68e30a7d4f4f575f54e5f ""
-  "AG.toc" 1520367128 396 4701fba3f10b931aff2f653cc83bdca1 ""
+  "AG.aux" 1520590828 1330 b91901fc85eb0dab53b4828e74a87fd4 ""
+  "AG.out" 1520590828 483 e807923cb62b93530fa9221af919097c ""
+  "AG.tex" 1520590825 36718 fa5ec9c236d8dfddc24101970929b3a6 ""
+  "AG.toc" 1520590828 505 b2cbf3b55c73601c86682f3e21ccf2a9 ""
   (generated)
-  "AG.aux"
-  "AG.pdf"
   "AG.log"
   "AG.toc"
+  "AG.pdf"
+  "AG.aux"
   "AG.out"
