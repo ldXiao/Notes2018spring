@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_GB
 \documentclass[11pt]{article}
 \usepackage{amssymb}
 \usepackage{latexsym}
@@ -464,6 +465,10 @@ One can not find $f_0:f_1$ in $K[Y_0,Y_1,Y_2]$ s.t. $\tau([y_0:y_1:y_2]=[f_0(Y):
 \end{enumerate}
 \end{ex}
 
+\subsection{Mar 5th: Exercise class}
+The content covered can be found in Hartshorne, p50ff Proposition 7.4 and Theorem 7.5.
+
+
 \subsection{Mar 6th: Rational/birational maps}
 
 $Y\subset \affn^n$ algebraic if $Y$ is irreducible, then $\calo(Y)$ is an integral domain. Let $K(Y)$ be its quotient field. What is the geometric meaning of $K(Y)$? It is called the \textbf{function field} of $Y$.
@@ -506,9 +511,9 @@ is a quasi-affine variety.
 
 \underline{Fact}: There is an isomorphism
 $$
-\sigma(x) = 
+\sigma = 
 \left\{\begin{aligned}
-U_f&\overset{\sigma}{\lrta} Y=\{(x,y)\in\affn^{n+1}|yf(x)=1\}\\
+U_f&\lrta Y=\{(x,y)\in\affn^{n+1}|yf(x)=1\}\\
 x&\longmapsto \left(x,\frac{1}{f(x)}\right)
 \end{aligned}
 \right.
@@ -753,7 +758,7 @@ First example in char $0$ of non-rational unirational varieties were provided by
 Iskovskih-Manin ``general '' quantic hypersurfaces of $\dim 3$.
 
 \begin{cor}
-Any variety $Y$ is birational ro a hypersurface in $\proj^{\dim(Y)+1}$ or $\affn^{\dim(Y)+1}$
+Any variety $Y$ is birational ro a hypersurface in $\proj^{\dim(Y)+1}$ or $\affn^{\dim(Y)+1}$.
 \end{cor}
 \begin{proof}
 Let $d=\dim(Y)=\dim(\calo(Y))$. Then a fact in commutative algebra says $K(Y)$ is a finite separable extension of $K(X_1,...,X_d)=:E$. By the primitive element theorem, there exists $\alpha:\in K(Y)$ such that  $K(Y)=E(\alpha)$. Let $f\in E[T]$ be the minimal polynomial of $\alpha$.
@@ -764,9 +769,9 @@ f=\sum_{i=0}^na_i T^i=\sum_{i=0}^n \frac{b_i}{c_i} T^i,
 $$
 where $a_i\in E$ and $a_i, b_i\in A=K[X_1,...X_d]$
 
-$\Lrta$ $\tilde{f}(\alpha)=0$ where $\tilde{f}=\left(\prod c_i\right)f\in A[T]=K[X_1,...,X_d,T]$. Define $\tilde{Y}=V(\tilde{f})\subset \affn^{d+1}$. It is wat we wanted.
+$\Lrta$ $\tilde{f}(\alpha)=0$ where $\tilde{f}=\left(\prod c_i\right)f\in A[T]=K[X_1,...,X_d,T]$. Define $\tilde{Y}=V(\tilde{f})\subset \affn^{d+1}$. This is what we wanted.
 \begin{enumerate}[label=(\arabic*)]
-\item $\tilde{Y}$ is a irreducible hypersurfaces
+\item $\tilde{Y}$ is an irreducible hypersurface.
 \item $\tilde{Y}$ is birational to $Y$ $\Llrta K(\tilde{Y})=K(Y)$
 \end{enumerate}
 
@@ -783,7 +788,7 @@ $$
 \end{aligned}
 \right.
 $$
-so the fraction fiedl $K(\tilde{Y})$ injects into $K(Y)$. The image of $K(\tilde{Y})$ contains $X_1,...,X_d$ and $\alpha$ spt contains $E(\alpha)$, i.e., $K(\tilde{Y})=K(Y)$
+so the fraction field $K(\tilde{Y})$ injects into $K(Y)$. The image of $K(\tilde{Y})$ contains $X_1,...,X_d$ and $\alpha$ hence it contains $E(\alpha)$, i.e., $K(\tilde{Y})=K(Y)$
 \end{proof}
 
 \section*{Nonsingular varieties}
@@ -797,9 +802,9 @@ has rank $n-d$ if this holds for all $x$, then we say $Y$ is \textbf{nonsingular
 \end{dfn}
 \underline{Key fact}: It suffices to check the rank of $J_F(x)$ for some generating set. 
 
-Indeed suppose $\underline{h}=(h_1,..,h_k)$ also generated $I(Y)$ so
+Indeed suppose $\underline{h}=(h_1,..,h_k)$ also generate $I(Y)$ so
 $$
-f_i\sum^k_{\ell=1} g_{i\ell} h_\ell,
+f_i = \sum^k_{\ell=1} g_{i\ell} h_\ell,
 $$
 where $g_{i\ell}\in \calo(\affn^n)$, $\frac{\pd f_i}{\pd x_j}=\sum^k_{\ell=1}\frac{\pd g_{i\ell}}{\pd x_j}h_\ell+\sum^k_{\ell=1}g_{i\ell}\frac{h_\ell}{x_j}$
 
@@ -844,7 +849,7 @@ f&=Y^2-X^3\\
 \frac{\pd f}{\pd Y}&=2Y
 \end{aligned}\right.
 $$
-so $X=Y=0$ is the only singular point if $K$ has characteristic $\neq 2,3$.
+so $X=Y=0$ is the only singular point.
 
 $Y^2=X^3-X$
 >>>>>>pic
@@ -869,7 +874,7 @@ $$
 &=\{\text{ regular functions on some } U\ni x\}/(f_1\sim f_2\text{ if they coincide on } U_{f_1}\cap U_{f_2})
 \end{aligned}
 $$
-if $Y$ is affine, then $\calo){Y,x}=\{f_1/f_2\in K(Y)|f_i\in\calo(Y),f_2(x)\neq 0\}=\calo(Y)_{\scm_x}$, where $\scm_x=\{f\in\calo(Y)|f(x)=0\}$ is the maximal ideal corresponding to $x$.
+if $Y$ is affine, then $\calo_{Y,x}=\{f_1/f_2\in K(Y) \mid f_i\in\calo(Y),f_2(x)\neq 0\}=\calo(Y)_{\scm_x}$, where $\scm_x=\{f\in\calo(Y)|f(x)=0\}$ is the maximal ideal corresponding to $x$.
 $$
 \calo(Y)\subset\calo_{Y,x}\subset K(Y)
 $$
@@ -883,12 +888,12 @@ $$
 where $\scm_{Y,x}\subset \calo_{Y,x}$ is the maximal ideal 
 \end{dfn}
 \begin{rmk}
-$\calo_{Y,y}$ is a local ring, it has a unique maximal ideal which is $\calo_x\calo_{Y,x}$ in the affine case. Moreover $\calo_{Y,x}/\scm/\calo_{Y,x}=K$ by $f\mapsto f(x)$.
+$\calo_{Y,x}$ is a local ring, it has a unique maximal ideal $\scm$ which is $\calo_x\calo_{Y,x}$ in the affine case. Moreover $\calo_{Y,x}/\scm=K$ by $f\mapsto f(x)$.
 \end{rmk}
 
-N.B. Intuitively,  $f\in \calo_{Y,x}$, defined around $x\in\scm_{Y,x}$
+N.B. Intuitively,  the Taylor expansion of $f\in \calo_{Y,x}$ about $x\in\scm_{Y,x}$ is
 $$
-f=f(x)+\sum^n_{j=1}\frac{\pd f}{\pd x_j}(x)(X-x_j)
+f(X)=f(x)+\sum^n_{j=1}\frac{\pd f}{\pd x_j}(x)(X-x_j)+\dots
 $$
 if $f\in\scm_{Y,x}$ then $f(x)=0$ and terms of order $\geq 2$ belongs to $\scm_{Y,x}^2$, so $f$ has image
 $$
