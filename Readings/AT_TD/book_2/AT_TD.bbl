@@ -16,5 +16,28 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \sortlist{nyt}{nyt}
+    \entry{spanier1989algebraic}{book}{}
+      \name{author}{1}{}{%
+        {{hash=02781f3a486f60efd04e6d3b260841e8}{Spanier}{S\bibinitperiod}{Edwin\bibnamedelima H}{E\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{02781f3a486f60efd04e6d3b260841e8}
+      \strng{fullhash}{02781f3a486f60efd04e6d3b260841e8}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{1}
+      \field{title}{Algebraic topology}
+      \field{volume}{55}
+      \field{year}{1989}
+    \endentry
+  \endsortlist
+\endrefsection
 \endinput
 

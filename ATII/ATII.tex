@@ -76,7 +76,10 @@
 \newtheorem{dfn/thm}[thm]{Definition/Theorem}
 \renewcommand{\baselinestretch}{1.1}
 \renewcommand{\hom}{\text{ Hom}}
+\newcommand{\im}{\text{ im}}
+\newcommand{\coker}{\text{ coker}}
 \newcommand{\tor}{\text{ Tor}}
+\newcommand{\ext}{\text{ Ext}}
 \newcommand{\affn}{\mathbb A}
 \newcommand{\proj}{\mathbb P}
 \newcommand{\reals}{\mathbb R}
@@ -138,7 +141,7 @@
 \maketitle
 \tableofcontents
 \newpage
-\section{21th Feb: Tor functor}
+\section{Feb 21th: Tor functor}
 \begin{dfn}
 Suppose $A$ is an abelian group, A \textbf{Free resolution} is an exact sequence of the form
 $$
@@ -167,7 +170,7 @@ $$
 
 This definition is independent on the choice of short free resolution.
 
-\section{28th Feb:}
+\section{Feb 28th:}
 
 \underline{Question}: Given $X, Y$ what is the cohomology of $X\times Y$?
 
@@ -315,7 +318,7 @@ Take the direct sum over $i$ and use the fact that
 \end{proof}
 
 
-\section{2nd Mar: Eilenberg-Zilber}
+\section{Mar 2nd: Eilenberg-Zilber}
 
 \begin{thm}
 (Eilenberg-Zilber) if $X$ and $Y$ are two topological spaces. There is a nontrivial chain equivalence
@@ -615,6 +618,226 @@ Let $X$ and $Y$  be otpological spaces then for $n\geq0$
 
 There is a split exact sequence
 \end{cor}
+\section{Mar 7th: Cochain complexes and cohomology}
+
+\section{Mar 9th: Universal coefficient theorem for cohomology}
+\begin{dfn}
+Suppose $A$ is an abelian group and let 
+$$
+0\lrta K \overset{f}{\lrta} F\lrta A\lrta 0
+$$
+is a short free resolution. Take another abelian group and apply $\hom(\square, B)$, we can find an exact sequence
+$$
+0\lrta \hom(A, B)\lrta \hom(F,B) \overset{\hom(f,B)}{\lrta} \hom(K,B)
+$$
+and we define $\ext(A,B):=\coker\hom(f,B)=\hom (K,B)/\im \hom(f,B)$. Thus $\ext (A,B) $measures the failure for $\hom(\square, B)$ to be right exact.
+\end{dfn}
+Here is a more sophisticated way of viewing $\ext (A,B)$ consider a chain complex $C_1=K$, $C_0=F$, $\pd_1:C_1\lrta C_0=f: K\lrta F$ and all other group zero. $H_0(C_\bullet)=A$. Now apply $\hom(\square, B)$ to a cochain complex $\hom(C_\bullet ,B)$, the definition of $\ext (A,B)$ gives us immediately that
+$$
+H^1(\hom(C_\bullet,A))=\ext(A,B).
+$$
+From this it follows that $\ext(\square, B)$ is a contravariant functor and it is well defined (independent of the choice of short free resolution.)
+\begin{dfn}
+An abelian group $D$ is said to be \textbf{divisible} if  for every $b\in D$ and every $n\in \mathbb{N}$ there exists an $a\in D$ s.t., $na=b$
+\end{dfn}
+
+\begin{thm}
+(Properties of $\ext$)
+
+For a fixed abelian group $A$, $\ext(\square, A)$ is a contravariant functor and $\ext(A,\square)$ is a covariant funcotr. Moreover,
+\begin{enumerate}[label=(\arabic*)]
+\item If $F$ is a free group, then $\ext (F,B)=0,\forall B$. If $D$ is a divisible abelian group, then $\ext (A,D)=0\forall A$.
+\item If  $A$ is a finitely generated group with torsion subgroup $T(A)$ then $\ext(A,\intg)=T(A)$
+\item $0\lrta A\lrta A'\lrta A''\lrta 0$ is exact, then for any $B$, there is an exact sequence
+$$
+\begin{tikzcd}
+0 \arrow[r] & \hom(A'',B) \arrow[r] & \hom(A',B) \arrow[r] & \hom(A,B) \arrow[lld] &  \\
+ & \ext(A'',B) \arrow[r] & \ext(A',B) \arrow[r] & \ext(A,B) \arrow[r] & 0
+\end{tikzcd}
+$$
+
+
+If $0\lrta B\lrta B'\lrta B''\lrta 0$ is exact, then for any $A$, there is an exact sequence
+$$
+\begin{tikzcd}
+0 \arrow[r] & \hom(A,B) \arrow[r] & \hom(A,B') \arrow[r] & \hom(A,B'') \arrow[lld] &  \\
+ & \ext(A,B) \arrow[r] & \ext(A,B') \arrow[r] & \ext(A,B'') \arrow[r] & 0
+\end{tikzcd}
+$$
+\item If $B$ is an abelian group and $\{A_\lambda|\lambda\in \Lambda\}$ is a collection of abelian group then 
+$$
+\ext\left(\bigoplus_{\lambda\in\Lambda} A_\lambda,B\right)\cong \prod_{\lambda\in \Lambda} \ext(A_\lambda, B)
+$$
+$$
+\ext\left(B, \prod_\lambda A_\lambda\right)\cong \prod_{\lambda\in \Lambda} \ext(B,A_\lambda)
+$$
+\item For any $m\in \mathbb{N}$ and any $B$
+$$
+\ext(\intg_m, B)\cong B/mB
+$$
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Every thin g apart from $(1)$ and $(2)$ all follow identically to the corresponding statements about $\tor$. These two new statements are left as exercise. 
+\end{proof}
+
+\subsection*{Three universal coefficient theorems}
+
+Let $C_\bullet$ be a chain complex and $A$ be an abelian group, form $\hom(C_\bullet, A)$ as a cochain complex.
+
+we define a natural chain map $\zeta$ as follows
+$$\zeta:H^n(\hom(C_\bullet,A))\lrta \hom(H_n(C_\bullet ),A)$$
+$$
+\zeta\lgl \gamma\rgl\lgl c\rgl =\gamma(c)\in A
+$$
+We need to check this is well defined.
+
+Suppose $\gamma,\gamma'$ to be cocycles s.t. $\lgl\gamma\rgl=\lgl\gamma'\rgl$, $c,c'$ to be cycles s.t. $\lgl c\rgl=\lgl c'\rgl$.
+
+\underline{Claim}: $\gamma(c)=\gamma'(c')$.
+
+$$
+\begin{aligned}
+ \gamma'&=\gamma+ d \delta\\
+c'&=c+\pd a\\
+\gamma'(c')&= \gamma(c)+ d\delta( c)+\gamma(\pd a)+d \delta(\pd a)\\
+&= \gamma(c)+ \delta(\pd c)+d\gamma(a)+d \delta(\pd a)\\
+&=\gamma(c)
+\end{aligned}
+$$
+\begin{thm}
+(The dual universal coefficients theorem)
+
+Let $(C_\bullet,\pd)$ be a free chain complex and let $A$ be an abelian group. Then for every $n$ there is a split exact sequence
+$$
+0\lrta \ext(H_{n-1}(C_\bullet, A))\lrta H^n(\hom(C_\bullet, A))\overset{\zeta}{\lrta}\hom(H_n(C_\bullet)m A)\lrta 0,
+$$
+where $\zeta$ is the map defined above.
+$$
+H^n(\hom(C_\bullet , A))\cong \hom(H_n(C_\bullet), A)\oplus\ext (H_n{C_\bullet}, A). 
+$$
+This specialize to $C_\bullet=C_\bullet(X)$  for $X$ a topological space
+\end{thm}
+\begin{proof}
+Go through the proof of universal coefficient theorem and 
+\begin{enumerate}[label=(\alph*)]
+\item erase $\square \otimes A$ and write $\hom(\square, A)$ 
+\item erase $\tor $ and write $\ext$
+\item reverse arrow when needed.
+\end{enumerate}
+\end{proof}
+
+\begin{dfn}
+A topological space $X$ is of \textbf{finite type} is $H_n(X)$ is finitely generated for all $n$. This covers all spaces we have looked at so far.
+\end{dfn}
+\begin{cor}
+Let $X$  be of finite type  Denote  by $T_n(X)$ the torsion subgroup of $H_n(X)$. Then $\forall n\geq 0$
+$$
+H^n(X)\cong H_n(X)/T_n(X)\oplus T_{n-1}(X)
+$$ 
+\begin{proof}
+For any finitely generated group  $A$, $\hom(A,\intg)\cong A/T(A)$[in problem sheet]
+$\ext(H_{n-1}(X),\intg)\cong T_{n-1}(X)$ by property $(2)$ of Ext theorem.
+\end{proof}
+If $C_\bullet$ and $D_\bullet$ be two chain complex there is a natural chain map to male $\hom(C_\bullet, D_\bullet)$ to a cochain complex, and one could mimic what we did in Lecture 26 to obtain an algebraic  Kuenneth lemma. But it is useless, because there is no analogous Eilenberg-Zilber theorem for cochain complex.
+\end{cor}
+
+\begin{prop}
+Let $X$ be a topological space of finite type. Then there exists a free non-negative chain complex $(E_\bullet,\epsilon )$ such that $(C_\bullet(X),\pd)\cong (E_\bullet,\epsilon)$ and such that each $E_n$ is finitely generated.
+\end{prop}
+\begin{proof}
+Let $p:Z_n(X)\lrta H_n(X)$, $c\mapsto \lgl c\rgl$. Since $H_n(X)$ is finitely generated, $\exists$ finitely generated subgroup $F_n\subset Z_n(X)$ s.t., $p|_{F_n}$  is surjective. Note $F_n$ is free (As $Z_n(X)$ is free). $F_n'=\ker p|_{F_n}:F_n\lrta H_n(X)$, 
+$$
+E_n=F_n\oplus F_n'
+$$
+$E_n$ is indeed free and finitely generated.
+$\epsilon: E_n\lrta E_{n-1} $ $(c,c')\mapsto (c',0)$, then obviously, $\epsilon^2=0$, $(E_\bullet,\epsilon)$ is a chain complex.
+\begin{equation}\tag{*}
+H_n(E_\bullet)=\frac{ker \epsilon :E_n\lrta E_{n-1}}{\im \epsilon E_{n+1}\lrta E_n}=\frac{F_n}{F_{n-1}'}=H_n(X).
+\end{equation}
+
+Now let us build a chain map $$
+f:(E_\bullet, \epsilon)\lrta (C_\bullet(X),\pd)
+$$
+Since $F_n'$ is free abelian, there exists a homomorphism
+$$
+g: F_n'\lrta C_{n+1}(X)
+$$
+s.t. $\pd g(c')=c',\forall c'\in F_n'$. (Lemma 22.3) in ATI notes.
+
+Define 
+$$
+f: E_n\lrta C_n(X)
+$$
+$$
+(c,c')\longmapsto c+ g(c')
+$$
+\underline{Claim}: $f\circ \epsilon=\pd \circ f$
+$$
+f\epsilon (c,c')=f(c',0)=c'
+$$
+$\pd f(c,c')=\pd c+\pd g(c)$. But $F_n\subset Z_n(X)$ by assumption so $\pd f(c,c')=c'=f\epsilon(c,c')$. Thus $f$ is a chain map and we get an induced map.
+$$
+H_n(f): H_n(E_\bullet)\lrta H_n(X)
+$$
+which is isomorphism by $(*)$, then $f$ is a chain equivalence because $E_n$ is free.
+
+\end{proof}
+
+\begin{lemma}
+Let $E_\bullet$ be a chian complex s.t. each $E_n$ is finitely generated, and let $A$ be an abelian group. Then there is an isomorphism of cochain complexes
+$$
+\hom(E_\bullet, \intg)\otimes A\cong \hom(E_\bullet, A)
+$$
+\end{lemma}
+\begin{proof}
+$$
+h: \hom(E_n,\intg)\lrta \hom(E_n,A)
+$$
+$$
+\gamma\otimes a\longmapsto [c\mapsto \gamma(c)a]
+$$
+$E_n\ni h(\gamma\otimes a)(c)=\gamma(c)\cdot a$, where $\gamma(c)\in \intg$ and this is multiplication in $A$. This is clearly a chain map  but hwy is it an isomorphism?
+
+induct on the rank of $E_n$ if rank $E_n=1$ then $E_n\cong \intg$ and $\intg\otimes A\cong A$. 
+
+For the inductive steps, we just use that both $\otimes $ and $\hom$ respects $(B\oplus B')$
+\end{proof}
+
+
+\begin{thm}
+(Cohomological universal coefficients theorem) Let $X $ be a topological space of finite type and let $A$ be an abelian group. Then $\forall n\geq 0$, there are split exact sequences.
+$$
+0\lrta H^n(X)\otimes A\lrta H^n(X,A)\lrta \tor(H^{n+1},A)\lrta 0
+$$
+\end{thm}
+\begin{proof}
+By the proposition, $\exists $ a free and finitely generated chain complex $E_\bullet$ which is chain equivalent to $C_\bullet (X)$ . Set $E^\bullet=\hom(E_\bullet.\intg)$. Then $E^\bullet$ is free, finitely generated cochina complex, thus by the UCT, there is a split short exact sequence.
+$$
+0\lrta H^n(E^\bullet)\otimes A\lrta H^n(E^\bullet\otimes A)\lrta \tor(H^{n+1}(E^\bullet), A)\lrta 0
+$$
+$H^n(E^\bullet)=H^n(\hom(
+E_\bullet ,\intg))\cong H^n(\hom(C_n(X),\intg))=H^n(X)$ 
+
+$E^\bullet\otimes A=\hom(E,\intg)\otimes A=\hom(E_\bullet,A)\cong \hom(C_\bullet(X),A)$
+\end{proof}
+
+\begin{thm}
+(Kuenneth Formula for cohomology)
+
+Let $X$ and $Y$ be topological spaces of finite type. Then $\forall n\geq 0$, $\exists $a split short exact sequence.
+$$
+0\lrta \bigoplus_{i+j=n}H^i(X)\otimes H^j(Y)\lrta H^n(X\times Y)\lrta \bigoplus_{k+\ell=n+1}\tor(H^k(X),H^\ell(Y))\lrta 0
+$$
+\end{thm}
+\begin{proof}
+Let $E_\bullet, F_\bullet$ be two finitely generated free chain complexes equivalent to $C_\bullet(X), C_\bullet(Y)$ respectively.
+\end{proof}
+
+
+
+
+
 
 
 
