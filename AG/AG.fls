@@ -334,4 +334,5 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 INPUT Y^2-X^3.pdf
 INPUT Y^2=X^3-X.pdf
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
 INPUT AG.aux
