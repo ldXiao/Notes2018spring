@@ -133,7 +133,7 @@
 \newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
 \renewcommand{\qedsymbol}{$\square$}
 \bibliographystyle{plain}
-\title{\bf Lecture Notes for Algebraic Geomtry I}
+\title{\bf Lecture Notes for Algebraic Geometry I}
 \author{Lecture delivered by Emmanuel Kowalski\\
 Notes by Lin-Da Xiao and David Burgschweiger}
 \date{2018 ETH} 
@@ -794,11 +794,11 @@ so the fraction field $K(\tilde{Y})$ injects into $K(Y)$. The image of $K(\tilde
 \section*{Nonsingular varieties}
 Concrete geometric definition:
 \begin{dfn}
-$Y\subset \affn^n$ affine variety $\dim Y=d$, $x\in Y$. We say $Y$ is \textbf{nonsingular} at $x$ if, for any generating set $\underline{f}:=(f_1,...,f_m)$ of $I(Y)$, the Jacobian matrix at $x$
+$Y\subset \affn^n$ affine variety $\dim Y=d$, $x\in Y$. We say $Y$ is \textbf{nonsingular} at $x$ if for any generating set $\underline{f}:=(f_1,...,f_m)$ of $I(Y)$, the Jacobian matrix at $x$
 $$
 J_{\underline{f}}(x)=\left(\frac{\pd f_i(x)}{\pd x_j}\right)_{1\leq i\leq m, 1\leq j \leq n}\in M_{m\times n}(K)
 $$
-has rank $n-d$ if this holds for all $x$, then we say $Y$ is \textbf{nonsingular}.
+has rank $n-d$. If this holds for all $x$, then we say $Y$ is nonsingular.
 \end{dfn}
 \underline{Key fact}: It suffices to check the rank of $J_F(x)$ for some generating set. 
 
@@ -932,7 +932,7 @@ $$
 rank\ J_{\underline{f}}(x)=n-d.
 $$
 \begin{thm}(Zariski)
-The followings are equivalent
+The following are equivalent
 \begin{enumerate}[label=(\arabic*)]
 \item
 $Y$ is non-singular at $x$
@@ -940,42 +940,44 @@ $Y$ is non-singular at $x$
 \end{enumerate}
 \end{thm}
 \begin{proof}
-$I=I(Y), x=(x_1,...,x_n)\in\affn^n$.
+Denote $I:=I(Y)$ and  $x:=(x_1,...,x_n)\in\affn^n$.
 
 Let $I_x:=(X_1-x_1,...,X_n-x_n)\subset \calo(\affn^n)$ so that $\tilde{\scm}_{Y,x}=I_x/I$.
 
-\underline{Fact}: there  is an isomorphism of $K$-vector spaces
+\underline{Fact}: There  is an isomorphism of $K$-vector spaces
 $$
 \theta:\left\{\begin{aligned}
-& I_x/I_x^2\lrta K^n\\
-& f\longmapsto \left(\frac{\pd f(x)}{\pd x_j}\right)_{1\leq j\leq n}
-\end{aligned}\right.
+ I_x/I_x^2&\lrta K^n\\
+ f&\longmapsto \left(\frac{\pd f}{\pd X_j}(x)\right)_{1\leq j\leq n}
+\end{aligned}\right. ~.
 $$
-$f\in I^2_x\Lrta f=\sum_{i,j}h_{ij}(X_i-x_i)(X_j-x_j)$, and in general 
+To see this, note that $f\in I^2_x$ iff $f=\sum_{i,j}h_{ij}(X_i-x_i)(X_j-x_j)$ and thus each $f \in I_x/I_x^2$ can be expressed as
 $$
-f=\sum_{i}^n(X_i-x_i)\frac{\pd f}{\pd x_i}(x)+I_x^2.
+f=\sum_{i}^n(X_i-x_i)\frac{\pd f}{\pd X_i}(x)+I_x^2.
 $$
-Let $(f_1,...,f_m)$ be a generating set of $I$. Then $(\theta(f_1),...,\theta(f_m))$ are the columns of $J_{\underline{f}}(x)$ and if $f\in I$, 
+That means each $f$ is uniquely defined by its derivatives and this preserves scalar multiplication.
+
+Let $(f_1,...,f_m)$ be a generating set of $I$. Then $(\theta(f_1),...,\theta(f_m))$ are the columns of $J_{\underline{f}}(x)$ and for any $f\in I$ we can write
 $$
 f=\sum_j g_j f_j
 $$
+for some $g_j \in K[X]$. Thus
 $$
-\Lrta \frac{\pd f}{\pd x_i}(x)=\sum^n_{j=1} g_j(x)\frac{\pd f_j}{x_i}(x)
+\frac{\pd f}{\pd X_i}(x)=\sum^n_{j=1} g_j(x)\frac{\pd f_j}{\pd X_i}(x)~.
 $$
-$
-\Lrta 
-$ the span of $\theta(f_j)$ is $\theta(I_x/I_x^2)$, so 
+In other words
 $$
-rank\  J_{\underline{f}}(x)=\dim_K\theta(I/I_x^2)=\dim_K(I/I_x^2)
+\theta(f)_i=\sum^n_{j=1} g_j(x) \theta(f_j)_i~.
 $$
-Consider
+We conclude that the span of the $\theta(f_j)$ is $\theta(I_x/I_x^2)$, so 
 $$
-0\lrta I_x^2+I/I_x^2\lrta I_x/I_x^2\lrta I_x/(I+I_x^2)\lrta 0
+rank\  J_{\underline{f}}(x)=\dim_K\theta(I_x/I_x^2)=\dim_K(I_x/I_x^2) ~.
 $$
-
-Then $=rank \ J_{\underline{f}}(x)+\dim_K(I_x/I+I_x^2)$.  so 
-
-$x$ is non-singular iff 
+Consider the short exact sequence
+$$
+0\lrta (I_x^2+I)/I_x^2\lrta I_x/I_x^2\lrta I_x/(I+I_x^2)\lrta 0 ~.
+$$
+From the we see that $rank \ J_{\underline{f}}(x) = \dim_K((I_x^2+I)/I_x^2) + \dim_K(I_x/(I+I_x^2))$.  So $x$ is non-singular iff 
 $d=\dim_K(I_x/I+I_x^2)$. []$I_x$ depends on $Y\inj \affn^n$]
 
 Consider 
