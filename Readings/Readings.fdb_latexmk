@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1520948297 "Readings.tex" "Readings.pdf" "Readings" 1520948300
+["pdflatex"] 1521153171 "Readings.tex" "Readings.pdf" "Readings" 1521153174
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -11,6 +11,8 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1136768653 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm" 1136768653 1532 9162035f4e7176612125649e348e2195 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -197,13 +199,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Readings.aux" 1520948300 1478 8187eeb7d6ce9cbca03e1ac68a56a575 ""
-  "Readings.out" 1520948300 589 075b35d913d46c7f56dbf3a0e278e2a9 ""
-  "Readings.tex" 1520948297 20655 fd9128bff046c3b3904990facf30e465 ""
-  "Readings.toc" 1520948300 689 920f1b5b4522a8653b61a37499675d5f ""
+  "Readings.aux" 1521153173 1478 eb514b80ca976a951df7fae5a44b3371 ""
+  "Readings.out" 1521153173 589 075b35d913d46c7f56dbf3a0e278e2a9 ""
+  "Readings.tex" 1521153171 22477 95ad17cc7b8e57ca2147cc9913c2fe76 ""
+  "Readings.toc" 1521153173 689 7b7a797bbf318cfa8a7a34a648282d24 ""
   (generated)
-  "Readings.out"
-  "Readings.log"
-  "Readings.aux"
   "Readings.pdf"
   "Readings.toc"
+  "Readings.log"
+  "Readings.out"
+  "Readings.aux"

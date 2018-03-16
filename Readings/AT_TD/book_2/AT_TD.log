@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  12 MAR 2018 20:56
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  15 MAR 2018 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1257,23 +1257,23 @@ tly
 )
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 605.
+(hyperref)                setting the option has no effect on input line 606.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 605.
+(hyperref)                setting the option has no effect on input line 606.
 
 
 Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 605.
+(hyperref)                setting the option has no effect on input line 606.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 605.
-Package hyperref Info: Option `breaklinks' set `true' on input line 605.
+Package hyperref Info: Option `colorlinks' set `true' on input line 606.
+Package hyperref Info: Option `breaklinks' set `true' on input line 606.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 605.
+(hyperref)                setting the option has no effect on input line 606.
 
-Package hyperref Info: Option `bookmarksopen' set `false' on input line 605.
+Package hyperref Info: Option `bookmarksopen' set `false' on input line 606.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -1519,9 +1519,13 @@ LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 5.
+
+Underfull \vbox (badness 1681) has occurred while \output is active []
+
  [3
 
-] [4])
+]
+[4])
 \tf@toc=\write6
 \openout6 = `AT_TD.toc'.
 
@@ -1574,190 +1578,242 @@ MS/ztmcm/m/n/10.95 ^^B \OML/ztmcm/m/it/10.95 I [] Y\OT1/ztmcm/m/n/10.95 )\OML/z
 tmcm/m/it/10.95 = \OMS/ztmcm/m/n/10.95 ^^X$\T1/ptm/m/n/10.95 ,
  []
 
-[13] [14
+[13]
+Package mdframed Info: mdframed works in twoside mode on input line 166.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 166.
+ [14] [15] [16
 
 ]
 Chapter 5.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [15] [16
+<use  "Pictures/blue_chap_head.pdf" >
+Package mdframed Info: mdframed works in twoside mode on input line 221.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 221.
+Package mdframed Info: mdframed works in twoside mode on input line 230.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 230.
+ [17]
+Package mdframed Info: mdframed works in twoside mode on input line 252.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 252.
+Package mdframed Info: mdframed works in twoside mode on input line 260.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 260.
+Package mdframed Info: mdframed works in twoside mode on input line 265.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 265.
+Package mdframed Info: mdframed works in twoside mode on input line 274.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 274.
+Package mdframed Info: mdframed works in twoside mode on input line 284.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 284.
+Package mdframed Info: mdframed works in twoside mode on input line 291.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 291.
+ [18]
+Package mdframed Info: mdframed works in twoside mode on input line 331.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 331.
+ [19]
+File: varp.png Graphic file (type QTm)
+ <use  "varp.png" >
+[20]
+Package mdframed Info: mdframed works in twoside mode on input line 412.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 412.
+ [21] [22
 
 ]
 Chapter 6.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [17] [18
+<use  "Pictures/blue_chap_head.pdf" > [23] [24
 
 ]
 Chapter 7.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [19] [20
+<use  "Pictures/blue_chap_head.pdf" > [25] [26
 
 ]
 Chapter 8.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [21] [22
+<use  "Pictures/blue_chap_head.pdf" > [27] [28
 
 ]
 Chapter 9.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [23] [24
+<use  "Pictures/blue_chap_head.pdf" > [29] [30
 
 ]
 Chapter 10.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [25] [26
+<use  "Pictures/blue_chap_head.pdf" > [31] [32
 
 ]
 Chapter 11.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
 <use  "Pictures/blue_chap_head.pdf" >
-Package mdframed Info: mdframed works in twoside mode on input line 175.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 175.
-Package mdframed Info: mdframed works in twoside mode on input line 185.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 185.
-Package mdframed Info: mdframed works in twoside mode on input line 196.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 196.
- [27]
-Package mdframed Info: Not enough space on this page on input line 198.
-Package mdframed Info: mdframed works in twoside mode on input line 233.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 233.
-Package mdframed Info: mdframed works in twoside mode on input line 266.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 266.
- [28]
-Package mdframed Info: Not enough space on this page on input line 279.
-Package mdframed Info: mdframed works in twoside mode on input line 280.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 280.
-Package mdframed Info: mdframed works in twoside mode on input line 367.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 367.
- [29]
-Package mdframed Info: Not enough space on this page on input line 373.
-Package mdframed Info: mdframed works in twoside mode on input line 384.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 384.
-Package mdframed Info: mdframed works in twoside mode on input line 402.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 402.
-Package mdframed Info: mdframed works in twoside mode on input line 415.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 415.
- [30]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 450.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 450.
-Package mdframed Info: mdframed works in twoside mode on input line 452.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 452.
 Package mdframed Info: mdframed works in twoside mode on input line 458.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 458.
- [31] [32]
-Package mdframed Info: mdframed works in twoside mode on input line 552.
+Package mdframed Info: mdframed works in twoside mode on input line 468.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 552.
-Package mdframed Info: mdframed works in twoside mode on input line 568.
+(mdframed)              on input line 468.
+Package mdframed Info: mdframed works in twoside mode on input line 479.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 568.
-Package mdframed Info: Not enough space on this page on input line 570.
+(mdframed)              on input line 479.
  [33]
-Package mdframed Info: Not enough space on this page on input line 570.
-Package mdframed Info: mdframed works in twoside mode on input line 572.
+Package mdframed Info: Not enough space on this page on input line 481.
+Package mdframed Info: mdframed works in twoside mode on input line 516.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 572.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 616.
-
-[34]
-Package mdframed Info: mdframed works in twoside mode on input line 672.
+(mdframed)              on input line 516.
+Package mdframed Info: mdframed works in twoside mode on input line 549.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 672.
+(mdframed)              on input line 549.
+ [34]
+Package mdframed Info: Not enough space on this page on input line 562.
+Package mdframed Info: mdframed works in twoside mode on input line 563.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 563.
+Package mdframed Info: mdframed works in twoside mode on input line 650.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 650.
+ [35]
+Package mdframed Info: Not enough space on this page on input line 656.
+Package mdframed Info: mdframed works in twoside mode on input line 667.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 667.
+Package mdframed Info: mdframed works in twoside mode on input line 685.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 685.
+Package mdframed Info: mdframed works in twoside mode on input line 698.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 698.
+ [36]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 733.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 733.
+Package mdframed Info: mdframed works in twoside mode on input line 735.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 735.
+Package mdframed Info: mdframed works in twoside mode on input line 741.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 741.
+ [37] [38]
+Package mdframed Info: mdframed works in twoside mode on input line 835.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 835.
+Package mdframed Info: mdframed works in twoside mode on input line 851.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 851.
+Package mdframed Info: Not enough space on this page on input line 853.
+ [39]
+Package mdframed Info: Not enough space on this page on input line 853.
+Package mdframed Info: mdframed works in twoside mode on input line 855.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 855.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 899.
+
+[40]
+Package mdframed Info: mdframed works in twoside mode on input line 955.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 955.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 682.
- [35]
-Package mdframed Info: mdframed works in twoside mode on input line 684.
+(mdframed)              on input line 965.
+ [41]
+Package mdframed Info: mdframed works in twoside mode on input line 967.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 684.
-LaTeX Font Info:    Try loading font information for OT1+pzc on input line 700.
+(mdframed)              on input line 967.
+LaTeX Font Info:    Try loading font information for OT1+pzc on input line 983.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2001/06/04 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 700.
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 983.
 
 Package microtype Info: Loading generic settings for font family
 (microtype)             `pzc' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <8> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 700.
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 983.
 
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <6> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 700.
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 983.
 
 
-[36]
-Package mdframed Info: mdframed works in twoside mode on input line 776.
+[42]
+Package mdframed Info: mdframed works in twoside mode on input line 1059.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 776.
- [37] [38
+(mdframed)              on input line 1059.
+ [43] [44
 
 ]
 Chapter 12.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [39] [40
+<use  "Pictures/blue_chap_head.pdf" > [45] [46
 
 ]
 Chapter 13.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [41] [42
+<use  "Pictures/blue_chap_head.pdf" > [47] [48
 
 ]
 Chapter 14.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [43] [44
+<use  "Pictures/blue_chap_head.pdf" > [49] [50
 
 ]
 Chapter 15.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [45] [46
+<use  "Pictures/blue_chap_head.pdf" > [51] [52
 
 ]
 Chapter 16.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [47] [48
+<use  "Pictures/blue_chap_head.pdf" > [53] [54
 
 ]
 Chapter 17.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
 <use  "Pictures/blue_chap_head.pdf" >
-Overfull \hbox (12.24251pt too wide) in paragraph at lines 813--814
+Overfull \hbox (12.24251pt too wide) in paragraph at lines 1096--1097
 []\T1/ptm/b/n/10.95 Excision. \T1/ptm/m/n/10.95 Let $\OT1/ztmcm/m/n/10.95 (\OML
 /ztmcm/m/it/10.95 X; A\OT1/ztmcm/m/n/10.95 )$ \T1/ptm/m/n/10.95 be a pair and $
 \OML/ztmcm/m/it/10.95 U \OMS/ztmcm/m/n/10.95 ^^Z \OML/ztmcm/m/it/10.95 A$ \T1/p
@@ -1767,133 +1823,133 @@ T1/ptm/m/n/10.95 . Then the in-clu-sion $\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/
 ML/ztmcm/m/it/10.95 U\OT1/ztmcm/m/n/10.95 ) [][]\OMS/ztmcm/m/n/10.95 !
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 821.
+Package mdframed Info: mdframed works in twoside mode on input line 1104.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 821.
+(mdframed)              on input line 1104.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <5> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 827.
-
-[49] [50]
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1110
+.
+[55] [56]
 Chapter 18.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [51
+<use  "Pictures/blue_chap_head.pdf" > [57
 
-] [52
+] [58
 
 ]
 Chapter 19.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [53] [54
+<use  "Pictures/blue_chap_head.pdf" > [59] [60
 
 ]
 Chapter 20.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [55] [56
+<use  "Pictures/blue_chap_head.pdf" > [61] [62
 
 ]
 Chapter 21.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [57] [58
+<use  "Pictures/blue_chap_head.pdf" > [63] [64
 
 ]
 Appendix A.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
 <use  "Pictures/blue_chap_head.pdf" >
-Package mdframed Info: mdframed works in twoside mode on input line 849.
+Package mdframed Info: mdframed works in twoside mode on input line 1132.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 849.
-Package mdframed Info: mdframed works in twoside mode on input line 853.
+(mdframed)              on input line 1132.
+Package mdframed Info: mdframed works in twoside mode on input line 1136.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 853.
-Package mdframed Info: mdframed works in twoside mode on input line 860.
+(mdframed)              on input line 1136.
+Package mdframed Info: mdframed works in twoside mode on input line 1143.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 860.
-Package mdframed Info: mdframed works in twoside mode on input line 874.
+(mdframed)              on input line 1143.
+Package mdframed Info: mdframed works in twoside mode on input line 1157.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 874.
+(mdframed)              on input line 1157.
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <6> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 879.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 1162.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <6> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 879.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 1162.
 
 Underfull \vbox (badness 5217) has occurred while \output is active []
 
- [59]
-Package mdframed Info: mdframed works in twoside mode on input line 891.
+ [65]
+Package mdframed Info: mdframed works in twoside mode on input line 1174.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 891.
-Package mdframed Info: mdframed works in twoside mode on input line 900.
+(mdframed)              on input line 1174.
+Package mdframed Info: mdframed works in twoside mode on input line 1183.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 900.
-Package mdframed Info: mdframed works in twoside mode on input line 903.
+(mdframed)              on input line 1183.
+Package mdframed Info: mdframed works in twoside mode on input line 1186.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 903.
+(mdframed)              on input line 1186.
 
-[60]
-Overfull \hbox (0.76967pt too wide) in paragraph at lines 964--965
+[66]
+Overfull \hbox (0.76967pt too wide) in paragraph at lines 1247--1248
 []\T1/ptm/m/n/10.95 The bot-tom row is ex-act on $\OT1/pzc/mb/it/10.95 M$\T1/pt
 m/m/n/10.95 , in the sense that for ev-ery model $\OML/ztmcm/m/it/10.95 M \OMS/
 ztmcm/m/n/10.95 2 \OT1/pzc/mb/it/10.95 M$\T1/ptm/m/n/10.95 , one has $[]\OT1/zt
 mcm/m/n/10.95 ^^I[](\OML/ztmcm/m/it/10.95 M\OT1/ztmcm/m/n/10.95 ) =
  []
 
-[61] [62]
-Package mdframed Info: mdframed works in twoside mode on input line 1068.
+[67] [68]
+Package mdframed Info: mdframed works in twoside mode on input line 1351.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1068.
- [63]
-Package mdframed Info: mdframed works in twoside mode on input line 1079.
+(mdframed)              on input line 1351.
+ [69]
+Package mdframed Info: mdframed works in twoside mode on input line 1362.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1079.
- [64]
+(mdframed)              on input line 1362.
+ [70]
 Appendix B.
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
-<use  "Pictures/blue_chap_head.pdf" > [65
+<use  "Pictures/blue_chap_head.pdf" > [71
 
-] [66
+] [72
 
 ]
 File: Pictures/blue_chap_head.pdf Graphic file (type QTm)
 
 <use  "Pictures/blue_chap_head.pdf" >
 
-Package biblatex Warning: Type 'article' not found on input line 1102.
+Package biblatex Warning: Type 'article' not found on input line 1385.
 
 
-LaTeX Warning: Empty bibliography on input line 1102.
+LaTeX Warning: Empty bibliography on input line 1385.
 
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
-[67] [68
+[73] [74
 
 ] (./AT_TD.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1122.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1122.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1405.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1405.
  (./AT_TD.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1122.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1122.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1405.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1405.
 Package logreq Info: Writing requests to 'AT_TD.run.xml'.
 \openout1 = `AT_TD.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37239 strings out of 493706
- 704028 string characters out of 6145769
- 1203736 words of memory out of 5000000
- 40053 multiletter control sequences out of 15000+600000
+ 37740 strings out of 493706
+ 716625 string characters out of 6145769
+ 1203992 words of memory out of 5000000
+ 40547 multiletter control sequences out of 15000+600000
  81396 words of font info for 128 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  58i,17n,84p,10508b,1849s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on AT_TD.pdf (68 pages).
+Output written on AT_TD.pdf (74 pages).
