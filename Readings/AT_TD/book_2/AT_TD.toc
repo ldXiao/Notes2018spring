@@ -12,95 +12,107 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}The mapping cylinder}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Cofibrations and fibrations}{15}{chapter.5}
+\contentsline {section}{\numberline {4.2}Double mapping cylinder}{14}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Homotopy groups}{17}{chapter.6}
+\contentsline {section}{\numberline {4.3}Suspension. Homotopy groups}{14}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Stable homotopy. Daulity}{19}{chapter.7}
+\contentsline {section}{\numberline {4.4}Loop space}{14}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Cell complexes}{21}{chapter.8}
+\contentsline {section}{\numberline {4.5}Groups and cogroups}{14}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Singular homology}{23}{chapter.9}
+\contentsline {section}{\numberline {4.6}The cofibre sequence}{14}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.1}Singular Homology Groups}{23}{section.9.1}
+\contentsline {chapter}{\numberline {5}Cofibrations and fibrations}{17}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.2}The Fundamental Group }{23}{section.9.2}
+\contentsline {section}{\numberline {5.1}Fibrations}{17}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.3}Homotopy }{23}{section.9.3}
+\contentsline {chapter}{\numberline {6}Homotopy groups}{23}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.4}Barycentric Subdivision. Excision}{23}{section.9.4}
+\contentsline {chapter}{\numberline {7}Stable homotopy. Daulity}{25}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.5}Weak Equivalences and Homology}{23}{section.9.5}
+\contentsline {chapter}{\numberline {8}Cell complexes}{27}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.6}Homology with Coefficients}{23}{section.9.6}
+\contentsline {chapter}{\numberline {9}Singular homology}{29}{chapter.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.7}The Theorem of Eilenberg and Zilber}{23}{section.9.7}
+\contentsline {section}{\numberline {9.1}Singular Homology Groups}{29}{section.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.8}The Homology Product}{23}{section.9.8}
+\contentsline {section}{\numberline {9.2}The Fundamental Group }{29}{section.9.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}Homology}{25}{chapter.10}
+\contentsline {section}{\numberline {9.3}Homotopy }{29}{section.9.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.1}The Axioms of Eilenberg and Steenrod}{25}{section.10.1}
+\contentsline {section}{\numberline {9.4}Barycentric Subdivision. Excision}{29}{section.9.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {11}Homological algebra}{27}{chapter.11}
+\contentsline {section}{\numberline {9.5}Weak Equivalences and Homology}{29}{section.9.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.1}Diagrams}{27}{section.11.1}
+\contentsline {section}{\numberline {9.6}Homology with Coefficients}{29}{section.9.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.2}Exact sequences}{27}{section.11.2}
+\contentsline {section}{\numberline {9.7}The Theorem of Eilenberg and Zilber}{29}{section.9.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.3}Chain complex}{27}{section.11.3}
+\contentsline {section}{\numberline {9.8}The Homology Product}{29}{section.9.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.4}Cochain complex}{27}{section.11.4}
+\contentsline {chapter}{\numberline {10}Homology}{31}{chapter.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.5}Natural chain maps and homotopies}{27}{section.11.5}
+\contentsline {section}{\numberline {10.1}The Axioms of Eilenberg and Steenrod}{31}{section.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.6}Linear algebra of chain complexes}{27}{section.11.6}
+\contentsline {chapter}{\numberline {11}Homological algebra}{33}{chapter.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.7}Tor and Ext}{30}{section.11.7}
+\contentsline {section}{\numberline {11.1}Diagrams}{33}{section.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.8}Universal coefficients}{35}{section.11.8}
+\contentsline {section}{\numberline {11.2}Exact sequences}{33}{section.11.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.9}Algebraic K\"unneth formula}{35}{section.11.9}
+\contentsline {section}{\numberline {11.3}Chain complex}{33}{section.11.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.10}Eilenberg-Zilber theorem and K\"unneth formula}{36}{section.11.10}
+\contentsline {section}{\numberline {11.4}Cochain complex}{33}{section.11.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {12}Cellular homology}{39}{chapter.12}
+\contentsline {section}{\numberline {11.5}Natural chain maps and homotopies}{33}{section.11.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {13}Partition of unity in homotopy}{41}{chapter.13}
+\contentsline {section}{\numberline {11.6}Linear algebra of chain complexes}{33}{section.11.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {14}Bundles}{43}{chapter.14}
+\contentsline {section}{\numberline {11.7}Tor and Ext}{36}{section.11.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {15}Manifolds}{45}{chapter.15}
+\contentsline {section}{\numberline {11.8}Universal coefficients}{41}{section.11.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {16}Homology of manifolds}{47}{chapter.16}
+\contentsline {section}{\numberline {11.9}Algebraic K\"unneth formula}{41}{section.11.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {17}Cohomology}{49}{chapter.17}
+\contentsline {section}{\numberline {11.10}Eilenberg-Zilber theorem and K\"unneth formula}{42}{section.11.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17.1}Axiomatic approach}{49}{section.17.1}
+\contentsline {chapter}{\numberline {12}Cellular homology}{45}{chapter.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17.2}Cohomological universal coefficients theorems}{50}{section.17.2}
+\contentsline {chapter}{\numberline {13}Partition of unity in homotopy}{47}{chapter.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {18}Duality}{51}{chapter.18}
+\contentsline {chapter}{\numberline {14}Bundles}{49}{chapter.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {19}Characteristic classes}{53}{chapter.19}
+\contentsline {chapter}{\numberline {15}Manifolds}{51}{chapter.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {20}Homology and homotopy}{55}{chapter.20}
+\contentsline {chapter}{\numberline {16}Homology of manifolds}{53}{chapter.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {21}Bordism}{57}{chapter.21}
+\contentsline {chapter}{\numberline {17}Cohomology}{55}{chapter.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\text {Acyclic models and model categories}}{59}{appendix.A}
+\contentsline {section}{\numberline {17.1}Axiomatic approach}{55}{section.17.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Acyclic models theorem}{59}{section.A.1}
+\contentsline {section}{\numberline {17.2}Cohomological universal coefficients theorems}{56}{section.17.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Model categories}{64}{section.A.2}
+\contentsline {chapter}{\numberline {18}Duality}{57}{chapter.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Derived functors and derived categories}{65}{appendix.B}
+\contentsline {chapter}{\numberline {19}Characteristic classes}{59}{chapter.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}More on Tor and Ext}{65}{section.B.1}
+\contentsline {chapter}{\numberline {20}Homology and homotopy}{61}{chapter.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{67}{appendix*.2}
+\contentsline {chapter}{\numberline {21}Bordism}{63}{chapter.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{67}{section*.3}
+\contentsline {chapter}{\numberline {A}\text {Acyclic models and model categories}}{65}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{67}{section*.4}
+\contentsline {section}{\numberline {A.1}Acyclic models theorem}{65}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Model categories}{70}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Derived functors and derived categories}{71}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.1}More on Tor and Ext}{71}{section.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{73}{appendix*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articles}{73}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Books}{73}{section*.4}
 \contentsfinish 

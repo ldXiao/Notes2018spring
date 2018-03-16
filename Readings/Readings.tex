@@ -467,7 +467,44 @@ $$
 \section{Model categories}
 Model categories were an abstraction of homotopy theory. They especially useful when we only care about topological spaces up to some weak form of equivalence. For example, homotopy equivalence is a prototype of this ``weak equivalence''.
 \begin{dfn}
-\textbf{weak homotopy equivalences} are map from $X$ to $Y$ that induces isomorphism on each homotopy groups, $\pi_n(X,x)\cong \pi_n(Y,f(x))$
+\textbf{weak homotopy equivalences} are map from $X$ to $Y$ that induces isomorphism on each homotopy groups, $\pi_n(X,x)\cong \pi_n(Y,f(x))$. We often denote weak equivalences by $\overset{\sim}{\lrta}$.
+\end{dfn}
+
+\begin{dfn}
+Let $\calc$ be any category. The arrow category of $\calc,$ denoted $\mathbf{Arr}(\calc)$ is defined to be a category where objects are the arrows of $\calc$ and morphism are commutative squares.
+\end{dfn}
+
+\begin{dfn}
+Let $\calc$ be any category. An arrow $f\in Arr(\calc)$ is a retract of an arrow $g\in Arr(\calc)$ if it is a retract of an object in $\mathbf{Arr}(\calc)$.
+
+Explicitly, $f$ is a retract of $g$ if we are given a commutative diagram as the following:
+$$
+\begin{tikzcd}
+A \arrow[r] \arrow[rr, "id_A", bend left] \arrow[d, "f"'] & C \arrow[r] \arrow[d, "g"] & A \arrow[d, "f"] \\
+B \arrow[r] \arrow[rr, "id_B"', bend right] & D \arrow[r] & B
+\end{tikzcd}
+$$
+\end{dfn}
+
+\begin{dfn}
+Let $\calc$ be any category. A \textbf{model structure} on $\calc$ is  the given three full subcategories $W, FIB, COFIB$ of $\mathbf{Arr}(\calc)$ satisfying the following axioms:
+\begin{enumerate}[label=\textbf{MC\arabic*}]
+\item $\calc$ is (small) complete and (small) cocomplete;
+\item if $f,g,h$ are arrows s.t. $fg=h$ and two of them are in $W$, then so is the third;
+\item $W,FIB,COFIB$ are closed under retracts;
+\item every arrow in $W\cap FIB$ has the RLP with respect to every arrow in $COFIB$ and every arrow in $FIB$ has the RLP with respect to every arrow in $W\cap COFIB$;
+\item there are functorial
+\end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+We see a map $p:E\lrta B$ satisfies the \textbf{homotopy lifting property} iff for any homotopy $h: X\times [0,1]\lrta B$, if we can lift $h(x,0)=h\circ i_0(x) $ to $E$ then we can lift all of $h$ to $E$ extending the original lift. Diagramatically, it means
+$$
+\begin{tikzcd}
+X \arrow[r, "\tilde{h}_0"] \arrow[d, "i_0"'] & E \arrow[d, "p"] \\
+X\times I \arrow[r, "h"'] \arrow[ru, "H", dashed] & B
+\end{tikzcd}
+$$
 \end{dfn}
 
 \section{Formalization renormalization}

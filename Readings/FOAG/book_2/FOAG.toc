@@ -2,43 +2,103 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {I}{Preliminaries}}{5}{part.1}
+\contentsline {part}{\@mypartnumtocformat {I}{Preliminaries}}{7}{part.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {II}{Schemes}}{7}{part.2}
+\contentsline {chapter}{\numberline {1}Some category theory}{9}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Some properties of schemes}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{9}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Topological properties}{9}{section.1.1}
+\contentsline {section}{\numberline {1.2}Categories and functors}{9}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Reducedness and integrality}{13}{section.1.2}
+\contentsline {section}{\numberline {1.3}Universal properties determine an object up to unique isomorphism}{13}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Properties of schemes that can be checked ``affine-locally''}{18}{section.1.3}
+\contentsline {section}{\numberline {1.4}Limits and colimits}{31}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Normality and factoriality}{23}{section.1.4}
+\contentsline {section}{\numberline {1.5}Adjoints}{34}{section.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}The crucial points of a scheme: Associated points and primes}{30}{section.1.5}
+\contentsline {section}{\numberline {1.6}Introduction to Abelian categories}{39}{section.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {III}{Morphisms}}{33}{part.3}
+\contentsline {section}{\numberline {1.7}Spectral sequences}{40}{section.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Morphisms of schemes}{35}{chapter.2}
+\contentsline {chapter}{\numberline {2}Sheaves}{47}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Useful classes of morphisms}{37}{chapter.3}
+\contentsline {section}{\numberline {2.1}Motivating example}{47}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Closed embeddings}{39}{chapter.4}
+\contentsline {section}{\numberline {2.2}Definition of presheaf and sheaf}{48}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fibered product of schemes}{41}{chapter.5}
+\contentsline {section}{\numberline {2.3}Morphism of presheaves and sheaves}{52}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Separated and proper schemes, varieties}{43}{chapter.6}
+\contentsline {section}{\numberline {2.4}Properties determined at the level of stalks, and sheafification}{62}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {IV}{``Geometric'' properties: Dimension and smoothness}}{45}{part.4}
+\contentsline {section}{\numberline {2.5}Recovering sheaves form a ``sheaf on a base''}{69}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {V}{Quasicoherent sheaves}}{47}{part.5}
+\contentsline {section}{\numberline {2.6}Sheaves of Abelian group, and ${\cal O}_X$-modules, form Abelian categories}{73}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {VI}{More}}{49}{part.6}
+\contentsline {section}{\numberline {2.7}The inverse image sheaf}{74}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{51}{chapter*.2}
+\contentsline {part}{\@mypartnumtocformat {II}{Schemes}}{75}{part.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{51}{section*.3}
+\contentsline {chapter}{\numberline {3}Toward affine schemes: the underlying set, and topological space}{77}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{51}{section*.4}
+\contentsline {section}{\numberline {3.1}Towards schemes}{77}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}The underlying sets of affine schemes}{77}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Visualizing schemes I: generic points}{87}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}The underlying topological space of an affine scheme}{87}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}A base of the Zariski topology on schemes: Distinguished open sets}{90}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Topological (and Noetherian) properties}{92}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}The function $I(\cdot ),$ taking subsets of $\text { Spec\tmspace +\thinmuskip {.1667em}}A$ to ideals of $A$}{102}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}The structure sheaf, definition of schemes}{105}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}The structure sheaf of an affine scheme }{105}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Visualizing schemes II: nilpotents}{108}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Definition of schemes }{108}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Three examples}{112}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Projective schemes, and the \textit {Proj} construction }{115}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Some properties of schemes}{129}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Topological properties}{129}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Reducedness and integrality}{133}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Properties of schemes that can be checked ``affine-locally''}{138}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Normality and factoriality}{143}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}The crucial points of a scheme: Associated points and primes}{150}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {III}{Morphisms}}{153}{part.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Morphisms of schemes}{155}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Useful classes of morphisms}{157}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Closed embeddings}{159}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Fibered product of schemes}{161}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}Separated and proper schemes, varieties}{163}{chapter.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {IV}{``Geometric'' properties: Dimension and smoothness}}{165}{part.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {V}{Quasicoherent sheaves}}{167}{part.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {VI}{More}}{169}{part.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{171}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articles}{171}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Books}{171}{section*.4}
 \contentsfinish 

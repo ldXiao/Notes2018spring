@@ -36,6 +36,23 @@
       \field{title}{Algebraic geometry}
       \field{year}{2010}
     \endentry
+    \entry{mac1998categories}{book}{}
+      \name{author}{1}{}{%
+        {{hash=412e255483e0d09fd0b0895d355a28a8}{Mac\bibnamedelima Lane}{M\bibinitperiod\bibinitdelim L\bibinitperiod}{Saunders}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{412e255483e0d09fd0b0895d355a28a8}
+      \strng{fullhash}{412e255483e0d09fd0b0895d355a28a8}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Categories for the Working Mathematician}
+      \field{volume}{5}
+      \field{year}{1978}
+    \endentry
     \entry{neeman2007algebraic}{book}{}
       \name{author}{1}{}{%
         {{hash=b0653a87bc1b4236dc840bab79449849}{Neeman}{N\bibinitperiod}{Amnon}{A\bibinitperiod}{}{}{}{}}%

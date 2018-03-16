@@ -5,4 +5,4 @@
 \contentsline {subsection}{\numberline {3.1}Spectral sequences of filtered complexes}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Spectral sequences of double complex}{10}{subsection.3.2}
 \contentsline {section}{\numberline {4}Model categories}{10}{section.4}
-\contentsline {section}{\numberline {5}Formalization renormalization}{10}{section.5}
+\contentsline {section}{\numberline {5}Formalization renormalization}{11}{section.5}

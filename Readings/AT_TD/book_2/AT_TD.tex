@@ -120,10 +120,10 @@ B &  &  &  \\
  & Y \arrow[uu] \arrow[ru, "i_0"] \arrow[luuu] &  & X \arrow[ll, "f"] \arrow[uu, "i_0"'],
 \end{tikzcd}
 \]
-Set-theoretically, the mapping cylinder is usually represented as the quotient space $(X\times I \coprod Y)/\sim$, where $f(x)\sim (x,0)$.
-We use $Mf$ to denote it. (other notations are used including $Mf$, $M_f$ and $\text{Cyl}(f)$.)
+Set-theoretically, the mapping cylinder is usually represented as the quotient space $(X\times I \coprod Y)/\sim$, where $f(x)\sim (x,1)$.
+We use $Z(f)$ to denote it. (other notations are used including $Mf$, $M_f$ and $\text{Cyl}(f)$.)
 \end{definition}
-Notice that it is $Mf$ rather than $Y\times I$ that plays the role of pushout because the map $r$ is not unique. Our only restriction on $r$ is $r\circ j=id$, where $j: Mf\lrta Y\times I$ is the map that restricts to $f\times id$ on $X\times I$ and restricts to $i_0$ on $Y$.
+Notice that it is $Z(f)$ rather than $Y\times I$ that plays the role of pushout because the map $r$ is not unique. Our only restriction on $r$ is $r\circ j=id$, where $j: Mf\lrta Y\times I$ is the map that restricts to $f\times id$ on $X\times I$ and restricts to $i_0$ on $Y$.
 \begin{remark}
 Another equivalent definition is used in tom Dieck.
 \end{remark}
@@ -135,8 +135,300 @@ X \arrow[r, "f"] \arrow[d, "\alpha"'] & Y \arrow[d, "\beta"] \\
 X' \arrow[r, "f'"] & Y',
 \end{tikzcd}
 \]
-where the diagram commutes up to a homotopy $\Psi: f'\circ \alpha\simeq \beta \circ f$. 
+where the diagram commutes up to a homotopy $\Psi: f'\circ \alpha\simeq \beta \circ f$.
+\section{Double mapping cylinder}
+\section{Suspension. Homotopy groups}
+In this section we consider the pointed spaces. A map $K: X\times I\lrta Y$ is a pointed homotopy from the constant map to itself iff it sends the subspaces $X\times \pd I\cup \{x\}\times I$ to the base point of $Y$. We define the quotient space 
+$$
+\Sigma X=X\times I/(X\times \pd I\cup \{x\}\times I)
+$$
+to be \textbf{suspension} of the pointed space $(X,x)$. (This is also called reduced suspension in some other literatures) A homotopy $K: X\times I\lrta Y$ from the constant map to itself now factors through a pointed map $\overline{K}:\Sigma X\lrta Y$ and homotopies relative to $X\times \pd I$ correspond to homotopies $\Sigma X\times I\lrta Y$. 
+
+This leads us to the homotopy set $[\Sigma X, Y]^0$, which carries a group structure
+$$
+f+g:(x,t)\mapsto\left\{\begin{aligned}
+f(x,2t) & t\leq 1/2\\
+g(x,2t-1), & 1/2\leq t
+\end{aligned}\right.
+$$
+Suspension $\Sigma$ is a functor from the category of pointed spaces to itself. If $f: X\lrta Y$ is a pointed map, then $f\times id(I)$ is a compatible with passing to the suspension and induces $\Sigma f: \Sigma X\lrta \Sigma Y, (x,t)\mapsto (f(x),t)$. In this manner the suspension becomes a functor $\Sigma: TOP^0\lrta TOP^0$. This functor is in addition compatible with homotopies: a pointed homotopy $H_t$ induces a pointed homotopy $\Sigma(H_t)$.
+
+We define the $k$-fold suspension by $\Sigma^k X=X\wedge (I^k/\pd I^k)$. Because of the associativity of smash product and 
+$$
+I^{k+\ell}/\pd I^{k+\ell}\cong I^k/\pd I^k\wedge I^\ell/\pd I^\ell,
+$$
+ we have
+ $$
+\Sigma^\ell(\Sigma^k X)\cong\Sigma^{k+\ell}X
+ $$
+
+\section{Loop space}
+\begin{definition}
+The \textbf{loop space} $\Omega Y$ of $Y$ is the subspace of the path space $Y^I$ (with compact-open topology) consisting of the loops in $Y$ with base point $y$
+$$
+\Omega Y=\{\omega\in Y^I|\omega(0)=\omega(1)=y\}.
+$$
+\end{definition}
+
+A pointed map $f: Y\lrta Z$ induces a pointed map $\Omega f:\Omega Y\lrta \Omega Z,\omega\mapsto f\circ \omega$. This yields the functor. It is compatible with homotopies $H_t$ yields a pointed homotopy $\Omega H_t$
+
+
+The most important fact in this section is 
+the adjunction between $\Sigma$ and $\Omega$.
+$$
+[\Sigma X, Y]^0\cong[X,\Omega Y]^0
+$$
+\section{Groups and cogroups}
+
+
+\section{The cofibre sequence}
+
+A pointed map $f: (X,*)\lrta (Y,*)$ induces a pointed set map
+$$
+f^*:[Y,B]^0\lrta [X, B]^0, [\alpha]\mapsto [\alpha f].
+$$
+The kernel of $f^*$ consists of the classes $[\alpha]$ such that $\alpha f$ is pointed null homotopic. A homotopy set $[Y,B]^0$ is pointed by the constant map.
+
+We say a sequence $A\overset{\alpha}{\lrta} B\overset{\beta}{\lrta} C$ of pointed set maps is \textbf{exact} if $\alpha(A)=\beta^{-1}(*)$. A sequence $U\overset{f}{\lrta} V\overset{g}{\lrta} W$ in $TOP^0$ is called \textbf{h-coexact} if for each  pointed space $B$ the sequence
+$$
+[U,B]^0\overset{f^*}{\llta}[V,B]^0\overset{g^*}{\llta}[W,B]^0
+$$
+is exact. If we choose $B=W$ and consider $id(W)\in[W,W]^0$ $f^*g^*([id(W)])=[gf]=[*]$, which means $gf$ is null homotopic.
+
+A pointed homotopy $X\times I\lrta B$ sends $*\times I$ to the base point. Therefore we use the \textbf{pointed cylinder} $XI=X\times I/*\times I$ in $TOP^0$ together with the embeddings $i_t: X\lrta XI, x\mapsto (x,t)$ and the projection $p: XI\lrta X, (x,t)\mapsto x$, and we consider morphisms $XI\lrta Y$ in $TOP^0$ as homotopies in $TOP^0$.
+
+Note that this is the cylinder object in the category of pointed topological spaces.
+
+Similarly, we can define the \textbf{pointed cone} $CX$ over $X$ as $CX=X\times I/X\times 0\cup *\times I$ with base point the identified set. The inclusion $i_1^X=i_1: X\lrta CX, x\mapsto (x,1)$ is an embedding. The maps $h: CX\lrta B$ correspond to the homotopies of the constant map to $hi_1$ (by composition with the projection $XI\lrta CX$.
+)
+
+The (pointed) mapping cone of $f$ is defined as $C(f)=CX\vee Y/(x,1)\sim f(x)$, or more formally, via a pushout
+$$
+\begin{tikzcd}
+X \arrow[r, "f"] \arrow[d, "i_1"] & Y \arrow[d, "f_1"] \\
+CX \arrow[r, "j"] & C(f).
+\end{tikzcd}
+$$
+We denote the points of $C(f)$ by their representing elements in $X\times I \coprod Y$. The inclusion $Y\subset CX\coprod Y$ induces an embedding $f_1: Y\lrta C(f)$, and $CX\subset CX\coprod Y$ induces $CX\lrta C(f)$. The pushout property says: The pairs $\alpha: Y\lrta B$, $h: CX\lrta B$ with $\alpha f=h i_1$, i.e., the pairs of $\alpha$ and null homotopies of $\alpha$, correspond to maps $\beta:C(f)\lrta B$ with $\beta j=h$ and $\beta f_1=\alpha$.
+
+
+
+
+
+
 \chapter{Cofibrations and fibrations}
+\section{Fibrations}
+\begin{definition}
+A continuous map $p: E\lrta B$ is a \textbf{fibration} if it has the \textbf{homotopy lifting property} (HLP); i.e. given the continuous maps $p, G, \tilde{g}$, and the inclusion $Y\times \{0\}\lrta Y\times I$, we can find a continuous map $\tilde{G}: Y\times I\lrta E$ to make the diagram commutes
+$$
+\begin{tikzcd}
+Y\times\{0\} \arrow[d, hook] \arrow[r, "\tilde{g}"] & E \arrow[d, "p"] \\
+Y\times I \arrow[r, "G"] \arrow[ru, "\tilde{G}", dashed] & B
+\end{tikzcd}
+$$
+\end{definition}
+\begin{exr}
+Show that the projection to the first factor $p : B \times F \lrta B$ is a fibration. Show by example that the lifting need not be unique.
+\end{exr}
+\begin{proof}
+Consider the special case of lifting diagram
+$$
+\begin{tikzcd}
+Y\times\{0\} \arrow[d, hook] \arrow[r, "\tilde{g}"] & B\times F \arrow[d, "p"] \\
+Y\times I \arrow[r, "G"] \arrow[ru, "\tilde{G}", dashed] & B
+\end{tikzcd}
+$$
+we know $G(y,0)=p\tilde{g}(y)$, where $\tilde{g}: Y\lrta B\times F, y\mapsto (\tilde{g}_1(y), \tilde{g}_2(y))$, which means $G(y,0)=\tilde{g}_{1}(y)$. We can then define $\tilde{G}: Y\times I\lrta B\times F, (y,t)\mapsto (G(y,t), \tilde{g}_2(y))$. This is indeed a well-defined fibration.
+
+It is not unique, for example, assume $F$ to be a vector space, we can alternatively define
+$$
+\tilde{G}(y,t)=(G(y,t), \tilde{f}_2(y,t))
+$$
+so that 
+$$
+\tilde{f}_2(y,0)=\tilde{g}_2(y)
+$$
+\end{proof}
+\begin{theorem}
+Let $p: E\lrta B$ be a continuous map. Suppose that $B$ is paracompact and suppose that there exists an open cover $U_\alpha$ of $B$ so that $p: p^{-1}(U_\alpha)\lrta U_\alpha$ is a fibration for each $U_\alpha$. 
+
+Then $p: E\lrta B$ is a fibration.
+\end{theorem}
+\begin{proof}
+Proof can be found at page 51 of JPM.
+\end{proof}
+\begin{corollary}
+If $p: E\lrta B$ is a fiber bundle over a compact space $B$, then it is a fibration.
+\end{corollary}
+The definition of fiber bundle requires locally trivial and by exercise above, we have proved that trivial fiber bundle is a fibration.
+
+\begin{exr}
+Give an example of fibration which is not a fiber bundle.
+\end{exr}
+\begin{proof}
+Consider the the $p: E\lrta B$, where $E=I^2/{1/2}\times I$ and $B=I$ where $p$ is the canonical projection and this can not be a fiber bundle. Because at the point $1/2$, there is no local trivialization. In general it is called homotopy fiber bundle, see this \href{https://math.stackexchange.com/questions/6428/is-there-anywhere-we-use-a-fibration-which-is-not-a-fiber-bundle/9589}{Link}. 
+
+The proof that the counterexample we gave here is indeed a fibration is a simple verification.
+\end{proof}
+
+\begin{definition}
+If $p: E\lrta B$ and $p': E'\lrta B'$ are  fibrations, then a map of fibrations is a pair of maps $f: B\lrta B'$, $\tilde{f}: E\lrta E'$ so that the diagram commutes.
+$$
+\begin{tikzcd}
+E \arrow[d, "p"] \arrow[r, "\tilde{f}"] & E' \arrow[d, "p'"] \\
+B \arrow[r, "f"] & B'
+\end{tikzcd}
+$$
+\end{definition}
+
+\begin{definition}
+If $p: E\lrta B$ is a fibration, and $f: x\lrta B$ is a continuous map, define the \textbf{pullback} of $p$ by $f$ to be the map $f^{*}(E)\lrta X$ where
+$$
+f^*(E)=\{(x,e)\in X\times E|f(x)=p(e)\}\subset X\times E.
+$$
+and the map $f^*(E)\lrta X$ is the restriction of the projection $X\times E\lrta X$.
+\end{definition}
+\begin{exr}
+Show that $f^*(E)\lrta X$ is indeed a fibration.
+\end{exr}
+\begin{proof}
+We show this directly by verifying the definition. Consider the diagram
+$$
+\begin{tikzcd}
+Y\times \{0\} \arrow[dd, hook] \arrow[rr, "\tilde{g}"] &  & f^{*}(E) \arrow[rr, "\pi_2"] \arrow[dd, "\pi_1"] &  & E \arrow[dd, "p"] \\
+ &  &  &  &  \\
+Y\times I \arrow[rr, "G"'] \arrow[rrrruu, "\overline{fG}", dashed] \arrow[rruu, "\tilde{G}", dotted] &  & X \arrow[rr, "f"'] &  & B
+\end{tikzcd}.
+$$
+Because $p: E\lrta B$ is a fibration, by definition, there exists a homotopy $\overline{fG}: Y\times I\lrta E$, which commutes with the outer square.
+
+Recall the universal property of pullback
+$$
+\begin{tikzcd}
+Z \arrow[rdd, "\alpha"', bend right] \arrow[rrd, "\beta", bend left] \arrow[rd, "\exists !\gamma", dashed] &  &  \\
+ & f^{*}(E) \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & E \arrow[d, "p"] \\
+ & X \arrow[r, "f"'] & B
+\end{tikzcd}
+$$
+where $\gamma: Z\lrta f^*(E)$ is defined to be 
+$z\mapsto (\alpha(z), \beta(z))$. 
+
+Apply this universal property to $\overline{f G}$, we construct $\tilde{G}: Y\times I\lrta f^*(E)$ and
+$$
+\tilde{G}: (y,t)\mapsto (G(y,t),\overline{fG}(y,t))
+$$.
+
+Then it suffices to prove that $\tilde{G}$ indeed commutes with the left square
+
+$\pi_1\circ \tilde{G}=G$\checkmark 
+
+$\tilde{G}(y,0)=(G(y,0),\overline{fG}(y,0))=(\pi_1(\tilde{g},\pi_2\tilde(g))(y)=\tilde{g}(y)$\checkmark
+\end{proof}
+
+
+We have shown before that a fibration is not necessarily a fiber bundle. Nevertheless, a fibration has a well defined fiber up to homotopy. Homotopy lifting property in itself is sufficient to endow a map with the structure of a ``fiber bundle up to homotopy''.
+
+\begin{theorem}
+Let $p: E\lrta B$ be a fibration. Assume $B$ is path connected. Then all fibers $E_b=p^{-1}(b)$ are homotopy equivalent. Moreover every path $\alpha: I\lrta B$ defines a homotopy class $\alpha_*$ of homotopy equivalences $E_{\alpha(0)}\lrta E_{\alpha(1)}$ which depends only on the homotopy class of $\alpha$ relative to endpoints, in such a way that multiplication of paths corresponds to composition of homotopy equivalences.
+
+In particular, there exists a well-defined group homomorphism
+$$
+[\alpha]\mapsto \alpha^{-1}_*
+$$
+$\pi(B,b_0)\lrta $ Homotopy classes of self-homotopy equivalences of $E_{b_0}$.
+\end{theorem}
+\begin{remark}
+It is more important to understand what the theorem says than under stand the proof. The notion of homotopy classes of self-homotopy equivalences looks quite terrifying. We will dive into detail in the proof.
+\end{remark}
+\begin{proof}
+Let $b_0, b_1\in B$ and let $\alpha$ be a path in $B$ from $b_0$ to $b_1$. The inclusion $E_{b_0}\inj E$ completes to a square diagram, where we define $H(e,t):=\alpha(t)$ And since $p: E\lrta B$ is a fibration, $H$ lifts to $E$.
+$$
+\begin{tikzcd}
+E_{b_0}\times \{0\} \arrow[d] \arrow[r] & E \arrow[d, "P"] \\
+E_{b_0}\times I \arrow[r, "H"] \arrow[ru, "\tilde{H}", dashed] & B.
+\end{tikzcd}
+$$
+
+Notice that the homotopy at time $t=0$, $\tilde{H}_0: E_{b_0}\lrta E$ is just the inclusion of the fiber $E_{b_0}$ in $E$. Furthermore, $p\circ \tilde{H}_t$ is the constant map at $\alpha(t)$, so the homotopy $\tilde{H}$ at time $t$ is a map $\tilde{H}_1: E_{b_0}\lrta p^{-1}(\alpha(t))$. in particular, at time $t=1$, we know $\tilde{H}_1: E_{b_0}\lrta E_{b_1}$.
+
+We will let $\alpha_*:=[\tilde{H}_1]$ denote the homotopy class of this map. Since $\tilde{H}$ is not unique, we need to show that another choice of lift gives a homotopic map. We will in fact show something more general. Suppose $\alpha': I\lrta B$ is another path homotopic to $\alpha$ relative to the end points. Then as before, we obtain a lift $\tilde{H}'$ of $H'$.
+$$
+\begin{tikzcd}
+E_{b_0}\times \{0\} \arrow[d] \arrow[r] & E \arrow[d, "P"] \\
+E_{b_0}\times I \arrow[r, "H"] \arrow[ru, "\tilde{H}", dashed] & B.
+\end{tikzcd}
+$$
+
+\underline{Claim}: $\tilde{H}'_1$ is homotopic to $\tilde{H}_1$.
+
+\textbf{Proof of Claim}. Since $\alpha$ is homotopic relative to end points with $\alpha'$, there exists a map $\Lambda: E_{b_0}\times I\times I\lrta B$ such that
+$$
+\Lambda(e,s,t)=F(s,t)
+$$
+where $F(s,t)$ is a homotopy relative to end points from $\alpha$ to $\alpha'$. The solutions $\tilde{H}'$ and $\tilde{H}$ constructed above give a diagram
+$$
+\begin{tikzcd}
+E_{b_0}\times U \arrow[r, "\Gamma"] \arrow[d, hook] & E \arrow[d, "p"] \\
+E_{b_0}\times I\times I \arrow[r, "\Lambda"'] & B,
+\end{tikzcd}
+$$
+where $U=I\times \{0,1\}\cup \{0\}\times I$ and
+$$
+\Gamma(e,s,0)=\tilde{H}(e,s)
+$$
+$$
+\Gamma(e,s,1)=\tilde{H}'(e,s), \text{ and,}
+$$
+$$
+\Gamma(e,0,t)=e.
+$$
+There exists a homeomorphism $\varphi: I^2\lrta I^2$ such that $\varphi(U)=I\times \{0\}$
+\begin{center}
+\includegraphics[scale=0.5]{varp}
+\end{center}
+Thus the diagram 
+$$
+\begin{tikzcd}
+E_{b_0}\times I\times\{0\} \arrow[d, hook] & E_{b_0}\times U \arrow[r, "\Gamma"] \arrow[d, hook] \arrow[l, "id\times \varphi"'] & E \arrow[d, "p"] \\
+E_{b_0}\times I\times I \arrow[rru, "\Lambda'", dashed] & E_{b_0}\times I\times I \arrow[r, "\Lambda"'] \arrow[l, "id\times \varphi"] \arrow[ru, "\tilde{\Lambda}", dashed] & B
+\end{tikzcd}
+$$
+has the left two horizontal maps homeomorphisms. Since the homotopy applies to the outside square, there exists a lift $\tilde{\Lambda}:=\Lambda'\circ id\times\varphi$. Thus defined $\tilde{\Lambda}$ is a lift of $\Lambda$ and commutes with the right square.
+
+Therefore we have
+$$
+\tilde{\Lambda}(e,s,0)=\Gamma(e,s,0)=\tilde{H}(e,s)
+$$
+$$
+\tilde{\Lambda}(e,s,1)=\Gamma(e,s,1)=\tilde{H}'(e,s)
+$$
+
+This gives a homotopy from $\tilde{H}$ to $\tilde{H}'$. Restricting to $E_{b_0}\times \{1\}$ we obtain a homotopy from $\tilde{H}_1$ to $\tilde{H}'_1$. Thus the homotopy class $\alpha_*=[\tilde{H}_1]$ depends only on the homotopy class of $\alpha$ relative to end points, establishing the claim. 
+
+Clearly $(\alpha\beta)_*=\beta_*\circ \alpha_*$ if $\beta(0)=\alpha(1)$. In particular, if $\beta=\alpha^{-1}$ then $(const)_*=\beta_*\circ \alpha_*$, where const denote the constant path at $b_0$. But clearly, $(const)_*=[id_{E_{b_0}}]$, therefore $\alpha_*$ is a homotopy equivalence, and since $B$ is path connected, all fibers are homotopy equivalent.
+
+The following exercise completes the proof.
+\end{proof}
+\begin{exr}
+Show that the set of homotopy classes of self-homotopy equivalence of a space $X$ forms a group under composition.
+\end{exr}
+\begin{proof}
+Assume $h_1,h_2: X\lrta X$ are homotopy equivalence from $X$ to $X$ itself. And we denote by $[h_1],[h_2]$ the homotopy classes of them. An obvious choice of multiplication is
+$$
+[h_1]*[h_2]:=[h_1\circ h_2]
+$$
+This map is well-defined because composition of homotopic maps are homotopic.
+$[id_X]$ is an identity in this group. By definition of homotopy equivalence. Assume $g$ is one homotopy inverse of $h$, we have $gh\simeq id_X$ and $hg\simeq id_X$, therefore, $[g]*[h]=[id_X]$ and $[h]*[g]=[id_X]$.
+\end{proof}
+\begin{definition}
+With a little bit abuse of terminology, we refer to any space in the homotopy class of the space $E_b$ for any $b\in B$ as the fiber of the fibration $p: E\lrta B$.
+\end{definition}
+
+Since homotopy equivalences induces isomorphism in homology or cohomology, a fibration with fiber $F$ gives rise to local coefficients systems whose fiber is the homology or cohomology of $F$, as the next corollary asserts.
+
+\begin{corollary}
+
+\end{corollary}
 \chapter{Homotopy groups}
 \chapter{Stable homotopy. Daulity}
 \chapter{Cell complexes}
