@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1520770193 "ATII.tex" "ATII.pdf" "ATII" 1520770195
+["pdflatex"] 1521208474 "ATII.tex" "ATII.pdf" "ATII" 1521208476
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -203,13 +203,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "ATII.aux" 1520770194 1161 3da09de0c37a5e75e9234906c56b1928 ""
-  "ATII.out" 1520770194 375 7ec51e889d5ddb3f5bfe0ce259748486 ""
-  "ATII.tex" 1520770193 31050 099a0bb933df7121e9a6e14fdb286838 ""
-  "ATII.toc" 1520770194 426 a4210e0b9e21581564560cb9a590e4d9 ""
+  "ATII.aux" 1521208475 1274 0d8f812a046b4a65c6cb8cacbe2fb714 ""
+  "ATII.out" 1521208475 464 61748ef8687d5a86366856b49846a2e2 ""
+  "ATII.tex" 1521208474 37583 3c992b6f36a9bc68f35ecaf11d9a7fa1 ""
+  "ATII.toc" 1521208475 521 8ad8a1a574403f9b45baff6e5e610037 ""
   (generated)
-  "ATII.aux"
-  "ATII.out"
   "ATII.log"
   "ATII.toc"
   "ATII.pdf"
+  "ATII.aux"
+  "ATII.out"

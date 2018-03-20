@@ -1,15 +1,15 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'AT_TD.blg'
-[154] biber-darwin:276> INFO - === Thu Mar 15, 2018, 21:03:09
-[154] 388d08c1.pm:333> INFO - Reading 'AT_TD.bcf'
-[322] 388d08c1.pm:645> INFO - Found 1 citekeys in bib section 0
-[357] 388d08c1.pm:2977> INFO - Processing section 0
-[379] 388d08c1.pm:3115> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[381] 6ce97eef.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[383] 6ce97eef.pm:895> INFO - Found BibTeX data source 'bibliography.bib'
-[412] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[412] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[413] 388d08c1.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[413] 388d08c1.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[416] bbl.pm:505> INFO - Writing 'AT_TD.bbl' with encoding 'UTF-8'
-[416] bbl.pm:596> INFO - Output to AT_TD.bbl
+[48] biber-darwin:276> INFO - === Fri Mar 16, 2018, 15:48:38
+[48] 388d08c1.pm:333> INFO - Reading 'AT_TD.bcf'
+[146] 388d08c1.pm:645> INFO - Found 1 citekeys in bib section 0
+[165] 388d08c1.pm:2977> INFO - Processing section 0
+[184] 388d08c1.pm:3115> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[186] 6ce97eef.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[188] 6ce97eef.pm:895> INFO - Found BibTeX data source 'bibliography.bib'
+[210] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[210] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[210] 388d08c1.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[210] 388d08c1.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[212] bbl.pm:505> INFO - Writing 'AT_TD.bbl' with encoding 'UTF-8'
+[212] bbl.pm:596> INFO - Output to AT_TD.bbl

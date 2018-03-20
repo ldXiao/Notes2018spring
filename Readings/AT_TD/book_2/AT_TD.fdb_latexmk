@@ -1,16 +1,16 @@
 # Fdb version 3
-["biber AT_TD"] 1521144188 "AT_TD.bcf" "AT_TD.bbl" "AT_TD" 1521146066
-  "AT_TD.bcf" 1521146066 102997 e1ff20f556818d0f3161af80389b7c6f ""
+["biber AT_TD"] 1521211717 "AT_TD.bcf" "AT_TD.bbl" "AT_TD" 1521469108
+  "AT_TD.bcf" 1521469108 102997 e1ff20f556818d0f3161af80389b7c6f ""
   "bibliography.bib" 1520595627 1726 d69251d74edb69879a12efecb91cff18 ""
   (generated)
-  "AT_TD.bbl"
   "AT_TD.blg"
-["makeindex AT_TD.idx"] 1519918009 "AT_TD.idx" "AT_TD.ind" "AT_TD" 1521146066
-  "AT_TD.idx" 1521146059 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "AT_TD.bbl"
+["makeindex AT_TD.idx"] 1519918009 "AT_TD.idx" "AT_TD.ind" "AT_TD" 1521469108
+  "AT_TD.idx" 1521469099 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "AT_TD.ind"
   "AT_TD.ilg"
-["pdflatex"] 1521146058 "AT_TD.tex" "AT_TD.pdf" "AT_TD" 1521146066
+["pdflatex"] 1521469098 "AT_TD.tex" "AT_TD.pdf" "AT_TD" 1521469108
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/avantgar/pagd8t.tfm" 1136768653 7216 ce159066bacd323ac1e4527281f7a233 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/avantgar/pagk8t.tfm" 1136768653 7340 62d51a8cc96448508dcbcfef0e69f404 ""
@@ -213,24 +213,25 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "AT_TD.aux" 1521146066 20759 b5dbbcf2d3c56e1bb4b4ab1942ec9684 ""
-  "AT_TD.bbl" 1521144190 1251 27966fa8997237979b706ecbace0a8dc "biber AT_TD"
+  "AT_TD.aux" 1521469108 23950 9b4866545ab63bd71fc0de256bef5068 ""
+  "AT_TD.bbl" 1521211718 1251 27966fa8997237979b706ecbace0a8dc "biber AT_TD"
   "AT_TD.ind" 1519918010 0 d41d8cd98f00b204e9800998ecf8427e "makeindex AT_TD.idx"
-  "AT_TD.run.xml" 1521146066 2314 4f450e44ce29a04b06afb175cda1c8f6 ""
-  "AT_TD.tex" 1521146058 68084 5dbfc9cfc2db66f0b593fafe1375adc6 ""
-  "AT_TD.toc" 1521146066 6698 851a281ca402a70efe47bebd95a7aa1f ""
+  "AT_TD.run.xml" 1521469108 2314 4f450e44ce29a04b06afb175cda1c8f6 ""
+  "AT_TD.tex" 1521469098 97001 f9568c8269f0610c8bca9525425d037e ""
+  "AT_TD.toc" 1521469108 7273 18ab57647bef20f25d58d91224f80fa2 ""
   "Pictures/blue_background.pdf" 1519914545 356679 5355f6823ac7449f8de8195a745c717b ""
   "Pictures/blue_chap_head.pdf" 1519916029 1045673 591814036d97938222ed54e55b17060c ""
+  "retraction.png" 1521299872 68772 4db2343abdc1f473658bb876924fd153 ""
   "structure.tex" 1521063220 23624 0269263b6e5c7deb497201cc9f2e2e56 ""
   "varp.png" 1521143492 23272 00753b27f3dada293d49d8f1894e32fb ""
   (generated)
   "AT_TD.pdf"
-  "Chaps/appendixA.aux"
-  "AT_TD.log"
-  "AT_TD.ptc"
   "AT_TD.idx"
-  "AT_TD.bcf"
-  "Chaps:appendixA.aux"
-  "AT_TD.toc"
-  "AT_TD.run.xml"
   "AT_TD.aux"
+  "AT_TD.run.xml"
+  "Chaps:appendixA.aux"
+  "AT_TD.log"
+  "AT_TD.bcf"
+  "AT_TD.ptc"
+  "Chaps/appendixA.aux"
+  "AT_TD.toc"

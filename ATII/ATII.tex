@@ -834,11 +834,202 @@ $$
 Let $E_\bullet, F_\bullet$ be two finitely generated free chain complexes equivalent to $C_\bullet(X), C_\bullet(Y)$ respectively.
 \end{proof}
 
+\section{Mat 16th: Ring structure on cohomology.}
+
+\begin{dfn}
+A ring $R$ is an abelian group with a additional  operation called ``multiplication'' which is associative and distributive over the abelian group structure. There is a multiplicative identity.
+\end{dfn}
+
+\begin{rmk}
+If $1=0$, we have $R=\{0\}$ is the zero ring.
+\end{rmk}
+
+we omit a lot of stuffs on ring theory here and only state a lemma that we will use later
+\begin{lemma}
+Suppose $R$ is a graded ring and $I$ is a homogeneous graded ideal. then quotient ring is again a graded ring. 
+$$
+R/I=\bigoplus_n(R^n+I)/I
+$$
+\end{lemma}
+
+\begin{dfn}
+Let $R$ be a ring. Let $X$ be a topological space. 
+$H^*(X,R)$ is the total cohomology
+$$
+\bigoplus_{n\geq 0} H^n(X;R)
+$$
+\end{dfn}
+
+\underline{Goal}: If $R$ is  commutative, we will show $H^*(X;R) $ is a graded ring (NOT necessarily  commutative.)
+
+Suppose $A$ is an abelian group. How to make $A$ a ring?
+
+If $R$ is a ring, then $\hom(A,R)$ is naturally a ring.
+$f,g\in\hom(A,R)$, $fg$ is defined as $(fg)(a)=f(a)g(a)\forall a\in A$. We will use this to endow $H^*(X;R)$ with a ring structure.
+
+Let's recall the face maps from last semester. The face maps 
+$$
+\begin{aligned}
+\epsilon^n_i:&\Delta^{n-1}\lrta \Delta^n\\
+&(s_0,s_1..,s_{n-2})\mapsto (s_0,...s_{i-1}, 0,s_{i},...,s_{n-2})
+\end{aligned}
+$$
+maps the standard $n-1$ simplex onto the $i$-th face of the standard $n$-simplex.
+
+\begin{dfn}
+Let $0\leq i\leq n$, the ith \textbf{front face}
+$$
+\begin{aligned}
+F_i^n:\Delta^i&\lrta \Delta^n\\
+(s_0,...,s_{i-1})\mapsto (s_0,...,s_{i-1},0,0,..,0)
+\end{aligned}
+$$
+the ith \textbf{back face}
+$$
+\begin{aligned}
+B_i^n:\Delta^i&\lrta \Delta^n\\
+(s_0,...,s_{i-1})\mapsto (0,0,..,0,s_0,...,s_{i-1})
+\end{aligned}
+$$
+\end{dfn}
+
+\begin{lemma}
+\ \begin{enumerate}
+ \item $\epsilon^{n+1}_0=B^{n+1})n$ $\epsilon^{n+1}_{n+1}=F^{n+1}_n$
+ \item $B^n_{m+k}\circ B^{m+k}_k=B^n_k$, $F^n_{m+k}\circ F^{m+k}_k=F^n_k$
+ \item 
+ $$
+\epsilon^{n+1}_{i}\circ F_m^n=\left\{\begin{aligned}
+&F^{n+1}_{m+1}\circ \epsilon^{m+1}_i \ \  i\leq m\\
+&F^{n+1}_m\ \ \   i\geq m+1
+\end{aligned}\right.
+ $$
+
+\end{enumerate}
+\end{lemma}
 
 
+ Let $\alpha\in C^n(H,R)=\hom(C_n(X),R)$, $\beta\in C^m(X,R)=\hom(C_m(X),R)$. 
+ Define $\alpha\smile \beta$ the cup product of $\alpha$ and $\beta$ to the elemetnof $C^{n+m}(X,R)$ defined by 
+ $$
+\alpha\smile\beta(\sigma)=\alpha(\sigma\circ F^n)\beta(\sigma\circ B_m)
+ $$
+
+ $F_n:\Delta^n\lrta \Delta^{n+m}, \sigma\circ F_n: \Delta^n\lrta \Delta^{n+m}\lrta X$ is a singular $n$-simplex. $\alpha(\sigma\circ F_n)$ is a well-defined element of $R$. Similarly, $\beta(\sigma\circ B_m)$ is an element in $R$ . Then $\alpha(\sigma\circ F_m)\beta(\sigma\circ B_m)$ is an element of $R$. it is then clear that  $\alpha\smile\beta$ extends by linearity to define an element of $\hom(C_{n+m}(X),R)=C^{n+m}(X,R)$
+
+\begin{prop}
+Let $R$ be commutative. Then $C^*(X;R)=\bigoplus_{n\geq 0}C^n(X,R)$ is a graded ring under the cup product
+\end{prop}
+\begin{proof}
+Let $\alpha\in C^n$, $\beta,\gamma\in  C^m$.
+
+\underline{Distributive}: $\alpha\smile(\beta+\gamma)=\alpha\smile \beta+\alpha\smile\gamma$. Take $\sigma: \Delta^{n+m}\lrta X$ and
+$$
+\begin{aligned}
+(\alpha\smile(\beta+\gamma))(\sigma)&=\alpha(\sigma\circ F_n)[(\beta+\gamma)(\sigma\circ B_m)]\\
+&=\alpha(\sigma\circ F_n)[\beta(\sigma\circ B_m)+\gamma(\sigma\circ B_m)]\\
+&=\alpha(\sigma\circ F)\beta(\sigma\circ B_m)+\alpha(\sigma\circ F)\gamma(\sigma\circ B_m)\\
+&=\alpha\smile\beta(\sigma)+\alpha\smile \gamma(\sigma)
+\end{aligned}$$
+The same argument shows $(\beta+\gamma)\smile \alpha=\beta\smile\alpha+\gamma\smile\alpha$
+
+\underline{Associativity} take $\alpha\in C^n,\beta\in C^m,\gamma\in C^p$ and $\sigma:\Delta^{n+m+p}\lrta X$.
+$$
+(\alpha\smile \beta)\smile \gamma(\sigma)=\alpha(\sigma\circ F_{n+m}\circ F_n)\beta(\sigma\circ F_{n+m}\circ F_{n})\cdot\gamma(\sigma\circ B_p)
+$$
+$$
+\alpha\smile (\beta\smile \gamma)( \sigma)=\alpha(\sigma\circ  F_n)\beta(\sigma\circ B_{m+p}\circ F_{m})\cdot\gamma(\sigma\circ B_{m+p}\circ B_p)
+$$
+By the face relation lemma the above two equal.
+
+\underline{identity}: Define $\nu(x)=1_R,\forall x\in X$
+\end{proof}
+
+how does this ring structure behave with respect to continuous map? Take
+$$
+f:X\lrta Y
+$$
+$$f_\#:C_\bullet(X)\lrta C_\bullet(Y)$$
+$$
+f^\#:C^\bullet(X,R)\lrta C^\bullet(X,R)
+$$
+Claim: $f^\#(\alpha\smile \beta)=f^\#(\alpha)\smile f^\#(\beta)$
+$$
+\begin{aligned}
+f^\#(\alpha\smile \beta)(\sigma)&=\alpha\smile \beta(f_\#\sigma)\\
+&=(\alpha\smile \beta)(f\circ \sigma)\\
+&=\alpha(f_\#(\sigma\circ F_n))\beta(f_\#(\sigma\circ B_m))\\
+&=f^\#(\alpha)\smile f^\#(\beta)(\sigma)
+\end{aligned}
+$$
+\begin{cor}
+There is a contravariant functor
+$$
+C^*(\square,R): TOP\lrta Gr-Rings.
+$$
+The ring structure is not very helpful, because it does not descend to the homotopy category.
+\end{cor}
+
+We will see now that $\smile$ induces an operation on cohomology
+$$
+\lgl\alpha\rgl\smile\lgl\beta\rgl=\lgl\alpha\smile\beta\rgl
+$$
+and induces a ring structue on $H^*(X;R)$ that does indeed respect homotopy.
 
 
+\begin{thm}(Ring structure on cohomology)
+If $R$ is a commutative ring, then 
+$H^*(\square, R): h-Top\lrta GrRings$ is a well-defined functor.
+\end{thm}
 
+\begin{prop}
+$d(\alpha\smile\beta)=d\alpha\smile \beta+(-1)^n\alpha\smile d\beta$
+\end{prop}
+\begin{proof}
+$$
+\begin{aligned}
+d(\alpha\smile \beta)(\sigma)&=(\alpha\smile\beta)(\pd\sigma)\\
+&=\sum_{i=0}^{n+m+1}(-1)^i(\alpha\smile \beta)(\sigma\circ \epsilon_i)\\
+&=\sum_{i=0}^{n}(-1)^i
+\alpha(\sigma\circ \epsilon_i\circ F_n)\beta(\sigma\circ \epsilon\circ B_m)+\sum_{i=n+1}^{m+n+1}(-1)^i\alpha(\sigma\circ\epsilon_i\circ F_n)\beta(\sigma\circ \epsilon_i\circ B_m)
+\end{aligned}
+$$
+the first sum becomes $(d\alpha\smile \beta)(\sigma)$ and the second sum is $(-1)^n(\alpha\smile d\beta)(\sigma)$
+\end{proof}
 
+Assuming the proposition , lets prove the theorem
+
+\begin{proof}
+$$
+Z^*=\bigoplus Z^n(X,R)
+$$
+$$
+B^*=\bigoplus B^n(X,R)
+$$
+If $\alpha,\beta\in Z^*$ then 
+$$
+d(\alpha\smile \beta)=d\alpha\smile \beta+(-1)^{?}\alpha\smile d\beta=0
+$$
+Thus $Z^*$ is a graded subring of $C^*$ if $\alpha\in Z^n$ and $\beta\in B^m$ say $\beta=d \gamma$
+then
+$$
+\alpha\smile \beta=\alpha\smile d\gamma=\pm \alpha\smile \gamma+\alpha \smile d\gamma=\pm d(\alpha\smile \gamma)
+$$
+thus $\alpha\smile \beta\in B^{n+m}$, similarly $\beta\smile \alpha\in B^{n+m}$. $B^*$ is a homogeneous two sided ideal of $C^*$.
+
+Thus by ht elemma at the start of the lecture,
+$$
+H^*(X;R)=Z^*/B^*
+$$
+has a graded ring structure, where
+$$
+\lgl\alpha\rgl\smile\lgl\beta\rgl=\lgl\alpha\smile\beta\rgl
+$$.
+
+If $f:X\lrta Y$
+$$
+H^*(f):\sum_{n\geq 0}H^n(f):\bigoplus H^n(Y;R)\lrta \
+$$
+\end{proof}
 
 \end{document}

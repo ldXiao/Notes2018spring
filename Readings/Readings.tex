@@ -493,20 +493,172 @@ Let $\calc$ be any category. A \textbf{model structure} on $\calc$ is  the given
 \item if $f,g,h$ are arrows s.t. $fg=h$ and two of them are in $W$, then so is the third;
 \item $W,FIB,COFIB$ are closed under retracts;
 \item every arrow in $W\cap FIB$ has the RLP with respect to every arrow in $COFIB$ and every arrow in $FIB$ has the RLP with respect to every arrow in $W\cap COFIB$;
-\item there are functorial
+\item there are functorial $(W\cap COFIB, FIB)$ and $(COFIB,W\cap FIB)$ factorization in $\calc$.
 \end{enumerate}
 \end{dfn}
 
 \begin{dfn}
-We see a map $p:E\lrta B$ satisfies the \textbf{homotopy lifting property} iff for any homotopy $h: X\times [0,1]\lrta B$, if we can lift $h(x,0)=h\circ i_0(x) $ to $E$ then we can lift all of $h$ to $E$ extending the original lift. Diagramatically, it means
-$$
-\begin{tikzcd}
-X \arrow[r, "\tilde{h}_0"] \arrow[d, "i_0"'] & E \arrow[d, "p"] \\
-X\times I \arrow[r, "h"'] \arrow[ru, "H", dashed] & B
-\end{tikzcd}
-$$
+By Axiom \textbf{MC1}, we know a model category have initial object $\emptyset$ and final object $*$. We see an object $A\in \calc$ is cofibrant if $\emptyset\lrta A$ is a cofibration and we say $B\in\calc$ is fibrant if $B\lrta *$ is a fibration.
 \end{dfn}
 
+\begin{ex}
+The category $Ch_R$ can be given the structure of a model category by defining a map $f: M\lrta N$ to be 
+\begin{enumerate}[label=(\roman*)]
+\item a weak equivalence if $f$ induces isomorphisms on homology groups,
+\item a cofibration if for each $k\geq 0$ the map $f_k:M_k\Lrta N_k$ is a monomorphism with projective $R$-module as its cokernel, and
+\item a fibration if for each $k\geq 1$ the map $f_k: M_k\lrta N_k$ is an epimorphism.
+\end{enumerate} The initial object in $Ch_R$ is the zero complex. 
+The cofibrant object in $Ch_R$ are the projective chain complexes. The homotopy category $Ho(Ch_r)$ is equivalent to the category whose objects are these cofibrant chain complexes and whose morphisms are ordinary chain homotopy classes of maps.
+\end{ex}
+
+\begin{lemma}
+Let $\calc$ be a model categroy. Then :
+\begin{enumerate}[label=(\roman*)]
+\item fibrations are exactly those arrows with RLP with respect to all acyclic cofibrations;
+\item acyclic fibrations are exactly those arrows with RLP with respect to all cofibrations;
+\item  cofibrations are exactly those arrows with LLP with respect to all acyclic fibrations;
+\item acyclic cofibrations are exactly those arrows with LLP with respect to all fibrations;
+ \end{enumerate}
+\end{lemma}
+\begin{proof}
+We sketch the proof of $(i)$: One inclusion is by definition: every fibration has RLP with every acyclic cofibration. For the reverse inclusion, consider an arrow $f$, by axiom $MC5$, $f$ can be factorized in to $p\circ i$ where $i$ is an acyclic cofibration and $p$ is a fibration. 
+$$
+\begin{tikzcd}
+\bullet \arrow[d, "i"'] \arrow[r, "id"] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r, "p"] \arrow[ru, "h"] & \bullet
+\end{tikzcd}
+$$
+and observe that the diagram 
+$$
+\begin{tikzcd}
+\bullet \arrow[r, "i"] \arrow[d, "f"] & \bullet \arrow[r, "h"] \arrow[d, "p"] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r, "id"'] & \bullet \arrow[r, "id"'] & \bullet
+\end{tikzcd}
+$$
+expresses $f$ as a retract of $p$. This implies that $f$ is a fibration.
+\end{proof}
+
+\begin{cor}
+Let $\calc$ be a model category. Then 
+\begin{enumerate}[label=(\roman*)]
+\item FIB is closed under pull back;
+\item COFIB is closed under pushout.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+Given a fibration $f$ and consider the following diagram
+$$
+\begin{tikzcd}
+\bullet \arrow[d, "j"'] \arrow[r] & * \arrow[r] \arrow[d, "q"'] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r] \arrow[rru, "h'"'] \arrow[ru, "h"] & \bullet \arrow[r, "g"'] & \bullet
+\end{tikzcd}
+$$
+where the right square is the pullback diagram funder $g$. Consider an arbitrary acyclic cofibration $j$, then there exists a $h'$ because $f$ is RLP w.r.t $j$. $h'$ must factor through $h$ because $*$ is a pull back. As a result $q$ has RLP w.r.t every acyclic cofibration. Thus we know $q$ is a fibration by the lemma above.
+\end{proof}
+
+\begin{dfn}
+Let $\calc$ be a model category. Then A cofibrant approximation to an object $X\in Obj(\calc)$ is a pair $(\tilde{X},i)$ where $\tilde{X}$ is cofibrant and $i:\tilde{X}\lrta X$ is a weak equivalence;
+
+a fibrant approximation to an object $X\in Obj(\calc)$ is a pair $(\hat{X},j)$ where $\hat{X}$ is a fibrant object and $j: X\lrta \hat{X}$ is a weak equivalence;
+\end{dfn}
+
+\begin{prop}
+\begin{enumerate}[label=(\roman*)]
+\item every object $X\in Obj(\calc)$ has a cofibrant approximation $(\tilde{X},i_X)$ where $i_X$ is a trivial fibration;
+\item if $(\tilde{X},i_X)$ $(\tilde{X}',i_X
+')$ are cofibrant approximations there is a weak equivalence $f:\tilde{X}\lrta \tilde{X}'$;
+\item every morphism in $\calc$ has fibrant approximation.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(i) Every morphism to $X$ factorizes as $p\circ q$ where $q$ is a cofibration and $p$ is a acyclic fibration. In particular, the initial object has a morphism ending in $X$, $\emptyset\lrta X$ factorizes as $i_X\circ q$ where $i_X$ is a acyclic fibration and $q:\emptyset\lrta \tilde{X}$ is a  cofibration.  By definition $\tilde{X}$ is cofibrant.
+
+(ii) Consider the diagram
+$$
+\begin{tikzcd}
+\emptyset \arrow[d, "p"'] \arrow[r, "q"] & \tilde{X}' \arrow[d, "i_{X}'"] \\
+\tilde{X} \arrow[r, "i_X"] \arrow[ru, "f", dashed] & X
+\end{tikzcd}
+$$
+where $i_X,i_X'$ are acyclic fibrations and $p,q$ are cofibrations. Because each  cofibration has the LLP with acyclic fibrations, there exists a map $f: \tilde{X}\lrta \tilde{X}'$. And this map $f$ is a weak equivalence because. Because $i_X, i_X'$ are weak equivalence and $i_X'f=i_X$, by the 2 of 3 axiom for weak equivalences, $f$ is also a weak equivalence.
+
+(iii): Here we use the notion $(\hat{X},j_X)$ to denote the functorial fibration approximation where $j_X$ is an acyclic cofibration. And we consider $(\hat{Y},j)$ an ordinary fibration approximation of $Y$. Consider the following diagram
+$$
+\begin{tikzcd}
+X \arrow[r, "\alpha"'] \arrow[d, "j_X"'] \arrow[rd] & Y \arrow[d, "j"'] \\
+\hat{X} \arrow[r, dashed] \arrow[d, "p_X"'] & \hat{Y} \arrow[ld, "p"] \\
+* & 
+\end{tikzcd}
+$$
+where the composition $j\circ \alpha$ gives a map from $X$ to an fibrant object $\hat{Y}$, therefore $X,\hat{X},*, \hat{Y}$ form a  commutative square. Note that $j_X$ is an acyclic cofibration and $p$ is a fibration. There is a lift $h:\hat{X}\lrta \hat{Y}$ because fibration has RLP w.r.p acyclic cofibrations. This lift $h$ gives the fibrant approximation of $\alpha$.
+\end{proof}
+
+\begin{lemma}[Ken Brown's Lemma]
+Let $\calc$ be a model category and let $\calb$ be a category with subcategory $S\subset \mathbf{Arr}(\calc)$ containing all the identities and satisfies the 2-out-of-3 axiom. If $F:\calc\lrta \calb$ is a functor hat takes acyclic cofibrations between cofibrant objects to elements of $S$, then $F$ takes fibrations between fibrant objects to elements of $S$, then $F$ takes every weak equivalence between fibrant objects to elements of $S$.
+\end{lemma}
+\begin{rmk}
+Basically, this lemmas says a functor sending acyclic (co)fibrations between (co)fibrant objects to $S$ (``weak equivalences in $\calb$''), would send all weak equivalence in $\calc$ to ``weak equivalence in $\calb$'' 
+\end{rmk}
+\begin{proof}
+Let $f: A\lrta B$ be a generic weak equivalence between cofibrant objects between cofibrant objects. By $\mathbf{MC1}$ all colimits exists  in $\calc$, there the coproduct $A\sqcup B\in Obj(\calc)$. By universal property of coproduct there exists a morphism $\lgl f,id_B\rgl: A\sqcup B\lrta B$.
+We can factorize this map as
+$$
+A\sqcup B\overset{q}{\lrta }C\overset{p}{\lrta }B 
+$$
+with $p$ and acyclic fibration and $q$ a cofibration. Since $A$ and $B$ are cofibrant, stability of cofibrations under pushout implies $i_0, i_1$ are both cofibrations  
+$$
+\begin{tikzcd}
+ & C \arrow[rd, "p"] &  \\
+A\sqcup B \arrow[rr, "{\lgl f,id_B\rgl}", bend left] \arrow[ru, "q"] &  & B \arrow[ll, "i_1"] \\
+ &  &  \\
+A \arrow[uu, "i_0"] \arrow[rruu, "f"] &  & \emptyset \arrow[ll] \arrow[uu]
+\end{tikzcd}.
+$$
+Then $qi_0$ and $qi_1$ are both weak equivalences because of 2-out-of-3 axiom by considering the the following two triangles.
+$$
+\begin{tikzcd}
+C \arrow[rd, "p"] &  & C &  \\
+A \arrow[r, "f"] \arrow[u, "q\circ i_0"] & B & A \arrow[u, "q\circ i_0"] \arrow[r, "f"] & B \arrow[lu, "q\circ i_1"].
+\end{tikzcd}
+$$
+By hypothesis, $F(q\circ i_0)$ and $F(q\circ i_0)$ are elements of $S$. Since $F(p\circ q\circ i_1)=F(id_B)$ is in $S$. By 2-out-of-3 hypothesis of $S$, It follows that $F(p)\in S$. Hence $F(f)=F(p)\circ F(q\circ i_0)$ is in $S$.
+\end{proof}
+
+\subsection{The homotopy category}
+
+\begin{dfn}
+Let $\mathbb{U}\subset\mathbb{V}$ be Grothendieck universe and let $\calc$ be a $\mathbb{U}$-small category. Let $S\subset Arr(\calc)$ be a set of Arrows. A $\mathbb{V}$-\textbf{localization of $\calc$ with respect to $S$} is a $\mathbb{V}$-small category $\calc[S^{-1}]$ together with a functor $F_S:\calc\lrta \calc[S^{-1}]$ such that 
+\begin{enumerate}[label=(\roman*)]
+\item for all $s\in S$, $F_S(s)$ is an isomorphism;
+\item for any other $\mathbb{V}$-small categroy $\cala$ and any functor $\calc\lrta \cala$ such that $G(s)$ is an isomorphism for each $s\in S$, there is a functor $G_s:\calc[S^{-1}]\lrta \cala$ and a natural isomorphism
+$$
+\eta_G: G_S\circ F_S\cong G
+$$
+\item for any $\mathbb{V}$-small category $\cala$, the induces functor
+$$
+F_S^*: Func(\calc[S^{-1}], \cala), \lrta Func(\calc,\cala)
+$$
+is fully faithful.
+\end{enumerate}
+\end{dfn}
+
+\begin{thm}
+Let $\mathbb{U}$ be a Grothendieck universe and let $\calc$ be a model category. Then there exists a $\mathbb{U}$-localization of $\calc$ with respect to the set of Weak equivalences $W$.
+\end{thm}
+
+\begin{dfn}
+Let $\calc$ be a category and let $\calc_0$, $\mathbf{W}\subset \calc$ be subcategories. We say that $\calc_0$ is a left (resp. right) deformation retract of $\calc$ with respect to $\mathbf{W}$ if there exits a functor $R:\calc\lrta \calc_0$ and a natural transformation $s: R\lrta Id_\calc$ (resp. $s: Id_\calc\lrta R$) such that:\begin{enumerate}
+\item $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$;
+\item for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$;
+\item for every object $C_0\in Obj(\calc_0)$, the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$.
+\end{enumerate}
+The pair $(R,s)$ is called a left (resp. right) deformation retraction from $\calc$ to $\calc_0$ with respect to $\mathbf{W}$. When $\mathbf{W}=\calc$, we say  $(R,s)$ is an absolute deformation retraction of $\calc$ to $\calc_0$.
+\end{dfn}
+
+\begin{lemma}
+Let $\calc$ be a category and let $\calc_0, \mathbb{W}\subset \calc$ be subcategories. Let $R:\calc\lrta \calc_0$ be an absolute left deformation retraction. Assume that for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$; if $\mathbf{W}$ satisfies the 2-out-of-3 axiom, then $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$. If $\calc_0$ is a full subcategory, then for every $C_0\in Obj(\calc_0)$ the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$
+\end{lemma}
+\section{Fibered category}
 \section{Formalization renormalization}
 \begin{dfn}
 A \textbf{parametrix} for the Laplacian $D$ on a manifold is a symmetric distribution $P$ on $M^2$ such that $(D\otimes 1)P-\delta_M$ is a smooth function on $M^2$, where $\delta_M$ stands for the $\delta$-distribution on the diagonal of $M$.

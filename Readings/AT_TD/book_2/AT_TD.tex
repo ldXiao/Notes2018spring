@@ -288,7 +288,7 @@ f^*(E)=\{(x,e)\in X\times E|f(x)=p(e)\}\subset X\times E.
 $$
 and the map $f^*(E)\lrta X$ is the restriction of the projection $X\times E\lrta X$.
 \end{definition}
-\begin{exr}
+\begin{exr}\label{exr:pullback_of_fibration}
 Show that $f^*(E)\lrta X$ is indeed a fibration.
 \end{exr}
 \begin{proof}
@@ -427,10 +427,411 @@ With a little bit abuse of terminology, we refer to any space in the homotopy cl
 Since homotopy equivalences induces isomorphism in homology or cohomology, a fibration with fiber $F$ gives rise to local coefficients systems whose fiber is the homology or cohomology of $F$, as the next corollary asserts.
 
 \begin{corollary}
-
+aaa
 \end{corollary}
+
+\section{Path space fibrations}
+ An important family of fibrations are the path space fibrations. They will be useful in replacing arbitrary maps by fibrations and then in extending a fibration to a ``fiber sequence''.
+ \begin{definition}
+Let $(Y,y_0)$ be a base space. The \textbf{path space} $P_{y_0}Y$ is the space of paths in $Y$ stating at $y_0$
+$$
+P_{y_0}Y=Map((I,0), (Y,y_0))\subset Map(I,Y).
+$$
+Similarly, the \textbf{loop space} $\Omega_{y_0}Y$ is the space of all loops in $Y$ based at $y_0$
+$$
+\Omega_{y_0}Y=Map((I,\{0,1\}); (Y,y_0))
+$$
+Often, we the notion $Y^I:=Map(I,Y)$ to denote the free path space. Let $p: Y^{I}\lrta Y$ be the evaluation at the end point of a path: $p(\alpha)=\alpha(1)$
+ \end{definition}
+ \begin{exr}
+ Let $y_0,y_1$ be two points in a path-connected space $Y$. Prove that $\Omega_{y_0} Y$ and $\Omega_{y_1}Y$ are homotopy equivalent.
+ \end{exr}
+ \begin{proof}
+This is an easy exercise. Because $Y$ is path-connected, we have a loop $\alpha: [0,1]\mapsto Y$ s.t. $\alpha(0)=y_0, \alpha(1)=y_1$. Then we can define a continuous map
+$$
+\begin{aligned}
+f_\alpha: \Omega_{y_0}Y&\lrta \Omega_{y_1}Y\\
+ \gamma&\longmapsto \alpha \gamma \alpha^{-1} 
+\end{aligned}
+$$
+where the multiplication is path concatenation.
+Similarly, we obtain
+$$
+\begin{aligned}
+g_\alpha: \Omega_{y_1}Y&\lrta \Omega_{y_0}Y\\
+ \gamma&\longmapsto \alpha^{-1} \gamma \alpha 
+\end{aligned}
+$$
+
+Note that the composition of path is associative only up to homotopy.
+
+We know $f_\alpha\circ g_\alpha\simeq id$
+ \end{proof}
+\begin{theorem}\ 
+\begin{enumerate}
+	\item The map $p: Y^I\lrta Y$, where $p(\alpha)=\alpha(1)$ is a fibration. Its fiber over $y_0$ is the space of paths which end at $y_0$, a space homeomorphic to $P_{y_0}Y$
+	\item The map $p: P_{y_0}Y\lrta Y$ is a fibration. Its fiber over $y_0$ is the loop space $\Omega_{y_0}Y$.
+	\item The free path space $Y^I$ is homotopy equivalent to $Y$. The projection $p:Y^I\lrta Y$ is a homotopy equivalence.
+	\item The space of paths in $Y$ starting at $y_0$, $P_{y_0}Y$ is contractible.
+\end{enumerate}
+\end{theorem}
+\begin{definition}\label{chap6def:fiber_homotpy}
+A \textbf{fiber homotopy} between two morphisms of fibrations is a commutative diagram
+$$
+\begin{tikzcd}
+E\times I \arrow[d, "p\times id"'] \arrow[r, "\tilde{H}"] & E' \arrow[d, "p'"] \\
+B\times I \arrow[r, "H"] & B'
+\end{tikzcd}
+$$
+with $H_0=f_0， H_1=f_1, \tilde{H}_0=\tilde{f}_0$ and $\tilde{H}_1=\tilde{f}_1$.
+\end{definition}
+\section*{Factorizing a continuous map into fibration and homotopy equivalence}
+
+Let $f: X\lrta Y$ be a continuous map. We will replace $X$ by a homotopy equivalent space $P_f$ and obtain a amp $P_f\lrta Y$ which is a fibration.
+
+\begin{definition}
+The pullback $P_f=f^*(Y^I)$ of the path space fibration along $f$ is called the mapping path space
+$$
+\begin{tikzcd}
+P_f=f^*(Y^I) \arrow[d] \arrow[r] & Y^I \arrow[d, "q"] \\
+X \arrow[r, "f"'] & Y
+\end{tikzcd}
+$$
+where $q(\alpha)=\alpha(0)$.
+An element of $P_f$ is a pair $(x,\alpha)$ where $\alpha$ is a path in $Y$ and $x$ is a point in $X$ which maps via $f$ to the starting point of $\alpha$. ($f(x)=\alpha(0)$) The mapping path fibration 
+$$
+p:P_f\lrta Y
+$$
+is obtained by evaluating at the end point
+$$
+p(x,\alpha)=\alpha(1).
+$$
+\end{definition}
+\begin{theorem}\label{thm:factorization_fibration_htp_equiv}
+Suppose that $f: X\lrta Y$ is a continuous map.
+\begin{enumerate}[label=(\alph*)]
+\item There exists a homotopy equivalence $h:X\lrta P_f$ so that the diagram
+$$
+\begin{tikzcd}
+X \arrow[rd, "f"'] \arrow[r, "h"] & P_f \arrow[d, "p"] \\
+ & Y
+\end{tikzcd}
+$$
+commutes.
+\item The amp $p: P_f\lrta Y$ is a fibration. 
+\item IF $f: X\lrta Y$ is a fibration, then $h$ is a fiber homotopy equivalence.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a): Let $h: X\lrta P_f$ be the map
+$$
+x\mapsto (x,const_{f(x)}),
+$$
+where $const_{f(x)}$  is the constant path at $f(x)$. IN this way, we can have 
+$$
+p\circ h(x)=const_{f(x)}(1)=f(x)
+$$
+ the diagram indeed commutes. Then it remains to find the homotopy inverse of $h$. Consider the canonical projection to the first entry
+ $p_1: P_f\lrta X, (x,\alpha)\lrta x$. $p_1\circ h=id_X$. For another direction, the homotopy from $h\circ p_1$ to $id_{P_f}$ if given by $F: P_f\times I\lrta P_f$
+ $$
+ F((x,\alpha),s)
+ =(x,\alpha_s)
+ $$
+ where $\alpha_s(t)=\alpha(st).$ We see therefore $F((x,\alpha),0)=(x, const_{f(x)})=h\circ p_1(x,\alpha)$ and $F((x,\alpha),1)=(x,\alpha)=id_{P_f}(x,\alpha)$.
+
+ (b) we check the homotopy lifting property directly
+$$
+\begin{tikzcd}
+A\times\{0\} \arrow[r, "g"] \arrow[d, "i", hook] & P_f \arrow[d, "p"] \\
+A\times I \arrow[r, "H"'] \arrow[ru, "\tilde{H}", dashed] & Y
+\end{tikzcd}
+$$
+$g$ has two components
+$$
+g(a)=(g_1(a),g_2(a))\in P_f\subset  X\times Y^I
+$$
+ where $f(g_1(a))=g_2(\alpha)(0)$ by definition of $P_f$. On the other hand, because the outside square commutes, we know $p\circ g(a)=g_2(a)(1)=H(a,0)$. Therefore, there is a path from $f(g_1(a))$ to $g_2(a)(1)=H(a,0)$ and then to $H(a,1)$. This suggest us to define the lift $\tilde{H}=(\tilde{H}_1,\tilde{H}_2)$, where $\tilde{H}_2: A\times I\lrta Y^I$.
+ $$
+\tilde{H}_1(a,s):= g_1(a)
+ $$
+ $$
+\tilde{H}_2(a,s)(t)=\left\{\begin{aligned}
+g_2(a)((1+s) t), &\ \  0\leq t\leq 1/(1+s)\\
+H(a,(1+s)t-1), &\ \  1\geq t\geq 1/1/(1+s)
+\end{aligned}\right.
+ $$
+ Thus constructed $\tilde{H}_2$ is continuous and in makes the diagram commutes
+ $p\circ \tilde{H}(a,s)=\tilde{H}_2(a,s)(1)=H(a,(1+s)-1)=H(a,s)$. Also $\tilde{H}\circ i(a)=\tilde{H}(a,0)=(g_1(a), g_2(a)(\_))$
+
+ (c): If $f: X\lrta Y$ is already a fibration to start with. Recall the definition~\ref{chap6def:fiber_homotpy} As in the proof of $(a)$, we have proved that $h,p_1$ are homotopy equivalence we also founded the corresponding homotopy. 
+
+ Now it suffices to find another pair of morphism $h: X\lrta P_f$ and $k: P_f\lrta X$ such that $(h, id_Y)$ and $(k,id_Y)$ are morphism of fibrations. And they are fiber homotopy equivalence.
+
+ (1) check $(h,id_Y)$ is morphisms of fibrations. Clearly, the diagram 
+ $$
+\begin{tikzcd}
+X \arrow[d, "f"'] \arrow[r, "h"] & P_f \arrow[d, "p"] \\
+Y \arrow[r, "id_Y"'] & Y
+\end{tikzcd}
+ $$
+ commutes.
+
+ However we can not choose $(k=p_1)$ because $f\circ p_1(x,\alpha)=f(x)\neq \alpha(1)$ in general.
+ $$
+\begin{tikzcd}
+X \arrow[d, "f"'] & P_f \arrow[l, "k"'] \arrow[d, "p"] \\
+Y & Y \arrow[l, "id_Y"]
+\end{tikzcd}
+ $$
+ The diagram requires $fk(x,\alpha)=\alpha(1)$.
+
+ How to construct $k$?
+
+Consider the test diagram of fibration $f:X\lrta Y$, where $\gamma((x,\alpha),t)=\alpha(t)$.
+ $$
+\begin{tikzcd}
+P_f\times\{0\} \arrow[d, "i"', hook] \arrow[r, "p_1"] & X \arrow[d, "f"] \\
+P_f\times I \arrow[r, "\gamma"'] \arrow[ru, "\tilde{\gamma}", dashed] & Y
+\end{tikzcd}
+ $$
+ The outer square indeed commutes and there exists a lift $\tilde{\gamma}$. 
+
+ Now, we define $k:P_f\lrta X$ by $k(x,\alpha):=\tilde{\gamma}((x,\alpha),1)$. In this way $fk(x,\alpha)=f\tilde{\gamma}((x,\alpha),1)=\gamma((x,\alpha),1)=\alpha(1)$. $(k,id_Y)$ is a morphism of fibrations.
+
+ $(2)$ It remains to construct the homotopy $hk\simeq id_{P_f}$ and $kh\simeq id_{X}$
+
+ $$
+kh(x)=k(x,const_{f(x)})=\tilde{\gamma}((x,const_{f(x)}),1)
+ $$
+Also notice $x=\tilde{\gamma}((x, const_{f(x)}),0)$. One obvious choice of homotopy is 
+$$
+F: X\times I\lrta X
+$$
+$$
+(x,s)\longmapsto \tilde{\gamma}((x,const_{f(x)}),s)
+$$
+
+On the other hand
+$$
+hk(x,\alpha)=h(\tilde{\gamma}(x,\alpha,1))=(\tilde{\gamma}(x,\alpha,1), const_{f(\tilde{\gamma}(x,\alpha,1)})=(\tilde{\gamma}(x,\alpha,1), const_{\gamma(x,\alpha,1)})
+$$
+where $f\tilde{\gamma}(x,\alpha,1)=\gamma(x,\alpha,1)$. Also note that $(\tilde{\gamma}(x,\alpha,0), \alpha((1-0)t\_)=(x,\alpha(t\_))$. One reasonable choice of homotopy is
+$$
+G: P_f\times I\lrta P_f
+$$
+$$
+(x,\alpha,s)\mapsto (\tilde{\gamma}(x,\alpha,s),\alpha((1-s)t\_) )
+$$
+$G(x,\alpha,1)=hk(x,\alpha)$ and $G(x,\alpha,0)=(x,\alpha)$. The pair $(F,G)$ satisfies the definition of fiber homotopy.
+\end{proof}
+\section{Cofibration}
+\begin{definition}
+A map $i: A\lrta X$ is called a \textbf{cofibration} or satisfies the \textbf{homotopy extension property} if the following diagram has a solution for arbitrary $Y$.
+$$
+\begin{tikzcd}
+A\times \{0\} \arrow[dd, "i"] \arrow[rr, hook] &  & A\times I \arrow[dd, "i\times id"] \arrow[ld, "h"] \\
+ & Y &  \\
+X\times\{0\} \arrow[rr, hook] \arrow[ru,"f"] &  & X\times I \arrow[lu, "H",dashed]
+\end{tikzcd}
+$$
+We say there exists a homotopy $H$ extending $h$ with initial condition $f$.
+\end{definition}
+Cofibration is the dual notion of fibration, using the adjointness of $\square\times I$ and $\square^I$.
+
+Equivalently, the lift problem in the diagram below always has  solution
+$$
+\begin{tikzcd}
+A \arrow[d, "i"'] \arrow[r] & Y^I \arrow[d, "e_0"] \\
+X \arrow[r] \arrow[ru, dashed] & Y
+\end{tikzcd}
+$$
+where $e_0(\alpha)=\alpha(0)$. Here $i:A\lrta X$ has the Left lift property with respect to an acyclic fibration $e_0:Y^I\lrta Y$. (we will explain this statement in model category)
+
+Dually, we say a fibration $p:E\lrta B$ has the right lift property with respect to an acyclic cofibration $i_0: Y\times\{0\}\lrta Y\times I$
+$$
+\begin{tikzcd}
+Y\times\{0\} \arrow[d, "i_0",hook] \arrow[r] & E \arrow[d, "p"] \\
+Y\times I \arrow[r] \arrow[ru, dashed] & B.
+\end{tikzcd}
+$$
+
+Most cofibrations we would encounter in this notes are of the form $(X,A)$ where $A$ is a subspace of $X$. We want to find the criterion for the inclusion $i: A\inj X$ to be a cofibration.
+\begin{definition}
+Let $X$ be compactly generated, $A \subset X$ a subspace. Then $(X,A)$ is called an \textbf{NDR-pair} (neighborhood-deformation-retraction) if there exists continuous maps $u: X\lrta I$ and $h: X\times I\lrta X$ s.t.
+\begin{enumerate}
+\item $A=u^{-1}(0)$
+\item $h(\_, 0)=id_X$
+\item $h(a,t)=a,\forall a\in A, t\in [0,1]$
+\item $h(x,1)\in A,\forall x\in X$ such that $u(x)<1$
+\end{enumerate}
+$(X,A)$ is a \textbf{DR-pair} if $u(x) < 1$ for all $x \in X$, in which case $A$ is a deformation retract of $X$. 
+\end{definition}
+
+\begin{theorem}\label{thm:steenrod}(Steenrod)
+Let $A$ be a closed subspace of $X$. Then the following are equivalent
+\begin{enumerate}[label=(\roman*)]
+\item $(X,A)$ is an NDR-pair.
+\item $(X\times I,X\times \{0\}\cup A\times I)$ is a DR-pair.
+\item $X\times \{0\}\cup A\times I$ is a retract of $X\times I$.
+\item The inclusion $i: A\inj X$ is a fibration. 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+For proof, see page 45 of JPM.
+\end{proof}
+
+
+\begin{exr}
+Prove that a push out of a cofibration is a cofibration. Given $i: A\lrta X$ is a cofibration, assume the square to be a pushout, then the map $B\lrta f_* X$ is a cofibration.
+$$
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "i"'] & B \arrow[d] \\
+X \arrow[r] & f_*X
+\end{tikzcd}
+$$
+\end{exr}
+\begin{proof}
+This is the dual statement of Exercise~\ref{exr:pullback_of_fibration}. We prove it directily via the diagram.
+
+$$
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "i"'] & B \arrow[d] \arrow[r] & Y^I \arrow[d, "e_0"] \\
+X \arrow[r] \arrow[rru, "H", dashed] & f_*X \arrow[r] \arrow[ru, "\tilde{H}"', dashed] & Y
+\end{tikzcd}
+$$
+Initially, we assume the right square commutes, which implies the the outside square commutes.
+Then by the fact that $i: A\lrta X$ is a fibration, we know there exists $H:X\lrta Y^I$. Then by the fact that $f_*X$ is a pushout, there exists a map $\tilde{H}:f_*X\lrta Y^I$ such that $\tilde{H}\circ [B\lrta f_*H]=B\lrta Y^I$ and $\tilde{H}\circ [X\lrta f_*X]=X\lrta Y^I$. Then it remains to check $e_0\circ \tilde{H}=f_*X\lrta Y$. 
+
+We know $e_0\circ \tilde{H}$ form a commutative diagram
+$$
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "i"'] & B \arrow[d] \arrow[rrddd] &  &  \\
+X \arrow[r] \arrow[rrrdd] & f_*X \arrow[rd, "\tilde{H}"', dashed] &  &  \\
+ &  & Y^I \arrow[rd, "e_0"] &  \\
+ &  &  & Y
+\end{tikzcd}
+$$
+where the arrows from $X,B$ to $Y$ are just the composition of arrows in the outside square in the initial diagram. Then because the $f_*X$ is a push out  the morphism $f_*X\lrta Y$ is unique. Thus, $e_0\circ \tilde{H}=f_*X\lrta Y$ in the initial diagram. We have verified $\tilde{H}$ indeed form lift.
+\end{proof}
+
+\section{Mapping cylinder}
+\begin{definition}
+A \textbf{mapping cylinder} of map $f: A\lrta X$ is  the space
+$$
+M_f=\frac{A\times I\coprod X}{(a,1)\sim f(a)}
+$$
+alternatively, we can define it as  the pushout
+$$
+\begin{tikzcd}
+A\times\{1\} \arrow[r, "f"] \arrow[d, "i_1"', hook] & X \arrow[d] \\
+A\times I \arrow[r] & M_f
+\end{tikzcd}
+$$
+
+A mapping cone $C_f$ is defined to be
+$$
+C_f=\frac{M_f}{A\times \{0\}}
+$$
+\end{definition}
+
+There is a dual result to Theorem~\ref{thm:factorization_fibration_htp_equiv}.
+\begin{theorem}
+Let $f: A\lrta X$ be a continuous map. Let $i: A\lrta M_f$ be the inclusion map $a\mapsto [(a,0)]$
+\begin{enumerate}[label=(\arabic*)]
+\item there exists a homotopy equivalence $h: M_f\lrta X$ so that the diagram commutes
+$$
+\begin{tikzcd}
+A \arrow[r, "i"] \arrow[rd, "f"'] & M_f \arrow[d, "h"] \\
+ & X.
+\end{tikzcd}
+$$
+\item The inclusion $i: A\lrta M_f$ is a cofibration.
+\item if $f: A\lrta X$ is already a cofibration, then $h:M_f\lrta X$ is a homotopy equivalence relative to $A$, in particular, $h$ induces homotopy equivalence of cofibers $C_f\lrta X/f(A)$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1): Let $h: M_f\lrta X$ be the map $h([a,s])=f(a), h([x])=x$. It is clear that the map $h$ is well-defined. The $h\circ i(a)=h([a,0])=f(a)$ makes the diagram commutes. The homotopy inverse of $h$ is the inclusion $j: X\inj M_f$. $h\circ j=id_X$ and $j\circ h([x])=[x]$ $j\circ h ([a,s])=[f(x)]=[a,1]$. We can find a homotopy $F:M_f\times I\lrta M_f$
+$$
+F([x],t)=[x]
+$$
+$$
+F([a,s],t)=[a,s+(1-s)t]
+$$
+This is indeed a well-defined homotopy and $F(\_, 0)=id_X$, $F(\_, 1)=j\circ h(\_)$
+
+(2) We can either choose to prove it via the homotopy extension property or by the Steenrod' s theorem~\ref{thm:steenrod}. (iii$\Lrta $iv). We need to construct a retraction:$M_f\times I\lrta M_f\times \{0\}\cup A\times I$.
+\begin{center}
+\includegraphics[scale=0.5]{retraction}
+\end{center}
+Let $r: I\times I\lrta I\times 0\cup 0\times I$ be a retraction so that $r(1\times I)=\{(1,0)\}$. Define $R([a,s],t):=[a,r(s,t)]$ and $R([x],t)=([x],0)$. Thus $i: A\lrta M_f$ is a cofibration.
+
+(3): If $f: A\inj X$ is a cofibration, by Steen rod's theorem there is a retraction
+$$
+r: X\times I\lrta X\times 1\cup f(A)\times I
+$$
+and an obvious homeomorphism
+$$
+q: X\times 1\cup f(A)\times I\lrta M_f.
+$$
+Define $g: X\lrta M_f$ by $g(x)=q(r(x,0))$. We will show that $g,h$ are homotopy inverse rel $A$. Define the homotopy
+$$
+H: X\times I\lrta X
+$$
+as $H:=h\circ r$. Then $H(x,0)=h\circ g(x)$, $H(x,1)=x$, and $H(f(a),t)=f(a)$. Define the homotopy
+$$
+F:M_f\times I\lrta M_f
+$$
+as $F([x],t)=q(r(x,t))$ and $F([a,s],t)=q(r(f(a),st))$. Then $F(x,0)=g\circ h(x)$, $F(\_, 1)=id_{M_f}$, and $F(i(a),t)=i(a).$ 
+\end{proof}
+
+\section{Sets of homotopy classes of maps}
+In this section we will discuss the exact sequence of pointed sets and their behavior under fibrations and cofibrations.
+\begin{theorem}
+(Basic property of fibrations) Let $p: E\lrta B$ be a fibration, with fiber $F=p^{-1}(b_0)$ and $B$ path-connected. Let $Y$ be any space. Then the sequence of sets
+$$
+[Y,F]\overset{i_*}{\lrta}[Y,E]\overset{p_*}{\lrta}[Y,B]
+$$
+is exact.
+\end{theorem}
+Note that even if $B,E,F, Y$ are ordinary spaces, the set for example $[Y,B]$ is pointed because $B$ is path connected and we can indeed define the notion of exactness for this sequence.
+\begin{proof}
+Clearly, $p_*(i_*[g])=0$ for a homotopy class $[g]$ of maps from $Y$ to $F$ because $p_*(i_*[g])=p_*([i g])=[pig]=[c_{b_0}]$ where $c_{b_0}$ denote the constant map to $b_0$.
+
+Suppose $f: Y\lrta E$ so that $p_*(f)=const$, i.e. $p\circ f: Y\lrta B$ is null homotopic. Let $G: Y\times I\lrta B$ be a null homotopy, and then let $H: Y\times I\lrta E$ be the lift of $G$ in the following diagram
+$$
+\begin{tikzcd}
+Y\times\{0\} \arrow[d, hook] \arrow[r, "f", dashed] & E \arrow[d, "p"] \\
+Y\times I \arrow[r, "G"'] \arrow[ru, "H", dashed] & B
+\end{tikzcd}
+$$
+Then we know $ H(y,0)=f(y)$ and $p\circ H(y,1)=G(y,1)=b_0$, therefore $H(y,1)\in p^{-1}(b_0)$ is a null homotopy from $f$ to $(i_*g)(y):=H(y,1)$ where $g$ is a map from $Y$ to $F$.
+\end{proof}
+
+Dually, we have a similar statement for cofibrations.
+\begin{theorem}(Basic property of cofibrations). Let $i:A\inj X$ be a cofibration, with cofiber $X/A$. Let $q: X\lrta X/A$ denote the quotient map. Let $Y$ be any path-connected space. Then the sequence of sets
+$$
+[X/A, Y]\overset{q^*}{\lrta}[X,Y]\overset{i^*}{\lrta}[A,Y]
+$$ 
+is exact.
+\end{theorem}
+\begin{proof}
+Clearly, $i^*(q^*([g]))=[g\circ q\circ i]=[const]$.
+
+Suppose $f:X\lrta Y$ is a map and suppose that $f|_A: A\lrta Y$ is null-homotopic. Let $h: A\times I\lrta Y$ be a null homotopy. The solution $F$ to the problem
+$$
+\begin{tikzcd}
+X\times \{0\}\cup A\times I \arrow[r, "f\cup h"] \arrow[d, "i"', hook] & Y \\
+X\times I \arrow[ru, "F"', dashed] & 
+\end{tikzcd}
+$$
+defines a map $f':X\lrta Y,x\mapsto F(x,1)$, which is homotopic to $f$ and $f'|A$ is a constant map. i.e., $f'(A)=y_0$. Therefore we can define a map $g:X/A\lrta Y$ by $g([x])=f'(x)$. Thus $[f]=[f']=q^*[g]$
+\end{proof}
+
+\begin{exr}
+Prove the base-point versions of the previous theorems.
+\end{exr}
 \chapter{Homotopy groups}
-\chapter{Stable homotopy. Daulity}
+\chapter{Stable homotopy. Duality}
 \chapter{Cell complexes}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
@@ -1307,7 +1708,7 @@ T_0 \arrow[r] \arrow[d, "\exists \Phi_0"', dashed] & H_0(T_\bullet) \arrow[r] \a
 S_0 \arrow[r] & H_0(S_\bullet) \arrow[r] & 0
 \end{tikzcd}
 \]
-\end{proof}
+
 
 If we find $\Phi_i, 0\leq i\leq n$ such that makes the first $n$ ladder commute, we can find a $\Phi_{n+1}$ that makes the diagram commute
 \[
@@ -1334,7 +1735,7 @@ S_1 \arrow[r] & S_0 \arrow[r] & H_0(S_\bullet),
 where we have used~\ref{appendixA:lem:A.1.4} again. Inductively, If we have constructed $\Upsilon_{n-1}$, we have the following diagram
 \[
 \begin{tikzcd}
-T_n \arrow[r, "id"] \arrow[d, "\exists \Upsilon_{n}"', dashed] & T_n \arrow[d, "\Xi_n-\Upsilon_{n-1}\circ\pd"] \arrow[r] & 0 \arrow[d, "0"] \\
+T_{n+1} \arrow[r, "id"] \arrow[d, "\exists \Upsilon_{n}"', dashed] & T_n \arrow[d, "\Xi_n-\Upsilon_{n-1}\circ\pd"] \arrow[r] & 0 \arrow[d, "0"] \\
 S_{n+1} \arrow[r, "\pd'"] & S_n \arrow[r] & S_{n-1}
 \end{tikzcd}
 \] 
@@ -1349,9 +1750,222 @@ $$
 \end{aligned}
 $$
 Hence, we can construct $\Upsilon_{n}$ by~\ref{appendixA:lem:A.1.4}.
+\end{proof}
+\ \\
+\ \\
+\ \\
 
 
+\section{Some generalizations}
+Recall the comparison theorem in homological algebra.
+\begin{theorem}
+Let $P_\bullet: \cdots\lrta P_2\lrta P_1\lrta P_0\lrta M\lrta 0$ be a complex with all $P_i$ projective. Let $C_\bullet: \cdots\lrta C_2\lrta C_1\lrta C_0\lrta N\lrta 0$ be an exact complex. Then for any $f\in \hom_R(M,N)$ there exists a map of complexes $f_\bullet: P_\bullet\lrta C_\bullet$ that extends $f$. This lifting $f_\bullet$ is unique up to homotopy.
+\end{theorem}
+How to generalize the acyclic model theorem in this direction?
 
+How to define ``projective'' functor $S_\bullet: \calc\lrta Comp_R$? with some model $\pzm$ specified?
+
+It should not be the projective object in the functor category. We should define the notion of ``projective with basis''.
+
+Recall one of the equivalent definitions of projective module
+
+A module $P$ is projective iff there exists a set $\{a_i\in P\mid i\in I\}$ and a set $\{f_i\in \hom(P,R)\mid i\in I\}$ such that for every $x\in P$, $f_i(x)$ is only nonzero for finitely many $i$, and $x=\sum_i f_i(x)a_i$. In this case we say $P$ is endowed with a \textbf{projective basis}.
+
+This inspires us to define the notion of ``projective functor with basis''.
+
+\begin{definition}
+A functor $S: \calc\lrta Mod_{R}$ is said to be \textbf{projective with basis in $\pzm$} if the following two condition holds
+\begin{enumerate}
+\item $T(C)$ is projective for all $C\in\calc$.
+\item There is a $T$-model set $\chi=\{x_\lambda\in T(M_\lambda)\mid M_\lambda\in \Lambda\}$ s.t.
+$$
+\{T(g)(x_\lambda)|g\in \hom(M_\lambda,C), \lambda\in \Lambda\}
+$$
+is projective basis for $T(C)$. i.e.
+For each $x\in T(C)$, it can be expressed as
+$$
+x=\sum_{\lambda\in \Lambda}\sum_{g\in \hom(M_\lambda,C)} f_{g,\lambda}^C(x)T(g)(x_\lambda)
+$$
+where $\{f_i: T(C)\lrta R\}$ is a fixed set of morphisms of $R$-modules.
+A functor $S_\bullet:\cala\lrta Comp_R$, where $Comp_R$ is the category of chain complex of $R$-modules, is said to be \textbf{projective with basis in $\pzm$} if each $S_n$ is projective with basis in $\pzm$. 
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Conjecture]\label{conj}
+Suppose $\calc$ is a category with models $\pzm$. Suppose $T_\bullet, S_\bullet:\calc\lrta Comp_R$ are two functors such that both $T_\bullet$ and $S_\bullet$ are non-negative. Assume further $T_\bullet$ is projective with basis in $\pzm$ and $S_\bullet$ is acyclic in the positive degree on each element $M\in\pzm$.
+
+Suppose 
+$$
+\Theta: H_0\circ T_\bullet\lrta H_0\circ S_\bullet
+$$
+ is a natural transformation. $\exists $ a  natural chain morphism $\Psi_\bullet:T_\bullet\lrta S_\bullet$ which is unique up to natural chain homotopy and has $H_0(\Psi_\bullet)=\Theta$.
+\end{theorem}
+\begin{lemma}\label{conj:lemma1}
+Let $\calc$ be a category with family of models $\pzm=\{M_\lambda|\lambda\in \Lambda\}$. Assume $S,T:\calc\lrta Mod_R$ are functors and assume $T$ is projective with basis in $\pzm$. Let
+$\chi:=\{x_\lambda\in T(M_\lambda)|\lambda\in \Lambda\}$ denote the projective model basis for $T$. 
+\textbf{If there exists morphisms of $R$-modules $F_\lambda: T(M_\lambda)\lrta S(M_\lambda)$} 
+
+Then there exists a unique natural transformation $\Phi:T\lrta S$ such that 
+$$
+\Phi(M_\lambda)=F_\lambda
+$$
+\end{lemma}
+\begin{proof}
+Because $T$ is projective with basis $\pzm$, we know for each $C\in\calc$, $T(C)$ is projective $R$-module and
+$$
+\{T(f)(x_\lambda)|f\in \hom(M_\lambda,C), \lambda\in \Lambda\}
+$$
+is a projective basis for the projective $R$-modules $T(C)$. For fixed $\lambda\in \Lambda$ and fixed object $C\in obj(\calc)$, we have a commutative diagram for every morphism $f: M_\lambda\lrta C$
+\[
+\begin{tikzcd}
+T(M_\lambda) \arrow[r, "T(f)"] \arrow[d, "\Phi(M_\lambda)=F_\lambda"'] & T(C) \arrow[d, "\Phi(C)"] \\
+S(M_\lambda) \arrow[r, "S(f)"'] & S(C)
+\end{tikzcd}
+\]
+We have $\Phi(C)\circ T(f)(x_\lambda)=S(f)(y_\lambda)$. Since $T(f)(x_\lambda)$ forms a projective basis of $T(C)$ in particular the module morphism is uniquely determined by its behavior on generating set.
+
+ we know $\Phi(C)$ is uniquely determined and $C$ is arbitrary, therefore $\Phi$ is unique \textbf{if it exists}.
+
+The only reasonable choice of $\Phi(C)$ should be
+$$
+\Phi(C)(T(g)(x_\lambda)):=S(g)(F_\lambda(x_\lambda)).
+$$
+and
+$$
+\Phi(C)(x)=\sum_{\lambda,g} f_{\lambda,g}^C(x) S(g)(F_\lambda(x_\lambda)).
+$$
+\textbf{I am not quite sure whether there is circular reasoning in the above definition of $\Phi(C)$}
+
+Finally, it suffices to prove the naturality of $\Phi$. We have proved each individual $\Phi(C)$ exists and is unique. It only lefts to check that such specified $\Phi$ is indeed a natural transformation
+\[
+\begin{tikzcd}
+T(A) \arrow[r, "T(g)"] \arrow[d, "\Phi(A)"'] & T(B) \arrow[d, "\Phi(B)"] \\
+S(A) \arrow[r, "S(g)"'] & S(B)
+\end{tikzcd}
+\]
+Given a typical basis element $T(f)(x_\lambda)$ for some $\lambda\in \Lambda$ and $f\in \hom(M_\lambda,A)$. Then 
+$$
+S(g)\circ \Phi(A)(T(f)(x_\lambda))=S(g)S(f)(F(M_\lambda)(x_\lambda))=S(g\circ f)(F_\lambda(x_\lambda)).
+$$
+But also going the other way round:
+$$
+\Phi(B)\circ T(g) (T(f)(x_\lambda))=\Phi(B)(T(g\circ f)(x_\lambda))=S(g\circ f)(F_\lambda(x_\lambda)).
+$$
+Thus  $\Phi$ is indeed a natural transformation.
+\end{proof}
+
+\begin{lemma}\label{conj:lemma2}
+Let $\calc$ be category with family of models $\pzm$. Suppose given six functors
+$T_i,S_i:\calc\lrta Mod_R$, $i=0,1,2$. together with six natural transformations as pictured below
+\[
+\begin{tikzcd}
+T_2 \arrow[r, "\Phi_2"] & T_1 \arrow[r, "\Phi_1"] \arrow[d, "\Theta_1"] & T_0 \arrow[d, "\Theta_0"] \\
+S_2 \arrow[r, "\Psi_2"'] & S_1 \arrow[r, "\Psi_1"'] & S_0
+\end{tikzcd}
+\]
+Assume that 
+\begin{enumerate}
+	\item For every object $C\in obj(\calc)$, the composition $\Phi_1(C)\circ \Phi_2(C):T_2(C)\lrta T_0(C)$ is the zero homomorphism.
+	\item The bottom row is exact on $\pzm$, in the sense that for every model $M\in\pzm$, one has $\im \Psi_2(M)=\ker \Psi_1(M)$.
+	\item The diagram commutes for every object $C\in obj(\calc)$.
+	\item $T_2$ is projective with basis in $\pzm$.
+\end{enumerate}
+Then there exists a natural transformation $\Gamma:T_2\lrta S_2$ such the the first square commutes for every object of $\calc$.
+\[
+\begin{tikzcd}
+T_2\ar[d, dashed, "\Gamma"] \arrow[r, "\Phi_2"] & T_1 \arrow[r, "\Phi_1"] \arrow[d, "\Theta_1"] & T_0 \arrow[d, "\Theta_0"] \\
+S_2 \arrow[r, "\Psi_2"'] & S_1 \arrow[r, "\Psi_1"'] & S_0
+\end{tikzcd}
+\]
+\end{lemma}
+\begin{proof}
+Let $\chi=\{x_\lambda\in T_2(M_\lambda)|\lambda\in \Lambda\}$ denote a model basis for $T_2$. Then for each $\lambda\in \Lambda$ we have a commutative diagram in $Mod_R$ such that both top row and bottom row are chain complex and the bottom row is exact. Also $T_2(M_\lambda)$ is projective 
+\[
+\begin{tikzcd}
+T_2(M_\lambda)\ar[d, dashed, "\gamma_\lambda"] \arrow[r, "f_2"] & T_1(M_\lambda) \arrow[r, "f_1"] \arrow[d, "t_1"] & T_0(M_\lambda) \arrow[d, "t_0"] \\
+S_2(M_\lambda) \arrow[r, "g_2"'] & S_1(M_\lambda) \arrow[r, "g_1"'] & S_0(M_\lambda)
+\end{tikzcd}
+\]
+$\im t_1\circ f_2\subset \im g_2$ because $g_1\circ t_1\circ f_2=h\circ f_1\circ f_2=0$, hence $\im t_1\circ f_2\subset \ker g_1=\im g_2$. For each $x_\lambda$, there is a $y_\lambda\in S_2(M_\lambda)$ such that $g_2(y_\lambda)=t_1\circ f_2(x_\lambda)$ because $g_2$ is surjective. By universal property of projective module, we get a morphism $\gamma_\lambda:T_2(M_\lambda)\lrta S_2(M_\lambda)$ such that $\gamma_\lambda(x_\lambda)=y_\lambda$. (Even $y_\lambda$ are fixed, $\gamma_\lambda$ is not a unique morphism as shown in the definition of projective modules)
+\[
+\begin{tikzcd}
+ & T_2(M_\lambda) \arrow[d, "t_1\circ f_2"] \arrow[ld, "\exists \gamma"', dashed] &  \\
+S_2(M_\lambda) \arrow[r, "g_2"] & \im g_2 \arrow[r] & 0.
+\end{tikzcd}
+\]
+(It also makes the first square of the previous diagram commutes).
+We then know by~\ref{conj:lemma1}, when fix $\gamma_\lambda$ there exists a unique natural transformation $\Gamma: T_2\lrta S_2$ such that
+$$
+\Gamma(M_\lambda)=\gamma_\lambda.
+$$ 
+
+It remains to check thus constructed $\Gamma$ makes the functor diagram commutes.
+At the level of morphism of modules, we know $\Psi(M_\lambda)\circ \Gamma(M_\lambda)=\Theta_1(M_\lambda)\circ \Phi_2(M_\lambda)$.
+ 
+ Then we know the first square of functor diagram commutes by the uniqueness in~\ref{conj:lemma1}. $\Phi\circ \Gamma=\Theta\circ \Phi_2$.
+\end{proof}
+
+\begin{proof}{of theorem A.1.1}
+
+1. \underline{Such $\Phi_\bullet$ exists}: 
+We need to construct natural transformations $\Phi_n:S_n\lrta T_n$ such that the following diagram commutes.
+\[\begin{tikzcd}
+\cdots \arrow[r, "\pd"] & T_2 \arrow[r, "\pd"] \arrow[d, "\Phi_2", dashed] & T_1 \arrow[r, "\pd"] \arrow[d, "\Phi_1", dashed] & T_0 \arrow[r] \arrow[d, "\Phi_0", dashed] & H_0(T_\bullet) \arrow[r] \arrow[d, "\Theta"] & 0 \\
+\cdots \arrow[r, "\pd'"] & S_2 \arrow[r, "\pd'"] & S_1 \arrow[r, "\pd'"] & S_0 \arrow[r] & H_0(S_\bullet) \arrow[r] & 0
+\end{tikzcd}
+\]
+With Lemma~\ref{appendixA:lem:A.1.4} in hand, we can induct on $n$ to concatenate the ``ladders''.
+
+For $n=0$, we have
+\[
+\begin{tikzcd}
+T_0 \arrow[r] \arrow[d, "\exists \Phi_0"', dashed] & H_0(T_\bullet) \arrow[r] \arrow[d] & 0 \arrow[d] \\
+S_0 \arrow[r] & H_0(S_\bullet) \arrow[r] & 0
+\end{tikzcd}
+\]
+
+
+If we find $\Phi_i, 0\leq i\leq n$ such that makes the first $n$ ladder commute, we can find a $\Phi_{n+1}$ that makes the diagram commute
+\[
+\begin{tikzcd}
+T_{n+1} \arrow[r] \arrow[d, "\exists \Phi_{n+1}"', dashed] & T_n \arrow[r] \arrow[d, "\Phi_n"] & T_{n-1} \arrow[d, "\Phi_{n-1}"] \\
+S_{n+1} \arrow[r] & S_n \arrow[r] & S_{n-1}
+\end{tikzcd}
+\]
+
+2. \underline{$H_0(\Phi_\bullet)=\Theta$}: This is a direct result of the corresponding diagram of  chain complexes. On each object $C$, $H_0(\Phi_\bullet)(C): H_0(T_\bullet(C))\lrta H_0(S_\bullet(C)):\lgl c\rgl\mapsto \lgl \Phi_0(c)\rgl$
+Then we have $H_0(\Phi_\bullet)(C)=\Theta(C)$ because the right most square commutes when applied to object $C$.
+
+3. \underline{$\Phi_\bullet$ is unique up to natural chain homotopy} Suppose now we have two such maps $\Psi_\bullet,\Phi_\bullet: T_\bullet\lrta S_\bullet$. We need to find natural transformation $\Upsilon_n: T_{n}\lrta S_{n+1}$ for $n\geq -1$ such that 
+$$
+\pd'\Upsilon_n+\Upsilon_{n-1}\pd=\Phi_n-\Psi_n.
+$$
+Denote the difference $\Phi_n-\Psi_n=:\Xi_n$. We define $\Upsilon_{-1}=0$ and proceed inductively. We have a diagram
+\[
+\begin{tikzcd}
+T_0 \arrow[r] \arrow[d, "\exists\Upsilon_0"', dashed] & T_0 \arrow[d, "\Xi_0"] \arrow[r] & 0 \arrow[d, "0"] \\
+S_1 \arrow[r] & S_0 \arrow[r] & H_0(S_\bullet),
+\end{tikzcd}
+\]
+where we have used~\ref{conj:lemma2} again. Inductively, If we have constructed $\Upsilon_{n-1}$, we have the following diagram
+\[
+\begin{tikzcd}
+T_{n+1} \arrow[r, "id"] \arrow[d, "\exists \Upsilon_{n}"', dashed] & T_n \arrow[d, "\Xi_n-\Upsilon_{n-1}\circ\pd"] \arrow[r] & 0 \arrow[d, "0"] \\
+S_{n+1} \arrow[r, "\pd'"] & S_n \arrow[r] & S_{n-1}
+\end{tikzcd}
+\] 
+By induction hypothesis, the above diagram commutes because
+$$
+\begin{aligned}
+\pd'(\Xi_n-\Upsilon_{n-1}\pd)\\
+&=\pd'\Xi_n-\pd'\Upsilon_{n-1}\pd\\
+&=\pd'\Xi_n-(\Xi_{n-1}-\Upsilon_{n-1}\pd)\pd\\
+&=\pd'\Xi_n-\Xi_{n-1}\pd\\
+&=0.
+\end{aligned}
+$$
+Hence, we can construct $\Upsilon_{n}$ by~\ref{conj:lemma2}.
+\end{proof}
 
 
 \section{Model categories}
