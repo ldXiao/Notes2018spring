@@ -101,6 +101,7 @@
 \newcommand{\cale}{{\cal E}}
 \newcommand{\cali}{{\cal I}}
 \newcommand{\call}{{\cal L}}
+\newcommand{\calm}{{\cal M}}
 \newcommand{\caln}{{\cal N}}
 \newcommand{\calo}{{\cal O}}
 \newcommand{\calr}{{\cal R}}
@@ -630,7 +631,7 @@ By hypothesis, $F(q\circ i_0)$ and $F(q\circ i_0)$ are elements of $S$. Since $F
 Let $\mathbb{U}\subset\mathbb{V}$ be Grothendieck universe and let $\calc$ be a $\mathbb{U}$-small category. Let $S\subset Arr(\calc)$ be a set of Arrows. A $\mathbb{V}$-\textbf{localization of $\calc$ with respect to $S$} is a $\mathbb{V}$-small category $\calc[S^{-1}]$ together with a functor $F_S:\calc\lrta \calc[S^{-1}]$ such that 
 \begin{enumerate}[label=(\roman*)]
 \item for all $s\in S$, $F_S(s)$ is an isomorphism;
-\item for any other $\mathbb{V}$-small categroy $\cala$ and any functor $\calc\lrta \cala$ such that $G(s)$ is an isomorphism for each $s\in S$, there is a functor $G_s:\calc[S^{-1}]\lrta \cala$ and a natural isomorphism
+\item for any other $\mathbb{V}$-small category $\cala$ and any functor $\calc\lrta \cala$ such that $G(s)$ is an isomorphism for each $s\in S$, there is a functor $G_S:\calc[S^{-1}]\lrta \cala$ and a natural isomorphism
 $$
 \eta_G: G_S\circ F_S\cong G
 $$
@@ -647,7 +648,7 @@ Let $\mathbb{U}$ be a Grothendieck universe and let $\calc$ be a model category.
 \end{thm}
 
 \begin{dfn}
-Let $\calc$ be a category and let $\calc_0$, $\mathbf{W}\subset \calc$ be subcategories. We say that $\calc_0$ is a left (resp. right) deformation retract of $\calc$ with respect to $\mathbf{W}$ if there exits a functor $R:\calc\lrta \calc_0$ and a natural transformation $s: R\lrta Id_\calc$ (resp. $s: Id_\calc\lrta R$) such that:\begin{enumerate}
+Let $\calc$ be a category and let $\calc_0$, $\mathbf{W}\subset \calc$ be subcategories. We say that $\calc_0$ is a left (resp. right) deformation retract of $\calc$ with respect to $\mathbf{W}$ if there exits a functor $R:\calc\lrta \calc_0$ and a natural transformation $s: \iota R\lrta Id_\calc$ (resp. $s: Id_\calc\lrta \iota R$), where $\iota:\calc_0\lrta \calc$ is the inclusion functor. such that:\begin{enumerate}
 \item $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$;
 \item for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$;
 \item for every object $C_0\in Obj(\calc_0)$, the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$.
@@ -656,9 +657,69 @@ The pair $(R,s)$ is called a left (resp. right) deformation retraction from $\ca
 \end{dfn}
 
 \begin{lemma}
-Let $\calc$ be a category and let $\calc_0, \mathbb{W}\subset \calc$ be subcategories. Let $R:\calc\lrta \calc_0$ be an absolute left deformation retraction. Assume that for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$; if $\mathbf{W}$ satisfies the 2-out-of-3 axiom, then $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$. If $\calc_0$ is a full subcategory, then for every $C_0\in Obj(\calc_0)$ the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$
+Let $\calc$ be a category and let $\calc_0, \mathbf{W}\subset \calc$ be subcategories. Let $R:\calc\lrta \calc_0$ be an absolute left deformation retraction. Assume that for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$; if $\mathbf{W}$ satisfies the 2-out-of-3 axiom, then $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$. If $\calc_0$ is a full subcategory, then for every $C_0\in Obj(\calc_0)$ the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$.
 \end{lemma}
+\begin{proof}
+Let $f: A\lrta B$ be in $\mathbf{W}$, consider the diagram of natural transformation of $s$ defined in the absolute deformation retraction $(R,s)$.
+
+$$
+\begin{tikzcd}
+R(A) \arrow[d, "R(f)"'] \arrow[r, "s_A"] & A \arrow[d, "f"] \\
+R(B) \arrow[r, "s_B"] & B
+\end{tikzcd}
+$$
+The hypothesis says $s_A, s_B\in \mathbf{W}$, therefore $f\circ  s_A\in \mathbf{W}$. Then by the 2-out-of-3 property of $\mathbf{W}$, we know $R(f)\in\mathbf{W}$. Combined with the fact $R: \calc\lrta \calc_0$, it follows $R(\mathbf{W})\subset \mathbf{W}\cap \calc_0$; The second statemnt is clear because $\mor_{\calc_0}(R(C_0), C_0)=\mor_{\calc}(R(C_0),C_0)$, therefore $s_{C_0}\in \calc_0$.  
+\end{proof}
+\begin{rmk}
+The above lemma says, under suitable choice of subcategory $\mathbf{W}$, the deformation retraction along $\mathbf{W}$ is ``equivalent'' to an absolute deformation retraction. 
+\end{rmk}
+ 
+\begin{lemma}
+Let $\calc$ be a category and $\calc, \mathbf{W}\subset \calc$ subcategories. Let $(R,s)$ be a left( resp. right) deformation retraction w.r.t $\mathbf{W}$. Denote $\mathbf{W}\cap \calc_0$ as $\mathbf{W}_0$. Let $\mathbb{V}$ be the universe where $\calc[\mathbf{W}^{-1}]$ exists.
+\begin{enumerate}
+\item The induced inclusion $\calc_0[\mathbf{W}_0^{-1}]\subset \calc[\mathbf{W}^{-1}]$ is an equivalence of categories. 
+\item $\calc[\mathbf{W}^{-1}]$ exists iff $\calc_0[\mathbf{W}_0^{-1}]$ exists.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The second statement obviously comes from the first.
+
+Consider the inclusion functor: $j_0:\calc_0\lrta \calc$ and the left deformation functor $R:\calc\lrta \calc_0$. The universal property of localization of categories implies both $R,j_0$ descend to functors between the localizations
+$$
+\tilde{j}_0:\calc_0[\mathbf{W}_0^{-1}]\lrta \calc[\mathbf{W}^{-1}]
+$$
+and
+$$
+\tilde{R}:\calc[\mathbf{W}^{-1}]\lrta \calc_0[\mathbf{W}_0^{-1}].
+$$
+
+By the definition of of deformation retraction $s: R j_0\lrta id_\calc$ is a natural transformation and for all object $C\in Obj(\calc)$, $s_C\in \mathbf{W}$.  The natural transformation $s$ descends to a natural transformation
+$\tilde{s}:\tilde{R}\tilde{j}_0\lrta id_{\calc[\mathbf{W}^{-1}]}$
+where 
+$$
+\tilde{s}_{F_\mathbf{W}(C)}=F_{\mathbf{W}}(s_C)
+$$
+where $F_\mathbf{W}$ is the defining functor of localization. By definition of localization $F_\mathbf{W}(s_C)$ is isomorphism because $s_C\in \mathbf{W}$. Hence, by definition, $\tilde{s}$ is a natural isomorphism. The third condition in the definition of deformation retraction means $s$ restricts to a natural transformation $s_0:j\circ R\lrta id_{\calc_0}$. With identical argument we can prove that there is a natural isomorphism between $\tilde{s}_0:\tilde{j}_0\tilde{R}\lrta id_{\calc_0[\mathbf{W}_0^{-1}]}$. 
+
+We have established the desired equivalence of categories.
+\end{proof}
+
+\begin{dfn}
+Let $\calm$ be a model category. 
+\begin{enumerate}
+\item $\calm_c$ denote the full subcategory of $\calm$ consisting of cofibrant objects.
+\item $\calm_f$ denote the full  subcategory of $\calm$ consisting of fibrant objects.
+\item $\calm_{cf}$ denote the full subcategory of $\calm$ consisting of objects that are both cofibrant and fibrant.
+\end{enumerate}
+\end{dfn}
+\begin{prop}
+\begin{enumerate}
+  \item $\calm_{cf},\calm_c$ are left deformation retracts of $\calm_f$ and $\calm$ with respect to the weak equivalences.
+  \item $\calm_{cf},\calm_{f}$ are right deformation retracts w.r.t the weak equivalence.
+\end{enumerate}
+\end{prop}
 \section{Fibered category}
+\section{Stacks}
 \section{Formalization renormalization}
 \begin{dfn}
 A \textbf{parametrix} for the Laplacian $D$ on a manifold is a symmetric distribution $P$ on $M^2$ such that $(D\otimes 1)P-\delta_M$ is a smooth function on $M^2$, where $\delta_M$ stands for the $\delta$-distribution on the diagonal of $M$.

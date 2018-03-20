@@ -6,5 +6,6 @@
 \contentsline {subsection}{\numberline {3.2}Spectral sequences of double complex}{10}{subsection.3.2}
 \contentsline {section}{\numberline {4}Model categories}{10}{section.4}
 \contentsline {subsection}{\numberline {4.1}The homotopy category}{14}{subsection.4.1}
-\contentsline {section}{\numberline {5}Fibered category}{16}{section.5}
-\contentsline {section}{\numberline {6}Formalization renormalization}{16}{section.6}
+\contentsline {section}{\numberline {5}Fibered category}{17}{section.5}
+\contentsline {section}{\numberline {6}Stacks}{17}{section.6}
+\contentsline {section}{\numberline {7}Formalization renormalization}{17}{section.7}

@@ -7,4 +7,5 @@
 \contentsline {subsection}{\numberline {1.6}Mar 13th-A: Continue and proofs}{19}{subsection.1.6}
 \contentsline {section}{\numberline {2}Schemes}{22}{section.2}
 \contentsline {subsection}{\numberline {2.1}Mar 13th-B: Affine schemes}{22}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Mar 16th: affine scheme, example and properties.}{25}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Mar 16th: affine scheme, example and properties.}{24}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Mar 20th: }{30}{subsection.2.3}

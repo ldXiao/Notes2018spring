@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1521552859 "Readings.tex" "Readings.pdf" "Readings" 1521553198
+["pdflatex"] 1521587767 "Readings.tex" "Readings.pdf" "Readings" 1521587770
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -199,13 +199,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Readings.aux" 1521552862 1673 22611ac85fd52b68ca8e8b95a341ba31 ""
-  "Readings.out" 1521552862 720 cf56b57f3b3b4962d33f818ca58b3bf6 ""
-  "Readings.tex" 1521552858 32340 a39e12a3ba7a45bb0e4bebd0933d5ca7 ""
-  "Readings.toc" 1521552862 848 5ddb6c7eb78f69f0c1366b5076f3347b ""
+  "Readings.aux" 1521587770 1753 b40d67078d0a258387ad4e710459cb05 ""
+  "Readings.out" 1521587770 762 4aaf4e456c82f10fbed3e8680d27b35e ""
+  "Readings.tex" 1521587767 35944 7922fd2e869e40ce37aae541b8b6630a ""
+  "Readings.toc" 1521587770 910 e4704cfbcc3464ccaed9799413a62958 ""
   (generated)
+  "Readings.log"
+  "Readings.pdf"
+  "Readings.out"
   "Readings.aux"
   "Readings.toc"
-  "Readings.pdf"
-  "Readings.log"
-  "Readings.out"
