@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1522165378 "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.pdf" "Chap4" 1522165381
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.aux" 1522165167 9682 90a457592bdafe132a354fa9df39d22d ""
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.tex" 1522165378 62935 e2606322a9708cff30b185216539271d ""
+["pdflatex"] 1522164627 "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.pdf" "Chap2" 1522164631
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.aux" 1522164522 10896 181f940144339c406fa1711de1aa1c2d ""
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.tex" 1522164627 77169 0bc5bf8abca0ad738f395fccf855b838 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
@@ -10,13 +10,9 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1440418262 3849859 5c35c49c1fcf460538abecd3dad8aee2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Chap4.tex" 1522165378 62935 e2606322a9708cff30b185216539271d ""
+  "Chap2.tex" 1522164627 77169 0bc5bf8abca0ad738f395fccf855b838 ""
   (generated)
-  "Chap4.log"
-  "Chap4.run.xml"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.pdf"
-  "Chap4.pdf"
-  "Chap4.idx"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.log"
-  "Chap4.bcf"
-  "Chap4.aux"
+  "Chap2.pdf"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.pdf"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.log"
+  "Chap2.log"

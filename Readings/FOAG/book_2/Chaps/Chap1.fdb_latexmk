@@ -1,12 +1,19 @@
 # Fdb version 3
-["pdflatex"] 1517583915 "Chap1.tex" "Chap1.pdf" "Chap1" 1517583915
+["pdflatex"] 1522165130 "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.pdf" "Chap1" 1522165136
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.aux" 1522165077 10895 d3a357ab2832f2a19ba8974ad1c24f72 ""
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.tex" 1522165135 90083 39c1843614d24788ed0f900a7ccbff84 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
-  "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
+  "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
+  "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1440418262 3849859 5c35c49c1fcf460538abecd3dad8aee2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Chap1.aux" 1516653919 5597 716ed041732bba993ed1ca47060a1627 ""
-  "Chap1.tex" 1516654065 872 4d9b9b3fc71dbd2c01f6a5cf665a8297 ""
+  "Chap1.tex" 1522165135 90083 39c1843614d24788ed0f900a7ccbff84 ""
   (generated)
   "Chap1.log"
   "Chap1.pdf"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.pdf"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.log"

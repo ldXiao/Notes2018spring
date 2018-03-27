@@ -1,20 +1,20 @@
 # Fdb version 3
-["bibtex Stacks"] 1522156160 "Stacks.aux" "Stacks.bbl" "Stacks" 1522156163
+["bibtex Stacks"] 1522156160 "Stacks.aux" "Stacks.bbl" "Stacks" 1522159927
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Stacks.aux" 1522156163 10614 431eb8d4fbe8689019022ed65c4ac548 ""
+  "Stacks.aux" 1522159927 10614 431eb8d4fbe8689019022ed65c4ac548 ""
   "Stacks.bcf" 0 -1 0 ""
   "bibliography.bib" 1251493620 1400 4ebfe710dbe5b523c4e0d98372dc4946 ""
   (generated)
   "Stacks.blg"
   "Stacks.bbl"
-["makeindex Stacks.idx"] 1522156018 "Stacks.idx" "Stacks.ind" "Stacks" 1522156163
-  "Stacks.idx" 1522156163 10186 a214df5c089d10c7b3c053f770df6369 ""
+["makeindex Stacks.idx"] 1522156018 "Stacks.idx" "Stacks.ind" "Stacks" 1522159927
+  "Stacks.idx" 1522159927 10186 a214df5c089d10c7b3c053f770df6369 ""
   (generated)
   "Stacks.ilg"
   "Stacks.ind"
-["pdflatex"] 1522156160 "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf" "Stacks" 1522156163
-  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.aux" 1522156163 10614 431eb8d4fbe8689019022ed65c4ac548 ""
-  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" 1522156157 70533 45b48a9e291144b11ea3812e2c4c6aff ""
+["pdflatex"] 1522159925 "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf" "Stacks" 1522159927
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.aux" 1522159927 10614 431eb8d4fbe8689019022ed65c4ac548 ""
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" 1522159924 70560 7c2eb8c9ad41829cad81ef09ac580f1f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1136768653 4712 9ef4d7d106579d4b136e1529e1a4533c ""
@@ -320,23 +320,23 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1440418262 3849859 5c35c49c1fcf460538abecd3dad8aee2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Stacks.aux" 1522156163 10614 431eb8d4fbe8689019022ed65c4ac548 ""
+  "Stacks.aux" 1522159927 10614 431eb8d4fbe8689019022ed65c4ac548 ""
   "Stacks.bbl" 1522156160 1189 9a28957362c537873353bb69510f0d5a "bibtex Stacks"
   "Stacks.ind" 1522156018 5076 416107d5b085c7b88071b488b5d51800 "makeindex Stacks.idx"
-  "Stacks.out" 1522156163 4466 9e76325eea4286d3a049f8c79931f2b0 ""
-  "Stacks.tex" 1522156157 70533 45b48a9e291144b11ea3812e2c4c6aff ""
-  "Stacks.toc" 1522156163 2925 01404a13bdab5e5ba2098627ef135b93 ""
+  "Stacks.out" 1522159927 4466 9e76325eea4286d3a049f8c79931f2b0 ""
+  "Stacks.tex" 1522159924 70560 7c2eb8c9ad41829cad81ef09ac580f1f ""
+  "Stacks.toc" 1522159927 2925 01404a13bdab5e5ba2098627ef135b93 ""
   "graphics/helix.pdf" 1242847894 9436 a37d6482b483c71a7881e781c4b94af9 ""
   "graphics/hilbertcurves.pdf" 1242847894 29629 69a17dada5c1553466dccb30d8fdf6e7 ""
   "graphics/sine.pdf" 1242847894 6069 dcb821f8816c16dae479bc0f27412a2a ""
   "tufte-book.cls" 1521943763 2113 41a3c8515d682f1ce08c4dc70e975e7f ""
   "tufte-common.def" 1521943278 66831 c9522ca528108e53dd70064f9ea605ee ""
   (generated)
-  "Stacks.toc"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.log"
-  "Stacks.out"
   "Stacks.log"
+  "Stacks.out"
+  "Stacks.toc"
+  "Stacks.aux"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.log"
   "Stacks.idx"
   "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf"
   "Stacks.pdf"
-  "Stacks.aux"

@@ -121,7 +121,7 @@ Each $f_i^{-1}(V)$ is open set in $U_i$ hence is an open set in $X$.
 \begin{exr}\ 
 \begin{enumerate}[label=(\alph*)]
 \item 
-(sheaf of sections of a map) Suppose we are given a continuous map $\mu : Y \lrta X$. Show that sections of $\mu$ form a sheaf. More precisely, to each open set $U$ of $X$, associate the set of continuous maps $s: U \lrta  Y$ such that $μ\mu\circ s   = id|_U$. Show that this forms a sheaf. 
+(sheaf of sections of a map) Suppose we are given a continuous map $\mu : Y \lrta X$. Show that sections of $\mu$ form a sheaf. More precisely, to each open set $U$ of $X$, associate the set of continuous maps $s: U \lrta  Y$ such that $\mu\circ s   = id|_U$. Show that this forms a sheaf. 
 \item Suppose that $Y$ is a topological group. Show that continuous maps to $Y$ form a sheaf of groups.
 \end{enumerate}
 \end{exr}
@@ -176,7 +176,7 @@ Gluability axiom: if $\{f_i\}_{i\in I}$  are compatible on each intersection. Th
 \end{proof}
 
 \begin{exr}
-Suppose $π\pi: X \lrta Y $ is a continuous map, and $\calf$ is a sheaf of sets (or rings or $A$-modules) on $X$. If $ \pi(p) = q$, describe the natural morphism of stalks $(\pi_*\calf)_q \lrta \calf_p$.
+Suppose $\pi: X \lrta Y $ is a continuous map, and $\calf$ is a sheaf of sets (or rings or $A$-modules) on $X$. If $ \pi(p) = q$, describe the natural morphism of stalks $(\pi_*\calf)_q \lrta \calf_p$.
 \end{exr}
 \begin{proof}
 First we define the morphism of stalk using the universal property of colimits.
@@ -1225,7 +1225,7 @@ $$
 $$
 \end{exr}
 \begin{proof}
-In exercise~\ref{chap2exr:kernel_sheaf}, we showed that the kernel of morphism of sheaves of abelian group is indeed a sheaf. The punchline is \textbf{filtered colimits preserve finite limits} （see \cite[p.~216]{mac1998categories}). There is no simple derivation using only the universal property. We have to prove it by hand. 
+In exercise~\ref{chap2exr:kernel_sheaf}, we showed that the kernel of morphism of sheaves of abelian group is indeed a sheaf. The punchline is \textbf{filtered colimits preserve finite limits} (see \cite[p.~216]{mac1998categories}). There is no simple derivation using only the universal property. We have to prove it by hand. 
 
 Consider the sheaf morphism $\phi:\calf\lrta \calg$.
 Assume $[(f,U)]_p\in \ker(\calf\lrta\calg)_p$, where $(f,U)$ is a representative so that $f\in \ker (\phi(U))\in \calf(U)$.  Also $(\phi(U)f)_p=\phi_pf_p=0$, which means $f_p\in \ker(\phi_p)$. This gives a morphism from $\ker(\phi)_p$ to $\ker(\phi_p)$.

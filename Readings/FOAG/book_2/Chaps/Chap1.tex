@@ -262,7 +262,7 @@ M\ar[r, "\phi"]\ar[dr, "\alpha"] &{S^{-1}M}  \arrow[d,"\exists!"] \\
 &N       
 \end{tikzcd}
 \end{center}
-Define elements of $S^{-1}M$ to be of the form $m/s$ where $m\in M$and $s\in S$, and $m_1/s_1 =m_2/s_2$ if and only if for some $s\in S$, $s(s_2m_1 ? s_1m_2) = 0$. Define the additive structure by $(m_1/s_1) + (m_2/s_2) = (s_2m_1 + s_1m_2)/(s_1s_2)$, and the $S^{-1}A$-module structure (and hence the A-module structure) is given by$ (a_1/s_1) · (m_2/s_2) = (a_1m_2)/(s_1s_2)$. And the required $\phi:M\lrta S^{-1}M ,m\longmapsto m/1$.
+Define elements of $S^{-1}M$ to be of the form $m/s$ where $m\in M$and $s\in S$, and $m_1/s_1 =m_2/s_2$ if and only if for some $s\in S$, $s(s_2m_1/ s_1m_2) = 0$. Define the additive structure by $(m_1/s_1) + (m_2/s_2) = (s_2m_1 + s_1m_2)/(s_1s_2)$, and the $S^{-1}A$-module structure (and hence the A-module structure) is given by$ (a_1/s_1)\cdot (m_2/s_2) = (a_1m_2)/(s_1s_2)$. And the required $\phi:M\lrta S^{-1}M ,m\longmapsto m/1$.
 
 It is easy to check that $S^{-1}M$ is well-defined $S^{-1}A$-module. We only need to check the universal property. For a given $\alpha:M\lrta N$ such that $s\in S$ act as isomorphism on $N$. we define
 $$
@@ -838,7 +838,7 @@ Assume $\mu_1,\mu_2:W\lrta Z$ and $\pi_1\circ\pi_2\circ\mu_1=\pi_1\circ\pi_2\cir
 \end{proof}
 
 \begin{exr}
-Prove that a morphism $\pi: X ?\lrta Y$ is a monomorphism if and only if the fibered product $X ×\times_Y X $exists, and the induced morphism $X \lrta  X \times_Y X$ is an isomorphism.
+Prove that a morphism $\pi: X ?\lrta Y$ is a monomorphism if and only if the fibered product $X \times_Y X $exists, and the induced morphism $X \lrta  X \times_Y X$ is an isomorphism.
 \end{exr}
 \begin{proof}
 $\pi:X\lrta Y$ is a monomorphism. \underline{Claim}: $X$ itself is the fibered product $X\times_Y X$.
@@ -1362,7 +1362,7 @@ $$
 where $\tilde{\kappa}$ is the bilinear map $M\times N\lrta P$. Hence the diagram commute and the two functors indeed form an adjoint pair.
 \end{proof}
 \begin{exr}
-Suppose $B \lrta A$ is a morphism of rings. If $M$ is an $A$-module, you can create a $B$-module $M_B$ by considering it as a $B$-module. This gives a functor $\cdot_B : Mod_A \lrta Mod_B$. Show that this functor is right-adjoint to $· \otimes_B A$. In other words, describe a bijection
+Suppose $B \lrta A$ is a morphism of rings. If $M$ is an $A$-module, you can create a $B$-module $M_B$ by considering it as a $B$-module. This gives a functor $\cdot_B : Mod_A \lrta Mod_B$. Show that this functor is right-adjoint to $\cdot \otimes_B A$. In other words, describe a bijection
 $$
 \hom_A(N\otimes_B A,M)\cong\hom_B(N,M_B)
 $$

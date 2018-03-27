@@ -1680,6 +1680,271 @@ $$
 \end{enumerate}
 \end{proof}
 
+\subsection{Mat : absent}
+
+\subsection{Mar 27th: Morphism of shcemes}
+Recall: $\spec A$, Zariski topology $\calo_A$ structure sheaf.
+
+\underline{Observe}: 
+$f:A\lrta B$ ring morphism and 
+$$
+\begin{aligned}
+\tilde{f}:&\spec B\lrta \spec A\\
+& \scp\longmapsto f^{-1}(\scp)
+\end{aligned}
+$$
+we also get, (Recall $f_*\calf(U)=\calf(f^{-1}(U)))$
+$$
+\begin{aligned}
+\calo(A) &\overset{f^*}{\lrta}  \tilde{f}_*\calo_B \\
+\forall U\subset \spec A, &\calo_A(U)\lrta \tilde{f}_*\calo_B(U)=\calo_B(f^{-1}(U))
+\end{aligned}
+$$
+is defined as follows:
+
+To $s\in \calo_A(U), s:U\lrta \sqcup_{\scp\in U}A_\scp$, such that....\\
+we associated $t:f^{-1}(U)\lrta \sqcup_{Q\in\tilde{f}^{-1}(U)}B_Q$  such that ...\\
+defined 
+$$
+t(Q)=f(s(\tilde{f}(Q))), \ \ s(\tilde{f}(Q))\in A_{\tilde{f}(Q)}
+$$
+where $f(a/b)=f(a)/f(b)$.
+$$\begin{aligned}
+f:&A_{f^{-1}(Q)}\lrta B_Q\\
+& \frac{a}{b}\longmapsto \frac{f(a)}{f(b)}
+\end{aligned}
+$$
+One checks that $t\in\calo_B(f^{-1}(U))$ if $s\in \calo_A(U)$. IN other words: $f:A\lrta B$ gives 
+$$
+(\tilde{f},f^*): (\spec B,\calo_B)\lrta (\spec A,\calo_A)
+$$
+\begin{dfn}
+A \textbf{ringed space} is $(X\calo_X)$, where $X$ is a topological space and $\calo_X$ is a sheaf of rings  on $X$. A \textbf{locally ringed space} is a ringed space where $\calo_{X,x}$ is a local ring for all $x\in X$. (e.g. $\calo_{A,\scp}=A_\scp$, where $A_\scp$ is a local ring with unique maximal ideal $\scp A_\scp$).
+
+A morphism of ringed space $f:(X,\calo_X)\lrta (Y,\calo_Y)$ is a pair
+$$
+(f,f^*):\left\{\begin{aligned}
+&f:X\lrta Y \ \text{  morphism of topological spaces}\\ 
+& f^*:\calo_Y\lrta f_*\calo_X\ \text{ morphism of sheaves}
+\end{aligned}
+\right.
+$$ 
+\end{dfn}
+Ringed space form a category $Id_{(X,\calo_X)}=(Id_X,Id_{\calo_x})$ and 
+$$
+\left\{\begin{aligned}
+& X\overset{f}{\lrta }&Y\overset{g}{\lrta} Z\\
+& \calo_Y\overset{f^*}{\rta}f_*\calo_X&\\
+&& \calo_Z\overset{g^*}{\lrta}g_*\calo_Y,
+\end{aligned}\right.
+$$
+has composition
+$$
+(g\circ g,g_*(f^*)\circ g^*)
+$$
+where $g_*(f^*)$ is the direct image $\calf\lrta g_*\calf$ is a functor from (pre)sheaves on $Y$ to sheaves on $Z$
+.
+(Any morphism of sheaves $\varphi:\calf_1\lrta \calf_2$ gives a morphism $g_*\calf_1\lrta g_*\calf_2$)
+
+A morphism of locally ringed space $(X,\calo_X)\lrta (Y,\calo_Y)$
+ is $(f,f^*)$ $f:X\lrta Y$ is continuous and $\calo_Y\overset{f^*}{\lrta}f_*\calo_X$ such that $f^*$ induces for each $x\in X$ a \underline{local} morphism 
+$\calo_{Y,f(x)}\lrta\calo_{X,x}$.
+
+Recall that $A,B$ are local rings. $f: A\lrta B$ is \underline{local} iff $f^{-1}(\scm_B)=\scm_A$. 
+
+\underline{Note}: $f^{-1}(\scm_B)\subset \scm_A$ because if $f(a)\in \scm_B$ $a\notin A^\times\Lrta a\in \scm_A$. So the condition to be local is 
+$$
+\scm_A\subset f^{-1}(\scm_B)\Llrta f(\scm_A)\subset \scm_B
+$$
+
+\begin{dfn}
+If $\calo_{Y,f(x)}\lrta \calo_{X,x}$ $f^*$ gives  morphisms 
+$$
+\calo_Y(U)\overset{f^*_U}{\lrta}\calo_X(f^{-1}(U))
+$$
+for every $y\in Y$
+$$
+\calo_{Y,y}\lrta (f_*\calo_X)_y
+$$
+$$
+[(U,s)]\longmapsto [(U,f^*_U(s))].
+$$
+Take $y=f(x):$
+$$
+\begin{aligned}
+&\calo_{Y,f(x)}\lrta (f_*\calo_X)_{f(x)}\lrta \calo_{X,x}\\
+& [(U,s)]\longmapsto [(U,f^*_U(s))]\longmapsto[f^{-1}(U),f^*_U(s)]
+\end{aligned}
+$$
+is the desired morphism.
+\end{dfn}
+\begin{thm}
+\begin{enumerate}[label=(\arabic*)]
+\item For any $f: A\lrta B$ the pair $(\tilde{f},\tilde{f}^*)$ is a morphism  of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$
+\item Conversely, any morphism of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$ is induced by a morphism of rings.
+\item This gives a equivalence of categories
+$$
+\left( \text{ commutative rings with unity}\right)\overset{\simeq}{\llrta}\left(\text{affine schemes as locally ringed spaces}\right)
+$$
+$$
+\hom_{rings}(A,B)=\hom_{loc.r.sp}(\spec B,\spec A)
+$$
+\end{enumerate}
+\begin{proof}
+\underline{Recall} $\calo_{A,\scp}=A_\scp$ and recall $f:A_{f^{-1}(\scq)}\lrta B_\scq$ i.e.
+$$
+\calo_{A,\tilde{f}(\scq)}\lrta \calo_{B,\scq}
+$$
+\underline{Claim}: This is exactly the morphism $\calo_{A,\tilde{\scq}}\lrta \calo_{B,\scq}$ induced by $\tilde{f}^*:\calo_A\lrta \tilde{f}^*\calo_B$
+
+\underline{Claim2}: For every $\scq\in\spec B$, 
+$$
+\begin{aligned}
+& A_{f^{-1}(\scq)}\lrta B_\scq\\
+&a/b\longmapsto f(a)/f(b)
+\end{aligned}
+$$
+is a local morphism.
+
+We first prove Claim2, it suffices to check $f(\scm_{A_{f^{-1}(\scq)}})\subset \scm_{B_\scq}$
+$$
+f(a/b)=\frac{f(a)}{f(b)}\in \scq\\
+$$
+$$
+\begin{tikzcd}
+\calo_{A,\tilde{f}(\scq)} \arrow[ddd, "\simeq"'] \arrow[rr] &  & (\tilde{f}^*_*\calo_B)_{\tilde{f}(\scq)} \arrow[rr] &  & \calo_{B,\scq} \arrow[ddd, "\simeq"] \\
+ & (U,s) \arrow[d, maps to] \arrow[r, maps to] & (U,\tilde{f}^*_*(s)) \arrow[r, maps to] & (\tilde{f}^{-1}(U),\tilde{f}_*^*(s)) \arrow[d, maps to] &  \\
+ & s(f^{-1}(\scq))=s(\tilde{f}(\scq)) \arrow[rr, maps to] &  & f(s(\tilde{f}(\scq)))=\tilde{f}^*_*(s)(\scq) &  \\
+A_{f^{-1}(\scq)} \arrow[rrrr, "f"] &  &  &  & B_\scq,
+\end{tikzcd}
+$$
+so this indeed works,
+
+(2) Let $(f,f^*):(\spec B,\calo_B)\lrta (\spec A,\calo_A)$ be a  morphism of locally ringed space/ 
+$$
+f^*:\calo_A\lrta f_*\calo_B
+$$
+$$
+\begin{tikzcd}
+\calo_A(\spec A) \arrow[dd, equal] \arrow[r, "f^*_{\spec A}"] & \calo_B(f^{-1}(\spec A)) \arrow[d,equal] \\
+ & \calo_B(\spec B) \arrow[d,equal] \\
+A \arrow[r] & B.
+\end{tikzcd}
+$$
+Let $\varphi=f^*_{\spec A}$.
+
+\underline{Claim}: The locally ringed morphism induced by $\varphi$ is $(f,f^*)$.
+
+To finish the proof of $(2)$, we need to check that the two constructions are reciprocal bijections.
+
+To check the claim, let $\scq\in \spec(B)$, we have
+$$
+\begin{tikzcd}
+A \arrow[r, "\varphi"] \arrow[d] & B \arrow[d] \\
+\calo_{A,f(\scq)} \arrow[r, "f*_\scq"] & B_\scq=\calo_{B,\scq}
+\end{tikzcd}
+$$
+We know:
+\begin{enumerate}[label=(\arabic*)]
+\item $f^*_\scq$ is local 
+$$
+\Llrta (f^*_\scq)^{01}(\scm_{B_\scq})=\scm_{A_{f(\scq)}}
+$$
+\item The diagram commutes, because $f^*$ is a morphism of sheaves so compatible with restriction. This implies $f(\scq)=\varphi^{-1}(\scq)=\tilde{\varphi}(\scq)$. (Indeed. let $\alpha\in\varphi^{-1}(\scq),\beta=\varphi(\alpha)\in\scq\Lrta \alpha\in f(\scq)\Lrta \varphi^{-1}(\scq)\subset f(\scq)$).
+$$
+\begin{tikzcd}
+\alpha \arrow[d, maps to] \arrow[r, maps to] & \beta \arrow[d, maps to] \\
+(*) \arrow[r, maps to] & (\bullet\in \scm_{B_\scq}),
+\end{tikzcd}
+$$
+where $(*)$ belongs to $\scm_{A_{f(\scq)}}$ (because the morphism is local)
+
+Conversely, let $\alpha\in F(\scq)$
+$$
+\begin{tikzcd}
+\alpha \arrow[d, maps to] \arrow[r, maps to] & \beta=\varphi(\alpha) \arrow[d, maps to] \\
+(\bullet\in \scm_{A_{f(\scq)}}) \arrow[r, maps to] & (*\in \scm_{B_\scq})
+\end{tikzcd}
+$$
+since $\beta$ maps to an element in $\scm_{B_\scq}$, we have $\beta\in\scq$, so $\varphi(f(\scq))\subset \scq\Llrta f(\scq)\subset \varphi^{-1}(\scq)$
+\end{enumerate}
+
+Proof of part $(3)$ is left as an exercise.
+\end{proof}
+\end{thm}
+\begin{dfn}
+$(X,\calo_X)$ (locally)-ringed space. $U\subset X$ open set.  Define $\calo_U(V)=\calo_X(V)$ for $V\subset U$ open.  Then $(U,\calo_U)$ is a (locally) ringed space. ( in fact $\forall x\in U$, $\calo_{U,x}=\calo_{X,x}$)
+\end{dfn}
+\begin{dfn}
+A \textbf{scheme} $S$ is a locally ringed space $(S,\calo_S)$  which is locally isomorphic to affine schemes, i.e.
+ $\forall x\in S\exists U\subset S$  open, $x\in U$, and a ring $A$ such that $(U,\calo_u)$ is isomorphic as locally ringed spaces to $(\spec A,\calo_A)$. We view category of schemes as a subcategory of locally ringed spaces.
+\end{dfn}
+\subsection*{ Examples of schemes/morphisms}
+
+Let $K$ be a field. Let $S$ be a scheme with morphism $f:S\lrta \spec K$.
+
+\underline{Affine case}: $S=\spec A$
+$$
+f\llrta (K\lrta A)
+$$ 
+i.e. $f\llrta$ structure of $K$-algebra on $A$
+\begin{ex}
+$A=K[X_1,...,X_m]/I$ has  morphism $\spec A\lrta K$. 
+\end{ex}
+
+\underline{Global case}: 
+$$
+f\llrta\left\{\begin{aligned}
+& S\overset{continuous}{\lrta}\spec (K)=\eta=\{0\}\\
+& \calo_{\spec K}\lrta f_*\calo_S
+\end{aligned}\right.
+$$
+where $\calo_{\spec K}$ consists of 
+$$
+\emptyset :\calo_{K}(\emptyset)=\{0\}\lrta \{0\}
+$$
+$$
+\{\eta\}:\calo_K(\eta)=K\lrta (f_*\calo_S)(\{\eta\})=\calo_S(S)
+$$
+therefore
+$$
+\{S\lrta \spec K\}\llrta \{K\lrta \calo_S(S)\}.
+$$
+
+
+\begin{dfn}
+Let $B$ be a scheme, a scheme \textbf{over } $B$ is 
+$$
+f:S\lrta B
+$$
+a morphism of schemes.
+
+A morphism of schemes over $B$ is 
+$$
+\begin{tikzcd}
+S_1 \arrow[rd, "f_1"] \arrow[rr, "g"] &  & S_2 \arrow[ld, "f_2"] \\
+ & B & 
+\end{tikzcd}
+$$
+so that $f_2\circ g=f_1$.
+\end{dfn}
+
+\underline{Global case2}: $K$ is a field , $f:\spec K\lrta S$ corresponds to a point $x=f(\eta)\in S$, $\calo_S\lrta f_*\calo_{\spec K}:$ $$
+\forall U,\calo_S(U)\lrta \calo_{\spec K}(f^{-1}(U))=\left\{\begin{aligned}
+&\{0\}\text{ if }x\notin U\\
+& K\text{ if } x\in U.
+\end{aligned}
+\right.$$
+Compatibility with restrictions show that this is equivalent to
+$$
+\calo_{S,f(\eta)}=\calo_{S,x}\overset{g}{\lrta}\calo_{K,\eta}=K
+$$
+such that $g^{-1}(\{0\})=\scm_{\calo_{S,x}}$, i.e.
+$g$ passes to the quotient
+$$
+K_S(x)\lrta K.
+$$
+Concretely, ``the coordinates of $x$ are in $K^n$''
 
 
 \end{document}
