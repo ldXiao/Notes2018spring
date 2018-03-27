@@ -1,16 +1,17 @@
 # Fdb version 3
-["biber AT_TD"] 1521211717 "AT_TD.bcf" "AT_TD.bbl" "AT_TD" 1521469108
+["biber AT_TD"] 1521211717 "AT_TD.bcf" "AT_TD.bbl" "AT_TD" 1521946687
   "AT_TD.bcf" 1521469108 102997 e1ff20f556818d0f3161af80389b7c6f ""
   "bibliography.bib" 1520595627 1726 d69251d74edb69879a12efecb91cff18 ""
   (generated)
-  "AT_TD.blg"
   "AT_TD.bbl"
-["makeindex AT_TD.idx"] 1519918009 "AT_TD.idx" "AT_TD.ind" "AT_TD" 1521469108
+  "AT_TD.blg"
+["makeindex AT_TD.idx"] 1519918009 "AT_TD.idx" "AT_TD.ind" "AT_TD" 1521946687
   "AT_TD.idx" 1521469099 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "AT_TD.ind"
   "AT_TD.ilg"
-["pdflatex"] 1521469098 "AT_TD.tex" "AT_TD.pdf" "AT_TD" 1521469108
+["pdflatex"] 1521469098 "/Users/vector_cat/Dropbox/2018spring/Readings/AT_TD/book_2/AT_TD.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/AT_TD/book_2/AT_TD.pdf" "AT_TD" 1521946687
+  "/Users/vector_cat/Dropbox/2018spring/Readings/AT_TD/book_2/AT_TD.tex" 1521469098 97001 f9568c8269f0610c8bca9525425d037e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/avantgar/pagd8t.tfm" 1136768653 7216 ce159066bacd323ac1e4527281f7a233 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/avantgar/pagk8t.tfm" 1136768653 7340 62d51a8cc96448508dcbcfef0e69f404 ""
@@ -222,16 +223,18 @@
   "Pictures/blue_background.pdf" 1519914545 356679 5355f6823ac7449f8de8195a745c717b ""
   "Pictures/blue_chap_head.pdf" 1519916029 1045673 591814036d97938222ed54e55b17060c ""
   "retraction.png" 1521299872 68772 4db2343abdc1f473658bb876924fd153 ""
-  "structure.tex" 1521063220 23624 0269263b6e5c7deb497201cc9f2e2e56 ""
+  "structure.tex" 1521942761 23624 0269263b6e5c7deb497201cc9f2e2e56 ""
   "varp.png" 1521143492 23272 00753b27f3dada293d49d8f1894e32fb ""
   (generated)
-  "AT_TD.pdf"
-  "AT_TD.idx"
-  "AT_TD.aux"
-  "AT_TD.run.xml"
-  "Chaps:appendixA.aux"
-  "AT_TD.log"
-  "AT_TD.bcf"
-  "AT_TD.ptc"
-  "Chaps/appendixA.aux"
   "AT_TD.toc"
+  "AT_TD.idx"
+  "AT_TD.pdf"
+  "Chaps/appendixA.aux"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/AT_TD/book_2/AT_TD.log"
+  "AT_TD.run.xml"
+  "AT_TD.aux"
+  "AT_TD.bcf"
+  "AT_TD.log"
+  "AT_TD.ptc"
+  "Chaps:appendixA.aux"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/AT_TD/book_2/AT_TD.pdf"

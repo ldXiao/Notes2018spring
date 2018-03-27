@@ -109,12 +109,12 @@
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
 
-\include{Chaps/Chap1}
+%\include{Chaps/Chap1}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------
 
-\include{Chaps/Chap2}
+%\include{Chaps/Chap2}
 
 
 
@@ -144,9 +144,9 @@
 %----------------------------------------------------------------------------------------
 %	CHAPTER 3
 %----------------------------------------------------------------------------------------
-\include{Chaps/Chap3}
+%\include{Chaps/Chap3}
 
-\include{Chaps/Chap4}
+%\include{Chaps/Chap4}
 \chapter{Some properties of schemes}
 \section{Topological properties}
 \begin{exr}
@@ -1240,6 +1240,39 @@ Now we are done.
 \begin{exr}
 (ASSUMING \textbf{(A)}). Suppose $m \in M$. Show that $\supp m$ is the closure of those associated points of $M$ where $m$ has non-zero germ.(Hint: $\supp m$ is a closed set containing the points described, and thus their closure. Why does it contain no other points?)
 \end{exr}
+\begin{proof}
+Recall what we mean by the support of a section $m$
+$$
+\supp(m)=\{\scp\in X:m_{\scp}\neq 0\}.
+$$
+By definition in $\mathbf{(A)}$, associated points are the generic points of irreducible components of $\supp(n)$ for some $n$. In particular the associated described in the problem is contained in $\supp(m)$ hence contains the closure of those associated point.
+
+Denote the set of associated point where $m$ has nonzero germ by $S$. We want to prove $\supp(m)-\overline{S}=\emptyset$. Choose a point $\scq\in \supp(m)$, want $U\ni\scq\Lrta U\cap S\neq \emptyset$. Consider $D(f)\ni \scq\Lrta$ $D(f)\cap \supp(m)\neq \emptyset$. $D(f)$ intersects with as least one irreducible component $W$ of $\supp(m)$ by definition $(A)$, it corresponds to an associated point $\scp$ and $\overline{\scp}=W$. We know $D(f)\cap W\neq \emptyset,\Lrta D(f)\ni \scp$. $\Lrta D(f)\cap S\neq \emptyset$.
+\end{proof}
+\begin{exr}(Assuming $\mathbf{(A)}$ and $\mathbf{(B)}$)
+Show that the locus on $\spec A$ of points $[\scp]$ where $\calo_{\spec A,[\scp]} = A_\scp$ is nonreduced is the closure of those associated points of $\spec A$ whose stalks are nonreduced. (Hint: why do points in the closure of these associated points all have nonreduced stalks? Why can’t any other point have a nonreduced stalk?)
+\end{exr}
+\begin{proof}
+Follow the hint, we first show that the points in the closure of those specified associated point all have nonreduced stalk.
+
+Let $\{\scn_i\}$ be the points with nonreduced stalks and let $\{\scp_j\}$ be the associated points with nonreduced stalks. What we want to show is basically the equality
+$$
+\overline{\cup_j [\scp_j]}=\{[\scn_i]\}
+$$
+By $\mathbf{(B)}$, the closure of finite union is the finite union of closures.
+$$
+\cup_j \overline{[\scp_j]}\overset{?}{=}\{[\scn_i]\}
+$$
+
+The containment $\supset$ follows from the following fact: if $f\in A_\scn$ is a nilpotent, consider $\supp(f)$.
+$0\neq f\in Nil(A_\scn)$ means $f$ is contained in all prime ideals in $\scn$ and also $\scn\in \supp f$.
+
+Choose $\scq$ to the associated point corresponding to the irreducible component containing $[\scn]$. Then $f/1$ is nilpotent in $A_\scq$. This is because $\scq\subset \scn$ and $$f\in Nil(A_\scn)=\cap_{prime\ \sca\in \scn}\sca\subset \cap_{prime\ \scb\in \scq}\scb=Nil(A_\scq).$$
+
+The reverse inclusion is easier because assume
+$\sca\in \cup\overline{[\scp_i]}$, this means some $A_\scp$ is a further localization of $A_\sca$, where $A_\scp$ is nonreduced. We then know $A_\sca$ is nonreduced because we have shown before that localization of a reduced ring is reduced in Exercise~\ref{chap5exr:reduced_ring_reduced_affine_scheme}.
+\end{proof}
+
 %---------------------------------------------------------------------------------------
 
 \part{Morphisms}

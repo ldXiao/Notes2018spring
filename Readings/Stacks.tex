@@ -1,0 +1,348 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{stmaryrd}
+\newcommand{\Swarrow}{\mathbin{\rotatebox[origin=c]{45}{$\Leftarrow$}}}
+\usepackage{fancyhdr}
+\pagestyle{headings}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage{cmbright}
+%\usepackage{concmath}
+%\usepackage{sansmathfonts}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{pdfrender,xcolor,scrpage2}
+%\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}
+    },
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+  }
+}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmkt}[thm]{Remark by TeXer}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nex}[thm]{Non-example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.1}
+\newcommand{\mor}{{\textnormal Mor\,}}
+\renewcommand{\hom}{{\textnormal Hom}}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\pd}{{\partial}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cald}{{\cal D}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\calm}{{\cal M}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\llta}{\longleftarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Mastere course on algebraic stacks}
+\author{\\
+Translated by Lind Axiao}
+\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Lecture 1: Reflections on the notions of space I}
+The goal of the first course is to understand the notion of manifold in different contexts (topological, differentiable, analytic...) We will start by looking at the case of topological manifolds.
+\subsection{Reminders on topological manifolds}
+\begin{dfn}
+\begin{enumerate}
+  \item A \textbf{topological manifold} is a topological space $X$, which has an open cover $\{U_i\}_{i\in I}$ such that for each $i\in I$, there exists a homeomorphism between $U_i$ and an open subset in $\reals^{n_i}$ 
+
+  \item the category of topological manifold is a subcategory of $\mathsf{Top}$. It is denoted as $\mathsf{VarTop}$. 
+\end{enumerate}
+\end{dfn}
+
+Let $X$ be a topological manifold and $\{U_i\}_{i\in I}$ is an open cover as in the definition above. We put, for $i$ and $j$ in $I$, $U_{i,j}:=U_i\cap U_j$. We have a diagram of topological spaces
+$$
+\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I} U_{i},
+$$
+where the first morphism sends the component $U_{i,j}$ into $U_i$ by the inclusion $U_{i,j}\inj U_i$, and the second morphism sends $U_{i,j}$ into $U_j$ by the inclusion $U_{i,j}\inj U_j$. There also exists  a morphism
+$$
+\coprod_{i\in I} U_i\lrta X
+$$
+which restricts to inclusion $U_i\inj X$ for all $i$, which equalizes the above two morphisms. We obtain also a well-defined morphism from the coequalizer of the first diagram to $X$
+$$
+\text{Colim}\left(\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right)\lrta X.
+$$
+What makes it important is the following lemma.
+\begin{lemma}
+The morphism 
+$$
+\textnormal{Colim}\left(\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right)\lrta X
+$$
+is an isomorphism.
+\end{lemma}
+\begin{proof}
+The lemma says that for a topological space $Y$, and a given morphism $f:X\lrta Y$ is the same as giving for each $i\in I$ a morphism $f_i:U_i\lrta Y$ so that $(f_i)|_{U_{i,j}}=(f_j)|_{U_{i,j}}$ for all $(i,j)\in I^2$. (This is a direct translation of the universal property of the coequalizer. Which is true by the gluing lemma of continuous maps)
+\end{proof}
+The above lemma has to be interpreted in the following way: all topological manifold is obtained from a colimit of a diagram of open sets in $\reals^n$ (for $n$ variable). we can draw from it the following principle:
+
+\textit{The category $\mathsf{TopMfd}$ of the topological manifolds can be constructed from the category of open sets in $\reals^n$ (with morphism continuous maps).}
+
+We would explain the principle in the following section.
+\subsection{Manifold and sheaves}
+Let $\calc$ be the full subcategory of $\mathsf{TopMfd}$, of which the objects are open sets in $\reals^n$ for some $n$. We denote $\mathsf{Pr}(\calc)$ the category of presheaves of sets on $\calc$, (also denoted as $\widehat{\calc}$ ). We consider Yoneda embedding in the case of $\calc$
+$$
+\begin{aligned}
+h\_: \mathsf{TopMfd}&\lrta \mathsf{Pr}(\calc)\\
+X&\longmapsto h_X,
+\end{aligned}
+$$
+where the presheaf $h_X$ is defined by 
+$$
+h_X(Y):=\hom_{\mathsf{TopMfd}}(Y,X)
+$$
+for all $Y\in \calc\subset \mathsf{TopMfd}$.
+
+\begin{lemma}\label{lem:yoneda_full_faithful}
+The functor $h\_$ above is full and faithful.
+\end{lemma}
+\begin{proof}
+The functor is faithful: for two morphisms $f,g:X\lrta X'$, we consider an open cover $\{U_i\}$ of $X$ so that each $U_i\in\calc$ this exists because $X$ is a manifold). If $h_f=h_g$, for every $i\in I$, the two maps 
+$$
+h_f(U_i)=h_g(U_i):\hom(U_i, X)=h_X(U_i)\lrta \hom(U_i, X')=h_{X'}(U_i)
+$$
+are equal. This means that $f|_{U_i}=g|_{U_i}$, for every $i$, hence that $f=g$. 
+
+The functor is full: Let $X$ and $X'$ be two topological manifolds and $u:h_X\lrta h_{X'}$ is a morphism of in $\mathsf{Pr}(\calc)$. Let $\{U_i\}$ be an open cover of $X$ with $U_i\in \calc$. For all $i$, the morphism $u$ induces a map 
+$$
+h_X(U_i)=\hom(U_i,X)\lrta h_{X'}(U_i)=\hom(U_i,X').
+$$
+This map send the 
+inclusion $U_i\subset X$ to morphisms $f_i:U_i\lrta X'$ for all $i$.  For all $i$ and $j$ in $I$, the elements $(f_i)|_{U_{i,j}}\in h_{X'}(U_{i,j})$ agree because they are both images of the inclusion $U_{i,j}\inj X$ because the morphism of presheaves $u$ is compatible with the restriction maps. There the morphisms $f_i:U_i\lrta X'$ give a continuous map $f:X\lrta X'$. By construction $h_f=u$.
+\end{proof}
+The Lemma~\ref{lem:yoneda_full_faithful} is a good point remark, we know $\mathsf{TopMfd}$ can be identified with a full subcategory of $\mathsf{Pr}(\calc)$. We are now seeking to characterize the subcategory.
+
+We start by making $\calc$ a Grothendieck site. We say a collection of morphism $\{U_i\lrta U\}_{i\in I}$ in $\calc$ is a \textbf{covering family} if each morphism $U_i\lrta U$ is an open immersion and if the map $\coprod_{i\in I}U_i\lrta U$ is surjective. This define a pretopology on $\calc$, and we denote the associated topology $\tau$. 
+\begin{exercise}
+Verify it indeed induces a  pretopology.
+\end{exercise}
+\begin{proof}[Sol]
+Check the covering family defined above satisfies \href{https://ncatlab.org/nlab/show/Grothendieck+pretopology}{the axioms} of Grothendieck pretopology. And the Grothendieck topology $\tau$ on $\calc$ is generated by union of covering families (or, the covering family gives a basis of topology $\tau$)
+\end{proof}
+\begin{lemma}\label{lem:sheaf_on_site}
+For all $X\in \mathsf{TopMfd}$ the presheaf $h_X\in\mathsf{Pr}(\calc)$ is a sheaf with respect to the topology $\tau$.
+\end{lemma}
+\begin{proof}
+See the \href{https://stacks.math.columbia.edu/tag/00VM}{definition} of a sheaf on a site.
+It is another way of saying for each topological manifold $Y$ and an open cover $\{U_i\lrta Y\}_{i\in I}$, to give a continuous map from $Y$ to $X$ is the same as to give a a collection of continuous map $f_i:U_i\lrta X$ such that $f_i$ and $f_j$ coincide on $U_i\cap U_j$. 
+\end{proof}
+As a result, the Lemma~\ref{lem:sheaf_on_site} implies that the there is a fully faithful functor 
+$$
+h\_: \mathsf{TopMfd}\lrta\mathsf{Sh}(\calc,\tau).
+$$
+A sheaf isomorphic to $h_X$ is called \textbf{representable} by $X$. In a general way, we identify the category of $\mathsf{TopMfd}$ with its image in $\mathsf{Sh}(\calc,\tau)$.
+
+To characterize the image, we put the following definition
+\begin{dfn}\ 
+\begin{enumerate}
+\item A morphism $f: F\lrta G$ in $\mathsf{Sh}(\calc,\tau)$ is a \textbf{local homeomorphism} if for all $X\in\calc$ and each morphism $h_X\lrta G$, the sheaf $F\times_G h_X$ is representable by $Y\in \mathsf{TopMfd}$, and the induced morphism $Y\lrta X$ by the projection $F\times_G h_X\simeq h_Y\lrta h_X$ is a local homeomorphism as morphism in $\mathsf{Top}$. 
+\item A morphism in $\mathsf{Sh}(\calc,\tau) $ is an \textbf{open immersion} if it is a monomorphism and a local homeomorphism.
+\end{enumerate}
+\end{dfn}
+It is easy to check that the open immersions in $\mathsf{Sh}(\calc,\tau)$ are stable under composition. We can also verify that the local homeomorphisms  are stable under composition, but it requires corollary~\ref{cor:criterion_representable} below. We also show that a morphism of topological manifolds $X\lrta Y$ is a local homeomorphism of topological spaces if and only if the morphism of sheaves $h_X\lrta h_Y$ is a local homeomorphism as defined above.
+
+We therefore have the proposition below.
+\begin{prop}\label{lem:criterion_representable_TopMfd}
+A sheaf $F\in \mathsf{Sh}(\calc,\tau)$ is representable by one topological manifold iff there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$, and a morphism of sheaves
+$$
+p:\coprod_{i\in I}h_{U_i}\lrta F,
+$$ 
+that satisfy the following two conditions
+\begin{enumerate}
+\item The morphism $p$ is an epimorphism of sheaves.
+\item For each $i\in I$, the morphism $h_{U_i}\lrta F$ is an open immersion.
+\end{enumerate}
+\end{prop} 
+\begin{proof}
+We start by supposing that $F$ is representable by one topological manifold $X$. We choose an open cover $\{U_i\}_{i\in I}$ of $X$ with $U_i\in \calc$ and we consider the morphism
+$$
+p:\coprod_{i\in I}h_{U_i}\lrta F\simeq h_X
+$$
+induced by the inclusion $U_i\subset X$. Explicitly, we have
+$$
+p(W):\left(\coprod_{i}h_{U_i}\right)(W)=\coprod_i h_{U_i}(W)\lrta h_X(W).
+$$ 
+For $Y\in \calc$ and $f:Y\lrta X$ an element in $h_X(Y)=\hom(Y,X)$, we regard $\{f^{-1}(U_i)\}_{i\in I}$ as an open cover of $Y$. Furthermore, for each $i\in I$, there exists a commutative diagram
+$$
+\begin{tikzcd}
+f^{-1}(U_i) \arrow[d,"g"] \arrow[r] & Y \arrow[d,"f"] \\
+U_i \arrow[r] & X
+\end{tikzcd}
+$$
+which show that $f$ is locally in the image of $p$ in the sense that $f|_{f^{-1}(U_i)}$ is in the image of $p(U_i)$. By \href{http://stacks.math.columbia.edu/tag/00WL}{Tag 00WL, stacks-project},  this implies that $p$ is an epimorphism of sheaves. Moreover, for $Y\in \calc$ and for all morphism $h_Y\lrta h_X$, corresponding to a morphism $f:Y\lrta X$, we have
+$$
+h_{U_i}\times_{h_{X}}h_Y\simeq h_{U_i\times_X Y}=h_{f^{-1}(U_i)},
+$$
+where the induced map $f^{-1}(U_i)\lrta Y$ is the plain inclusion hence must be local homeomorphism in $\mathsf{Top}$,
+which means $h_{U_i}\lrta F$ is a local homeomorphism by definition.
+As $f^{-1}(U_i)\lrta Y$ is an open immersion, we observe that every morphism $h_{U_i}\lrta F$ is an open immersion. ($h$ is fully faithful, therefore preserves limits and colimits, thus gives us the equality above. For the same reason $h$ preserves monomorphisms, hence $h_{f^{-1}(U_i)}\lrta h_Y$ is a monomorphism. Take the special case $Y=X$, $h_{U_i}\lrta F$ is a monomorphism.)
+
+Conversely, suppose $F$ is a sheaf satisfying the two conditions in the proposition. We construct the topological space $X$ in the following way: let $\{U_i\}_{i\in I}$ be a family of objects in the category $\calc$ and $p:\coprod h_{U_i}\lrta F$ is a morphism in the statement of the proposition. We set $U=\coprod_i U_i\in \mathsf{TopMfd}$. We remark that the morphism
+$$
+\coprod h_{U_i}\lrta h_U
+$$
+is an isomorphism in $\mathsf{Sh}(\calc,\tau)$ (Exercise, verify this.) We consider the two projections
+$$
+h_U\times_F h_U\rightrightarrows h_U.
+$$
+By hypothesis, we have
+$$
+h_U\times_F h_U= \coprod_{i} h_{U_i}\times_F\coprod_{j} h_{U_j}\simeq\coprod_{i,j} h_{U_{i,j}}\simeq h_R,
+$$
+where $R=\coprod_{i,j}U_{i,j}$, with $h_{U_{i,j}}\simeq h_{U_i}\times_F h_{U_j}$. ($U_{i,j}$ is the representing object of $h_{U_i}\times_F h_{U_j}$, is isomorphic to an open set in $U_i$ and in $U_j$). The second isomorphism above is from the fact that finite limit commutes with filtered colimit. By Lemma~\ref{lem:yoneda_full_faithful} and Lemma~\ref{lem:sheaf_on_site} the diagram 
+$$
+h_R\rightrightarrows h_U
+$$
+is image by $h$ of the diagram of topological manifolds $R\rightrightarrows U$. We set the 
+$$
+X:=\textnormal{colim}(R\rightrightarrows U),
+$$
+where the colimit is taken in the category $\mathsf{Top}$. Note that $R$ defines an equivalence relation on $U$ and that $X$ is the quotient space.
+
+We further remark that $X$ is a topological manifold. For it, observe by definition the morphism $U\lrta X$ is surjective. More over, $U_i\lrta X$ is an open immersion. Indeed, from the fact that $h_{U_i}\lrta F$ is a monomorphism , we have $U_{i,i}=U_i$, which implies that $U_i\lrta X$ is injective (Exercise, verify this). Moreover, a subset $V\subset X$ is open iff its preimage in $U$ by the projection $U\lrta X$ is open. But the inverse image of $U_i\subset X$ by the projection is the subset $\coprod_j U_{i,j}\subset U$ which is indeed an open set. This shows that $X$ is covered by the opens $U_i\in\calc$, and therefore is a topological manifold.
+
+It remains to show that $F$ is isomorphic to $h_X$. There exists a morphism of sheaves
+$$
+\textnormal{colim}(h_R\rightrightarrows h_U)\lrta h_X.
+$$
+Because $h_U\lrta F$ is an epimorphism and that \underline{the epimorphism of sheaves are} \href{https://ncatlab.org/nlab/show/effective+epimorphism}{  effective epimorphisms}. By the definition of effective epimorphism
+$$
+\textnormal{colimit}(h_U\times_Fh_U\rightrightarrows h_U)\simeq F
+$$
+and because $h_R\simeq h_U\times_F h_U$ as described above, we have
+$$
+F\simeq \textnormal{colimit}(h_R\rightrightarrows h_U).
+$$
+It then remains verify that $\textnormal{colim}(h_R\rightrightarrows h_U)\simeq h_X$. $h_U\lrta h_X$ is also an epimorphism of sheaves (Exercise, verify this), it remains to show that the morphism
+$$
+h_R\lrta h_U\times_{h_X} h_U
+$$
+is an isomorphism. Recall that $h$ is a fully faithful functor, it suffices to verify that the morphism
+$$
+R\lrta U\times_X U
+$$ is an isomorphism, which is true because the morphism $U_{i,j}\lrta U_i\times_X U_j$ is an isomorphism. Explicitly, $U_i\times_X U_j=\{(u,v)\in U_i\coprod U_j: \iota_i(u)=\iota_j(v)\}$
+$$
+\begin{tikzcd}
+U_{i,j} \arrow[rdd, "\alpha_{i,j}"'] \arrow[rrd, "\beta_{i,j}"] \arrow[rd, dashed] &  &  \\
+ & U_i\times_X U_j \arrow[d] \arrow[r] & U_j \arrow[d, "\iota_j"] \\
+ & U_i \arrow[r, "\iota_i"'] & X
+\end{tikzcd}
+$$
+the dashed arrow is given by $z\longmapsto (\alpha_{i,j}(z),\beta_{i,j}(z))$, it is injective because $\alpha_{i,j},\beta_{i,j}$ are injective. It is surjective because $X:=\coprod_i U_i/\sim$, where $\iota_i(u)=\iota_j(v)$ iff
+$(u,v)=(\alpha_{i,j}(z),\beta_{i,j}(z))$ for some $z\in U_{i,j}$. And by hypothesis, $h_(U_i)\lrta F$ is open immersion therefore is a local homeomorphism, we know $\alpha_{i,j},\beta_{i,j}$ are local homeomorphism. Altogether we know $z\mapsto (\alpha_{i,j}(z),\beta_{i,j}(z))$ is a bijective local homeomorphism hence a homeomorphism.
+\end{proof}
+\begin{cor}\label{cor:criterion_representable}
+Let $X\in\mathsf{TopMfd}$, and $F\lrta X$ a morphism of shaves. If there exists an open covering $\{U_i\}_{i\in I}$ of $X$ so that for all $i\in I$ the sheaf $F\times_{h_X} h_{U_i}$ is representable by a topological manifold, the sheaf $F$ is representable by a topological manifold.
+\end{cor}
+\begin{proof}
+For each $i\in I$, we choose $\{V_{i,j}\}_{j\in J}$ and $\coprod_j h_{V_{i,j}}\lrta F\times_{h_X} h_{U_i}$ from the above proposition~\ref{lem:criterion_representable_TopMfd}. We verify then
+$$
+\coprod_{i,j}h_{V_{i,j}}\lrta F
+$$
+is a morphism from the proposition~\ref{lem:criterion_representable_TopMfd}(Exercise, verify this)
+\end{proof}
+\subsection{Quotient manifolds}
+\subsection{Remarks on manifolds}
+\end{document}

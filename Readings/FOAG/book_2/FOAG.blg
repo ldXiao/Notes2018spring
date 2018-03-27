@@ -1,15 +1,2 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [1] Config.pm:327> INFO - Logfile is 'FOAG.blg'
-[65] biber-darwin:276> INFO - === Fri Mar 16, 2018, 09:37:14
-[65] 388d08c1.pm:333> INFO - Reading 'FOAG.bcf'
-[192] 388d08c1.pm:645> INFO - Found 4 citekeys in bib section 0
-[219] 388d08c1.pm:2977> INFO - Processing section 0
-[244] 388d08c1.pm:3115> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[246] 6ce97eef.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[248] 6ce97eef.pm:895> INFO - Found BibTeX data source 'bibliography.bib'
-[321] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[321] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[321] 388d08c1.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[321] 388d08c1.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[330] bbl.pm:505> INFO - Writing 'FOAG.bbl' with encoding 'UTF-8'
-[330] bbl.pm:596> INFO - Output to FOAG.bbl

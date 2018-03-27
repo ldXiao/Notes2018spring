@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1521587767 "Readings.tex" "Readings.pdf" "Readings" 1521587770
+["pdflatex"] 1521845413 "Readings.tex" "Readings.pdf" "Readings" 1521845418
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -29,6 +29,8 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1136768653 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm" 1136768653 520 7bb3abb160b19e0ed6ac404bb59052b7 ""
@@ -199,13 +201,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Readings.aux" 1521587770 1753 b40d67078d0a258387ad4e710459cb05 ""
-  "Readings.out" 1521587770 762 4aaf4e456c82f10fbed3e8680d27b35e ""
-  "Readings.tex" 1521587767 35944 7922fd2e869e40ce37aae541b8b6630a ""
-  "Readings.toc" 1521587770 910 e4704cfbcc3464ccaed9799413a62958 ""
+  "Readings.aux" 1521845418 2392 166612c6a1b4782461d8d0884c8ec873 ""
+  "Readings.out" 1521845418 1100 cf52b8c9b1cd861df231fa97a8326995 ""
+  "Readings.tex" 1521845409 44474 d8e3dea68b46c9b40bffc64e37b94a2b ""
+  "Readings.toc" 1521845418 1312 68428af71e084c8f073db4d85bf0c3b9 ""
   (generated)
   "Readings.log"
-  "Readings.pdf"
-  "Readings.out"
-  "Readings.aux"
   "Readings.toc"
+  "Readings.out"
+  "Readings.pdf"
+  "Readings.aux"
