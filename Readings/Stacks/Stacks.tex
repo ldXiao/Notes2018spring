@@ -175,6 +175,11 @@
 \newtheorem{problem}[thm]{Problem}
 \newtheorem{dfn/thm}[thm]{Definition/Theorem}
 \renewcommand*{\thethm}{\thesection.\arabic{thm}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\makeatletter
+\@addtoreset{footnote}{section}
+\makeatother
 
 %------------------------Colors----------------------------
 \definecolor{mygray}{gray}{0.6}
@@ -470,7 +475,7 @@ Conversely, suppose $F$ is a sheaf satisfying the two conditions in the proposit
 $$
 \coprod h_{U_i}\lrta h_U
 $$
-is an isomorphism in $\mathsf{Sh}(\calc,\tau)$ (Exercise, verify this.) We consider the two projections
+is an isomorphism in $\mathsf{Sh}(\calc,\tau)$ (Exercise, verify this\sidenote{{\color{gray} $h\_$ is a fully faithful functor, therefore maps isomorphisms to isomorphisms}}.) We consider the two projections
 $$
 h_U\times_F h_U\rightrightarrows h_U.
 $$
@@ -489,12 +494,18 @@ $$
 where the colimit is taken in the category $\mathsf{Top}$. Note that $R$ defines an equivalence relation on $U$ and that $X$ is the quotient space.
 
 We further remark that $X$ is a topological manifold. For it, observe by definition the morphism $U\lrta X$ is surjective. More over, $U_i\lrta X$ is an open immersion. Indeed, from the fact that $h_{U_i}\lrta F$ is a monomorphism , we have $U_{i,i}=U_i$, which implies that $U_i\lrta X$ is injective (Exercise, verify this
-\sidenote{
+\sidenote[][-6\baselineskip]{
   {
-  \color{gray}
-  \begin{proof}[sol]
-  ada
-  \end{proof}
+  \color{gray}See Vakil Exercise 1.3.W.
+  It is an abstract nonsense that the fibered product of two identical monomorphisms $h_X\lrta F$, is isomorphic to $h_{U_i}$ itself. I.e., 
+  $$
+  h_{U_i}\times_F h_{U_i}\cong h_{U_i}.
+  $$
+   $U_{i,i}$ is defined to be the representing object of $h_{U_i}\times_F h_{U_i}\cong h_{U_i}$, which implies $U_i=U_{i,i}$ because $h\_$ is fully faithful. In $\mathsf{Top}$, the monomorphisms are exactly those injective continuous maps.
+
+   \underline{Claim}: $U_{i,i}=h_{U_i}\times_X h_{U_i}$, this is proved in sidenote~\ref{sidenote:afd}. Check that there is no circular reasoning.
+
+   This in return implies $U_i\lrta X$ is a monomorphism (injective) in $\mathsf{Top}$.
   }
 }
 ). Moreover, a subset $V\subset X$ is open iff its preimage in $U$ by the projection $U\lrta X$ is open. But the inverse image of $U_i\subset X$ by the projection is the subset $\coprod_j U_{i,j}\subset U$ which is indeed an open set. This shows that $X$ is covered by the opens $U_i\in\calc$, and therefore is a topological manifold.
@@ -513,7 +524,7 @@ and because $h_R\simeq h_U\times_F h_U$ as described above, we have
 $$
 F\simeq \textnormal{colimit}(h_R\rightrightarrows h_U).
 $$
-It then remains verify that $\textnormal{colim}(h_R\rightrightarrows h_U)\simeq h_X$. $h_U\lrta h_X$ is also an epimorphism of sheaves (Exercise, verify this), it remains to show that the morphism
+It then remains to verify that $\textnormal{colim}(h_R\rightrightarrows h_U)\simeq h_X$. $h_U\lrta h_X$ is also an epimorphism of sheaves (Exercise, verify this\sidenote{{\color{gray} Because $h\_$ is fully faithful and $U\lrta X$ is epimorphism}}), it remains to show that the morphism
 $$
 h_R\lrta h_U\times_{h_X} h_U
 $$
@@ -522,7 +533,7 @@ is an isomorphism.
 Recall that $h$ is a fully faithful functor, it suffices to verify that the morphism
 $$
 R\lrta U\times_X U
-$$ is an isomorphism, which is true because the morphism $U_{i,j}\lrta U_i\times_X U_j$ is an isomorphism. (It is bijective local homeomorphism\sidenote[][-3\baselineskip]{{\color{gray}
+$$ is an isomorphism, which is true because the morphism $U_{i,j}\lrta U_i\times_X U_j$ is an isomorphism. (It is bijective local homeomorphism\sidenote[][-3\baselineskip]{\label{sidenote:afd}{\color{gray}
 Explicitly, $U_i\times_X U_j=\{(u,v)\in U_i\coprod U_j: \iota_i(u)=\iota_j(v)\}$}})
 \begin{marginfigure}[-4\baselineskip]
 {\color{gray}
@@ -545,11 +556,30 @@ $(u,v)=(\alpha_{i,j}(z),\beta_{i,j}(z))$ for some $z\in U_{i,j}$. And by hypothe
 Let $X\in\mathsf{TopMfd}$, and $F\lrta h_X$ a morphism of sheaves. If there exists an open covering $\{U_i\}_{i\in I}$ of $X$ so that for all $i\in I$ the sheaf $F\times_{h_X} h_{U_i}$ is representable by a topological manifold, the sheaf $F$ is representable by a topological manifold.
 \end{cor}
 \begin{proof}
-For each $i\in I$, we choose $\{V_{i,j}\}_{j\in J}$ and $\coprod_j h_{V_{i,j}}\lrta F\times_{h_X} h_{U_i}$ from the above proposition~\ref{lem:criterion_representable_TopMfd}. We verify then
+For each $i\in I$, we choose $\{V_{i,j}\}_{j\in J}$ and $p_i:\coprod_j h_{V_{i,j}}\lrta F\times_{h_X} h_{U_i}$ from the above proposition~\ref{lem:criterion_representable_TopMfd}. We verify then
 $$
-\coprod_{i,j}h_{V_{i,j}}\lrta F
+p:\coprod_{i,j}h_{V_{i,j}}\lrta F
 $$
-is a morphism from the proposition~\ref{lem:criterion_representable_TopMfd}(Exercise, verify this)
+is a morphism satisfying the conditions from the proposition~\ref{lem:criterion_representable_TopMfd}(Exercise, verify this\sidenote{{\color{gray} We need to check that the morphism $p$ in the below diagram satisfies the two conditions (epi, open immersion)}}){\color{gray}\begin{marginfigure}$$
+\tiny
+\begin{tikzcd}
+\coprod_{i,j}h_{V_{i,j}} \arrow[r, "\coprod_ip_i"] \arrow[rd, "p"'] & \coprod_i(F\times_{h_X} h_{U_i})=F\times_{h_X}\coprod_i h_{U_i} \arrow[d, "f^*(\pi)"'] \arrow[r] & \coprod_ih_{U_i} \arrow[d, "\pi"] \\
+ & F \arrow[r, "f"] & h_X
+\end{tikzcd}
+$$
+\underline{Claim}: pullback of an epimorphism of sheaves is an epimorphism. 
+
+This can be checked at the level of stalks. Therefore $p$ is the composition of two epimorphisms, which is again an epimorphism.
+
+\underline{Claim}: pullback of an open immersion is an open immersion.
+
+It is easy to check that pullback of monomorphism is monomorphism. It remains to check that pullback of local homeomorphism is a local homeomorphism. $F\times_{h_X} h_{U_i}\lrta F$ is a local homeomorphism because 
+$$
+(F\times_{h_X} h_{U_i})\times_{F} h_Y\simeq h_{U_i}\times_{h_X} h_Y. 
+$$
+
+Basically, this means $h_{U_i}\lrta h_X$ induced by a covering family in $\calc$ gives a ``covering family'' in $\mathsf{Sh}(\calc,\tau)$ in that it is stale under pullback.
+\end{marginfigure}}
 \end{proof}
 \subsection{Quotient manifolds}
 Let $G$ be a group (discrete) that operate on the topological manifold $X\in \mathsf{TopMfd}$. By functoriality, the group $G$ acts on the sheaf $h_X$. Recall that the action $G$ on $X$ is free if for every $x\in X$ and $g\in G$, we have $(g\cdot x=x)\lrta (g=e)$. Recall also the that the action of group $G$ on $X$ is totally discontinuous if all point $x\in X$ has an open neighborhood $U\subset X$ so that for all $g\in G$ we have
@@ -557,7 +587,7 @@ $$
 (g(U)\cap U\neq \emptyset)\Lrta (g=e).
 $$
 
-In the following statement, we should take care not to confuse the quotient sheaf $h_X/G$ and the sheaf $h_{X/G}$ represented by the quotient topological manifold $X/G$.
+In the following statement, we should take care not to confuse the quotient sheaf $h_X/G$ and the sheaf $h_{X/G}$ represented by the quotient topological manifold $X/G$\sidenote[][4\baselineskip]{We don't a priory know $X/G$ is a well-defined. topological manifold}.
 
 \begin{prop}\label{prop:quotient_group_action}
 \ \begin{enumerate}
@@ -570,7 +600,7 @@ is a local homeomorphism.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-(1) Let $Y\in \calc$ and $h_Y\lrta h_X/G$ be a morphism of sheaves. We must firstly show that $h_X\times_{h_X/G}h_Y$ is  a topological manifold. Since the quotient morphism $h_X\lrta h_X/G$ is an epimorphism, there exists an open cover $\{Y_i\}$ of $Y$ and the the following diagram commutes\sidenote[][-6\baselineskip]{{\color{gray} Denote the natural transformation $\eta:h_X\lrta h_X/G$
+(1) Let $Y\in \calc$ and $h_Y\lrta h_X/G$ be a morphism of sheaves. We must firstly show that $h_X\times_{h_X/G}h_Y$ is  a topological manifold. Since the quotient morphism $h_X\lrta h_X/G$ is an epimorphism, there exists an open cover $\{Y_i\}$ of $Y$ and the the following diagram commutes\sidenote[][-4\baselineskip]{{\color{gray} Denote the natural transformation $\eta:h_X\lrta h_X/G$
 $id_Y$ maps to equivalence class $[\eta(id_Y)]\in h_{X}/G(Y)$ and we can choose one element $f\in [\eta(id_Y)]$. Recall the stability axiom of Grothendieck pretopology, the pull back of the covering family $\{X_i\lrta X\}$ gives a covering family $\{Y_i:=f^*X_i\lrta X\}$of $Y$} }
 $$
 \begin{tikzcd}
@@ -584,13 +614,24 @@ h_X\times_{h_X/G}h_Y\lrta h_Y.
 $$
 It suffices to show that each $h_X\times_{h_X/G}h_{Y_i}$ is representable by a topological manifold.\sidenote[][-6\baselineskip]{{\color{gray}
 The Corollary~\ref{cor:criterion_representable} says given $F\lrta h_Z$ and $Z\in\mathsf{TopMfd}$, $F$ is representable if $Y\in \mathsf{TopMfd}$ and each $F\times_{h_Z}h_{Y_i}$ is representable. This is automatically implied if we can prove the representability of $h_X\times_{h_X/G}h_{Y_i}$ for the general case $Y\in\calc$.
-}}Note that we also have the composition of pushout
+}}Note that we also have the composition of pullbacks.
 $$
 h_X\times_{h_X/G}h_{Y_i}\simeq (h_X\times_{h_X/G}h_X)\times_{h_X}h_{Y_i}.
 $$
-Now, $h_X\times_{h_X/G}h_X\simeq h_X\times h_G$ as can be verified  at the level of presheaves of sets (Exercise, verify this\sidenote[][]{aaaa}). Thus, we have
+Now, $h_X\times_{h_X/G}h_X\simeq h_X\times h_G$ as can be verified  at the level of presheaves of sets (Exercise, verify this\sidenote[][]{{\color{gray} We first loot at  $(h_X/G)(U)=\hom(U,X)/\sim$, where $f\sim h$ if $\exists \alpha\in G$ s.t. $f(\_)=h(\alpha^{-1}\_)$}}).
+{\color{gray}
+\begin{marginfigure}
 $$
-h_X\times_{h_X.G}h_{Y_i}\simeq h_{Y_i}\times h_G\simeq h_{Y_i\times G}.
+\tiny
+\begin{tikzcd}
+(h_{X}\times_{h_X/G} h_X)(U) \arrow[d] \arrow[r] & h_X(U)=\hom(U,X) \arrow[d] \\
+h_X(U)=\hom(U,X) \arrow[r] & (h_X/G)(U)=\hom(U,X)/\sim
+\end{tikzcd}
+$$
+$h_{X}\times_{h_X/G} h_X)(U)$ is therefore the set $\{(f,h)\in h_X(U)\times h_X(U)| f\sim h\}\cong \{(f, f\circ \alpha^{-1})\in h_X(U)\times h_X(U)| \forall \alpha\in G\}\cong (h_{X}\times h_G)(U)$. This bijection of sets relies on the fact that $G$ action is free and totally discontinuous. Hence, we find the isomorphism of sheaves.
+\end{marginfigure}} Thus, we have
+$$
+h_X\times_{h_X/G}h_{Y_i}\simeq h_{Y_i}\times h_G\simeq h_{Y_i\times G}.
 $$
 $Y_i\times G\in \mathsf{TopMfd}$, which finishes the proof that $h_X\times_{h_X/G}h_Y$ is representable by a topological manifold. Moreover, the morphism of manifolds
 $$
@@ -612,9 +653,9 @@ h_{U_x}\times_{h_X/G}h_{U_x}\simeq (h_{U_x}\times_{h_X/G}h_X)\times_{h_X}h_{U_x}
 $$
 as we have seen before in the proof of point $(1)$. Finally, we have
 $$
-h_{U_x}\times h_G)\times_{h_X}h_{U_x}\simeq h_{(U_x\times G)\times_X U_x}.
+(h_{U_x}\times h_G)\times_{h_X}h_{U_x}\simeq h_{(U_x\times G)\times_X U_x}.
 $$
-According to the choice of $U_x$, we have $(U_x\times G)\times_X U_x\simeq U_x$ (Exercise, verify this). Hence, we have shown that the morphism
+According to the choice of $U_x$, we have $(U_x\times G)\times_X U_x\simeq U_x$ (Exercise, verify this\sidenote{{\color{gray}we can easily check that $(U_x\times G)\times_X U_x=(\coprod_{g\in G} g(U_x))\cap U_x$. On the other hand, $U_x$ is chosen small enough such that $g(U_x)\cap U_x=\emptyset$ if $g\neq e$, we therefore know $U_x\times G)\times_X U_x=e(U_x)\cap U_x=U_x$}}). Hence, we have shown that the morphism
 $$
 h_{U_x}\lrta h_{U_x}\times_{h_X/G}h_{U_x}
 $$
@@ -664,9 +705,9 @@ Let $\calc$ be a category with a canonical (pre)topology $\tau$. By Yoneda's lem
 $$
 h:\calc\lrta \mathsf{Sh}(\calc,\tau).
 $$
-We single out a class of morphism $\mathbf{P}$ in $\calc$ (i.e. $\mathbf{P}$ is a subset of morphisms in $\calc$). Recall the following notions:
+We single out a class of morphisms $\mathbf{P}$ in $\calc$ (i.e. $\mathbf{P}$ is a subset of morphisms in $\calc$). Recall the following notions:
 \begin{enumerate}
-\item We say that one morphism $f:X\lrta Y$ in $\calc$ is \textbf{carrable} if for every morphism $Z\lrta Y$ in $\calc$, the object $X\times_Y\lrta Y$ exists in $\calc$.
+\item We say that one morphism $f:X\lrta Y$ in $\calc$ is \textbf{carrable} if for every morphism $Z\lrta Y$ in $\calc$, the object $X\times_Y Z$ exists in $\calc$.
 \item We say that $\mathbf{P}$ is \textbf{stable by composition} if for two morphisms $X\overset{f}{\lrta}Y\overset{g}{\lrta }Z$ we have $f\in \mathbf{P}$ and $g\in \mathbf{P}\Lrta g\circ f\in \mathbf{P}$.
 \item We say that $\bfp$ is \textbf{stable by change of basis} if for every Cartesian square in $\calc$
 $$
@@ -679,7 +720,19 @@ $$
 we have $f\in \bfp\Lrta f'\in \bfp$.
 \item We say that $\bfp$ \textbf{contains the identity} is for every object $X\in \calc$, $id_X\in \bfp$.
 \end{enumerate}
-We remark that if $\bfp$ is stable by change of basis and contains identity, $\bfp$ contain also all the isomorphisms (Exercises: verify this. We use the fact that the commutative squares of isomorphisms is Cartesian).
+We remark that if $\bfp$ is stable by change of basis and contains identity, $\bfp$ contains also all the isomorphisms (Exercises: verify this\sidenote{{\color{gray} By definition, an isomorphism is both epimorphism and monomorphism.}}.{\color{gray}\begin{marginfigure}
+$$
+\tiny
+\begin{tikzcd}
+Z \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists !", dashed] &  &  \\
+ & X \arrow[r, "f"] \arrow[d, "id_X"] & Y \arrow[d, "g"] \\
+ & X \arrow[r, "id_X"'] & X,
+\end{tikzcd}
+$$
+where $f,g$ are inverse to each other.
+The commutative diagram of isomorphisms is Cartesian, checked by universal property. In particular $\bfp$ is stable under change of base and it contains $id_X$, hence contains $f$.
+\end{marginfigure}
+} We use the fact that the commutative squares of isomorphisms is Cartesian).
 
 We will also need the following notions.
 \begin{enumerate}
@@ -781,7 +834,7 @@ where the $u_i$ are homeomorphisms , and $q_i$, $p_i$ are respectively $U_i\subs
 We fix a geometric context $(\calc,\tau,\bfp)$ in the sense of Definition~\ref{dfn:geometric_context}.
 \begin{dfn}\ 
 \begin{enumerate}
-\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an open immersion if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that their image under $f$ is the same as the image under $\coprod_i h_{X_i}\lrta h_X$.
+\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an \textbf{open immersion} if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that their image under $f$ is the same as the image under $\coprod_i h_{X_i}\lrta h_X$.
 \item A morphism of sheaves $f:F\lrta G$ is an open immersion if for all $X\in\calc$ and all morphism $h_X\lrta G$, the induced morphism 
 $$
 F\times_G h_X\lrta h_X
@@ -794,7 +847,7 @@ We remark that condition $(5)$ in the definition~\ref{dfn:geometric_context} of 
 We can show that the open immersions are stable under composition and change of basis (Exercise). We can also show that for two sheaves $F,G$ the morphism $F\lrta F\coprod G$ is an open immersion (Exercise: use the fact that $(\calc,\tau,\bfp)$ is compatible with finite coproducts).
 
 \begin{dfn}
-A sheaf $F\in \ssh(\calc,\tau)$ is a manifold (respect to a context $(\calc,\tau,\bfp)$) if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism $p:\coprod_{i\in I}h_{U_i}\lrta F$ such that the following two condition is satisfied.
+A sheaf $F\in \ssh(\calc,\tau)$ is a \textbf{manifold}\sidenote{{\color{red}In French, both algebraic variety and manifolds are called vari\'et\'e. I suppose it is just a convention.}} (respect to a context $(\calc,\tau,\bfp)$) if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism $p:\coprod_{i\in I}h_{U_i}\lrta F$ such that the following two condition is satisfied.
 \begin{enumerate}
 \item The morphism $p$ is an epimorphism of sheaves.
 \item For each $i\in I$, the morphism $h_{U_i}\lrta F$ is an open immersion.
@@ -819,7 +872,7 @@ Each geometric context in the Example~\ref{ex:geometric_context} thus give rise 
 To illustrate the  power of definition of geometric spaces, we must firstly extend the notion of morphism in $\bfp$ of objects in $\calc$, to those on sheaves, as we have done for the notion of local homeomorphisms.
 \begin{dfn}\label{dfn:geometric_space_property}\ 
 \begin{enumerate}
-\item A morphism $f: F\lrta G$ in $\ssh(\calc,\tau)$ is representable (by a manifold) if for all object $X\in \calc$ and all morphisms $h_X\lrta G$ the fibered product $F\times_G h_X$ is a manifold.
+\item A morphism $f: F\lrta G$ in $\ssh(\calc,\tau)$ is \textbf{representable (by a manifold)} if for all object $X\in \calc$ and all morphisms $h_X\lrta G$ the fibered product $F\times_G h_X$ is a manifold.
 \item A morphism $f:F\lrta G$ in $\ssh(\calc,\tau)$ \textbf{has the property $\bfp$} (We also say the morphism belongs to $\bfp$) if it is representable and if for every object $X\in\calc$ and all morphism $h_X\lrta G$ there exists an open atlas.
 $$
 p:\coprod_{i\in I}h_{U_i}\lrta F\times_G h_X
@@ -844,6 +897,27 @@ If so, we say the sheave $F$ is a manifold.
 \item A morphism $f:X\lrta Y$ induces an open immersion $h_f:h_X\lrta h_Y$ if and only if $f$ belongs to  $\bfp$ and if it is a monomorphism in $\calc$.
 \end{enumerate}
 \end{lemma}
+\begin{proof}(1)
+Let $f:F\lrta G$ be an open immersion. Let $X\in \calc, h_X\lrta G$ be a morphism, and consider the induced morphism
+$$
+F':=F\times_G h_X\lrta h_X.
+$$
+There exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that $F'$ identifies with the image of morphism $\coprod_i h_{X_i}\lrta h_X$. With the useful fact that the morphism of $\bfp$ have open images, we can further suppose that each $h_{X_i}\lrta h_X$ is a monomorphism. With the useful fact that the morphism in $\bfp$ are locally carrable, we can also suppose that the morphisms $X_i\lrta X$ are carrable in $\calc$. The morphisms $h_{X_i}\lrta h_X$ would factorize through $F'$. Moreover, we see easily (Exercise) that each morphism $h_{X_i}\lrta F'$ is an open immersion. By hypothesis, the morphism $P:\coprod_i h_{X_i}\lrta F'$ is an epimorphism, which implies that $F'$ is a manifold. In addition, $p:\coprod_i h_{X_i}\lrta F'$ is an open atlas that $h_{X_i}\lrta h_X$ is in $\bfp$. This shows that $f$ is in $\bfp$.
+
+(2). Let $F_i:=F\times_{h_X}h_{X_i}$. For all $i$, there exists an open atlas $\coprod_j V_{i,j}\lrta F_i$. We verify then the morphism
+$$
+\coprod_{i,j}V_{i,j}\lrta F
+$$
+is an open atlas.
+
+(3) Exercise (use point $(2)$)
+
+(4) Let $f:X\lrta Y$ in $\calc$. Suppose first that $f$ is in $\bfp$. Let $Z\lrta Y$ be a morphism in $\calc$. We have to start by showing that the sheaf $h_X\times_{h_Y} h_Z$ is representable by a manifold. For this, we use the fact that the morphism in $\bfp$ are locally carrable. There exists an open $\bfp$-cover $\{X_i\lrta X\}$, so that each sheaf $h_{X_i}\times_{h_Y} h_Z$ is representable by an object $U_i$ in $\calc$. By the point $(2)$, this shows that $h_X\times_{h_Y} h_Z$ is a manifold. Moreover, the induced morphism $U-i\lrta Z$ are in $\bfp$ because the morphisms in $\bfp$ are stable under change of basis, which shows $f$ is indeed in $\bfp$.
+
+Reciprocally, if $h_f$ is in $\bfp$, there exists a $\bfp$-cover $\{X_i\lrta X\}$ so that each morphism $X_i\lrta Y$ is in $\bfp$. Therefore $\bfp$ is local for $\tau$, which implies $f$ is in $\bfp$.
+
+(5) is induced from $(4)$ plus the fact that a morphism $f$ in $\calc$ is a monomorphism if and only if the morphism $h_f$ is a monomorphism in $\ssh(\calc,\tau)$.
+\end{proof}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------

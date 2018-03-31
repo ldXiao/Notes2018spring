@@ -1277,6 +1277,213 @@ $\sca\in \cup\overline{[\scp_i]}$, this means some $A_\scp$ is a further localiz
 
 \part{Morphisms}
 \chapter{Morphisms of schemes}
+\section{Introductions}
+\section{Morphism of ringed space}
+\begin{definition}
+A \textbf{morphism of ringed spaces $\pi:X\lrta Y$}  is a continuous map of topological spaces along with a map $\calo_Y\lrta \pi_*\calo_X$, which we think of as a ``pullback map''.
+\end{definition}
+\begin{exr}\label{chap6exr:glue_morphisms_of_ringed_spaces}
+(Glue morphisms of ringed spaces). Suppose $(X,\calo_X)$ and $(Y,\calo_Y)$ are ringed spaces, $X=\cup_i U_i$ is an open cover of $X$, and we have morphisms of ringed spaces $\pi_i:U_i\lrta Y$ that ``agree on overlaps'', i.e. $\pi_i\mid_{U_i\cap U_j}=\pi_{j}|_{U_i\cap U_j}$. Show that there is a unique morphism of ringed space $\pi:X\lrta Y$ such that $\pi|_{U_i}=\pi_i$.
+\end{exr}
+\begin{proof}[Sol]
+Denote the morphisms of ringed spaces as $(\pi_i,\tilde{\pi}_i)$
+The topological part has been shown in Exercise~\ref{chap2exr:sheaf_of_continuous_maps}, which says continuous maps from a topological space $X$ to $Y$ forms sheaf.
+
+Suppose the topological part glue to a unique continuous map $\pi$. We denote pushforward sheaves by $\pi_*\calo_X$. Given an open set $V\subset Y$, on the open set level
+$$
+\pi_{i,*}\calo_{U_i}(V)=\calo_{U_i}(\pi_i^{-1}(V))=\calo_X((\pi|_{U_i})^{-1}(V))=\calo_X(\pi^{-1}(V)\cap U_i)
+$$
+For each element $f\in \calo_Y(V)$
+$\pi_i(V)(f)\in\calo_X(\pi^{-1}(V)\cap U_i)$ are compatible, thus glue to a unique element in $\calo_X(\pi^{-1}(V))=\pi_*\calo_X(V)$. As discussed before, we can value-wisely define the morphism $\tilde{\pi}(V)$ and it is easy to check thus defined $\tilde{\pi}(V)$ is well-defined ring morphism and that $\tilde{\pi}$ forms a sheaf morphism. 
+$(\pi,\tilde{\pi})$ forms the desired morphism of ringed spaces.
+\end{proof}
+\begin{exr}
+$\calo$-module push forward. Given a morphism of ringed spaces $\pi:X\lrta Y$, show that sheaf push forward induces a functor $\mathsf{Mod}_{\calo_X}\lrta \mathsf{Mod}_{\calo_Y}$.
+\end{exr}
+\begin{proof}
+Given a $\calo_X$-module $\calf$, and  a morphism of ringed spaces $(\pi,\tilde{\pi}):X\lrta Y$. The $\calf$ as a sheaf of abelian groups automatically pushforward to $\pi_*\calf$. It suffices to check the $\calo_Y$-module structure on $\pi_*\calf$.
+$$
+\begin{tikzcd}
+\calo_Y(U)\times\pi_*\calf(U) \arrow[d, "{\res_{U,V}\times\res_{U,V}}"] \arrow[r,"{\tilde{\pi}(U)\times id}"] & \pi_*\calo_{X}(U)\times\pi_*\calf(U) \arrow[d, "{\res_{U,V}\times\res_{U,V}}"]\arrow[r] & \pi_*\calf(U) \arrow[d,"{\res_{U,V}}"] \\
+\calo_Y(V)\times\pi_*\calf(V) \arrow[r,"{\tilde{\pi}(V)\times id}"] & \pi_*\calo_{X}(U)\times\pi_*\calf(U) \arrow[r] & \pi_*\calf(U)
+\end{tikzcd}
+$$
+The right square commutes because $\pi_*\calf$ is a $\pi_*\calo_X$-module. The right square commutes by the definition of morphism of ringed spaces, therefore the outer square commutes, which indicates the $\calo_Y$-module structure.
+
+We still denote the functor $\pi_*$. It remains to check the commutative diagram
+$$
+\begin{tikzcd}
+\calf \arrow[d, "\pi_*"] \arrow[r, "\phi"] & \calg \arrow[d, "\pi_*"] \arrow[r, "\psi"] & \calh \arrow[d, "\pi_*"] \\
+\pi_*\calf \arrow[r, "\pi_*(\phi)"] & \pi_*\calg \arrow[r, "\pi_*(\psi)"] & \pi_*\calh,
+\end{tikzcd}
+$$
+where $\pi_*(\phi)(V)$ is defined to be $\phi(\pi^{-1}(V))$ and $\pi_*(\psi\circ \phi)(V)=\psi\circ \phi(\pi^{-1}(V))=\psi(\pi^{-1}(V))\circ \phi(\pi^{-1}(V)) =\pi_*(\psi)\circ \pi_*(\phi) (V)$
+This works for all opens,  we thus have $\pi_*(\psi\circ \phi)=\pi_*(\psi)\circ \pi_*(\phi)$.
+
+It still remains to check $\pi_*$ is a well defined morphism of $\calo_Y$ modules, but the procedure is similar. We just omit it.
+\end{proof}
+
+\begin{exr}
+Given a morphism of ringed spaces $\pi:X\lrta Y$ with  $\pi(p)=q$, show that there is a map of stalks $(\calo_Y)_q\lrta (\calo_X)_p$
+\end{exr}
+\begin{proof}[Sol]
+A morphism of ringed spaces $\pi:X\lrta Y$ consists of the data $(\pi,\tilde{\pi})$ where
+$$
+\tilde{\pi}:\calo_Y\lrta \pi_*\calo_X
+$$
+Exercise~\ref{chap2exr:morphism_of_sheaves_induce_on_stalks} shows that it induces a morphism on the stalks $\calo_{Y,q}\lrta(\pi_*\calo_X)_{q}$.
+
+On the other hand Exercise~\ref{chap2exr:Pushforward_induces_morphism_stalks} says the pushforward induces a morphism on the stalks $(\pi_{*}\calo_X)_{q}\lrta\calo_{X,p}$ if $\pi(p)=q$
+
+The composition of the above two morphisms gives the desired map.
+\end{proof}
+\begin{exr}\label{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}
+Suppose $\pi^\#:B\lrta A$ is a morphism of rings. Define a morphism of ringed space $\pi:\spec A\lrta \spec B$ as follows. The map of topological spaces was given by Exercise~\ref{exr:spec_functor}. To describe a morphism of sheaves $\calo_{\spec B}\lrta \pi_*\calo_{\spec A}$ on $\spec B$, it suffices to describe a morphism of sheaves on the distinguished base of $\spec B$. On $D(f)\subset \spec B$, we define
+$$
+\calo_{\spec B}(D(g))\lrta \calo_{\spec A}(\pi^{-1}D(g))=\calo_{\spec A}(D(\pi^\#g))
+$$
+by $B_g\lrta A_{\pi^\# g}.$ verify that this makes sense (e.g., is independent of $g$), and that this describes a morphism of sheaves on the distinguished base. (This is the third in a series of exercises. We saw that a morphism of rings induces a map of sets in 3.2.9, a map of topological spaces in Exercise~\ref{exr:spec_functor}, and now a map of ringed spaces here. )
+\end{exr}
+\begin{proof}[Sol]
+We have shown that $A_f\cong \calo_{\spec A}(D(f))$ in Exercise 4.1.A.
+Choose another representative of $D(g)$, say $h$. Then we  know $\sqrt{(h)}=\sqrt{(g)}$, which means $h$ is invertible in $B_g$ and $g$ is invertible in $B_h$. i.e. 
+$$
+B_g\cong B_h
+$$
+It also means $\pi^\#(h)$ is invertible in $(\pi^\#(g))$ and $\pi^\#(g)$ is invertible in $(\pi^\#(h))$, i.e.
+$$
+A_{\pi^\#(g)}=A_{\pi^\#(h)}.
+$$
+Then this map is indeed independent on the choice of representative of $D(g)$.
+$$
+\calo_{\spec B}(D(g))=B_g\lrta \pi_*\calo_{\spec A}(D(g))=A_{\pi^\#(g)}
+$$
+gives a well-defined morphism of sheaves.
+\end{proof}
+\begin{exr} (Not all map of affine ringed spaces are induced by ring morphisms).
+Recall (Exercise 3.4.K) that $\spec k[y]_{(y)}$ has two points, $[(0)]$ and $[(y)]$, where the second point is closed, and he first is not. Describe a map of ringed spaces $\spec k(x)\lrta \spec k[y]_{(y)}$ sending the unique point of $\spec k(x)$ to the closed point $[(y)]$, where pullback map on global sections sends $k$ to $k$ by the identity, and sends $y$ to $x$. Show that this map of ringed spaces is not of the form described in  Exercise~\ref{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}.
+\end{exr}
+\begin{proof}[Sol]
+Denote $B:=k[y]_{(y)}$ and $A:=k(x)$.
+The exotic choice  topologically sends the unique point $\eta=[(0)]$ in $\spec k(x)$ to the closed point $[(y)]$. These topological space discrete, making it a continuous map.  The only open sets on $\spec A$ are $\{[(0)],[(y)]\},\{[(0)]\}$ and $\emptyset$.
+$$
+\phi:\spec A=\{\eta\}\lrta \spec B=\{[(0)],[(y)]\}
+$$
+$$
+\phi_*\calo_{\spec A}(\{[(0)],[(y)]\})=\calo_{\spec A}(\eta)=A
+$$
+$$
+\phi_*\calo_{\spec A}(\{[(0)]\})=\calo_{\spec A}(\emptyset)=\{0\}
+$$
+where $\{0\}$ is the final object in $\mathsf{Rings}$. The corresponding maps on
+$$
+\tilde{\phi}(\{[(0)],[(y)]\}):B\lrta A (k\mapsto k, y\mapsto x),
+$$
+$$
+\tilde{\phi}(\{[(0)]\}):B\lrta 0 .
+$$
+This does not corresponds to a ring morphism as in Exercise~\ref{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}. Assume by contradiction it is, then $\{[(0)]\}=D(y)$ and $\phi^\#$ has been given by the morphism on global sections. However $\phi^\#(y)=x$ and $A_{\pi^\#(y)}=A_x=A\neq 0$.
+\end{proof}
+\section{From locally ringed spaces to morphisms of schemes}
+In this section we will use the notion $\pi^\#$ to denote the induced morphism on stalks.
+\begin{exr}
+Show that morphisms of locally ringed spaces glue (cf. Exercise~\ref{chap6exr:glue_morphisms_of_ringed_spaces}). (Hint: your solution to Exercise~\ref{chap6exr:glue_morphisms_of_ringed_spaces} may work without change.)
+\end{exr}
+\begin{proof}[Sol]
+With out change of the proof, we only need to check the glued morphism of ringed spec is in fact a morphism of locally ringed spaces.
+
+This is easy because for each pair of points $p,q,\pi(p)=q$, we can check that
+$$
+\tilde{\pi}_{p}=\tilde{\pi_i}_{p}
+$$
+simply because $\tilde{\pi}$ restricts to $\tilde{\pi}_i$. Each $\pi_i$ induces local morphisms on stalks, therefore $\pi$ also induces local morphisms on stalks.
+\end{proof}
+\begin{exr}
+\ \begin{enumerate}[label=(\alph*)]
+\item Show that $\spec A$ is a locally ringed space.
+\item Show that the morphism of ringed spaces $\pi:\spec A\lrta \spec B$ defined by a ring morphism $\pi^\#:B\lrta A$ is a morphism of locally ringed spaces.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol]
+\begin{enumerate}[label=(\alph*)]
+\item $\spec A$ is a locally ringed space because we have shown in Exercise~\ref{chap4exr:affine_scheme_stalk_localization} that
+$$
+\calo_{\spec A,\scp}=A_\scp
+$$
+and $A_\scp$ is a local ring with maximal ideal $\scp A_\scp$.
+\item In Exercise~\ref{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}, we have given explicitly on the distinguished base. We only need to should that the map on stalks indeed sends maximal ideals to maximal ideals.
+
+Given two prime ideals $\scq\subset B$ and $\scp\subset A$, $\pi([\scp])=[\scq]$ means $(\pi^{\#})^{-1}(\scp)=\scq$, recall that pull back of ideals preserve prime ideals. This means the $\pi^\#(B-\scq)\subset A-\scp$ and hence composition map $B\lrta A_\scp$ sends $B-\scq$ into invertible element in $A_\scp$.  
+$$
+\begin{tikzcd}
+B \arrow[d] \arrow[r] \arrow[rd] & A \arrow[d] \\
+B_\scq \arrow[r, "\phi", dashed] & A_\scp
+\end{tikzcd}
+$$
+There is a ring morphism from $B_\scq$ to $A_\scp$ by universal property of localization. 
+$$
+\phi:
+\frac{b}{s}\mapsto \frac{\pi^\#(b)}{\pi^\#(s)}.
+$$
+We use $\phi$ to avoid abuse of notations.
+
+We want to show that
+$$
+\phi(\scq B_\scq)\subset \scp A_\scp.
+$$
+This is true because 
+$$
+\phi\left(\sum_i q_i \frac{b_i}{s_i}\right)=\sum_i \frac{\pi^\#(q_i b_i)}{\pi^\#(s_i)}\in \scp A_\scp.
+$$ 
+\end{enumerate}
+\end{proof}
+\begin{proposition}
+If $\pi:\spec A\lrta \spec B$ is a morphism of locally ringed spaces then it is the morphism induced by the map $\pi^\#:B=\Gamma(\spec B,\calo_{\spec B})\lrta \Gamma(\spec A,\calo_{\spec A})=A.$
+\end{proposition}
+\begin{exr}
+Show that  a morphism of schemes $\pi:X\lrta Y$ is a morphism of ringed spaces that looks locally like morphisms of affine schemes. Precisely, if $\spec A$ is an affine open subset of $X$ and $\spec B$ is an affine open subset of $Y$, and $\pi(\spec A)\subset \spec B$, then the induced morphism of ringed spaces is a morphism of affine schemes. (In case it helps, note: note: if $W\subset X$ and $Y\subset Z$ are both open embeddings of ringed spaces, then any morphism of ringed spaces $X\lrta Y$ induces a morphism of ringed spaces $W\lrta Z$, by composition $W\lrta X\lrta Y\lrta Z$.) Show that it suffices to check on a set $(\spec A_i,\spec B_i)$ where the $\spec A_i$ form an open cover of $X$ and the $\spec B_i$ from an open cover of $Y$.
+\end{exr}
+\begin{proof}[Sol]
+By affine open subset, we mean a open subscheme which is affine. There is an open embedding from $\spec A$ to $X$. In particular, the $\calo_X|_{\spec A}=\calo_{\spec A}$. By definition,  ``morphism of schemes'' is a morphism of locally ringed spaces. Restricting to the affine opens, the morphism of schemes induces a morphism of locally ringed spaces from $\spec A$ to $\spec B$. By proposition above, we know it is induced by a ring morphism $B\lrta A$.
+
+
+On the other hand, given the set $(\spec A_i,\spec B_i)$, s.t. $\pi(\spec A_i)\subset\spec B_i$ and $A_i, B_i$ covers $X, Y$ respectively. 
+The morphism of affine schemes $\spec A_i\lrta \spec B_i$ induces morphism of locally ringed spaces $\spec A_i\lrta Y$ by composition. 
+We have checked that morphism of locally ringed spaces glue, hence there is a morphism of locally ringed spaces from $X\lrta Y$. This criterion is valid.
+\end{proof}
+\begin{exr}
+Show that the category of rings and the opposite category of affine schemes are equivalent.
+\end{exr}
+\begin{proof}[Sol]
+We give a pair of functors which are reciprocal quasi-inverse.
+$$
+\spec ,\Gamma,
+$$
+where $\Gamma$ is the global section functor, both are contravariant.
+$$
+\begin{tikzcd}
+B \arrow[r, "\spec"] \arrow[d, "\pi'"] & \spec B \arrow[r, "\Gamma"] \arrow[d, "{(\pi,\tilde{\pi})}"] & B \arrow[d, "\pi^\#"] \\
+A \arrow[r, "\spec"] & \spec A \arrow[r, "\Gamma"] & A
+\end{tikzcd}
+$$
+The above diagram is easy to verify and wesee from it
+$$
+\Gamma\circ \spec =Id_{\mathsf{Rings}}
+$$
+
+$$
+\begin{tikzcd}
+(U,\calo_U)\cong \spec B \arrow[r, "\Gamma"] \arrow[d] & B \arrow[r, "\spec "] \arrow[d] & \spec B \arrow[d] \\
+(V,\calo_V)\cong\spec A \arrow[r, "\Gamma"] & A \arrow[r, "\spec"] & \spec A
+\end{tikzcd}
+$$
+This means
+$$
+\spec\circ \Gamma\cong Id_{\mathsf{Affn}}.
+$$
+Because both of them are contravariant functors, this indicates a equivalence of categories between $\mathsf{Rings}$ and $\mathsf{Affn}^{op}$.
+
+\end{proof}
 \chapter{Useful classes of morphisms}
 \chapter{Closed embeddings}
 \chapter{Fibered product of schemes}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  27 MAR 2018 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  28 MAR 2018 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7606,7 +7606,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
 l.124 ...te the set of continuous maps $s: U \lrta
-                                                    Y$ such that $Î¼\mu\circ...
+                                                    Y$ such that $\mu\circ s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -7621,8 +7621,6 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no Î in font cmr10!
-Missing character: There is no ¼ in font cmr10!
 Missing character: There is no . in font nullfont!
 Missing character: There is no S in font nullfont!
 Missing character: There is no h in font nullfont!
@@ -19027,6 +19025,282 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+\@footnotetext ...tins {\reset@font \footnotesize 
+                                                  \interlinepenalty \interfo...
+l.369 ...t of $\phi(U_i)$s in the arrow category.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@footnotetext ...}\color@begingroup \@makefntext 
+                                                  {\rule \z@ \footnotesep \i...
+l.369 ...t of $\phi(U_i)$s in the arrow category.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (19.50003pt too wide) in paragraph at lines 369--369
+[][]\OT1/cmr/m/n/10 This
+ []
+
+
+Overfull \hbox (25.83339pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 value-
+ []
+
+
+Overfull \hbox (26.44449pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 wisely
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 de-
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 fined
+ []
+
+
+Overfull \hbox (18.88895pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 map
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (16.94446pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 well
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 de-
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 fined
+ []
+
+
+Overfull \hbox (20.58337pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 mor-
+ []
+
+
+Overfull \hbox (26.16673pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 phism
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (15.5556pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 any
+ []
+
+
+Overfull \hbox (16.66669pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 cat-
+ []
+
+
+Overfull \hbox (7.77777pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 e-
+ []
+
+
+Overfull \hbox (19.1945pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 gory
+ []
+
+
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 of
+ []
+
+
+Overfull \hbox (25.08336pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 struc-
+ []
+
+
+Overfull \hbox (23.36116pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 tured
+ []
+
+
+Overfull \hbox (19.00002pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 sets.
+ []
+
+
+Overfull \hbox (14.61115pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 For
+ []
+
+
+Overfull \hbox (18.33336pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 gen-
+ []
+
+
+Overfull \hbox (16.13892pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 eral
+ []
+
+
+Overfull \hbox (16.66669pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 cat-
+ []
+
+
+Overfull \hbox (7.77777pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 e-
+ []
+
+
+Overfull \hbox (19.1945pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 gory
+ []
+
+
+Overfull \hbox (11.38889pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 we
+ []
+
+
+Overfull \hbox (28.38896pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 should
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 de-
+ []
+
+
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 fine
+ []
+
+
+Overfull \hbox (21.7917pt too wide) in paragraph at lines 369--369
+\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (8.94446pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 as
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (20.55562pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 limit
+ []
+
+
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 of
+ []
+
+
+Overfull \hbox (27.83765pt too wide) in paragraph at lines 369--369
+\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 )$s
+ []
+
+
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 in
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (12.25002pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 ar-
+ []
+
+
+Overfull \hbox (15.86113pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 row
+ []
+
+
+Overfull \hbox (16.66669pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 cat-
+ []
+
+
+Overfull \hbox (7.77777pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 e-
+ []
+
+
+Overfull \hbox (21.13895pt too wide) in paragraph at lines 369--369
+\OT1/cmr/m/n/10 gory.| 
+ []
+
 Missing character: There is no T in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -19143,6 +19417,21 @@ Overfull \hbox (5.12846pt too wide) in paragraph at lines 369--371
 
 Overfull \hbox (5.12846pt too wide) in paragraph at lines 369--371
 \OML/cmm/m/it/10 g$
+ []
+
+
+Overfull \hbox (21.7917pt too wide) in paragraph at lines 369--371
+\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (13.61113pt too wide) in paragraph at lines 369--371
+[]$
+ []
+
+
+Overfull \hbox (4.48613pt too wide) in paragraph at lines 369--371
+[]
  []
 
 
@@ -36497,6 +36786,82 @@ Overfull \hbox (9.38199pt too wide) in paragraph at lines 686--692
  []
 
 
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.692 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[2
+! Undefined control sequence.
+<write> ...:sheaf_of_continuous_maps}{{}{\thepage 
+                                                  }}
+l.692 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{chap2exr:sheaf_of_continuous_maps}{{}{}}
+! Undefined control sequence.
+<write> ..._sheaves_induce_on_stalks}{{}{\thepage 
+                                                  }}
+l.692 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{chap2exr:morphism_of_sheaves_induce_on_stalks}{{}{}}
+! Undefined control sequence.
+<write> ...ave_section_funcotr_exact}{{}{\thepage 
+                                                  }}
+l.692 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{chap2:exr_presheave_section_funcotr_exact}{{}{}}
+! Undefined control sequence.
+<write> \newlabel{chap2:exr2.3.H}{{}{\thepage 
+                                              }}
+l.692 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{chap2:exr2.3.H}{{}{}}
+! Undefined control sequence.
+<write> ...bel{chap2exr:kernel_sheaf}{{}{\thepage 
+                                                  }}
+l.692 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{chap2exr:kernel_sheaf}{{}{}}
+]
+
 ! LaTeX Error: Environment exr undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -37897,94 +38262,6 @@ Overfull \hbox (21.65417pt too wide) in paragraph at lines 720--721
 \OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 )$ 
  []
 
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.721 
-      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[2
-! Undefined control sequence.
-<write> ...:sheaf_of_continuous_maps}{{}{\thepage 
-                                                  }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2exr:sheaf_of_continuous_maps}{{}{}}
-! Undefined control sequence.
-<write> ..._sheaves_induce_on_stalks}{{}{\thepage 
-                                                  }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2exr:morphism_of_sheaves_induce_on_stalks}{{}{}}
-! Undefined control sequence.
-<write> ...ave_section_funcotr_exact}{{}{\thepage 
-                                                  }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2:exr_presheave_section_funcotr_exact}{{}{}}
-! Undefined control sequence.
-<write> \newlabel{chap2:exr2.3.H}{{}{\thepage 
-                                              }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2:exr2.3.H}{{}{}}
-! Undefined control sequence.
-<write> ...bel{chap2exr:kernel_sheaf}{{}{\thepage 
-                                                  }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2exr:kernel_sheaf}{{}{}}
-! Undefined control sequence.
-<write> \newlabel{chap2exr2.4.A}{{}{\thepage 
-                                             }}
-l.721 
-      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\newlabel{chap2exr2.4.A}{{}{}}
-]
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no B in font nullfont!
@@ -61733,9 +62010,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no ï in font nullfont!
-Missing character: There is no ¼ in font nullfont!
-Missing character: There is no ˆ in font nullfont!
+Missing character: There is no ( in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -61744,7 +62019,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.1228 ... ï¼ˆsee \cite[p.~216]{mac1998categories}
+l.1228 ...s} (see \cite[p.~216]{mac1998categories}
                                                   ). There is no simple deri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -65182,11 +65457,11 @@ Missing character: There is no f in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 87 strings out of 493089
- 1518 string characters out of 6134842
- 117829 words of memory out of 5000000
- 3663 multiletter control sequences out of 15000+600000
- 4294 words of font info for 16 fonts, out of 8000000 for 9000
+ 92 strings out of 493089
+ 1572 string characters out of 6134842
+ 116696 words of memory out of 5000000
+ 3666 multiletter control sequences out of 15000+600000
+ 5199 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,11n,21p,770b,173s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -175,7 +175,7 @@ Identity axiom: $f_1,f_2$ in $\pi_*\calf(V)$ agrees when restricted to any $V_i$
 Gluability axiom: if $\{f_i\}_{i\in I}$  are compatible on each intersection. They are also compatible as sections in $\calf(\pi^{-1}V_i)$, because $\calf$ is a sheaf, there is an element $\tilde{f}\in \calf(\pi^{-1}V)$ such that it restricts to each $f_i$. $\tilde{f}$ can be interpreted as an element $f\in \pi_*\calf(V)$.
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap2exr:Pushforward_induces_morphism_stalks}
 Suppose $\pi: X \lrta Y $ is a continuous map, and $\calf$ is a sheaf of sets (or rings or $A$-modules) on $X$. If $ \pi(p) = q$, describe the natural morphism of stalks $(\pi_*\calf)_q \lrta \calf_p$.
 \end{exr}
 \begin{proof}
@@ -366,7 +366,7 @@ g_i|_{V_i\cap V_j}=g_j|_{V_i\cap V_j}
 $$
 $g_i$ are compatible when restricted to intersections. Then, again,  \textbf{because $\calg$ is a sheaf, by gluability}, there is a unique element $g$ to glue to in $\calg(V)$. 
 
-We define $\phi(V):f\mapsto g$, $g$ is constructed as above. 
+We define $\phi(V):f\mapsto g$, $g$ is constructed as above. $\phi(V)$ is a well-defined morphism in category $\mathsf{Set}$. \footnote{This value-wisely defined map is well defined morphism is any category of structured sets. For general category we should define $\phi(V)$ as the limit of $\phi(U_i)$s in the arrow category.}
 Then there two things left: 1. verify that $\phi$ is indeed a morphism of (pre)sheaves. 2. verify that $\phi$ to restricts to $\phi_i$.
 \begin{center}
 \begin{tikzcd}

@@ -87,29 +87,35 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Morphisms of schemes}{157}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Useful classes of morphisms}{159}{chapter.7}
+\contentsline {section}{\numberline {6.1}Introductions}{157}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Closed embeddings}{161}{chapter.8}
+\contentsline {section}{\numberline {6.2}Morphism of ringed space}{157}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Fibered product of schemes}{163}{chapter.9}
+\contentsline {section}{\numberline {6.3}From locally ringed spaces to morphisms of schemes}{159}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}Separated and proper schemes, varieties}{165}{chapter.10}
+\contentsline {chapter}{\numberline {7}Useful classes of morphisms}{163}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {IV}{``Geometric'' properties: Dimension and smoothness}}{167}{part.4}
+\contentsline {chapter}{\numberline {8}Closed embeddings}{165}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Fibered product of schemes}{167}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}Separated and proper schemes, varieties}{169}{chapter.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {IV}{``Geometric'' properties: Dimension and smoothness}}{171}{part.4}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {V}{Quasicoherent sheaves}}{169}{part.5}
+\contentsline {part}{\@mypartnumtocformat {V}{Quasicoherent sheaves}}{173}{part.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {VI}{More}}{171}{part.6}
+\contentsline {part}{\@mypartnumtocformat {VI}{More}}{175}{part.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{173}{chapter*.2}
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{177}{chapter*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{173}{section*.3}
+\contentsline {section}{Articles}{177}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{173}{section*.4}
+\contentsline {section}{Books}{177}{section*.4}
 \contentsfinish 
