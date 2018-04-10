@@ -745,7 +745,7 @@ is an epimorphism of sheaves.
 \item We say that $\bfp$ is local for topology $\tau$ if the two following conditions are satisfied
 \begin{enumerate}[label=(\alph*)]
 \item Let $f:X\lrta Y$ be a morphism in $\calc$. If there exists a covering family $\{Y_i\lrta Y\}$ such that each induced morphism $f_i:X\times_Y Y_i\lrta Y$ belongs to $\bfp$, $f\in\bfp$.
-\item Let $f:X\lrta Y$ be a morphism in $\calc$. If there exists a $\bfp$-covering $\{X_i\lrta X\}$ so that each induced morphism $X_i\lrta X$ is in $\bfp$, $f\in \bfp$.
+\item Let $f:X\lrta Y$ be a morphism in $\calc$. If there exists a $\bfp$-covering $\{X_i\lrta X\}$ so that each induced morphism $X_i\lrta X$ is in $\bfp$,\sidenote{{\color{red}Shouldn't it be $X_i\lrta Y$?}} $f\in \bfp$.
 \end{enumerate}
 \item We say that the triple $(\calc,\tau,\bfp)$ is compatible with finite coproduct if the following four conditions are satisfied
 \begin{enumerate}[label=(\alph*)]
@@ -817,7 +817,7 @@ In order to make the ideas clear, we give the following examples of geometric co
   \item
 We take $\calc$ to be the category of topological space. The Grothendieck topology $\tau$ is a usual one: a collection of morphisms of topological spaces $\{X_i\lrta X\}_{i\in I}$ is a covering family if for every $i$ the morphism $X_i\lrta X$ is an open immersion and the morphism $\coprod_i X_i\lrta X$ is surjective. $\bfp$ is taken to be the local homeomorphisms.
 \item We take $\calc$ the full subcategory of topological spaces consisting of finite disjoint coproducts of open sets in $\reals^n$ ($n$ is not fixed). The topology $\tau$ is the topology as above in $(1)$ and $\bfp$ are still take to be local homeomorphisms.
-\item $\calc$ and $\tau$ are taken to be as in $(2)$ above. $\bfp$ is taken to be the submersions in $\mathsf{Top}$. WE recall that a continuous map $f: X\lrta Y$ is a submersion if there exists an open cover $\{U_i\}$ of $X$ and a collection of open sets $\{V_i\}_{i\in I}$ in $Y$ and the diagram commutes
+\item $\calc$ and $\tau$ are taken to be as in $(2)$ above. $\bfp$ is taken to be the submersions in $\mathsf{Top}$. We recall that a continuous map $f: X\lrta Y$ is a submersion if there exists an open cover $\{U_i\}$ of $X$ and a collection of open sets $\{V_i\}_{i\in I}$ in $Y$ and the diagram commutes
 $$
 \begin{tikzcd}
 U_i \arrow[d, "q_i"'] \arrow[r, "u_i"] & V_i\times \reals^{n_i} \arrow[d, "p_i"] \\
@@ -834,8 +834,8 @@ where the $u_i$ are homeomorphisms , and $q_i$, $p_i$ are respectively $U_i\subs
 We fix a geometric context $(\calc,\tau,\bfp)$ in the sense of Definition~\ref{dfn:geometric_context}.
 \begin{dfn}\ 
 \begin{enumerate}
-\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an \textbf{open immersion} if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that their image under $f$ is the same as the image under $\coprod_i h_{X_i}\lrta h_X$.
-\item A morphism of sheaves $f:F\lrta G$ is an open immersion if for all $X\in\calc$ and all morphism $h_X\lrta G$, the induced morphism 
+\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an \textbf{open immersion} if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that their image under $f$ is the same as the image under\sidenote[][-6\baselineskip]{{\color{red}This ``image'' seems to mean the image of $F(X_i)\lrta F(X)$ under the natural transformation $f$}} $\coprod_i h_{X_i}\lrta h_X$.
+\item A morphism of sheaves $f:F\lrta G$ is an \textbf{open immersion} if for all $X\in\calc$ and all morphism $h_X\lrta G$, the induced morphism 
 $$
 F\times_G h_X\lrta h_X
 $$
@@ -844,10 +844,26 @@ is an open immersion in the sense defined above.
 \end{dfn}
 We remark that condition $(5)$ in the definition~\ref{dfn:geometric_context} of geometric context implies that we can suppose each $X_i\lrta X$ to be also a monomorphism in the above definition.
 
-We can show that the open immersions are stable under composition and change of basis (Exercise). We can also show that for two sheaves $F,G$ the morphism $F\lrta F\coprod G$ is an open immersion (Exercise: use the fact that $(\calc,\tau,\bfp)$ is compatible with finite coproducts).
+We can show that the open immersions are stable under composition and change of basis (Exercise\sidenote[][-15\baselineskip]{It is stable under change of base because
+$$
+(F\times_G H)\times_H h_X\simeq F\times_G \times h_X
+$$
+for all $X\in \calc$. It is stable under composition because
+$$
+(h_X\times_H G)\times_G F\simeq h_X\times_H F
+$$}).{\color{gray}\begin{marginfigure}[-23\baselineskip]
+$$
+\tiny
+\begin{tikzcd}
+(h_X\times_H G)\times_G F\simeq h_X\times_H F \arrow[d] \arrow[r] & F \arrow[d] \\
+h_X\times_H G \arrow[r] \arrow[d] & G \arrow[d] \\
+h_X \arrow[r] & H
+\end{tikzcd}
+$$
+\end{marginfigure}} We can also show that for two sheaves $F,G$ the morphism $F\lrta F\coprod G$ is an open immersion (Exercise: use the fact that $(\calc,\tau,\bfp)$ is compatible with finite coproducts\sidenote{{\color{gray}It is easy to show the monomorphism part of $F\times_{F\coprod G}h_X\lrta h_X$ because $F\lrta F\coprod G$ is a monomorphism and therefore its pullback is a monomorphism. But I still don't know how to prove the remaining part.}}).
 
 \begin{dfn}
-A sheaf $F\in \ssh(\calc,\tau)$ is a \textbf{manifold}\sidenote{{\color{red}In French, both algebraic variety and manifolds are called vari\'et\'e. I suppose it is just a convention.}} (respect to a context $(\calc,\tau,\bfp)$) if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism $p:\coprod_{i\in I}h_{U_i}\lrta F$ such that the following two condition is satisfied.
+A sheaf $F\in \ssh(\calc,\tau)$ is a \textbf{manifold}\sidenote[][15\baselineskip]{{\color{red}In French, both algebraic variety and manifolds are called vari\'et\'e. I suppose it is just a convention.}} (with respect to a context $(\calc,\tau,\bfp)$) if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism $p:\coprod_{i\in I}h_{U_i}\lrta F$ such that the following two conditions are satisfied.
 \begin{enumerate}
 \item The morphism $p$ is an epimorphism of sheaves.
 \item For each $i\in I$, the morphism $h_{U_i}\lrta F$ is an open immersion.
@@ -923,6 +939,23 @@ Reciprocally, if $h_f$ is in $\bfp$, there exists a $\bfp$-cover $\{X_i\lrta X\}
 %----------------------------------------------------------------------------------------
 \chapter{Schemes and algebraic spaces}
 \section{Lecture 3: Schemes and algebraic spaces I}
+In The previous lectures, we have seen the notion of geometric context, and it gives rise to the notion of manifolds and geometric spaces. We will now construct a specific context in algebraic geometric for which the manifold being called schemes and the geometric spaces being called algebraic spaces.
+
+In order to have a better understanding of the construction of algebraic context, recall our naive view of algebraic varieties (affine). Naively, an algebraic variety is the solution loci of a system of polynomial equations. Or equivalently, an algebraic variety $X$ is determined by a finite family of polynomials $P_1,...,P_r\in \cplx[x_1,...,x_n]:$ $X$ is determined by
+$$
+X:=\{x\in\cplx^n\mid P_i(x)=0\forall i\}.
+$$ 
+There then arises the question to define the ``algebraic functions'' on $X$. Follow the spirit that the algebraic functions on $\cplx^n$ are just the polynomials with entries $x_1,...,x_n$, we can convince ourselves that the ring of algebraic functions on  $X$ can be written as
+$$
+\calo(X)=\cplx[x_1,...,x_n]/(P_1,...,P_r).
+$$  
+So, an algebraic variety $X$ corresponds to the ring $\cplx[x_1,...,x_n]/(P_1,...,P_r)$. This ring is a commutative $\cplx$-algebra of finite type (with a finite number of generators). Conversely, if $A$ is a commutative $\cplx$-algebra  of finitel type, we can write
+$$
+A\simeq \cplx[y_1,...,y_m]/(Q_1,..,Q_s),
+$$
+and hence construct an algebraic variety in $\cplx^m$ by the equations $Q_1(y)=...=Q_s(y)=0$.
+
+This shows that there exists a co 
 \section{Lecture 4: Schemes and algebraic spaces II}
 \section{Lecture 4 1/2: Complements on schemes and algebraic spaces}
 \chapter{Stacks}

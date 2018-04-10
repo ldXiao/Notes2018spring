@@ -10,8 +10,8 @@
 \contentsline {subsection}{\numberline {1.2.3}Geometric spaces}{22}{subsection.1.2.3}
 \contentsline {chapter}{\numberline {2}Schemes and algebraic spaces}{25}{chapter.2}
 \contentsline {section}{\numberline {2.1}Lecture 3: Schemes and algebraic spaces I}{25}{section.2.1}
-\contentsline {section}{\numberline {2.2}Lecture 4: Schemes and algebraic spaces II}{25}{section.2.2}
-\contentsline {section}{\numberline {2.3}Lecture 4 1/2: Complements on schemes and algebraic spaces}{25}{section.2.3}
+\contentsline {section}{\numberline {2.2}Lecture 4: Schemes and algebraic spaces II}{26}{section.2.2}
+\contentsline {section}{\numberline {2.3}Lecture 4 1/2: Complements on schemes and algebraic spaces}{26}{section.2.3}
 \contentsline {chapter}{\numberline {3}Stacks}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}Lecture 5: Stacks I}{27}{section.3.1}
 \contentsline {section}{\numberline {3.2}Lecture 6: Stacks II}{27}{section.3.2}
