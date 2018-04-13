@@ -1848,7 +1848,7 @@ We omit the proof, it can be found in Hartshorne or Eisenbud.
     Since $f^{-1}(U) = \bigcup f^{-1}(U_\alpha)$ and $\calf$ is a sheaf, there is a unique $s\in\calf(f^{-1}(U))$ such that $s|f^{-1}(U_\alpha) = s_\alpha$. Hence $s \in (f_*\calf)(U)$, $s|U_\alpha = s_\alpha$. The uniqueness follows from the same kind reasoning.
 \end{proof}
 
-\subsection{Mar 27th: Morphism of shcemes}
+\subsection{Mar 27th: Morphism of schemes}
 Recall: $\spec A$, Zariski topology $\calo_A$ structure sheaf.
 
 \underline{Observe}: 
@@ -2111,6 +2111,286 @@ $$
 K_S(x)\lrta K.
 $$
 Concretely, ``the coordinates of $x$ are in $K^n$''
+
+\subsection{Apr 10th: }
+Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$,  $(\calo_{S,x})$ are local rings. s.t. $\forall x\in S$, exists an open set $U\in S$ $x\in U$ and a ring $A$ s.t. 
+$(U,\calo_{S}\mid_U)\simeq \spec A$.
+
+We will give some examples of morphism of schemes.
+\begin{ex}
+\begin{enumerate}[label=(\arabic*)]
+\item $A, B$ are rings. 
+$$
+\hom_{Sch}(\spec A,\spec B)=\hom_{Rings}(B,A)
+$$
+\item $K$ is a field.
+$$
+[X\lrta \spec K-\{\eta\}]\Llrta [K\lrta \Gamma(X,\calo_X)]
+$$
+(also for any $x\in X$, we get $\calo_{K,\eta}=K\lrta \calo_{X,x}\lrta \kappa(x)$) so every residue field is an extension of $K$.
+\item $$
+[\spec(K)\overset{f}{\lrta } X]\Llrta [\text{a point $x=f(\eta)$ and } \calo_{X,x}\overset{f^*}{\lrta } K]
+$$
+s.t. $\ker(f^*)=\scm_{X,x}$ i.e. $\kappa(x)\inj K$.
+
+I.e. $\hom_{Sch}(\spec(K), X)\cong\{(x,i)|x\in X, i:\kappa(x)\inj K\}$. 
+
+In particular, take $X=\spec(K[X_1,...,X_n]/(f_1,...,f_m))$ then using $(1)$, we get 
+$$
+\hom_{Sch}(\spec K, X)\simeq \hom_{Rings}(K[X]/I, K).
+$$
+If we only consider morphism over $\spec K$,
+$$
+\begin{tikzcd}
+\spec K \arrow[rd, "id"] \arrow[rr] &  &X \arrow[ld] \\
+ & \spec K & ,
+\end{tikzcd}
+$$
+we look ar $\hom_{K-alg}(K[X]/I ,K)$
+
+$K$-linear $K[X]/I\lrta K$ $\Llrta $ giving $x=(x_1,...,x_n)\in K^n$ s.t. $f_1(x)=...=f_m(x)=0$ so
+$$
+\hom_{Sch\ over\ K}(\spec K, X)
+$$
+are the $K$-valued solutions of the equation defining $X$.
+
+\underline{Notation}: Any $S\overset{f}{\lrta }X$ is called an $S$-valued point of $X$.
+\item  (restriction of morphisms)
+$$
+U\subset X\overset{f}{\lrta} Y
+$$
+where $U$ is open. We want to restrict $f$ to $U$, first $(U,\calo_X\mid U)$ is locally ringed space. (We will see that it is a scheme.)
+
+Let $f|U:(U,\calo_X\mid U)\lrta X$ be defined by 
+$$
+(f|U)(x)=f(x)\forall x\in U
+$$
+so $f| U$ is continuous and 
+$\calo_Y\overset{f|_U^*}{\lrta }(f|U)_*(\calo_X|U)$ defined by 
+$
+\forall V\in Y,\text{ open }
+$
+$$
+\calo_Y(V)\lrta (\calo_X|U)((f|U)^{-1} (V))=\calo_X(U\cap f^{-1}(V))
+$$
+obtained by 
+$$
+\calo_Y(V)\lrta \calo_X(f^{-1}(V))\overset{\res}{\lrta}\calo_{X}(f^{-1}(U)\cap V).
+$$
+This is a morphism of ringed spaces. Moreover, we can check that it is a morphism of schemes. On the stalks, the induced morphisms 
+$$
+\calo_{Y,(f|U)(x)=f(x)}\lrta \calo_{X,x}
+$$
+are the same as those from $f$ it self. 
+
+\underline{Check} $V\subset U\subset X\Lrta f|V=(f|U)|V$.
+\item \underline{Prop}. Any $U\subset X$, where $X$ is a scheme, $U$ open , is a scheme. 
+(\underline{Note}: in general, this is not an affine  scheme even if $X$ is affine.)
+Let $X=\affn^2_\cplx=\spec(\cplx{X_1,X_2})$, $U=X-\{(0,0)\}$ open, where the point $(0,0)$ corresponds to the maximal ideal $(X_1,X_2)\cplx[X]$. $U$ is not  an affine scheme because one can check that 
+$$
+\begin{tikzcd}
+\Gamma(U,\calo_U) \arrow[d, equal] \arrow[r, "\simeq"] & \cplx[X_1,X_2] \arrow[d,equal] \\
+\Gamma(U,\calo_X|U) \arrow[d,equal] & \Gamma(X,\calo_X) \\
+\Gamma(U,\calo_X) & 
+\end{tikzcd}
+$$
+\boxed{Hartlog's phenomenon} so if $U$ was affine, we would get $U\overset{\simeq}{\inj} X$ which is absurd.
+\begin{proof}[Proof of Prop]
+$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open nbhd of $x\in U$, and is  open in $V=\spec A$ so it it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (We already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
+
+To deduce the Prop, it suffices to have an isomorphism 
+$$
+\calo_{A_f}\overset{\simeq}{\lrta} i_*\calo_{U_f}
+$$
+i.e. for all $V\subset \spec (A_f)$ open an isomorphism 
+$$
+\calo_{A_f}(V)\overset{\simeq }{\lrta} \calo_{U_f}(i^{-1}(V))
+$$
+and compatible with restrictions.
+
+\underline{Recall}: $\calo_{A_f}(U)=\{g:U\lrta \sqcup_{Q\in U}(A_f)_Q|g\text{ ``locally'' } \frac{a}{b}, a,b\in A_f\} $
+
+$$
+\calo_{U_f}(i^{-1}(V)=\calo_A(i^{-1}(V)))=\{\tilde{g}: i^{-1}(V)\lrta \sqcup_{\scp \in A_{\scp}}|\tilde{g}=\frac{\tilde{a}}{\tilde{b}}, \tilde{a},\tilde{b}\in A\}
+$$
+The morphism $g\mapsto \tilde{g}$ is given by $\tilde{g}(\scp)=g(\scp A_f)=g(i(\scp))$. This works because $a=\tilde{a}/f^n$ and $b=\tilde{b}/f^m$ so $a.b=f^m\tilde{a}/f^n\tilde{b}$
+\end{proof}
+\item A discrete valuation ring is a local ring $A$ with maximal ideal $\scm_A\subset A$ being a principal ideal generated by $\varpi\in A$ (``uniformizer'')\footnote{$A$ is a the local ring at a closed point of  a non-singular point of a curve}
+$A/\scm_A-k$ is the residue field. (Exercise. $A=\{a/b\in Q|p\nmid b,a\in \intg\}$, $\scm_A=\scp A,\varpi =p$)
+
+$\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=\varpi A=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$, $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
+$$
+\calo_A(\emptyset)=0,\calo_A(\spec A)=A, \calo_A(\{\eta\})\simeq A_\varpi=K=Frac(A)
+$$
+(since $A_\varpi=\{\frac{a}{\pi^n}|n\geq 0\}$ and any $b\notin \varpi A$ is invertible)
+$$
+\kappa(s)=A/\scm_A=k
+$$
+$$
+\kappa(\eta)=Frac(A/\{0\})=K
+$$
+$$
+\res^{\spec A}_{\{\eta\}}:A\lrta A_\varpi=K
+$$
+is the inclusion. What is the nature of schemes over $A$?
+$$
+f:X\lrta \spec(A)
+$$
+\underline{Topologically}: $X=X-s\sqcup X_\eta$,
+$$
+f(x)=\left\{\begin{aligned}
+&s, x\in X_s\\
+& \eta, x\in X_\eta
+\end{aligned}\right.
+$$
+s.t. $f^{-1}(\{\eta\})=X_\eta$ is open in $X$. (topology is determined by an oepn set $X_\eta\subset X$),
+
+\underline{sheaf-theoretical point}
+$$
+\calo_A\lrta F_*\calo_X\Llrta \begin{tikzcd}
+A=\calo_A(\spec A) \arrow[r, "f^*_A"] \arrow[d, "\res"'] & \calo_X(X) \arrow[d] \\
+K=\calo_A(\{\eta\}) \arrow[r, "f^*_\eta"'] & \calo_X(X_\eta)
+\end{tikzcd}
+$$
+such that 
+$$
+\res^X_{X_\eta}(f^*_A(a))=f^*_\eta(a)(\text{ viewed a elements of }K).
+$$
+It is locally ringed $\forall x, \calo_{A,f(x)}\lrta \calo_{X,x}$ local $\Llrta \forall x\in X_\eta$, $\calo_{A,\eta}=A_\eta=K\lrta \calo_{X,x}$ (always local) and 
+$\forall s\in X_s$, $\calo_A(\spec A)=A=\calo_{A,s}\lrta \calo_{X,x}$, where the equality holds because $\spec A$ is the only open set that containing $s$.
+\end{enumerate}
+\end{ex} 
+
+\begin{exercise}
+For any scheme $X$, there is a unique morphism $X\lrta \spec(\intg)$. recall $\dim(\intg)=1$.
+\end{exercise}
+\begin{proof}
+If $X=\spec A$, then
+$$
+\hom_{Sch}(\spec A,\spec \intg)=\hom){Rings}(\intg, A)=\{1\mapsto 1\}
+$$
+has a unique element. If $X$ is arbitrary, $X=\cup_{i}\spec A_i$ for every $i$, there is a unique $f_i:\spec (A_i)\lrta \spec \intg$. Intuitively, this implies uniqueness $(f,\tilde{f}:x\lrta \spec \intg)\Lrta f|\spec(A_i)=f_i=\tilde{f}|\spec(A_i)$ and thus implies $f=\tilde{f}$ and also the existence since
+$$
+f_i|\spec(A_i)\cap \spec(A_j)=f_j|\spec(A_i)\cap \spec(A_j)
+$$
+
+Indeed
+\begin{prop}
+Given $X,Y$ schemes, $X=\cup_i U_i$ open covering. To give $f:X\lrta Y$ is ``the same'' as giving $f_i|U\lrta Y$ s.t. $f_i|U_i\cap U_j=f_j|U_i\cap U_j$.
+
+$f\mapsto (f|U_i)_j$ is a bijection.
+\end{prop}
+\underline{surjectivity}: Given $(f_i), f_i:U_i\lrta Y$ construct $f$? 
+$$
+X\overset{f}{\lrta } Y
+$$
+
+\underline{Topologically}: $f(x)=f_i(x)$ if $x\in U_i$ is well-defined since $f_i(x)=f_j(x)$ if $x\in U_i\cap U_j$. $f$ thus defined is continuous (exercise)
+
+\underline{Sheaf-theory} we need $\calo_Y\lrta f_*\calo_X$: $\forall V\subset Y$, $\calo_Y(V)\overset{?}{\lrta}\calo_X(f^{-1}(V))$. Given $s\in \calo_Y(V)$, we get $s_i\in \calo_{U_i}(f_i^{-1}(V))=\calo_X(f_i^{-1}(V))$ and $f^{-1}(V)=\cup_i f_i^{-1}(V)$ and 
+$s_i|f_i^{-1}\cap f_j^{-1}(V)=s_j|f_i^{-1}(V)\cap f_j^{-1}(V)$. By the sheaf condition on $\calo_X$ , there exists a  unique $\tilde{s}\in \calo_X(f^{-1}(V))$ s.t.
+$$
+\tilde{s}|f^{-1}(V_i)=s_i,\forall i.
+$$
+The map $s\mapsto \tilde{s}$ is the required
+$\calo_Y(V)\lrta \calo_X(f^{-1}(V))\Lrta $ get $\calo_Y\overset{f^*}{\lrta }f_*\calo_X$. It is local because if $x\in U_i\subset X$ the induced 
+\end{proof}
+
+\subsection{Aprl 13th: }
+\begin{ex}
+\begin{prop}
+For any scheme $X$ and any ring $A$, there is a bijection
+$$
+\hom_{Sch}(X,\spec A)\simeq \hom_{Rings}(A,\calo_X(X))
+$$
+given by 
+$$
+X\overset{f}{\lrta}\spec A
+$$
+$$
+\Lrta \calo_A\overset{f^*}{\lrta} f_*\calo_X\Lrta A=\calo_{\spec A}(\spec A)\lrta \calo_X(f^{-1}\spec A)=\calo_X(X)
+$$
+\underline{Ex}.\begin{enumerate}[label=(\arabic*)]
+\item $\hom_{Sch}(X,\spec K)\llrta K\inj c\calo_X(X)$
+\item $\hom_{Sch}(X,\spec \intg)\simeq \hom(\intg,\calo_X(X))$ has a unique element. ($\spec \intg$ is the final object in $\mathsf{Sch}$) 
+\item $\hom_{Sch}(X,\affn^1_\intg)\simeq\hom(\intg[T],\calo_X(X))$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+$$
+X=\cup_i U_im U_i=\spec(A_i)\text{ open in } X
+$$
+$$
+\begin{aligned}
+\hom_{Sch}(X,\spec A)&=\{(f_i):f_i:U_i\lrta \spec A\text{ s.t. }f_i|U_i\cap U_j=f_j|U_i\cap U_j\}\\
+&\cong\{(g_i):g_i:A\lrta A_i,\text{ which are compatible on intersections} \}\\
+&\cong\{(g_i\: g_iA\lrta \Gamma(U_i\calo_X),\forall a\in A, g_i(a)|U_i\cap U_j=g_j(a)|U_i\cap U_j\}\\
+&\simeq\{g|g:A\lrta \calo_X(X)\}
+>>>>>>>>>>1
+\end{aligned}
+$$
+\end{proof}
+\underline{Note} in general, 
+$$
+\hom_{Sch}(\spec A. X)\neq \hom_{rings}(\calo_X(X),A)
+$$
+\underline{Ex}. $X=\proj^1_K$, $\Lrta \calo_X(X)=K$. If $A=K$, then $\hom_{rings}(K,K)=\{id\}$ but 
+$\hom(\spec \ratl,\proj^1_\ratl)$ has infinitely many elements.
+\end{ex}
+\section{Fiber product}
+This is a notion that makes sense in any category.
+\begin{dfn}
+$\calc$ a category, $X,Y$ objects of $\calc$, $S$ an object of $\calc$. Assume given
+$$
+\begin{tikzcd}
+ & Y \arrow[d, "f_2"'] \\
+X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+We say that an object $Z$ of $\calc$ with morphisms 
+$$
+\begin{tikzcd}
+Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+makes the diagram commutes is a \textbf{fibre product} of $X,Y$ over $S$ if it has the universal property
+$$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
+ & Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+ & X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+
+\underline{Notation}: $Z=X\times_S Y$
+\end{dfn}
+N.B. This notation is ambiguous because the fibre product depends on $f_1,f_2$. The fibre product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
+\begin{ex}
+In $\mathsf{Sets}$ fibre products exist and
+$$
+X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
+$$
+with $\pi_1(x,y)=x$ and $\pi_2(x,y)=y$
+\end{ex}
+\begin{thm}
+In the category $\mathsf{Sch}$ of schemes, arbitrary fibre product exists.
+\end{thm}
+\underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
+\begin{proof}
+\ \begin{enumerate}[label=(\arabic*)]
+\item $f_2\circ \pi_2(x,y)=f_2(y)=f_1(x)=f_1\circ \pi_1(x,y)$ for $(x,y)\in Z$.
+\item Let $T$ be a set with $p_1:T\lrta X$ and $p_2:T\lrta Y$ s.t. $$\begin{tikzcd}
+T \arrow[rdd,"p_1"] \arrow[rrd,"p_2"] \ar[rd,"f"] &  &  \\
+ & Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+ & X \arrow[r, "f_1"] & S
+\end{tikzcd}$$
+define $f(t)=(p_1(t),p_2(t))$, $f_1(p_1(t))=f_2(p_2(t))$, therefore $f(t)\in Z$. So $f$ is a map makes the  above diagram commute. Uniqueness of $f$ is obvious. If there is  another $\tilde{f}(t)=(\tilde{f}_1(t),\tilde{f}_2(t))$ making the above diagram commute, then $\tilde{f}_1(t)=\pi_1\circ \tilde{f}(t)=p_1(t)$ and $\tilde{f}_2(t)=\pi\circ \tilde{f}(t)=p_2(t)$.
+\end{enumerate}
+\underline{Note}: This construction/definition is a an example of ``universal'' object in the categorical sense. It is universal in the following sense.
+
+Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibre products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$
+\end{proof}
 
 
 \end{document}

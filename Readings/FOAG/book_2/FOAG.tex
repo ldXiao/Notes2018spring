@@ -109,12 +109,12 @@
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
 
-\include{Chaps/Chap1}
+%\include{Chaps/Chap1}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------
 
-\include{Chaps/Chap2}
+%\include{Chaps/Chap2}
 
 
 
@@ -1390,7 +1390,7 @@ In this section we will use the notion $\pi^\#$ to denote the induced morphism o
 Show that morphisms of locally ringed spaces glue (cf. Exercise~\ref{chap6exr:glue_morphisms_of_ringed_spaces}). (Hint: your solution to Exercise~\ref{chap6exr:glue_morphisms_of_ringed_spaces} may work without change.)
 \end{exr}
 \begin{proof}[Sol]
-With out change of the proof, we only need to check the glued morphism of ringed spec is in fact a morphism of locally ringed spaces.
+Without change of the proof, we only need to check the glued morphism of ringed spaces is in fact a morphism of locally ringed spaces.
 
 This is easy because for each pair of points $p,q,\pi(p)=q$, we can check that
 $$
@@ -1484,6 +1484,27 @@ $$
 Because both of them are contravariant functors, this indicates a equivalence of categories between $\mathsf{Rings}$ and $\mathsf{Affn}^{op}$.
 
 \end{proof}
+\begin{exr}
+(This exercise can given you some practice with understanding morphisms of schemes by cutting up into affine open sets.) Make sense of the following sentence: ``$ \affn^{n+1}_k\backslash \{0\}\lrta \proj^n_k$ given by 
+$$
+(x_0,x_1,...,x_n)\mapsto[x_0,x_1,...,x_n]
+$$
+is a morphism of schemes.''
+(Can you generalize to the case where $k$ is replaced by a general ring $B$?)
+\end{exr}
+\begin{proof}[Sol]
+$\affn^{n+1}_k\backslash \{0\}$ can be covered by affine opens like
+$$
+\spec A_i,\ \ \  A_i:= k[x_0,...,x_n]_{x_i}
+$$
+On the other hand $\proj^{n}_{k}$ can be covered by affine opens
+$$
+\spec B_i
+$$
+\end{proof}
+\begin{exr}
+Show that morphism $X\lrta \spec A$ are in natural bijection with ring morphisms $A\lrta \Gamma(X,\calo_X)$.
+\end{exr}
 \chapter{Useful classes of morphisms}
 \chapter{Closed embeddings}
 \chapter{Fibered product of schemes}

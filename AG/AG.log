@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  10 APR 2018 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  13 APR 2018 09:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,12 +903,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 712.
-[14] [15] [16] <Y^2-X^3.pdf, id=231, 270.00874pt x 270.00874pt>
+[14] [15] [16] <Y^2-X^3.pdf, id=246, 270.00874pt x 270.00874pt>
 File: Y^2-X^3.pdf Graphic file (type pdf)
 <use Y^2-X^3.pdf>
 Package pdftex.def Info: Y^2-X^3.pdf used on input line 846.
 (pdftex.def)             Requested size: 135.00403pt x 135.00403pt.
-<Y^2=X^3-X.pdf, id=232, 266.9975pt x 266.9975pt>
+<Y^2=X^3-X.pdf, id=247, 266.9975pt x 266.9975pt>
 File: Y^2=X^3-X.pdf Graphic file (type pdf)
 <use Y^2=X^3-X.pdf>
 Package pdftex.def Info: Y^2=X^3-X.pdf used on input line 860.
@@ -989,23 +989,34 @@ Overfull \hbox (70.46886pt too wide) detected at line 1986
 []
  []
 
-[40] [41] [42] [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2116.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2116.
+[40] [41] [42] [43] [44] [45] [46] [47]
+Overfull \hbox (19.94008pt too wide) detected at line 2331
+[] []
+ []
+
+[48pdfTeX warning (ext4): destination with the same identifier (name{thm.2.48})
+ has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.2356 $$
+         ] [49] [50]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2396.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2396.
 (/Users/vector_cat/Dropbox/2018spring/AG/AG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2116.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2396.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2396.
 
 Package rerunfilecheck Info: File `AG.out' has not changed.
-(rerunfilecheck)             Checksum: 0D2C5134C416634917EBE79B1F2CE53A;1004.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2116.
+(rerunfilecheck)             Checksum: D483109F7DF923F2B68A2A1AB1A4E707;1174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2396.
  ) 
 Here is how much of TeX's memory you used:
- 28471 strings out of 493089
- 670212 string characters out of 6134842
- 812787 words of memory out of 5000000
- 31230 multiletter control sequences out of 15000+600000
- 22522 words of font info for 91 fonts, out of 8000000 for 9000
+ 28823 strings out of 493089
+ 678253 string characters out of 6134842
+ 820561 words of memory out of 5000000
+ 31546 multiletter control sequences out of 15000+600000
+ 25518 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,16n,84p,759b,1195s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1017,27 +1028,30 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on /Users/vector_cat/Dropbox/2018spring/AG/AG.pdf (43 pages, 418
-199 bytes).
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on /Users/vector_cat/Dropbox/2018spring/AG/AG.pdf (50 pages, 475
+331 bytes).
 PDF statistics:
- 584 PDF objects out of 1000 (max. 8388607)
- 506 compressed objects within 6 object streams
- 221 named destinations out of 1000 (max. 500000)
- 127 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 664 PDF objects out of 1000 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 249 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

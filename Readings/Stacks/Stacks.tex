@@ -188,6 +188,7 @@
 \renewcommand{\baselinestretch}{1.1}
 \newcommand{\mor}{{\textnormal Mor\,}}
 \renewcommand{\hom}{{\textnormal Hom}}
+\newcommand{\spec}{\textnormal{Spec}\,}
 \newcommand{\reals}{\mathbb R}
 \newcommand{\cplx}{\mathbb C}
 \newcommand{\intg}{\mathbb Z}
@@ -767,7 +768,7 @@ $$
 \item We say that the morphisms in $\bfp$ \textbf{have open images} if every morphism $f:X\lrta Y$ in $\bfp$, there exists a family of morphism $\{X'_i\lrta Y\}$ in $\bfp$ that satisfies the following two conditions
 \begin{enumerate}[label=(\alph*)]
 \item The morphisms $X_i'\lrta Y$ are monomorphisms.
-\item The morphisms of sheaves $h_X\lrta h_Y$ and $\coprod_i h_{X'_i}\lrta h_Y$ have open images.
+\item The morphisms of sheaves $h_X\lrta h_Y$ and $\coprod_i h_{X'_i}\lrta h_Y$ have the same images\sidenote{{\color{red} Here the image means the categorical image, as defined in }\href{https://en.wikipedia.org/wiki/Image_(category_theory)}{The definition}}.
   \end{enumerate}
 \item We say that the morphisms in $\bfp$ are \textbf{locally carrable} if for every morphism $f:X\lrta Y$ in $\bfp$, there exists a $\bfp$-open covering $\{X_i\lrta X\}_{i\in I}$ so that each morphism $X_i\lrta Y$ are carrable.
 \end{enumerate}
@@ -776,11 +777,11 @@ We finally arrive at the key definition of this lecture.
 \begin{dfn}\label{dfn:geometric_context}
 A \textbf{geometric context} means to give a category $\calc$, a (pre)topology $\tau$ on $\calc$, and class of morphisms $\bfp$ in $\calc$ so that the following conditions are satisfied.
 \begin{enumerate}
-\item The topology $\tau$ is sub-canonical.
+\item The topology $\tau$ is subcanonical\sidenote{\color{red} a Grothendieck topology on a category is called subcanonical if all representable presheaves on the site are sheaves}.
 \item The morphism in $\bfp$ are locally carrable.
 \item $\bfp$ is stable under composition and change of basis, contains identities and is local for topology $\tau$.
 \item The triple $(\calc,\tau,\bfp)$ is compatible with finite coproducts.
-\item The morphism in $\bfp$ have open images.
+\item The morphisms in $\bfp$ have open images.
   \end{enumerate}
 \end{dfn}
 It is now important to note the following fact which will be used implicitly afterwards.
@@ -832,9 +833,9 @@ where the $u_i$ are homeomorphisms , and $q_i$, $p_i$ are respectively $U_i\subs
 \end{ex}
 \subsection{Manifolds}
 We fix a geometric context $(\calc,\tau,\bfp)$ in the sense of Definition~\ref{dfn:geometric_context}.
-\begin{dfn}\ 
+\begin{dfn}\label{dfn:open_immersions}\ 
 \begin{enumerate}
-\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an \textbf{open immersion} if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that their image under $f$ is the same as the image under\sidenote[][-6\baselineskip]{{\color{red}This ``image'' seems to mean the image of $F(X_i)\lrta F(X)$ under the natural transformation $f$}} $\coprod_i h_{X_i}\lrta h_X$.
+\item Let $X\in \calc$. A morphism of sheaves $f:F\lrta h_X$ is an \textbf{open immersion} if it is a monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that the image of $f$ is the same as the image of $\coprod_i h_{X_i}\lrta h_X$.
 \item A morphism of sheaves $f:F\lrta G$ is an \textbf{open immersion} if for all $X\in\calc$ and all morphism $h_X\lrta G$, the induced morphism 
 $$
 F\times_G h_X\lrta h_X
@@ -846,7 +847,7 @@ We remark that condition $(5)$ in the definition~\ref{dfn:geometric_context} of 
 
 We can show that the open immersions are stable under composition and change of basis (Exercise\sidenote[][-15\baselineskip]{It is stable under change of base because
 $$
-(F\times_G H)\times_H h_X\simeq F\times_G \times h_X
+(F\times_G H)\times_H h_X\simeq F\times_G h_X
 $$
 for all $X\in \calc$. It is stable under composition because
 $$
@@ -868,7 +869,7 @@ A sheaf $F\in \ssh(\calc,\tau)$ is a \textbf{manifold}\sidenote[][15\baselineski
 \item The morphism $p$ is an epimorphism of sheaves.
 \item For each $i\in I$, the morphism $h_{U_i}\lrta F$ is an open immersion.
 \end{enumerate}
-The assignment of $U_i$ and morphism $p:\coprod_{i\in I} h_{U_i}\lrta F$ is called an \textbf{open atlas} of $F$.
+The data of $U_i$ and morphism $p:\coprod_{i\in I} h_{U_i}\lrta F$ is called an \textbf{open atlas} of $F$.
 \end{dfn}
 The category of manifolds is the full subcategory of the category of sheaves $\ssh(\calc,\tau)$ formed by manifolds.
 
@@ -879,7 +880,7 @@ Each geometric context in the Example~\ref{ex:geometric_context} thus give rise 
 \item The category of manifolds in context $(3)$ is equivalent to the category of topological manifolds
 (We remark that the open immersions are the same as in $(2)$, although the $\bfp$s are different).
 \item The category of manifolds in context $(4)$ is equivalent to the category of differentiable manifolds.
-\item The category of manifolds in context $(5)$ is equivalent to the category of differentiable manifolds.
+\item The category of manifolds in context $(5)$ is equivalent to the category of smooth manifolds.
 \item The category of manifolds in context $(6)$ is equivalent to the category of complex manifolds.
 \end{enumerate}
 
@@ -907,7 +908,7 @@ As will be explained in the following important lemma, in particular, the notion
 \item Each morphism $X_i\lrta X$ is a monomorphism  and belongs to $\bfp$.
 \item For each $i$, the sheaf $F\times_{h_X}h_{X_i}$ is a manifold.
 \end{enumerate}
-If so, we say the sheave $F$ is a manifold.
+If so, we obtain the sheave $F$ is a manifold.
 \item The morphisms having property $\bfp$ in the sense of definition~\ref{dfn:geometric_space_property} are stable under composition and change of basis.
 \item Let $f:X\lrta Y$ be  a morphism in $\calc$. Then $f$ is in $\bfp$ if and only if the morphism $h_f:h_X\lrta h_Y$ has property $\bfp$ in the sense of definition~\ref{dfn:geometric_space_property}
 \item A morphism $f:X\lrta Y$ induces an open immersion $h_f:h_X\lrta h_Y$ if and only if $f$ belongs to  $\bfp$ and if it is a monomorphism in $\calc$.
@@ -918,7 +919,25 @@ Let $f:F\lrta G$ be an open immersion. Let $X\in \calc, h_X\lrta G$ be a morphis
 $$
 F':=F\times_G h_X\lrta h_X.
 $$
-There exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that $F'$ identifies with the image of morphism $\coprod_i h_{X_i}\lrta h_X$. With the useful fact that the morphism of $\bfp$ have open images, we can further suppose that each $h_{X_i}\lrta h_X$ is a monomorphism. With the useful fact that the morphism in $\bfp$ are locally carrable, we can also suppose that the morphisms $X_i\lrta X$ are carrable in $\calc$. The morphisms $h_{X_i}\lrta h_X$ would factorize through $F'$. Moreover, we see easily (Exercise) that each morphism $h_{X_i}\lrta F'$ is an open immersion. By hypothesis, the morphism $P:\coprod_i h_{X_i}\lrta F'$ is an epimorphism, which implies that $F'$ is a manifold. In addition, $p:\coprod_i h_{X_i}\lrta F'$ is an open atlas that $h_{X_i}\lrta h_X$ is in $\bfp$. This shows that $f$ is in $\bfp$.
+By definition of open immersion, the morphism $F'\lrta h_X$ is an open immersion.
+$F'\lrta h_X$ is monomorphism and there exists a family of morphisms $\{X_i\lrta X\}$ in $\bfp$ so that $F'\lrta h_X$ has the same image of morphism $\coprod_i h_{X_i}\lrta h_X$. (i.e. $F'$ is itself identified with the image of $\coprod_i h_{X_i}\lrta h_X$).  
+With the useful fact that the morphism of $\bfp$ have open images, we can further suppose that each $h_{X_i}\lrta h_X$ is a monomorphism. With the useful fact that the morphism in $\bfp$ are locally carrable, we can also suppose that the morphisms $X_i\lrta X$ are carrable in $\calc$. The morphisms $h_{X_i}\lrta h_X$ would 
+factorize through $F'$. Moreover, we see easily (Exercise\sidenote[][-25\baselineskip]{\color{gray}Check the definition of open immersion~\ref{dfn:open_immersions}, what we want to show is that for any $h_Y\lrta F'$, $h_{X_i}\times_{F'}h_Y\lrta h_Y$ is an open immersion.}) that each morphism $h_{X_i}\lrta F'$ is an open immersion.
+{\color{gray}
+\begin{marginfigure}[-50\baselineskip]
+$$
+\begin{tikzcd}
+h_{X_i} \arrow[r] \arrow[rr, hook, bend right] & F' \arrow[r, hook] & h_X
+\end{tikzcd}
+$$
+One can check that when two out of three arrows of the above commutative diagram are monomorphisms, the third is also a monomorphism. $h_{X_i}\lrta F'$ being a monomorphism indicates that the pullback $h_{X_i}\times_{F'} h_Y\lrta h_Y$ is also a monomorphism. 
+
+On the other hand, because $X_i\lrta X$ is carrable, we set $Y_i:=X_i\times_X Y$, where $Y\lrta X$ is induced by $h_Y\lrta F'\lrta h_X$. The image of $$
+ h_{Y_i}=h_{X_i}\times_{h_X}h_Y\lrta h_Y
+$$
+is the same as the image of $h_{X_i}\times_{F'} h_Y\lrta h_Y$?{\color{red} Unfinished, I suppose it is not as easy as indicated}
+\end{marginfigure}}
+By hypothesis, the morphism $p:\coprod_i h_{X_i}\lrta F'$ is an epimorphism, which implies that $F'$ is a manifold. In addition, $p:\coprod_i h_{X_i}\lrta F'$ is an open atlas that $h_{X_i}\lrta h_X$ is in $\bfp$. This shows that $f$ is in $\bfp$.
 
 (2). Let $F_i:=F\times_{h_X}h_{X_i}$. For all $i$, there exists an open atlas $\coprod_j V_{i,j}\lrta F_i$. We verify then the morphism
 $$
@@ -933,6 +952,51 @@ is an open atlas.
 Reciprocally, if $h_f$ is in $\bfp$, there exists a $\bfp$-cover $\{X_i\lrta X\}$ so that each morphism $X_i\lrta Y$ is in $\bfp$. Therefore $\bfp$ is local for $\tau$, which implies $f$ is in $\bfp$.
 
 (5) is induced from $(4)$ plus the fact that a morphism $f$ in $\calc$ is a monomorphism if and only if the morphism $h_f$ is a monomorphism in $\ssh(\calc,\tau)$.
+\end{proof}
+
+\begin{dfn}
+A sheaf $F$ is a \textbf{geometric space} if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism $p:\coprod_{i\in I}h_{U_i}\lrta F$ that satisfy the following two conditions.
+\begin{enumerate}
+\item The morphism $p$ is an epimorphism of sheaves.
+\item For each $i\in I$, the morphism $h_{U_i}\lrta F$ belongs to $\bfp$. 
+\end{enumerate}
+The data of objects $U_i$ and the morphism $p:\coprod_i h_{U_i}\lrta F$ would be called an \textbf{atlas} of $F$.
+\end{dfn}
+The category of geometric spaces is a full subcategory of the category $\ssh(\calc,\tau)$ formed by geometric spaces.
+
+A manifold is an example of geometric spaces (because the open immersion is also a morphism in $\bfp$).
+
+We finish with the following proposition, which presents the geometric spaces as quotient of manifolds by some equivalence relations.
+
+\begin{prop}
+Let $F$ be an geometric space. Then, there exists a sheaf $X$, and an equivalence relation $R\subset X\times X$ satisfying the following conditions.
+\begin{enumerate}
+\item Then sheaves $X$ and $R$ are manifolds. The sheaf $X$ is a disjoint union of objects in $\calc$ (i.e. $X\simeq \coprod h_{U_i}$, with $U_i\in \calc$).
+\item The two morphisms $R\inj X\times X\lrta X$ are in $\bfp$.
+\item The sheaf $F$ is isomorphic to the quotient sheaf of $X$ by the relation $R$.
+$$
+F\simeq X/R=colim(R\rightrightarrows X).
+$$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We choose an atlas
+$$
+p:\coprod_i h_{U_i}\lrta F.
+$$
+We set $X:=\coprod h_{U_i}$ and $R:=X\times_F X$. As the morphism $p$ is an epimorphism, we have
+$$
+F\simeq colim(X\times_F X\rightrightarrows X),
+$$
+which satisfies the condition $(3)$. To check condition $(1)$, we write
+$$
+R=X\times_X X\simeq \coprod_{i,j}h_{U_i}\times_F h_{U_j}.
+$$
+This shows that $R$ is a disjoint union of manifolds and therefore a manifold. Finally, as each morphism $h_{U_i}\lrta F$ is in $\bfp$, we have that each projection
+$$
+h_{U_i}\times_F h_{U_j}\lrta h_{U_i}
+$$
+is in $\bfp$. This implies condition $(2)$.
 \end{proof}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
@@ -955,7 +1019,187 @@ A\simeq \cplx[y_1,...,y_m]/(Q_1,..,Q_s),
 $$
 and hence construct an algebraic variety in $\cplx^m$ by the equations $Q_1(y)=...=Q_s(y)=0$.
 
-This shows that there exists a co 
+This shows that there exists a correspondence between affine algebraic varieties over $\cplx$ (i.e. the one that are subvarieties of $\cplx^n$ for some $n$) and commutative $\cplx$-algebras of finite type. The starting point of scheme theory is to consider general commutative ring $A$ (rather than restricting to only the commutative $\cplx$-algebras of finite type), where a scheme $X$ should be considered as the geometric object of which $A$ is the ring of algebraic functions over $X$. The geometric object associated to the ring are called affine schemes, and a scheme is by definition glue up from affine schemes (just like a topological manifold is glue up by  a collection of open subsets in $\reals^n$). We draw from that the following two principles
+
+\textsf{The affine schemes are in correspondence with commutative rings.}
+
+\textsf{The schemes are obtained by gluing up affine schemes}
+
+We can combine the two principles to obtain the following principle.
+
+\textbf{The schemes are obtained by gluing up commutative rings.}
+
+We have to pay attention that the correspondence between affine schemes and commutative rings are contravariant. Therefore, we will seek to define the geometric context $(\calc,\tau,\bfp)$, where $\calc$ is the opposite category of the commutative rings.
+\subsection{Recollection on rings and modules.}
+We first recall that given a ring $A$, there exists  a notion of $A$-module (left): an $A$-module is an abelian group $M$ endowed with a bi-linear action $m:A\times M\lrta M$ so that 
+$$
+m(a,m(b,x))=m(a\cdot b,x),\ \forall a,b\in A\forall x\in M
+$$
+$$
+m(1,x)=x,\ \forall x\in M.
+$$
+We use the notion $a\cdot x:=m(a,x),\forall a\in A\forall x\in M$.
+
+For two $A$-modules  $M$ and $N$, a morphism of $A$-modules $M\lrta N$ is a morphism of abelian groups $f:M\lrta N$ so that $f(a\cdot x)=a\cdot f(x)\forall a\in A\forall x\in M$. The $A$-module and morphism of $A$-modules form a category $A-\mathsf{Mod}$.
+
+If $f:A\lrta B$ is a morphism of rings, we define a functor
+$$
+F:B-\mathsf{Mod}\lrta A-\mathsf{Mod}
+$$
+where for each $B$-module $M$, the abelian group structure of $F(M)$ is identical to those of $M$, and the the structure of $A$-module is given by 
+$$
+a\cdot x:=f(a)\cdot x, \ \forall a\in A\forall x\in M.
+$$
+We can show that the functor $F$ has a left adjoint
+$$
+\begin{aligned}
+A-\mathsf{Mod}&\lrta B-\mathsf{Mod}\\
+M&\longmapsto B\otimes_A M.
+\end{aligned}
+$$
+The abelian group underlining the $B-$module $B\otimes_A M$ is the quotient of the free abelian group $B\times M$ generated by the symbols $b\otimes x$ with $b\in B$ and $x\in M$ by the subgroup generated by the elements
+$$
+(b+b')\otimes x-b\otimes x-b'\otimes x
+$$
+$$
+b\otimes(x+y)-b\otimes x-b\otimes y
+$$
+$$
+a\cdot b\otimes x-b\otimes a\cdot x,
+$$
+where $b$ and $b'$ run over $B$, $x$ and $y$ over $M$ and $a$ takes value over $A$. The structure of $B$-module on $B\otimes_A M$ is thus defined by 
+$$
+b\cdot(b'\otimes x):=(b\cdot b')\otimes x.
+$$
+We denote by $\mathsf{Comm}$ the category of commutative rings. For a morphism $f:A\lrta B$ in $\mathsf{Comm}$ we can regard $B$ as an $A$-module by  the formula $a\cdot x:=f(a)\cdot x$, for $a\in A$ and $x\in B$. If $g:A\lrta C$ is a second morphism in $\mathsf{Comm}$, we show that that the coproduct object $B\coprod_A C$ exists in $\mathsf{Comm}$ of which the abelian group structure is $B\otimes_A C$ and the ring structure is given by $(b\otimes c)\cdot (b'\otimes c'):=(b\cdot b')\otimes (c\cdot c')$ (Exercise\sidenote{}:verify that $B\otimes_A C$ is indeed the colimit of the diagram $B\llta A\lrta C$ in $\mathsf{Comm}$).
+
+We finish this subsection by the notion
+$$
+\mathsf{Aff}:=\mathsf{Comm}^{op}.
+$$
+Moreover, the contravariant functor $\mathsf{Comm}\lrta \mathsf{Comm}^{op}$ is denoted by $\text{Spec}$. So the morphism of rings $A\lrta B$ is formally the same as a morphism $\spec B\lrta \spec A$ in $\mathsf{Aff}$
+
+\subsection{Flat morphisms}
+\begin{dfn}
+A morphism of commutative rings $A\lrta B$ is flat if the functor 
+$$
+B\otimes_A\_: A-\mathsf{Mod}\lrta B-\mathsf{Mod}
+$$
+is exact.
+\end{dfn}
+We remark the  the category of modules is an abelian category and the functor $B\otimes_A\_$ is a left adjoint (therefore is right exact\sidenote{},) the functor $B\otimes_A\_$ is exact iff it preserves the kernel. This a frequently used criterion.
+
+The general properties of flat morphism are the following.
+\begin{lemma}\ 
+\begin{enumerate}
+\item The flat morphism is stable by compositions.
+\item If 
+$$
+\begin{tikzcd}
+B' & B \arrow[l, "f'"'] \\
+A' \arrow[u] & A \arrow[l, "f"] \arrow[u]
+\end{tikzcd}
+$$
+is a cocartesian in $\mathsf{Comm}$ ($B',f'$ is the pushout of $f$), and if $f$ is flat, we know $f'$ is flat (i.e. the flat morphism is stable under ``co-change'' of bases).
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(1): Consider two flat morphisms $A\lrta B\lrta C$. For all $A$-modules $M$, there exists an isomorphism (Exercise: verify this)
+$$
+C\otimes_B(B\otimes_A M)\simeq C\otimes_A M.
+$$
+Therefore, the functor $M\mapsto C\otimes_A M$ is isomorphic to the composition of two functors $M\mapsto B\otimes_A M$ and $N\mapsto C\otimes_B N$. Since the two functors are exact, so is their composition. Therefore, the morphism $A\lrta C$ is flat.
+
+(2) If 
+$$
+\begin{tikzcd}
+B' & B \arrow[l, "f'"'] \\
+A' \arrow[u] & A \arrow[l, "f"] \arrow[u]
+\end{tikzcd}
+$$
+is a pushout diagram in $\mathsf{Comm}$, there is an isomorphism 
+$$
+B'\simeq A'\otimes_A B.
+$$
+Therefore, for all $B$-module $M$, there exists an isomorphism of $A$-modules
+$$
+B'\otimes_B M\simeq (A'\otimes_A B)\otimes_B M\simeq A'\otimes_A M.
+$$
+This shows that $f$ flat implies $f'$ is also flat. (Exercise: fill in the details.)
+\end{proof}
+
+Exercise: For all commutative ring $A$, show that the morphism of inclusion $A\inj A[X]$ is a flat morphism, the same for the morphism $A[X]\lrta A[X]$ sending $X$ to $X^2$. Show that the morphism $A[X]\lrta A$ sending $X$ to $0$ is not flat.
+\begin{dfn}
+A morphism of commutative rings $A\lrta B$ is faithfully flat if the functor 
+$$B\otimes_A\_: A-\mathsf{Mod}\lrta B-\mathsf{Mod}
+$$
+is exact and conservative (i.e., exact and $(B\otimes_A M\simeq 0)\Lrta (M\simeq 0)$).
+\end{dfn}
+The general properties of faithfully flat  morphism is the same as those of flat morphisms.
+\begin{lemma}\label{lem:property_faithfully_flat}
+\ \begin{enumerate}
+\item The faithfully flat morphisms are stable by compositions.
+\item  If
+$$
+\begin{tikzcd}
+B' & B \arrow[l, "f'"'] \\
+A' \arrow[u] & A \arrow[l, "f"] \arrow[u]
+\end{tikzcd}
+$$ 
+is a cocartesian diagram in $\mathsf{Comm}$ and if $f$ is faithfully flat, we have $f'$ is also faithfully flat (i.e. the faithfully flat morphisms are stable by ``co-change'' of bases).
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Exercises.
+\end{proof}
+
+Exercise: Show that the inclusion $A\inj A[X]$ is a faithfully flat morphism. The same for the morphism $A[X]\lrta A[X]$ sending $X$ to $X^2$. Show that the inclusion $\intg\inj \ratl$ is flat but not a faithfully flat.
+
+\begin{dfn}
+A family of morphisms in $\mathsf{Aff}$
+$$
+\{\spec A_i\lrta \spec A\}_{i\in I}
+$$
+is a faithfully flat and quasi-compact covering ($\textnormal{fpqc}$ for short)if  the following conditions are satisfied.
+\begin{enumerate}
+\item The collection $I$ is finite.
+\item For all $i\in I$ the morphism $A\lrta A_i$ is a flat morphism.
+\item The morphism $A\lrta \prod_{i\in I}A_i$ is faithfully  flat.
+\end{enumerate}
+\end{dfn}
+
+Exercise: Show that condition $(3)$ above implies condition $(2)$ (Hint: we can use the fact that there exists a equivalence of categories $(\prod_{i\in I} A_i)-\mathsf{Mod}\simeq \prod_{i\in I}(A_i-\mathsf{Mod})$).
+
+\begin{lemma}
+The fpqc covering defined above gives a Grothendieck (pre)topology on $\mathsf{Aff}$.
+\end{lemma}
+\begin{proof}
+This follows directly from lemma~\ref{lem:property_faithfully_flat}
+\end{proof}
+\begin{dfn}
+The Grothendieck topology on $\mathsf{Aff}$ having the covering family as fpqc coverings is called fpqc topology.
+\end{dfn}
+We finish this section by the following lemma
+\begin{lemma}
+The fpqc topology is subcanonical.
+\end{lemma}
+\begin{proof}
+We note that to say that all the representable presheaves on $\mathsf{Aff}$ are sheaves is equivalent to say that for all faithful flat morphism $A\lrta B$, the natural morphism
+$$
+A\lrta lim(B\rightrightarrows B\otimes_A B)
+$$
+is an isomorphism. (Exercise: verify this).
+
+Consider a faithfully flat morphism $A\lrta B$. As the functor commutes with finite limits (by flatness), and is conservative (by faithful flatness), it suffices to show that the morphism
+$$
+A\lrta lim(B\rightrightarrows B\otimes_A B)
+$$
+induces an isomorphism
+$$
+B\otimes_A A\simeq B\lrta lim(B\otimes_A B\rightrightarrows B\otimes_A B\otimes_A B)
+$$
+\end{proof}
+\subsection{Smooth and etale morphisms}
 \section{Lecture 4: Schemes and algebraic spaces II}
 \section{Lecture 4 1/2: Complements on schemes and algebraic spaces}
 \chapter{Stacks}
