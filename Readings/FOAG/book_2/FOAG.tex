@@ -1485,7 +1485,7 @@ Because both of them are contravariant functors, this indicates a equivalence of
 
 \end{proof}
 \begin{exr}
-(This exercise can given you some practice with understanding morphisms of schemes by cutting up into affine open sets.) Make sense of the following sentence: ``$ \affn^{n+1}_k\backslash \{0\}\lrta \proj^n_k$ given by 
+(This exercise can give you some practice with understanding morphisms of schemes by cutting up into affine open sets.) Make sense of the following sentence: ``$ \affn^{n+1}_k\backslash \{0\}\lrta \proj^n_k$ given by 
 $$
 (x_0,x_1,...,x_n)\mapsto[x_0,x_1,...,x_n]
 $$
@@ -1495,16 +1495,49 @@ is a morphism of schemes.''
 \begin{proof}[Sol]
 $\affn^{n+1}_k\backslash \{0\}$ can be covered by affine opens like
 $$
-\spec A_i,\ \ \  A_i:= k[x_0,...,x_n]_{x_i}
+\spec A_i\simeq D(x_i),\ \ \  A_i:= k[x_0,...,x_n]_{x_i}.
 $$
 On the other hand $\proj^{n}_{k}$ can be covered by affine opens
 $$
-\spec B_i
+\spec B_i\simeq \affn^{n}_{k}, B_i:=k[x_{0/i},...,x_{k/i},...,x_{n/i}]/(x_{i/i}-1)\cong k[y_0,...,y_{n-1}].
 $$
+We denote the morphism 
+$$
+f:(x_0,...,x_n)\mapsto [x_0,...,x_n]
+$$
+and observe that $f_i:=f|_{D(x_i)}$ maps $D(x_i)$ into $\spec B_i$. Locally, it is a morphism of affine scheme induced by 
+$$
+B_i\lrta A_i,
+$$
+$$
+x_{k/i}\mapsto \frac{x_{k}}{x_i}, x_{i/i}\mapsto 1
+$$
+which is a well-defined ring morphism.
+
+Then it suffice to check that behaves well when we glue up the affine charts. It is equivalent to check that
+$$
+f_i|_{D(x_i)\cap D(x_j)}=f_j|_{D(x_i)\cap D(x_j)}.
+$$
+Note that $D(x_i)\cap D(x_j)=D(x_i x_j)=\spec A_{ij}=\spec k[x..]_{x_i x_j}$ and both $f_i|_{D(x_i)\cap D(x_j)}$ and $f_j|_{D(x_i)\cap D(x_j)}$ map into $$\spec B_{ij}:=\spec k[x_{0/i},...,x_{n/i}, 1/x_{j/i}]/(x_{i/i}-1)$$ and $$\spec B_{ji}=\spec k[x_{0/j},...,x_{n/j},1/x_{i/j}]/(x_{j/j}-1)$$.
+The above two are isomorphic by the map $x_{k/j}=x_{k/i}/x_{j/i}$.
+$
+f_i|_{D(x_i)\cap D(x_j)}
+$
+is induced by
+$$
+\spec B_{ij}\mapsto \spec A_{ij}
+$$
+$$
+x_{k/i}\mapsto \frac{x_k x_j}{x_i x_j},1/x_{j/i}\mapsto \frac{x_i^2}{x_j x_i}
+$$
+Together with the isomorphism above, $f_i|_{D(x_i)\cap D(x_j)}$ can be identified with $f_j|_{D(x_i)\cap D(x_j)}$.
 \end{proof}
 \begin{exr}
 Show that morphism $X\lrta \spec A$ are in natural bijection with ring morphisms $A\lrta \Gamma(X,\calo_X)$.
 \end{exr}
+\begin{proof}[Sol.]
+
+\end{proof}
 \chapter{Useful classes of morphisms}
 \chapter{Closed embeddings}
 \chapter{Fibered product of schemes}

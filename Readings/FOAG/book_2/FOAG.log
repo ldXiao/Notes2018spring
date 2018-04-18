@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  11 APR 2018 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  15 APR 2018 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2734,15 +2734,28 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 1487.
 [93]
 Package mdframed Info: Not enough space on this page on input line 1494.
-Package mdframed Info: mdframed works in twoside mode on input line 1501.
+
+Overfull \hbox (9.32419pt too wide) in paragraph at lines 1520--1521
+\T1/ptm/m/n/10.95 (-20) Note that $\OML/ztmcm/m/it/10.95 D\OT1/ztmcm/m/n/10.95 
+(\OML/ztmcm/m/it/10.95 x[]\OT1/ztmcm/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 \ \OML/zt
+mcm/m/it/10.95 D\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 x[]\OT1/ztmcm/m/n/1
+0.95 ) = \OML/ztmcm/m/it/10.95 D\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 x[]
+x[]\OT1/ztmcm/m/n/10.95 ) = []\OML/ztmcm/m/it/10.95 A[] \OT1/ztmcm/m/n/10.95 = 
+[]\OML/ztmcm/m/it/10.95 k\OT1/ztmcm/m/n/10.95 [\OML/ztmcm/m/it/10.95 x::\OT1/zt
+mcm/m/n/10.95 ][]$ \T1/ptm/m/n/10.95 (-20) and both $\OML/ztmcm/m/it/10.95 f[]\
+OMS/ztmcm/m/n/10.95 j[]$ \T1/ptm/m/n/10.95 (-20) and $\OML/ztmcm/m/it/10.95 f[]
+\OMS/ztmcm/m/n/10.95 j[]$
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 1535.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1501.
+(mdframed)              on input line 1535.
 [94]
 Chapter 5.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1504.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1541.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 [95
 
@@ -2752,7 +2765,7 @@ Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1504.
 Chapter 6.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1505.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1542.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 [97] [98
 
@@ -2760,7 +2773,7 @@ Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1505.
 Chapter 7.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1506.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1543.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 [99] [100
 
@@ -2768,7 +2781,7 @@ Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1506.
 Chapter 8.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1507.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1544.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 [101] [102
 
@@ -2781,13 +2794,13 @@ Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1507.
 ] [108]
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1518.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1555.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 
-Package biblatex Warning: Type 'article' not found on input line 1525.
+Package biblatex Warning: Type 'article' not found on input line 1562.
 
 
-LaTeX Warning: Empty bibliography on input line 1525.
+LaTeX Warning: Empty bibliography on input line 1562.
 
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
@@ -2800,13 +2813,13 @@ Package biblatex Warning: Setting 'defernumbers=true' recommended.
 \tf@ptc=\write7
 \openout7 = `FOAG.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1545.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1545.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1582.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1582.
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.aux (/Users/vec
 tor_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap3.aux) (/Users/vector
 _cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1545.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1545.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1582.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1582.
 
 LaTeX Warning: There were undefined references.
 
@@ -2851,7 +2864,7 @@ yr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on /Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOA
-G.pdf (110 pages, 1274270 bytes).
+G.pdf (110 pages, 1276356 bytes).
 PDF statistics:
  1409 PDF objects out of 1440 (max. 8388607)
  1187 compressed objects within 12 object streams

@@ -2373,10 +2373,6 @@ X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
 $$
 with $\pi_1(x,y)=x$ and $\pi_2(x,y)=y$
 \end{ex}
-\begin{thm}
-In the category $\mathsf{Sch}$ of schemes, arbitrary fibre product exists.
-\end{thm}
-\underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
 \begin{proof}
 \ \begin{enumerate}[label=(\arabic*)]
 \item $f_2\circ \pi_2(x,y)=f_2(y)=f_1(x)=f_1\circ \pi_1(x,y)$ for $(x,y)\in Z$.
@@ -2389,8 +2385,264 @@ define $f(t)=(p_1(t),p_2(t))$, $f_1(p_1(t))=f_2(p_2(t))$, therefore $f(t)\in Z$.
 \end{enumerate}
 \underline{Note}: This construction/definition is a an example of ``universal'' object in the categorical sense. It is universal in the following sense.
 
-Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibre products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$
+Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibre products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
+\end{proof}
+\begin{ex}
+If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibre product over $S$ is just the Cartesian product
+$$
+X\times_S Y=\{(x,y\\in X\times Y|f_1(x)=f_2(y)\}
+$$
+But the restriction on $f_i$ is just vacuous, the fibre product contains the usual Cartesian product.
+
+(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibre product is isomorphic to the intersection of $X,Y$
+$$
+\begin{tikzcd}
+X\cap Y \arrow[d, hook] \arrow[r, hook] & Y \arrow[d, hook] \\
+X \arrow[r, hook] & S
+\end{tikzcd}
+$$
+
+(3) $$
+\begin{tikzcd}
+f_2^{-1}(X) \arrow[d, "f_2|_{f^{-1}_2(X)}"'] \arrow[r, hook] & Y \arrow[d, "f_2"] \\
+X \arrow[r, "f_1", hook] & S
+\end{tikzcd}
+$$
+\end{ex}
+\begin{thm}
+In the category $\mathsf{Sch}$ of schemes, arbitrary fibre product exists.
+\end{thm}
+\underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
+
+\begin{proof}[Proof of theorem]
+\underline{Step 1} We prove this for affine schemes.
+
+Assume $X=\spec A$, $Y=\spec B$, $S=\spec R$. Given  a diagram
+$$
+\begin{tikzcd}
+X \arrow[r] & S \\
+ & Y \arrow[u]
+\end{tikzcd}
+$$
+in $\mathsf{AffnSch}$, we have a reversed diagram in $\mathsf{Rings}$
+$$
+\begin{tikzcd}
+A &  \\
+R \arrow[u] \arrow[r] & B
+\end{tikzcd}
+$$
+Define $Z=\spec(A\otimes_R B)$, and set $A\otimes_R B=:C$. We have 
+$$
+\begin{tikzcd}
+A \arrow[rrr] &  &  & C &  \\
+ & a \arrow[r, maps to] & a\otimes 1 &  & 1\otimes b \\
+ &  &  &  & b \arrow[u, maps to] \\
+R \arrow[uuu] \arrow[rrr] &  &  & B \arrow[uuu] & 
+\end{tikzcd}
+$$
+This diagram is commutative, which guarantees a diagram in $\mathsf{AffSch}$ 
+$$
+\begin{tikzcd}
+Z \arrow[r] \arrow[d] & Y \arrow[d] \\
+X \arrow[r] & S
+\end{tikzcd}
+$$
+$$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] &  &  \\
+ & Z \arrow[d] \arrow[r] & Y \arrow[d] \\
+ & X \arrow[r] & S
+\end{tikzcd}
+$$
+
+\underline{N.B.} $\spec (A\otimes_R B)$ is not easy to describe as a set.
+
+
+\underline{Step 2} Uniqueness of $X\times_S Y$, when it  exists, is formal.
+
+\underline{Step 3.} If $X\times_S Y$ exists, for any open subset $U\subset X$, $U\times_S Y$ exists and is $\pi_1^{-1}(U)$
+$$
+\begin{tikzcd}
+\pi_1^{-1}(U) \arrow[d] \arrow[r] & X\times_S Y \arrow[d, "\pi_1"] \arrow[r] & Y \arrow[d] \\
+U \arrow[r, hook] & X \arrow[r] & S
+\end{tikzcd}
+$$
+\underline{Step 4} $U_i$ affine. If for each $i$, $U-i\times_S Y$ exists, then so does $X\times_S Y$
+$$
+\begin{tikzcd}
+ & Y \arrow[d, "f_2"] \\
+\cup_i U_i=X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+If for each $i$, $U_i\times_S Y$ exists, then so does $X\times_S Y$.
+
+Define $V_{i,j}=\pi_{1,i}^{-1}(U_i\cap U_j)\subset U_i\times_S Y$ open. Check that $V_{i,j}=(U_i\cap U_j)\times_S Y$
+>>>>>>>>>2
+
+One can glue  the $U_i\times_S Y$ along the isomorphisms. 
+
+\underline{Check} This scheme is $X\times_S Y$
+
+\underline{Step 5.}
+
+step 1+ step 4.
+
+$Y,S$ affine $\Lrta X\times_S Y$ exists.
 \end{proof}
 
+\subsection{17th Aprl: Examples and Applications of the Fiber Product}
+Recall.
+If we have maps
+ $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fiber product of $X\lrta S\longleftarrow Y$ if it has the universal property
+ $$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
+ & Z \arrow[d] \arrow[r] & Y \arrow[d] \\
+ & X \arrow[r] & S
+\end{tikzcd}
+ $$
+ $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fiber product of schemes.
+ $$
+X\times_S Y=\spec A\otimes_R B
+ $$
+ Define: $X\times_R Y:=X\times_{\spec R} Y$.
 
+\begin{ex}
+Why not product?
+For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fiber product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
+
+$X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y\neq\spec \intg[T,V]$ Krull dimension $3$.
+$$
+\dim X\times_\intg Y\neq \dim X+\dim Y.
+$$
+\end{ex}
+
+\begin{ex}
+$K$ a field, $X, Y$ schemes over $K$ $\dim X\times_K Y=\dim X+\dim Y$. But hte set of points of $X\times_K Y$ is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it true that $X(K)=\hom(\spec K, X)$
+$$
+X\times_K Y(K)=X(K)\times Y(K)
+$$
+$$
+\hom_{\spec K}(\spec K, X\times_K Y)=\hom_{\spec K}(\spec K, X)\times \hom_{\spec K}(\spec K, Y)
+$$
+by the universal product of fiber products.
+\end{ex}
+
+If $X$ is a scheme over $S$, $T$ is a scheme over S. We can define $X(T)$ as $\hom_S(T,X)$
+and call it the $T$-valued points of $X$.
+$$
+T=\spec R, X(R)
+$$
+$$
+X\times_S Y(T)=X(T)\times Y(T).
+$$
+If we have the following morphism of schemes
+$$
+\begin{tikzcd}
+X \arrow[rd] &  & Y \arrow[ld] \\
+ & S' \arrow[d] &  \\
+ & S &, 
+\end{tikzcd}
+$$
+ we have 
+ $$
+X\times_{S'} Y(T)=X(T)\times_{S'(T)} Y(T).
+ $$
+
+$\hom_S(T,X\times_{S'}Y)=$\{ pair $(f_1,f_2)$ of elements $f_1\in \hom_{S}(T,X)$ and $f_2\in \hom_S(T,Y)$  such that $p_1\circ f_1=p_2\circ f_2$\}$=$\{ pair of elements $f_1\in X(T)$ and $f_2\in Y(T)$, $p_1\circ f_1=p_2\circ f_2\in S'(T)$\}
+$$
+\begin{tikzcd}
+T \arrow[rd] \arrow[rdd, "f_1"'] \arrow[rrd, "f_2"] \arrow[rrrddd, dashed, bend right=49] &  &  &  \\
+ & X\times_{S'}Y \arrow[d] \arrow[r] & Y \arrow[d, "p_2"] &  \\
+ & X \arrow[r, "p_1"] & S' \arrow[rd] &  \\
+ &  &  & S
+\end{tikzcd}
+$$
+\begin{ex}Consider
+$GL_n(K)$. There exists a scheme $\mathcal{GL}_n$ with $\mathcal{GL}_n(K)=GL_n(K)$.
+$\affn^{n^2}\supset V(det)$, $\mathcal{GL}_n$ gives the ``open complement of $V(det)$''. What are the $R$-valued points of $\mathcal{GL}_n$?
+$$
+\mathcal{GL}_n(R)\neq \{n\times n\text{ matrices over $R$ with } det \neq 0 \}
+$$
+But
+$$
+\begin{aligned}
+\mathcal{GL}_n(R)&=\{n\times n\text{ matrices over $R$ s.t. }\spec R\lrta \affn^{n^2}\text{ does not intersect }V(det)\}\\
+&=\{n\times n\text{ matrices $M$ over $R$ s.t.} det(M) \notin\text{ any prime ideal of }R \}\\
+&=\{n\times n\text{ matrices $M$ over $R$ where } det(M)\text{ is invertible}\}
+\end{aligned}
+$$
+\end{ex}
+
+\begin{ex}
+Equation
+$$
+x^3+y^3+z^2=0,
+$$
+find all solutions in $\intg$. 
+$X=\spec \intg[x,y,z]/(x^3+y^3+z^2)$. The set of solutions is $X(\intg)$
+\end{ex}
+
+\begin{ex}
+$f:X\lrta S$, $\scp$ a point of $S$
+$K(\scp)$ residue field of $\scp$. $\spec K(\scp)\lrta S$. Define$K(\scp)\times_S X$ as the fiber of $f$ over $\scp$
+$$
+\begin{tikzcd}
+ & X \arrow[d] \\
+\spec K(\scp) \arrow[r] & S
+\end{tikzcd}
+$$
+\end{ex}
+\begin{lemma}
+The set of points of the fiber is the inverse image of $\scp$ where $f$ is the set of points of $X$. The underlying set of $K(\scp)\times_SX$ maps to the underlying set of $X$.
+
+
+\end{lemma}
+
+\underline{The relative point of view}
+``A parametrized family of varieties''
+$y^2=x^3-3x-t$ viewed as a family of algebraic sets in $\affn^2$ with coordinates $X,Y$ parameter $t$. For each %t
+, we get an equation in $X,Y$, this defines a curve in $\affn^2$. Consider the morphism
+$$
+f:\spec k[x,y,t]/(y^2-x^3-3x+t)\lrta \spec K[t].
+$$
+The fibers of $f$ over closed points are curves in the family.
+
+\underline{Idea from Grothendieck}: view any morphism as a family where elements are the fiber. $\affn^3\cup pt\Lrta \affn^1$, $\affn^3$ to $0$ $pt$ to $1$. Not all maps make  nice families but this point of view is helpfull in general, why?
+\begin{itemize}
+	\item Fibers of a  family are often simper (e.g. )
+	\item Full family are simpler than individual fibers.
+\end{itemize}
+
+\begin{ex}
+Reduction $\mod p$. $X$ is a scheme over $\intg$. $X\times_\intg \spec \bbf_p$ is a scheme over $\bbf_p$. ``reduction $\mod p$'' of $X$
+$X=\spec \intg[x_1,...,x_n]/(f_1,...,f_m)$
+$X\times_\intg\spec \bbf_p=\spec \bbf_p[x_1,...,x_n]/(f_1,..,f_m)$. This can be tricky, for example $\spec \intg[T]/T(T+2)$ has no nilpotents (is ``reduced'' scheme) but $\spec \bbf_2[T]/Y(T+2)=\spec \bbf_2[T]/T^2$ has nilpotent. 
+\end{ex}
+\begin{ex}
+$X$ a scheme over $\intg$
+$X\times_\intg \spec \ratl$ (or $X\times_\intg \spec \overline{\ratl}$). Given $Y$ over $\spec \ratl$, can we find $X$ over $\spec \intg$ with $X\otimes_\intg \spec \ratl=Y$? If so $X\times_{\spec \intg} \spec \bbf_p$ will give some perspective on $Y$.
+\end{ex}
+\begin{lemma}
+If $Y$ in $\bbf^n_\ratl$ is the vanishing scheme of $f_1,..,f_m$ then this is possible.
+\end{lemma}
+\begin{proof}
+$Y=\spec \ratl[T_1,..,T_n]/(f_1,..,f_m)$, where $f_i$ are polynomials with rational coefficients. We can find $c_1,..,c_m$ positive integes where $c_if_i$ has integer coefficients for all $i$. $X=\spec \intg[T_1,...,T_n]/(c_1f_1,...,c_mf_m)$. Because $c_i^{-1}$ exists in $\ratl$, it produces the same scheme over $\ratl$. 
+
+\end{proof}
+However, this is not unique. For example, $Y=\spec \ratl[T]/(T^2/2+1)$. We can take $c=2$ to get $\intg[T]/T^2+2$ and $c=4$ to get $\intg[T]/2T^2+4$. These are not isomorphic fibers over $2$, in fact, they are distinct
+$\bbf_2[T]/T^2$ v.s. $\bbf_2[T]$. Worse $T=2U$, $Y=\spec \ratl[U]/(2U^2+1), X=\spec \intg[U]/(2U^2+1)$. Reducetion over $2$ gives $\spec \bbf_2[U]/1=\emptyset$ 
+
+\begin{ex}
+(Base change)
+$f:X\lrta S$ a morphism, family of schemes.
+$$
+\begin{tikzcd}
+X\times_S T \arrow[d, "f'"'] \arrow[r] & X \arrow[d, "f"] \\
+T \arrow[r] & S
+\end{tikzcd}
+$$
+ we can think of $f':X\times_{S}T\lrta T$as some family with different parameter space/ base/
+ This process is known as base change. $a\in T$ a point which mapsto $p\in S$
+\end{ex}
 \end{document}
