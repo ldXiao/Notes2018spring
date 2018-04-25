@@ -162,6 +162,7 @@ Let $X\subset \affn^m$ and $Y \subset \affn^n$ be affine algebraic sets. A \text
 We denote the category of affine algebraic sets over $K$ as $Alg_K$
 \begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
 Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
+
 $$
 \begin{aligned}
 &\hom_{K\text{-alg}}(\calo(Y_2),\calo(Y_1))
@@ -2645,4 +2646,192 @@ $$
  we can think of $f':X\times_{S}T\lrta T$as some family with different parameter space/ base/
  This process is known as base change. $a\in T$ a point which mapsto $p\in S$
 \end{ex}
+
+\section{Elementary geometry of schemes}
+\subsection{Some basics of schemes}
+\begin{dfn}
+$X$ is a scheme. It is called \textbf{connected} if it is connected as a topological space. It is \textbf{irreducible} if it is irreducible as a topological space (it can not be expressed as union of two closed non empty set.)
+
+\underline{Warning:} spearated does not mean $X$ is separated (Hausdorff) as topological space.
+\end{dfn}
+\begin{dfn}
+The dimension of X, denoted $\dim(X)$ is the max number $n$ s.t. there is a chain of closed subsets
+$$
+Y_0\subsetneq Y_1\subsetneq ...\subsetneq Y_n \subset X.
+$$ with each $Y_i$irreducible (with induced topology from $X$).
+$$
+\dim \spec (A)=\text{Krull dimsnion of $A$}
+$$ 
+\end{dfn}
+[check that $V(I)\subset \spec R$ is irreducible $\Llrta I$ is prime] 
+
+\begin{dfn}
+A scheme $X$ is reduced if $\forall U\subset X$ open, $\calo_X(U)$ is reduced (no nilpotents)
+
+And this is equivalent to 
+$$
+\forall x\in X,\ \  \calo_{X,x} \text{ is reduced.}
+$$
+\end{dfn}
+
+\begin{dfn}
+A scheme $X$ is called \textbf{integral} if for all $U\subset X$ open, $\calo(U)$ is an integral domain.
+\end{dfn}
+Note that being integral scheme $\not \Llrta$ $\forall x\in X,\calo_{X,x} $ is integral domain.
+\begin{lemma}
+$X$ integral $\Llrta$ $X$ is reduced and irreducible.
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+\item In a scheme $X$ is integral, $\calo_X(U)$ is integral for all open subsets, hence $\calo_X(U)$ is also reduced because integral domain has no nonzero zero divisors.
+
+\item An integral scheme should be irreducible. Assume contrarily $X$ is reducible, and can be written as union of two closed subsets $X=Y\cup Z$. Define the complements $U:=X-Y$ and $V=X-Z$, we know $U,V$ are nonempty opens and their have empty intersection. The structure sheaf $\calo_X(U\cup V)=\calo_X(U)\times \calo_X(V)$ which is not integral in general.
+\item Conversely: $X$ reduced + irreducible. Let $U\subset X$ be a open, and assume $\calo_X(U)$ is not integral. (exists $s,tin\calo_X(U)$ such that $st=0$.)
+
+Let $Z_s=\{x\in U| s(x)\in\scm_{X,x}\subset \calo_{X,x}\}$, $Z_t=\{X\in U|t(x\\in\scm_{X,x}\subset \calo_{X,x}$
+
+\underline{Claim}: $Z_t,Z_s$ are closed in $X$. (If $U=\spec A$ is affine, then $s$ corresponds to an element $a\in A$ and
+$$
+\begin{aligned}
+Z_s&=\{\scp\in\spec A| a\in\scp A_\scp\}\\
+&=\{\scp\in\spec A|a\in\scp\}\\
+&=V(a A)\text{ is  closed}
+\end{aligned}
+$$
+
+In the general case, it follows that $Z_s\cap \spec A$ is closed for any $\spec A\subset U$ open affine $\Lrta Z_s$ is closed.)
+
+Since $st=0$, we have $s(x)t(x)\in\scm_{X,x}$ for every $x$, so $x\in Z_s\cup Z_t$ for every $x$. $Z_t\cup Z_s=U$.
+
+Since $X$ is irreducible $\Lrta Z_s=U$ or $Z_t=U$. For instance, if $Z_s=U$, then $s|V=0$ nilpotent for every affine $\spec B=V\subset U$ (because $s|V$ corresponds to $a\in A$ which has $U_a=V-V(a)$ is empty set $\Lrta \sqrt{(a)}=\{0\}\Lrta a$ is nilpotent). Since $X$ (hence $U$) is reduced, we get $s|V=0$ for every $V\subset U$ open affine, so by the (sheaf condition) we have $s=0$.
+\end{itemize}
+\end{proof}
+\begin{dfn}
+A scheme $X$ is \textbf{locally Noetherian} if there exists an affine open cover of $X$
+$\cup_{i\in I} U_i=X$, $\spec A_i=U_i$, with $A_i$ Noetherian. $X$ is \textbf{Noetherian} if there is a  finite such cover.
+\end{dfn}
+Fact: Hartshone. prop II 3.2
+$$
+\text{locally Noetherian}\Llrta \forall \spec(A)\subset X \text{ open, } A \text{ Noetherian}
+$$
+
+This implies that an affine scheme $\spec A$ is locally Noetherian iff $A$ is Noetherian.
+
+\begin{dfn}
+$X\overset{f}{\lrta } Y$ (scheme over $Y$ ) is a morphism \textbf{locally of finite type} $\Llrta$ $\exists Y=\cup_i U_i, U_i=\spec A_i$, such that $\forall i, \exists f^{-1}(U_i)=\cup_i \spec(B_{ij})$ s.t.
+$$
+\spec(B_{ij})\lrta \spec(A_i)
+$$
+corresponds to 
+$$
+A_i\lrta B_{ij}
+$$
+which makes $B_{ij}$ an $A_i$-algebra of finite type.
+
+$X\lrta Y$ is of finite type if for every $i$ as above, there is a covering with only finitely many $j$.
+\end{dfn}
+\begin{ex}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item $K$ a field, $\spec K[X_1,..,X_n]/I$ is Noetherian, of finite type over $K$
+$$
+\Lrta \spec(K[X]/I)\lrta \spec(K) is of finite type.
+$$
+\item $\sqcup_{n\geq 0}\affn^n_K\lrta \spec K$ is locally of finite type, not of finite type(over $K$)
+\item $\spec (\intg[X_1,..,X_n]/I)\lrta\spec \intg$ is of finite type and Noetherian.
+\item $\spec(\ratl)\lrta \spec \intg$ if \textbf{not} of finite type.
+\end{enumerate}
+\end{ex}
+\subsection{Open and closed subschemes}
+\begin{dfn}
+$X$ a scheme $U\subset X$ open $(U,\calo_X|U)$ is called an open subscheme of $X$, $j:U\inj  X$ is called an \text{open immersion}.
+\end{dfn}
+\begin{dfn}
+(Hartshorne p85) A morphism $Y\overset{f}{\lrta}X$ is a called a \textbf{closed morphism} if 
+\begin{enumerate}[label=(\arabic*)]
+\item $f$ induces a homeomorphism $Y\lrta f(Y)\subset X$ where $f(Y)$  is closed.
+\item
+$f^*:\calo_X\rta f_*\calo_Y$ is surjective (surjective at the level of stalks)
+\end{enumerate}
+\end{dfn}
+Intuitively,
+$$
+\calo_X(U)\lrta \calo_Y(f^{-1}(U))
+$$
+are not surjective  in general, but  if $s\in(f_*\calo_Y)(U)$, we can find locally  for each $x\in U$ a section  on some open set $V\subset U$ containing $x$ which maps to the restriction of $s$ to $V$.
+
+\begin{dfn}
+A \textbf{closed subscheme} of $X$ is an equivalent class of closed immersions modulo
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\centering
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,249.36666870117188); %set diagram left start at 0, and has height of 249.36666870117188
+
+
+\draw (130,67) node   {$Y$};
+\draw (245,68) node   {$X$};
+\draw (190,53) node   {$f$};
+\draw (188,150) node   {$Y'$};
+\draw (146,113) node   {$g$};
+\draw (226,117) node   {$f'$};
+\draw (335,112) node   {$ \begin{gathered}
+f\sim f'\\
+\Longleftrightarrow \exists g:Y\overset{\sim }{\longrightarrow } Y'
+\end{gathered}$};
+\draw    (139.26,80.25) -- (178.74,136.75) ;
+\draw [shift={(178.74,136.75)}, rotate = 235.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (197.21,136.75) -- (235.79,81.25) ;
+\draw [shift={(235.79,81.25)}, rotate = 484.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (140.57,67.09) -- (233.98,67.9) ;
+\draw [shift={(233.98,67.9)}, rotate = 180.5] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\end{tikzpicture}
+\end{dfn}
+\begin{ex}
+Example. 
+$(1)$ Let $X=\spec (A)$ let $I\subset A$ ideal and $\spec(A/I)\overset{f}{\lrta}\spec A$ the canonical morphism. Then it is a closed immersion
+
+ We saw thart $\spec A/I\overset{\sim}{\lrta}V(I)\subset \spec(A)$ is a homeomorphism.
+
+$\forall \scp in V(I),$ the morphism $\calo_{A,\scp}\lrta \calo_{A/I,\scp/I}$ is $A_\scp\lrta (A/I)_{\scp/I}$ which is surjective by elementary localization.
+\end{ex}
+\begin{prop}
+$(1)$
+$A$ is a ring. If 
+$$
+Y\overset{f}{\lrta} \spec A
+$$ 
+is a closed immersion, there exists a closed immersion, there exists an ideal $I\subset A$ such that $f$ is equivalent to $\spec(A/I)\lrta \spec (A)$: there is 
+$$
+\begin{tikzcd}
+Y \arrow[r, "f"] \arrow[d, "\sim"] & \spec(A) \\
+\spec(A/I) \arrow[ru] & 
+\end{tikzcd}
+$$
+(elementary proof in Wedhorn, best proof is to use coherent sheaves)
+
+$(2)$ $$
+\begin{tikzcd}
+Z\times_X Y \arrow[r, "\tilde{j}"] \arrow[d] & Y \arrow[d] \\
+Z \arrow[r, "j"] & X,
+\end{tikzcd}
+$$ 
+where $f$ is a morphism and $j$ is closed immersion. $\tilde{j}$ is a closed immersion (e.g. $x\in X$ is a closed point, then $\spec \kappa(x)\lrta X$ is a closed immersion and $f^{-1}(x)=\spec \kappa(x)\times_X Y\lrta Y$ is a closed immersion)
+
+$(3)$ Note that a closed subscheme of $X$ is not determined by its image in $X$.
+
+e.g. $\spec(A/I)``=''\spec (A/J)$ iff $\sqrt{I}=\sqrt{J}$ which may give  infinitely many $J$ for  a given $I$.
+$n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. Intuitively, it is they are both the point $0$ but ``memorize'' different information of derivatives.
+\end{prop}
+
+\begin{prop}
+>>>>>>>1
+\end{prop}
+If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the reduced induced scheme structure on $Y$.]
 \end{document}
+\subsection{Projective space and schemes}
+\begin{dfn}
+$S$ is a scheme, $n\geq 1$ $\proj^n_S=\proj^n_\intg\times_{\spec \intg} S$
+\end{dfn}
