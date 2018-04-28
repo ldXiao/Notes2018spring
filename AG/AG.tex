@@ -2830,8 +2830,195 @@ $n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. I
 >>>>>>>1
 \end{prop}
 If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the reduced induced scheme structure on $Y$.]
-\end{document}
-\subsection{Projective space and schemes}
+
+\subsection{Aprl 27th:Projective space and schemes}
 \begin{dfn}
 $S$ is a scheme, $n\geq 1$ $\proj^n_S=\proj^n_\intg\times_{\spec \intg} S$
 \end{dfn}
+
+\section*{Two standard construction of $\proj^n_\intg$}
+\begin{enumerate}[label=(\arabic*)]
+\item $\mathsf{Proj}$ of a graded ring (hartshorne p 76)
+$$
+A=\oplus_{d\geq 0} A_d, A_d A_e\subset A_{d+e}
+$$
+$A_0$ is a ring and each $A_d$ is an $A_0$-algebra.
+
+\underline{Ex} $A=B[X_1,..,X_n],A_0=B$
+
+To each such $A$, one can associate a scheme $\text{Proj}(A)$ which generalizes classical projective algebraic sets. For $\proj^n_\intg$ we take $A=\intg[X_0,...,X_n]$. Let $A^+:=(X_0,..,X_n)$ the definition of $\text{Proj}(A)=\proj^n_\intg$ is 
+$$
+\proj^n_\intg=\{P\subset A\mid \text{prime and homogeneous ideal in $A$ such that} P\notsupset A^+\}
+$$
+
+Topologically, the closed sets $V^p(I)=\{P\in\proj^n_\intg|I \subset P\}$ homogeneous and for $U\subset \proj^n_\intg$ open
+$$
+\calo_{\proj_\intg^n}(U)=\left\{
+s:U\lrta \sqcup_{P\in U}A_{(P)}\left| \begin{aligned} &\forall P, s(P)\in A_{(P)},\\
+&\text{ and  locally } s(P)=a/b,\\
+& \text{ where } a,b \text{ homogeneous  of same degree}
+\end{aligned}
+\right\}
+\right.,
+$$
+where $A_{(P)}=\{\text{degree $0$ elements in localization of $A$ w.r.t. $S-P$, homogeneous}\}$
+
+\underline{FACTS}:
+\begin{enumerate}
+\item $\proj^n_\intg$ is  a locally-ringed space
+\item $\proj^n_\intg$ is a scheme, more precisely, for each $i\in \{0,...,n\}$, let $U_i=\{P\in \proj^n_\intg|X_i\notin P\}$, then $U_i$ is open and $\cup_i U_i =\proj^n_\intg$(because $P\in \proj^n_\intg$ does not contain $A^+$).
+
+By ``dehomogeneousation'' one has an isomorphism
+$$
+U_i\overset{\sim}{}\lrta 
+\spec(\intg[Y_1,...,Y_n])\simeq \affn^n_\intg$$
+\end{enumerate}
+\item ``Glueing''
+
+        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,249.36666870117188); %set diagram left start at 0, and has height of 249.36666870117188
+
+\draw   (308,81) .. controls (328,71) and (325.3,64.9) .. (342.65,96.95) .. controls (360,129) and (378,111) .. (398,141) .. controls (418,171) and (328,171) .. (308,141) .. controls (288,111) and (288,91) .. (308,81) ;
+\draw   (153,62) .. controls (173,52) and (211.65,47.95) .. (191.65,67.95) .. controls (171.65,87.95) and (223,92) .. (243,122) .. controls (263,152) and (173,152) .. (153,122) .. controls (133,92) and (133,72) .. (153,62) ;
+\draw [color={rgb, 255:red, 239; green, 46; blue, 46 }  ,draw opacity=1 ]   (213.65,96.95) .. controls (199.65,107.95) and (197.65,118.95) .. (184.65,138.95) ;
+
+
+\draw [color={rgb, 255:red, 45; green, 44; blue, 191 }  ,draw opacity=1 ]   (295,115) .. controls (298.65,111.95) and (302.65,126.95) .. (342.65,96.95) ;
+
+
+\draw    (223,77) .. controls (263,47) and (263.65,68.95) .. (295.65,74.95) ;
+\draw [shift={(295.65,74.95)}, rotate = 192.47] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (295.65,86.95) .. controls (273.65,106.95) and (268.65,118.95) .. (220,107) ;
+\draw [shift={(220,107)}, rotate = 373.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+\draw (214,49) node   {$X_{1}$};
+\draw (223,126) node   {$x$};
+\draw (422,103) node   {$X_{2}$};
+\draw (323,89) node   {$y$};
+
+
+\end{tikzpicture}
+
+Glueing constructs $``X_1\cup X_2$ where each point $x$ is ``identified'' with the corresponding point $y$ in $X_2$.
+\begin{figure*}[h]
+\includegraphics[width=0.2\textwidth]{cocycles.pdf}
+\end{figure*}
+More generally: we need to take care of intersections
+>>>>>>>>>>1
+\end{enumerate}
+\begin{prop}
+Given the glueing datum on $(X_i)_{i\in I}$, there is a scheme $X$ obtained by ``glueing the $X_i$'s along the $U_{ij}$ using $\varphi_{ij}$'s '' given by 
+$$
+X=\left(\sqcup_{i\in I}X_i\right)/\sim,
+$$
+where the equivalence relation is each $x\in X_i$ is identified with $\varphi_{ij}(x)\in X_{j}$ for $j\neq i$ if $x\in U_{ij}$, with the quotient topology. The quotient map $\sqcup X_i\overset{f}{\lrta} X$ is open, in particular $f(X_i)\subset X$ is open).
+
+Note: $\sim$ is an equivalence relation because of the cocycle relation: if $y=\varphi_{ij}(x)$, then $x=\varphi_{ij}^{-1}(y)=\varphi_{ji}(y)$. If $y=\varphi_{ij}(x),x\in U_{ij},z=\varphi_{jk}(y), y\in U_{jk}$ and $x\in U_{ik}$, then $\varphi_{ik}(x)=\varphi_{jk}\circ \varphi_{ij}(y)$ so $x\sim y\sim z\Lrta X\sim z$ and with structure sheaf
+$$
+\calo_X(U)=\{(s_i)_{i\in I}|s_i\in \calo_{X_i}(U\cap X_i) \text{ s.t. } \varphi_{ij}^{\alpha}(s_{j}|U\cap U_{ji}=s_i|U\cap U_{ij}\},
+$$
+\begin{figure*}[h]
+\includegraphics[width=0.3\textwidth]{pic2Aprl27.pdf}
+\end{figure*}
+we want
+$\varphi_j(y)=\varphi_i(\varphi_{ij}^{-1}(y))$
+\end{prop}
+Note that the projection 
+$$
+f:\sqcup X_i\lrta X
+$$ induces a homomorphism
+$X_i\overset{\sim}{\lrta} f(X_i)\subset X$ with open image [$f|X_i$ is injective.]
+
+We identify $X_i$ with $f(X_i)\subset X$ to write $U\cap X_i$ for instance (really it is $f^{-1}(U)\cap X_i$). Then $(X,\calo_X)$ is a ringed space  and there is an isomorphism 
+$X_i\lrta f(X_i)$ of ringed spaces, it follows that(since $f(X_i)$ is open) that $X$ is a scheme.
+
+Here we fix $j$,
+$$
+\calo_{f(X_j)}\lrta f_*\calo_{X_j}
+$$
+is given by 
+$$
+(s_i)\mapsto \text{ the unique $s$ section of $\calo_{X_j}$ that coincides with $s_i$ on} X_i\cap X_j=U_{ij}\subset X_i
+$$
+\underline{Application to } $\proj^n_\intg$. Let $A=\intg[X_0,...,X_n, X_0^{-1},...,X_n^{-1}]$. In $A$, we have subrings $A_i=\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i}]$. Note $A_i\simeq \intg[Y_1,..,Y_n]$ by 
+$$
+\begin{aligned}
+&\frac{X_0}{X_i}\mapsto Y_1\\
+&\frac{X_{i-1}}{X_i}\mapsto Y_{i}\\
+&\frac{X_{i+1}}{X_i}\mapsto Y_{i+1}\\
+&\frac{X_n}{X_i}\mapsto Y_n
+\end{aligned}
+$$
+Let $X_i=\spec(A_i)$ ($\simeq \affn^n_\intg$), ($0\leq i \leq n$). Let $U_{ij}\subset X_i$ be $\spec(A_i,\frac{X_j}{X_j})=\spec (\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j})$ is an open subset in $X_i$.
+
+Note that $B_{ij}=B_{ji}$, the identity $B_{ij}\lrta B_{ji}$ corresponds to an isomorphism 
+$$
+\varphi_{ij}:U_{ij}\lrta U_{ji}.
+$$
+Since the ring part is identity, the cocycle condition holds.
+\begin{dfn}
+$\proj^n_\intg$ is the glued scheme in that case
+i.e. covered by $n+1$ open subschemes $\simeq \affn^n_\intg$, it is of finite type, Noetherian, integral ...
+\end{dfn}
+\begin{dfn}
+$S$ is a  scheme, A projective $S-$scheme
+$$
+X\overset{f}{\lrta} S
+$$
+is a morphism such that there is a factorization
+$$
+X\overset{\text{closed inclusion}{\inj}}\proj^n_S\lrta S
+$$
+for some integer $n\geq 1$.
+\end{dfn}
+
+How to concretely construct projective scheme over $K$? Let $K$ be a field,. Let $f\in K[X_0,...,X_n]$ homogeneous. \underline{Goal}: Define the zero set $Y$ of $f$ as a  closed subscheme of $\proj^n_K$. We are going to do it by glueing up the corresponding intersection
+$$
+Y\cap U_i
+$$
+We define the dehomogeneousation 
+$$
+f_i:=f\left(\frac{X_0}{X_i},..,1,..,\frac{X_n}{X_i}\right)\in K[\frac{X_0}{X_i},...,\frac{X_n}{X_i}]=A_i
+$$
+for $0\leq i\leq n$.
+So we get \underline{closed immersions}
+$$
+Y_i=\spec(A_i/f_i A_i)\inj U_i
+$$
+Idea: $Y$ is obtained by glueing the $Y_i$ by identify $Y_i\cap U_{ji}$ with $Y_j\cap U_{ji}$ along $\varphi_{ij}$.
+
+Precisely: Let $B_{ij}=K[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j}]$,
+$$
+Y_i\cap U_{ij}=\spec(B_{ij}/f_i B_{ij})
+$$
+and
+$$
+Y_i\cap U_{ij}=\spec(B_{ji}/f_j B_{ji})
+$$
+$$
+\begin{tikzcd}
+B_{ij} \arrow[r] \arrow[d, equal] & B_{ij}/f_iB_{ij} \arrow[d, "\sim"] \\
+B_{ji} \arrow[r] & B_{ji}/f_jB_{ji}
+\end{tikzcd}
+$$
+commutative because $f_i$ and $f_j$ generate the same ideal ub $B_{ij}=B_{ji}$, since
+$$
+\begin{aligned}
+f_j &=\sum_J \alpha_J \left(\frac{X_0}{X_j}\right)^{d_0}\cdots\left(\frac{X_i}{X_j}\right)^{d_i}\cdots \left(\frac{X_n}{X_j}\right)^{d_n}\\
+&=\sum_J \alpha_J \left(\frac{X_0}{X_i}\right)^{d_0}\cdots\left(\frac{X_i}{X_i}\right)^{d_i}\cdots \left(\frac{X_n}{X_i}\right)^{d_n}\cdot \left(\frac{X_j}{X_i}\right)^{d_0+\cdots d_n}\\
+&= f_i \cdot \left(\frac{X_j}{X_i}\right)^{d_0+\cdots d_n}
+\end{aligned}
+$$
+
+
+
+
+
+
+
+\end{document}
+

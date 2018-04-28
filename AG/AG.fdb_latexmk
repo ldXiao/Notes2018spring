@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1524582079 "AG.xdv" "AG.pdf" "AG" 1524582079
-  "AG.xdv" 1524582079 786004 19b657fd35235cfabaac36b5177deeb9 "xelatex"
+["xdvipdfmx"] 1524820025 "AG.xdv" "AG.pdf" "AG" 1524820026
+  "AG.xdv" 1524820025 832620 eb7a04545bffb7acc39cef620ba7c210 "xelatex"
   (generated)
   "AG.pdf"
-["xelatex"] 1524582076 "AG.tex" "AG.xdv" "AG" 1524582079
+["xelatex"] 1524820022 "AG.tex" "AG.xdv" "AG" 1524820026
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -31,6 +31,7 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1480098701 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1480098701 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1480098701 1316 b636689f1933f24d1294acdf6041daaa ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1480098701 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1480098701 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1480098701 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1480098701 1116 933a60c408fc0a863a92debe84b2d294 ""
@@ -214,15 +215,17 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "AG.aux" 1524582079 2980 b1a05fe29115e5431290e5d1ef90f951 ""
-  "AG.out" 1524582079 1702 21cc62a4f280e6026a2298cf8c6baf43 ""
-  "AG.tex" 1524582076 108360 2c78689b44fda5a39d801336842da172 ""
-  "AG.toc" 1524582079 1837 8a5c28e833c19b5cd8d4a995e3d24887 ""
+  "AG.aux" 1524820025 3102 adb5ebf481b767ec8e7f6f7bbaf53492 ""
+  "AG.out" 1524820025 1802 88c8f93eb466a1ffd31c2de24d4b7cf4 ""
+  "AG.tex" 1524820021 116529 931ab2fd416d17fa57b3bd698bbfe4cc ""
+  "AG.toc" 1524820025 1941 fe8b123b9414ebb4c8b422c321a76ec0 ""
   "Y^2-X^3.pdf" 1520887628 2522 61b009a465c215459b37f7f854fce86a ""
   "Y^2=X^3-X.pdf" 1520887612 3260 4eb11fe8d49a67f393f50df453fb40d5 ""
+  "cocycles.pdf" 1524812910 77129 75cb255f71f19ea492f4fa5b6ddce0db ""
+  "pic2Aprl27.pdf" 1524813743 78296 833e4befa7928cc1ff41720195dda336 ""
   (generated)
-  "AG.aux"
   "AG.log"
   "AG.toc"
   "AG.out"
   "AG.xdv"
+  "AG.aux"
