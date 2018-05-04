@@ -426,6 +426,7 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/avantgar/pagk8t.tfm
 INPUT Pictures/blue_chap_head.pdf
 INPUT varp.png
+INPUT retraction.png
 INPUT Pictures/blue_chap_head.pdf
 INPUT Pictures/blue_chap_head.pdf
 INPUT Pictures/blue_chap_head.pdf

@@ -51,6 +51,11 @@
 		draw=none,
 		every to/.append style={
 			edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+	},
+	Subset/.style={
+		draw=none,
+		every to/.append style={
+			edge node={node [sloped, allow upside down, auto=false]{$\subset$}}}
 	}
 }
 
@@ -78,6 +83,7 @@
 \renewcommand{\baselinestretch}{1.1}
 \renewcommand{\hom}{\text{ Hom}}
 \newcommand{\spec}{\text{ Spec}\,}
+\newcommand{\res}{\text{ res}}
 \newcommand{\affn}{\mathbb A}
 \newcommand{\proj}{\mathbb P}
 \newcommand{\reals}{\mathbb R}
@@ -161,6 +167,7 @@ Let $X\subset \affn^m$ and $Y \subset \affn^n$ be affine algebraic sets. A \text
 We denote the category of affine algebraic sets over $K$ as $Alg_K$
 \begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
 Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
+
 $$
 \begin{aligned}
 &\hom_{K\text{-alg}}(\calo(Y_2),\calo(Y_1))
@@ -1447,8 +1454,1783 @@ $\eta_f$ specializes to the point $(x,y)$ on $C_f$.
 
 \end{ex}
 
+\subsection{Mar 20th: }
+
+\begin{ex}
+$A=\intg$, $\spec A=\{0\}\cup \{p\intg|p\text{ prime number}\}$.
+Recall $\dim (\intg)=1$, with residue fields 
+$$
+\left\{\begin{aligned}
+&K(\eta)=\ratl\\
+&K(p\intg)=\intg/p\intg=\bbf_p, \text{  finite field }
+\end{aligned}\right.
+$$
+A statement like `` property  $P$ is true at $\eta$'' $\Lrta $`` It is true on any open set'' means ``a property $P$ true for $\ratl$ is also true for $\mod p$ for $p$ large enough.''
+
+(Topology has closed sets $\emptyset, \spec \intg, V(n\intg)=\{p\intg: p\textbf{ divides }n\}$, where $V(n\intg)$ is a finite set of closed points.)
+
+$$
+\intg\lrta \bbf_p\llrta \begin{aligned}
+&\spec (\bbf_p)\inj \spec (\intg)\\
+& \{0\}\in\bbf_p\mapsto  p\intg
+\end{aligned}
+$$
+$$
+\intg\overset{i}{\inj} \ratl\llrta \begin{aligned}
+&\spec (\bbf_p)\overset{i^*}{\lrta} \spec (\intg)\\
+& \{0\}\in\bbf_p\mapsto  \eta
+\end{aligned}.
+$$
+In particular, the image of $i^*$ is dense in $\spec \intg$.
+\end{ex}
+\section*{structure sheaf}
+
+Note recall we want
+$$
+\{\text{affine schemes}\}\llrta \{\text{ commutative rings}\}
+$$
+$$
+\spec A\mapsfrom A
+$$
+$$
+f^*\mapsfrom f
+$$
+This is functorial but cannot capture the whole category of rings because for instance all rings
+$$
+A=K[X]/(X^n), n\geq 1
+$$
+($K$ is a field). We have $\spec A=\{XK[X]\}$, independent of $K$ and $n$. We need to remember what is $K$ and  what is $n$.
+
+We deal with that by defining ``regular functions''
+\begin{dfn}
+$A$ is a ring. For $U\subset \spec A$ open, we define the ring $\calo(U)$ of ``regular functions on $U$'' by 
+$$
+\calo(U)=\left.\left\{s:U\lrta \bigsqcup_{\scp\in U}A_\scp\right| \begin{aligned}
+& \text{(1) $s(\scp)\in A_\scp$ for $\scp \in U$}\\
+&\text{(2)} \forall \scp\in U, \exists V \text{ open  nbhd of } \scp \text{ in } U\\
+& \text{ and } a\in A, f\in A, \text{ s.t.} \forall \scq\in V, f\notin \scq, \text{ and } s(\scq)=a/f\in A_\scq
+\end{aligned}\right\}
+$$
+\end{dfn}
+Note: if $V\subset U$ open then $s\mapsto s|_V$ is a ring morphism $res^U_V:\calo(U)\lrta \calo(V)$ and $res^U_V=id_{\calo(U)}$. Then the pair $\left((\calo(U))_{U\in\spec A}, (res^U_V)_{U,V\in \spec A}\right)$ is a \textbf{ sheaf of rings } on $\spec A$. 
+\begin{dfn}
+$X$ is a topological space, $\calc$ a category,
+\begin{enumerate}[label=(\arabic*)]
+\item A \textbf{$\calc$-presheaf} is sthe data of 
+\begin{enumerate}[label=(\alph*)]
+\item For every open set $U\subset X$, an object $\calf(U)=\Gamma(U,\calf)$ in $\calc$.
+\item For every $V\subset U$ opens in $X$, a $\calc$-morphism $res^U_V: \calf(U)\lrta \calf(V)$
+\end{enumerate}
+such that given $U$ opens in $X$.
+\begin{enumerate}[label=(\roman*)]
+\item $res^U_U=id_{\calf(U)}$
+\item Given $W\subset V\subset \subset U$ opens in $X$
+$$
+res^U_W=res^V_W\circ res^U_V
+$$
+\underline{Notation:} $res^U_V(s)=s|_V$
+\end{enumerate}
+
+\item A $\calc$-presheaf is a \textbf{$\calc$-sheaf} if: for any $U\subset X$ open, for every open covering $U=\cup_\alpha V_\alpha$, for any family $(s_\alpha)_\alpha$ with $s_\alpha\in \calf(V_\alpha)$ such that $s_\alpha|_{V_\alpha\cap V_\beta}=s_{\beta}|_{V_\alpha\cap V_\beta}$, there is a unique $s\in \calf(U)$ with $s|_{V_\alpha}=s_\alpha$.
+\end{enumerate}
+\end{dfn}
+\begin{exercise}
+Check that the sheaf of regular functions is indeed a sheaf.
+\end{exercise}
+\begin{dfn}
+$A$ a ring. The \textbf{affine scheme} associated to $A$ is $(\spec A,\calo)$ where the first data is endowed with Zariski's topology and the $\calo$ is the structure sheaf.
+\end{dfn}
+
+\begin{ex}
+$K$ a field, $\spec K=\{\eta\}$
+$$
+\left\{
+\begin{aligned}
+&\calo(\spec K)=\{s:\eta\lrta K_{\{0\}}=K,\ (\text{ i.e. } s(\eta)\in K)\} \\
+&\calo(\emptyset)=\{0\}
+\end{aligned}
+\right.
+$$
+Different K gives different affine schemes.
+\end{ex}
+
+\begin{prop}
+For $f\in A$, define $U_f=\{\scp\in \spec A|f\notin \scp\}$
+\begin{enumerate}[label=(\arabic*)]
+	\item $U_f$ is a open ``basic open sets''
+	\item We have a canonical isomorphism
+	$$
+	\left\{
+	\begin{aligned}
+	& A_f\overset{\psi}{\lrta}\calo(U_f)\\
+	& a/f^m\longmapsto (s:\scp\in U_f\mapsto \frac{a}{f^m}\in A_\scp)
+	\end{aligned}
+	\right.
+	$$
+\end{enumerate}
+In particular, for $f=1$, we get a canonical isomorphism
+$$
+A=A_1\overset{\sim}{\lrta}\Gamma(\spec A,\calo)
+$$
+$\Lrta$ the affine scheme of $A$ allows you to recover $A$.
+\end{prop}
+\begin{proof}
+(injectivity)
+
+Suppose $\psi\left(\frac{a}{f^m}\right)=0$. This means that 
+$$
+\forall \scp\in U_f, \frac{a}{f^m}=\frac{0}{1}\in A_\scp
+$$
+$\Llrta \forall \scp\in U_f$, $\exists h_\scp\notin \scp,$ $ha=0$. Let $I=\{x\in A|xa=0\}$. $I$ is an ideal and $I\notsubset \scp$ for any $\scp \in U_f$
+
+$\Lrta V(I)\cap U_f=\emptyset$
+
+$\Lrta V(I)\subset V(f)$
+
+$\sqrt{(f)}\subset \sqrt{I}$
+
+$f\in \sqrt{(f)}\in\sqrt{I}$
+
+$\exists k\geq 0, f^ka=0\Lrta a/f^m=0\in A_f$
+
+(Surjectivity): We need the following lemma
+\begin{lemma}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item $U_{f_1}\cap U_{f_2}=U_{f_1f_2}$
+\item $U_{f^n}=U_{f}, V(f^n)=V(f)$
+\item $U_f$ is quasicompact
+\item The open sets $U_f$ forms a basis of the Zariski topology.
+\end{enumerate}
+\end{lemma}
+Consider $\psi:A_f\lrta \calo(U_f)$, let $s\in \calo(U_f)$.
+
+By definition there exists an open covering of $U_f$, $U_f=\bigcup_\alpha V_\alpha$, and elements $a_\alpha, g_\alpha$ such that $\forall \scp\in V_\alpha$, $s(\scp)=\frac{a_\alpha}{g_\alpha}, g_\alpha\notin \scp$.
+
+Using the above lemma,  we may assume  there are finitely many $V_\alpha$ and $V_\alpha=U_{h_\alpha}$.
+
+\underline{Observe}: $\forall \scp\in U_{h_\alpha}=V_\alpha$, $g_\alpha\notin\scp\Llrta \scp\in U_{g_\alpha}$
+$$
+\begin{aligned}
+&U_{h_\alpha}\subset V_{g_\alpha}\\
+& \Lrta V(g_\alpha)\subset V(h_\alpha)\\
+&\Lrta \sqrt{(h_\alpha)}\subset \sqrt{(g_\alpha)}\\
+&\Lrta \exists n_\alpha, h^{n_\alpha}_{\alpha}\in (g_{\alpha})
+\end{aligned}
+$$
+So $h^{n_\alpha}_\alpha=c_\alpha g_\alpha$, Now for $\scp\in U_{h_\alpha}$
+$$
+\frac{a_\alpha}{g_\alpha}=\frac{a_\alpha c_\alpha }{g_\alpha c_\alpha}=\frac{a_\alpha c_\alpha}{h_\alpha^{n_\alpha}}\in A_\scp
+$$
+Replacing $a_\alpha$ by $a_\alpha c_\alpha$, $g_\alpha$ by $h^{n_\alpha}{\alpha}$, Using $U_{h_\alpha^{n_\alpha}}=U_{h_\alpha}$, we reduce to the case where $g_\alpha=h_\alpha$ for all $\alpha$.
+
+On $U_{h_\alpha}\cap U_{h_\beta}=U_{h_\alpha h_\beta}$, we have
+$$
+\forall \scp \in U_{h_\alpha h_\beta}, \frac{a_\alpha}{h_\alpha}=\frac{a_\beta}{h_\beta}\text{  in } A_\scp
+$$
+$$
+\Lrta \exists n(\alpha, \beta), (h_\alpha h_\beta)^{n(\alpha, \beta)}(a_\alpha h_\beta-h_\alpha a_\beta)=0
+$$
+
+Take $n$ to be the largest of the finite many $n(\alpha,\beta)$
+$$
+\Lrta(h_\alpha h_\beta)^{n}(a_\alpha h_\beta-h_\alpha a_\beta)=0
+$$
+$$
+a_\alpha' h'_\beta-a_\beta' h_\alpha'=0
+$$
+where $a_\alpha'=a_\alpha h_\alpha^n$ and $h'_\alpha=h_{\alpha}^{n+1}$
+
+Note 
+$\frac{a_\alpha'}{h_\alpha'}=\frac{a_\alpha}{h_\alpha}$ in $A_\scp$ for all $\scp\in U_{h_\alpha'}=U_{h_\alpha}$.
+
+Now
+$$
+\begin{aligned}
+& \bigcup_\alpha U_{h_\alpha'}=U_f\\
+& V(f)=V(\sum (h'_\alpha))\\
+&\Lrta \sqrt{f}=\sqrt{\sum(h_\alpha')}\\
+& \Lrta f^k =\sum_\alpha h_\alpha' c_\alpha\ \text{ for some } k
+\end{aligned}
+$$
+Define 
+$$
+a=\sum_\alpha c_\alpha a_\alpha'\in A
+$$
+Fix $\beta$,
+$$
+a h_\beta'=\sum_\alpha c_\alpha a_\alpha' h'_\alpha=\sum_\alpha c_\alpha a_\beta' h'_\alpha
+=a_\beta' f^k
+$$
+$$
+\Lrta s(\scp)=\frac{a_\beta}{h_\beta}= \frac{a_\beta'}{h_\beta'}=\frac{a
+}{f^k}
+$$
+in $A_\scp $ for any $\scp \in U_{h_\beta}=V_\beta$.
+
+So $\psi(\frac{a}{f^k})|_{V_\beta}=s|_{V_\beta}$ for any $\beta$.
+So $\psi(a/f^k)$ and $s$ are elements of $\calo(U_f)$ with restrictions equal on open sets forming a covering of $U_f$, by the uniqueness condition in the definition of sheaf, it follows that $\psi(a/f^k)=s$.
+\end{proof}
+
+
+\begin{proof}(of the lemma)
+\begin{enumerate}[label=(\arabic*)]
+\item $U_{f_1}\cap U_{f_2}\overset{?}{=}U_{f_1 f_2}$
+$$
+\begin{aligned}
+V(f_1)\cup V(f_2)&=\{\scp\in \spec A|f_1\in \scp \text{ or } f_2\in\scp \}\\
+&=\{\scp\in\spec A|f_1f_2\in \scp\}
+\end{aligned}
+$$
+\item $f^n\in \scp \Llrta f\in\scp, n\geq1$
+\item Suppose $V(f)\subset \cap_\alpha V(I_\alpha)\Lrta V(\sum I_\alpha)\supset V(f)\Lrta \sqrt{(f)}\subset \sqrt{\sum I_\alpha}$
+\end{enumerate}
+\end{proof}
+
+\subsection{Mar 23th: Sheaves and stalks}
+\begin{ex}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 
+        Let $X$ be a topological space. Then
+        $$
+            \underline C(U) = \{ f : U \longrightarrow \mathbb C \text{ continuous}\}
+        $$
+        for $U\subset X$ open is a sheaf. For $X$ a manifold we also have that
+        $$
+        \underline C^\infty(U) = \{ f : U \longrightarrow \mathbb C \text{ smooth}\}
+        $$
+        is a sheaf and lastly for $X$ a complex manifold the following is a sheaf:
+        $$
+        \mathcal H(U) = \{ f : U \longrightarrow U \text{ holomorphic}\}. 
+        $$
+        \item
+        Let $X= \mathbb C^\times$. Then
+        $$
+        \calf(U) = \{f: U \longrightarrow \mathbb C \text{ holomorphic and } f= g^2 \text{ for some $g$ holomorphic} \}
+        $$
+        is a pre-sheaf but not a sheaf. A holomorphic function might have a square root locally but not on all of U.
+    \end{enumerate}
+\end{ex}
+
+\begin{dfn}
+    Let $\calf_1, \calf_2$ be $\calc$-pre-sheaves on $X$. A \textbf{morphism} $\calc : \calf_1 \longrightarrow \calf_2$ is a collection of morphisms $\varphi_U: \calf_1(U) \longrightarrow \calf_2(U)$ such that for any $V\subset U$ open we have a commutative square
+    $$
+    \begin{tikzcd}
+    \calf_1(U) \arrow[r, "\varphi_U"] \arrow[d, "res^U_V \text{ for } \calf_1"'] & \calf_2(U) \arrow[d, "res^U_V \text{ for } \calf_1"] \\
+    \calf_1(V) \arrow[r, "\varphi_V"] & \calf_2(V)
+    \end{tikzcd}
+    $$
+    A morphism of sheaves we define to be the same as a morphism of pre-sheaves.
+\end{dfn}
+Note that $\operatorname{Id}_{\calf(U)}: \calf(U) \longrightarrow \calf(U)$ gives a morphism and that composition makes sense, i.e. we have that
+$$
+(\varphi \circ \psi)_U = \varphi_U \circ \psi_U.
+$$ 
+Thus we have now defined the category of $\calc$-pre-sheaves and sheaves.
+
+\begin{ex}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 
+        If $X$ is a complex manifold, there are morphisms
+        $$
+        \mathcal H \longrightarrow \underline C^\infty \longrightarrow \underline C
+        $$
+        \item
+        If $X\subset \reals^n$ is a manifold, then
+        $$
+        \left\{
+        \begin{aligned}
+        \underline C^\infty (U) & \longrightarrow \underline C^\infty(U) \\
+        f & \longmapsto \partial f / \partial x_1
+        \end{aligned}
+        \right.
+        $$
+        is a morphism of sheaves from $\underline C^\infty \longrightarrow \underline C^\infty$.
+    \end{enumerate}
+\end{ex}
+
+\begin{prop}
+    Suppose $\calf$ is a $\calc$-pre-sheaf on $X$. Then there is a unique, up to unique isomorphism, morphism $\sigma: \calf\longrightarrow \calf^\sigma$, (the ``sheafification'' of $\calf$) such that for any morphism of presheaves $\varphi: \calf \longrightarrow \mathcal Y$ there is a unique $\varphi^\sigma$ such that $\varphi = \varphi^\sigma \circ \sigma$. In particular $\hom (\calf, \mathcal Y) = \hom (\calf^\sigma, \mathcal Y)$.
+    $$
+    \begin{tikzcd}
+    \calf \arrow[r, "\varphi"] \arrow[d, "\sigma"'] & \mathcal Y  \\
+    \calf^\sigma \arrow{ru}[swap]{\varphi^\sigma}
+    \end{tikzcd}
+    $$
+    If $\calf$ is a sheaf then $\sigma$ is an isomorphism.
+\end{prop}
+
+$\calf^\sigma$ is called the sheaf associated to $\calf$. In order to prove the statement, we need another definition.
+
+\begin{dfn}
+    Suppose $\calf$ is a $\calc$-presheaf on $X$. The \textbf{stalk} of $\calf$ at $x\in X$ is 
+        $$
+        \calf_x := \{ (U,s) \mid x \in U\subset X \text{ open}, s \in \calf(U)\} / \sim
+        $$
+        with 
+        $$(U_1, s_1) \sim (U_2,s_2) \quad \Longleftrightarrow \quad \exists V\subset U_1 \cap U_2 \text{ s.t. } s_1|_V = s_2|_V \text{ and } x \in V.
+        $$
+        This is also called the ``germs of sections of $\calf$ at $x$''.
+\end{dfn}
+
+\begin{prop}
+    Let $A$ be a ring and consider $\calo_A$ on $\spec A$. Then the following morphism is an isomorphism:
+    $$
+    \varphi
+    \left\{
+    \begin{aligned}
+    \calo_{A,p} & \longrightarrow A_p \\
+    (U,s) & \longmapsto s(p)
+    \end{aligned}
+    \right.
+    $$
+\end{prop}
+
+\begin{proof}
+    It follows easily from the definitions that $\varphi$ is well defined. For surjectivity, let $a/f\in A_p$, $f\notin p$.  Then we can construct $s$ defined on $U_f$ such that $s(q) = a/f$ in $A_q$ for all $q \in U_f$.
+    
+    Next, suppose that $s(p)=0$ for some section $(U,s)$. Then we can write $s(q) = a/f$ for any $q\in V$ where $V$ is an open neighbourhood of $p$ in $V$. Since $s(p)=0$, we get $ha=0$ for some $h \notin p$. But then on $V \cap U_h$, $s\equiv 0$. 
+\end{proof}
+
+Now we get back to the construction of $\calf^\sigma$. Define
+$$
+\calf^\sigma(U) := \left\{ 
+    s: U \longrightarrow \bigsqcup_{x \in U} \calf_x \left| 
+    \begin{aligned}
+    & \forall x \in U, s(x) \in \calf_x \text{ and} \\
+    & \forall x \in U, \exists V \subset U \text{ open, s.t. } x\in V, \\
+    & \exists t \in \calf(V) \text{ s.t. } \forall y \in V, s(y) = t_y 
+    \end{aligned}
+    \right\} \right.
+$$
+where $t_y$ denotes the equivalence class $[(V,t)]\in \calf_y$.
+Moreover, define $\varphi^\sigma: \calf \longrightarrow \calf^\sigma$ by 
+$$
+\varphi^\sigma_U(t) = (x \longmapsto t_x)
+$$
+and for $s \in \calf^\sigma(U)$, $V\subset U$ let 
+$$
+\res_V^U(s)(y) = s(y) 
+$$
+for $y\in V$. Finally for a given sheaf $\mathcal Y$, let $\varphi^\sigma_U: \calf^\sigma(U) \longrightarrow \mathcal Y(U)$, such that $s$ maps to the unique $\tilde s \in \mathcal Y(U)$ such that for all $a\in U$, $V\subset U$ and $t \in \calf(V)$ such that $s(y) = t_y$ on $V$, we have $\tilde s|_V = \varphi_V(t)$. Using the sheaf property of $\mathcal Y$, we see that such an $\tilde s \in \mathcal Y(U)$ does exist.
+
+Then $\calf^\sigma$ is a presheaf and $\sigma$ is a morphism. One checks that $\calf^\sigma$ is a sheaf (because it is defined by local conditions) and that the universal property holds.
+
+Given $\calf$ and $\calf^\sigma$, we obtain an isomorphism for all $x$, $\sigma: \calf_x \longrightarrow \calf^\sigma_x$ by
+$$
+[(U,x)] \longmapsto [(U,\varphi^\sigma_U(s))].
+$$
+
+\begin{prop}
+    Given sheaves $\calf_1$, $\calf_2$ on $X$ and a morphism $\varphi: \calf_1 \longrightarrow \calf_2$, $\varphi$ is an isomorphism if and only if for every $x\in X$ the induced $\varphi_x: \calf_{1,x} \longrightarrow \calf_{2,x}$, $[(U,s)] \longmapsto [(U, \varphi_U(s))]$ is an isomorphism.
+\end{prop}
+
+We omit the proof, it can be found in Hartshorne or Eisenbud.
+
+\begin{rmk}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 
+        This only holds for sheaves not presheaves.
+        \item
+        The ismorphism $\varphi_x$ need to come from a ``global'' map $\varphi: \calf_1 \longrightarrow \calf_2$.
+        \item
+        One checks that $\varphi: \calf_1 \longrightarrow \calf_2$ is and isomorphism iff $\varphi_U: \calf_1(U) \longrightarrow \calf_2(U)$ are all isomorphisms. One can define $\varphi$ to be injective if $\varphi_U$ is injective for all $U$. However, the correct definition of surjectivity for $\varphi$ is not equivalent to saying that $\varphi_U$ is surjective for all $U$.
+    \end{enumerate}
+\end{rmk}
+
+\begin{dfn/thm}
+    Let $X,Y$ be topological spaces and $f_X\longrightarrow Y$ be continuous, $\calc$ be a category and $\calf$ be a $\calc$-presheaf on $X$. Define $(f_* \calf)(U)=\calf (f^{-1}(U))$ and $\res_V^U = \res_{f^{-1}(V)}^{f^{-1}(U)}$. Then $f_*\calf$ is a $\calc$-presheaf and is a sheaf is $\calf$ is one.
+    $f_*\calf$ is called the \textbf{direct image of $\calf$ on $Y$}.
+\end{dfn/thm}
+
+\begin{proof}
+    We check that $f_*\calf$ is a sheaf. Let $U\subset Y$ be open, $U \bigcup U_\alpha$ be and open cover for $U$ and let $s_\alpha \in (f_* \calf)(U_\alpha)$ be such that 
+    $$
+    s_\alpha|U_\alpha\cap U_\beta = s_\beta|U_\alpha \cap U_\beta.
+    $$
+    Then $s_\alpha \in \calf(f^{-1}(U_\alpha))$ and
+    $$
+    s_\alpha|f^{-1}(U_\alpha)\cap f^{-1}(U_\beta) = s_\beta|f^{-1}(U_\alpha) \cap f^{-1}(U_\beta).
+    $$
+    Since $f^{-1}(U) = \bigcup f^{-1}(U_\alpha)$ and $\calf$ is a sheaf, there is a unique $s\in\calf(f^{-1}(U))$ such that $s|f^{-1}(U_\alpha) = s_\alpha$. Hence $s \in (f_*\calf)(U)$, $s|U_\alpha = s_\alpha$. The uniqueness follows from the same kind reasoning.
+\end{proof}
+
+\subsection{Mar 27th: Morphism of schemes}
+Recall: $\spec A$, Zariski topology $\calo_A$ structure sheaf.
+
+\underline{Observe}: 
+$f:A\lrta B$ ring morphism and 
+$$
+\begin{aligned}
+\tilde{f}:&\spec B\lrta \spec A\\
+& \scp\longmapsto f^{-1}(\scp)
+\end{aligned}
+$$
+we also get, (Recall $f_*\calf(U)=\calf(f^{-1}(U)))$
+$$
+\begin{aligned}
+\calo(A) &\overset{f^*}{\lrta}  \tilde{f}_*\calo_B \\
+\forall U\subset \spec A, &\calo_A(U)\lrta \tilde{f}_*\calo_B(U)=\calo_B(f^{-1}(U))
+\end{aligned}
+$$
+is defined as follows:
+
+To $s\in \calo_A(U), s:U\lrta \sqcup_{\scp\in U}A_\scp$, such that....\\
+we associated $t:f^{-1}(U)\lrta \sqcup_{Q\in\tilde{f}^{-1}(U)}B_Q$  such that ...\\
+defined 
+$$
+t(Q)=f(s(\tilde{f}(Q))), \ \ s(\tilde{f}(Q))\in A_{\tilde{f}(Q)}
+$$
+where $f(a/b)=f(a)/f(b)$.
+$$\begin{aligned}
+f:&A_{f^{-1}(Q)}\lrta B_Q\\
+& \frac{a}{b}\longmapsto \frac{f(a)}{f(b)}
+\end{aligned}
+$$
+One checks that $t\in\calo_B(f^{-1}(U))$ if $s\in \calo_A(U)$. IN other words: $f:A\lrta B$ gives 
+$$
+(\tilde{f},f^*): (\spec B,\calo_B)\lrta (\spec A,\calo_A)
+$$
+\begin{dfn}
+A \textbf{ringed space} is $(X\calo_X)$, where $X$ is a topological space and $\calo_X$ is a sheaf of rings  on $X$. A \textbf{locally ringed space} is a ringed space where $\calo_{X,x}$ is a local ring for all $x\in X$. (e.g. $\calo_{A,\scp}=A_\scp$, where $A_\scp$ is a local ring with unique maximal ideal $\scp A_\scp$).
+
+A morphism of ringed space $f:(X,\calo_X)\lrta (Y,\calo_Y)$ is a pair
+$$
+(f,f^*):\left\{\begin{aligned}
+&f:X\lrta Y \ \text{  morphism of topological spaces}\\ 
+& f^*:\calo_Y\lrta f_*\calo_X\ \text{ morphism of sheaves}
+\end{aligned}
+\right.
+$$ 
+\end{dfn}
+Ringed space form a category $Id_{(X,\calo_X)}=(Id_X,Id_{\calo_x})$ and 
+$$
+\left\{\begin{aligned}
+& X\overset{f}{\lrta }&Y\overset{g}{\lrta} Z\\
+& \calo_Y\overset{f^*}{\rta}f_*\calo_X&\\
+&& \calo_Z\overset{g^*}{\lrta}g_*\calo_Y,
+\end{aligned}\right.
+$$
+has composition
+$$
+(g\circ g,g_*(f^*)\circ g^*)
+$$
+where $g_*(f^*)$ is the direct image $\calf\lrta g_*\calf$ is a functor from (pre)sheaves on $Y$ to sheaves on $Z$
+.
+(Any morphism of sheaves $\varphi:\calf_1\lrta \calf_2$ gives a morphism $g_*\calf_1\lrta g_*\calf_2$)
+
+A morphism of locally ringed space $(X,\calo_X)\lrta (Y,\calo_Y)$
+ is $(f,f^*)$ $f:X\lrta Y$ is continuous and $\calo_Y\overset{f^*}{\lrta}f_*\calo_X$ such that $f^*$ induces for each $x\in X$ a \underline{local} morphism 
+$\calo_{Y,f(x)}\lrta\calo_{X,x}$.
+
+Recall that $A,B$ are local rings. $f: A\lrta B$ is \underline{local} iff $f^{-1}(\scm_B)=\scm_A$. 
+
+\underline{Note}: $f^{-1}(\scm_B)\subset \scm_A$ because if $f(a)\in \scm_B$ $a\notin A^\times\Lrta a\in \scm_A$. So the condition to be local is 
+$$
+\scm_A\subset f^{-1}(\scm_B)\Llrta f(\scm_A)\subset \scm_B
+$$
+
+\begin{dfn}
+If $\calo_{Y,f(x)}\lrta \calo_{X,x}$ $f^*$ gives  morphisms 
+$$
+\calo_Y(U)\overset{f^*_U}{\lrta}\calo_X(f^{-1}(U))
+$$
+for every $y\in Y$
+$$
+\calo_{Y,y}\lrta (f_*\calo_X)_y
+$$
+$$
+[(U,s)]\longmapsto [(U,f^*_U(s))].
+$$
+Take $y=f(x):$
+$$
+\begin{aligned}
+&\calo_{Y,f(x)}\lrta (f_*\calo_X)_{f(x)}\lrta \calo_{X,x}\\
+& [(U,s)]\longmapsto [(U,f^*_U(s))]\longmapsto[f^{-1}(U),f^*_U(s)]
+\end{aligned}
+$$
+is the desired morphism.
+\end{dfn}
+\begin{thm}
+\begin{enumerate}[label=(\arabic*)]
+\item For any $f: A\lrta B$ the pair $(\tilde{f},\tilde{f}^*)$ is a morphism  of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$
+\item Conversely, any morphism of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$ is induced by a morphism of rings.
+\item This gives a equivalence of categories
+$$
+\left( \text{ commutative rings with unity}\right)\overset{\simeq}{\llrta}\left(\text{affine schemes as locally ringed spaces}\right)
+$$
+$$
+\hom_{rings}(A,B)=\hom_{loc.r.sp}(\spec B,\spec A)
+$$
+\end{enumerate}
+\begin{proof}
+\underline{Recall} $\calo_{A,\scp}=A_\scp$ and recall $f:A_{f^{-1}(\scq)}\lrta B_\scq$ i.e.
+$$
+\calo_{A,\tilde{f}(\scq)}\lrta \calo_{B,\scq}
+$$
+\underline{Claim}: This is exactly the morphism $\calo_{A,\tilde{\scq}}\lrta \calo_{B,\scq}$ induced by $\tilde{f}^*:\calo_A\lrta \tilde{f}^*\calo_B$
+
+\underline{Claim2}: For every $\scq\in\spec B$, 
+$$
+\begin{aligned}
+& A_{f^{-1}(\scq)}\lrta B_\scq\\
+&a/b\longmapsto f(a)/f(b)
+\end{aligned}
+$$
+is a local morphism.
+
+We first prove Claim2, it suffices to check $f(\scm_{A_{f^{-1}(\scq)}})\subset \scm_{B_\scq}$
+$$
+f(a/b)=\frac{f(a)}{f(b)}\in \scq\\
+$$
+$$
+\begin{tikzcd}
+\calo_{A,\tilde{f}(\scq)} \arrow[ddd, "\simeq"'] \arrow[rr] &  & (\tilde{f}^*_*\calo_B)_{\tilde{f}(\scq)} \arrow[rr] &  & \calo_{B,\scq} \arrow[ddd, "\simeq"] \\
+ & (U,s) \arrow[d, maps to] \arrow[r, maps to] & (U,\tilde{f}^*_*(s)) \arrow[r, maps to] & (\tilde{f}^{-1}(U),\tilde{f}_*^*(s)) \arrow[d, maps to] &  \\
+ & s(f^{-1}(\scq))=s(\tilde{f}(\scq)) \arrow[rr, maps to] &  & f(s(\tilde{f}(\scq)))=\tilde{f}^*_*(s)(\scq) &  \\
+A_{f^{-1}(\scq)} \arrow[rrrr, "f"] &  &  &  & B_\scq,
+\end{tikzcd}
+$$
+so this indeed works,
+
+(2) Let $(f,f^*):(\spec B,\calo_B)\lrta (\spec A,\calo_A)$ be a  morphism of locally ringed space/ 
+$$
+f^*:\calo_A\lrta f_*\calo_B
+$$
+$$
+\begin{tikzcd}
+\calo_A(\spec A) \arrow[dd, equal] \arrow[r, "f^*_{\spec A}"] & \calo_B(f^{-1}(\spec A)) \arrow[d,equal] \\
+ & \calo_B(\spec B) \arrow[d,equal] \\
+A \arrow[r] & B.
+\end{tikzcd}
+$$
+Let $\varphi=f^*_{\spec A}$.
+
+\underline{Claim}: The locally ringed morphism induced by $\varphi$ is $(f,f^*)$.
+
+To finish the proof of $(2)$, we need to check that the two constructions are reciprocal bijections.
+
+To check the claim, let $\scq\in \spec(B)$, we have
+$$
+\begin{tikzcd}
+A \arrow[r, "\varphi"] \arrow[d] & B \arrow[d] \\
+\calo_{A,f(\scq)} \arrow[r, "f*_\scq"] & B_\scq=\calo_{B,\scq}
+\end{tikzcd}
+$$
+We know:
+\begin{enumerate}[label=(\arabic*)]
+\item $f^*_\scq$ is local 
+$$
+\Llrta (f^*_\scq)^{01}(\scm_{B_\scq})=\scm_{A_{f(\scq)}}
+$$
+\item The diagram commutes, because $f^*$ is a morphism of sheaves so compatible with restriction. This implies $f(\scq)=\varphi^{-1}(\scq)=\tilde{\varphi}(\scq)$. (Indeed. let $\alpha\in\varphi^{-1}(\scq),\beta=\varphi(\alpha)\in\scq\Lrta \alpha\in f(\scq)\Lrta \varphi^{-1}(\scq)\subset f(\scq)$).
+$$
+\begin{tikzcd}
+\alpha \arrow[d, maps to] \arrow[r, maps to] & \beta \arrow[d, maps to] \\
+(*) \arrow[r, maps to] & (\bullet\in \scm_{B_\scq}),
+\end{tikzcd}
+$$
+where $(*)$ belongs to $\scm_{A_{f(\scq)}}$ (because the morphism is local)
+
+Conversely, let $\alpha\in F(\scq)$
+$$
+\begin{tikzcd}
+\alpha \arrow[d, maps to] \arrow[r, maps to] & \beta=\varphi(\alpha) \arrow[d, maps to] \\
+(\bullet\in \scm_{A_{f(\scq)}}) \arrow[r, maps to] & (*\in \scm_{B_\scq})
+\end{tikzcd}
+$$
+since $\beta$ maps to an element in $\scm_{B_\scq}$, we have $\beta\in\scq$, so $\varphi(f(\scq))\subset \scq\Llrta f(\scq)\subset \varphi^{-1}(\scq)$
+\end{enumerate}
+
+Proof of part $(3)$ is left as an exercise.
+\end{proof}
+\end{thm}
+\begin{dfn}
+$(X,\calo_X)$ (locally)-ringed space. $U\subset X$ open set.  Define $\calo_U(V)=\calo_X(V)$ for $V\subset U$ open.  Then $(U,\calo_U)$ is a (locally) ringed space. ( in fact $\forall x\in U$, $\calo_{U,x}=\calo_{X,x}$)
+\end{dfn}
+\begin{dfn}
+A \textbf{scheme} $S$ is a locally ringed space $(S,\calo_S)$  which is locally isomorphic to affine schemes, i.e.
+ $\forall x\in S\exists U\subset S$  open, $x\in U$, and a ring $A$ such that $(U,\calo_U)$ is isomorphic as locally ringed spaces to $(\spec A,\calo_A)$. We view category of schemes as a subcategory of locally ringed spaces.
+\end{dfn}
+\subsection*{ Examples of schemes/morphisms}
+
+Let $K$ be a field. Let $S$ be a scheme with morphism $f:S\lrta \spec K$.
+
+\underline{Affine case}: $S=\spec A$
+$$
+f\llrta (K\lrta A)
+$$ 
+i.e. $f\llrta$ structure of $K$-algebra on $A$
+\begin{ex}
+$A=K[X_1,...,X_m]/I$ has  morphism $\spec A\lrta K$. 
+\end{ex}
+
+\underline{Global case}: 
+$$
+f\llrta\left\{\begin{aligned}
+& S\overset{continuous}{\lrta}\spec (K)=\eta=\{0\}\\
+& \calo_{\spec K}\lrta f_*\calo_S
+\end{aligned}\right.
+$$
+where $\calo_{\spec K}$ consists of 
+$$
+\emptyset :\calo_{K}(\emptyset)=\{0\}\lrta \{0\}
+$$
+$$
+\{\eta\}:\calo_K(\eta)=K\lrta (f_*\calo_S)(\{\eta\})=\calo_S(S)
+$$
+therefore
+$$
+\{S\lrta \spec K\}\llrta \{K\lrta \calo_S(S)\}.
+$$
+
+
+\begin{dfn}
+Let $B$ be a scheme, a scheme \textbf{over } $B$ is 
+$$
+f:S\lrta B
+$$
+a morphism of schemes.
+
+A morphism of schemes over $B$ is 
+$$
+\begin{tikzcd}
+S_1 \arrow[rd, "f_1"] \arrow[rr, "g"] &  & S_2 \arrow[ld, "f_2"] \\
+ & B & 
+\end{tikzcd}
+$$
+so that $f_2\circ g=f_1$.
+\end{dfn}
+
+\underline{Global case2}: $K$ is a field , $f:\spec K\lrta S$ corresponds to a point $x=f(\eta)\in S$, $\calo_S\lrta f_*\calo_{\spec K}:$ $$
+\forall U,\calo_S(U)\lrta \calo_{\spec K}(f^{-1}(U))=\left\{\begin{aligned}
+&\{0\}\text{ if }x\notin U\\
+& K\text{ if } x\in U.
+\end{aligned}
+\right.$$
+Compatibility with restrictions show that this is equivalent to
+$$
+\calo_{S,f(\eta)}=\calo_{S,x}\overset{g}{\lrta}\calo_{K,\eta}=K
+$$
+such that $g^{-1}(\{0\})=\scm_{\calo_{S,x}}$, i.e.
+$g$ passes to the quotient
+$$
+K_S(x)\lrta K.
+$$
+Concretely, ``the coordinates of $x$ are in $K^n$''
+
+\subsection{Apr 10th: }
+Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$,  $(\calo_{S,x})$ are local rings. s.t. $\forall x\in S$, exists an open set $U\in S$ $x\in U$ and a ring $A$ s.t. 
+$(U,\calo_{S}\mid_U)\simeq \spec A$.
+
+We will give some examples of morphism of schemes.
+\begin{ex}
+\begin{enumerate}[label=(\arabic*)]
+\item $A, B$ are rings. 
+$$
+\hom_{Sch}(\spec A,\spec B)=\hom_{Rings}(B,A)
+$$
+\item $K$ is a field.
+$$
+[X\lrta \spec K-\{\eta\}]\Llrta [K\lrta \Gamma(X,\calo_X)]
+$$
+(also for any $x\in X$, we get $\calo_{K,\eta}=K\lrta \calo_{X,x}\lrta \kappa(x)$) so every residue field is an extension of $K$.
+\item $$
+[\spec(K)\overset{f}{\lrta } X]\Llrta [\text{a point $x=f(\eta)$ and } \calo_{X,x}\overset{f^*}{\lrta } K]
+$$
+s.t. $\ker(f^*)=\scm_{X,x}$ i.e. $\kappa(x)\inj K$.
+
+I.e. $\hom_{Sch}(\spec(K), X)\cong\{(x,i)|x\in X, i:\kappa(x)\inj K\}$. 
+
+In particular, take $X=\spec(K[X_1,...,X_n]/(f_1,...,f_m))$ then using $(1)$, we get 
+$$
+\hom_{Sch}(\spec K, X)\simeq \hom_{Rings}(K[X]/I, K).
+$$
+If we only consider morphism over $\spec K$,
+$$
+\begin{tikzcd}
+\spec K \arrow[rd, "id"] \arrow[rr] &  &X \arrow[ld] \\
+ & \spec K & ,
+\end{tikzcd}
+$$
+we look ar $\hom_{K-alg}(K[X]/I ,K)$
+
+$K$-linear $K[X]/I\lrta K$ $\Llrta $ giving $x=(x_1,...,x_n)\in K^n$ s.t. $f_1(x)=...=f_m(x)=0$ so
+$$
+\hom_{Sch\ over\ K}(\spec K, X)
+$$
+are the $K$-valued solutions of the equation defining $X$.
+
+\underline{Notation}: Any $S\overset{f}{\lrta }X$ is called an $S$-valued point of $X$.
+\item  (restriction of morphisms)
+$$
+U\subset X\overset{f}{\lrta} Y
+$$
+where $U$ is open. We want to restrict $f$ to $U$, first $(U,\calo_X\mid U)$ is locally ringed space. (We will see that it is a scheme.)
+
+Let $f|U:(U,\calo_X\mid U)\lrta X$ be defined by 
+$$
+(f|U)(x)=f(x)\forall x\in U
+$$
+so $f| U$ is continuous and 
+$\calo_Y\overset{f|_U^*}{\lrta }(f|U)_*(\calo_X|U)$ defined by 
+$
+\forall V\in Y,\text{ open }
+$
+$$
+\calo_Y(V)\lrta (\calo_X|U)((f|U)^{-1} (V))=\calo_X(U\cap f^{-1}(V))
+$$
+obtained by 
+$$
+\calo_Y(V)\lrta \calo_X(f^{-1}(V))\overset{\res}{\lrta}\calo_{X}(f^{-1}(U)\cap V).
+$$
+This is a morphism of ringed spaces. Moreover, we can check that it is a morphism of schemes. On the stalks, the induced morphisms 
+$$
+\calo_{Y,(f|U)(x)=f(x)}\lrta \calo_{X,x}
+$$
+are the same as those from $f$ it self. 
+
+\underline{Check} $V\subset U\subset X\Lrta f|V=(f|U)|V$.
+\item \underline{Prop}. Any $U\subset X$, where $X$ is a scheme, $U$ open , is a scheme. 
+(\underline{Note}: in general, this is not an affine  scheme even if $X$ is affine.)
+Let $X=\affn^2_\cplx=\spec(\cplx{X_1,X_2})$, $U=X-\{(0,0)\}$ open, where the point $(0,0)$ corresponds to the maximal ideal $(X_1,X_2)\cplx[X]$. $U$ is not  an affine scheme because one can check that 
+$$
+\begin{tikzcd}
+\Gamma(U,\calo_U) \arrow[d, equal] \arrow[r, "\simeq"] & \cplx[X_1,X_2] \arrow[d,equal] \\
+\Gamma(U,\calo_X|U) \arrow[d,equal] & \Gamma(X,\calo_X) \\
+\Gamma(U,\calo_X) & 
+\end{tikzcd}
+$$
+\boxed{Hartlog's phenomenon} so if $U$ was affine, we would get $U\overset{\simeq}{\inj} X$ which is absurd.
+\begin{proof}[Proof of Prop]
+$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open nbhd of $x\in U$, and is  open in $V=\spec A$ so it it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (We already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
+
+To deduce the Prop, it suffices to have an isomorphism 
+$$
+\calo_{A_f}\overset{\simeq}{\lrta} i_*\calo_{U_f}
+$$
+i.e. for all $V\subset \spec (A_f)$ open an isomorphism 
+$$
+\calo_{A_f}(V)\overset{\simeq }{\lrta} \calo_{U_f}(i^{-1}(V))
+$$
+and compatible with restrictions.
+
+\underline{Recall}: $\calo_{A_f}(U)=\{g:U\lrta \sqcup_{Q\in U}(A_f)_Q|g\text{ ``locally'' } \frac{a}{b}, a,b\in A_f\} $
+
+$$
+\calo_{U_f}(i^{-1}(V)=\calo_A(i^{-1}(V)))=\{\tilde{g}: i^{-1}(V)\lrta \sqcup_{\scp \in A_{\scp}}|\tilde{g}=\frac{\tilde{a}}{\tilde{b}}, \tilde{a},\tilde{b}\in A\}
+$$
+The morphism $g\mapsto \tilde{g}$ is given by $\tilde{g}(\scp)=g(\scp A_f)=g(i(\scp))$. This works because $a=\tilde{a}/f^n$ and $b=\tilde{b}/f^m$ so $a.b=f^m\tilde{a}/f^n\tilde{b}$
+\end{proof}
+\item A discrete valuation ring is a local ring $A$ with maximal ideal $\scm_A\subset A$ being a principal ideal generated by $\varpi\in A$ (``uniformizer'')\footnote{$A$ is a the local ring at a closed point of  a non-singular point of a curve}
+$A/\scm_A-k$ is the residue field. (Exercise. $A=\{a/b\in Q|p\nmid b,a\in \intg\}$, $\scm_A=\scp A,\varpi =p$)
+
+$\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=\varpi A=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$, $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
+$$
+\calo_A(\emptyset)=0,\calo_A(\spec A)=A, \calo_A(\{\eta\})\simeq A_\varpi=K=Frac(A)
+$$
+(since $A_\varpi=\{\frac{a}{\pi^n}|n\geq 0\}$ and any $b\notin \varpi A$ is invertible)
+$$
+\kappa(s)=A/\scm_A=k
+$$
+$$
+\kappa(\eta)=Frac(A/\{0\})=K
+$$
+$$
+\res^{\spec A}_{\{\eta\}}:A\lrta A_\varpi=K
+$$
+is the inclusion. What is the nature of schemes over $A$?
+$$
+f:X\lrta \spec(A)
+$$
+\underline{Topologically}: $X=X-s\sqcup X_\eta$,
+$$
+f(x)=\left\{\begin{aligned}
+&s, x\in X_s\\
+& \eta, x\in X_\eta
+\end{aligned}\right.
+$$
+s.t. $f^{-1}(\{\eta\})=X_\eta$ is open in $X$. (topology is determined by an oepn set $X_\eta\subset X$),
+
+\underline{sheaf-theoretical point}
+$$
+\calo_A\lrta F_*\calo_X\Llrta \begin{tikzcd}
+A=\calo_A(\spec A) \arrow[r, "f^*_A"] \arrow[d, "\res"'] & \calo_X(X) \arrow[d] \\
+K=\calo_A(\{\eta\}) \arrow[r, "f^*_\eta"'] & \calo_X(X_\eta)
+\end{tikzcd}
+$$
+such that 
+$$
+\res^X_{X_\eta}(f^*_A(a))=f^*_\eta(a)(\text{ viewed a elements of }K).
+$$
+It is locally ringed $\forall x, \calo_{A,f(x)}\lrta \calo_{X,x}$ local $\Llrta \forall x\in X_\eta$, $\calo_{A,\eta}=A_\eta=K\lrta \calo_{X,x}$ (always local) and 
+$\forall s\in X_s$, $\calo_A(\spec A)=A=\calo_{A,s}\lrta \calo_{X,x}$, where the equality holds because $\spec A$ is the only open set that containing $s$.
+\end{enumerate}
+\end{ex} 
+
+\begin{exercise}
+For any scheme $X$, there is a unique morphism $X\lrta \spec(\intg)$. recall $\dim(\intg)=1$.
+\end{exercise}
+\begin{proof}
+If $X=\spec A$, then
+$$
+\hom_{Sch}(\spec A,\spec \intg)=\hom){Rings}(\intg, A)=\{1\mapsto 1\}
+$$
+has a unique element. If $X$ is arbitrary, $X=\cup_{i}\spec A_i$ for every $i$, there is a unique $f_i:\spec (A_i)\lrta \spec \intg$. Intuitively, this implies uniqueness $(f,\tilde{f}:x\lrta \spec \intg)\Lrta f|\spec(A_i)=f_i=\tilde{f}|\spec(A_i)$ and thus implies $f=\tilde{f}$ and also the existence since
+$$
+f_i|\spec(A_i)\cap \spec(A_j)=f_j|\spec(A_i)\cap \spec(A_j)
+$$
+
+Indeed
+\begin{prop}
+Given $X,Y$ schemes, $X=\cup_i U_i$ open covering. To give $f:X\lrta Y$ is ``the same'' as giving $f_i|U\lrta Y$ s.t. $f_i|U_i\cap U_j=f_j|U_i\cap U_j$.
+
+$f\mapsto (f|U_i)_j$ is a bijection.
+\end{prop}
+\underline{surjectivity}: Given $(f_i), f_i:U_i\lrta Y$ construct $f$? 
+$$
+X\overset{f}{\lrta } Y
+$$
+
+\underline{Topologically}: $f(x)=f_i(x)$ if $x\in U_i$ is well-defined since $f_i(x)=f_j(x)$ if $x\in U_i\cap U_j$. $f$ thus defined is continuous (exercise)
+
+\underline{Sheaf-theory} we need $\calo_Y\lrta f_*\calo_X$: $\forall V\subset Y$, $\calo_Y(V)\overset{?}{\lrta}\calo_X(f^{-1}(V))$. Given $s\in \calo_Y(V)$, we get $s_i\in \calo_{U_i}(f_i^{-1}(V))=\calo_X(f_i^{-1}(V))$ and $f^{-1}(V)=\cup_i f_i^{-1}(V)$ and 
+$s_i|f_i^{-1}\cap f_j^{-1}(V)=s_j|f_i^{-1}(V)\cap f_j^{-1}(V)$. By the sheaf condition on $\calo_X$ , there exists a  unique $\tilde{s}\in \calo_X(f^{-1}(V))$ s.t.
+$$
+\tilde{s}|f^{-1}(V_i)=s_i,\forall i.
+$$
+The map $s\mapsto \tilde{s}$ is the required
+$\calo_Y(V)\lrta \calo_X(f^{-1}(V))\Lrta $ get $\calo_Y\overset{f^*}{\lrta }f_*\calo_X$. It is local because if $x\in U_i\subset X$ the induced 
+\end{proof}
+
+\subsection{Aprl 13th: }
+\begin{ex}
+\begin{prop}
+For any scheme $X$ and any ring $A$, there is a bijection
+$$
+\hom_{Sch}(X,\spec A)\simeq \hom_{Rings}(A,\calo_X(X))
+$$
+given by 
+$$
+X\overset{f}{\lrta}\spec A
+$$
+$$
+\Lrta \calo_A\overset{f^*}{\lrta} f_*\calo_X\Lrta A=\calo_{\spec A}(\spec A)\lrta \calo_X(f^{-1}\spec A)=\calo_X(X)
+$$
+\underline{Ex}.\begin{enumerate}[label=(\arabic*)]
+\item $\hom_{Sch}(X,\spec K)\llrta K\inj c\calo_X(X)$
+\item $\hom_{Sch}(X,\spec \intg)\simeq \hom(\intg,\calo_X(X))$ has a unique element. ($\spec \intg$ is the final object in $\mathsf{Sch}$) 
+\item $\hom_{Sch}(X,\affn^1_\intg)\simeq\hom(\intg[T],\calo_X(X))$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+$$
+X=\cup_i U_im U_i=\spec(A_i)\text{ open in } X
+$$
+$$
+\begin{aligned}
+\hom_{Sch}(X,\spec A)&=\{(f_i):f_i:U_i\lrta \spec A\text{ s.t. }f_i|U_i\cap U_j=f_j|U_i\cap U_j\}\\
+&\cong\{(g_i):g_i:A\lrta A_i,\text{ which are compatible on intersections} \}\\
+&\cong\{(g_i\: g_iA\lrta \Gamma(U_i\calo_X),\forall a\in A, g_i(a)|U_i\cap U_j=g_j(a)|U_i\cap U_j\}\\
+&\simeq\{g|g:A\lrta \calo_X(X)\}
+>>>>>>>>>>1
+\end{aligned}
+$$
+\end{proof}
+\underline{Note} in general, 
+$$
+\hom_{Sch}(\spec A. X)\neq \hom_{rings}(\calo_X(X),A)
+$$
+\underline{Ex}. $X=\proj^1_K$, $\Lrta \calo_X(X)=K$. If $A=K$, then $\hom_{rings}(K,K)=\{id\}$ but 
+$\hom(\spec \ratl,\proj^1_\ratl)$ has infinitely many elements.
+\end{ex}
+\section{Fiber product}
+This is a notion that makes sense in any category.
+\begin{dfn}
+$\calc$ a category, $X,Y$ objects of $\calc$, $S$ an object of $\calc$. Assume given
+$$
+\begin{tikzcd}
+ & Y \arrow[d, "f_2"'] \\
+X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+We say that an object $Z$ of $\calc$ with morphisms 
+$$
+\begin{tikzcd}
+Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+makes the diagram commutes is a \textbf{fibre product} of $X,Y$ over $S$ if it has the universal property
+$$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
+ & Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+ & X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+
+\underline{Notation}: $Z=X\times_S Y$
+\end{dfn}
+N.B. This notation is ambiguous because the fibre product depends on $f_1,f_2$. The fibre product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
+\begin{ex}
+In $\mathsf{Sets}$ fibre products exist and
+$$
+X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
+$$
+with $\pi_1(x,y)=x$ and $\pi_2(x,y)=y$
+\end{ex}
+\begin{proof}
+\ \begin{enumerate}[label=(\arabic*)]
+\item $f_2\circ \pi_2(x,y)=f_2(y)=f_1(x)=f_1\circ \pi_1(x,y)$ for $(x,y)\in Z$.
+\item Let $T$ be a set with $p_1:T\lrta X$ and $p_2:T\lrta Y$ s.t. $$\begin{tikzcd}
+T \arrow[rdd,"p_1"] \arrow[rrd,"p_2"] \ar[rd,"f"] &  &  \\
+ & Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
+ & X \arrow[r, "f_1"] & S
+\end{tikzcd}$$
+define $f(t)=(p_1(t),p_2(t))$, $f_1(p_1(t))=f_2(p_2(t))$, therefore $f(t)\in Z$. So $f$ is a map makes the  above diagram commute. Uniqueness of $f$ is obvious. If there is  another $\tilde{f}(t)=(\tilde{f}_1(t),\tilde{f}_2(t))$ making the above diagram commute, then $\tilde{f}_1(t)=\pi_1\circ \tilde{f}(t)=p_1(t)$ and $\tilde{f}_2(t)=\pi\circ \tilde{f}(t)=p_2(t)$.
+\end{enumerate}
+\underline{Note}: This construction/definition is a an example of ``universal'' object in the categorical sense. It is universal in the following sense.
+
+Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibre products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
+\end{proof}
+\begin{ex}
+If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibre product over $S$ is just the Cartesian product
+$$
+X\times_S Y=\{(x,y\\in X\times Y|f_1(x)=f_2(y)\}
+$$
+But the restriction on $f_i$ is just vacuous, the fibre product contains the usual Cartesian product.
+
+(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibre product is isomorphic to the intersection of $X,Y$
+$$
+\begin{tikzcd}
+X\cap Y \arrow[d, hook] \arrow[r, hook] & Y \arrow[d, hook] \\
+X \arrow[r, hook] & S
+\end{tikzcd}
+$$
+
+(3) $$
+\begin{tikzcd}
+f_2^{-1}(X) \arrow[d, "f_2|_{f^{-1}_2(X)}"'] \arrow[r, hook] & Y \arrow[d, "f_2"] \\
+X \arrow[r, "f_1", hook] & S
+\end{tikzcd}
+$$
+\end{ex}
+\begin{thm}
+In the category $\mathsf{Sch}$ of schemes, arbitrary fibre product exists.
+\end{thm}
+\underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
+
+\begin{proof}[Proof of theorem]
+\underline{Step 1} We prove this for affine schemes.
+
+Assume $X=\spec A$, $Y=\spec B$, $S=\spec R$. Given  a diagram
+$$
+\begin{tikzcd}
+X \arrow[r] & S \\
+ & Y \arrow[u]
+\end{tikzcd}
+$$
+in $\mathsf{AffnSch}$, we have a reversed diagram in $\mathsf{Rings}$
+$$
+\begin{tikzcd}
+A &  \\
+R \arrow[u] \arrow[r] & B
+\end{tikzcd}
+$$
+Define $Z=\spec(A\otimes_R B)$, and set $A\otimes_R B=:C$. We have 
+$$
+\begin{tikzcd}
+A \arrow[rrr] &  &  & C &  \\
+ & a \arrow[r, maps to] & a\otimes 1 &  & 1\otimes b \\
+ &  &  &  & b \arrow[u, maps to] \\
+R \arrow[uuu] \arrow[rrr] &  &  & B \arrow[uuu] & 
+\end{tikzcd}
+$$
+This diagram is commutative, which guarantees a diagram in $\mathsf{AffSch}$ 
+$$
+\begin{tikzcd}
+Z \arrow[r] \arrow[d] & Y \arrow[d] \\
+X \arrow[r] & S
+\end{tikzcd}
+$$
+$$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] &  &  \\
+ & Z \arrow[d] \arrow[r] & Y \arrow[d] \\
+ & X \arrow[r] & S
+\end{tikzcd}
+$$
+
+\underline{N.B.} $\spec (A\otimes_R B)$ is not easy to describe as a set.
+
+
+\underline{Step 2} Uniqueness of $X\times_S Y$, when it  exists, is formal.
+
+\underline{Step 3.} If $X\times_S Y$ exists, for any open subset $U\subset X$, $U\times_S Y$ exists and is $\pi_1^{-1}(U)$
+$$
+\begin{tikzcd}
+\pi_1^{-1}(U) \arrow[d] \arrow[r] & X\times_S Y \arrow[d, "\pi_1"] \arrow[r] & Y \arrow[d] \\
+U \arrow[r, hook] & X \arrow[r] & S
+\end{tikzcd}
+$$
+\underline{Step 4} $U_i$ affine. If for each $i$, $U-i\times_S Y$ exists, then so does $X\times_S Y$
+$$
+\begin{tikzcd}
+ & Y \arrow[d, "f_2"] \\
+\cup_i U_i=X \arrow[r, "f_1"] & S
+\end{tikzcd}
+$$
+If for each $i$, $U_i\times_S Y$ exists, then so does $X\times_S Y$.
+
+Define $V_{i,j}=\pi_{1,i}^{-1}(U_i\cap U_j)\subset U_i\times_S Y$ open. Check that $V_{i,j}=(U_i\cap U_j)\times_S Y$
+>>>>>>>>>2
+
+One can glue  the $U_i\times_S Y$ along the isomorphisms. 
+
+\underline{Check} This scheme is $X\times_S Y$
+
+\underline{Step 5.}
+
+step 1+ step 4.
+
+$Y,S$ affine $\Lrta X\times_S Y$ exists.
+\end{proof}
+
+\subsection{17th Aprl: Examples and Applications of the Fiber Product}
+Recall.
+If we have maps
+ $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fiber product of $X\lrta S\longleftarrow Y$ if it has the universal property
+ $$
+\begin{tikzcd}
+T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
+ & Z \arrow[d] \arrow[r] & Y \arrow[d] \\
+ & X \arrow[r] & S
+\end{tikzcd}
+ $$
+ $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fiber product of schemes.
+ $$
+X\times_S Y=\spec A\otimes_R B
+ $$
+ Define: $X\times_R Y:=X\times_{\spec R} Y$.
+
+\begin{ex}
+Why not product?
+For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fiber product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
+
+$X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y\neq\spec \intg[T,V]$ Krull dimension $3$.
+$$
+\dim X\times_\intg Y\neq \dim X+\dim Y.
+$$
+\end{ex}
+
+\begin{ex}
+$K$ a field, $X, Y$ schemes over $K$ $\dim X\times_K Y=\dim X+\dim Y$. But hte set of points of $X\times_K Y$ is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it true that $X(K)=\hom(\spec K, X)$
+$$
+X\times_K Y(K)=X(K)\times Y(K)
+$$
+$$
+\hom_{\spec K}(\spec K, X\times_K Y)=\hom_{\spec K}(\spec K, X)\times \hom_{\spec K}(\spec K, Y)
+$$
+by the universal product of fiber products.
+\end{ex}
+
+If $X$ is a scheme over $S$, $T$ is a scheme over S. We can define $X(T)$ as $\hom_S(T,X)$
+and call it the $T$-valued points of $X$.
+$$
+T=\spec R, X(R)
+$$
+$$
+X\times_S Y(T)=X(T)\times Y(T).
+$$
+If we have the following morphism of schemes
+$$
+\begin{tikzcd}
+X \arrow[rd] &  & Y \arrow[ld] \\
+ & S' \arrow[d] &  \\
+ & S &, 
+\end{tikzcd}
+$$
+ we have 
+ $$
+X\times_{S'} Y(T)=X(T)\times_{S'(T)} Y(T).
+ $$
+
+$\hom_S(T,X\times_{S'}Y)=$\{ pair $(f_1,f_2)$ of elements $f_1\in \hom_{S}(T,X)$ and $f_2\in \hom_S(T,Y)$  such that $p_1\circ f_1=p_2\circ f_2$\}$=$\{ pair of elements $f_1\in X(T)$ and $f_2\in Y(T)$, $p_1\circ f_1=p_2\circ f_2\in S'(T)$\}
+$$
+\begin{tikzcd}
+T \arrow[rd] \arrow[rdd, "f_1"'] \arrow[rrd, "f_2"] \arrow[rrrddd, dashed, bend right=49] &  &  &  \\
+ & X\times_{S'}Y \arrow[d] \arrow[r] & Y \arrow[d, "p_2"] &  \\
+ & X \arrow[r, "p_1"] & S' \arrow[rd] &  \\
+ &  &  & S
+\end{tikzcd}
+$$
+\begin{ex}Consider
+$GL_n(K)$. There exists a scheme $\mathcal{GL}_n$ with $\mathcal{GL}_n(K)=GL_n(K)$.
+$\affn^{n^2}\supset V(det)$, $\mathcal{GL}_n$ gives the ``open complement of $V(det)$''. What are the $R$-valued points of $\mathcal{GL}_n$?
+$$
+\mathcal{GL}_n(R)\neq \{n\times n\text{ matrices over $R$ with } det \neq 0 \}
+$$
+But
+$$
+\begin{aligned}
+\mathcal{GL}_n(R)&=\{n\times n\text{ matrices over $R$ s.t. }\spec R\lrta \affn^{n^2}\text{ does not intersect }V(det)\}\\
+&=\{n\times n\text{ matrices $M$ over $R$ s.t.} det(M) \notin\text{ any prime ideal of }R \}\\
+&=\{n\times n\text{ matrices $M$ over $R$ where } det(M)\text{ is invertible}\}
+\end{aligned}
+$$
+\end{ex}
+
+\begin{ex}
+Equation
+$$
+x^3+y^3+z^2=0,
+$$
+find all solutions in $\intg$. 
+$X=\spec \intg[x,y,z]/(x^3+y^3+z^2)$. The set of solutions is $X(\intg)$
+\end{ex}
+
+\begin{ex}
+$f:X\lrta S$, $\scp$ a point of $S$
+$K(\scp)$ residue field of $\scp$. $\spec K(\scp)\lrta S$. Define$K(\scp)\times_S X$ as the fiber of $f$ over $\scp$
+$$
+\begin{tikzcd}
+ & X \arrow[d] \\
+\spec K(\scp) \arrow[r] & S
+\end{tikzcd}
+$$
+\end{ex}
+\begin{lemma}
+The set of points of the fiber is the inverse image of $\scp$ where $f$ is the set of points of $X$. The underlying set of $K(\scp)\times_SX$ maps to the underlying set of $X$.
+
+
+\end{lemma}
+
+\underline{The relative point of view}
+``A parametrized family of varieties''
+$y^2=x^3-3x-t$ viewed as a family of algebraic sets in $\affn^2$ with coordinates $X,Y$ parameter $t$. For each %t
+, we get an equation in $X,Y$, this defines a curve in $\affn^2$. Consider the morphism
+$$
+f:\spec k[x,y,t]/(y^2-x^3-3x+t)\lrta \spec K[t].
+$$
+The fibers of $f$ over closed points are curves in the family.
+
+\underline{Idea from Grothendieck}: view any morphism as a family where elements are the fiber. $\affn^3\cup pt\Lrta \affn^1$, $\affn^3$ to $0$ $pt$ to $1$. Not all maps make  nice families but this point of view is helpfull in general, why?
+\begin{itemize}
+	\item Fibers of a  family are often simper (e.g. )
+	\item Full family are simpler than individual fibers.
+\end{itemize}
+
+\begin{ex}
+Reduction $\mod p$. $X$ is a scheme over $\intg$. $X\times_\intg \spec \bbf_p$ is a scheme over $\bbf_p$. ``reduction $\mod p$'' of $X$
+$X=\spec \intg[x_1,...,x_n]/(f_1,...,f_m)$
+$X\times_\intg\spec \bbf_p=\spec \bbf_p[x_1,...,x_n]/(f_1,..,f_m)$. This can be tricky, for example $\spec \intg[T]/T(T+2)$ has no nilpotents (is ``reduced'' scheme) but $\spec \bbf_2[T]/Y(T+2)=\spec \bbf_2[T]/T^2$ has nilpotent. 
+\end{ex}
+\begin{ex}
+$X$ a scheme over $\intg$
+$X\times_\intg \spec \ratl$ (or $X\times_\intg \spec \overline{\ratl}$). Given $Y$ over $\spec \ratl$, can we find $X$ over $\spec \intg$ with $X\otimes_\intg \spec \ratl=Y$? If so $X\times_{\spec \intg} \spec \bbf_p$ will give some perspective on $Y$.
+\end{ex}
+\begin{lemma}
+If $Y$ in $\bbf^n_\ratl$ is the vanishing scheme of $f_1,..,f_m$ then this is possible.
+\end{lemma}
+\begin{proof}
+$Y=\spec \ratl[T_1,..,T_n]/(f_1,..,f_m)$, where $f_i$ are polynomials with rational coefficients. We can find $c_1,..,c_m$ positive integes where $c_if_i$ has integer coefficients for all $i$. $X=\spec \intg[T_1,...,T_n]/(c_1f_1,...,c_mf_m)$. Because $c_i^{-1}$ exists in $\ratl$, it produces the same scheme over $\ratl$. 
+
+\end{proof}
+However, this is not unique. For example, $Y=\spec \ratl[T]/(T^2/2+1)$. We can take $c=2$ to get $\intg[T]/T^2+2$ and $c=4$ to get $\intg[T]/2T^2+4$. These are not isomorphic fibers over $2$, in fact, they are distinct
+$\bbf_2[T]/T^2$ v.s. $\bbf_2[T]$. Worse $T=2U$, $Y=\spec \ratl[U]/(2U^2+1), X=\spec \intg[U]/(2U^2+1)$. Reducetion over $2$ gives $\spec \bbf_2[U]/1=\emptyset$ 
+
+\begin{ex}
+(Base change)
+$f:X\lrta S$ a morphism, family of schemes.
+$$
+\begin{tikzcd}
+X\times_S T \arrow[d, "f'"'] \arrow[r] & X \arrow[d, "f"] \\
+T \arrow[r] & S
+\end{tikzcd}
+$$
+ we can think of $f':X\times_{S}T\lrta T$as some family with different parameter space/ base/
+ This process is known as base change. $a\in T$ a point which mapsto $p\in S$
+\end{ex}
+
+\section{Elementary geometry of schemes}
+\subsection{Some basics of schemes}
+\begin{dfn}
+$X$ is a scheme. It is called \textbf{connected} if it is connected as a topological space. It is \textbf{irreducible} if it is irreducible as a topological space (it can not be expressed as union of two closed non empty set.)
+
+\underline{Warning:} spearated does not mean $X$ is separated (Hausdorff) as topological space.
+\end{dfn}
+\begin{dfn}
+The dimension of X, denoted $\dim(X)$ is the max number $n$ s.t. there is a chain of closed subsets
+$$
+Y_0\subsetneq Y_1\subsetneq ...\subsetneq Y_n \subset X.
+$$ with each $Y_i$irreducible (with induced topology from $X$).
+$$
+\dim \spec (A)=\text{Krull dimsnion of $A$}
+$$ 
+\end{dfn}
+[check that $V(I)\subset \spec R$ is irreducible $\Llrta I$ is prime] 
+
+\begin{dfn}
+A scheme $X$ is reduced if $\forall U\subset X$ open, $\calo_X(U)$ is reduced (no nilpotents)
+
+And this is equivalent to 
+$$
+\forall x\in X,\ \  \calo_{X,x} \text{ is reduced.}
+$$
+\end{dfn}
+
+\begin{dfn}
+A scheme $X$ is called \textbf{integral} if for all $U\subset X$ open, $\calo(U)$ is an integral domain.
+\end{dfn}
+Note that being integral scheme $\not \Llrta$ $\forall x\in X,\calo_{X,x} $ is integral domain.
+\begin{lemma}
+$X$ integral $\Llrta$ $X$ is reduced and irreducible.
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+\item In a scheme $X$ is integral, $\calo_X(U)$ is integral for all open subsets, hence $\calo_X(U)$ is also reduced because integral domain has no nonzero zero divisors.
+
+\item An integral scheme should be irreducible. Assume contrarily $X$ is reducible, and can be written as union of two closed subsets $X=Y\cup Z$. Define the complements $U:=X-Y$ and $V=X-Z$, we know $U,V$ are nonempty opens and their have empty intersection. The structure sheaf $\calo_X(U\cup V)=\calo_X(U)\times \calo_X(V)$ which is not integral in general.
+\item Conversely: $X$ reduced + irreducible. Let $U\subset X$ be a open, and assume $\calo_X(U)$ is not integral. (exists $s,tin\calo_X(U)$ such that $st=0$.)
+
+Let $Z_s=\{x\in U| s(x)\in\scm_{X,x}\subset \calo_{X,x}\}$, $Z_t=\{X\in U|t(x\\in\scm_{X,x}\subset \calo_{X,x}$
+
+\underline{Claim}: $Z_t,Z_s$ are closed in $X$. (If $U=\spec A$ is affine, then $s$ corresponds to an element $a\in A$ and
+$$
+\begin{aligned}
+Z_s&=\{\scp\in\spec A| a\in\scp A_\scp\}\\
+&=\{\scp\in\spec A|a\in\scp\}\\
+&=V(a A)\text{ is  closed}
+\end{aligned}
+$$
+
+In the general case, it follows that $Z_s\cap \spec A$ is closed for any $\spec A\subset U$ open affine $\Lrta Z_s$ is closed.)
+
+Since $st=0$, we have $s(x)t(x)\in\scm_{X,x}$ for every $x$, so $x\in Z_s\cup Z_t$ for every $x$. $Z_t\cup Z_s=U$.
+
+Since $X$ is irreducible $\Lrta Z_s=U$ or $Z_t=U$. For instance, if $Z_s=U$, then $s|V=0$ nilpotent for every affine $\spec B=V\subset U$ (because $s|V$ corresponds to $a\in A$ which has $U_a=V-V(a)$ is empty set $\Lrta \sqrt{(a)}=\{0\}\Lrta a$ is nilpotent). Since $X$ (hence $U$) is reduced, we get $s|V=0$ for every $V\subset U$ open affine, so by the (sheaf condition) we have $s=0$.
+\end{itemize}
+\end{proof}
+\begin{dfn}
+A scheme $X$ is \textbf{locally Noetherian} if there exists an affine open cover of $X$
+$\cup_{i\in I} U_i=X$, $\spec A_i=U_i$, with $A_i$ Noetherian. $X$ is \textbf{Noetherian} if there is a  finite such cover.
+\end{dfn}
+Fact: Hartshone. prop II 3.2
+$$
+\text{locally Noetherian}\Llrta \forall \spec(A)\subset X \text{ open, } A \text{ Noetherian}
+$$
+
+This implies that an affine scheme $\spec A$ is locally Noetherian iff $A$ is Noetherian.
+
+\begin{dfn}
+$X\overset{f}{\lrta } Y$ (scheme over $Y$ ) is a morphism \textbf{locally of finite type} $\Llrta$ $\exists Y=\cup_i U_i, U_i=\spec A_i$, such that $\forall i, \exists f^{-1}(U_i)=\cup_i \spec(B_{ij})$ s.t.
+$$
+\spec(B_{ij})\lrta \spec(A_i)
+$$
+corresponds to 
+$$
+A_i\lrta B_{ij}
+$$
+which makes $B_{ij}$ an $A_i$-algebra of finite type.
+
+$X\lrta Y$ is of finite type if for every $i$ as above, there is a covering with only finitely many $j$.
+\end{dfn}
+\begin{ex}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item $K$ a field, $\spec K[X_1,..,X_n]/I$ is Noetherian, of finite type over $K$
+$$
+\Lrta \spec(K[X]/I)\lrta \spec(K) is of finite type.
+$$
+\item $\sqcup_{n\geq 0}\affn^n_K\lrta \spec K$ is locally of finite type, not of finite type(over $K$)
+\item $\spec (\intg[X_1,..,X_n]/I)\lrta\spec \intg$ is of finite type and Noetherian.
+\item $\spec(\ratl)\lrta \spec \intg$ if \textbf{not} of finite type.
+\end{enumerate}
+\end{ex}
+\subsection{Open and closed subschemes}
+\begin{dfn}
+$X$ a scheme $U\subset X$ open $(U,\calo_X|U)$ is called an open subscheme of $X$, $j:U\inj  X$ is called an \text{open immersion}.
+\end{dfn}
+\begin{dfn}
+(Hartshorne p85) A morphism $Y\overset{f}{\lrta}X$ is a called a \textbf{closed morphism} if 
+\begin{enumerate}[label=(\arabic*)]
+\item $f$ induces a homeomorphism $Y\lrta f(Y)\subset X$ where $f(Y)$  is closed.
+\item
+$f^*:\calo_X\rta f_*\calo_Y$ is surjective (surjective at the level of stalks)
+\end{enumerate}
+\end{dfn}
+Intuitively,
+$$
+\calo_X(U)\lrta \calo_Y(f^{-1}(U))
+$$
+are not surjective  in general, but  if $s\in(f_*\calo_Y)(U)$, we can find locally  for each $x\in U$ a section  on some open set $V\subset U$ containing $x$ which maps to the restriction of $s$ to $V$.
+
+\begin{dfn}
+A \textbf{closed subscheme} of $X$ is an equivalent class of closed immersions modulo
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\centering
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,249.36666870117188); %set diagram left start at 0, and has height of 249.36666870117188
+
+
+\draw (130,67) node   {$Y$};
+\draw (245,68) node   {$X$};
+\draw (190,53) node   {$f$};
+\draw (188,150) node   {$Y'$};
+\draw (146,113) node   {$g$};
+\draw (226,117) node   {$f'$};
+\draw (335,112) node   {$ \begin{gathered}
+f\sim f'\\
+\Longleftrightarrow \exists g:Y\overset{\sim }{\longrightarrow } Y'
+\end{gathered}$};
+\draw    (139.26,80.25) -- (178.74,136.75) ;
+\draw [shift={(178.74,136.75)}, rotate = 235.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (197.21,136.75) -- (235.79,81.25) ;
+\draw [shift={(235.79,81.25)}, rotate = 484.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (140.57,67.09) -- (233.98,67.9) ;
+\draw [shift={(233.98,67.9)}, rotate = 180.5] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\end{tikzpicture}
+\end{dfn}
+\begin{ex}
+Example. 
+$(1)$ Let $X=\spec (A)$ let $I\subset A$ ideal and $\spec(A/I)\overset{f}{\lrta}\spec A$ the canonical morphism. Then it is a closed immersion
+
+ We saw thart $\spec A/I\overset{\sim}{\lrta}V(I)\subset \spec(A)$ is a homeomorphism.
+
+$\forall \scp in V(I),$ the morphism $\calo_{A,\scp}\lrta \calo_{A/I,\scp/I}$ is $A_\scp\lrta (A/I)_{\scp/I}$ which is surjective by elementary localization.
+\end{ex}
+\begin{prop}
+$(1)$
+$A$ is a ring. If 
+$$
+Y\overset{f}{\lrta} \spec A
+$$ 
+is a closed immersion, there exists a closed immersion, there exists an ideal $I\subset A$ such that $f$ is equivalent to $\spec(A/I)\lrta \spec (A)$: there is 
+$$
+\begin{tikzcd}
+Y \arrow[r, "f"] \arrow[d, "\sim"] & \spec(A) \\
+\spec(A/I) \arrow[ru] & 
+\end{tikzcd}
+$$
+(elementary proof in Wedhorn, best proof is to use coherent sheaves)
+
+$(2)$ $$
+\begin{tikzcd}
+Z\times_X Y \arrow[r, "\tilde{j}"] \arrow[d] & Y \arrow[d] \\
+Z \arrow[r, "j"] & X,
+\end{tikzcd}
+$$ 
+where $f$ is a morphism and $j$ is closed immersion. $\tilde{j}$ is a closed immersion (e.g. $x\in X$ is a closed point, then $\spec \kappa(x)\lrta X$ is a closed immersion and $f^{-1}(x)=\spec \kappa(x)\times_X Y\lrta Y$ is a closed immersion)
+
+$(3)$ Note that a closed subscheme of $X$ is not determined by its image in $X$.
+
+e.g. $\spec(A/I)``=''\spec (A/J)$ iff $\sqrt{I}=\sqrt{J}$ which may give  infinitely many $J$ for  a given $I$.
+$n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. Intuitively, it is they are both the point $0$ but ``memorize'' different information of derivatives.
+\end{prop}
+
+\begin{prop}
+>>>>>>>1
+\end{prop}
+If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the reduced induced scheme structure on $Y$.]
+
+\subsection{Aprl 27th:Projective space and schemes}
+\begin{dfn}
+$S$ is a scheme, $n\geq 1$ $\proj^n_S=\proj^n_\intg\times_{\spec \intg} S$
+\end{dfn}
+
+\section*{Two standard construction of $\proj^n_\intg$}
+\begin{enumerate}[label=(\arabic*)]
+\item $\mathsf{Proj}$ of a graded ring (hartshorne p 76)
+$$
+A=\oplus_{d\geq 0} A_d, A_d A_e\subset A_{d+e}
+$$
+$A_0$ is a ring and each $A_d$ is an $A_0$-algebra.
+
+\underline{Ex} $A=B[X_1,..,X_n],A_0=B$
+
+To each such $A$, one can associate a scheme $\text{Proj}(A)$ which generalizes classical projective algebraic sets. For $\proj^n_\intg$ we take $A=\intg[X_0,...,X_n]$. Let $A^+:=(X_0,..,X_n)$ the definition of $\text{Proj}(A)=\proj^n_\intg$ is 
+$$
+\proj^n_\intg=\{P\subset A\mid \text{prime and homogeneous ideal in $A$ such that} P\notsupset A^+\}
+$$
+
+Topologically, the closed sets $V^p(I)=\{P\in\proj^n_\intg|I \subset P\}$ homogeneous and for $U\subset \proj^n_\intg$ open
+$$
+\calo_{\proj_\intg^n}(U)=\left\{
+s:U\lrta \sqcup_{P\in U}A_{(P)}\left| \begin{aligned} &\forall P, s(P)\in A_{(P)},\\
+&\text{ and  locally } s(P)=a/b,\\
+& \text{ where } a,b \text{ homogeneous  of same degree}
+\end{aligned}
+\right\}
+\right.,
+$$
+where $A_{(P)}=\{\text{degree $0$ elements in localization of $A$ w.r.t. $S-P$, homogeneous}\}$
+
+\underline{FACTS}:
+\begin{enumerate}
+\item $\proj^n_\intg$ is  a locally-ringed space
+\item $\proj^n_\intg$ is a scheme, more precisely, for each $i\in \{0,...,n\}$, let $U_i=\{P\in \proj^n_\intg|X_i\notin P\}$, then $U_i$ is open and $\cup_i U_i =\proj^n_\intg$(because $P\in \proj^n_\intg$ does not contain $A^+$).
+
+By ``dehomogeneousation'' one has an isomorphism
+$$
+U_i\overset{\sim}{}\lrta 
+\spec(\intg[Y_1,...,Y_n])\simeq \affn^n_\intg$$
+\end{enumerate}
+\item ``Glueing''
+
+        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,249.36666870117188); %set diagram left start at 0, and has height of 249.36666870117188
+
+\draw   (308,81) .. controls (328,71) and (325.3,64.9) .. (342.65,96.95) .. controls (360,129) and (378,111) .. (398,141) .. controls (418,171) and (328,171) .. (308,141) .. controls (288,111) and (288,91) .. (308,81) ;
+\draw   (153,62) .. controls (173,52) and (211.65,47.95) .. (191.65,67.95) .. controls (171.65,87.95) and (223,92) .. (243,122) .. controls (263,152) and (173,152) .. (153,122) .. controls (133,92) and (133,72) .. (153,62) ;
+\draw [color={rgb, 255:red, 239; green, 46; blue, 46 }  ,draw opacity=1 ]   (213.65,96.95) .. controls (199.65,107.95) and (197.65,118.95) .. (184.65,138.95) ;
+
+
+\draw [color={rgb, 255:red, 45; green, 44; blue, 191 }  ,draw opacity=1 ]   (295,115) .. controls (298.65,111.95) and (302.65,126.95) .. (342.65,96.95) ;
+
+
+\draw    (223,77) .. controls (263,47) and (263.65,68.95) .. (295.65,74.95) ;
+\draw [shift={(295.65,74.95)}, rotate = 192.47] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\draw    (295.65,86.95) .. controls (273.65,106.95) and (268.65,118.95) .. (220,107) ;
+\draw [shift={(220,107)}, rotate = 373.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+\draw (214,49) node   {$X_{1}$};
+\draw (223,126) node   {$x$};
+\draw (422,103) node   {$X_{2}$};
+\draw (323,89) node   {$y$};
+
+
+\end{tikzpicture}
+
+Glueing constructs $``X_1\cup X_2$ where each point $x$ is ``identified'' with the corresponding point $y$ in $X_2$.
+\begin{figure*}[h]
+\includegraphics[width=0.2\textwidth]{cocycles.pdf}
+\end{figure*}
+More generally: we need to take care of intersections
+>>>>>>>>>>1
+\end{enumerate}
+\begin{prop}
+Given the glueing datum on $(X_i)_{i\in I}$, there is a scheme $X$ obtained by ``glueing the $X_i$'s along the $U_{ij}$ using $\varphi_{ij}$'s '' given by 
+$$
+X=\left(\sqcup_{i\in I}X_i\right)/\sim,
+$$
+where the equivalence relation is each $x\in X_i$ is identified with $\varphi_{ij}(x)\in X_{j}$ for $j\neq i$ if $x\in U_{ij}$, with the quotient topology. The quotient map $\sqcup X_i\overset{f}{\lrta} X$ is open, in particular $f(X_i)\subset X$ is open).
+
+Note: $\sim$ is an equivalence relation because of the cocycle relation: if $y=\varphi_{ij}(x)$, then $x=\varphi_{ij}^{-1}(y)=\varphi_{ji}(y)$. If $y=\varphi_{ij}(x),x\in U_{ij},z=\varphi_{jk}(y), y\in U_{jk}$ and $x\in U_{ik}$, then $\varphi_{ik}(x)=\varphi_{jk}\circ \varphi_{ij}(y)$ so $x\sim y\sim z\Lrta X\sim z$ and with structure sheaf
+$$
+\calo_X(U)=\{(s_i)_{i\in I}|s_i\in \calo_{X_i}(U\cap X_i) \text{ s.t. } \varphi_{ij}^{\alpha}(s_{j}|U\cap U_{ji}=s_i|U\cap U_{ij}\},
+$$
+\begin{figure*}[h]
+\includegraphics[width=0.3\textwidth]{pic2Aprl27.pdf}
+\end{figure*}
+we want
+$\varphi_j(y)=\varphi_i(\varphi_{ij}^{-1}(y))$
+\end{prop}
+Note that the projection 
+$$
+f:\sqcup X_i\lrta X
+$$ induces a homomorphism
+$X_i\overset{\sim}{\lrta} f(X_i)\subset X$ with open image [$f|X_i$ is injective.]
+
+We identify $X_i$ with $f(X_i)\subset X$ to write $U\cap X_i$ for instance (really it is $f^{-1}(U)\cap X_i$). Then $(X,\calo_X)$ is a ringed space  and there is an isomorphism 
+$X_i\lrta f(X_i)$ of ringed spaces, it follows that(since $f(X_i)$ is open) that $X$ is a scheme.
+
+Here we fix $j$,
+$$
+\calo_{f(X_j)}\lrta f_*\calo_{X_j}
+$$
+is given by 
+$$
+(s_i)\mapsto \text{ the unique $s$ section of $\calo_{X_j}$ that coincides with $s_i$ on} X_i\cap X_j=U_{ij}\subset X_i
+$$
+\underline{Application to } $\proj^n_\intg$. Let $A=\intg[X_0,...,X_n, X_0^{-1},...,X_n^{-1}]$. In $A$, we have subrings $A_i=\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i}]$. Note $A_i\simeq \intg[Y_1,..,Y_n]$ by 
+$$
+\begin{aligned}
+&\frac{X_0}{X_i}\mapsto Y_1\\
+&\frac{X_{i-1}}{X_i}\mapsto Y_{i}\\
+&\frac{X_{i+1}}{X_i}\mapsto Y_{i+1}\\
+&\frac{X_n}{X_i}\mapsto Y_n
+\end{aligned}
+$$
+Let $X_i=\spec(A_i)$ ($\simeq \affn^n_\intg$), ($0\leq i \leq n$). Let $U_{ij}\subset X_i$ be $\spec(A_i,\frac{X_j}{X_j})=\spec (\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j})$ is an open subset in $X_i$.
+
+Note that $B_{ij}=B_{ji}$, the identity $B_{ij}\lrta B_{ji}$ corresponds to an isomorphism 
+$$
+\varphi_{ij}:U_{ij}\lrta U_{ji}.
+$$
+Since the ring part is identity, the cocycle condition holds.
+\begin{dfn}
+$\proj^n_\intg$ is the glued scheme in that case
+i.e. covered by $n+1$ open subschemes $\simeq \affn^n_\intg$, it is of finite type, Noetherian, integral ...
+\end{dfn}
+\begin{dfn}
+$S$ is a  scheme, A projective $S-$scheme
+$$
+X\overset{f}{\lrta} S
+$$
+is a morphism such that there is a factorization
+$$
+X\overset{\text{closed inclusion}{\inj}}\proj^n_S\lrta S
+$$
+for some integer $n\geq 1$.
+\end{dfn}
+
+How to concretely construct projective scheme over $K$? Let $K$ be a field,. Let $f\in K[X_0,...,X_n]$ homogeneous. \underline{Goal}: Define the zero set $Y$ of $f$ as a  closed subscheme of $\proj^n_K$. We are going to do it by glueing up the corresponding intersection
+$$
+Y\cap U_i
+$$
+We define the dehomogeneousation 
+$$
+f_i:=f\left(\frac{X_0}{X_i},..,1,..,\frac{X_n}{X_i}\right)\in K[\frac{X_0}{X_i},...,\frac{X_n}{X_i}]=A_i
+$$
+for $0\leq i\leq n$.
+So we get \underline{closed immersions}
+$$
+Y_i=\spec(A_i/f_i A_i)\inj U_i
+$$
+Idea: $Y$ is obtained by glueing the $Y_i$ by identify $Y_i\cap U_{ji}$ with $Y_j\cap U_{ji}$ along $\varphi_{ij}$.
+
+Precisely: Let $B_{ij}=K[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j}]$,
+$$
+Y_i\cap U_{ij}=\spec(B_{ij}/f_i B_{ij})
+$$
+and
+$$
+Y_i\cap U_{ij}=\spec(B_{ji}/f_j B_{ji})
+$$
+$$
+\begin{tikzcd}
+B_{ij} \arrow[r] \arrow[d, equal] & B_{ij}/f_iB_{ij} \arrow[d, "\sim"] \\
+B_{ji} \arrow[r] & B_{ji}/f_jB_{ji}
+\end{tikzcd}
+$$
+commutative because $f_i$ and $f_j$ generate the same ideal ub $B_{ij}=B_{ji}$, since
+$$
+\begin{aligned}
+f_j &=\sum_J \alpha_J \left(\frac{X_0}{X_j}\right)^{d_0}\cdots\left(\frac{X_i}{X_j}\right)^{d_i}\cdots \left(\frac{X_n}{X_j}\right)^{d_n}\\
+&=\sum_J \alpha_J \left(\frac{X_0}{X_i}\right)^{d_0}\cdots\left(\frac{X_i}{X_i}\right)^{d_i}\cdots \left(\frac{X_n}{X_i}\right)^{d_n}\cdot \left(\frac{X_j}{X_i}\right)^{d_0+\cdots d_n}\\
+&= f_i \cdot \left(\frac{X_j}{X_i}\right)^{d_0+\cdots d_n}
+\end{aligned}
+$$
+
+
+
+\subsection{May 4th: }
+Recall: $\proj^n_\intg=$``glueing'' $U_i:=\spec(\intg[
+X_0/X_i,..., X_n/X_i])$ along open subsets $U_{ij}=\spec(\intg[...]_{X_j/X_i})$
+
+$f\in K[X_0,...,X_n]$ is non-constant homogeneous polynomial, $\leadsto$``vanishing scheme $Z_f$'' by  glueing the closed subschemes of $U_{i,K}=U_i\times_{\spec(\intg)}\spec (K)$ defined by $f_i=f(X_0/X_i,....,X_n/X_i)$. WE can do this with $f^{(1)},f^{(2)},....,f^{(m)}$ homogeneous of some degrees $\leadsto $ vanishing sets of finitely many homogeneous polynomials.
+
+\underline{Fact}: These ``vanishing sets '' are closed subscheme of $\proj^n_K$ all closed subscheme of $\proj^n_K$ arise in this way.
+
+\underline{Reason}: let $Y$ be this vanishing scheme; it is defined by glueing closed subschemes.
+$$
+Y_i\overset{\varphi_i}{\inj} U_{i,K}=\affn^n_K
+$$
+where 
+$$
+Y_i=\spec(K[X_0/X_i,...,X_n/X_i])/(f_i^{(1)},...,f_i^{(m)}).  
+$$
+One checks that there is a unique morphism
+$$
+\varphi:Y\lrta \proj^n_K
+$$
+such that  $\varphi|Y_i=\varphi_i$. and that $\varphi$ is a closed immersion. (Because every point has one $Y_i$ as an open neighbourhood
+and $\varphi_i$ is a closed immersion.)
+
+\begin{ex}
+In $\proj^2_\intg$, we have a closed subscheme defined by 
+$$
+Y^2Z-X^3-XZ^2
+$$
+and on $U_2=\spec(\intg[X/Z,Y/Z,1])$ it is isomorphic to the closed subscheme of $\affn^2_n=\spec(\intg[U,V])$
+$$
+\left(\frac{Y}{Z}\right)^2-\left(\frac{X}{Z}\right)^3-\left(\frac{X}{Z}\right)=V^2-U^3-U.
+$$
+\end{ex}
+
+
+\section{Weil divisors}
+\subsection{May 4th-B}
+Divisors are the first non-trivial geometric invariants of the schemes and have many applications and forms.
+\begin{itemize}
+	\item classification of ``hypersurfaces'' in a scheme $X$. (Weil divisors.)
+	\item certain sheaves (invertible sheaves of $\calo_X$-modules)
+	\item Picard groups $\leadsto$ morphisms of projective spaces.
+\end{itemize}
+
+We usually look at those schemes with nice enough properties so that we don't have to worry about Cartier divisors
+\begin{dfn}
+Let $X$ be scheme. $X$ is \textbf{regular in codimension one} if for ant $x\in X$ where $\dim(\calo_{X,x})=1$, the local ring $\calo_{X,x}$ is regular $\dim \scm/\scm^2=1$.
+\end{dfn}
+(this means $X$ has some minimal ``smoothness'')
+\begin{ex}
+\ \begin{enumerate}[label=(\arabic*)]
+\item $X$ finite type over a filed $X$, then this is true if $X$ is ``non-singular'' in the sense analogue of definition of non-singular varieties.
+\item $X=\affn_K^n=\spec(K[X_1,..,X_n])$. To say that $\scp\in X$ has dimension one means $\dim \calo_{X,\scp}=1\Llrta $ height of $\scp$ is equal to $1$. Because
+$$
+\calo_{X,\scp}=K[X_1,...,X_m]_{\scp} 
+$$
+in which prime ideals are exactly in bijection with prime ideals $Q\subset \scp$. IN $K[X_1,..,X_n]$ a prime ideal of height $1$ is principal ideal generated by $f$ irreducible. We also know that in that case $K[X_1,..,X_n]_{(f)}$ is regular.
+\item $\proj^n_K$ is also regular in codimension $1$, because it is a local condition, and we apply $(2)$.
+\item Any smooth curve over a field (points of dimension $1$ are closed points.)
+\item If $X$ is a singular curve, it is not regular in codimension $1$.
+\item $\spec(\intg)$ is also regular in codimension $1$. (the points of dimension $1$ are $p\intg$ and local ring  at $p\intg$ is 
+$$
+\calo_{\intg,p}=\left\{\frac{a}{b}\in \ratl| a,b \text{ coprime } p\nmid b\right\}
+$$
+which is a regular local ring.
+\end{enumerate}
+\end{ex}
+\underline{Convetion:} Below in this section, $X$ is Noetherian, integral, regular in codimension $1$. (quasiprojective over affine base)
+$$
+X\underset{\inj}{open} Y\underset{\inj}{closed} \proj^n_S\lrta S
+$$
+In particular, $X$ is of finite type over $S$.
+
+We loot at closed subschemes of codimension $1$ in $X$.
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{center}
 
 
 
 
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+\draw   (140,48) .. controls (160,38) and (391.65,18.85) .. (371.65,38.85) .. controls (351.65,58.85) and (336.65,160.85) .. (356.65,190.85) .. controls (376.65,220.85) and (119.65,225.85) .. (99.65,195.85) .. controls (79.65,165.85) and (120,58) .. (140,48) ;
+\draw [color={rgb, 255:red, 149; green, 125; blue, 8 }  ,draw opacity=1 ]   (207,174) .. controls (398.65,94.85) and (96.65,89.85) .. (307,174) ;
+
+
+\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ]   (261.65,41.85) .. controls (236.65,80.85) and (189.65,117.85) .. (171.65,186.85) ;
+
+
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (151.65,89.85) .. controls (177.65,79.85) and (185.65,77.85) .. (215.65,81.85) ;
+
+
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (189.65,42.85) .. controls (185.65,73.85) and (182.65,89.85) .. (182.65,126.85) ;
+
+
+\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ]   (266.65,39.85) .. controls (241.65,78.85) and (194.65,115.85) .. (176.65,184.85) ;
+
+
+\draw    (127.65,144.85) .. controls (167.65,114.85) and (294.65,90.85) .. (334.65,60.85) ;
+
+
+
+\draw (91,59) node  [align=left] {{\LARGE $X$}};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Regular codimension $1$ $\Lrta$ any such subscheme is a union of irreducible pieces, each of which is of the form $f^n=0$, $(n\geq 1)$ with $\{f=0\}$ being integral.
+
+\begin{dfn}
+\ \begin{enumerate}[label=(\arabic*)]
+\item  A \textbf{prime (Weil) divisor} $D$ in $X$ is an integral closed subscheme of codimension $1$. (there is no intermediate closed subscheme between $D$ and $X$)
+\item The group of Weil divisors on $X$ is the free abelian group generated by  prime divisors.
+$$
+\sum_{i\in I, finite} n_i D_i
+, n_i\in \intg\text{ and } D_i \text{ prime divisors }
+$$
+It is denoted $\text{Div}(X)$. A divisor $D=\sum_i n_i D_i$ is effective if all $n_i\geq 0$. Intuitively, effective divisor $\sum_i n_i D_i$ corresponds to the closed subscheme union of the $D_i$'s with multiplicity $n_i$.
+\end{enumerate}
+\end{dfn}
+\begin{dfn}
+The function field of $X$ is the residue field/local ring at the generic point $\eta$ of $X$. An element $f$ of $K(X)$ is therefore
+an open set $\emptyset \neq U\subset X$ and $s\in \Gamma(U,\calo_X)$.
+\end{dfn}
+\begin{ex}
+$K(\affn^n_K)=K(X_1,...,X_n)=K(\proj^n_K)$
+\end{ex}
+\begin{lemma}
+Let $D$ be a prime divisor, and $\eta_D$ its generic point. Let $\tilde{\eta}_D$ be the image of $\eta_D$ in $X$. The ring 
+$\calo_{X,\eta_D}$ is a DVR with fraction field $K(X)$
+\end{lemma}
+\begin{proof}
+\underline{Affine Case}: $D=\spec(A/\scp)$ with $\scp$ prime ideal so that $A/\scp$ is integral. $\eta_D=\{0\}\subset A/\scp$ and $\tilde{\eta}_D=\scp\in \spec(A)$.
+
+$D$ has codimension $1$, $\Llrta$ $\text{ht}(\scp)=1\Llrta \dim \calo_{X,\tilde{\eta}_D}=\dim A_\scp=1$ so by regularity in codimension $1$, $A_\scp$ is a regular local ring of dimension $1$, Noetherian, i.e. it is a DVR $\Llrta $ [maximal ideal is primal. ] Then $K(X)=Frac(A)=Frac(A_\scp)$. 
+\end{proof}
+
+Now given $D$ a prime divisor, $f\in K(X)^{\times}$, we denote by $\nu_D(f)$ the valuation at $D$ of $f$, $f\in Frac(\calo_X,\tilde{\eta}_D)$. $(\scm_{X,\tilde{\eta}_D} =(\varpi))$ then $f\in Frac(\calo_{X,\tilde{\eta}_D})$ is of the form $\frac{a}{b}$, $a, b$ in $\calo_{X,\tilde{\eta}_D}$, 
+$a=\varpi^n u, n\geq 0, u\in\calo_{X,\tilde{\eta}_D}^\times$ and $b=\varpi^m v, m \geq 0, v\in\calo_{X,\tilde{\eta}_D}^\times$ and $\nu_D(f)=n-m$.
+
+\underline{Intuitively:}
+$d=\nu_D(f)\geq 1$ means $f$ has a zero of order $f$ along $D$ ( has degree of vanishing $d$ along $D$). $d\geq -1$ means a pole of order $-d$ (a zero of order $d$ of $1/f$)
+
+
+
+\begin{lemma}[Hartshorne II 6.1] If $f\in K(X)^\times$ then $\nu_D(f)=0$ for all but at most finitely many prime divisors $D$.
+\end{lemma}
+\begin{dfn}
+For 
+$f\in K(X)^\times$,
+$$
+div(f)=\sum_{D\text{ prime}} \nu_D(f) D \in \text{Div}(X)
+$$
+$$
+div:K(X)^\times\lrta \text{Div}(X)\text{ group morphism }
+$$
+The group of all $div(f) $ is called the group of principal divisors. The quotient
+$$
+\text{Div}(X)/Im(div)=\text{Cl}(X)
+$$
+is the \textbf{divisor class group } of $X$
+\end{dfn}
+\begin{proof}[Proof of lemma immediately above]
+Let $f\in K(X)^\times$, view it as $f\in \Gamma(U,\calo_X),$ where $\emptyset \neq U=\spec(A)$ is affine. Let $Z=X-U$, closed in $X$, with reduced subscheme structure.
+
+$\{D\text{ prime }\mid D\subset Z \}$ is finite because $X$ (hence $Z$) is  Noetherian.
+
+Example. $f=X^2+3X^2Y+Y^3/(XY)$, $Z=$ union of coordinate axes, each is prime. If $D$ is not in $Z$ then $U\cap D=D_U$ is non-empty, and hence dense in $D$. Claim. $U\cap D$ is a prime divisor in $U$. Then $\nu_{D\cap U}(f)[=\nu_D(f)]\geq 0$ since $f\in \Gamma(U,\calo_X)=A$ and to say that $\nu_{D\cap U}(f)\geq 1$ means $D\cap U\subset V(fA)$ proper closed in $U$. So again this happens for finitely many $D$.
+
+WHy is $U\cap D$ a prime divisors in $U$?
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+\draw    (196.65,66.25) -- (313.65,64.25) ;
+\draw [shift={(313.65,64.25)}, rotate = 539.02] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ] [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- (8.93,-4.29)    ;
+
+
+\draw (179,64) node   {$D$};
+\draw (186,133) node   {$\emptyset \neq D\cap U$};
+\draw (328,65) node   {$X$};
+\draw (328,134) node   {$U$};
+\draw (181,99) node [rotate=-269.62]  {$\subset $};
+\draw (327,95) node [rotate=-269.62]  {$\subset $};
+\draw (259,137) node   {$\subset $};
+\draw (148,99) node [rotate=-271.46] [align=left] {open};
+\draw (350,94) node [rotate=-269.51] [align=left] {open};
+\draw (253,49) node  [align=left] {closed};
+
+
+\end{tikzpicture}
+
+\end{center}
+$D\cap U$ is an open subscheme of $D$ then check that $D\cap U\simeq D\times_X U$, so $D\cap U\inj U$ is a closed immersion. Moreover $D\cap U$ is integral because $D$ is integral. One checks that $D\cap U$ is also of codimension $1$
+$$
+K(U)=k(X)
+$$
+$$
+\Lrta \nu_{D\cap U}=\nu_D
+$$
+\end{proof}
 \end{document}
+

@@ -1,0 +1,413 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{stmaryrd}
+\newcommand{\Swarrow}{\mathbin{\rotatebox[origin=c]{45}{$\Leftarrow$}}}
+\usepackage{fancyhdr}
+\pagestyle{headings}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage{cmbright}
+%\usepackage{concmath}
+%\usepackage{sansmathfonts}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{pdfrender,xcolor,scrpage2}
+%\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}
+    },
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
+  }
+}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmkt}[thm]{Remark by TeXer}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nex}[thm]{Non-example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.1}
+\newcommand{\mor}{{\text Mor\,}}
+\renewcommand{\hom}{{\text Hom}}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\pd}{{\partial}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cald}{{\cal D}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\calm}{{\cal M}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\llta}{\longleftarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Notes of B-V formalism in derived settings}
+\author{\\
+Notes by Lind Axiao}
+\date{2018 ETH} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Recap on BV formalism}
+$$
+\int_X e^{i S_0(X)/\hbar} f(x) dx
+$$
+If $S_0$ is a Morse function on a finite dimensional manifold.
+
+But usually we would have to work on infinite dimensional space.
+
+\underline{idea}: 
+\begin{enumerate}
+\item embed $X$ into a larger graded manifold $V$ and extend $S_0(X)$ to a function on $S(x)$ on $V$ and express the initial integral as
+$$
+\int_{V\subset T^*[-1]V} e^{i S(y)/\hbar}f(y) dy
+$$
+then deform $V$ as a Lagrangian inside the odd cotangent bundle. In order to make the integral invariant, the new $S$ has to satisfies the quantum master equation $QME$. At the oder $\hbar=0$, QME reduces to the classical master equation
+$$
+[S_{0},S_{0}]=0
+$$
+\end{enumerate}
+
+We first given a heuristic version of BV-formalism of quantum field theory on ``points'', where the moduli space is finite dimensional.
+
+Let $M$ be a finite dimensional smooth manifold or affine variety.
+Let $S:M\lrta \mathbb{A}^1$ be a smooth function. The critical locus of $S$
+$$
+Crit(S)=graph(dS)\times_{T^*M}M
+$$
+the fibered product
+$$
+\begin{tikzcd}
+Crit(S) \arrow[d] \arrow[r] & M \arrow[d, "dS_0"] \\
+M \arrow[r, "zero\ sections"] & T^*M
+\end{tikzcd}
+$$
+is the intersection of graph of $dS$ and the zero section inside $T^*M$. 
+
+Sometimes this intersection could be non-transitive, we want to define a derived version.
+
+Traditionally, the BV-BRST complex of Lagrangian field theory is obtained in three steps
+\begin{enumerate}
+\item Find a Koszul-Tate complex to resolve the critical locus;
+\item find a BRST complex to encode the gauge invariance
+\item apply the homological perturbation theory to find a unified BV-differential.
+$$
+s_{BV}=s_{KT}+s_{BRST}+...
+$$
+\end{enumerate}
+Choosing the derived critical locus is equivalent to inverting the Koszul-Tate resolution.
+
+
+
+\section{Derived functor, homotopy pushout}
+We skip here the introduction of model category but only remember that given a model category $\calc$, the homotopy category $\gamma:\calc\lrta Ho(\calc)$ exists, which is the localization of $\calc$ w.r.t the weak equivalence. Any functor $G:\calc\lrta \calb$ which sends weak equivalences to isomorphisms would factor through $\gamma$.
+
+Given three categories, $\cala,\calb,\calc$ and two functors $X,F$. 
+$$
+\begin{tikzcd}
+\cala \arrow[d, "X"'] \arrow[r, "F"] & \calc \\
+\calb \arrow[ru, "R"', dashed] & 
+\end{tikzcd}
+$$
+The \textbf{right Kan extension of $X$ along $F$} consists of a functor $R:\calb\lrta \calc$ and a natural transformation $\eta:RF\lrta X$ which is \textbf{couniversal} with respect to the specification, in the sense that for any functor $M:\calb\lrta \calc$ and a natural transformation $\mu: MF\lrta X$, a unique natural transformation $\delta: M\lrta R$ is defined and the diagram of functors commutes
+$$
+\begin{tikzcd}
+RF \arrow[d, "\eta"'] &  \\
+X & MF \arrow[l, "\mu"] \arrow[lu, "\delta_F"', dashed]
+\end{tikzcd}
+$$
+where $\delta_F(a)=\delta(F(a))\lrta RF(a)$ for any object $a$ of $\cala$.
+
+Similarly, we have a dual notion of \textbf{left Kan extension}.
+
+
+\begin{dfn}
+Let $\calc$ be a model category and let $F:\calc\lrta \calb$ by any functor. We call the right Kan extension of $F$ along $\gamma:\calc\lrta Ho(\calc)$ the left derived functor of $F$. We will denote it by $(\mathbf{L}F,\eta)$, where $\eta$ is a defining natural transformation in Kan extension.
+
+Dually, the left Kan extension of $F$ along $\gamma:\calc\lrta Ho(\calc)$ the right derived functor of $F$. 
+\end{dfn}
+
+In the case $F=(co)lim:\calc^\cald\lrta \calc$, where $\cald$ is a diagram. We can define the homotopy limits and homotopy colimits:
+$\mathbf{R}lim$ and $\mathbf{L}colim$.
+
+It would be long story to introduce the model structure on $\calc^{\cald}$, which we suppress here.
+
+If $\cald$ is chosen to be 
+$$
+\begin{tikzcd}
+\bullet \arrow[r] & \bullet & \bullet \arrow[l],
+\end{tikzcd}
+$$
+the $\mathbf{R}lim$ is the \textbf{homotopy pullback}
+
+The derived critical locus is now defined to be a homotopy pullback in the category $caga_{\leq0}^{op}$
+$$
+\begin{tikzcd}
+dCrit(S) \arrow[rr] \arrow[dd] &  & M \arrow[dd, "dS"] \\
+ & \Swarrow &  \\
+M \arrow[rr, "\underline{0}"] &  & T^*M
+\end{tikzcd}
+$$
+The detailed construction is discussed in the next section.
+
+\section{Derived everything}
+\subsection{Recap on spaces, functor of point}
+First, we recall the definition of a topological manifold. 
+
+A topological variety is an topological space together with an open cover $\{U_i\}_{i\in I}$ such that for each $i\in I$ there exists a homeomorphism from $U_i$ to an open set in $\reals^{n_i}$, each integer $n_i\geq 0$ depends on $i$.
+
+We can give a fancy definition of topological manifolds
+
+Consider the coequilizer
+$$
+Colim\left(\coprod_{(i,j)\in I^2} U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right),
+$$
+where the upper morphism is induced by $U_{i,j}\lrta U_i$ while the second morphism is induced by the morphism $U_{i,j}\lrta U_j$.
+The morphism from $\coprod_i U_i\lrta X$ would factorize through 
+$$
+Colim\left(\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right)\lrta X
+$$
+\begin{lemma}
+The morphism 
+$$
+Colim\left(\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right)\lrta X
+$$
+is an isomorphism.
+\end{lemma}
+\begin{proof}
+Consider $Y$ another topological space with a morphism
+$$
+Colim\left(\coprod_{(i,j)\in I^2}U_{i,j}\rightrightarrows \coprod_{i\in I}U_i\right)\overset{f}{\lrta} Y
+$$
+$f_i:=f|_{U_{i}}$ and $f_i|_{U_{i,j}}=f_j|_{U_{i,j}}$. We can define an map $g$ from $X$ to $Y$ such that they agree pointwisely. $g|_{U_i}=f_i$. The restriction to each open set in the open cover is continuous, we therefore know $g$ is itself continuous. 
+
+Hence, there is a morphism from $X$ to $Y$ and continuous map $g$ is unique because it has to agree with $f$ pointwisely.
+
+$X$ satisfies the universal property of coequalizer hence is isomorphic to the coequalizer.
+\end{proof}
+
+We can consider it in an even fancier way. Use $\calc$ to denote the full subcategory of topological manifold. One consider the Yoneda embedding from the category $\calc$ to the category of presheaves over $\calc$, where $PSh(\calc)$ denote the functor category $[\calc^{op},Sets]$
+$$
+h_{\_}: TopMfd\lrta PSh(\calc)
+$$
+$$
+X\longmapsto h_X
+$$
+where $h_X(Y):=\hom_{TopMfd}(Y,X)$ for al $Y\in \calc\subset TopMfd$
+\begin{lemma}
+The functor $h_\_$ defined above is fully faithful. 
+\end{lemma}
+\begin{proof}
+refer to any proof of Yoneda lemma.
+\end{proof}
+(This functor is not necessarily essentially surjective)
+These lemma means $TopMfd$ is equivalent to a subcategory of presheaves over $\calc$. We all now trying to characterize this subcategory.
+
+We start by making $\calc$ a Grothendieck site.
+\begin{dfn}
+We can specify that certain collections of maps with a common codomain should cover their codomain. A family of morphisms \{$U_i\lrta U\}_{i\in I}$ is called a covering family is each morphism $U_i\lrta U$ is an open immersion and the induced morphism on the coproduct $\coprod_{i\in I}U_i\lrta U$ is surjective. This definition gives the neighborhood system for a pretopology (\textbf{Grothendieck pretopology}), we denote the associated topology $\tau$
+\end{dfn}
+\begin{lemma}
+For every $X\in TopMfd$, the presheaf $h_X\in PSh(\calc)$ is a sheaf with the specified topology $\tau$
+\end{lemma}
+
+\begin{dfn}
+We say a functor $F:\calc\lrta Sets $ is \textbf{representable} if it is naturally isomorphic to $h_X$ for some object $X\in\calc$.
+
+A morphism $f:F\lrta G$  of $Sh(\calc,\tau)$ is a local homeomorphism if for each $X\in \calc$ and all morphism $h_X\lrta G$, the sheaf $F\times_G\times h_X$ is representable by $Y\in TopMfd$, and the induced morphism $Y\lrta X$ by projection $F\times_G h_X\cong h_Y\lrta X$ is a local homeomorphism of topological spaces.
+
+A morphism of sheaves $Sh(\calc,\tau)$ is an \textbf{open immersion} if it is a monomorphism and a local homeomorphism.
+\end{dfn}
+
+\begin{prop}
+A sheaf $F\in Sh(\calc,\tau)$ is representable by a topological manifold if there exists a family of objects $\{U_i\}_{i\in I}$ in $\calc$ and a morphism of sheaves
+$$
+p:\coprod_{i\in I}h_{U_i}\lrta F
+$$
+such that the following two conditions holds
+\begin{enumerate}
+\item $p$ is an epimorphism.
+\item For all $i\in I$, the morphism $U_i\lrta F$ is an open immersion.
+\end{enumerate}
+\end{prop}
+
+Generally, we can identifies the category of $TopMfd$ with its image in $Sh(\calc,\tau)$
+
+In context of algebraic geometry, things are more famous.
+
+Schemes can be characterized as representable sheaves $Sh(Aff,\tau)$, where $\tau$ is the canonical Grothendieck topology.
+
+
+
+\begin{dfn}
+A \textbf{derived scheme} is a pair $(X,\calo)$ consisting of topological space and a sheaf $\calo$ of commutative ring spectra on $X$ such that the
+\begin{enumerate}
+\item pair $(X,\pi_0\calo)$ is a scheme and 
+\item each $\pi_k\calo$ is a quasi-coherent $\pi_0\calo$-module.
+\end{enumerate}
+\end{dfn}
+
+From the homotopical point of view, we note that a derived scheme $X$ defines a functor
+$$
+h_X: dAff^{op}=cdga_{\leq 0}\lrta Sets
+$$
+Furthermore,  we have the following lemma
+\begin{lemma}
+$h_X$ sends each quasi-isomorphism of $cdga_{\leq 0}$ to an isomorphism in $Sets$.
+\end{lemma}
+
+Recall the model structure on $cdga_{\leq}$, the weak equivalence are just the quasi-isomorphisms, i.e., the functor $h_X$ factors through the homotopy category $Ho(cdga_{\leq 0})$. Following the spirit of functor of points, we can regard $X$ as 
+a locally representable sheaf in $Sh(Ho(cdga_{\leq 0}))$.
+\subsection{Stacks, derived stacks}
+Roughly speaking, a Stack is a sheaf that takes values in categories rather than sets.
+\begin{dfn}
+A category $\calb$ with a functor $F$ to a category $\calc$ is called a \textbf{fibered category over $\calc$} if for any morphism $G:X\lrta Y$ in $\calc$ and any object $y\in\calb$ s.t. $F(y)=Y$, there is a poullback $g: x\lrta y$ of $y$ by $F$, i.e. $F(g)=G$.
+\end{dfn}
+
+\begin{dfn}
+The category $\calb$ is called a \textbf{prestack} over a category $\calc$ with a Grothendieck topology if it is fibered over $\calc$ and 
+
+for any object $U\in\calc$ and object $x,y\in\calb$ with image $U$, the functor from objects over $U$ to sets taking $[F:V\lrta U]$ to $\hom(F^*x, F^*y)$ is a sheaf.
+
+The category $\calb$ is called a \textbf{stack} over the category $\calc$ with a Grothendieck topology if it is a prestack over $\calc$ and every descent datum is effective.
+
+ A \textbf{descent datum} consists roughly of a covering of an object $V$ of $C$ by family $V_i$, elements $x_i$ in the fiber over $V_i$ and morphism $f_{ji}$ between the restrictions of $x_i$ and $x_j$ to $V_{ij}=V_i\times_V V_{j}$ satisfying the compatibility condition $f_{ki}=f_{kj}f_{ji}$. The descent datum is called effective if the elements $x_i$ are essentially the pullbacks of an element $x$ with image $V$.
+\end{dfn}
+\textbf{The descent condition here is just a derived version of the usual sheaf axioms.} The fiber functor $F:\calb\lrta \calc$ can be regarded a sheaf on $\calb$ with value in $\calc$.
+
+For example if we tak $\calc=Grpds$ the stack is called $1$-stack.
+
+We will jump through the story of $n$-stacks and go directly to $\infty-stacks$.
+
+\subsection{Derived critical locus}
+$$
+\begin{tikzcd}
+dCrit(S) \arrow[rr] \arrow[dd] &  & M \arrow[dd, "dS"] \\
+ & \Swarrow &  \\
+M \arrow[rr, "\underline{0}"] &  & T^*M
+\end{tikzcd}
+$$
+Mostly, it would be easier to analyze it in terms of functions on it. We will mostly work in the affine case only to convince ourselves.
+
+Let $R$ be a commutative $k$-algebra, and $P$ a projective $R$-module of finite type. Let $S:=Sym_R(P^\vee)$ the symmetric algebra on on the $R$-dual $P^\vee$. $S$ is a commutative $R$-algebra. Consider $\wedge^\bullet P^\vee$ be the exterior algebra of $P^\vee$ as an $R$-module and we can construct a non-positively graded $S$-module $S\otimes_R\wedge^\bullet P^\vee$ graded by 
+$$
+(S\otimes_R \wedge^\bullet P^\vee)_m:=S\otimes_R\wedge^{-m}P^\vee
+$$
+.
+This $S\otimes_{R}P^\vee$ is naturally a graded commutative $S$-algebra and can be endowed with a degree $1$ differential $d$.
+The differential $d$ is induced by a homomorphism
+$$
+\begin{aligned}
+h:& R\lrta Hom_R(P,P)\cong P^\vee\otimes P\\
+& 1_R\longmapsto \sum_i{\alpha_i}\otimes x_i
+\end{aligned}
+$$
+$$
+d(a\otimes(\beta\wedge\cdots\wedge \beta_{n+1}))=\sum_{j} a\cdot \alpha_{j}\otimes \sum_{k}(-1)^k\beta_k(x_j)(\beta_{1}\wedge\cdots \wedge \hat{\beta}_k\wedge \cdots \wedge \beta_{n+1})
+$$
+ $(S\otimes_R,d)$ is commutative differential non-positively graded algebra over $S$. We call it Koszul cdga and denote it by $K(R;P)$.
+\begin{prop}
+The cohomology of Koszul cdga $K(R;P)$  is zero in degrees $\leq 0$, and $H^0(K(R;P))\cong R$. 
+\end{prop}
+\begin{proof}
+See for example \href{https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/koszul.pdf}{this notes}
+\end{proof}
+
+\section{The BRST on $dCrit(S)$ $=$ the BV-BRST on $Crit(S)$}
+
+\end{document}

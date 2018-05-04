@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Recap on BV formalism}{2}{section.1}
+\contentsline {section}{\numberline {2}Derived functor, homotopy pushout}{3}{section.2}
+\contentsline {section}{\numberline {3}Derived everything}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Recap on spaces, functor of point}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Stacks, derived stacks}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Derived critical locus}{8}{subsection.3.3}
+\contentsline {section}{\numberline {4}The BRST on $dCrit(S)$ $=$ the BV-BRST on $Crit(S)$}{8}{section.4}

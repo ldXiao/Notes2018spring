@@ -77,6 +77,7 @@
 \newtheorem{dfn/thm}[thm]{Definition/Theorem}
 \renewcommand{\baselinestretch}{1.1}
 \newcommand{\mor}{{\text Mor\,}}
+\renewcommand{\hom}{{\text Hom}}
 \newcommand{\reals}{\mathbb R}
 \newcommand{\cplx}{\mathbb C}
 \newcommand{\intg}{\mathbb Z}
@@ -101,6 +102,7 @@
 \newcommand{\cale}{{\cal E}}
 \newcommand{\cali}{{\cal I}}
 \newcommand{\call}{{\cal L}}
+\newcommand{\calm}{{\cal M}}
 \newcommand{\caln}{{\cal N}}
 \newcommand{\calo}{{\cal O}}
 \newcommand{\calr}{{\cal R}}
@@ -465,7 +467,8 @@ $$
 \subsection{Spectral sequences of double complex}
 
 \section{Model categories}
-Model categories were an abstraction of homotopy theory. They especially useful when we only care about topological spaces up to some weak form of equivalence. For example, homotopy equivalence is a prototype of this ``weak equivalence''.
+\subsection{Axioms}
+Model categories were an abstraction of homotopy theory. They are especially useful when we only care about topological spaces up to some weak form of equivalence. For example, homotopy equivalence is a prototype of this ``weak equivalence''.
 \begin{dfn}
 \textbf{weak homotopy equivalences} are map from $X$ to $Y$ that induces isomorphism on each homotopy groups, $\pi_n(X,x)\cong \pi_n(Y,f(x))$. We often denote weak equivalences by $\overset{\sim}{\lrta}$.
 \end{dfn}
@@ -493,20 +496,350 @@ Let $\calc$ be any category. A \textbf{model structure} on $\calc$ is  the given
 \item if $f,g,h$ are arrows s.t. $fg=h$ and two of them are in $W$, then so is the third;
 \item $W,FIB,COFIB$ are closed under retracts;
 \item every arrow in $W\cap FIB$ has the RLP with respect to every arrow in $COFIB$ and every arrow in $FIB$ has the RLP with respect to every arrow in $W\cap COFIB$;
-\item there are functorial
+\item there are functorial $(W\cap COFIB, FIB)$ and $(COFIB,W\cap FIB)$ factorization in $\calc$.
 \end{enumerate}
 \end{dfn}
 
 \begin{dfn}
-We see a map $p:E\lrta B$ satisfies the \textbf{homotopy lifting property} iff for any homotopy $h: X\times [0,1]\lrta B$, if we can lift $h(x,0)=h\circ i_0(x) $ to $E$ then we can lift all of $h$ to $E$ extending the original lift. Diagramatically, it means
+By Axiom \textbf{MC1}, we know a model category have initial object $\emptyset$ and final object $*$. We see an object $A\in \calc$ is cofibrant if $\emptyset\lrta A$ is a cofibration and we say $B\in\calc$ is fibrant if $B\lrta *$ is a fibration.
+\end{dfn}
+
+\begin{ex}
+The category $Ch_R$ can be given the structure of a model category by defining a map $f: M\lrta N$ to be 
+\begin{enumerate}[label=(\roman*)]
+\item a weak equivalence if $f$ induces isomorphisms on homology groups,
+\item a cofibration if for each $k\geq 0$ the map $f_k:M_k\Lrta N_k$ is a monomorphism with projective $R$-module as its cokernel, and
+\item a fibration if for each $k\geq 1$ the map $f_k: M_k\lrta N_k$ is an epimorphism.
+\end{enumerate} The initial object in $Ch_R$ is the zero complex. 
+The cofibrant object in $Ch_R$ are the projective chain complexes. The homotopy category $Ho(Ch_r)$ is equivalent to the category whose objects are these cofibrant chain complexes and whose morphisms are ordinary chain homotopy classes of maps.
+\end{ex}
+
+\begin{lemma}
+Let $\calc$ be a model categroy. Then :
+\begin{enumerate}[label=(\roman*)]
+\item fibrations are exactly those arrows with RLP with respect to all acyclic cofibrations;
+\item acyclic fibrations are exactly those arrows with RLP with respect to all cofibrations;
+\item  cofibrations are exactly those arrows with LLP with respect to all acyclic fibrations;
+\item acyclic cofibrations are exactly those arrows with LLP with respect to all fibrations;
+ \end{enumerate}
+\end{lemma}
+\begin{proof}
+We sketch the proof of $(i)$: One inclusion is by definition: every fibration has RLP with every acyclic cofibration. For the reverse inclusion, consider an arrow $f$, by axiom $MC5$, $f$ can be factorized in to $p\circ i$ where $i$ is an acyclic cofibration and $p$ is a fibration. 
 $$
 \begin{tikzcd}
-X \arrow[r, "\tilde{h}_0"] \arrow[d, "i_0"'] & E \arrow[d, "p"] \\
-X\times I \arrow[r, "h"'] \arrow[ru, "H", dashed] & B
+\bullet \arrow[d, "i"'] \arrow[r, "id"] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r, "p"] \arrow[ru, "h"] & \bullet
+\end{tikzcd}
+$$
+and observe that the diagram 
+$$
+\begin{tikzcd}
+\bullet \arrow[r, "i"] \arrow[d, "f"] & \bullet \arrow[r, "h"] \arrow[d, "p"] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r, "id"'] & \bullet \arrow[r, "id"'] & \bullet
+\end{tikzcd}
+$$
+expresses $f$ as a retract of $p$. This implies that $f$ is a fibration.
+\end{proof}
+
+\begin{cor}
+Let $\calc$ be a model category. Then 
+\begin{enumerate}[label=(\roman*)]
+\item FIB is closed under pull back;
+\item COFIB is closed under pushout.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+Given a fibration $f$ and consider the following diagram
+$$
+\begin{tikzcd}
+\bullet \arrow[d, "j"'] \arrow[r] & * \arrow[r] \arrow[d, "q"'] & \bullet \arrow[d, "f"] \\
+\bullet \arrow[r] \arrow[rru, "h'"'] \arrow[ru, "h"] & \bullet \arrow[r, "g"'] & \bullet
+\end{tikzcd}
+$$
+where the right square is the pullback diagram funder $g$. Consider an arbitrary acyclic cofibration $j$, then there exists a $h'$ because $f$ is RLP w.r.t $j$. $h'$ must factor through $h$ because $*$ is a pull back. As a result $q$ has RLP w.r.t every acyclic cofibration. Thus we know $q$ is a fibration by the lemma above.
+\end{proof}
+
+\begin{dfn}
+Let $\calc$ be a model category. Then A cofibrant approximation to an object $X\in Obj(\calc)$ is a pair $(\tilde{X},i)$ where $\tilde{X}$ is cofibrant and $i:\tilde{X}\lrta X$ is a weak equivalence;
+
+a fibrant approximation to an object $X\in Obj(\calc)$ is a pair $(\hat{X},j)$ where $\hat{X}$ is a fibrant object and $j: X\lrta \hat{X}$ is a weak equivalence;
+\end{dfn}
+
+\begin{prop}
+\begin{enumerate}[label=(\roman*)]
+\item every object $X\in Obj(\calc)$ has a cofibrant approximation $(\tilde{X},i_X)$ where $i_X$ is a trivial fibration;
+\item if $(\tilde{X},i_X)$ $(\tilde{X}',i_X
+')$ are cofibrant approximations there is a weak equivalence $f:\tilde{X}\lrta \tilde{X}'$;
+\item every morphism in $\calc$ has fibrant approximation.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(i) Every morphism to $X$ factorizes as $p\circ q$ where $q$ is a cofibration and $p$ is a acyclic fibration. In particular, the initial object has a morphism ending in $X$, $\emptyset\lrta X$ factorizes as $i_X\circ q$ where $i_X$ is a acyclic fibration and $q:\emptyset\lrta \tilde{X}$ is a  cofibration.  By definition $\tilde{X}$ is cofibrant.
+
+(ii) Consider the diagram
+$$
+\begin{tikzcd}
+\emptyset \arrow[d, "p"'] \arrow[r, "q"] & \tilde{X}' \arrow[d, "i_{X}'"] \\
+\tilde{X} \arrow[r, "i_X"] \arrow[ru, "f", dashed] & X
+\end{tikzcd}
+$$
+where $i_X,i_X'$ are acyclic fibrations and $p,q$ are cofibrations. Because each  cofibration has the LLP with acyclic fibrations, there exists a map $f: \tilde{X}\lrta \tilde{X}'$. And this map $f$ is a weak equivalence because. Because $i_X, i_X'$ are weak equivalence and $i_X'f=i_X$, by the 2 of 3 axiom for weak equivalences, $f$ is also a weak equivalence.
+
+(iii): Here we use the notion $(\hat{X},j_X)$ to denote the functorial fibration approximation where $j_X$ is an acyclic cofibration. And we consider $(\hat{Y},j)$ an ordinary fibration approximation of $Y$. Consider the following diagram
+$$
+\begin{tikzcd}
+X \arrow[r, "\alpha"'] \arrow[d, "j_X"'] \arrow[rd] & Y \arrow[d, "j"'] \\
+\hat{X} \arrow[r, dashed] \arrow[d, "p_X"'] & \hat{Y} \arrow[ld, "p"] \\
+* & 
+\end{tikzcd}
+$$
+where the composition $j\circ \alpha$ gives a map from $X$ to an fibrant object $\hat{Y}$, therefore $X,\hat{X},*, \hat{Y}$ form a  commutative square. Note that $j_X$ is an acyclic cofibration and $p$ is a fibration. There is a lift $h:\hat{X}\lrta \hat{Y}$ because fibration has RLP w.r.p acyclic cofibrations. This lift $h$ gives the fibrant approximation of $\alpha$.
+\end{proof}
+
+\begin{lemma}[Ken Brown's Lemma]
+Let $\calc$ be a model category and let $\calb$ be a category with subcategory $S\subset \mathbf{Arr}(\calc)$ containing all the identities and satisfies the 2-out-of-3 axiom. If $F:\calc\lrta \calb$ is a functor hat takes acyclic cofibrations between cofibrant objects to elements of $S$, then $F$ takes fibrations between fibrant objects to elements of $S$, then $F$ takes every weak equivalence between fibrant objects to elements of $S$.
+\end{lemma}
+\begin{rmk}
+Basically, this lemmas says a functor sending acyclic (co)fibrations between (co)fibrant objects to $S$ (``weak equivalences in $\calb$''), would send all weak equivalence in $\calc$ to ``weak equivalence in $\calb$'' 
+\end{rmk}
+\begin{proof}
+Let $f: A\lrta B$ be a generic weak equivalence between cofibrant objects between cofibrant objects. By $\mathbf{MC1}$ all colimits exists  in $\calc$, there the coproduct $A\sqcup B\in Obj(\calc)$. By universal property of coproduct there exists a morphism $\lgl f,id_B\rgl: A\sqcup B\lrta B$.
+We can factorize this map as
+$$
+A\sqcup B\overset{q}{\lrta }C\overset{p}{\lrta }B 
+$$
+with $p$ and acyclic fibration and $q$ a cofibration. Since $A$ and $B$ are cofibrant, stability of cofibrations under pushout implies $i_0, i_1$ are both cofibrations  
+$$
+\begin{tikzcd}
+ & C \arrow[rd, "p"] &  \\
+A\sqcup B \arrow[rr, "{\lgl f,id_B\rgl}", bend left] \arrow[ru, "q"] &  & B \arrow[ll, "i_1"] \\
+ &  &  \\
+A \arrow[uu, "i_0"] \arrow[rruu, "f"] &  & \emptyset \arrow[ll] \arrow[uu]
+\end{tikzcd}.
+$$
+Then $qi_0$ and $qi_1$ are both weak equivalences because of 2-out-of-3 axiom by considering the the following two triangles.
+$$
+\begin{tikzcd}
+C \arrow[rd, "p"] &  & C &  \\
+A \arrow[r, "f"] \arrow[u, "q\circ i_0"] & B & A \arrow[u, "q\circ i_0"] \arrow[r, "f"] & B \arrow[lu, "q\circ i_1"].
+\end{tikzcd}
+$$
+By hypothesis, $F(q\circ i_0)$ and $F(q\circ i_0)$ are elements of $S$. Since $F(p\circ q\circ i_1)=F(id_B)$ is in $S$. By 2-out-of-3 hypothesis of $S$, It follows that $F(p)\in S$. Hence $F(f)=F(p)\circ F(q\circ i_0)$ is in $S$.
+\end{proof}
+
+\subsection{The homotopy category}
+
+\begin{dfn}
+Let $\mathbb{U}\subset\mathbb{V}$ be Grothendieck universe and let $\calc$ be a $\mathbb{U}$-small category. Let $S\subset Arr(\calc)$ be a set of Arrows. A $\mathbb{V}$-\textbf{localization of $\calc$ with respect to $S$} is a $\mathbb{V}$-small category $\calc[S^{-1}]$ together with a functor $F_S:\calc\lrta \calc[S^{-1}]$ such that 
+\begin{enumerate}[label=(\roman*)]
+\item for all $s\in S$, $F_S(s)$ is an isomorphism;
+\item for any other $\mathbb{V}$-small category $\cala$ and any functor $\calc\lrta \cala$ such that $G(s)$ is an isomorphism for each $s\in S$, there is a functor $G_S:\calc[S^{-1}]\lrta \cala$ and a natural isomorphism
+$$
+\eta_G: G_S\circ F_S\cong G
+$$
+\item for any $\mathbb{V}$-small category $\cala$, the induces functor
+$$
+F_S^*: Func(\calc[S^{-1}], \cala), \lrta Func(\calc,\cala)
+$$
+is fully faithful.
+\end{enumerate}
+\end{dfn}
+
+\begin{thm}
+Let $\mathbb{U}$ be a Grothendieck universe and let $\calc$ be a model category. Then there exists a $\mathbb{U}$-localization of $\calc$ with respect to the set of Weak equivalences $W$.
+\end{thm}
+
+\begin{dfn}
+Let $\calc$ be a category and let $\calc_0$, $\mathbf{W}\subset \calc$ be subcategories. We say that $\calc_0$ is a left (resp. right) deformation retract of $\calc$ with respect to $\mathbf{W}$ if there exits a functor $R:\calc\lrta \calc_0$ and a natural transformation $s: \iota R\lrta Id_\calc$ (resp. $s: Id_\calc\lrta \iota R$), where $\iota:\calc_0\lrta \calc$ is the inclusion functor. such that:\begin{enumerate}
+\item $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$;
+\item for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$;
+\item for every object $C_0\in Obj(\calc_0)$, the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$.
+\end{enumerate}
+The pair $(R,s)$ is called a left (resp. right) deformation retraction from $\calc$ to $\calc_0$ with respect to $\mathbf{W}$. When $\mathbf{W}=\calc$, we say  $(R,s)$ is an absolute deformation retraction of $\calc$ to $\calc_0$.
+\end{dfn}
+
+\begin{lemma}\label{lem:criterior_of_deformation_retract}
+Let $\calc$ be a category and let $\calc_0, \mathbf{W}\subset \calc$ be subcategories. Let $R:\calc\lrta \calc_0$ be an absolute left deformation retraction. Assume that for every object $C\in Obj(\calc)$, the map $s_C$ is in $\mathbf{W}$; if $\mathbf{W}$ satisfies the 2-out-of-3 axiom, then $R$ sends $\mathbf{W}$ into $\mathbf{W}\cap \calc_0$. If $\calc_0$ is a full subcategory, then for every $C_0\in Obj(\calc_0)$ the map $s_{C_0}$ is in $\mathbf{W}\cap \calc_0$.
+\end{lemma}
+\begin{proof}
+Let $f: A\lrta B$ be in $\mathbf{W}$, consider the diagram of natural transformation of $s$ defined in the absolute deformation retraction $(R,s)$.
+
+$$
+\begin{tikzcd}
+R(A) \arrow[d, "R(f)"'] \arrow[r, "s_A"] & A \arrow[d, "f"] \\
+R(B) \arrow[r, "s_B"] & B
+\end{tikzcd}
+$$
+The hypothesis says $s_A, s_B\in \mathbf{W}$, therefore $f\circ  s_A\in \mathbf{W}$. Then by the 2-out-of-3 property of $\mathbf{W}$, we know $R(f)\in\mathbf{W}$. Combined with the fact $R: \calc\lrta \calc_0$, it follows $R(\mathbf{W})\subset \mathbf{W}\cap \calc_0$; The second statemnt is clear because $\mor_{\calc_0}(R(C_0), C_0)=\mor_{\calc}(R(C_0),C_0)$, therefore $s_{C_0}\in \calc_0$.  
+\end{proof}
+\begin{rmk}
+The above lemma says, under suitable choice of subcategory $\mathbf{W}$, the deformation retraction along $\mathbf{W}$ is ``equivalent'' to an absolute deformation retraction. 
+\end{rmk}
+ 
+\begin{lemma}\label{lem:equivalence_fo_localization_cat}
+Let $\calc$ be a category and $\calc, \mathbf{W}\subset \calc$ subcategories. Let $(R,s)$ be a left( resp. right) deformation retraction w.r.t $\mathbf{W}$. Denote $\mathbf{W}\cap \calc_0$ as $\mathbf{W}_0$. Let $\mathbb{V}$ be the universe where $\calc[\mathbf{W}^{-1}]$ exists.
+\begin{enumerate}
+\item The induced inclusion $\calc_0[\mathbf{W}_0^{-1}]\subset \calc[\mathbf{W}^{-1}]$ is an equivalence of categories. 
+\item $\calc[\mathbf{W}^{-1}]$ exists iff $\calc_0[\mathbf{W}_0^{-1}]$ exists.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The second statement obviously comes from the first.
+
+Consider the inclusion functor: $j_0:\calc_0\lrta \calc$ and the left deformation functor $R:\calc\lrta \calc_0$. The universal property of localization of categories implies both $R,j_0$ descend to functors between the localizations
+$$
+\tilde{j}_0:\calc_0[\mathbf{W}_0^{-1}]\lrta \calc[\mathbf{W}^{-1}]
+$$
+and
+$$
+\tilde{R}:\calc[\mathbf{W}^{-1}]\lrta \calc_0[\mathbf{W}_0^{-1}].
+$$
+
+By the definition of of deformation retraction $s: R j_0\lrta id_\calc$ is a natural transformation and for all object $C\in Obj(\calc)$, $s_C\in \mathbf{W}$.  The natural transformation $s$ descends to a natural transformation
+$\tilde{s}:\tilde{R}\tilde{j}_0\lrta id_{\calc[\mathbf{W}^{-1}]}$
+where 
+$$
+\tilde{s}_{F_\mathbf{W}(C)}=F_{\mathbf{W}}(s_C)
+$$
+where $F_\mathbf{W}$ is the defining functor of localization. By definition of localization $F_\mathbf{W}(s_C)$ is isomorphism because $s_C\in \mathbf{W}$. Hence, by definition, $\tilde{s}$ is a natural isomorphism. The third condition in the definition of deformation retraction means $s$ restricts to a natural transformation $s_0:j\circ R\lrta id_{\calc_0}$. With identical argument we can prove that there is a natural isomorphism between $\tilde{s}_0:\tilde{j}_0\tilde{R}\lrta id_{\calc_0[\mathbf{W}_0^{-1}]}$. 
+
+We have established the desired equivalence of categories.
+\end{proof}
+
+\begin{dfn}
+Let $\calm$ be a model category. 
+\begin{enumerate}
+\item $\calm_c$ denote the full subcategory of $\calm$ consisting of cofibrant objects.
+\item $\calm_f$ denote the full  subcategory of $\calm$ consisting of fibrant objects.
+\item $\calm_{cf}$ denote the full subcategory of $\calm$ consisting of objects that are both cofibrant and fibrant.
+\end{enumerate}
+\end{dfn}
+\begin{prop}
+\begin{enumerate}
+  \item $\calm_{cf},\calm_c$ are left deformation retracts of $\calm_f$ and $\calm$ with respect to the weak equivalences.
+  \item $\calm_{cf},\calm_{f}$ are right deformation retracts w.r.t the weak equivalence.
+\end{enumerate}
+\end{prop}
+\begin{rmk}
+Together with Lemma~\ref{lem:equivalence_fo_localization_cat},  we can prove that the homotopy category (localization w.r.t weak equivalence) $Ho(\calm)$ exists iff $Ho(\calm_{cf})$ exists.
+\end{rmk}
+\begin{proof}
+ We will show $\calm_c$ is a left deformation retract of $\calm$ and one we replace $\calm$ by $\calm_f$ the first statement is finished. The second statement can be proved with the dual argument.
+
+ Fix an object; there is a functor sending an object $A$ to the unique arrow $\emptyset\lrta A$. We denote the functor by $F$. Consider the functorial $(COFIB,FIB\cap W)$-factorization
+ $$
+G:\mathbf{Arr}(\calm)\lrta \mathbf{Arr}(\calm)\times_{d_1,d_0}\mathbf{Arr}(\calm)
+ $$ 
+ Finally denote by $\pi_0$ and $\pi_1$ the projection functors
+ $$
+ \pi_i:\mathbf{Arr}(\calm)\times_{d_1,d_0}\mathbf{Arr}(\calm)\lrta \mathbf{Arr}(\calm)
+ $$
+ Consider the functor
+ $$
+Q:d_0\circ \pi_1\circ G\circ F:\calm\lrta \calm_c.
+ $$
+ $G$ factorizes the arrow $\emptyset\lrta A$ as $\emptyset \lrta Q(A)\overset{p_A}{\lrta} A$, where $\emptyset\lrta Q(A)$ is a cofibration and $p_A$ is a acyclic fibration. Thus, we can consider $Q$ as  a functor to $\calm_c$. It is clear that the family $\{p_A\}_{A\in Ob(\calm)}$ defines a a natural transformation $j_c\circ Q\lrta Id_\calm$. Because
+\begin{enumerate}
+\item $(Q,p)$ defines a absolute left deformation retract by definition.
+\item Weak equivalence has the 2-out-of-3 property
+\item $\calm_c$ is full subcategory.
+\end{enumerate}
+according to~\ref{lem:criterior_of_deformation_retract}, $(Q,p)$ also defines a left deformation retract form $\calm$ to $\calm_c$ with respect to weak equivalence.
+\end{proof}
+
+To construct the localization of $\calm_{cf}$ with respect to weak equivalences, we need to define some familiar notions
+\begin{dfn}
+Let $\calm$ be a model category and let $X\in Ob(\calm)$ be any object.
+\begin{enumerate}
+\item A \textbf{cylinder object} for $X$ is a factorization of the fold map (maps $x:X_1$ both $x:X_2$ to $x$)
+$$
+\nabla: X\sqcup X\overset{j}{\inj} X\times I\overset{\sim}{\lrta}X 
+$$
+if a cofibration followed by a weak equivalence.
+\item A \textbf{path object} for $X$ is a factorization of the diagonal map
+$$
+\Delta:X\overset{\sim}{\lrta}X^I\surj X\times X
+$$
+is the weak equivalence followed by a fibration.
+\end{enumerate}
+\end{dfn}
+
+If $\calm$ is a model category and $X\times I$ is a cylinder object for $X$, we will denote by $in_k:X\lrta X\times I$ the two arrows making the diagram commutative.
+$$
+\begin{tikzcd}
+X \arrow[d, "i_0"] \arrow[rd, "in_0"] &  \\
+X\sqcup X \arrow[r, hook] & X\times I \\
+X \arrow[u, "i_1"] \arrow[ru, "in_1"'] & 
+\end{tikzcd}
+$$
+notice that the 2-out-of-3 guarantees that $in_k$ are weak equivalence
+$$
+\begin{tikzcd}
+X \arrow[rd, "in_0"'] \arrow[rrd, "id_X"] &  &  \\
+ & X\times I \arrow[r, "\sim"] & X
+\end{tikzcd}
+$$
+The dual notion for $X^I$ is denoted by $pr_k$.
+
+We would use the notion of cyliner and path objects to introduce the notion of homotopy between two maps:
+\begin{dfn}
+ A \textbf{left homotopy from $f$ to $g$} is a pair $(A\times I, H)$ where $A\times I$ is a cylinder object for $A$ and $H:A\times I\lrta X$ is a map making the diagram commute 
+ $$
+ \begin{tikzcd}
+A \arrow[d, "in_0"'] \arrow[rd, "f"] &  \\
+A\times I \arrow[r, "H"] & X \\
+A \arrow[u, "in_1"] \arrow[ru, "g"] & 
+\end{tikzcd}
+ $$
+\end{dfn}
+\begin{dfn}
+A \textbf{ right homotopy from $f$ to $g$} is a pair $(X^I,K)$ where $X^{I}$ is a path object for $X$ and $K:A\lrta X^I$ is a map making the diagram commute 
+$$
+\begin{tikzcd}
+ & X \\
+A \arrow[r, "K"] \arrow[ru, "f"] \arrow[rd, "g"'] & X^I \arrow[u, "pr_0"'] \arrow[d, "pr_1"] \\
+ & X
 \end{tikzcd}
 $$
 \end{dfn}
+\begin{lemma}
+If $f:A\lrta X$ is left (resp right) homotopic to a weak equivalence, then $f$ is a weak equivalence.
+\end{lemma}
+\begin{proof}
+Still use the diagram above $f\overset{l}{\sim} g$, where $g$ is a weak equivalence, therefore $H\circ in_1, in_1$ are weak equivalence we therefore know $H$ is a weak equivalence, hence $f=H\circ in_0$ is a weak equivalence.
+\end{proof}
+\begin{lemma}\ \begin{enumerate}
+\item 
+If $A$ is a cofibrant object, then $\overset{l}{\sim}$ defines an equivalence relation on $\hom_\calm(A,X)$ for every object $X\in Ob(\calm)$;
+\item
+If $X$ is a fibrant object, then $\overset{r}{\sim}$ defines an equivalence relation on $\hom_\calm(A,X)$ for every object $A\in Ob(\calm)$;
+\end{enumerate}
+\end{lemma}
+\begin{dfn}
+Let $r_1$ be any relation on a nonempty set $S$. we define relations $r_2$ by $x r_2 y$ if either $xr_1 y$ or $yr_1 x$. Thus $r_2$ is reflexive and symmetric, but it may not be transitive. We further define $r_3$: $xr_3 y$ if there exists a finite set of element $z_1,...,z_n$ so that $x r_2 z_1$, ...,$z_n r_2 y$. Then $r_3$ is an equivalence relation. This is called \textbf{the equivalence relation generated by the relation $r_1$}.
+\end{dfn}
+\begin{dfn}
+Let $\calm$ be a model category. Let $A,X\in Ob(\calm)$ we denote by $\pi^l$ equivalent class of $\hom_\calm(A,X)$ under the equivalence relation \textbf{generated} by left homotopy. Similarly we will denote by $\pi^r(A,X)$ the quotient of $\hom_\calm(A,X)$ by the equivalence relation generated by right homotopy.
+\end{dfn}
+\section{Anel}
+In this section, we explain how o build the spaces of derived geometry. This will use ideas from Algebraic geometry crossed with ideas from Higher category theory.
+\subsection{A view on Algebraic Geometry}
+As we mentioned in the introduction, it is convenient to split algebraic geometry in two parts: The theory of Affine schemes and the theory of non-affine spaces (general schemes, algebraic spaces). Affine schemes are those spaces that can be described faithfully by a commutative rings of functions. Non-affine spaces are those spaces without enough functions and must be described by other means (functor of points, atlas)
 
+The theory of affine schemes consists in an almost perfect dictionary between geometric properties (points, open and closed subsets, etale and proper maps), connectedness, separatedness, bundles, dimensions, vector fields...) and features of commutative rings (fields, localizations, quotients and ideals, separable and finite extensions, idempotents, valuations, modules, generating)
+
+\section{Differential graded categories}
+There are two drawbacks of triangulated categories:
+\begin{enumerate}
+\item the fibered product of triangulated categories is no longer triangulated.
+\item there is no triangulated structure on the functor category for two triangulated categories.
+\end{enumerate}
+
+\begin{dfn}
+A \textbf{dg category} is a category enriched over cochain complexes of $k$-modules.
+\end{dfn}
+\section{Fibered category}
+\section{Stacks}
 \section{Formalization renormalization}
 \begin{dfn}
 A \textbf{parametrix} for the Laplacian $D$ on a manifold is a symmetric distribution $P$ on $M^2$ such that $(D\otimes 1)P-\delta_M$ is a smooth function on $M^2$, where $\delta_M$ stands for the $\delta$-distribution on the diagonal of $M$.
@@ -517,4 +850,92 @@ D_x P_{x,y}-\delta_{x,y}
 $$
 is a smooth function on $M^2$
 
+\section{three lectures}
+\subsection{Motivation}
+\begin{enumerate}
+\item $Crit(S)=\{graph(dS)\}\cap \{zero\ sections\ in\ \} T^*X) $ $\leadsto$ derived schemes
+\item quotient by symmetries. $\leadsto$ derived stacks.
+\item $\Sigma$ closed surfaces, the $FlatConn_G(\Sigma)$ is a symplectic.
+Consider $X$ 3-dim $\pd X=\Sigma$,
+\end{enumerate}
+\subsection{
+Derived geometry}
+A derived scheme is a pair $(X_0,\calo_X^\bullet)$ a scheme $X$ and a sheaf of $dg_{\leq 0}$-algebra on $X$ such that $\calo^0_{X}=\calo_{X_0}$.
+
+Main feature of the this kind of scheme is that it behaves well under intersections (fibered product).
+
+\begin{dfn}
+A \textbf{derived scheme} is a pair $(X,\calo)$ consisting of topological space and a sheaf $\calo$ of commutative ring spectra on $X$ such that the
+\begin{enumerate}
+\item pair $(X,\pi_0\calo)$ is a scheme and 
+\item each $\pi_k\calo$ is a quasi-coherent $\pi_0\calo$-module.
+\end{enumerate}
+\end{dfn}
+
+\section{B-V formalism and derived symplectic geometry}
+$$
+\int_X e^{i S_0(X)/\hbar} f(x) dx
+$$
+If $S_0$ is a Morse function on a finite dimensional manifold.
+
+But usually we would have to work on infinite dimensional space.
+
+\underline{idea}: 
+\begin{enumerate}
+\item embed $X$ into a larger graded manifold $V$ and extend $S_0(X)$ to a function on $S(x)$ on $V$ and express the initial integral as
+$$
+\int_{V\subset T^*[-1]V} e^{i S(y)/\hbar}f(y) dy
+$$
+then deform $V$ as a Lagrangian inside the odd cotangent bundle. In order to make the integral invariant, the new $S$ has to satisfies the quantum master equation $QME$. At the oder $\hbar=0$, QME reduces to the classical master equation
+$$
+[S_{0},S_{0}]=0
+$$ 
+
+\underline{Classical BRST cohomology} One construct the BRST cohomology
+$(\calo_{T^*[-1]V}, d=[S_{cl}])=(Sym_{\calo_X}T[1]X, \lgl\_,dS_0\rgl)$
+
+One of the advantage of the derived critical locus is that is has structure of $-1$-shifted symplectic derived scheme.
+
+\begin{dfn}
+n-shifted symplectic structure on $X$ is a non-degenerated closed $2$-form on $X$ of degree $n$.
+\end{dfn}
+
+On the derived stack $X$
+
+Solving the quantum master equation is equivalent to find the deformation quantization of BRST cohomology.
+
+\underline{Basic question}: to what extend does BRST cohomology depend on the choice of $S$ and $V$.
+\begin{thm}(
+Felder-Kazhdan) If $X$ is an affine variety, BRST cohomology is uniquely determined by $X$ and $S_0\in \calo_X$. 
+\end{thm}
+\end{enumerate}
+
+\underline{Heuristic}: BRST cohomology should only depend on the critical locus of $S_0$.
+
+\underline{Felder-Kazhdan}: 
+
+$X$ affine variety
+
+$S_0\in\calo_X$
+
+$L:=$ lie algebra of vector fields on $X$ annihilating $S_0$.
+
+$L_0\subset L$ is a sub-$\calo_X$-module generated by
+$$
+\xi(s_0)\eta-\eta(s_0)\xi\ \ \ \ \eta, \xi \in T_X
+$$
+$(\calo_{crit(S_0)}, L/L_0)$ forms a Lie-Rinehart pair.
+
+Another approach:
+
+Consider the derived critical locus instead of the critical locus. Roughly speaking is to solve the equation $dS=0$ up to homotopy.
+$$
+\begin{tikzcd}
+dCrit(S_0) \arrow[d] \arrow[r] & X \arrow[d, "dS_0"] \\
+X \arrow[r, "zero\ sections"] & T^*X
+\end{tikzcd}
+$$
+$$
+\calo_{dCrit(S_0)}=\calo_X\otimes^{L}_{\calo_{T^*X}}\calo_{X}=Sym_{\calo_X}
+$$
 \end{document}

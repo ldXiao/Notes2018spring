@@ -1,8 +1,19 @@
-\BOOKMARK [1][-]{section.1}{Complex\040manifold}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Complex\040structure,\040almost\040complex\040structure}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{Spectral\040sequences}{}% 3
-\BOOKMARK [1][-]{section.3}{Fundamental\040groups}{}% 4
-\BOOKMARK [2][-]{subsection.3.1}{Spectral\040sequences\040of\040filtered\040complexes}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.2}{Spectral\040sequences\040of\040double\040complex}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{Model\040categories}{}% 7
-\BOOKMARK [1][-]{section.5}{Formalization\040renormalization}{}% 8
+\BOOKMARK [1][-]{section.1}{Complex manifold}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Complex structure, almost complex structure}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Spectral sequences}{}% 3
+\BOOKMARK [1][-]{section.3}{Fundamental groups}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Spectral sequences of filtered complexes}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Spectral sequences of double complex}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Model categories}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Axioms}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{The homotopy category}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Anel}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{A view on Algebraic Geometry}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Differential graded categories}{}% 12
+\BOOKMARK [1][-]{section.7}{Fibered category}{}% 13
+\BOOKMARK [1][-]{section.8}{Stacks}{}% 14
+\BOOKMARK [1][-]{section.9}{Formalization renormalization}{}% 15
+\BOOKMARK [1][-]{section.10}{three lectures}{}% 16
+\BOOKMARK [2][-]{subsection.10.1}{Motivation}{section.10}% 17
+\BOOKMARK [2][-]{subsection.10.2}{ Derived geometry}{section.10}% 18
+\BOOKMARK [1][-]{section.11}{B-V formalism and derived symplectic geometry}{}% 19
