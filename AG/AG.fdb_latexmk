@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1524820025 "AG.xdv" "AG.pdf" "AG" 1524820026
-  "AG.xdv" 1524820025 832620 eb7a04545bffb7acc39cef620ba7c210 "xelatex"
+["xdvipdfmx"] 1525423508 "AG.xdv" "AG.pdf" "AG" 1525423566
+  "AG.xdv" 1525423508 897388 d9b4ee2a49cee2e29f3f86c3ae815d5b "xelatex"
   (generated)
   "AG.pdf"
-["xelatex"] 1524820022 "AG.tex" "AG.xdv" "AG" 1524820026
+["xelatex"] 1525423505 "AG.tex" "AG.xdv" "AG" 1525423566
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -27,11 +27,13 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1480098701 1524 d89e2d087a9828407a196f428428ef4a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1480098701 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1480098701 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1480098701 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1480098701 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1480098701 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1480098701 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1480098701 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss17.tfm" 1480098701 1320 ed93d62c5f2c16343826001f03341dbc ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1480098701 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1480098701 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1480098701 1116 933a60c408fc0a863a92debe84b2d294 ""
@@ -215,17 +217,17 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "AG.aux" 1524820025 3102 adb5ebf481b767ec8e7f6f7bbaf53492 ""
-  "AG.out" 1524820025 1802 88c8f93eb466a1ffd31c2de24d4b7cf4 ""
-  "AG.tex" 1524820021 116529 931ab2fd416d17fa57b3bd698bbfe4cc ""
-  "AG.toc" 1524820025 1941 fe8b123b9414ebb4c8b422c321a76ec0 ""
+  "AG.aux" 1525423508 3375 65b2ca2522ccbaa92191fb686e1f96e2 ""
+  "AG.out" 1525423508 1981 60b548fccfa2bc7fd96efcb89bcd9d29 ""
+  "AG.tex" 1525423505 126873 1b4d1dc75fc7fcd891950cf74326516a ""
+  "AG.toc" 1525423508 2160 f9304b33e9ae52abae5c3a29f55df05a ""
   "Y^2-X^3.pdf" 1520887628 2522 61b009a465c215459b37f7f854fce86a ""
   "Y^2=X^3-X.pdf" 1520887612 3260 4eb11fe8d49a67f393f50df453fb40d5 ""
   "cocycles.pdf" 1524812910 77129 75cb255f71f19ea492f4fa5b6ddce0db ""
   "pic2Aprl27.pdf" 1524813743 78296 833e4befa7928cc1ff41720195dda336 ""
   (generated)
-  "AG.log"
-  "AG.toc"
   "AG.out"
-  "AG.xdv"
   "AG.aux"
+  "AG.toc"
+  "AG.xdv"
+  "AG.log"

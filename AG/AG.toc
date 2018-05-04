@@ -19,3 +19,6 @@
 \contentsline {subsection}{\numberline {4.1}Some basics of schemes}{56}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Open and closed subschemes}{59}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Aprl 27th:Projective space and schemes}{60}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}May 4th: }{64}{subsection.4.4}
+\contentsline {section}{\numberline {5}Weil divisors}{65}{section.5}
+\contentsline {subsection}{\numberline {5.1}May 4th-B}{65}{subsection.5.1}
