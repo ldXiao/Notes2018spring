@@ -2748,7 +2748,7 @@ $$
 \end{ex}
 \subsection{Open and closed subschemes}
 \begin{dfn}
-$X$ a scheme $U\subset X$ open $(U,\calo_X|U)$ is called an open subscheme of $X$, $j:U\inj  X$ is called an \text{open immersion}.
+$X$ a scheme $U\subset X$ open $(U,\calo_X|U)$ is called an \textbf{open subscheme} of $X$, $j:U\inj  X$ is called an \textbf{open immersion}.
 \end{dfn}
 \begin{dfn}
 (Hartshorne p85) A morphism $Y\overset{f}{\lrta}X$ is a called a \textbf{closed morphism} if 
@@ -2765,7 +2765,7 @@ $$
 are not surjective  in general, but  if $s\in(f_*\calo_Y)(U)$, we can find locally  for each $x\in U$ a section  on some open set $V\subset U$ containing $x$ which maps to the restriction of $s$ to $V$.
 
 \begin{dfn}
-A \textbf{closed subscheme} of $X$ is an equivalent class of closed immersions modulo
+A \textbf{closed subscheme} of $X$ is an equivalence class of closed immersions modulo
 
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -2795,12 +2795,10 @@ f\sim f'\\
 \end{tikzpicture}
 \end{dfn}
 \begin{ex}
-Example. 
-$(1)$ Let $X=\spec (A)$ let $I\subset A$ ideal and $\spec(A/I)\overset{f}{\lrta}\spec A$ the canonical morphism. Then it is a closed immersion
+Let $X=\spec (A)$ let $I\subset A$ be an  ideal and $\spec(A/I)\overset{f}{\lrta}\spec A$ the canonical morphism. Then it is a closed immersion:
 
- We saw thart $\spec A/I\overset{\sim}{\lrta}V(I)\subset \spec(A)$ is a homeomorphism.
-
-$\forall \scp in V(I),$ the morphism $\calo_{A,\scp}\lrta \calo_{A/I,\scp/I}$ is $A_\scp\lrta (A/I)_{\scp/I}$ which is surjective by elementary localization.
+We saw that $\spec A/I\overset{\sim}{\lrta}V(I)\subset \spec(A)$ is a homeomorphism.
+$\forall \scp \in V(I)$ the morphism $\calo_{A,\scp}\lrta \calo_{A/I,\scp/I}$ is $A_\scp\lrta (A/I)_{\scp/I}$ which is surjective by elementary localization.
 \end{ex}
 \begin{prop}
 $(1)$
@@ -2808,7 +2806,7 @@ $A$ is a ring. If
 $$
 Y\overset{f}{\lrta} \spec A
 $$ 
-is a closed immersion, there exists a closed immersion, there exists an ideal $I\subset A$ such that $f$ is equivalent to $\spec(A/I)\lrta \spec (A)$: there is 
+is a closed immersion, there exists an ideal $I\subset A$ such that $f$ is equivalent to $\spec(A/I)\lrta \spec (A)$: There is a commutative diagram where the lower map is the canonical closed immersion.
 $$
 \begin{tikzcd}
 Y \arrow[r, "f"] \arrow[d, "\sim"] & \spec(A) \\
@@ -2817,13 +2815,14 @@ Y \arrow[r, "f"] \arrow[d, "\sim"] & \spec(A) \\
 $$
 (elementary proof in Wedhorn, best proof is to use coherent sheaves)
 
-$(2)$ $$
+$(2)$ Consider
+$$
 \begin{tikzcd}
 Z\times_X Y \arrow[r, "\tilde{j}"] \arrow[d] & Y \arrow[d] \\
 Z \arrow[r, "j"] & X,
 \end{tikzcd}
 $$ 
-where $f$ is a morphism and $j$ is closed immersion. $\tilde{j}$ is a closed immersion (e.g. $x\in X$ is a closed point, then $\spec \kappa(x)\lrta X$ is a closed immersion and $f^{-1}(x)=\spec \kappa(x)\times_X Y\lrta Y$ is a closed immersion)
+where $j$ is closed immersion. Then $\tilde{j}$ is a closed immersion. (e.g. $Z=\spec \kappa(x)$ where $x\in X$ is a closed point, then $Z\lrta X$ is a closed immersion and hence also $f\spec \kappa(x)\times_X Y\lrta Y$ is a closed immersion)
 
 $(3)$ Note that a closed subscheme of $X$ is not determined by its image in $X$.
 
@@ -2841,19 +2840,19 @@ If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed 
 $S$ is a scheme, $n\geq 1$ $\proj^n_S=\proj^n_\intg\times_{\spec \intg} S$
 \end{dfn}
 
-\section*{Two standard construction of $\proj^n_\intg$}
+\section*{Two standard constructions of $\proj^n_\intg$}
 \begin{enumerate}[label=(\arabic*)]
 \item $\mathsf{Proj}$ of a graded ring (hartshorne p 76)
 $$
-A=\oplus_{d\geq 0} A_d, A_d A_e\subset A_{d+e}
+A=\oplus_{d\geq 0} A_d, ~A_d A_e\subset A_{d+e}
 $$
-$A_0$ is a ring and each $A_d$ is an $A_0$-algebra.
+$A_0$ is a ring and each $A_d$ is an $A_0$-module.
 
 \underline{Ex} $A=B[X_1,..,X_n],A_0=B$
 
-To each such $A$, one can associate a scheme $\text{Proj}(A)$ which generalizes classical projective algebraic sets. For $\proj^n_\intg$ we take $A=\intg[X_0,...,X_n]$. Let $A^+:=(X_0,..,X_n)$ the definition of $\text{Proj}(A)=\proj^n_\intg$ is 
+To each such $A$, one can associate a scheme $\text{Proj}(A)$ which generalizes classical projective algebraic sets. For $\proj^n_\intg$ we take $A=\intg[X_0,...,X_n]$. Let $A^+:=(X_0,..,X_n)$. The definition of $\text{Proj}(A)=\proj^n_\intg$ is 
 $$
-\proj^n_\intg=\{P\subset A\mid \text{prime and homogeneous ideal in $A$ such that} P\notsupset A^+\}
+\proj^n_\intg=\{P\subset A\mid \text{prime and homogeneous ideal in $A$ such that} P\notsupset A^+\}.
 $$
 
 Topologically, the closed sets $V^p(I)=\{P\in\proj^n_\intg|I \subset P\}$ homogeneous and for $U\subset \proj^n_\intg$ open
@@ -2976,7 +2975,7 @@ X\overset{f}{\lrta} S
 $$
 is a morphism such that there is a factorization
 $$
-X\overset{\text{closed inclusion}{\inj}}\proj^n_S\lrta S
+X\overset{\text{closed immersion}}\inj \proj^n_S\lrta S
 $$
 for some integer $n\geq 1$.
 \end{dfn}
