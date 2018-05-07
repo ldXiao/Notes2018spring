@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1525423508 "AG.xdv" "AG.pdf" "AG" 1525423566
-  "AG.xdv" 1525423508 897388 d9b4ee2a49cee2e29f3f86c3ae815d5b "xelatex"
+["xdvipdfmx"] 1525527454 "AG.xdv" "AG.pdf" "AG" 1525527455
+  "AG.xdv" 1525527454 900704 3e54271637db3290c397996b5b47860b "xelatex"
   (generated)
   "AG.pdf"
-["xelatex"] 1525423505 "AG.tex" "AG.xdv" "AG" 1525423566
+["xelatex"] 1525527451 "AG.tex" "AG.xdv" "AG" 1525527455
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -217,17 +217,17 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "AG.aux" 1525423508 3375 65b2ca2522ccbaa92191fb686e1f96e2 ""
-  "AG.out" 1525423508 1981 60b548fccfa2bc7fd96efcb89bcd9d29 ""
-  "AG.tex" 1525423505 126873 1b4d1dc75fc7fcd891950cf74326516a ""
-  "AG.toc" 1525423508 2160 f9304b33e9ae52abae5c3a29f55df05a ""
+  "AG.aux" 1525527454 3385 1637b74afffaeac64596ced0b1e5c239 ""
+  "AG.out" 1525527454 1997 31712f509cc383f6f1a24a00db25dcac ""
+  "AG.tex" 1525527450 127358 c03cbd99874dde51c6c2b3cfc873f314 ""
+  "AG.toc" 1525527454 2170 4231cb14c9298936dad3cb400886cb3a ""
   "Y^2-X^3.pdf" 1520887628 2522 61b009a465c215459b37f7f854fce86a ""
   "Y^2=X^3-X.pdf" 1520887612 3260 4eb11fe8d49a67f393f50df453fb40d5 ""
   "cocycles.pdf" 1524812910 77129 75cb255f71f19ea492f4fa5b6ddce0db ""
   "pic2Aprl27.pdf" 1524813743 78296 833e4befa7928cc1ff41720195dda336 ""
   (generated)
-  "AG.out"
-  "AG.aux"
+  "AG.log"
   "AG.toc"
   "AG.xdv"
-  "AG.log"
+  "AG.out"
+  "AG.aux"

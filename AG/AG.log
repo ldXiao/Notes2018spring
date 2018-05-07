@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  4 MAY 2018 10:45
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  5 MAY 2018 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1039,7 +1039,7 @@ Overfull \hbox (7.34103pt too wide) detected at line 2580
  []
 
 [54] [55] [56] [57] [58]
-Overfull \hbox (11.5689pt too wide) in paragraph at lines 2798--2800
+Overfull \hbox (11.5689pt too wide) in paragraph at lines 2799--2801
 [][]\TU/lmr/bx/n/10.95 Example 4.12. []\TU/lmr/m/it/10.95 Example. $\OT1/cmr/m/
 n/10.95 (1)$ \TU/lmr/m/it/10.95 Let $\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 =
  [] (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )$ \TU/lmr/m/it/10.95 let $\OML/cm
@@ -1049,13 +1049,13 @@ m/m/it/10.95 I \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 A$ \TU/lmr/m/it/10.9
  []
 
 [59]
-Overfull \hbox (9.51175pt too wide) detected at line 2868
+Overfull \hbox (9.51175pt too wide) detected at line 2869
 \OMS/cmsy/m/n/10.95 O[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10
 .95 ) = [] \OML/cmm/m/it/10.95 ;
  []
 
 [60]
-Overfull \hbox (31.50372pt too wide) in paragraph at lines 2868--2870
+Overfull \hbox (31.50372pt too wide) in paragraph at lines 2869--2871
 \TU/lmr/m/n/10.95 where $\OML/cmm/m/it/10.95 A[] \OT1/cmr/m/n/10.95 = \OMS/cmsy
 /m/n/10.95 f[]g$ 
  []
@@ -1065,12 +1065,12 @@ File: cocycles.pdf Graphic file (type QTm)
 File: pic2Aprl27.pdf Graphic file (type QTm)
  <use  "pic2Aprl27.pdf" > [62] [63] [64] [65]
 [66] [67] [68] [69]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3235.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3235.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3236.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3236.
  (./AG.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3235.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3235.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3235.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3236.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3236.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3236.
  ) 
 Here is how much of TeX's memory you used:
  33188 strings out of 493005
@@ -1081,4 +1081,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  62i,16n,96p,719b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on AG.xdv (69 pages, 897388 bytes).
+Output written on AG.xdv (69 pages, 900704 bytes).
