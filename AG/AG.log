@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  5 MAY 2018 15:37
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  8 MAY 2018 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1020,65 +1020,117 @@ Overfull \hbox (70.51738pt too wide) detected at line 1992
 []
  []
 
-[41] [42] [43] [44] [45] [46] [47] [48]
-Overfull \hbox (18.10652pt too wide) detected at line 2337
+[41] [42] [43] [44] [45] [46] [47]
+Overfull \hbox (4.44708pt too wide) in paragraph at lines 2307--2309
+[]$[]$\TU/lmr/m/n/10.95 : we need $\OMS/cmsy/m/n/10.95 O[] [][]! \OML/cmm/m/it/
+10.95 f[]\OMS/cmsy/m/n/10.95 O[]$\TU/lmr/m/n/10.95 : $\OMS/cmsy/m/n/10.95 8\OML
+/cmm/m/it/10.95 V \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 Y$\TU/lmr/m/n/10.
+95 , $\OMS/cmsy/m/n/10.95 O[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V\OT1/cmr/
+m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 O[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f
+[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 ))$\TU/lmr/m/n/10
+.95 .
+ []
+
+[48]
+Overfull \hbox (22.74158pt too wide) detected at line 2355
 [][]
  []
 
-[49] [50] [51] [52]
-Overfull \hbox (5.27747pt too wide) detected at line 2533
+[49] [50] [51] [52] [53]
+Overfull \hbox (5.27747pt too wide) detected at line 2552
 [][]\OT1/cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 K; X \OMS/cmsy/m/n/10.95 ^^B[] \
 OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 ) = [][]([] \OML/cmm/m/it/10.95 K; X\OT1
 /cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^B [][]\OT1/cmr/m/n/10.95 ([] \OML/cmm/m/
 it/10.95 K; Y\OT1/cmr/m/n/10.95 )
  []
 
-[53]
-Overfull \hbox (7.34103pt too wide) detected at line 2580
+[54]
+Overfull \hbox (7.34103pt too wide) detected at line 2599
 [][]
  []
 
-[54] [55] [56] [57] [58]
-Overfull \hbox (11.5689pt too wide) in paragraph at lines 2799--2801
-[][]\TU/lmr/bx/n/10.95 Example 4.12. []\TU/lmr/m/it/10.95 Example. $\OT1/cmr/m/
-n/10.95 (1)$ \TU/lmr/m/it/10.95 Let $\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 =
- [] (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )$ \TU/lmr/m/it/10.95 let $\OML/cm
-m/m/it/10.95 I \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 A$ \TU/lmr/m/it/10.9
-5 ideal and $[] \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A=I\OT1/cmr/m/n/10.95 )
- []
- []
-
-[59]
-Overfull \hbox (9.51175pt too wide) detected at line 2869
+[55] [56] [57] [58] [59] [60]
+Overfull \hbox (9.51175pt too wide) detected at line 2887
 \OMS/cmsy/m/n/10.95 O[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10
 .95 ) = [] \OML/cmm/m/it/10.95 ;
  []
 
-[60]
-Overfull \hbox (31.50372pt too wide) in paragraph at lines 2869--2871
+
+Overfull \hbox (31.50372pt too wide) in paragraph at lines 2887--2889
 \TU/lmr/m/n/10.95 where $\OML/cmm/m/it/10.95 A[] \OT1/cmr/m/n/10.95 = \OMS/cmsy
 /m/n/10.95 f[]g$ 
  []
 
+[61]
 File: cocycles.pdf Graphic file (type QTm)
-<use  "cocycles.pdf" > [61]
+ <use  "cocycles.pdf" > [62]
 File: pic2Aprl27.pdf Graphic file (type QTm)
- <use  "pic2Aprl27.pdf" > [62] [63] [64] [65]
-[66] [67] [68] [69]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3236.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3236.
+ <use  "pic2Aprl27.pdf" > [63] [64] [65]
+[66] [67] [68] [69] [70]
+Overfull \hbox (5.89227pt too wide) in paragraph at lines 3290--3293
+\TU/lmr/m/it/10.95 is, integral domain and integrally closed , then $\OML/cmm/m
+/it/10.95 A$ \TU/lmr/m/it/10.95 is $\OML/cmm/m/it/10.95 UFD$ $\OMS/cmsy/m/n/10.
+95 ([]) \OML/cmm/m/it/10.95 Cl\OT1/cmr/m/n/10.95 ([] (\OML/cmm/m/it/10.95 A\OT1
+/cmr/m/n/10.95 )) =
+ []
+
+
+Overfull \hbox (1.77452pt too wide) in paragraph at lines 3322--3324
+\TU/lmr/m/it/10.95 where $\OMS/cmsy/m/n/10.95 f[]g ' []$ \TU/lmr/m/it/10.95 and
+
+ []
+
+[71]
+Overfull \hbox (4.85027pt too wide) in paragraph at lines 3333--3334
+[][]\TU/lmr/bx/n/10.95 Theorem 5.11. []\TU/lmr/m/it/10.95 (II 6.4) Define a gro
+up morphism from the $[] \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 Div\OT1/cmr/m
+/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ) [][]\OMS/cmsy/m/n/10.95 !
+ []
+
+
+Overfull \hbox (64.59561pt too wide) in paragraph at lines 3357--3360
+\TU/lmr/m/n/10.95 where $\OML/cmm/m/it/10.95 U[] \OT1/cmr/m/n/10.95 = [] (\OML/
+cmm/m/it/10.95 K\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]=X[]; X[]=X[]; ::; X
+[]=X[]\OT1/cmr/m/n/10.95 ])$\TU/lmr/m/n/10.95 . So $\OML/cmm/m/it/10.95 K\OT1/c
+mr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 K
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]=X[]; :::; X[]=X[]\OT1/cmr/m/n/10.95
+ )$
+ []
+
+
+Overfull \hbox (4.1572pt too wide) in paragraph at lines 3357--3360
+\TU/lmr/m/n/10.95 So $\OML/cmm/m/it/10.95 f \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it
+/10.95 K\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 )[]$ \TU/lm
+r/m/n/10.95 is of the form $\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/10.95 = \OML/cmm
+/m/it/10.95 f[]=f[]$ \TU/lmr/m/n/10.95 where $\OML/cmm/m/it/10.95 f[] \OMS/cmsy
+/m/n/10.95 2 \OML/cmm/m/it/10.95 K\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]=X
+[]; ::; X[]=X[]\OT1/cmr/m/n/10.95 ]$\TU/lmr/m/n/10.95 . 
+ []
+
+[72] [73]
+Overfull \hbox (16.98463pt too wide) in paragraph at lines 3436--3438
+[]\TU/lmr/m/n/10.95 One defines in an obvious way $\OMS/cmsy/m/n/10.95 O[]$\TU/
+lmr/m/n/10.95 -linear morphism of $\OMS/cmsy/m/n/10.95 O[]$\TU/lmr/m/n/10.95 -m
+odules [$\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 U; \OMS/cmsy/m/n/10.95 F[]\OT
+1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 ) [][]\OMS/cmsy/m/n/10
+.95 !
+ []
+
+[74]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3475.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3475.
  (./AG.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3236.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3236.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3236.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3475.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3475.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3475.
  ) 
 Here is how much of TeX's memory you used:
- 33188 strings out of 493005
- 765058 string characters out of 6134596
- 913729 words of memory out of 5000000
- 36627 multiletter control sequences out of 15000+600000
- 25568 words of font info for 126 fonts, out of 8000000 for 9000
+ 33231 strings out of 493005
+ 766154 string characters out of 6134596
+ 916881 words of memory out of 5000000
+ 36669 multiletter control sequences out of 15000+600000
+ 25576 words of font info for 127 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,96p,719b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on AG.xdv (69 pages, 900704 bytes).
+Output written on AG.xdv (74 pages, 972924 bytes).

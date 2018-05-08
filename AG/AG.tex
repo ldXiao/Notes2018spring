@@ -1168,7 +1168,7 @@ $I\subset \sqrt{I}\subset\sqrt{J}\subset \scp\Lrta \scp\in V(I)$.
 (3)
 \end{proof}
 
-\subsection{Mar 16th: affine scheme, example and properties.}
+\subsection{Mar 16th: Affine schemes, examples and properties.}
 Recall
 
 $A$ is a ring with unity
@@ -2123,7 +2123,7 @@ Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$,  $(\calo_{S,x})$ 
 $(U,\calo_{S}\mid_U)\simeq \spec A$.
 
 We will give some examples of morphism of schemes.
-\begin{ex}
+\begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $A, B$ are rings. 
 $$
@@ -2131,7 +2131,7 @@ $$
 $$
 \item $K$ is a field.
 $$
-[X\lrta \spec K-\{\eta\}]\Llrta [K\lrta \Gamma(X,\calo_X)]
+[X\lrta \spec K=\{\eta\}]\Llrta [K\lrta \Gamma(X,\calo_X)]
 $$
 (also for any $x\in X$, we get $\calo_{K,\eta}=K\lrta \calo_{X,x}\lrta \kappa(x)$) so every residue field is an extension of $K$.
 \item $$
@@ -2165,7 +2165,7 @@ are the $K$-valued solutions of the equation defining $X$.
 $$
 U\subset X\overset{f}{\lrta} Y
 $$
-where $U$ is open. We want to restrict $f$ to $U$, first $(U,\calo_X\mid U)$ is locally ringed space. (We will see that it is a scheme.)
+where $U$ is open. We want to restrict $f$ to $U$, first $(U,\calo_X|_U)$ is a locally ringed space. (We will see that it is a scheme.)
 
 Let $f|U:(U,\calo_X\mid U)\lrta X$ be defined by 
 $$
@@ -2190,21 +2190,28 @@ $$
 are the same as those from $f$ it self. 
 
 \underline{Check} $V\subset U\subset X\Lrta f|V=(f|U)|V$.
-\item \underline{Prop}. Any $U\subset X$, where $X$ is a scheme, $U$ open , is a scheme. 
-(\underline{Note}: in general, this is not an affine  scheme even if $X$ is affine.)
-Let $X=\affn^2_\cplx=\spec(\cplx{X_1,X_2})$, $U=X-\{(0,0)\}$ open, where the point $(0,0)$ corresponds to the maximal ideal $(X_1,X_2)\cplx[X]$. $U$ is not  an affine scheme because one can check that 
+\end{enumerate}
+\end{ex}
+\begin{prop}\label{prop:open_subscheme} Any $U\subset X$, where $X$ is a scheme, $U$ open , is a scheme. 
+\end{prop}
+\underline{Note}: in general, $U$ is not an affine  scheme even if $X$ is affine.
+
+E.g.
+ Let $X=\affn^2_\cplx=\spec(\cplx[X_1,X_2])$, $U=X-\{(0,0)\}$ open, where the point $(0,0)$ corresponds to the maximal ideal $(X_1,X_2)$. $U$ is not  an affine scheme because one can check that 
 $$
 \begin{tikzcd}
 \Gamma(U,\calo_U) \arrow[d, equal] \arrow[r, "\simeq"] & \cplx[X_1,X_2] \arrow[d,equal] \\
-\Gamma(U,\calo_X|U) \arrow[d,equal] & \Gamma(X,\calo_X) \\
+\Gamma(U,\calo_X|_U) \arrow[d,equal] & \Gamma(X,\calo_X) \\
 \Gamma(U,\calo_X) & 
 \end{tikzcd}
 $$
-\boxed{Hartlog's phenomenon} so if $U$ was affine, we would get $U\overset{\simeq}{\inj} X$ which is absurd.
-\begin{proof}[Proof of Prop]
-$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open nbhd of $x\in U$, and is  open in $V=\spec A$ so it it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (We already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
+This phenomenon is an analogy \textbf{Hartog's Lemma} in complex geometry, which states that we can extend a holomorphic function defined on the complement of a set of codimension at least two on a complex manifold over the missing set~\footnote{This will work more generally in the algebraic setting: you can extend over points in codimension at least $2$ not only if they are ``smooth manifold'', but also if they are mildly singular what we will call normal and is called \boxed{Hartog's\  phenomenon} in general.}.
 
-To deduce the Prop, it suffices to have an isomorphism 
+If $U$ was affine, we would get $U\simeq X$ which is absurd.
+\begin{proof}[Proof of Prop~\ref{prop:open_subscheme}]
+$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open neighborhood of $x\in U$, and is  open in $V=\spec A$ so it it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (Topologically, we already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
+
+To deduce the Proposition, it suffices to have an isomorphism of sheaves 
 $$
 \calo_{A_f}\overset{\simeq}{\lrta} i_*\calo_{U_f}
 $$
@@ -2214,21 +2221,22 @@ $$
 $$
 and compatible with restrictions.
 
-\underline{Recall}: $\calo_{A_f}(U)=\{g:U\lrta \sqcup_{Q\in U}(A_f)_Q|g\text{ ``locally'' } \frac{a}{b}, a,b\in A_f\} $
+\underline{Recall}: $\calo_{A_f}(U)=\left\{g:U\lrta \sqcup_{Q\in U}(A_f)_Q|g\text{ ``locally'' } \frac{a}{b}, a,b\in A_f\right\} $
 
 $$
-\calo_{U_f}(i^{-1}(V)=\calo_A(i^{-1}(V)))=\{\tilde{g}: i^{-1}(V)\lrta \sqcup_{\scp \in A_{\scp}}|\tilde{g}=\frac{\tilde{a}}{\tilde{b}}, \tilde{a},\tilde{b}\in A\}
+\calo_{U_f}(i^{-1}(V))=\calo_A(i^{-1}(V))=\left\{\tilde{g}: i^{-1}(V)\lrta \sqcup_{\scp \in A_{\scp}}\left|\tilde{g}=\frac{\tilde{a}}{\tilde{b}}, \tilde{a},\tilde{b}\in A\right.\right\}
 $$
 The morphism $g\mapsto \tilde{g}$ is given by $\tilde{g}(\scp)=g(\scp A_f)=g(i(\scp))$. This works because $a=\tilde{a}/f^n$ and $b=\tilde{b}/f^m$ so $a.b=f^m\tilde{a}/f^n\tilde{b}$
 \end{proof}
-\item A discrete valuation ring is a local ring $A$ with maximal ideal $\scm_A\subset A$ being a principal ideal generated by $\varpi\in A$ (``uniformizer'')\footnote{$A$ is a the local ring at a closed point of  a non-singular point of a curve}
-$A/\scm_A-k$ is the residue field. (Exercise. $A=\{a/b\in Q|p\nmid b,a\in \intg\}$, $\scm_A=\scp A,\varpi =p$)
+\begin{ex}
+A discrete valuation ring (DVR) is a local ring $A$ with maximal ideal $\scm_A\subset A$ being a principal ideal generated by $\varpi\in A$ (``uniformizer'')\footnote{$A$ is a the local ring at a closed point of  a non-singular point of a curve}
+$A/\scm_A=k$ is the residue field. (Exercise. $A=\{a/b\in \ratl|p\nmid b,a\in \intg\}$, $\scm_A=(p),\varpi =p$ is an example of DVR)
 
-$\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=\varpi A=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$, $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
+Consider a DVR $A$, $\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=(\varpi)=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$, $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
 $$
 \calo_A(\emptyset)=0,\calo_A(\spec A)=A, \calo_A(\{\eta\})\simeq A_\varpi=K=Frac(A)
 $$
-(since $A_\varpi=\{\frac{a}{\pi^n}|n\geq 0\}$ and any $b\notin \varpi A$ is invertible)
+(since $A_\varpi=\{\frac{a}{\varpi^n}| a\in A, n\geq 0\}$ and any $b\notin (\varpi) $ is invertible)
 $$
 \kappa(s)=A/\scm_A=k
 $$
@@ -2242,18 +2250,18 @@ is the inclusion. What is the nature of schemes over $A$?
 $$
 f:X\lrta \spec(A)
 $$
-\underline{Topologically}: $X=X-s\sqcup X_\eta$,
+\underline{Topologically}: $X=X_s\sqcup X_\eta$,
 $$
 f(x)=\left\{\begin{aligned}
 &s, x\in X_s\\
 & \eta, x\in X_\eta
 \end{aligned}\right.
 $$
-s.t. $f^{-1}(\{\eta\})=X_\eta$ is open in $X$. (topology is determined by an oepn set $X_\eta\subset X$),
+s.t. $f^{-1}(\{\eta\})=X_\eta$ is open in $X$. (topology is determined by an open set $X_\eta\subset X$),
 
 \underline{sheaf-theoretical point}
 $$
-\calo_A\lrta F_*\calo_X\Llrta \begin{tikzcd}
+\calo_A\lrta f_*\calo_X\Llrta \begin{tikzcd}
 A=\calo_A(\spec A) \arrow[r, "f^*_A"] \arrow[d, "\res"'] & \calo_X(X) \arrow[d] \\
 K=\calo_A(\{\eta\}) \arrow[r, "f^*_\eta"'] & \calo_X(X_\eta)
 \end{tikzcd}
@@ -2263,46 +2271,56 @@ $$
 \res^X_{X_\eta}(f^*_A(a))=f^*_\eta(a)(\text{ viewed a elements of }K).
 $$
 It is locally ringed $\forall x, \calo_{A,f(x)}\lrta \calo_{X,x}$ local $\Llrta \forall x\in X_\eta$, $\calo_{A,\eta}=A_\eta=K\lrta \calo_{X,x}$ (always local) and 
-$\forall s\in X_s$, $\calo_A(\spec A)=A=\calo_{A,s}\lrta \calo_{X,x}$, where the equality holds because $\spec A$ is the only open set that containing $s$.
-\end{enumerate}
-\end{ex} 
+$\forall s\in X_s$, $\calo_A(\spec A)=A=\calo_{A,s}\lrta \calo_{X,x}$, where the equality holds because $\spec A$ is the only open set that contains $s$.
+\end{ex}
 
-\begin{exercise}
+\begin{lemma}
 For any scheme $X$, there is a unique morphism $X\lrta \spec(\intg)$. recall $\dim(\intg)=1$.
-\end{exercise}
-\begin{proof}
+\end{lemma}
+\begin{proof} adsfd
 If $X=\spec A$, then
 $$
-\hom_{Sch}(\spec A,\spec \intg)=\hom){Rings}(\intg, A)=\{1\mapsto 1\}
+\hom_{Sch}(\spec A,\spec \intg)=\hom_{Rings}(\intg, A)=\{1\mapsto 1\}
 $$
-has a unique element. If $X$ is arbitrary, $X=\cup_{i}\spec A_i$ for every $i$, there is a unique $f_i:\spec (A_i)\lrta \spec \intg$. Intuitively, this implies uniqueness $(f,\tilde{f}:x\lrta \spec \intg)\Lrta f|\spec(A_i)=f_i=\tilde{f}|\spec(A_i)$ and thus implies $f=\tilde{f}$ and also the existence since
+has a unique element. If $X$ is arbitrary, $X=\cup_{i}\spec A_i$ for every $i$, there is a unique $f_i:\spec (A_i)\lrta \spec \intg$. Intuitively, this implies uniqueness $(f,\tilde{f}:X\lrta \spec \intg)\Lrta f|_{\spec(A_i)}=f_i=\tilde{f}|_{\spec(A_i)}$ and thus implies $f=\tilde{f}$. 
+
+The existence comes from
 $$
-f_i|\spec(A_i)\cap \spec(A_j)=f_j|\spec(A_i)\cap \spec(A_j)
+f_i|_{\spec(A_i)\cap \spec(A_j)}=f_j|_{\spec(A_i)\cap \spec(A_j)}.
 $$
 
 Indeed
-\begin{prop}
-Given $X,Y$ schemes, $X=\cup_i U_i$ open covering. To give $f:X\lrta Y$ is ``the same'' as giving $f_i|U\lrta Y$ s.t. $f_i|U_i\cap U_j=f_j|U_i\cap U_j$.
+\begin{prop}\label{prop:morphism_of_scheme_determined_by_open_cover}
+Given $X,Y$ schemes, $X=\cup_i U_i$ open covering. To give $f:X\lrta Y$ is ``the same'' as giving $f_i|_{U\lrta Y}$ s.t. $f_i|_{U_i\cap U_j}=f_j|_{U_i\cap U_j}$.
 
-$f\mapsto (f|U_i)_j$ is a bijection.
+ I.e. 
+$f\mapsto (f|_{U_i})_i$ gives a bijection the set of morphisms $\hom(X,Y)$ and the set of compatible local morphisms on the open sets
 \end{prop}
-\underline{surjectivity}: Given $(f_i), f_i:U_i\lrta Y$ construct $f$? 
+\begin{proof}[Proof of \ref{prop:morphism_of_scheme_determined_by_open_cover}]
+\underline{Surjectivity}: Given $(f_i)_i$,$ f_i:U_i\lrta Y$ satisfying the cocycle relation, construct $f$? 
 $$
 X\overset{f}{\lrta } Y
 $$
 
 \underline{Topologically}: $f(x)=f_i(x)$ if $x\in U_i$ is well-defined since $f_i(x)=f_j(x)$ if $x\in U_i\cap U_j$. $f$ thus defined is continuous (exercise)
 
-\underline{Sheaf-theory} we need $\calo_Y\lrta f_*\calo_X$: $\forall V\subset Y$, $\calo_Y(V)\overset{?}{\lrta}\calo_X(f^{-1}(V))$. Given $s\in \calo_Y(V)$, we get $s_i\in \calo_{U_i}(f_i^{-1}(V))=\calo_X(f_i^{-1}(V))$ and $f^{-1}(V)=\cup_i f_i^{-1}(V)$ and 
-$s_i|f_i^{-1}\cap f_j^{-1}(V)=s_j|f_i^{-1}(V)\cap f_j^{-1}(V)$. By the sheaf condition on $\calo_X$ , there exists a  unique $\tilde{s}\in \calo_X(f^{-1}(V))$ s.t.
+\underline{Sheaf-theoretically}: we need $\calo_Y\lrta f_*\calo_X$: $\forall V\subset Y$, $\calo_Y(V)\overset{?}{\lrta}\calo_X(f^{-1}(V))$. Given $s\in \calo_Y(V)$, we get $s_i\in \calo_{U_i}(f_i^{-1}(V))=\calo_X(f_i^{-1}(V))$ and $f^{-1}(V)=\cup_i f_i^{-1}(V)$ and 
+$s_i|_{f_i^{-1}(V)\cap f_j^{-1}(V)}=s_j|_{f_i^{-1}(V)\cap f_j^{-1}(V)}$. By the sheaf condition on $\calo_X$, there exists a unique $\tilde{s}\in \calo_X(f^{-1}(V))$ s.t.
 $$
-\tilde{s}|f^{-1}(V_i)=s_i,\forall i.
+\tilde{s}|_{f^{-1}(V_i)}=s_i,\forall i.
 $$
 The map $s\mapsto \tilde{s}$ is the required
-$\calo_Y(V)\lrta \calo_X(f^{-1}(V))\Lrta $ get $\calo_Y\overset{f^*}{\lrta }f_*\calo_X$. It is local because if $x\in U_i\subset X$ the induced 
+$\calo_Y(V)\lrta \calo_X(f^{-1}(V))\Lrta $ get $\calo_Y\overset{f^*}{\lrta }f_*\calo_X$. It is local because if $x\in U_i\subset X$ the induced morphism satisfies
+$$
+\begin{tikzcd}
+{\calo_{Y,f(x)}} \arrow[r, "f^*"] \arrow[d, equal] & {\calo_{X,x}} \arrow[d, equal] \\
+{\calo_{Y,f_i(x)}} \arrow[r, "f_i^*"] & {\calo_{U_i,x}}.
+\end{tikzcd}
+$$
+$f$ is local because $f_i^*$ is local.
 \end{proof}
-
-\subsection{Aprl 13th: }
+\end{proof}
+\subsection{Apr 13th-A: Continue, morphism to affine schemes }
 \begin{ex}
 \begin{prop}
 For any scheme $X$ and any ring $A$, there is a bijection
@@ -2324,27 +2342,28 @@ $$
 \end{prop}
 \begin{proof}
 $$
-X=\cup_i U_im U_i=\spec(A_i)\text{ open in } X
+X=\cup_i U_i, U_i\cong\spec(A_i)\text{ open in } X
 $$
 $$
 \begin{aligned}
-\hom_{Sch}(X,\spec A)&=\{(f_i):f_i:U_i\lrta \spec A\text{ s.t. }f_i|U_i\cap U_j=f_j|U_i\cap U_j\}\\
-&\cong\{(g_i):g_i:A\lrta A_i,\text{ which are compatible on intersections} \}\\
-&\cong\{(g_i\: g_iA\lrta \Gamma(U_i\calo_X),\forall a\in A, g_i(a)|U_i\cap U_j=g_j(a)|U_i\cap U_j\}\\
-&\simeq\{g|g:A\lrta \calo_X(X)\}
->>>>>>>>>>1
+\hom_{Sch}(X,\spec A)&=\{(f_i)\mid f_i:U_i\lrta \spec A\text{ s.t. }f_i|_{U_i\cap U_j}=f_j|_{U_i\cap U_j}\}\\
+&\cong\{(g_i)\mid g_i:A\lrta A_i,\text{ which are compatible on intersections} \}\\
+&=\{(g_i)\mid g_i: A\lrta \Gamma(U_i, \calo_X),\forall a\in A, g_i(a)|_{U_i\cap U_j}=g_j(a)|_{U_i\cap U_j}\}\\
+&\simeq\{g|g:A\lrta \calo_X(X)\}\text{ by sheaf condition}\\
+&=\hom_{Rings}(A,\calo_X(X))
 \end{aligned}
 $$
 \end{proof}
-\underline{Note} in general, 
+\underline{Note} in general the dual statement is not true:
 $$
-\hom_{Sch}(\spec A. X)\neq \hom_{rings}(\calo_X(X),A)
+\hom_{Sch}(\spec A, X)\neq \hom_{Rings}(\calo_X(X),A)
 $$
 \underline{Ex}. $X=\proj^1_K$, $\Lrta \calo_X(X)=K$. If $A=K$, then $\hom_{rings}(K,K)=\{id\}$ but 
 $\hom(\spec \ratl,\proj^1_\ratl)$ has infinitely many elements.
 \end{ex}
-\section{Fiber product}
-This is a notion that makes sense in any category.
+\section{Fibred product}
+\subsection{Apr 13th-B: Categorical introduction of Fibred product}
+This is a notion that makes sense in any category. (Though a specific fibred product may not exist)
 \begin{dfn}
 $\calc$ a category, $X,Y$ objects of $\calc$, $S$ an object of $\calc$. Assume given
 $$
@@ -2360,7 +2379,7 @@ Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
 X \arrow[r, "f_1"] & S
 \end{tikzcd}
 $$
-makes the diagram commutes is a \textbf{fibre product} of $X,Y$ over $S$ if it has the universal property
+makes the diagram commutes is a \textbf{fibred product} of $X,Y$ over $S$ if it has the universal property
 $$
 \begin{tikzcd}
 T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
@@ -2371,9 +2390,9 @@ $$
 
 \underline{Notation}: $Z=X\times_S Y$
 \end{dfn}
-N.B. This notation is ambiguous because the fibre product depends on $f_1,f_2$. The fibre product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
+N.B. This notation is ambiguous because the fibred product depends on $f_1,f_2$. The fibred product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
 \begin{ex}
-In $\mathsf{Sets}$ fibre products exist and
+In $\mathsf{Sets}$ fibred products exist and
 $$
 X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
 $$
@@ -2391,16 +2410,16 @@ define $f(t)=(p_1(t),p_2(t))$, $f_1(p_1(t))=f_2(p_2(t))$, therefore $f(t)\in Z$.
 \end{enumerate}
 \underline{Note}: This construction/definition is a an example of ``universal'' object in the categorical sense. It is universal in the following sense.
 
-Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibre products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
+Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibred products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
 \end{proof}
 \begin{ex}
-If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibre product over $S$ is just the Cartesian product
+If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibred product over $S$ is just the Cartesian product
 $$
-X\times_S Y=\{(x,y\\in X\times Y|f_1(x)=f_2(y)\}
+X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
 $$
-But the restriction on $f_i$ is just vacuous, the fibre product contains the usual Cartesian product.
+But the restriction on $f_i$ is just vacuous, the fibred product contains the usual Cartesian product.
 
-(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibre product is isomorphic to the intersection of $X,Y$
+(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibred product is isomorphic to the intersection of $X,Y$
 $$
 \begin{tikzcd}
 X\cap Y \arrow[d, hook] \arrow[r, hook] & Y \arrow[d, hook] \\
@@ -2416,7 +2435,7 @@ X \arrow[r, "f_1", hook] & S
 $$
 \end{ex}
 \begin{thm}
-In the category $\mathsf{Sch}$ of schemes, arbitrary fibre product exists.
+In the category $\mathsf{Sch}$ of schemes, arbitrary fibred product exists.
 \end{thm}
 \underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
 
@@ -2496,10 +2515,10 @@ step 1+ step 4.
 $Y,S$ affine $\Lrta X\times_S Y$ exists.
 \end{proof}
 
-\subsection{17th Aprl: Examples and Applications of the Fiber Product}
+\subsection{Apr 17th: Examples and Applications of the Fibred Product}
 Recall.
 If we have maps
- $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fiber product of $X\lrta S\longleftarrow Y$ if it has the universal property
+ $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fibred product of $X\lrta S\longleftarrow Y$ if it has the universal property
  $$
 \begin{tikzcd}
 T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
@@ -2507,15 +2526,15 @@ T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
  & X \arrow[r] & S
 \end{tikzcd}
  $$
- $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fiber product of schemes.
+ $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fibred product of schemes.
  $$
-X\times_S Y=\spec A\otimes_R B
+X\times_S Y=\spec( A\otimes_R B)
  $$
  Define: $X\times_R Y:=X\times_{\spec R} Y$.
 
 \begin{ex}
 Why not product?
-For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fiber product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
+For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fibred product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
 
 $X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y\neq\spec \intg[T,V]$ Krull dimension $3$.
 $$
@@ -2531,7 +2550,7 @@ $$
 $$
 \hom_{\spec K}(\spec K, X\times_K Y)=\hom_{\spec K}(\spec K, X)\times \hom_{\spec K}(\spec K, Y)
 $$
-by the universal product of fiber products.
+by the universal product of fibred products.
 \end{ex}
 
 If $X$ is a scheme over $S$, $T$ is a scheme over S. We can define $X(T)$ as $\hom_S(T,X)$
@@ -2827,7 +2846,7 @@ where $j$ is closed immersion. Then $\tilde{j}$ is a closed immersion. (e.g. $Z=
 
 $(3)$ Note that a closed subscheme of $X$ is not determined by its image in $X$.
 
-e.g. $\spec(A/I)``=''\spec (A/J)$ iff $\sqrt{I}=\sqrt{J}$ which may give  infinitely many $J$ for  a given $I$.
+e.g. $\spec(A/I)$``$=$''$\spec (A/J)$ iff $\sqrt{I}=\sqrt{J}$ which may give  infinitely many $J$ for  a given $I$.
 $n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. Intuitively, it is they are both the point $0$ but ``memorize'' different information of derivatives.
 \end{prop}
 
@@ -2836,7 +2855,7 @@ $n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. I
 \end{prop}
 If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the reduced induced scheme structure on $Y$.]
 
-\subsection{Aprl 27th:Projective space and schemes}
+\subsection{Apr 27th: Projective space and schemes}
 \begin{dfn}
 $S$ is a scheme, $n\geq 1$ $\proj^n_S=\proj^n_\intg\times_{\spec \intg} S$
 \end{dfn}
@@ -3021,7 +3040,7 @@ $$
 
 
 
-\subsection{May 4th: }
+\subsection{May 4th-A: Projective schemes continued}
 Recall: $\proj^n_\intg=$``glueing'' $U_i:=\spec(\intg[
 X_0/X_i,..., X_n/X_i])$ along open subsets $U_{ij}=\spec(\intg[...]_{X_j/X_i})$
 
@@ -3232,5 +3251,226 @@ $$
 \Lrta \nu_{D\cap U}=\nu_D
 $$
 \end{proof}
+
+\subsection{May 8th-A: Divisors continued}
+
+Reminder:
+ Let $X$ be a scheme, which is integral regular in codimension one, Noetherian, quasi-projective.
+
+ We defined $Div(X):=$ free Abelian group with basis of the integral codimension 1 subschemes.
+
+ $f\in K(X)^\times$
+
+ $\Lrta div(f)=\sum_D \nu_D(f)D$
+ 
+ $div$ gives a group morphism $K(X)^\times\lrta Div(X)$
+
+\begin{dfn}
+$Cl(X)=Div(X)/Im div$ is called the divisor class group.
+\end{dfn}
+\begin{ex}
+\begin{enumerate}[label=(\arabic*)]
+\item
+Let $X$ be  a smooth curve over a field $K$
+$\Lrta$ prime divisors are closed points of $X$, an $f\in K(X)^\times$ can be seen as a non-constant morphism 
+$$
+f:X\lrta \proj^1_K
+$$
+and $div(f)=$zero of $f$ with multiplicities or poles of $f$ with multiplicities.
+
+$Cl(X)\llrta$ ``given points $x_1,...,x_m$ and$y_1,...,y_n$  with specified integers of $\nu_1,..,\nu_m\geq 1$ and $\mu_1,...,\mu_n\geq 1$''. Is there an 
+$$
+f: X\lrta \proj^1_K
+$$
+s.t. $f$ has zeros at $x_i$ with multiplicities $\nu_i$ and poles at $y_j$ with multiplicities $\mu_j$
+
+$\leadsto$ \textbf{Riemann-Roch Theorem}
+\item $X=\affn^1_K=\spec(K[T])$. Prime divisors is in one to one correspondence with irreducible monic polynomials in $K[T]$ and divisor can be identifies to $f_1/f_2$, where $f_1,f_2$ are coprime monic polynomials. BY $\sum n_i D_i\mapsto \prod_i f_i^{n_i}$ 
+(This is historically one of the motivating cases)
+\item $X=\affn^n_K$ (or $\affn^n_\intg$)
+\underline{Claim}: $Cl(X)=0$.
+(In fact: prop II 6.2 in Hartshorne If $A$ is, integral domain and integrally closed , then $A$ is $UFD$ $\Llrta Cl(\spec(A))=0$)
+
+Any prime divisor $D$ in $\affn^n_K$ is of the form $V((f))$ for $f\in A$ irreducible, thus $D=\spec(A/(f))$.
+
+ Let $D=\sum n_i D_i$ be a divisor with $n_\geq 1$, $D_i$ distinct. We can define $f_i$ so that
+ $$
+D_i=\spec(A/(f_i))
+ $$
+ and let $f=\prod f_i^{n_i}\in K(T_1,...,T_n)^\times=K(\affn^n_K)$.
+ Then recall how to compute $div(f)$: $D$ prime divisor, $D=\spec(A/(g))$
+ $$
+ \begin{aligned}
+ \calo_{\affn^n_K,\tilde{\eta}_D}
+ &=A_{(g)}\\
+ &=\{f_1/f_2\in K(T_1,..,T_n)^\times: g\nmid f_2\}
+ \end{aligned}
+ $$
+ is indeed a DVR with maximal ideal generated by $g$, and $\nu_D(f_1/f_2)=$ the exponent of $g$ $=k$ s.t. 
+ $f_1/f_2=f^k u$, with $u\in A_{(g)}^\times$. So $div(f)=\sum n_i D_i=D$ so any $D$ is principal, therefore $Cl(\affn^n_K)=0$
+
+\item $Cl(\spec K)=\{0\}$ has no prime divisors. Consider $L/\ratl$ finite extension. Let $A\subset L$ be the integral closure of $\intg$. Then $\spec(A)$ is regular of codimension one, so 
+$
+Cl(\spec A)
+$
+is defined.
+This is isomorphic to the ``ideal class group'' $H(L)$ of $L$.
+
+We sketch the reason here.
+$$
+H(L)=\{\text{fractional ideals}\}/\{\text{ principal ideals}\}
+$$
+where $\{\text{fractional ideals}\}\simeq\text{free Abelian group generated by prime ideals}$ and  a fractional ideal is principal iff it is associated to a principal ideal.
+
+There are still many open questions: are there infinitely many $L/\ratl$ with $Cl(\spec A)=0$? (i.e. $A$ UFD)
+
+How are $Cl(\spec A)$ distributed when $L/\ratl$ varies? (Cohen-Lenstra Heuristics)
+
+\item $X=\proj^n_K$ with $K$ is a field.
+
+\underline{Fact}: the prime divisors are the closed subschemes associated to a single homogeneous irreducible polynomials $f\in  K[X_0,..,X_n]$.
+\begin{thm}
+(II 6.4) Define a group morphism from the $\underline{deg}: Div(X)\lrta \intg$
+$$
+D\longmapsto \underline{deg}(f)
+$$ 
+where $D$ is the subscheme associated to homogeneous polynomial $f$.
+\begin{enumerate}[label=(\alph*)]
+\item For all principal divisors $div(f), f\in K(X)$, we have $\underline{deg}(f)=0$.
+\item The induced morphism from class groups to $\intg$ 
+$$
+Cl(X)\overset{\underline{deg}}{\lrta }\intg
+$$
+is  an isomorphism.
+\item $Cl(X)$ is isomorphic to $\intg$ with generator any 
+$$
+H_i=\proj^n_K-U_i
+$$
+where $U_i$ is  the canonical affine chart of $\proj^n_K$ corresponding to $X_i$
+\end{enumerate}
+\end{thm}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item (A function on $\proj^n_K$ has the same number of zeros and poles with multiplicities) We know
+$$
+K(X)^\times=K(U_0)^\times
+$$
+where $U_0=\spec(K[X_0/X_0,X_1/X_0,..,X_n/X_0])$. So $K(X)=K(X_0/X_0,...,X_n/X_0)$
+So $f\in K(X)^\times$ is of the form $f=f_1/f_2$ where $f_i \in K[X_0/X_0,..,X_n/X_0]$. 
+
+\underline{Key fact}: 
+$f$ us also $f=g_1/g_2$ where $g_i$ is homogeneous of degree $deg g_1=deg g_2$ in $K[X_0,..,X_n]$. Then factor $g_1,g_2$ in irreducibles in $K[X_0,..X_n]$, there are homogeneous, say 
+$$
+f=\prod_i h_i^{n_i}\prod_j k_j^{-m_j}
+$$
+with $n_i\geq 1, m_j \geq 1$
+Then 
+$$
+div(f)=\sum n_i D_i-\sum m_j E_j
+$$
+and $D_i$ is the prime divisors of $h_i$, $E_j$ is the prime divisors of $k_j$. (Intuitively, it is clear, but we need a proof)
+
+$\Lrta$
+$$
+\begin{aligned}
+\underline{deg}(div(f))&=\sum n_i \underline{deg}(D_i-\sum m_j \underline{deg}(E_j)\\ 
+&(\underline{deg}(D_i)=deg(h_i),\underline{deg}(E_j)=deg(k_j))\\
+&=deg(g_1)-deg(g_2)=0.
+\end{aligned}
+$$
+Then we come back to prove the \underline{Key fact}:
+$$
+f_1=\sum_{\underline{d}}\alpha_{\underline{d}} \left(\frac{X_0}{X_0}\right)^{d_0}\cdots \left(\frac{X_n}{X_0}\right)^{d_n}
+$$
+e.g.
+$$
+\begin{aligned}
+&\left(\frac{X_1}{X_0}\right)^{2}+37 \left(\frac{X_1}{X_0}\right)^{3}\left(\frac{X_2}{X_0}\right)\\
+&=\frac{X_0^2X_1^2+37X_1^3X_2}{X_0^4}\\
+&=\frac{1}{X_0^{deg f_1}}\sum_{\underline{d}}\alpha_{\underline{d}} X_0^{deg f_1-\sum_{i=1}^n d_i} X_1^{}d_1\cdots X_n^{d_n}\\
+&=\frac{\text{homogeneous degree $deg f_1$}}{X_0^{deg f_1}}\\
+\end{aligned}
+$$
+$$
+\Lrta f_2=\frac{\text{homogeneous degree $deg f_2$}}{X_0^{deg f_2}}\\
+$$
+$$
+\Lrta \frac{f_1}{f_2}=\frac{X_0^{ deg f_1}(deg f_1)}{(deg f_2) X_0^{deg f_1}}
+$$
+
+\item $\underline{deg}: Cl(X)\lrta \intg$ is surjective because $\underline{deg}(D_0)=1$, $D_0$ associated to $X_0$ and injective because if $deg(D)=0$ write $D=D_1-D_2$ with $D_1,D_2$ effective then $\underline{deg}(D_1)=\underline{deg}(D_2)$. Write 
+$D_1=\sum n_i E_i$, where $E_i$ is prime divisors associated to $h_i$. 
+$D_2=\sum m_j F_j$, where $F_j$ is prime divisors associated to $k_j$. 
+
+
+Then let $f=\prod h_i ^{n_i}\prod k_j^{- m_j}\in K(X)^\times$, and as shown above $dic(f)=D_1-D_2=D$ so $D$ is  $0$ in $Cl(X)$.
+\item the proof can be found in Hartshorne
+\end{enumerate}
+\end{proof}
+\item Further examples: 
+\begin{enumerate}[label=(\alph*)]
+\item $X\subset \proj^4_K$ cubic, where $K$ is an algebraic closed field. $X$ is a  surface, smooth, then $Pic(X)\simeq \intg^7$
+\item $Y\subset \proj^2_K$ curve of degree $d$. Let $U\subset \proj^3_K-Y$ be the complements, then 
+$$
+CL(U)\simeq \intg/d\intg
+$$
+generated by $U\cap H_0$
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+\section{Picard group}
+\subsection{May 8th-B: Picard group, definitions}
+\begin{dfn}
+Let $(X,\calo_X)$ be a ringed space. A sheaf of $\calo_X-$ modules is a sheaf
+$\calf$ on $X$ so that $\calf(U)$ is a $\calo_X(U)$-module for any open $U$ and for $V\subset U$
+$$
+\calf(U)\overset{\res}{\lrta}\calf(V)
+$$
+is linear i.e. given $f\in \calo_X(U), s\in \calf(U)$
+$$
+\res (f s)=\res(f)\res(s)
+$$
+\end{dfn}
+
+One defines in an obvious way $\calo_X$-linear morphism of $\calo_X$-modules
+[$\forall U, \calf_1(U)\lrta\calf_2(U)$ is $\calo_X(U)$-linear], so ther is a category of $\calo_X$-modules
+\begin{ex}
+$n\geq 1$, $\calo_X^n:U\lrta \calo_X(U)^n$ is an $\calo_X(U)$-module. 
+\end{ex}
+\begin{dfn}
+An $\calo_X$-moduel $\calf$ is locally free of rank $n\geq 1$ is $\forall x\in X,\exists U $ open nbhd of $x $ s.t.
+$$
+\calf|_U\simeq \calo_U^u
+$$
+as $\calo_U$-module.
+\end{dfn}
+
+If $\call$ is  locally free of rank $1$, it is called an invertible sheaf.
+\begin{prop}
+The set $Pic(X)$ of isomorphism class of invertible sheaves on $X$ form s an abelian group with operation induced by 
+$$
+(\call_1,\call_2)\longmapsto \call_1\otimes_{\calo_X}\call_2
+$$
+$1=$ class of $\calo_X$
+
+inverse
+$$
+\call\longmapsto \hom_{\calo_X}(\call,\calo_X)
+$$
+N.B for $\calf_1,\calf_2$ $\calo_X$-moduels, we define
+$$
+\calf_1\otimes_{\calo_X}\calf_2=\text{ sheaf associated to  the presheaf $U\mapsto \calf_1(U)_{\calo_X(U)\calf_2(U)}$}
+$$
+and
+$$
+\hom_{\calo_X}(\calf_1,\calf_2)=\text{ sheaf associated to $U\mapsto \hom_{\calo_X(U}(\calf_1(U),\calf_2(U))$}
+$$
+\end{prop}
+
+
+
+
+
 \end{document}
 
