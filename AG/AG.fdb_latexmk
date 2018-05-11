@@ -1,11 +1,12 @@
 # Fdb version 3
-["xdvipdfmx"] 1525791638 "AG.xdv" "AG.pdf" "AG" 1525791638
-  "AG.xdv" 1525791637 972916 0a8b521259ed8fb128ed333aa97bd484 "xelatex"
+["xdvipdfmx"] 1526026471 "AG.xdv" "AG.pdf" "AG" 1526026472
+  "AG.xdv" 1526026471 1025892 bba2c6b7c83964464ce7ad70be1135b7 "xelatex"
   (generated)
   "AG.pdf"
-["xelatex"] 1525791635 "AG.tex" "AG.xdv" "AG" 1525791638
+["xelatex"] 1526026468 "AG.tex" "AG.xdv" "AG" 1526026472
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm" 1480098689 2160 cd316d9c599fb08dc58cdb63ea33eeb9 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -205,6 +206,7 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1480098837 274 4cad6e665cc93ac2ac979039a94fa1e1 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1480098837 325 2bcd023400636339210573e2b3ee298b ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/pgfplots/pgfplots.sty" 1480098837 4716 cc323f1c25d2dd60de87c1aff374e8b9 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pzc.fd" 1480098837 404 921c65af08565a96d447508d8c8d11a6 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/pifont.sty" 1480098837 2284 330328193b4aeb08dd45b0dd3e5ae732 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/upsy.fd" 1480098837 148 2da0acd77cba348f34823f44cabf0058 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/upzd.fd" 1480098837 148 b2a94082cb802f90d3daf6dd0c7188a0 ""
@@ -217,17 +219,17 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "AG.aux" 1525791637 4052 0cde6574af77683840ada755653890fb ""
-  "AG.out" 1525791637 2447 ac1c905b2e12f17e85cfd699cc4f4de9 ""
-  "AG.tex" 1525791631 137132 99b6125b743300e3e4ddff41d057a346 ""
-  "AG.toc" 1525791637 2622 c7a3d04fe8978361d8b97b16cbcc0e8a ""
+  "AG.aux" 1526026471 4314 c6049b5633fab2c4b014c3e10a44bce0 ""
+  "AG.out" 1526026471 2567 3b476052666ee97e9ef0ebcb9bbc9489 ""
+  "AG.tex" 1526026464 146467 cc9ad6f064fc95f578867e8966512965 ""
+  "AG.toc" 1526026471 2748 15134b3e01aa3caa10d72ba5390f3faf ""
   "Y^2-X^3.pdf" 1520887628 2522 61b009a465c215459b37f7f854fce86a ""
   "Y^2=X^3-X.pdf" 1520887612 3260 4eb11fe8d49a67f393f50df453fb40d5 ""
   "cocycles.pdf" 1524812910 77129 75cb255f71f19ea492f4fa5b6ddce0db ""
   "pic2Aprl27.pdf" 1524813743 78296 833e4befa7928cc1ff41720195dda336 ""
   (generated)
-  "AG.out"
-  "AG.xdv"
-  "AG.log"
   "AG.toc"
   "AG.aux"
+  "AG.xdv"
+  "AG.log"
+  "AG.out"

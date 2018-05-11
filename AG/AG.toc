@@ -23,6 +23,7 @@
 \contentsline {subsection}{\numberline {4.3}May 4th-A: Projective schemes continued}{65}{subsection.4.3}
 \contentsline {section}{\numberline {5}Divisors}{66}{section.5}
 \contentsline {subsection}{\numberline {5.1}May 4th-B: Weil divisors}{66}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}May 8th: Divisors continued}{70}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}May 8th-A: Divisors continued}{70}{subsection.5.2}
 \contentsline {section}{\numberline {6}Picard group}{74}{section.6}
 \contentsline {subsection}{\numberline {6.1}May 8th-B: Picard group, definitions}{74}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}May 11th: The twisting invertible sheaf on $\mathbb P^n$}{75}{subsection.6.2}

@@ -144,7 +144,7 @@
 %----------------------------------------------------------------------------------------
 %	CHAPTER 3
 %----------------------------------------------------------------------------------------
-\include{Chaps/Chap3}
+%\include{Chaps/Chap3}
 
 \include{Chaps/Chap4}
 \chapter{Some properties of schemes}
@@ -1411,7 +1411,7 @@ $$
 \calo_{\spec A,\scp}=A_\scp
 $$
 and $A_\scp$ is a local ring with maximal ideal $\scp A_\scp$.
-\item In Exercise~\ref{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}, we have given explicitly on the distinguished base. We only need to should that the map on stalks indeed sends maximal ideals to maximal ideals.
+\item In Exercise~\ref{chap6exr:ring_morphism_induces_morphisms_ringed_spaces}, we have given explicitly on the distinguished base. We only need to show that the maps on stalks indeed send maximal ideals to maximal ideals.
 
 Given two prime ideals $\scq\subset B$ and $\scp\subset A$, $\pi([\scp])=[\scq]$ means $(\pi^{\#})^{-1}(\scp)=\scq$, recall that pull back of ideals preserve prime ideals. This means the $\pi^\#(B-\scq)\subset A-\scp$ and hence composition map $B\lrta A_\scp$ sends $B-\scq$ into invertible element in $A_\scp$.  
 $$
@@ -1440,11 +1440,11 @@ $$
 \begin{proposition}
 If $\pi:\spec A\lrta \spec B$ is a morphism of locally ringed spaces then it is the morphism induced by the map $\pi^\#:B=\Gamma(\spec B,\calo_{\spec B})\lrta \Gamma(\spec A,\calo_{\spec A})=A.$
 \end{proposition}
-\begin{exr}
-Show that  a morphism of schemes $\pi:X\lrta Y$ is a morphism of ringed spaces that looks locally like morphisms of affine schemes. Precisely, if $\spec A$ is an affine open subset of $X$ and $\spec B$ is an affine open subset of $Y$, and $\pi(\spec A)\subset \spec B$, then the induced morphism of ringed spaces is a morphism of affine schemes. (In case it helps, note: note: if $W\subset X$ and $Y\subset Z$ are both open embeddings of ringed spaces, then any morphism of ringed spaces $X\lrta Y$ induces a morphism of ringed spaces $W\lrta Z$, by composition $W\lrta X\lrta Y\lrta Z$.) Show that it suffices to check on a set $(\spec A_i,\spec B_i)$ where the $\spec A_i$ form an open cover of $X$ and the $\spec B_i$ from an open cover of $Y$.
+\begin{exr}\label{chap6exr:equivalent_defs_morphisms_of_schemes}
+Show that  a morphism of schemes $\pi:X\lrta Y$ is a morphism of ringed spaces that looks locally like morphisms of affine schemes. Precisely, if $\spec A$ is an affine open subset of $X$ and $\spec B$ is an affine open subset of $Y$, and $\pi(\spec A)\subset \spec B$, then the induced morphism of ringed spaces is a morphism of affine schemes. (In case it helps, note: if $W\subset X$ and $Y\subset Z$ are both open embeddings of ringed spaces, then any morphism of ringed spaces $X\lrta Y$ induces a morphism of ringed spaces $W\lrta Z$, by composition $W\lrta X\lrta Y\lrta Z$.) Show that it suffices to check on a set $(\spec A_i,\spec B_i)$ where the $\spec A_i$ form an open cover of $X$ and the $\spec B_i$ from an open cover of $Y$.
 \end{exr}
 \begin{proof}[Sol]
-By affine open subset, we mean a open subscheme which is affine. There is an open embedding from $\spec A$ to $X$. In particular, the $\calo_X|_{\spec A}=\calo_{\spec A}$. By definition,  ``morphism of schemes'' is a morphism of locally ringed spaces. Restricting to the affine opens, the morphism of schemes induces a morphism of locally ringed spaces from $\spec A$ to $\spec B$. By proposition above, we know it is induced by a ring morphism $B\lrta A$.
+By affine open subset, we mean an open subscheme which is affine. There is an open embedding from $\spec A$ to $X$. In particular, the $\calo_X|_{\spec A}=\calo_{\spec A}$. By definition,  ``morphism of schemes'' is a morphism of locally ringed spaces. Restricting to the affine opens, the morphism of schemes induces a morphism of locally ringed spaces from $\spec A$ to $\spec B$. By proposition above, we know it is induced by a ring morphism $B\lrta A$.
 
 
 On the other hand, given the set $(\spec A_i,\spec B_i)$, s.t. $\pi(\spec A_i)\subset\spec B_i$ and $A_i, B_i$ covers $X, Y$ respectively. 
@@ -1532,20 +1532,273 @@ x_{k/i}\mapsto \frac{x_k x_j}{x_i x_j},1/x_{j/i}\mapsto \frac{x_i^2}{x_j x_i}
 $$
 Together with the isomorphism above, $f_i|_{D(x_i)\cap D(x_j)}$ can be identified with $f_j|_{D(x_i)\cap D(x_j)}$.
 \end{proof}
-\begin{exr}
+\begin{exr}\label{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}
 Show that morphism $X\lrta \spec A$ are in natural bijection with ring morphisms $A\lrta \Gamma(X,\calo_X)$.
 \end{exr}
 \begin{proof}[Sol.]
+The bijection
+$$
+\hom_{\mathsf{Sch}}(X,\spec A)\simeq \hom_{\mathsf{Rings}}(A,\Gamma(X,\calo_X))
+$$
+is explicitly
+$$
+[f:X\lrta \spec A]\longmapsto [A=\calo_{\spec A}(\spec A)\lrta \calo_X(f^{-1}\spec A)=\calo_X(X)],
+$$
+where the later is induced by 
+$$
+f^*:\calo_X\lrta f_*\calo_X.
+$$
 
+Consider $X$ covered covered by a collection of affine opens $X=\cup_i U_i$ with each $U_i\simeq\spec A_i$
+$$
+\begin{aligned}
+\hom_{\mathsf{Sch}}(X,\spec A)&=\{(f_i)\mid f_i:U_i\lrta \spec A\text{ s.t. }f_i|_{U_i\cap U_j}=f_j|_{U_i\cap U_j}\}\\
+&=\{(g_i)\mid g_i: A\lrta \Gamma(U_i, \calo_X),\forall a\in A, g_i(a)|_{U_i\cap U_j}=g_j(a)|_{U_i\cap U_j}\}\\
+&\simeq\{g|g:A\lrta \calo_X(X)\}\text{ by sheaf condition}\\
+&=\hom_{\mathsf{Rings}}(A,\calo_X(X))
+\end{aligned}
+$$
 \end{proof}
+\begin{exr}
+Show that this definition of $A$-scheme given in \S $6.3.7$ agrees with the earlier definition of \S $5.3.6$.
+\end{exr}
+\begin{proof}[Sol.]
+Def 1: In \S 5.3.6, the $A$-scheme is defined to be scheme whose ring of sections over any  open sets is an $A$-algebra and the restriction maps are morphisms of $A$-algebras.
+
+Def 2: In \S 6.3.7, the $A$-scheme is defined to be simply a scheme $X$ with  a morphism $X\lrta \spec A$. 
+
+$Def 2\Lrta Def 1$: Consider an open subsets $U\subset V\subset X$, $(V,\calo_X|_V)\overset{\iota}{\inj}(X,\calo_X)$. Compositing with the morphism of schemes $X\lrta \spec A$, we know there is a morphism of schemes from $V$ to $\spec A$. By Exercise~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}, $\calo_X|_V(V)=\calo_X(V)$ is an $A$-algebra. 
+
+Morphism $\calo_X(V)\lrta\calo_X(U)$ is a morphism of $A$-algebras because
+$$
+\begin{tikzcd}
+U \arrow[r, hook] \arrow[rd] & V \arrow[d] & \calo_X(U) & \calo_X(V) \arrow[l, "\res"] \\
+ & \spec A &  & A \arrow[u] \arrow[lu]
+\end{tikzcd}
+$$
+the later diagram gives the correct meaning of morphism of $A$-algebras.
+
+$Def1\lrta Def2$: BY definition 1, in particular $\Gamma(X,\calo_X)$ is an $A$-algebra, again by Exercise~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}, there is a morphism of schemes between $X$ and $\spec A$.
+\end{proof}
+
+
+\begin{exr}
+If $S_\bullet$ is a finitely generated graded $A$-algebra, describe a natural ``structure morphism'' $\Proj S_\bullet\lrta \spec A$.
+\end{exr}
+\begin{proof}[Sol.]
+By Exercise~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}, the structure morphism corresponds to the morphism of rings
+$$
+A\lrta S_\bullet : a\mapsto a\times 1.
+$$
+
+Recall that $\Proj S_\bullet$ is covered by  affine charts $D(f)=\spec ((S_\bullet)_f)_0$ for each homogeneous $f\in S_+$, where the $((S_\bullet)_f)_0$ is the zero piece of the localization $(S_\bullet)_f$. A morphism $A\lrta S_\bullet$ naturally induces a morphism $A\lrta ((S_\bullet)_f)_0$ and this gives a collection of compatible morphism from $\phi_f:A\lrta \Gamma(D_f, \calo_{\Proj S_\bullet})$. These $\phi_f$ in turn defines a compatible collection of morphism of schemes $\spec ((S_\bullet)_f)_0\lrta \spec A$. And they glue up to a morphism of schemes $\Proj S_\bullet\lrta \spec A$.
+
+Sections on general open sets in $\Proj S_\bullet$ could be quite nasty, please refer to~\ref{chap4exr:structure_sheaf_of_projective_schemes} for a detailed description of structure sheaf on $\Proj S_\bullet$.
+\end{proof}
+\begin{exr}
+Show that $\spec \intg$ is the final object in the category of schemes. In other words, if $X$ is any scheme, there exists a unique morphism to $\spec \intg$. (Hence the category of schemes is isomorphic to the category of $\intg$-schemes.) If $k$ is a field, show that $\spec k$ is the final object in the category of $k$-schemes.
+\end{exr}
+\begin{proof}[Sol.]
+Simple words: $\intg$ is the initial object in the category $\mathsf{Rings}$ and $k$ it the initial object in the category in the category $k-\mathsf{Alg}$ and then argue by~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}.
+\end{proof}
+
+\begin{exr}\label{chap6exr:morphism_of_schemes_stalk_to_X}
+\ \begin{enumerate}[label=(\alph*)]
+\item Suppose $p$ is a point of a scheme $X$. Describe a canonical (choice-free) morphism $\spec \calo_{X,p}\lrta X$. (Hint: do this for affine $X$ first. But then for general $X$ be sure to show that your morphism is independent of choice.)
+\item Define a canonical morphism $\spec \kappa(p)\lrta X$. This is often written $p\lrta X$; one gives $p$ the obvious interpretation as a scheme, $\spec \kappa(p)$
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+\begin{enumerate}[label=(\alph*)]
+\item For affine $X=\spec A$, consider the point $\scp$. There is a morphism of rings 
+$$
+\calo_X(X)=A\lrta A_\scp=\calo_{X,\scp}
+$$
+which gives a morphism
+$$
+\spec \calo_{X,\scp}\lrta X.
+$$
+
+For general case, a point $p\in X$, we can find an affine open neighborhood $U_i$ of $p$ so that $U=\spec B$. There is a morphism
+$$
+\spec \calo_{X,p}\lrta \spec B\lrta X.
+$$
+We must show that the composition map $\spec \calo_{X,p}\lrta X$ is independent of the choice of affine open $U$. Consider the $V$ is another affine open that contains $p$, we can check that restriction of the injections $U\inj X$ and $V\inj X$ to $U\cap V\inj X$ would agree. For quasiseparated scheme, the intersection $U\cap V$ is finite union of affine opens again, and the proof is finished here by picking the affine open that contains $p$ and in $U\cap V$. 
+
+For non-quasiseparated schemes, we can still check that $U\cap V$ is a union of affine open charts (not necessarily finite). The process is the same.
+ 
+\item $\kappa(p)$ is a field and $\spec \kappa(p)$ is a one point set. Each residue field $\kappa(p):=\calo_{X,p}/\scm_p$, there is a canonical morphism of rings $\calo_{X,p}\lrta \kappa(p)$ and therefore induces a canonical morphism of affine schemes
+$$
+\spec \kappa(p)\lrta \spec \calo_{X,p}.
+$$
+Together with the morphism described in $(a)$, we have the canonical morphism
+$$
+\spec \kappa(p)\lrta X.
+$$
+\end{enumerate}
+\end{proof}
+\begin{exr}
+Suppose $X$ is a scheme, and $(A,\scm)$ is a local ring. Suppose we have a scheme morphism $\pi:\spec A\lrta X$ sending $[\scm]$ to $p$. Show that any open set containing $p$ contains the image of $\pi$. Show that there is a bijection between $\mor(\spec A,X)$ and 
+$$
+\{p\in X,\text{ local homomorphisms }\calo_{X,p}\lrta A\}.
+$$
+\end{exr}
+\begin{proof}[Sol.]
+In order to show that the image lies in an affine open subscheme of $X$, we need to prove the following two topological facts:
+\begin{enumerate}
+\item Any continuous map preserves the relations of specialization/generalization
+\item If $p\in X$ is a point. Then any open neighborhood $U\ni x$ contains all the generalization of $p$ in $X$.
+\end{enumerate}
+The first of which can be checked in \cite[Tag 0060]{stacks-project} (Also check the general definition of specialization and generalization in topological spaces). The first point implies that $p$ is a closed point in $X$.
+
+The second point is easy to prove. Though $[\scm]$ is close point, it is not necessarily true that $\pi([\scm])$ is closed. In general we only know $\overline{\pi(\scm)}\supset \pi(\overline{[\scm]})$. Given point $p$ and an open neighborhood $U$ containing it. We recall the definition of $q\in X$ is a  generalization of $p$: $p\in \overline{\{q\}}$. $p$ is in the closure of $\{q\}$, thus any open neighborhood of $p$ would contain $q$. 
+
+Because $[\scm]$ is the only closed point in $\spec A$, all point of $\spec A$ would be a generalization of $[\scm]$, which means $\pi(\spec A)$ is contained in any open neighborhood of $p=\pi([\scm])$.\footnote{We can not simply argue by ``$U$ would contain the image of generic point $\pi(\eta)$ of $\spec A$''. The subtle stuff here is that $U$ might do not contain $\overline{\{\pi(p)\}}$. In general for continuous map $\pi$, $\pi(\overline{S})\subset \overline{\pi(S)}$.}
+
+The above proof finishes the first question.
+
+This implies that the morphism $\pi:\spec A\lrta X$, with $(A,\scm)$ being local and $\pi([\scm])=p$, would factor through $\spec \calo_{X,p}\lrta X$.
+
+Take an affine open neighborhood $X\supset \spec B$ of $p$. Thus $p$ can be identified as a prime ideal in $B$. We denote it by $p=[\scp]\in\spec B$. $\spec A\lrta X$ would factor as $\spec A\lrta\spec B$, which corresponds to a ring morphism $\phi:B\lrta A$. The preimage of $\scm$ is some the prime ideal $\scp\in B$. Recall that $A-\scm$ is the set of units in local ring.  $\phi$ sends the invertible elements into $A-\scp$, by the universal property of localization $B\lrta A$ factors through the localization $B_\scp$, where $B_\scp=\calo_{X,p}$ and the morphism $\calo_{X,p}\lrta A$ is local morphism. It does not depends on the choice of $\spec B$, because they are induced by the same morphism of ringed spaces cf~\ref{chap6exr:equivalent_defs_morphisms_of_schemes}. $\pi:\spec A\lrta X$, uniquely determines a data of $\{p\in X,\text{a local morphism } \calo_{X,p}\lrta A\}$. This given is injectivity in the second question. The surjectivity is derived from Exercise~\ref{chap6exr:morphism_of_schemes_stalk_to_X} which says the morphism $\spec \calo_{X,p}\lrta X$ is canonical.
+\end{proof}
+
+\begin{exr}
+\ \begin{enumerate}[label=(\alph*)]
+\item Show that a morphism of schemes $X\lrta Y$ induces a map of $Z$-valued points $X(Z)\lrta Y(Z)$.
+\item Note that morphisms of schemes $X\lrta Y$ are not determined by their underlying map of points. (Give an example) Show that are determined by their induced maps of $Z$-valued points, as $Z$ varies over all schemes. 
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item 
+A morphism of schemes $f:X\lrta Y$ would induce a map
+$$
+\begin{aligned}
+X(Z):=\mor(Z,X)
+\lrta \mor(Z,Y)=:Y(Z)\\
+[Z\rta X]\longmapsto [Z\rta X\overset{f}{\rta} Y]
+\end{aligned}
+$$
+\item For example choose $Z$ to the final object $\spec \intg$ in $\mathsf{Sch}$. Any morphism between $X,Y$ would induces a map between one point sets, which gives a non-example. 
+
+Then we will reprove the Yoneda's Lemma in the context of schemes. Pick $Z=X$, $f:X\lrta Y$ would induce a map between $\mor(X,X)\lrta \mor(X,Y)$, where $id_X\in \mor(X,X)$ is mapped to $f\in \mor(X,Y)$. $f$ is determined by the induces map on Hom sets.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+\ \begin{enumerate}[label=(\alph*)]
+\item Suppose $B$ is a ring. If $X$ is a $B$-scheme, and $f_0,...,f_n$ are $n+1$ functions on $X$ with no common zeros, then show that $[f_0,..,f_n]$ gives a morphism of $B$-scheme $X\lrta \proj^n_B$.
+\item Suppose $g$ is nowhere vanishing function on $X$, and $f_i$ are as in part $(a)$. Show that the morphisms $[f_0,...,f_n]$ and $[gf_0,...,g f_n]$ to $\proj^n_B$ are the same.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+\ \begin{enumerate}[label=(\alph*)]
+\item Recall that $\proj_B^n=\Proj B[x_0,...,x_n]$. We consider an open over of $X=\cup_{f_i} X_{f_i}$ where $X_{f_i}$ is open set of $X$ where $f_i\neq 0$ and $\proj^n_B$ is covered by the canonical affine charts $U_i:=spec B[x_{0/i},...,x_{n/i}]$. We hope to define a morphism $\pi:X\lrta\proj^n_B$ so that it induces a morphism of schemes
+$$
+X_{f_i}\lrta \spec B[x_{0/i},...,x_{n/i}]
+$$
+and then verify that they agree on the overlaps.
+ We do not need $X_{f_i}$ to be affine. By Exercise~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}, it suffices to construct the morphism of rings
+$$
+B[x_{0/i},...,x_{n/i}]\lrta \Gamma(X_{f_i},\calo_{X}).
+$$
+
+One the obvious choice of $B$-algebra morphism is
+$$
+\pi_i:x_{k/i}\longmapsto \frac{f_k}{f_i}.
+$$
+{\color{red} A crucial problem here is how to define the the sheaf on $X_{f_i}$, which is not necessarily affine.}
+
+They are compatible on intersections $X_{f_i}\cap X_{f_j}$ where both $f_i,f_j$ are non-zero. Recall on the intersection $U_i\cap U_j$, the gluing isomorphism is 
+$$
+\varphi_{ij}: U_i\cap U_j\lrta U_i\cap U_j
+$$
+$$
+x_{k/i}\longmapsto x_{k/j}/x_{i/j}
+$$
+Compositing with the constructed map $x_{k/j}\lrta \frac{f_k}{f_j}$.
+We
+have
+$$
+x_{k/i}\longmapsto x_{k/j}/x_{i/j}\longmapsto \frac{\frac{f_k}{f_j}}{\frac{f_i}{f_j}}=\frac{f_k}{f_i}.
+$$
+This means they are compatible on the intersections, we argue by~\ref{chap6exr:glue_morphisms_of_ringed_spaces} that we can glue it up to a morphism of schemes $\pi:X\lrta\proj^n_B$.
+
+\item Given the explicit form of $(a)$, $(b)$ is obvious.
+\end{enumerate}
+\end{proof}
+\begin{exr}
+Omitted.
+\end{exr}
+
+\section{Maps of graded rings and maps of projective schemes}
+
 \chapter{Useful classes of morphisms}
 \chapter{Closed embeddings}
 \chapter{Fibered product of schemes}
 \chapter{Separated and proper schemes, varieties}
 \part{``Geometric'' properties: Dimension and smoothness}
+\chapter{Dimension}
+
+\chapter{Regularity and smoothness}
 
 \part{Quasicoherent sheaves}
+\chapter{Quasicoherent and coherent sheaves}
+\section{Vector bundles and locally free sheaves}
+\begin{exr}
+Show that over $U_i\cap U_j$, the vector-valued function $\vec{s}^i$ is related to ${s}^j$ by the (same) transition functions: $T_{ij} \vec{s}^{i}=\vec{s}^j$. (Make sure you get the correct superscripts)
+\end{exr}
+\begin{proof}[Sol.]
+There is in fact some abuse of notions, where $\vec{s}^i$ should be interpreted as the restriction of $\vec{s}^i$ to $U_i\cap U_j$.
+Here the superscripts are not for the indices of matrices but only denote the  charts.
+$$
+\tiny
+\begin{tikzcd}
+ & \calo(U_i)^d \arrow[rd] &  \\
+\calf(U_i) \arrow[ru, "\phi_i"] \arrow[rd, "\res"] &  & \calo(U_i\cap U_j)^d \arrow[dd, "T_{ij}"] \\
+ & \calf(U_i\cap U_j) \arrow[rd, "\simeq"] \arrow[ru, "\simeq"] &  \\
+\calf(U_j) \arrow[ru, "\res"] \arrow[rd, "\phi_j"] &  & \calo(U_i\cap U_j)^d \\
+ & \calo(U_j)^d \arrow[ru] & 
+\end{tikzcd}
+$$
+\end{proof}
+\begin{exr}
+Suppose $\calf$ and $\calg$ are locally free sheaves on $X$ of rank $m$ and $n$ respectively. Show that $\phom_{\calo_X}(\calf , \calg)$ is a locally free sheaf of rank $mn$.
+\end{exr}
+\begin{proof}[Sol.]
+Recall the definition of sheaf-hom
+$$
+\phom(\calf,\calg)(U):=\hom(\calf|_U,\calg|_U)
+$$
+(in fact, this notion has been implicitly extended to $\calo_X$-modules-hom)
 
+On the other hand, 
+$$
+\calf|_U\simeq \calo_U^{\oplus m}
+$$
+and
+$$
+\calf|_U\simeq \calo_U^{\oplus n}
+$$
+We have
+$$
+\phom(\calf,\calg)(U)\cong\hom_{\calo_X}(\calo_U^{\oplus m},\calo_U^{\oplus n}).
+$$
+The later is isomorphic to 
+$$
+M_{m\times n}(\calo_U)\cong\calo_U^{\oplus mn}
+$$
+\end{proof}
+
+\begin{exr}
+If $\cale$ is a locally free sheaf on $X$ of (finite) rank $n$, the above exercise implies that $\cale^\vee:=\phom(\cale,\calo_X)$ is also a locally free sheaf of rank $n$. This is called the dual of $\cale$. Given transition functions for $\cale$, describe transition functions of $\cale^\vee$. (Note that if $\cale$ is of rank $1$, i.e., invertible, the transition functions of the dual are the inverse of the transition functions of the original.) Show that $\cale\cong\cale^{\vee\vee}$. (Caution: your argument showing that there is  a canonical isomorphism $(\calf^\vee)^\vee$ better not also show that there is an isomorphism $\calf^\vee\cong \calf$. We will see an example in \S 14.1 of a locally free $\calf$ that is not isomorphic to its dual: the invertible sheaf $\calo(1)$ on $\proj^n$.)
+\end{exr}
+\begin{proof}[Sol.]
+
+\end{proof}
+\chapter{Line bundles: Invertible sheaves and divisors}
+\chapter{Quasicoherent sheaves and projective $A$-schemes}
+\chapter{{Pushforwards and pullbacks of quasicoherent sheaves}
 \part{More}
 
 %----------------------------------------------------------------------------------------

@@ -374,4 +374,9 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pzc.fd
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pzc.fd
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT AG.aux

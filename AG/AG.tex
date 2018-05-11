@@ -16,6 +16,8 @@
 \usepackage{enumitem} 
 \usepackage{hyperref}
 \usepackage{geometry}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
 \geometry{left=4cm,right=4cm}
 \pgfplotsset{every axis/.append style={
 		axis x line=middle,    % put the x axis in the middle
@@ -82,7 +84,9 @@
 \newtheorem{dfn/thm}[thm]{Definition/Theorem}
 \renewcommand{\baselinestretch}{1.1}
 \renewcommand{\hom}{\text{ Hom}}
+\newcommand{\phom}{\mathpzc{Hom\,}}
 \newcommand{\spec}{\text{ Spec}\,}
+\newcommand{\Proj}{\mathsf{ Proj}}
 \newcommand{\res}{\text{ res}}
 \newcommand{\affn}{\mathbb A}
 \newcommand{\proj}{\mathbb P}
@@ -3084,14 +3088,16 @@ Divisors are the first non-trivial geometric invariants of the schemes and have 
 	\item Picard groups $\leadsto$ morphisms of projective spaces.
 \end{itemize}
 
-In order to define Weil divosors, the scheme is required to be Noetherian and intergral. We usually look at those schemes with nice enough properties so that we don't have to worry about Cartier divisors
+In order to define Weil divisors, the scheme is required to be Noetherian and integral. We usually look at those schemes with nice enough properties so that we don't have to worry about Cartier divisors
 \begin{dfn}
 Let $X$ be scheme. $X$ is \textbf{regular in codimension one} if for any $x\in X$ where $\dim(\calo_{X,x})=1$, the local ring $\calo_{X,x}$ is regular ($\dim \scm/\scm^2=1$). i.e. each local ring $\calo_{X,x}$ of dimension one is regular.
 \end{dfn}
+
+In this section, we require the scheme to be Noetherian integral, separated scheme which is regular in codimension one.
 (In general a Noetherian local ring $(A,\scm)$, with $k=A/\scm$ is called regular if the dimension of $A$ is equal to the $\dim_k \scm/\scm^2$  this means $X$ has some minimal ``smoothness'')
 \begin{ex}
 \ \begin{enumerate}[label=(\arabic*)]
-\item $X$ finite type over a filed $K$, then $X$ is regular in codimension one  if $X$ is ``non-singular'' in the sense analogue of definition of non-singular varieties.
+\item Assume, a scheme $X$ if of finite type over a filed $K$, then $X$ is regular in codimension one  if $X$ is ``non-singular'' in the sense analogue of definition of non-singular varieties.
 \item $X=\affn_K^n=\spec(K[X_1,..,X_n])$. To say that $\scp\in X$ has dimension one means $\dim \calo_{X,\scp}=1\Llrta $ height of $\scp$ is equal to $1$. Because
 $$
 \calo_{X,\scp}=K[X_1,...,X_m]_{\scp} 
@@ -3458,16 +3464,285 @@ inverse
 $$
 \call\longmapsto \hom_{\calo_X}(\call,\calo_X)
 $$
-N.B for $\calf_1,\calf_2$ $\calo_X$-moduels, we define
+N.B for $\calf_1,\calf_2$ $\calo_X$-modules, we define
 $$
-\calf_1\otimes_{\calo_X}\calf_2=\text{ sheaf associated to  the presheaf $U\mapsto \calf_1(U)_{\calo_X(U)\calf_2(U)}$}
+\calf_1\otimes_{\calo_X}\calf_2=\text{ sheaf associated to  the presheaf $U\mapsto \calf_1(U)\times_{\calo_X(U)}\calf_2(U)$}
 $$
 and
 $$
-\hom_{\calo_X}(\calf_1,\calf_2)=\text{ sheaf associated to $U\mapsto \hom_{\calo_X(U}(\calf_1(U),\calf_2(U))$}
+\hom_{\calo_X}(\calf_1,\calf_2)=\text{ sheaf associated to $U\mapsto \hom_{\calo_X(U)}(\calf_1(U),\calf_2(U))$}
 $$
 \end{prop}
 
+
+\subsection{May 11th: The twisting invertible sheaf on $\proj^n$}
+
+Recall:
+$\calo_X$-modules, locally-free $\calo_X$-modules,
+
+rank $1$ locally free $\Lrta$ invertible sheaves.
+
+\begin{prop}
+$Pic(X)=\{\text{iso. class of  invertible sheaves}\}$ is an abelian group with $\call_1\otimes \call_2$
+and $1=\calo_{X}$, $\call^{-1}=\phom(\call,\calo_X)$.
+\end{prop}
+\begin{proof}
+What needs to be done (given commutativity/ Associativity of $\otimes$) is
+\begin{enumerate}[label=(\arabic*)]
+\item if $\call_1,\call_2$ are invertible, so is $\call_1\otimes \call_2$
+\item $\call\otimes \calo_X=\call$
+\item $\call\otimes \call^{-1}\cong \calo_X$.
+\end{enumerate}
+
+$(1)$: If $\call_1|_U\simeq \calo_X|_U$ and $\call_2|_U\simeq \calo_X|_U$,  $(\call_1\otimes\calo_X)|_U\simeq \calo_X|_U\otimes\calo_X|_U\simeq \calo_X|_U$, where the LHS is sheaf associated to presheaf, (given $V\subset U$) $V\longmapsto\call_1\otimes(V)\otimes\call_2(V)$ and the $\calo_X(V)\otimes \calo_X(V)\simeq \calo_X(V)$. So the LHS is the sheaf $V\longmapsto \calo_X(V)$ and $\call_1|_U\otimes \call_2|_U\simeq \calo|_U$ and therefore $\call_1\otimes \call_2$ is invertible.
+
+\underline{Warning!} in general, $\call_1\otimes \call_2(U)\neq\call_1(U)\otimes\call_2(U)$.
+
+$(2)$ For any $U\subset X$, 
+$$
+\call(U)\otimes\calo_X(U)\overset{\sim}{\lrta}\call(U)
+$$
+$$
+(s,a)\longmapsto as
+$$
+$\Lrta $ a morphism of presheaves 
+$$
+[U\mapsto \call(U)\otimes\calo_X(U)]\longmapsto \call
+$$
+$\Lrta$  a canonical morphism
+$$
+\call\otimes\calo_X\longmapsto \call
+$$
+and this is  an isomorphism because on stalks it is 
+$$
+\call_x\otimes \calo_{X,x}\simeq \call_x
+$$
+$$
+(s,a)\longmapsto as
+$$
+which is an isomorphism
+
+$(3)$ For any $U\subset X$ we have an isomorphism of modules
+$$
+\call(u)\otimes\call^{-1}_{pre}(U)\overset{\sim}{\lrta}\calo_X(U)
+$$
+$$
+LHS=\call(U)\otimes\hom_{\calo_X(U)}(\call(U),\calo_X(U))
+$$
+$$
+(s,\lambda)\longmapsto \lambda(s).
+$$
+After sheafification, we get a morphism
+$$
+\call\otimes\call^{-1}\lrta \calo_X
+$$
+which at stalks is an isomorphism.
+\end{proof}
+
+
+\begin{ex}\ 
+\begin{enumerate}[label=\boxed{\arabic*}]
+\item \underline{Affine case}: $X=\spec A$. Theory of (quasi)-coherent sheaves establishes
+ a connection between $A$-modules and $\calo_X$-modules.
+
+Given an $A$-module $M$, we can construct a $\calo_X$-module  $\tilde{M}$ by 
+$$
+\tilde{M}(U)=\left\{s:U\lrta \sqcup_{x\in U}M_x\left|\begin{aligned}
+&\forall x,s(x)\in M_x, \forall x\in U,\exists V\subset U
+,\\
+&\text{s.t. for } x\in V,\exists m\in M,\exists f\in A,\\ 
+&\text{ s.t. } \forall y\in V f\notin y,\  s(y)=\frac{m}{f}\in M_y  
+\end{aligned}
+\right.\right\}
+$$
+subexample: $\tilde{A}=\calo_X$ and $\tilde{M}$ is an $\calo_X$-module:
+$$
+(a\cdot s)(x)=a(x)s(x)
+$$
+for all $a\in \calo_X(U), s\in \tilde{M}(U)$
+
+\underline{Facts:}
+
+\begin{enumerate}
+\item $\Gamma(U_f,\tilde{M})\simeq M_f\lrta $``$f(x)\neq 0$''
+\item stalk $\tilde{M}_x= M_x$ localization
+\item $\widetilde{M_1\otimes M_2}=\tilde{M_1}\otimes\tilde{M_2}$
+\item  [Serre-Swan] Locally-free $\calo_X$-modules is in bijection with vector bundle and  projective $A$-modules.
+
+In practice, $\tilde{M}$ is an invertible sheaf iff $M$ is projective, locally of rank $1$ $M_\scp\cong A_\scp$ (when viewed as $A_\scp$-module)
+
+\underline{Cor}: If $A$ is a UFD, then $Pic(\spec A)=\{0\}$
+\end{enumerate}
+
+\item If $X$ has the usual regularity properties, and $D$ is a prime divisor, there is a naturally associated invertible sheaf $\call(D):$ Let $U\subset X$ open small enough, so that $D\cap U$ is given by $f=0$ on $U$, then
+$$
+\call(D)(U)=\{s\in Frac(\calo_X(U)| s=f^{-1}t, t\in \Gamma(U, \calo_X)\}
+$$
+ One checks that this is well-defined (it is independent on the choice of $f$)
+
+ Then $\call(D)$ is an invertible sheaf. This extends to a group morphism
+ $$
+  Div(X)\lrta Pic(X).
+ $$
+ \item The twisting sheaf on projective space. Let $K$ be a field. We define an important non-trivial invertible sheaf on $\proj^n_K$, $n\geq 1$, denoted 
+ $$
+\calo(1)=\calo_{\proj^n_K}(1).
+ $$
+
+ From the $\Proj$ point of view, where $K[X_0,..,X_n]=:A$
+ $$
+\proj^n_K=\Proj(A)
+ $$
+$$
+\begin{tikzcd}
+M \arrow[d,rightsquigarrow] & \text{graded } A\text{-module} \\
+\tilde{M} & \calo_{\Proj(A)}\text{-module}
+\end{tikzcd}
+$$
+Take: 
+$$
+M=\bigoplus_{k\geq 1}A_k,
+$$
+where $A_k$ is the homogeneous part of degree $k$.
+$\Lrta \tilde{M}=\calo(1)$.
+
+Glueing: $n$,
+$$
+\proj^n_K=\cup_{i=0} U_i
+$$
+where $U_i=\spec(B_i)$, $B_i=K[X_0/X_i,...,X_n/X_i]\subset B=[X_0^{\pm },..,X_n^{\pm}]$
+glued over $U_{ij}=\spec(B_{ij})$, with $B_{ij}=(B_i)_{X_j/X_i}$ using the isomorphism 
+$$
+B_{ij}=B_{ji}\subset B.
+$$
+To define a sheaf $\calf$ on $\proj^n_K$ it suffices to consider sheaves $\calf_i$ on $U_i$, isomorphisms $\varphi_{i,j}\calf_i|_{U_{ij}}\simeq \calf_{j}|_{U_{ij}}$ with the cocycle condition on $\varphi_{i,j}$. We define $\call_i$ on $U_i$ by 
+$$
+\call_i=\tilde{M}_i
+$$
+where $M_i=X_i B_i\subset B_i$ as $B_i$-module. We have 
+$M_i\simeq B_i$ as $B_i$-module so $\tilde{M}_i\simeq \calo_{\proj^n}|_{U_i}$ we glue the $\call_i$
+ over $U_{ij}$ using the isomorphisms 
+ $$
+B\supset M_{i,\left(\frac{X_j}{X_i}\right)}=M_{j,\left(\frac{X_i}{X_j}\right)}.
+ $$
+ These identity morphisms glue to an ivertible sheaf $\calo(1)$ on $\proj^n_K$. By \boxed{1}, we have 
+ $$
+ \Gamma(U_i,\calo(1))\cong \Gamma(U_i,\tilde{M}_i)=M_i=X_i B_i.
+ $$
+ \begin{prop}
+ We have 
+ $$
+\dim_K \Gamma(\proj^n_{K},\calo(1)=n+1)
+ $$
+ and $\dim_K\Gamma(\proj^n_K,\calo)=1$. (A basis of $\Gamma(\proj^n_K,\calo(1))$ is given by the ``homogeneous coordinates'')
+ \end{prop}
+ \begin{proof}
+ Using the glueing perspective $s\in \Gamma(\proj^n_K,\calo(1))$ is equivalent to $(s_i), s_i\in \Gamma(U_i,\calo(1))$ with $s_i|_{U_{ij}}=s_j|_{U_{ji}}$ which means 
+ $$
+ s_i\in M_i=X_i B_i\subset B
+ $$
+ and $s_i=s_j$ in $B$.
+ $\Lrta$ 
+ $$
+ \Gamma(\proj^n_K,\calo(1))=\bigcap^n_{i=0}X_i B_i\subset B.
+ $$
+ Similarly,$\Gamma(\proj^n_K,\calo)=\bigcap^n_{i=0} B_i\subset B$. ($\bigcap B_i=K$ because only constant polynomial in 
+ $K[X_0/X_i,...,X_n/X_i]$ are allowed.) Let $s\in \bigcap X_iB_i$,
+ $$
+ \begin{aligned}
+ \forall i, s&=X_i g_i(X_0/X_i,...,X_n/X_i)\in A\\
+ &=\frac{f_i(X_0,...,X_n)}{X_i^{d_i}}
+ \end{aligned}
+ $$
+ with $X_i\nmid f_i, d_i\geq 0$. Thus, 
+ $$
+ X_i^{-d_i}f_i=X_j^{-d_j}f_j
+ $$
+ for all $j$,
+ $x_j^{d_j} f_i=X_i^{d_i}f_j$, $\forall i,j;$ since $X_k\nmid f_j, d_i=0$ $\Lrta i,j$ $f_i=f_j$ but $f_i$ is homogeneous of degree $d_{i}+1=1$, so $s\llrta (f)\in$ homogeneous degree $1$. Conversely, any $f$ homogeneous of degree $1$ is in $\bigcap X_i B_i$ $X_i=X_i\cdot 1=X_j\cdot \frac{X_i}{X_j}$ so $\Gamma(\proj^n_K,\calo(1))\overset{\sim}{\lrta}$\{ homogeneous polynomials of degree $1$ in $A$\} $\cong K^{n+1}$ as $K$-vector spaces. 
+ \end{proof}
+\begin{thm}\label{thm:aut_Proj}
+$Aut_{\mathsf{Sch}}(\proj^n_K)\simeq PGL_{n+1}(K)=GL_{n+1}(K)/K^\times I_{n+1}$ given by
+$$
+g\longmapsto ([x_0:...:x_n]\lrta[\sum_j a_{0j}x_j:...:\sum_j a_{n_j} x_j]) 
+$$
+with $a_{ij}$ the entries of $g$.  
+\end{thm}
+This uses
+\begin{thm}[Hartshorne II6.16]
+\label{thm:Hart_II_6.16}$X$ Noetherian, integral, quasi-projective, every local ring is regular
+$\Lrta$ the map $D\longmapsto \call(D)$ gives an isomorphism 
+$$
+Cl(X)\overset{\simeq}{\lrta}Pic(X)
+$$
+\begin{proof}[Proof of~\ref{thm:aut_Proj}]
+We construct an inverse
+$$
+Aut(\proj^n_K)\lrta PGL_{n+1}(K)
+$$
+to the morphism in the statement of~\ref{thm:Hart_II_6.16}. 
+
+\underline{idea}: Any $\gamma:\proj^n_K\overset{\sim}{\lrta}\proj^n_K$ ``acts linearly on $\Gamma(\proj^n,\calo(1))\simeq K^{n+1}$''. Precisely: given $\gamma$ we get an induced isomorphism
+$$
+\gamma^*\calf\lrta \calf
+$$
+where as a sheaf $\gamma^*\calf(U)=\calf(\gamma(U))$.
+$$
+\begin{aligned}
+\calf(\gamma(U)&\lrta \calf(U))\\
+s&\longmapsto [x\mapsto s(\gamma(x))]
+\end{aligned}
+$$
+in particular, we get 
+$$
+\gamma^* \calo(1)\lrta\calo(1)
+$$
+\underline{Key}: $\gamma^*\calo(1)\simeq \calo(1)$. Indeed, $\calo(1)\in Pic(\proj^n_K)\simeq Cl(\proj^n_K)\simeq \intg[H_0]$ corresponds to $[H_0]$, where $H_0$ means the hyperplane where $X_0=0$.
+$\gamma^*\calo(1)\in Pic(\proj^n_K)$ s therefore also a generator of $Pic(\proj^n_K)$. However, one checks 
+$$
+\Gamma(\proj^n_K,\calo(1)^{-1})=\{0\}
+$$
+so that  $\gamma^*\calo(1)\simeq \calo(1)^{-1}$ is not possible, hence the key claim.
+
+So we get 
+$$
+\calo(1)\overset{\varphi}{\lrta}\gamma^*\calo(1)\overset{\sim}{\lrta}\calo(1)
+$$
+$\Lrta$ an isomorphism
+$$
+K^{n+1}\simeq\Gamma(\proj^n,\calo(1))\overset{\gamma\circ \varphi}{\lrta}\Gamma(\proj^n,\calo(1))\simeq K^{n+1}
+$$
+$K$-linear in $Gl_{n+1}(K)$. 
+
+$\varphi$ is only defined up to an automorphism of $\calo(1)$:
+$\calo(1)\simeq\calo(1)$
+
+\underline{Claim}: 
+$$
+Aut_{\mathsf{Sheaves}}(\calo(1))\simeq K^{\times}
+$$
+$$
+[s\mapsto \lambda s]\mapsfrom \lambda
+$$
+$$
+\hom_{\mathsf{Sheaves}}(\calo(1),\calo(1))
+$$
+$$
+\calo(1)\overset{f,\sim}{\lrta}\calo(1)
+$$
+$$
+\leadsto \calo(1)\otimes\calo(1)^{-1}\overset{\sim}{\lrta}\calo(1)\otimes\calo(1)
+^{-1}
+$$
+$$
+\leadsto
+K\simeq \Gamma(\proj^n,\calo)\overset{\sim}{\lrta}\Gamma(\proj^n,\calo)\simeq K.
+$$
+\end{proof}
+
+\end{thm}
+\end{enumerate}
+\end{ex}
 
 
 
