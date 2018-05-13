@@ -1,0 +1,119 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nyt/global/}
+    \entry{gortz2010algebraic}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6ce6acdb0fb322d897f757dab4854fa0}{%
+           family={Görtz},
+           familyi={G\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod}}}%
+        {{hash=19a9170cb8e6a605aacaaf60dcce3a64}{%
+           family={Wedhorn},
+           familyi={W\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \strng{fullhash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \strng{authornamehash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \strng{authorfullhash}{f23b3d42d595de42569aeb63bfb2ea8c}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic geometry}
+      \field{year}{2010}
+    \endentry
+    \entry{mac1998categories}{book}{}
+      \name{author}{1}{}{%
+        {{hash=412e255483e0d09fd0b0895d355a28a8}{%
+           family={Mac\bibnamedelima Lane},
+           familyi={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Saunders},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{412e255483e0d09fd0b0895d355a28a8}
+      \strng{fullhash}{412e255483e0d09fd0b0895d355a28a8}
+      \strng{authornamehash}{412e255483e0d09fd0b0895d355a28a8}
+      \strng{authorfullhash}{412e255483e0d09fd0b0895d355a28a8}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Categories for the Working Mathematician}
+      \field{volume}{5}
+      \field{year}{1978}
+    \endentry
+    \entry{neeman2007algebraic}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b0653a87bc1b4236dc840bab79449849}{%
+           family={Neeman},
+           familyi={N\bibinitperiod},
+           given={Amnon},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{fullhash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{authornamehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{authorfullhash}{b0653a87bc1b4236dc840bab79449849}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic and analytic geometry}
+      \field{volume}{345}
+      \field{year}{2007}
+    \endentry
+    \entry{stacks-project}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4cbef342f832f67d2565c5773283e977}{%
+           family={{Stacks Project Authors}},
+           familyi={S\bibinitperiod},
+           given={The},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4cbef342f832f67d2565c5773283e977}
+      \strng{fullhash}{4cbef342f832f67d2565c5773283e977}
+      \strng{authornamehash}{4cbef342f832f67d2565c5773283e977}
+      \strng{authorfullhash}{4cbef342f832f67d2565c5773283e977}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://stacks.math.columbia.edu}}
+      \field{shorthand}{Stacks}
+      \field{title}{\textit{Stacks Project}}
+      \field{year}{2018}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

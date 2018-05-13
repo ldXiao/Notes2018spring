@@ -1,20 +1,20 @@
 # Fdb version 3
-["pdflatex"] 1522253465 "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.pdf" "Chap2" 1522253469
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.aux" 1522190819 10948 3cf51515bf9182675bb24525dce40a8f ""
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.tex" 1522253465 77431 25686e7996f8a551d4245c2c1836c664 ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
-  "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
-  "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
-  "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1440418262 3849859 5c35c49c1fcf460538abecd3dad8aee2 ""
-  "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Chap2.tex" 1522253465 77431 25686e7996f8a551d4245c2c1836c664 ""
+["xdvipdfmx"] 1526224474 "Chap2.xdv" "Chap2.pdf" "Chap2" 1526224474
+  "Chap2.xdv" 1526224469 62212 86dab3168ca7190508f8908561c3d355 "xelatex"
   (generated)
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.pdf"
   "Chap2.pdf"
+["xelatex"] 1526224468 "Chap2.tex" "Chap2.xdv" "Chap2" 1526224474
+  "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1480098701 1316 b636689f1933f24d1294acdf6041daaa ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1480098701 1296 d77f431d10d47c8ea2cc18cf45346274 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm" 1480098712 1308 02cc510f9dd6012e5815d0c0ffbf6869 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd" 1480098833 1013 f8133048bddeed1bf1041c9d830a3723 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd" 1480098833 805 af340a8260c447aa315cfc740ff0152f ""
+  "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
+  "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
+  "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
+  "Chap2.aux" 1526134346 11678 e052ff8b60bbb444abe261746d668aa5 ""
+  "Chap2.tex" 1526224468 79229 894760447427f3aa3bfd78d9ffdc4064 ""
+  (generated)
+  "Chap2.xdv"
   "Chap2.log"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.log"

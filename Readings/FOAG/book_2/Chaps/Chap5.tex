@@ -1,0 +1,1125 @@
+\chapter{Some properties of schemes}
+\section{Topological properties}
+\begin{exr}
+Show that $\proj^n_k$ is irreducible.
+\end{exr}
+\begin{proof}
+In this case $S_\bullet=k[x_1,..,x_n]$ and $S_+=(x_1,...,x_n)$.
+Assume $\proj^n_k$ can be written as union of two proper closed subsets: $V(I_1)\cup V(I_2)$, where $I_1,I_2$ are two homogeneous ideal in $k[x_1,..,x_n]$, also we require $I_1,I_2$ not contain $S_+$.
+
+$(0)$ is still a homogeneous prime ideal in $k[x_1,..,x_n]$ because it is integral domain and it does not contain the irrelevant ideal. W.l.o.g, assume $V(I_1)\ni [(0)]$, which means $I_1\subset (0)\Lrta I_1=(0)$. But $V(I_1)=V((0))=\Proj S_\bullet=\proj^n_k$, which contradicts the assumption that $V(I_1)$ is a proper closed subset.
+\end{proof}
+
+\begin{exr}\label{chap5exr:bijection_closed_generic_point_scheme}
+Exercise~\ref{chap3exr:bijection_closed_subsets_points_affine} showed that there is a bijection between irreducible closed subsets and points for affine schemes (the map sending a point $p$ to the closed subset $\overline{\{p\}}$ is a bijection). Show that this is true of schemes in general.
+\end{exr}
+\begin{proof}
+Given a scheme $X$, we want a bijection
+$$
+\begin{aligned}
+X&\lrta \{Z\subset X:Z\text{ closed irreducible}\}\\
+z&\longmapsto \overline{\{z\}}.
+\end{aligned}
+$$ 
+We already showed this bijection exists for affine schemes. This map can be naturally extended to general scheme, with the Zariski topology.
+
+We only need to show 
+\begin{itemize}
+\item $\overline{\{z\}}$ is irreducible in $X$, and
+\item $\overline{\{z\}}\neq\overline{\{x\}}$ if $z\neq x$, and
+\item Each irreducible closed subset in $X$ is of the form.
+\end{itemize}
+
+Each $\{z\}$ is irreducible in $X$, the closure of a irreducible subset is irreducible by~\ref{chap3exr:irreducible_subset_dense_open_irreducible_closure}.
+
+If $\overline{\{z\}}=\overline{\{x\}}$, they are covered by some affine open subsets $U_i$. By definition of closure, each $U_i$ contain $z,x$. $\overline{\{z\}}\cap U_i=\overline{\{z\}}\cap U_i$ are the closure of $z,x$ in the subset topology of $U_i$, they are irreducible in $U_i$ because $\{z\},\{x\}$ are irreducible in $U_i$ with subset topology. Then because the bijection exists in affine schemes, there is a unique generic point corresponding to $\overline{\{z\}}\cap U_i$, $z=x$ in $U_i$, which means $z=x$ in $X$.
+
+Given an irreducible subset $Z\subset X$. Let $U$ be an affine open subset such that $Z\cap U\neq \emptyset$. $Z\cap U$ is an open set in $Z$ with subspace topology on $Z$. By~\ref{chap3exr:irreducible_subset_dense_open_irreducible_closure}, $Z\cap U$ is dense and irreducible in $Z$, with subspace topology. Then it is also irreducible in $U$ with subspace topology on $U$. Hence it corresponds to a unique generic point in $U$. $\exists z\in U\cap Z$ s.t. $Z\cap U=\overline{\{z\}}'$ is the closure of $z$ in $Z\cap U$. However, we already know $Z\cap U$ is dense in $Z$, therefore $\overline{\{z\}}=Z$.
+
+We have established to bijection between the irreducible closed subsets and generic points of the irreducible closed subsets.
+\end{proof}
+
+
+\begin{exr}
+Prove that if $X$ is a scheme that has a finite cover $X = \cup_{i=1}^n \spec A_i$ where $A_i$ is Noetherian, then $X$is a Noetherian topological space (We will soon call a scheme with such a cover a \textbf{Noetherian scheme}) Hint: show that a topological space that is a finite union of Noetherian subspaces is itself Noetherian.
+\end{exr}
+\begin{proof}
+We have shown in~\ref{chap3exr:Noetherian_rings_Noetherian_topological_spaces} that affine scheme corresponding to a Noetherian ring is Noetherian topological space.
+
+It suffices to check finite union of Noetherian subspaces $X=\cup_i^nX_i$ is itself Noetherian.
+
+A topological space is called Noetherian if it satisfies the descending chain condition for closed subsets. Given an descending chain of closed subsets in $X$.
+$$
+Z_1\supset Z_2\supset\cdots\supset Z_k\supset \cdots
+$$
+$Z_k=\cup_i^n(X_i\cap Z_k)$, $X_i\cap Z_k$ would give a descending chain of closed subsets in the subspace $X_i$ with subspace topology on $X_i$. Each would stabilize after $m_i$. Choose $m=\max\{m_i\}_{1\leq i\leq n}$, the descending chain $\{Z_k\}=\{\cup_i^n(X_i\cap Z_k)\}$ would also stabilize after $m$.
+\end{proof}
+
+
+\begin{exr}\label{chap5exr:quasicompact_scheme_union_affine_subschemes}
+Show that a scheme $X$ is quasicompact if and only if it can be written as a finite union of affine open subschemes. (Hence $\proj^n_A$ is quasicompact for any ring $A$.)
+\end{exr}
+\begin{proof}
+One direction is easy, if a scheme $X$ can be written as union of affine open subschemes $X_i$. Given a open cover of $X$, its intersection with affine open subschemes also given an open cover of $X_i$.
+ Affine open subscheme is quasicompact, we can select a finite subcover of these intersection covers, and the union gives a finite subcover of the initial cover.
+
+ For the reverse direction, consider a quasicompact scheme $X$. By definition, for each point $x$, there is an affine open subscheme $U_x$ contain $x$. These affine open subscheme give an open cover of $X$. $\cup_{x\in X}U_x$, we can select a finite subcover $\cup_{x\in I}U_x$ of $X$. Then the scheme $X$ is the union $\cup_{x\in I}U_x$. Then $X$ can be written as a finite union of affine open subschemes.
+
+ In particular, $\proj^n_A$ is quasicompact.
+\end{proof}
+
+\begin{exr}\label{chap5exr:quasicompact_scheme_have_closed_points}
+QUASICOMPACT SCHEMES HAVE CLOSED POINTS. Show that if $X$ is a quasicompact scheme, then every point has a closed point in its closure. Show that every nonempty closed subset of $X$ contains a closed point of $X$. In particular, every nonempty quasicompact scheme has a closed point.
+\end{exr}
+\begin{proof}
+We already showed that $\overline{\{z\}}$ is a irreducible subset in $X$. Hence it suffices to show only every nonempty closed subset of a quasicompact scheme $X$ contains a closed point of $X$. 
+
+Given a closed subset $Z\subset X$. Observe that a point $p\in Z$ is closed in $Z$ iff $p$ is closed in $X$. 
+
+$X$ is a finite union of affine opens $\cup_i^nU_i$ by
+~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}. Consider a finite sub-collection of $\{U_i\}_{1\leq i\leq n}$ that intersects with $Z$, w.l.o.g, we assume it is $\{U_i\}_{1\leq i\leq m}$. Then a point $p\in Z$ is closed iff $p$ is closed in each $\{U_i\}_{1\leq i\leq m}$ that contains $z$.
+
+A closed point in $U_1$ corresponds to maximal ideals in $\spec A_1$. $Z\cap U_1$ is not empty, hence contains at least one $[\scp]$ and $\overline{\{[\scp]\}}\subset Z\cap U_1$. $\scp$ is contained in a maximal ideal $\scm$. $[\scm]\in \overline{\{[\scp]\}}$, which means there is at least one closed point in $Z\cap U_1$.
+
+We can find a closed point (in $U_1$)  $z_1\in Z\cap U_1$. If $z_1$ is also closed in other $U_i$, we are done. 
+
+If not, we can find in $\overline{\{z_1\}}\cap U_2$ a closed point $z_2$ such that $z_2$ is closed in $U_2$. $z_2\notin U_1$ because if $z_2\in U_1$, $\overline{\{z_1\}}\cap U_1\neq \emptyset$, which means $z_1$ is not closed point in $U_1$ in the first place. 
+
+If $z_2$ is closed in all $U_i$ (besides $U_1$ ) that contains it, we are done. If not, assume $z_2$ is not closed point in $U_3$. $\overline{\{z_2\}}\subset \overline{\{z_1\}}$. We can find $z_3\in \overline{\{z_2\}}\cap U_3$, $z_3$ can't lie in $U_1$ or $U_2$, because it would imply $z_1$ not close point in $U_1$, $z_2$ not close point in $U_2$.
+
+We can induct on these process until we find $z_m$ is closed in all $U_i$ that contains it. The process would terminate because we started with a finite cover with affine opens. 
+
+Any closed subset in quasicompact scheme contains a closed point. In particular, a quasicompact scheme contains a closed point and the closure of each point in a quasicompact scheme contains a closed point.
+\end{proof}
+
+\begin{exr}\label{chap5exr:characterization_quasiseparatedness}
+Show that a scheme is quasiseparated if and only if the intersection of any two affine open subsets is a finite union of affine open subsets.
+\end{exr}
+\begin{proof}
+The $\Lrta$ direction is trivial, affine open subsets are quasicompact, if the scheme is quasiseparated, then the intersection of any two affine open subsets $A,B$ would be quasicompact and by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes} this intersection should be finite union of affine open subsets in $A\cap B$. Because $A\cap B$ is endowed with subspace topology of $X$, $A\cap B$ is also finite union of affine open subsets in $X$.
+
+For the reverse direction. In a scheme any quasicompact subset is a finite union of affine open subsets, $Y=\cup_i^n U_i$ and $Z=\cup_{j}^m V_j$. Then the intersection of $Y$ and $Z$ should be 
+$$
+Y\cap Z=\cup_{1\leq i\leq n,1\leq j\leq m} U_i\cap V_j.
+$$
+If each $U_i\cap V_j$ can be written as finite union of affine open subsets, $Y\cap Z$ can be written as finite union of affine open subsets, which is equivalent to $Y\cap Z$ is quasicompact by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}
+\end{proof}
+
+\begin{exr}
+Show that affine schemes are quasiseparated.
+\end{exr}
+\begin{proof}
+We have to firstly characterize a quasicompact open subset in $\spec A$.
+(Do not try to characterize all affine opens in an affine scheme in general, it is difficult. The hint seems to be a trap)
+
+Any open subset $U$, in $\spec A$ can written as a union of distinguished base. If in addition this set is quasicompact, we can write it as a finite union of $D(f_i)$.
+
+$$
+Y\cap Z=\cup_i^nD(f_i)\cap \cup_j^mD(g_j)=\cup_{1\leq i\leq n,1\leq j\leq m}D(f_i)\cap D(g_j)=\cup_{1\leq i\leq n,1\leq j\leq m}D(f_ig_j)
+$$
+which can be written as a finite union of affine opens. Then $Y\cap Z$ is quasicompact by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}.
+
+Then intersection of any two quasicompact opens is also quasicompact. Affine scheme is quasiseparated.
+\end{proof}
+
+\begin{exr}\label{chap5exr:characterization_quasicompact_And_quasiseparated}
+Show that a scheme $X$ is quasicompact and quasiseparated if and only if $X$ can be covered by a finite number of affine open subsets, any two of which have intersection also covered by a finite number of affine open subsets.
+\end{exr}
+\begin{proof}
+$\Lrta$ direction: $X$ can be written as a finite union of affine open subsets because $X$ is quasicompact by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}. If in addition $X$ is quasiseparated, each intersection of these affine opens can be written as a finite union of affine open subsets by~\ref{chap5exr:characterization_quasiseparatedness}.
+
+$\Llta$ direction: Assume $X$ can be written as a finite union of affine open subsets such that each pairwise intersection can be written as finite union of affine open subsets. Then $X$ is quasicompact by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}. 
+
+The quasiseparatedness part of the reverse direction is tricky. It can be cleanly proved using the diagonal morphism arguments, as shown in the first answer to this
+\href{https://math.stackexchange.com/questions/9809/quasiseparated-if-finitely-covered-by-affines-in-appropriate-way}{StackExchange question}. We will give a more topological proof here.
+
+Notice that we have proved affine schemes are quasicompact and quasiseparated. The specified affine opens are quasicompact and quasiseparated in the subspace topology. Given $Z$, $Y$ two quasicompact subsets in $X$. Each is covered by finitely many of specified affine opens.
+$$
+Z\cap Y=\cup_i(Z\cap Y\cap U_i)=\cup_i(Z\cap U_i)\cap (Y\cap U_i)
+$$
+
+\underline{Claim}: $Z\cap U_i$, $Y\cap U_i$ are quasicompact in $U_i$ for all $i$.
+
+If we have the claim, we know $(Z\cap U_i)\cap (Y\cap U_i)$ is quasicompact because $U_i$ is quasiseparated. And a finite union of quasicompact space is always  quasicompact. Hence we are done.
+
+Then the problem reduces to prove the claim:
+
+\underline{proof of the claim}: $Z$ is quasicompact in $X$, therefore can be written as finite union of affine opens $Z=\cup_k Z_k$.
+$$
+Z=\cup_{k,i}(Z_k\cap U_i)
+$$
+$Z_k$ is affine open we can choose a distinguished base of $W_{k,i,\alpha}:=D(f_{k,i,\alpha})$, each $W_{k,i,\alpha}$ is quasicompact.
+
+$Z_k\cap U_i$ is an open set in $Z_k$, hence can be written as union of $W_{k,\alpha}$ (not necessarily finite). We have
+$$
+Z=\cup_{k,i}(Z_k\cap U_i)=\cup_{k,i}\cup_{\alpha\in L_{ki}}W_{k,i,\alpha},
+$$
+where $L_{ki}$ is not finite in general. But because $Z$ is quasicompact, there is a finite subcover, we can choose a finite subset $F_{ki}$ for each $L_{ki}$ so that
+$$
+Z=\cup_{k,i}\cup_{\alpha\in F_{ki}}W_{k,i,\alpha}.
+$$
+(Now $\cup_{\alpha\in F_{ki}}W_{k,\alpha}$ no longer cover $Z_k\cap U_i$ in general)
+Intersect it with $U_i$, we get
+$$
+Z\cap U_1=\cup_{k,i}\cup_{\alpha\in F_{ki}}W_{k,i,\alpha}\cap U_1.
+$$
+The condition that ``$U_i\cap U_j$ can be written as a finite union of affine opens $\cup_{l\in M_{ij}}V_{ij;l}$ '' would be used in the next step, where $M_{ij}$ is a finite index set depending on $i,j$.
+$$
+Z\cap U_1=\cup_{k,i}\cup_{\alpha\in F_{ki}}W_{k,i,\alpha}\cap U_1\overset{(*)}{=}\cup_{k,i}\cup_{\alpha\in F_{ki}}W_{k,i,\alpha}\cap U_1\cap U_i=\cup_{k,i}\cup_{\alpha\in F_{ki}}\cup_{l\in M_{1i}} W_{k,i,\alpha}\cap V_{1i;l}.
+$$
+where $(*)$ holds because each $W_{k.i.\alpha}\subset U_i$. $W_{k,i,\alpha}$ and $ V_{1i;l}$ are quasicompact subset in $U_i$ and their intersection is quasicompact because $U_i$ is quasiseparated. $Z\cap U_1$ is finite union of quasicompact subsets, therefore is compact. We proved the claim there fore the quasiseparatedness part of the reverse direction.
+\end{proof}
+
+\begin{exr}\label{chap5exr:Proj_A-scheme_quasicompact_quasiseparated}
+Show that all projective $A$-schemes are quasicompact and quasiseparated. 
+\end{exr}
+\begin{proof}
+By definition a projective $A$-scheme $X$ is defined to be $\Proj S_\bullet$, where $S_\bullet$ is a finitely generated graded ring over $A$. A graded ring is finitely generated iff $S_+$ is finitely generated. Assume $S_+=(x_1,...,x_n)$, where each $x_i$ is homogeneous, we can consider an open cover of $X$:
+$$
+D(x_i).
+$$
+We already showed that $D(x_i)$ is affine open subset that is isomorphic to $\spec ((S_\bullet)_{x_i})_0$.
+
+$$
+D(x_i)\cap D(x_j)=D(x_ix_j).
+$$
+
+In summary, $X=\Proj S_\bullet$ can be covered by a finite union of affine open subsets and each intersection of these affine open subsets can be written again as finite union of affine open subsets. Then we can conclude that $X=\Proj S_\bullet$ is quasicompact and quasiseparated by~\ref{chap5exr:characterization_quasicompact_And_quasiseparated}.
+\end{proof}
+
+\begin{exr}
+Let $X = \spec k[x_1, x_2,...]$, and let $U$ be $X - [\scm]$ where $\scm$ is the maximal ideal $(x_1,x_2,...)$. Take two copies of $X$, glued along $U$ (``affine $\infty$-space with a doubled origin'', see Example 4.4.5 and Exercise~\ref{chap4exr:affine_doubled_origin}  for ``finite-dimensional'' versions). Show that the result is not quasiseparated.
+\end{exr}
+\begin{proof}
+We glue two copies of $\spec k[x_1,x_2,...]$ $X,X'$along the open
+$$
+U:=\spec k[x_1,x_2,...]-[\scm],
+$$
+and denote the resulting scheme as $\affn^\infty_{(2)}$.
+We showed in Exercise~\ref{chap3exr:affine_scheme_quasicompact}(b) that $U$ is not quasicompact in $\spec k[x_1,x_2,...]$.
+
+Denote the the quotient map $\pi:X\coprod X'\lrta \affn^\infty_{(2)}$.
+$\affn^\infty_{(2)}$ is equipped with quotient topology, which make the quotient map continuous. The images $\pi(X)$ and $\pi(X')$ in $\affn^\infty_{(2)}$ are quasicompact $\spec B$ is quasicompact for any ring $B$. And $\pi (U)$ is not quasicompact because $\cup_{i\in\intg}\pi(D(x_i))$ is an open cover of $\pi(U)$ with no finite subcover.
+
+$\pi(X)\cap \pi(X')=\pi(U)$. Intersection of two quasicompact open subsets is not quasicompact, therefore $\affn^\infty_{(2)}$ is not quasiseparated.
+\end{proof}
+
+\section{Reducedness and integrality}
+
+\begin{exr}\label{chap5exr:reducedness_stalk_local}
+(REDUCEDNESS IS A stalk-local PROPERTY, I.E., CAN BE CHECKED AT STALKS). Show that a scheme is reduced if and only if none of the stalks have nonzero nilpotents. Hence show that if $f$ and $g$ are two functions (global sections of $\calo_X$) on a reduced scheme that agree at all points, then $f = g$.
+\end{exr}
+\begin{proof}
+``$\Lrta$'': A scheme $X$ is reduced  then $\calo_X(U)$ is reduced for all open subsets $U\subset X$. Assume $[(f\in \calo_X(U);U)]\in\calo_{X,p}$ is nilpotent, which means $f|_V^n=0\in\calo_X(V)$ for some open neighborhood $V$ of $p$. But $\calo_X(V)$ is reduced ring, $\Lrta f|_V=0$ and $[(f\in \calo_X(U);U)]=0$, which implies there is no non-zero nilpotents in $\calo_{X,p}$.
+
+``$\Llta$'': Given $f\in\calo_X(U)$, assume $f^n=0$. Then its image to stalks are also nilpotent. The condition that stalks are reduced implies the image of $f$ to each stalk is zero. By~\ref{chap2exr2.4.A}, we know the morphism 
+$$
+\calo_X(U)\lrta \prod_{p\in U}\calo_{X,p}
+$$
+is injective, therefore we know $f=0\in\calo_X(U)$.
+
+We have to clarify what it means by ``agree on all points''. It means given any affine open subset $U$, $(U,\calo_X(U))\cong (\spec A,\calo_{\spec A})$, $f|_U\equiv g|_U\mod \scp,\forall [\scp]\in \spec A$. 
+$$
+f|_U\equiv g|_U\mod \scp
+$$
+means $f|_U\equiv g|_U$ divers only by a nilpotent. Because $\calo_X(U)$ is reduced, we have $f|_U=g|_U$. $f,g$ agree when restricted to a base of topology, then $f,g$ have same germs on each stalks which means $f=g$.
+\end{proof}
+\begin{remark}
+We should have mentioned  this before. When $f=g+n$, where $n\in\sqrt{(0)}$, they are generally not equal when taking germs
+$$
+\frac{n}{1}\neq \frac{0}{1}\in A_\scp.
+$$
+For example, $A=k[x,\epsilon]/(\epsilon^2)$, $f=x^2,g=x^2+\epsilon$. $\epsilon/1\neq 0/1\in A_{(\epsilon)}$.
+\end{remark}
+
+\begin{exr}\label{chap5exr:reduced_ring_reduced_affine_scheme}
+If $A$ is a reduced ring, show that $\spec A$ is reduced. Show that $\affn^n_k$ and $\proj^n_k$ are reduced.
+\end{exr}
+\begin{proof}
+ 
+We state a stronger version: 
+
+\textbf{$\spec A$ is reduced scheme iff $A$ is a reduced ring.}
+
+One direction is already contained in the definition of reduced scheme.
+
+For the other direction, we prove an algebraic fact. Any localization of a reduced ring is reduced.
+
+ Given any multiplicative subset $S\subset A$. Assume $a/s\in S^{-1}A$ is nilpotent $(a/s)^n=0$, there exists $t\in S$ s.t. $ta^n=0\in A$, but then we have $(ta)^n=0\in A$ and $A$ being reduced, hence $ta=0$. $\Lrta a/s=0\in S^{-1}A$.
+
+Exercise~\ref{chap5exr:reducedness_stalk_local} also translate to: $A$ is reduced iff $A_\scp$ is reduced for all $[\scp]\in\spec A$. We will give a algebraic proof here. Remember that taking radical is commutative with localization, $\mathfrak{N}(A)_\scp=\mathfrak{N}(A_\scp)$. Also notice that being zero is a local property for $A$-modules, each $A_\scp$ begin reduced implies $\mathfrak{N}(A)$  is zero.
+
+We even have a stronger version: $A$ is reduced iff $A_\scm$ is reduced for all maximal ideals in $A$. (Because the ``being zero'' local property of $A$-module says an $A$ module $M$ is zero iff $M_\scm$ is zero module for all maximal ideals in $A$.)
+
+But note that being reduced can not be checked only on closed points for general schemes, we need quasicompactness, see Exercise~\ref{chap5exr:quasicompact_scheme_reducedness_closed_point} below.
+
+
+Then $\affn^n_k$ is reduced because $k[x_1,...,x_n]$ is reduced. On the other hand, $\proj^n_k$ is reduced because it can be covered by $\affn^n_k$ and hence each stalk is reduced.
+\end{proof}
+
+
+
+\begin{exr}
+Show that  $\left(k[x, y]/(y^2, xy)\right)_x$  has no nonzero nilpotent elements.
+(Possible hint: show that it is isomorphic to another ring, by considering the geometric picture. Exercise~\ref{chap3exr:3.2.L} may give another hint.) Show that the only point of $\spec k[x, y]/(y^2 , xy)$ with a nonreduced stalk is the origin.
+
+\end{exr}
+\begin{proof}
+Geometrically $\spec \left(k[x, y]/(y^2, xy)\right)_{\bar{x}}=$ the distinguished open $D([x])$ in $\spec k[x, y]/(y^2, xy)$. It is equivalent to the non-vanishing loci of $x$ in $V(y^2,xy)$ in the affine plain, which is the affine line with origin removed. This geometric picture gives us some intuition
+
+\underline{Claim}:
+$$
+\left(k[x, y]/(y^2, xy)\right)_{\bar{x}}=k[x]_{x},
+$$
+where $\bar{x}$ is the image of $x$ in the quotient ring. A general element in $k[x, y]/(y^2, xy)$ is of the form
+$$
+p(\bar{x})+a\bar{y},
+$$
+where $p$ is a polynomial in $k[x]$, $a$ is a constant in $k$ and $\bar{x}\bar{y}=0$ and $\bar{y}^2=0$.
+A general element in $\spec \left(k[x, y]/(y^2, xy)\right)_{\bar{x}}$ is of the form
+$$
+\frac{p(\bar{x})}{\bar{x}^n}.
+$$
+$\bar{y}/1=0$ because $\bar{x}\bar{y}=0$.
+ There is a well-define ring morphism
+$$
+\frac{p(\bar{x})}{\bar{x}^n}\mapsto \frac{p(x)}{x^n},
+$$
+Which is obviously an isomorphism.
+
+$k[x]_x$ is reduced because $k[x]$ is reduced. We then know there is no nonzero nilpotents in $\left(k[x, y]/(y^2, xy)\right)_{\bar{x}}$.
+
+Consider the ring of $\spec \left(k[x, y]/(y^2, xy)\right)$. The prime ideals of this ring corresponds to prime ideals in $k[x,y]$ that contains $(y^2,xy)$. Hence a general prime ideal in this ring is of the form $(\bar{x}-a, \bar{y})$ or $(\bar{y})$. 
+When $a\neq 0$, $\bar{x}\notin (\bar{x}-a,\bar{y})$. $\bar{x}$ is invertible in $\left(k[x, y]/(y^2, xy)\right)_{(\bar{x}-a,\bar{y})}$, hence it is further localization of $\left(k[x, y]/(y^2, xy)\right)_{\bar{x}}$ and should be reduced.
+
+When $a=0$, we focus on the ring
+$$
+\left(k[x, y]/(y^2, xy)\right)_{(\bar{x},\bar{y})}.
+$$
+The multiplicative set consists of elements like $b(\bar{x})+c\bar{y}$, where $b(\bar{x})$ is a polynomial of $\bar{x}$ and the constant term $b_0\neq 0$. $\bar{y}(b\bar{x}+c\bar{y})^n=b_0^n\bar{y}\neq 0$, therefore $\bar{y}/1\neq 0/1$. And $\bar{y}/1$ is nilpotent.
+
+$\left(k[x, y]/(y^2, xy)\right)_{(\bar{x},\bar{y})}$ contains at least one nonzero nilpotent $\bar{y}/1$, hence is nonreduced.
+\end{proof}
+
+
+\begin{exr}\label{chap5exr:quasicompact_scheme_reducedness_closed_point}
+If $X$ is a quasicompact scheme, show that it suffices to check reducedness at closed points. Hint: Do not try to show that reducedness is an open condition (see Remark 5.2.2). Instead show that any nonreduced point has a nonreduced closed point in its closure, using Exercise~\ref{chap5exr:quasicompact_global_section_vanishes_on_point_nilpotent}. (This result is interesting, but we won’t use it.)
+\end{exr}
+\begin{proof}
+Follow the hint, we prove the contrapositive: If a quasicompact scheme is not reduced then at least one of its closed points has non-reduced stalk.
+
+By definition, we know if $X$ is not reduced then at least one of its stalk is not reduced by~\ref{chap5exr:reducedness_stalk_local}. Denote this non-reduced point by $p$, then there is a closed point $z\in \overline{\{p\}}$ by~\ref{chap5exr:quasicompact_scheme_have_closed_points}. (I suppose the hint in the body of this problem is wrong). The stalk $\calo_{X,p}$ is a localization of the stalk $\calo_{X,z}$ at closed point. $\calo_{X,p}$ is not reduced, therefore $\calo_{X,z}$ is also non-reduced.
+\end{proof}
+
+
+
+\begin{exr}\label{chap5exr:quasicompact_global_section_vanishes_on_point_nilpotent}
+Suppose $X$ is quasicompact, and $f$ is a function that vanishes at all points of $X$. Show that there is some $n$ such that $f^n = 0$. Show that this may fail if $X$ is not quasicompact. (This exercise is less important, but shows why we like quasicompactness, and gives a standard pathology when quasicompactness doesn’t hold.)
+\end{exr}
+\begin{proof}
+$f$ is a global section on a quasicompact scheme $X$ that vanishes at each point. 
+
+$X$ is quasicompact and can be written as a finite union of affine open subschemes $\cup_i U_i$, where each $U_i\cong \spec A_i$. We then have $f|_{U_i}\calo_X(U_i)=A_i$. $f|_{U_i}$ vanishes on each point $[\scp]\in \spec A_i$ and hence is an element in the nilpotent $\mathfrak{A_i}$, $\Lrta f_{U_i}^{n_i}=0$ for some $n_i\in\intg$. There are only finitely many such affine opens, we can choose $n:=\max_i\{n_i\}$ and then $f^n|_{U_i}=0\in \calo_X(U_i)$ and there is only one element $0$ to glue to in the global section.
+
+For the counterexample when $X$ is not quasicompact, we follow the hint and consider the union of infinite disjoint union of $\spec A_n$, where $A_n=k[\epsilon]/(\epsilon^{n})$. Each $\spec A_n$ consists of only one point $[(\epsilon)]$. Consider the function $f=\coprod_n \epsilon$. We know $f$ vanishes at each each point but is not nilpotent in the global section.
+\end{proof}
+
+\begin{exr}\label{chap5exr:integral=irreducible+reduced}
+Show that a scheme $X$ is integral if and only if it is irreducible and reduced. (Thus we picture integral schemes as: ``one piece, no fuzz'')
+\end{exr}
+\begin{proof}
+In a scheme $X$ is integral, $\calo_X(U)$ is integral for all open subsets, hence $\calo_X(U)$ is also reduced because integral domain has no nonzero zero divisors.
+
+An integral scheme should be irreducible. Assume contrarily $X$ is reducible, and can be written as union of two closed subsets $X=Y\cup Z$. Define the complements $U:=X-Y$ and $V=X-Z$, we know $U,V$ are nonempty opens and their have empty intersection. The structure sheaf $\calo_X(U\cup V)=\calo_X(U)\times \calo_X(V)$ which is not integral in general.
+
+
+For the reverse direction, we would use the hint~\ref{chap3exr:locally_ringed_space_function_value}.
+
+\underline{Claim}: Any open subset $U$ in a irreducible space $X$ is irreducible with the subset topology.
+
+For any other nonempty open subset $U\subset X$. By~\ref{chap3exr:irreducible_subset_dense_open_irreducible_closure}, $U$ is dense in $X$. Assume $U$ is reducible and can be written as $(Y\cap U)\cup (Z\cap U)=(Y\cup Z)\cap U$, where $Y,Z$ are nonempty proper closed subsets in $X$. 
+We also know $Y\cup Z\supset U$. Hence $\overline{Y\cup Z}=\overline{Y}\cup \overline{Z}=Y\cup Z\supset \overline{U}=X$, which means $X$ is reducible, contradiction. 
+
+Given $f,g\in\calo_X(U)$ and $fg=0\in\calo_X(U)$. Recall~\ref{chap3exr:locally_ringed_space_function_value}, the set where $f,g$ vanishes is closed. (Notice here vanishes means $f_pg_p\in\scm_p$). $U$  could be covered by the closed set $V$ $f$ vanishes and the closed set $W$ where $g$ vanishes. Then because $X$ is irreducible, we know $W$ or $V$ must be the whole space $X$. Assume $f$ vanishes on every point in $X$, we know $f=0\in \calo_X(U)$ because $U$ is a reduced scheme~\ref{chap5exr:reducedness_stalk_local}.
+\end{proof}
+
+\begin{exr}\label{chap5exr:affine_integral_scheme}
+Show that an affine scheme $\spec A$ is integral if and only if $A$ integral domain.
+\end{exr}
+\begin{proof}
+The ``only if'' direction is obvious, because $\Gamma(\spec A,\calo_{\spec A})=A$.
+
+
+Consider the ``if'' direction. We simply have $\spec A$ is irreducible if $A$ is an integral domain by~\ref{chap3exr:Integral_domain_irreducible}. Also an integral domain is always reduced ring, hence $\spec A$ is  reduced by~\ref{chap5exr:reduced_ring_reduced_affine_scheme}. We know $\spec A$ is irreducible and reduced if $A$ is integral domain, hence $\spec A$ is integral by~\ref{chap5exr:integral=irreducible+reduced}.
+\end{proof}
+
+
+\begin{exr}\label{chap5exr:generic_point_integral_scheme_function_field}
+Suppose $X$ is an integral scheme. Then $X$ (being irreducible) has a generic point $\eta$. Suppose $\spec A$ is any nonempty affine open subset of $X$. Show that the stalk at $\eta$, $\calo_{X,\eta}$ is naturally identified with $K(A)$, the fraction field of $A$. This is called the \textbf{function field} $K(X)$ of $X$. It can be computed on any nonempty open set of $X$, as any such open set contains the generic point. The reason for the name: we will soon think of this as the field of \textit{rational functions} on $X$
+\end{exr}
+\begin{proof}
+Suppose $X$ is an integral scheme. $X$ is itself irreducible closed and hence corresponds to a unique generic point by~\ref{chap5exr:bijection_closed_generic_point_scheme}. This generic point $\eta$ is contained in any open subset of $X$. Specifically, it is contained in affine open $U:=\spec A$ and corresponds to $[(0)]\in \spec A$, where $A$ is an integral domain. $\calo_{X,\eta}\cong A_{[(0)]}=K(A)$, where localization at the prime ideal $(0)$ is isomorphic to the fraction field $K(A)$.
+\end{proof}
+
+\begin{exr}
+Suppose $X$ is an integral scheme. Show that the restriction maps $\res_{U,V}: \calo_X(U) \lrta \calo_X(V)$ are inclusions so long as $V\neq \emptyset$. Suppose $\spec A$ is any nonempty affine open subset of $X$ (so $A$ is an integral domain). Show that the natural map $\calo_X(U) \lrta  \calo_{X,\eta} = K(A)$ (where $U$ is any nonempty open subset) is an inclusion.
+\end{exr}
+\begin{proof}
+In fact, the first question relies on the second. Because we have the composition of maps
+$$
+\calo_X(U)\overset{\res_{U,V}}{\lrta}\calo_X(V)\lrta\calo_{X,\eta},
+$$
+it suffices to prove $\calo_X(U)\lrta \calo_{X,\eta}$ is injective. ($\res_{U,V}$ has to be injective because its composition with an injection is again an injection.)
+
+\underline{Claim}: $\calo_X(U)\lrta K(X)$ is injective.
+
+Assume a section $f\in\calo_X(U)$ and $f_\eta=0$. \underline{Want}: $f=0\in \calo_X(U)$. It suffices to prove that $f_\eta\Lrta f|_W=0$ for all affine open subsets contained in $U$. 
+
+For an affine open $W=\spec A$, the natural morphism
+$$
+\calo_X(W)\lrta \calo_{X,\eta}=K(A)
+$$
+as shown in~\ref{chap5exr:generic_point_integral_scheme_function_field}. This map must be the canonical inclusion because the stalk at $[(0)]$ is a further localization of any $A_f=\calo_{\spec  A}(D(f))$.
+
+We have prove both questions.
+\end{proof}
+
+\section{Properties of schemes that can be checked ``affine-locally''}
+\begin{exr}
+Show that locally Noetherian schemes are quasiseparated.
+\end{exr}
+\begin{proof}
+In a locally Noetherian scheme, each affine open is isomorphic to $\spec A$ for some Noetherian ring $A$. By~\ref{chap5exr:characterization_quasiseparatedness}, we can check whether any intersection of two affine open can be written as finite union of affine opens.
+
+Given $U=\spec A$ and $V=\spec B$ for $A,B$ Noetherian rings, consider then intersection $U\cap V$.  By proposition 5.3.1, we know $U\cap V$ can be written as union of open sets such that are simultaneously distinguished open subschemes in $\spec A$ and $\spec B$. But notice by~\ref{chap3exr:open_subset_Noetherian_space_quasicompact} that open subset of Noetherian space is quasicompact, we can cover $U\cap V$ with finitely many simultaneous distinguished opens, which are affine opens.
+
+We don't need Prop 5.3.1 to prove this statement but it is more clear to see which of the affine opens are selected.
+\end{proof}
+
+
+\begin{exr}\label{chap5exr:Noetherian_scheme_finite_irreducible_compoenents}
+Show that a Noetherian scheme has a finite number of irreducible components. (Hint: Proposition 3.6.15.) Show that a Noetherian scheme has a finite number of connected components, each a finite union of irreducible components.
+\end{exr}
+\begin{proof}
+\underline{Claim}: The underline topological space of a Noetherian scheme is Noetherian.
+
+Note that a Noetherian scheme is locally Noetherian and quasicompact, we know a Noetherian scheme $X$ can be covered by finitely many Noetherian affine subschemes.
+
+\underline{subclaim}: A finite union of Noetherian subspace is also Noetherian.
+
+We can prove the subclaim directly by checking the descending chain condition on closed subsets. Given a chain $V_0\supset V_1\supset \cdots$, each $V_i$ can be covered by finitely many $U_j$, where $U_j$ is Noetherian subsapce. It renders a descending chain of closed subset in $U_j$ with subset topology, hence will stabilize after $n_j$. Choose $N=\max\{n_j\}$, we have $V_n=\cup_n (V_N\cap U_j)$ would stabilize when $n\geq N$.
+
+
+Then in particular, we know a Noetherian scheme is Noetherian topological space and by Prop 3.6.15, we know it has only finitely many irreducible components.
+
+
+Exercise~\ref{chap3exr:topology_irreducible_components_connected_components} already showed that connected components in topological space $X$ are unions of irreducible components of $X$. But in the case of Noetherian scheme, there are only finitely many irreducible components, hence $X$ is the union of finitely many connected components and each connected component is union of finitely many irreducible components.
+\end{proof}
+
+\begin{exr}\label{chap5exr:Noetherian_scheme_integral_stalk}
+Show that a Noetherian scheme $X$ is integral if and only if $X$ is nonempty and connected and all stalks $\calo_{X,p}$ are integral domains. Thus in ``good situations'', integrality is the union of local (stalks are integral domains) and global (connected) conditions.
+\end{exr}
+\begin{proof}
+We follow the hint and recall Exercise~\ref{chap5exr:integral=irreducible+reduced} says integral $=$ irreducible $+$ reduced. Note that ``being reduced'' is stalk-local~\ref{chap5exr:reducedness_stalk_local}. 
+
+$\Lrta$ direction is easy:
+
+``Irreducible'' alone guarantees that $X$ is connected. And also note that localization of integral domain is also integral domain because $\frac{a}{s}\frac{b}{t}=\frac{0}{1}\Lrta \exists r\in S, rab=0\Lrta ab=0$.
+
+We want to prove the reverse direction under Noetherian hypothesis.
+
+Each stalk being integral domain alone implies each stalk is reduced, hence the scheme $X$ is reduced.
+
+\underline{Want}: under Noetherian hypothesis, connected $+$ stalks being integral domain $\Lrta$ $X$ is irreducible.
+
+$X$ is Noetherian, we know each connected component is union of finitely many irreducible components. We know $X$ is  connected and hence $X$ is the union of finitely many irreducible components, and some of the pair-wise intersections of these irreducible components are nonempty to make sure their union is  connected.
+
+Assume $Y,Z$ are two of these irreducible components and their intersection is non-empty. $p\in Y\cap Z$. \underline{Claim}: $\calo_{X,p}$ is not integral domain.
+
+Choose an affine open $U\ni p$, $U=\spec A$ is the union of $U\cap Y$ and $U\cap Z$, $U$ is not irreducible and $A$ is not integral domain~\ref{chap3exr:Integral_domain_irreducible}. Assume $U\cap Y=V(\scq_1)$ and $U\cap Z=V(\scq_2)$, where $\scq_1,\scq_2$ are two prime ideals in $A$, they should be minimal prime because there is a bijection~\ref{chap3exr:irreducible_components_minimal_pirmes_bij} between the minimal primes and irreducible components in $\spec A$. $V(\scq_1)\cap V(\scq_2)=V(\scq_1+\scq_2)$. $p=[\scp]\in V(\scq_1+\scq_2)\Lrta \scq_1+\scq_2\subset \scp$. The stalk at $p$, is $\calo_{X,p}=A_\scp$. Then there are at least two minimal prime ideals in $A_\scp$, therefore $A_\scp$ can not be integral domain.
+
+In short, we have
+\textbf{the minimal primes in $\calo_{X,p}$ is in one to one correspondence with the irreducible components that pass through $p$}.
+
+The only possibility is that $X$ is irreducible. Combined with our proof that $X$ is reduced, we know $X$ is integral scheme.
+\end{proof}
+
+\begin{exr}\label{chap5exr:quasiprojective=>finite_type;Open_subschem_of_Noetherian_projective_scheme_is_of_finite_type}\ 
+\begin{enumerate}[label=(\alph*)]
+\item (quasiprojective implies finite type)
+If $X$ is a quasiprojective $A$-scheme (Definition 4.5.9), show that $X$ is of finite type over $A$. If $A$ is furthermore assumed to be Noetherian, show that $X$ is a Noetherian scheme, and hence has a finite number of irreducible components.
+\item Suppose $U$ is an open subscheme of a projective $A$-scheme. Show that $U$ is locally of finite type over $A$. If $A$ is Noetherian, show that $U$ is quasicompact, and hence quasiprojective over $A$, and hence by (a) of finite type over $A$. Show this need not be true if $A$ is not Noetherian. Better: give an example of an open subscheme of a projective $A$-scheme that is not quasicompact, necessarily for some non-Noetherian $A$.
+\end{enumerate}
+\end{exr}
+\begin{proof}\ 
+\begin{enumerate}[label=(\alph*)]
+\item a quasiprojective $A$-scheme $X$ is a quasicompact open subscheme of projective $A$-scheme $Y$.
+
+A projective $A$-scheme is of the form $Y:=\Proj S_\bullet$, where $S_\bullet$ is finitely generated graded ring over $A$. It is locally of finite type over $A$. Because it is covered by affine open sets $\spec ((S_\bullet)_f)_0$, where $(S_\bullet)_f$ is finitely generated over $A$ because it is generated by $\{S_\bullet, 1/f\}$ hence its degree zero piece is finitely generated over $A$.
+
+Recall the Affine Communication Lemma~5.3.2 and also check that ``being finite over $A$'' is indeed an affine-local property. Then $Y=\cup_{i\in I}\spec B_i$ and $\spec B_i$ is of finite generated algebra over $A$, $\Lrta$ any affine open $U\subset X$ is of finite type over $A$. In particular $X$ can be cover covered by affine open $\spec_{j\in J} B_j$, where $B_j$ is finitely generated $A$-algebra, therefore $X$ is of locally finite type over $A$. In addition $X$ is quasicompact, we know $X$ is of finite type over $A$.
+
+If $A$ is furthermore assumed to be Noetherian, then each affine open of $X$ is isomorphic to $\spec B_i$, where $B_i$  is Noetherian because $B_i$ is finitely generated over a Noetherian ring $A$, hence is also Noetherian by Hilbert basis theorem. Then it has finite number of irreducible components by~\ref{chap5exr:Noetherian_scheme_finite_irreducible_compoenents}.
+
+\item For same reasons, an open subscheme in a scheme of locally of finite type over $A$ is locally of finite type over $A$, therefore any open subscheme $U$ of a projective $A$-scheme $Y$ is locally of finite type over $A$.
+
+If $A$ is Noetherian, we know $U$ is locally Noetherian. Also notice that a projective $A$-scheme is quasicompact and quasiseparated by~\ref{chap5exr:Proj_A-scheme_quasicompact_quasiseparated}. 
+
+\textbf{A projective $A$-scheme over a Noetherian ring $A$ is a Noetherian scheme.} 
+
+
+By~\ref{chap3exr:open_subset_Noetherian_space_quasicompact}, an open subset of a Noetherian topological space is quasicompact. We know $U$ is quasicompact and locally Noetherian, hence is Noetherian. $U$ is also quasiprojective and of finite type over $A$.
+
+As for the counterexample. Consider the silly example 4.5.11, $\Proj A[T]\cong\spec A$, where $x_0=T$ is of degree $1$. Also recall~\ref{chap3exr:affine_scheme_quasicompact}, $\spec A$ can have non-quasicompact open subscheme.
+\end{enumerate}
+\end{proof}
+\begin{remark}\label{chap5rmk:open_subscheme_Noetherian}
+The part of (locally)Noetherian and quasicompactness does not depend on (Projective), hence we have in general:
+
+\textbf{
+Any open or closed subscheme of a (locally) Noetherian scheme is
+(locally) Noetherian.}
+\end{remark}
+
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item
+Showthat $\spec k[x_1,...,x_n]/I$ is an affine $k$-variety if and only if $I \subset k[x_1,...,x_n]$ is a radical ideal.
+\item Suppose $ I \subset  k[x_0,...,x_n]$ is a radical graded ideal. Show that $\Proj k[x_0,...,x_n]/I$ is a projective $k$-variety. (Caution: The example of $ I = (x_0^2, x_0x_1,...,x_0x_n)$ shows that $\Proj k[x_0,...,x_n]/I$ can be a projective $k$-variety without $I$ being radical.)
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item $X:=\spec k[x_1,...,x_n]/I$ is of finite type over $k$.
+
+$k$ is Noetherian, $\spec k[x_1,...,x_n]/I$ is a projective $k$-scheme. We know open subscheme of a projective $A$-scheme over a Noetherian ring is of finite type over $A$ by Exercise~\ref{chap5exr:quasiprojective=>finite_type;Open_subschem_of_Noetherian_projective_scheme_is_of_finite_type}.
+
+\underline{Want}:
+$\spec k[x_1,...,x_n]/I$ is reduced iff $I$ is radical ideal.
+
+Recall~\ref{chap5exr:reduced_ring_reduced_affine_scheme}, an affine scheme $\spec A$ is reduced iff $A$ is reduced.
+The nilradical of $k[x_1,...,x_n]/I$ is just $\sqrt{I}$. We know $k[x_1,...,x_n]/I$ is reduced iff $I$ is radical.
+\item We define projective $k$-variety to be reduced $k$-scheme. $\Proj k[x_1,...,x_n]/I$ is automatically of finite type over $k$ by~\ref{chap5exr:quasiprojective=>finite_type;Open_subschem_of_Noetherian_projective_scheme_is_of_finite_type}. 
+
+We know $I$ is radical homogeneous ideal, then $S_\bullet:=k[x_1,...,x_n]/I$ is a reduced graded ring, hence $((S_\bullet)_f)_0$ is reduced and so is any further localizations. We have checked any stalks of $\Proj k[x_1,...,x_n]/I$ is reduced ring, hence it is a reduced projective $k$-scheme, i.e., a projective $k$-variety.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+Show that a point of a locally finite type $k$-scheme is a closed point if and only if the residue field of the stalk of the structure sheaf at that point is a finite extension of $k$. Show that the closed points are dense on such a scheme (even though it needn't be quasicompact, cf. Exercise~\ref{chap5exr:quasicompact_scheme_have_closed_points}).
+\end{exr}
+\begin{proof}
+We have a stronger version, for a locally finite type $k$-scheme $X$, the followings are equivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item the point $p\in X$ is closed point
+	\item the field extension $k\inj K(\calo_{X,p})$  is finite
+	\item the field extension $k\inj K(\calo_{X,p})$ is algebraic
+\end{enumerate}
+$p$ is contained in an affine open subset $U=\spec A$ of $X$, where $A$ is a $k$-algebra and it corresponds to a maximal ideal $\scm$ in $A$. By Hilbert Nullstellensatz, $K(\calo_{X,p})\cong A/\scm$ is a finite field extension of $k$.
+
+A finite field extension is automatically an algebraic field extension. These proves $(a)\Lrta (b),(c)$.
+
+For $(c)\Lrta (a)$, $p$ is a point in $\spec A$, and $\scp$ is the corresponding prime ideal. $K(\calo_{X,p})\cong Frac(A/\scp)$ is algebraic over $k$, (It is integral over $k$, hence the integral domain $A/\scp$ is integral over $k$.) Recall a lemma in commutative algebra, Lemma 1.9 in~\cite{gortz2010algebraic}. Or one can use directly \cite[\href{http://stacks.math.columbia.edu/tag/00GS}{Lemma 00GS}]{stacks-project}
+
+$B$ is integral over $A$, and both of them are integral domains. Then
+${A}$ is a field $\Llrta$ ${B}$ is a field.
+
+We know then $A/\scp$ is a field, therefore $\scp$ is a maximal ideal ideal, which means $p$ is a closed point.
+
+
+\underline{Claim}:Let $k$ be a field. Let $X$ be a $k$-scheme locally of finite type. Let $U$ be a non-empty affine open subset of $X$. Then any closed point of $U$ is a closed point of $X$.
+
+In an affine open subset $U\subset X$, the residue field at a closed point $p$ is finite field extension of $k$, which means it is also a closed point in $X$.
+
+Hence, there is a closed point in each  affine open, therefore the closed point is dense in $X$.
+\end{proof}
+
+\begin{exr}
+Suppose $X$ is a reduced, finite type $\cplx$-scheme. Define the corresponding complex analytic prevariety $X_{an}$. (The definition of an analytic prevariety is the same as the definition of a variety without the Hausdorff condition.) 
+\end{exr}
+\begin{proof}
+It would be a long story, \textbf{To Be Added}. The major reference should be Chapter$4-5$ of ~\cite{neeman2007algebraic}
+\end{proof}
+
+
+\begin{exr}
+Finish the proof of Proposition 5.3.3(a).
+\end{exr}
+\begin{proof} $A=(f_1,...,f_n)$.
+It remains to show that, given a strictly increasing chain of ideals $I_1\subsetneq I_2\subsetneq \cdots$ in $A$, we can construct a strictly increasing chain of ideals in $A_{f_i}$ by
+$$
+I_{i,1}\subset I_{i,2}\subset \cdots,
+$$
+where $I_{i,j}=I_j\otimes_A A_{f_i}$. It suffices to show that for each $j$,
+$$
+I_{i,j}\subsetneq I_{i,j+1},
+$$
+for some $i$. (Notice that this does mean there is a strictly increasing chain is some $A_{f_i}$)
+But it means there is  at least a chain $I_{i,1}\subset I_{i,2}\subset \cdots,$ not stabilize in the Noetherian ring $A_{f_i}$, contradiction.
+
+Each $I_{i,j}$ could be interpreted as localization of the $A$-module $I_j$ at $f_i$ by~\ref{chap1exr:localization_extension_of_scalar}
+
+\underline{Claim}:
+$A=(f_1,...,f_n)$. Consider an $A$-module $M$, it is zero iff $M_{f_i}=0$ for all $f_i$. 
+
+We only need the part: $\forall f_i, M_{f_i}=0\Lrta M=0$. Assume $M_{f_i}=0$ for all $i$, choose $m\in M$, exists $n_i\geq 0$ s.t., $f_i^n m=0$. On the other hand $1=\sum_{i=1}^nr_i f_i$, choose $N\geq \sum_{i=1}^n n_i+1$. $1\cdot m=1^Nm=(\sum_i r_i f_i)^N=\sum_i a_i f_i^{n_i}m=0$. Hence $M=0$.
+
+Or equivalently, we can prove it by observing that each $M_{\scp}$ is further localization of some $M_{f_i}$. All $M_{f_i}=0$ implies all $M_\scp=0$, which in return implies $M=0$~\cite[\href{http://stacks.math.columbia.edu/tag/00HN}{Lemma 00HN}]{stacks-project}.
+
+We apply the above claim to $I_{j+1}/I_j\neq0$, therefore we have for each $j$,
+$$
+I_{i,j+1}/I_{i,j}\neq 0
+$$
+for some $i$.
+\end{proof}
+
+\begin{exr} In text, we want to prove the proposition 
+
+``Given $A=(f_1,...,f_n)$, then $A$ is a finitely generated $B$-algebra iff each $A_{f_i}$ is a finitely generated $B$-algebra.''
+
+with some ``partition of unity argument''.
+Make this argument precise.
+\end{exr}
+\begin{proof}
+One direction is clear, $\spec A_{f_i}$ is generated by $A,1/f_i$. If $A$ is a finitely generated $B$-algebra, so is $A_{f_i}$.
+
+$A$ is generated by $f_i$. $1=\sum_i c_i f_i$ for $c_i\in A$. $A_{f_i}$ is finitely generated as $B$-algebra and we assume its generators are $\{r_{ij}/f_i^{k_j}\}$. 
+
+\underline{Claim:}$\{f_i\}\cup \{c_i\}\cup \{r_{ij}\}$ generate $A$ as a $B$-algebra.
+
+$r$ is an element in $A$ and restricts to $r/1\in A_{f_i}$, which could be written as
+$$
+\sum_j b_{ij} \frac{r_{ij}}{f_{i}^{k_{ij}}}=\frac{\sum_j b_{ij}r_{ij}f_i^{K_{ij}} }{f_i^{Q_{i}}}=:\frac{P_i(r_{ij},f_i)}{g_i},
+$$
+where  we define $P_{i}:=\sum_j b_{ij}r_{ij}f_i^{K_{ij}}\in B[r_{ij},f_i]$ and $g_i:=f_i^{Q_i}$ for simplicity. 
+
+$P_i/g_i$ and $P_j/g_j$ would agree on $A_{g_ig_j}$, which means
+$$
+(g_i g_j)^{m_{ij}}(P_i g_j-P_j g_i)=0.
+$$
+By taking $m=\max\{m_{ij}\}$, (the indexing set is finite), we can simplify the notation
+$$
+(g_i g_j)^{m}(P_i g_j-P_j g_i)=0,
+$$
+for all $i,j$.
+
+Let $T_i:=g_i^m P_i$ and $h_j:=g_j^{m+1}$, we have
+$$
+T_i h_j-T_j h_i=0.
+$$
+
+Now, because $D(f_i^n)=D(f_i)$, we have $\spec A=\cup_i D(h_i)$ and this implies $1=\sum_i s_i h_i$, where each $s_i$ can be written as a polynomial of $c_i,f_i$.
+Define 
+$$
+r':=\sum_i s_i T_i.
+$$
+$r'$ restricts to each $T_i/h_i$, because 
+$$
+r'h_j=\sum_i {s_i T_i}h_j=\sum_i s_i h_i T_j=T_j.
+$$
+In other words, it restricts to each 
+$$
+\sum_j b_{ij} \frac{r_{ij}}{f_{i}^{k_{ij}}}
+$$
+and by the identity axiom $r=r'$, which can be expressed as a polynomial in $B[\{f_i\}\cup \{c_i\}\cup \{r_{ij}\}]$
+
+\end{proof}
+
+
+\section{Normality and factoriality}
+\begin{exr}
+Show that integrally closed domains behave well under localization: if $A$ is an integrally closed domain, and $S$ is a multiplicative subset not containing $0$, show that $S^{-1}A$ is an integrally closed domain.
+\end{exr}
+\begin{proof}
+Assume $x\in K(A)$ is integral over $S^{-1}A$. It satisfies a monic polynomial
+$$
+x^n+\frac{a_{n-1}}{s_{n-1}}x^{n-1}+\cdots +\frac{a_{0}}{s_0}=0.
+$$
+Define $s:=\prod_i s_i$ and if multiply the above equation by $s^n$, we get a polynomial of $sx$ with coefficients in $A$. Because $A$ is integral closed, we know $sx\in A$, hence $x\in S^{-1}A$, which means $S^{-1}A$ is integral closed.
+\end{proof}
+
+
+\begin{exr}
+Show that a Noetherian scheme is normal if and only if it is the finite disjoint union of integral Noetherian normal schemes.
+\end{exr}
+\begin{proof}
+$\Lrta$ direction: A Noetherian scheme $X$ is normal at least implies each stalks of this scheme is integral. Recall each connected component is open subscheme and open subscheme of Noetherian scheme is Noetherian (Remark~\ref{chap5rmk:open_subscheme_Noetherian}).
+
+ By~\ref{chap5exr:Noetherian_scheme_integral_stalk}, each connected component of $X_i$ is a integral scheme. Also by~\ref{chap5exr:Noetherian_scheme_finite_irreducible_compoenents}, a Noetherian scheme has only finitely many connected components.
+
+Then we know $X$ is a disjoint finite union of integral Noetherian normal schemes.
+
+$\Llta$ direction is clear. Because normality is stalk-local, we know a finite union of integral Noetherian normal schemes is normal and it is Noetherian because it can be covered by finite Noetherian affine opens. 
+\end{proof}
+
+\begin{exr}
+If $A$ is an integral domain, show that $A = \cap A_\scm$, where the intersection runs over all maximal ideals of $A$.
+\end{exr}
+\begin{proof}
+If we interpret them as subsets in $K(A)$, we have clearly
+$$
+A\subset \cap A_\scm.
+$$
+As for the reverse direction, we claim:
+$$
+K(A)\backslash A\subset K(A)\backslash \cap A_\scm.
+$$
+If nonempty, pick $s\in K(A)\backslash A$, we can construct the ideal of denominators of $s$
+$$
+I_s:=\{r\in A:rs\in A\}
+$$
+$I_s\neq A$ because $1\notin I_s$. Then $I_s\subset \scm$ for some maximal ideal. $s\notin A_\scm$.
+\end{proof}
+
+\begin{exr}\label{chap5exr:5.4.D}
+One might naively hope from experience with unique factorization domains that the ideal of denominators is principal. This is not true. As a counterexample, consider our new friend $A = k[w, x, y, z]/(wz - xy)$ (which we first met in Example 4.4.12, and which we will later recognize as the cone over the quadric surface), and $w/y = x/z \in K(A)$. Show that the ideal of denominators of this element of $K(A)$ is $(y, z)$.
+\end{exr}
+\begin{proof}
+Denote the element $s:=w/y=x/z$. we easily check that $(y,z)\subset I_s$.
+
+Assume $t\in I_s$, we have 
+$$
+tw/y=tx/z\in A,
+$$
+hence $tw=ya$. Then $t$ can not contain monomials in $w,x$. Furthermore, $t$ can not contain terms with only $w,x$ because $w^nx^m$ can not be a multiple of $y$. As a result, $t\in (y,z)$.
+\end{proof}
+
+\begin{exr}\label{chap5exr:localization_of_UFD}
+Show that any nonzero localization of a unique factorization domain is a unique factorization domain.
+\end{exr}
+\begin{proof}
+Recall the definition of a UFD. A UFD is an integral domain in which every non-zero element $x$ of $R$ can be written as a product of irreducible elements and a unit and this product is unique up to order of irreducible elements and units. 
+
+An equivalent characterization is ``an integral domain $R$ in which every non-zero element can be written as a product of unit and  prime elements of $R$''.
+
+We prove the statement based on the second characterization. $S\subset R$ is a multiplicative set and let $T$ be the set of all prime elements that divides an element of $S$, and let $M$ be the set of all prime element not in $T$.
+
+\underline{Claim}: $p\in T$ iff image of $p$ in $S^{-1}R$ is a unit.
+
+Indeed, if $p\in T$, then there exists $s\in S$, such that $p|s$; Let $x\in R$ with $px=s$. Then
+$$
+\frac{p}{1}\cdot\frac{x}{s}=\frac{ps}{s}\cdot \frac{x}{s}=1_{S^{-1}R}.
+$$
+
+For the ``if'' part, consider $p/1$ a unit, there is an inverse $v/s$, $\exists t\in S$ s.t., $pvt=st$, $pv=s$ because $0\notin S$ and $R$ is integral domain.
+
+\underline{Claim}: if $p\in M$, then $p/1\in S^{-1}R$ is prime.
+
+Assume $p/1|(a/s)(b/t)$, $(p c)/(r)=(ab)/(st)$, because $R$ is iintegral domain, $pcst=ab r$. Then we know $p|ab$ or $p|r$ because $p$ is prime, but we assumed $p\nmid s\forall s\in S$. Then we have $p|a$ or $p|b$ because $p$ is prime, which means $p/1|a/s$ or $p/1|b/t$ in return.
+
+Now given $a=up_1^{b_1}\cdots p_r^{b_r}q_1^{c_1}\cdots q_t^{c_t}$ be a prime factorization of $a$, where $p_i\in T$ and $q_j\in M$. We have
+$$
+\frac{a}{s}=\frac{u}{s}\left(\frac{p_1s}{s}\right)^{b_1}\cdots \left(\frac{p_rs}{s}\right)^{b_r}\left(\frac{q_1s}{s}\right)^{c_1}\cdots \left(\frac{q_ts}{s}\right)^{c_t}.
+$$
+Then we know each $a/s\in S^{-1}R$ can be factorized into product of a unit and prime elements.
+
+This proof is a improved version of~\href{https://math.stackexchange.com/q/140596}{This Answer}, in that we don't need to verify the uniqueness of factorization.
+\end{proof}
+
+\begin{exr}
+Show that unique factorization domains are integrally closed. Hence factorial schemes are normal, and if $A$ is a unique factorization domain, then $\spec A$ is normal. 
+\end{exr}
+\begin{proof} Assme $R$ is a UFD, denote the fraction field by $K(R)$.
+Let $x\in K(R)^{\times}$, say $x=r/s$, $gcd(x,s)=1$, $r,s\in R, s\neq 0$. Suppose $\exists a_1,..,a_n\in R$ s.t.,
+$$
+x^n+a_1 x^{n-1}+...+a_n=0.
+$$
+Then after multiplying it by $s^n$, set
+$$
+r^n=-(a_1 r^{n-1}s+a_2 r^{n-2}s^2+...+a_n s^n)
+$$
+$\Lrta s|r^n$, $gcd(r^n,s)=1,\Lrta s\in R^\times\Lrta x\in R$.
+
+Then we have ``all stalks of a scheme $X$ are UFD'' $\Lrta$ ``all stalks of a scheme $X$ are normal'', which means factorial schemes are normal. 
+
+If $A$ is a UFD,  each stalk  is a localization of $A$ is  therefore UFD by~\ref{chap5exr:localization_of_UFD} . $\spec A$ is factorial $\Lrta$ $\spec A$ is normal.
+\end{proof}
+
+\begin{exr}
+Show that the following schemes are normal: $\affn^n_k$ , $\proj_k^n$ , $\spec \intg$. (As usual, k is a field. Although it is true that if A is integrally closed then A[x] is as well, this is not an easy fact, so do not use it here.)
+\end{exr}
+\begin{proof}
+$\spec \intg$ is normal because $\intg$ is UFD.
+
+$\affn^n_k=\spec k[x_1,..,x_n]$, where the polynomial ring over a field $k$ is UFD.
+
+$\proj^n_k=\Proj k[x_0,...,x_n]$ can covered by $k[x_{0/i},...,x_{n/i}](x_{i/i}-1)$, which are UFDs, there fore we know each stalk is UFD. Then we know $\proj^n_k$ is factorial and hence normal.
+\end{proof}
+
+\begin{exr}\label{chap5exr:handy_characterization_normal_scheme}
+Suppose $A$ is a unique factorization domain with $2$ invertible, and $z^2 - f$ is irreducible in $A[z]$.
+\begin{enumerate}[label=(\alph*)]
+\item Show that if $f \in A$ has no repeated prime factors, then $\spec A[z]/(z^2 - f)$ is normal. Hint: $B := A[z]/(z^2 - f)$ is an integral domain, as $(z^2 - f)$ is prime in $A[z]$. Suppose we have monic $F(T)\in B[T]$ so that $F(T) = 0$ has a root $\alpha$ in $ K(B)\backslash \ K(A).$ Then by replacing $F(T)$ by $\bar{F}(T)F(T)$, we can assume $F(T) \in A[T]$. Also, $\alpha = g+hz$ where $g,h \in K(A).$ Now $\alpha$ is the root of $Q(T) = 0$ for monic $Q(T) = T^2 - 2gT + (g^2 - h^2f) \in K(A)[T]$, so we can factor $F(T) = P(T)Q(T)$ in $K(A)[T]$. By Gauss’s lemma, $2g, g^2 - h^2f \in A$. Say $g = r/2$, $h = s/t$ ($s$ and $t$ have no common factors, $r, s, t \in A$). Then $g^2 - h^2f = (r^2t^2 - 4s^2f)/4t^2$. Then $t$ is invertible.
+\item Show that if $f \in A$ has repeated prime factors, then $\spec A[z]/(z^2 - f)$ is not normal.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item In fact, the hint already gives the detailed solution. We only write here some further explanations.
+
+$A[z]/(z^2-f)$ is integral domain because $z^2-f$ is irreducible and hence is prime element in UFD.
+
+$B$ is equivalent to formally adjoining a pair of roots $\pm \sqrt{f}$. We can take the ``conjugate'' of a monic $F(T)$ be mapping the coefficients $a+b\sqrt{f}$ to $a-b\sqrt{f}$ and we denote the conjugate polynomial $\bar{F}(T)$. Then $\bar{F}(T)F(T)\in A[T]$.
+
+Assume $\alpha\in K(B)\backslash K(A)$ is a root of $F(T)=0$ hence a root of $\bar{F}(T)F(T)=0$,  We replace $F(T)$ by $\bar{F}(T)F(T)$ from now on. \underline{Want}: $\alpha$ is contained in $B$.
+
+The root $\alpha$ can be written as $g+hz$ or equivalently ($g+h\sqrt{f}$), where $g,h\in K(A)$.
+
+Then $\alpha$ is the root of $(T-g-h\sqrt{f})(T-g+h\sqrt{f})=T^2-2gT+g^2-h^2f\in K(A)[T]$, so we can factor $F(T)$ as $P(T)Q(T)\in K(A)[T]$. Recall Gauss' lemma for UFD:
+
+\textbf{Given $A$ is a UFD, and $K(A)$ its fraction field. $F(T)\in A[T]$, if it factors in $K(A)[T]$, then it factors in $A[T]$.} 
+
+Then we know $2g, g^2-h^2f\in A$. Because $2$ is invertible in $A$, we know $g\in A$ hence $h^2f\in A$. Assume $h=r/s$ and $gcd(r,s)=1$, we have $r^2f/s^2\in A$, because $f$ is square free, the only possibility is $s\in A^\times$. Then we know $h\in A$, therefore $\alpha=g+hz=g+h\sqrt{f}\in B$.
+
+We have proved that $B=A[z]/(z^2-f)$ is integral closed, therefore $\spec A[z]/(z^2-f)$ is normal.
+\item Assume $f\in A$ has repeated prime factors. 
+
+\underline{Want}: $B:=A[z]/(z^2-f)$ and $B_\scp$ is not integral closed for some $\scp\in \spec B$. By Proposition 5.4.2, it is equivalent to prove $B$ is not integral closed.
+
+\underline{Want}:$F(T)\in B[T]$, find an root of $F(T)=0$, $\beta\in K(B)\backslash K(A)$ s.t., $\beta\notin B$.
+
+Like in $(a)$, we can restrict to the case $F(T)\in A[T]$. Assume $p$ is the repeated prime element in $f$, i.e, $p^2|f$.
+
+We can choose the polynomial $F(T):=T^2-1/p^2 f$, $\sqrt{f}/p$ is a root of $F(T)$ in $K(B)$ and is not an element in $B$.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}\label{chap5exr:normal_schemes_examples}
+Show that the following schemes are normal:
+\begin{enumerate}[label=(\alph*)]
+\item  $\spec\intg[x]/(x^2-n)$ where $n$ is a square-free integer congruent to $3$ modulo $4$. Caution: the hypotheses of Exercise~\ref{chap5exr:handy_characterization_normal_scheme} do not apply, so you will have to do this directly. (Your argument may also show the result when $3$ is replaced by $2$. A similar argument shows that $\intg[(1+\sqrt{n})/2]$ is integrally closed if $n \equiv 1 (\mod 4)$ is square-free.)
+\item
+ $\spec k[x_1,...,x_n]/(x^2_1+x_2^2+\cdots+x^2_m)$ where $\char k\neq 2, n\geq m\geq 3$.
+\item $\spec k[w, x, y, z]/(wz - xy)$ where $\char\ k\neq  2$. This is our cone over a quadric surface example from Example 4.4.12 and Exercise~\ref{chap5exr:5.4.D}. Hint: Exercise~\ref{chap5exr:quadratic_forms_diagonalization} may help. (The result also holds for $\char k = 2$, but don’t worry about this.)
+\end{enumerate}
+\end{exr}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item $\intg[x]/(x^2-n)\cong B:=\intg[\sqrt{n}]$. Assume a monic polynomial $P(T)\in B[T]$, we can take the conjugate $\bar{P}(T)$ and $\bar{P}(T)P(T)\in \intg[T]$. W.l.o.g, we can set $P(T)\in \intg[T]$. Assume $\alpha=g+h\sqrt{n}\in K(B)\backslash \ratl$ is a root of $P(T)=0$, where $g,h\in \ratl$. $\alpha$ is also a root of $G(T)= T^2 - 2gT + (g^2 - h^2n) \in \ratl[T]$. $P(T)=R(T)G(T)$.
+
+Again, by Gauss's lemma, we have $G(T)\in \intg[T]$.
+$$
+2g\in \intg
+$$
+and
+$$
+g^2-h^2n\in \intg
+$$
+Assume $g=k/2$ and $h=r/s$, $k,r,s\in\intg$, we have
+$$
+\frac{k^2}{4}-\frac{r^2n}{s^2}\in \intg
+$$
+$n=4e+3$ and $k=2q$ or $k=2q+1$. The later case is ruled out. If $k=2q+1$,  the equation reduces to
+$$
+\frac{1}{4}-\frac{r^2n}{s^2}=m\in \intg
+$$
+Then we know $r^2 n=s^2/4 +ms^2$ and
+$gcd(r,s)=1$ and $n$ is square-free, we know $4|s^2$, assume $s^2=4t^2$, therefore
+$$
+3r^2\equiv t^2\ (\mod 4), 
+$$
+where $gcd(r,t)=1$. We know $r,t$ are coprime and have same parity. $r$ and $t$ can't be both even number and have to be both odd. Assume $r=2u+1$ and $t=2v+1$, then the equation reduces to
+$$
+3\equiv 1\ (\mod 4).
+$$
+We get the contradiction. As a result, $k=2q$ and $r^2n/s^2\in\intg$, which means $s=1$. $g,h\in \intg$ $\beta=g+h\sqrt{f}\in B$.
+
+The identical argument works when $n$ congruent to $2$ modulo $4$.
+
+\item $\char k\neq 2$, then $2$ is invertible in $k$. For example, in the case
+$k[x_1,x_2,x_3]/(x_1^2+x_2^2+x_3^2)$, regard $k[x_1,x_2,x_3]$ as $A[x_1]$, where $A=k[x_2,x_3]$, $A$ is a UFD, $2$ is invertible in $A$, $x_2^2+x_3^2$ is square-free in $A$, and $x_1^2+(x_2^2+x_3^2)$ is irreducible in $A[x_1]$. We can now use~\ref{chap5exr:handy_characterization_normal_scheme} to prove that $k[x_1,x_2,x_3]/(x_1^2+x_2^2+x_3^2)$ is integrally closed. The identical argument can be used to prove for arbitrary $n\geq m\geq 3$.
+\item We can diagonalize the quadratic form $wz-xy$.
+$$
+wz-xy=\left(\frac{w+z}{2}\right)^2-\left(\frac{w-z}{2}\right)^2-\left(\frac{x+y}{2}\right)^2+\left(\frac{x-y}{2}\right)^2.
+$$
+Then it reduces to a special case of $(b)$ above.
+
+\end{enumerate}
+\end{proof}
+\begin{exr}\label{chap5exr:quadratic_forms_diagonalization}
+Suppose $k$ is an algebraically closed field of characteristic not $2$. (The hypothesis that $k$ is algebraically closed is not necessary, so feel free to deal with this more general case.)
+\begin{enumerate}[label=(\alph*)]
+\item Show that any quadratic form in $n$ variables can be ``diagonalized'' by changing coordinates to be a sum of at most $n$ squares.
+\item Show that the number of squares appearing depends only on the quadratic. For example, $x^2 + y^2 + z^2$ cannot be written as a sum of two squares.
+\end{enumerate}
+\end{exr}
+\begin{proof}
+In linear algebra courses, we have discussed the diagonalization of real symmetric matrices and Hermitian matrices. This exercise is a simple generalization to fields with non-2 characteristics.
+\begin{enumerate}[label=(\alph*)]
+\item Consider a quadratic form 
+$$
+Q_{n}(\mathbf{x}):=\sum_{1\leq i,j\leq n}a_{ij}x_ix_j,
+$$
+with coefficients in $k$.
+Follow the hints, we can induct on $n$. We firstly prove for $n=2$,
+$$
+Q_2(\mathbf{x})=a_{11}x_1^2+2a_{12}x_1x_2+a_{22}x_2^2.
+$$
+Assume $a_{11},a_{22}=0$ and $2a_{12}\neq 0$ (which means $a_{12}\neq 0$ because $\char k\neq 2$), we have $Q_{2}(\mathbf{x})=a_{12}(x_1+x_2)^2-a_{12}x_1^2-a_{12}x_2^2$. Else, one of $a_{11},a_{22}\neq 0$, w.l.o.g, $a_{11}\neq 0$, we get $Q_2(\mathbf{x})=a_{11}(x_1-a_{12}a_{11}^{-1}x_2)^2+(a_{22}-a_{12}^2/a_{11})x_2^2$.
+
+Assume now all $Q_n$ can be diagonalized, consider a quadratic form $Q_{n+1}$, it can be written as 
+$$
+Q_{n+1}(\mathbf{x},x_{n+1})=P_{n}(\mathbf{x})+2c_{1,n+1}x_1x_{n+1}+...+2c_{n,n+1}x_nx_{n+1}+c_{n+1,n+1}x_{n+1}^2.
+$$
+Up to reordering, we require $c_{n+1,n+1}\neq 0$.
+By induction hypothesis, we can write $P_n(\mathbf{x})$ as $\sum_{i=1}^n b_{ii}y_i^2$, with with possibility all $b_{ii}=0$ and $\mathbf{y}=A^{-1}\mathbf{x}$, where $A$ is a linear transforamtion.
+$$
+\begin{aligned}
+Q_{n+1}(\mathbf{x},x_{n+1})&=\mathbf{y}^{T}B\mathbf{y}+2\sum_{i=1}^n\sum_{j=1}^n A_{ij}c_{i,n+1}y_jx_{n+1}+c_{n+1,n+1}x_{n+1}^2\\
+&=\mathbf{y}^{T}B\mathbf{y}+2\sum_{j=1}^n \tilde{c}_{j,n+1}y_jx_{n+1}+c_{n+1,n+1}x_{n+1}^2,
+\end{aligned}
+$$ 
+where $\tilde{c}_{j,n+1}:=\sum_{i=1}^nA_{ij} c_{i,n+1}$.
+$$
+\begin{aligned}
+Q_{n+1}(\mathbf{x},x_{n+1})
+&=c_{n+1,n+1}\left(x_{n+1}^2+\sum_{j=1}^n\frac{\tilde{c}_{j,n+1}}{c_{n+1,n+1}}y_j\right)^2+\sum_{i=1}^n\left(b_{ii}-\frac{c_{j,n+1}^2}{c_{n+1,n+1}}\right) y_i^2.
+\end{aligned}
+$$ 
+There are at most $n+1$ terms.
+\item Given a quadratic form $Q(\mathbf{x})=\mathbf{x}^{T}M\mathbf{x}$, under a transformation of basis, $\tilde{\mathbf{x}}=A \mathbf{x}$, we can write $Q(\tilde{\mathbf{x}})=\tilde{\mathbf{x}}^T \tilde{M} \tilde{\mathbf{x}}$, where 
+$$
+\tilde{M}=A^{T}M A.
+$$
+Assume $\mathbf{v}$ is in the null space of $M$, then $A^{-1}v$ is  in the null space of $\tilde{M}$, because $A$ is a non-degenerate matrix, we know the dimension of  null space is invariant under the change of basis. Hence, the rank of matrix $M$ is preserved under the base change. For quadratic forms, the rank is just the number of independent square terms.
+\end{enumerate}
+\end{proof}
+
+\begin{exr}
+(RINGS CAN BE INTEGRALLY CLOSED BUT NOT UNIQUE FACTORIZATION DOMAINS, ARITHMETIC VERSION). Show that $\intg[\sqrt{-5}]$ is integrally closed but not a unique factorization domain.
+\end{exr}
+\begin{proof}
+This is a classical counter-example.
+
+ $A:=\intg[\sqrt{-5}]$ is integrally closed by~\ref{chap5exr:normal_schemes_examples}(a) because 
+ $$-5\equiv 3\mod 4.
+ $$
+
+ It is not unique factorization domain because for example $6=2\times 3$ and $6=(1-\sqrt{-5})(1+\sqrt{-5})$.
+\end{proof}
+
+\begin{exr}
+(RINGS CAN BE INTEGRALLY CLOSED BUT NOT UNIQUE FACTORIZATION DOMAINS, GEOMETRIC VERSION). Suppose $\char k \neq 2$. Let $A = k[w, x, y, z]/(wz - xy)$, so $\spec A$ is the cone over the smooth quadric surface (cf. Exercises 4.4.12 and~\ref{chap5exr:5.4.D}).
+\begin{enumerate}[label=(\alph*)]
+\item Show that $A$ is integrally closed. (Hint: Exercises~\ref{chap5exr:normal_schemes_examples}(c) and~\ref{chap5exr:quadratic_forms_diagonalization})
+\item Show that $A$ is not a unique factorization domain. (Clearly $wz = xy$. But why are $w, x, y$, and $z$ irreducible? Hint: $A$ is a graded integral domain. Show that if a homogeneous element factors, the factors must be homogeneous.)
+\end{enumerate}
+\end{exr}
+\begin{proof}
+For (a), we can diagonalize the quadratic form $wz-xy$.
+$$
+wz-xy=\left(\frac{w+z}{2}\right)^2-\left(\frac{w-z}{2}\right)^2-\left(\frac{x+y}{2}\right)^2+\left(\frac{x-y}{2}\right)^2.
+$$
+We know $A\cong k[x_1,x_2,x_3,x_4]/(x_1^2-x_2^2-x_3^2+x_4^2)$, then we know it is integrally closed by~\ref{chap5exr:normal_schemes_examples}(b).
+
+As for $(b)$, we clearly have $wz=xy$. Then it suffices to prove $w,x,y,z$ are irreducible.  
+
+Indeed, we can regard $A$ as a graded integral domain because it is a quotient of the polynomial ring by a homogeneous prime ideal. 
+
+\underline{Claim}: If a homogeneous element factors, the factors must be homogeneous. 
+
+An element $f$ is of homogeneous degree $n$ iff each monomial of $f$ is of degree $n$.
+
+Now assume $f=gh$, where $g,h$ are not homogeneous. Assume $g=g_{0}+g_1$, where $g_0$ is the highest degree term in $g$ and $g_1$ is the rest. The degree of monomials in $g_0$ is strictly higher than those in $g_1$. We have $f=g_0 h+g_1 h$, but it is impossible for the two summands to have same highest degrees.
+
+Then we know $x$ is irreducible, because the only degree 
+$1$ homogeneous terms are $x,y,z,w$ and we won't have the relation $w=\lambda x$. 
+\end{proof}
+
+\begin{exr}
+Suppose $A$ is a $k$-algebra, and $l/k$ is a finite extension of fields. (Most likely your proof will not use finiteness; this hypothesis is included to avoid distraction by infinite-dimensional vector spaces.) Show that if $A\otimes_k l$ is a normal integral domain, then $A$ is a normal integral domain as well.
+\end{exr}
+\begin{proof}
+Here the notion ``normal integral domain'' is the same as ``integrally closed''. $A$ can be identified as a subring of $A\otimes_k l$, therefore $A\otimes_k l$ is an integral domain implies that $A$ being an integral domain. 
+
+The proof is sketched in the hint, we just follow it step by step.
+
+ Fix a $k$-basis for $l$, $b_1=1,...,b_d$. There is a dual basis $v_1=1,...,v_d$ such that $trace_{l/k}(v_i b_j)=\delta_{ij}$. We can extend the trace to $Tr:A\otimes_k l\lrta A: a\otimes x\mapsto a\cdot trace_{l/k}(x)$. The map $Tr$ is nondegenerate $Tr(a\otimes x)=0\Lrta a=0$ or $x=0$.
+
+ \underline{Claim}: $1\otimes b_1,...,1\otimes b_d$ forms a free $A$-basis for $A\otimes_k l$. 
+
+ Assume an element $a\otimes x\in A\otimes_k l$, where $x=\sum_i x_i b_i$. We have 
+ $a\otimes x=a\otimes \sum_i x_i b_i$ and it equals to $\sum_i (x_i a) (1\otimes b_i)$. It indeed forms an generating set of  $A$-module $A\otimes_k l$. And we can show that $A\otimes_k l$ is a free $A$-module with this basis. Assume $\sum_i r_i(1\otimes b_i)=0$, $\sum_i r_i\otimes b_i=0$. Consider $Tr((1\otimes v_j)\cdot (\sum_i r_i\otimes b_i))=r_j=0$. We have proved that $A\otimes_k l$ is a free $A$-module with the specified basis.
+
+ \underline{Claim}: The diagram commutes and the composition map $A\lrta K(A)\otimes_k l$ is injective.
+\[
+\begin{tikzcd}
+A \arrow[r] \arrow[d] & K(A) \arrow[d] \\
+A\otimes_k l \arrow[r] & K(A)\otimes_k l
+\end{tikzcd}
+\]
+$A\lrta K(A)$ is injective and $l$ is a flat $k$-module. Hence the composition map is injective.
+
+\underline{Claim}: $K(A)\otimes_k l\cong K(A\otimes_k  l)$.
+
+We know $A\otimes_k l\subset K(A)\otimes_k l\subset K(A\otimes_k l)$, then it suffices to prove only $K(A)\otimes_k l$ is a field.
+
+A general term in $K(A)\otimes_k l$ is of the form $\frac{a}{c}\otimes x$, $1\otimes b_i$ gives a $K(A)$-basis of $K(A)\otimes_k l$. (it comes from our first claim). By~\ref{exr:chap3_fin-dim_k_domain_is_field}, a finite $k$-algebra which is an integral domain must be a field. We therefore have $K(A)\otimes_k l$ is a  field. 
+
+\underline{Claim}: $K(A)\cap A\otimes_k l=A$, where we regard both $K(A)$ and $A\otimes_k l$ as subrings of $K(A\otimes_k l)$.
+
+$A\subset K(A)\cap A\otimes_k l$ is automatically true. $K(A)\otimes_k l$ is a $K(A)$-vector space with basis $1\otimes b_i$. The subspace $K(A)\cong K(A)\otimes_k 1$ is generated by $1\otimes 1$. $K(A)\cap A\otimes_k l$ is an $A$-submodule of $A\otimes_k l$ generated by $1\otimes 1$, therefore is contained in $A$.
+
+Now we have finished our preparation. Given $P(T)$ a monic polynomial in $A[T]$. We can regard $P(T)$ as an element in $K(A\otimes_k l)[T]$. By assumption, $A\otimes_k l$ is normal integral closed. The root of $P(T)=0$ in $K(A\otimes_k l)$, $\alpha\in A\otimes_k l$. Assume further more $\alpha$ is a root in $K(A)$, we then have $\alpha\in K(A)\cap A\otimes_k l=A$. Whence, we can conclude that $A$ is normal integral domain. 
+
+\end{proof}
+\begin{exr}
+(UFD-NESS IS NOT AFFINE-LOCAL). Let $A = (\ratl[x, y]_{x^2+y^2})_0$ denote the homogeneous degree $0$ part of the ring $\ratl[x,y]_{x^2 +y^2}$ . In other words, it consists of quotients $f(x, y)/(x^2 + y^2)^n$ , where $f$ has pure degree $2n$. Show that the distinguished open sets $D\left( \frac{x^2}{x^2+y^2}\right)$ and $D\left( \frac{y^2}{x^2+y^2}\right)$ cover $\spec A$. Show that $A_{\frac{x^2}{x^2+y^2}}$ and $A_{\frac{y^2}{x^2+y^2}}$
+are unique factorization domains. Finally, show that A is not a unique factorization domain.
+\end{exr}
+\begin{proof}
+By~\ref{exr:open_cover_distinguished}, we know 
+$ \frac{x^2}{x^2+y^2}+ \frac{y^2}{x^2+y^2}=1\Lrta D\left( \frac{x^2}{x^2+y^2}\right)\cup D\left( \frac{y^2}{x^2+y^2}\right)=\spec A$.
+
+A general element of $A_{\frac{x^2}{x^2+y^2}}$ is of the form
+$$
+\frac{\frac{f(x,y)}{(x^2+y^2)^n}}{\frac{x^{2m}}{(x^2+y^2)^m}}=\frac{f(x,y)/x^{2n}}{(x^2+y^2)^{n-m} (x^{2})^{m-n}}=\frac{g(t)}{(1+t^2)^{n-m}}
+$$
+where $t=\frac{y}{x}$ and $g(t)=f(x,y)/x^{2n}$. Hence we know both $A_{x^2/(x^2+y^2)}$ and $A_{y^2/(x^2+y^2)}$ are isomorphic to $\ratl[t]_{t^2+1}$, which is a localization of UFD, by~\ref{chap5exr:localization_of_UFD}, they are also UFDs.
+
+Finally, $A$ is not a UFD, for example
+$$
+\left(\frac{xy}{x^2+y^2}\right)^2=\frac{x^2}{x^2+y^2}\cdot \frac{y^2}{x^2+y^2},
+$$
+where both 
+$$
+\frac{xy}{x^2+y^2}
+$$
+and
+$$
+\frac{x^2}{x^2+y^2}
+$$
+are irreducible because $x/(x^2+y^2),y/(x^2+y^2)\notin A$ because they are not of degree $0$.
+\end{proof}
+\section{The crucial points of a scheme: Associated points and primes}
+\begin{exr}
+Suppose $f$ is a function on $\spec k[x,y]/(y^2,xy)$(i.e.,$f\in k[x,y]/(y^2,xy)$). Show that $\supp f$ is either the empty set, or the origin, or the entire space.
+\end{exr}
+\begin{proof}Denote the ring $k[x,y]/(xy, y^2)=:A$
+$f$ is a global section on $\spec k[x,y]/(xy, y^2)$. By definition 
+$$
+\supp(f):=\{p\in X=\spec A:f_p\neq 0\text{ in } \calo_{X,p}\}
+$$
+$\supp f$ is the point $[\scp]$ where $f/1\neq 0$ in $A_\scp$. $f/1\neq 0$ means $fs\neq 0\forall s\in A-\scp$. 
+
+A general element $f$ in $k[x, y]/(y^2, xy)$ is of the form
+$$
+q(\bar{x})+a\bar{y},
+$$
+where $q$ is a polynomial in $k[X]$, $a$ is a constant in $k$ and $\bar{x}\bar{y}=0$ and $\bar{y}^2=0$. 
+
+1. Assume $q=0$ and $a=0$, then $f=0$. In this trivial case the support of $f$ is empty set because $fs=0$ for whatever $s\in A$.
+
+2. In the case $f=q(\bar{x})+a \bar{y}$, $q\neq 0,a\neq 0$ 
+$$
+\bar{y}^2f=0
+$$
+which implies $\bar{y}^2\in\scp$ for $[\scp]\in \supp f$. But in fact, all the prime ideals in $A$  contains $\bar{y}$. 
+
+\underline{Claim}: if $f=q(\bar{x})+a\bar{y}$ with $q\neq 0, a\neq 0$, then $\supp f=\spec A$.
+
+Indeed the point of $\spec A$ is of the form $(\bar{x}-b,\bar{y}) $ or $(\bar{y})$, for any $\scp_b=(\bar{x}-b,\bar{y})$, the elements in multiplicative subset $S_b=A-\scp_b$ are of  the form $g(\bar{x})+c\bar{y}$ where $g(b)\neq 0$. $(g(\bar{x})+c\bar{y})(q(\bar{x})+a\bar{y})\neq 0$. For $\scp=(\bar{y})$, the multiplicative set are of the form $g(\bar{x})$ and $g(\bar{x})(q(\bar{x})+c\bar{y})\neq 0$.
+
+3. Assume $f$ is $a\bar{y}$, $f$ is not supported on $(\bar{y})$ because $\bar{x}\in A-(\bar{y})$. $f$ is neither supported over $(\bar{x}-b,\bar{y})$ since $\bar{x}\in A-(\bar{x}-b,\bar{y})$.
+
+$f$ is only supported on the origin $(\bar{x},\bar{y})$, where the multiplicative set are just the constants.
+
+We have discussed all the possible cases thus finished the proof.
+\end{proof}
+
+\begin{exr}\label{chap5exr:integral_associated_point_generic_point}(ASSUMING \textbf{(A)})
+Suppose $A$ is an integral domain. Show that the generic point $[0]$ is the only associated point of $\spec A$
+\end{exr}
+\begin{proof}
+\textbf{Confusion: when we talk about the associated point of $\spec A$, does it mean we choose $M=A$?}
+ 
+We use the definition \textbf{(A)} in page 167 in the case $M=A$ and always assume $A$ to be Noetherian when discussing associated points.
+
+Given $A$  a Noetherian integral domain, $(\spec A,\calo_{\spec A})$ is a Noetherian integral scheme by~\ref{chap5exr:affine_integral_scheme}, which means it is irreducible and reduced by~\ref{chap5exr:integral=irreducible+reduced}. 
+
+The global sections of $\spec A,\calo_{\spec A}$ are just elements in $A$. Now each section $a$ is supported on the whole scheme $\spec A$. The only irreducible component is $\spec A$ itself. Hence the generic point is the only associated point of $\spec A$.
+\end{proof}
+
+\begin{exr}(ASSUMING \textbf{(A)})
+Show that if $A$ is reduced, $\spec A$ has no embedded points.
+\end{exr}
+\begin{proof}
+What we want to show is 
+
+``the associated points of a scheme $\spec A$ for a reduced ring $A$ are generic points of the irreducible components of $\spec A$''
+
+Follow the hint.
+
+(i): In the case where $A$ is integral domain, we know the only associated point is the generic point of $\spec A$ by Exercise~\ref{chap5exr:integral_associated_point_generic_point}.
+
+(ii) For a general reduced ring $A$, we \underline{Claim}:
+
+If $f$ is a nonzero function on a reduced affine scheme,  then $\supp f = \overline{D(f)}$
+
+Indeed, $D(f)=\{[\scq]\in\spec A|f\notin \scq\}$, $[\scp]\in D(f)\Llrta$ $f\in A-\scp$, $f/1\neq 0\in A_\scp$ because $A-\scp$ is multiplicatively closed and $A-\scp$ does not contain $0$. Then we know $D(f)\subset \supp f$, therefore $\overline{D(f)}\subset\supp f$ because $\supp f$ is closed. 
+For the reverse inclusion, consider $[\scp]\in\supp f$ $\Lrta fs\neq 0, \forall s\in A-\scp$. Suppose $[\scp]\in D(g)$ for some $g\in A$, $g\notin \scp$($g\in A-\scp$), $D(f)\cap D(g)=D(fg)$. Then we know $fg\neq 0$. $fq$ is not nilpotent because $A$ is a reduced ring, therefore $D(fg)\neq \emptyset$. Useful exercises are~\ref{chap3exr:3.5.D} and~\ref{chap3exr:3.5.F}
+
+\underline{Claim}: $\overline{D(f)}$ is the union of irreducible component that intersects $D(f)$. 
+
+By Proposition 3.6.15, we know in Noetherian topological space, a non-empty closed set can be expressed uniquely as a finite union of irreducible closed subsets.
+
+ Apply it to $\overline{D(f)}$, it can be expressed as union of $\cup_i D_i$. What we need to prove is that the irreducible closed subset $D_i$ are in fact a irreducible components $X_i$ in $\spec A$. 
+Assume by contradiction, $D_i\subsetneq Z_i\subset X_i$ is not a maximal irreducible subset, where $Z_i$ is a minimal irreducible closed subset that contains $D_i$. (i.e. there is no intermediate irreducible closed subset between $D_i$ and $Z_i$). By~\ref{chap3exr:bijection_closed_subsets_points_affine}, there is a reverse inclusion of generic point $\scp_d\supsetneq \scp_z$, where $\overline{\scp_d}=D_i$ and $\overline{\scp_z}=Z_i$. (This also means $\scp_d$ is one of  associated primes of $A$ corresponding to $f$)
+
+ Consider the ring $A/\scp_z$, $\scp_d/\scp_z$ is a non-zero prime ideal in the quotient ring. 
+
+The canonical projection $A\lrta A/\scp_z$ induces a continuous map $\spec A/\scp_z\lrta \spec A$, which can be identified as the inclusion of a closed subset.
+
+We know $\overline{\scp_d/\scp_z}=\overline{\scp_d}\cap \spec A/\scp_z$. On the other hand
+$\overline{\scp_d}\subset \overline{D(f)}$, $\overline{\scp_d/\scp_z}=\overline{\scp_d}\cap \spec A/\scp_z\cap \overline{D(f)}=\overline{\scp_d}\cap \overline{D([f])}$, where $[f]$ is the equivalence class of $f$ in $A/\scp_z$. Every subspace of Noetherian space is also Noetherian by~\ref{chap3exr:open_subset_Noetherian_space_quasicompact}. We know $\overline{D([f])}$ is a subspace of Noetherian space $\overline{D(f)}$. Still by Proposition 3.6.15, both $\overline{D([f])}$ and $\overline{D(f)}$
+can expressed uniquely as a union of their irreducible components. Also because each irreducible closed subset is contained in an irreducible component. 
+
+We then know
+\underline{Lemma:}
+\textbf{ the irreducible component $Y_i$ of a subspace $Y$ in Noetherian space $X$ is the intersection of $Y\cap X_i$ with the irreducible component of $X$}.
+
+As a result, $\overline{\scp_d/\scp_z}$ is the irreducible component of $\overline{D([f])}=\supp [f]$.
+
+$\scp_d/\scp_z$ is an associated point of $A/\scp_z$, where $A/\scp_z$ is an integral domain, we then apply $(i)$. $\scp_d/\scp_z$ can not be an embedded point ($\scp_d/\scp_z=0$) contradicting to our setting $\scp_d\subsetneq \scp_z$.
+
+Now we are done.
+
+ 
+
+\end{proof}
+
+\begin{exr}
+(ASSUMING \textbf{(A)}). Suppose $m \in M$. Show that $\supp m$ is the closure of those associated points of $M$ where $m$ has non-zero germ.(Hint: $\supp m$ is a closed set containing the points described, and thus their closure. Why does it contain no other points?)
+\end{exr}
+\begin{proof}
+Recall what we mean by the support of a section $m$
+$$
+\supp(m)=\{\scp\in X:m_{\scp}\neq 0\}.
+$$
+By definition in $\mathbf{(A)}$, associated points are the generic points of irreducible components of $\supp(n)$ for some $n$. In particular the associated described in the problem is contained in $\supp(m)$ hence contains the closure of those associated point.
+
+Denote the set of associated point where $m$ has nonzero germ by $S$. We want to prove $\supp(m)-\overline{S}=\emptyset$. Choose a point $\scq\in \supp(m)$, want $U\ni\scq\Lrta U\cap S\neq \emptyset$. Consider $D(f)\ni \scq\Lrta$ $D(f)\cap \supp(m)\neq \emptyset$. $D(f)$ intersects with as least one irreducible component $W$ of $\supp(m)$ by definition $(A)$, it corresponds to an associated point $\scp$ and $\overline{\scp}=W$. We know $D(f)\cap W\neq \emptyset,\Lrta D(f)\ni \scp$. $\Lrta D(f)\cap S\neq \emptyset$.
+\end{proof}
+\begin{exr}(Assuming $\mathbf{(A)}$ and $\mathbf{(B)}$)
+Show that the locus on $\spec A$ of points $[\scp]$ where $\calo_{\spec A,[\scp]} = A_\scp$ is nonreduced is the closure of those associated points of $\spec A$ whose stalks are nonreduced. (Hint: why do points in the closure of these associated points all have nonreduced stalks? Why can’t any other point have a nonreduced stalk?)
+\end{exr}
+\begin{proof}
+Follow the hint, we first show that the points in the closure of those specified associated point all have nonreduced stalk.
+
+Let $\{\scn_i\}$ be the points with nonreduced stalks and let $\{\scp_j\}$ be the associated points with nonreduced stalks. What we want to show is basically the equality
+$$
+\overline{\cup_j [\scp_j]}=\{[\scn_i]\}
+$$
+By $\mathbf{(B)}$, the closure of finite union is the finite union of closures.
+$$
+\cup_j \overline{[\scp_j]}\overset{?}{=}\{[\scn_i]\}
+$$
+
+The containment $\supset$ follows from the following fact: if $f\in A_\scn$ is a nilpotent, consider $\supp(f)$.
+$0\neq f\in Nil(A_\scn)$ means $f$ is contained in all prime ideals in $\scn$ and also $\scn\in \supp f$.
+
+Choose $\scq$ to the associated point corresponding to the irreducible component containing $[\scn]$. Then $f/1$ is nilpotent in $A_\scq$. This is because $\scq\subset \scn$ and $$f\in Nil(A_\scn)=\cap_{prime\ \sca\in \scn}\sca\subset \cap_{prime\ \scb\in \scq}\scb=Nil(A_\scq).$$
+
+The reverse inclusion is easier because assume
+$\sca\in \cup\overline{[\scp_i]}$, this means some $A_\scp$ is a further localization of $A_\sca$, where $A_\scp$ is nonreduced. We then know $A_\sca$ is nonreduced because we have shown before that localization of a reduced ring is reduced in Exercise~\ref{chap5exr:reduced_ring_reduced_affine_scheme}.
+\end{proof}

@@ -411,13 +411,13 @@ Because $\phom(\calf,\calg)(V)=\{0\}, p\notin V$. Given $f\in\calf(V)$, and $\ph
 On the other hand, let $Y=X\backslash p$, and let $Ab_X\ni\calf=\calg$ be the extension by zero of the constant sheaf $\underline{H}$ on $Y$ (i.e. it's the constant sheaf $\underline{H}$ on $V$ and $\calf(U)=0$ if $U\notsubset V$). Then $\calf_p=\calg_p=0$, but $\phom(\calf,\calg)$ contains a natural copy of $\hom(\underline{H},\underline{H})\neq0$ for any $U$, so $\hom(\calf,\calg)_p$ contains a natural copy of $\hom(\underline{H},\underline{H})$, so it's not zero. Hence \textbf{$\phom(\calf,\calg)_p\lrta \hom(\calf_p,\calg_p)$, is not surjective.}
  \end{remark}
 
- \begin{exr}\ 
+ \begin{exr}\label{chap2exr:OX-moduel-hom_from_special_Ox-modules}\ 
  \begin{enumerate}[label=(\alph*)]
  	\item
 If $\calf$ is a sheaf of sets on $X$, then show that $\phom(\underline{\{p\}},\calf) \cong \calf$, where \underline{\{p\}} is the constant sheaf associated to the one element set $\{p\}$.
 \item 
  If $\calf$ is a sheaf of abelian groups on $X$, then show that $\phom_{Ab_X}(\underline{\intg},\calf)\cong \calf$ (an isomorphism of sheaves of abelian groups).
-\item  If $\calf$ is an $\calo_X$-module, then show that $\phom_{Mod_{\calo_X}}(\calo_X,\calf) \cong\calf$ (an iso morphism of $\calo_X$-modules).
+\item  If $\calf$ is an $\calo_X$-module, then show that $\phom_{Mod_{\calo_X}}(\calo_X,\calf) \cong\calf$ (an isomorphism of $\calo_X$-modules).
 \end{enumerate}
  \end{exr}
 \begin{proof}
@@ -1262,6 +1262,7 @@ $$
 The punchline is \textbf{Sheafification commutes with finite limits} and ultimately, it relies on \textbf{filtered colimit commutes with finite limit}
 
 \end{proof}
+\textbf{As a consequnce, the exactness of a sequence of sheaves may be checked art the level of stalks.}
 \begin{remark}
 There is no direct simple minded proof based on abstract nonsense because it is not tautology. In the above exercise, sheafification commutes with finite limit in the category we care but its not tautology. If we want to have a try: We have two options, one is to check that $\ker_{pre}(\coker_{pre}(\phi))^{sh}$ satisfies the universal property of $\ker(\coker(\phi))$, another is to check that $\ker(\coker_{pre}(\phi)^{sh})$ satisfies the universal property of sheafification. For example, we try to prove that the sheafification has the universal property of being a kernel.
 \begin{center}
@@ -1276,4 +1277,37 @@ We denote $\calh_{pre}$ as $\ker(\coker_{pre}(\phi))$ and $\calh$ as its sheafif
 $Z\lrta \calg$ compose with $\calg\lrta \coker(\phi)$ to get $0$.
 What we need is an arrow from $Z$ to $\calh$, but the universal property of sheafification at best can give us an arrow from $\calh$ to $Z$ and nothing else. We can neither construct the morphism from $Z$ to $\calh_{pre}$ because it would imply $\calh_{pre}=\calh$, which 
 \end{remark}
+\begin{exr}
+Show that taking the stalk of a sheaf of abelian groups is an exact functor. More precsely, if $X$ is a toplogical space and $p\in X$ is a point, show that taking the stalk at $p$ defines an exact functor $Ab_X\lrta Ab$.
+\end{exr}
+
+\begin{exr}
+Check that the exponential exact sequence is exact.
+\end{exr}
+
+\begin{exr}
+Suppose $U\subset X$ is an open set, and $0\lrta \calf\lrta \calg\lrta \calh$ is an exact sequence of sheaves of abelian groups. Show that 
+$$
+0\lrta \calf(U)\lrta\calg(U)\lrta \calh(U)
+$$
+is exact. Show that the section functor need not be exact: show that if $0\lrta \calf\lrta \calg\lrta \calh\lrta 0$ is an exact sequence of sheaves of abelian groups, then
+$$
+0\lrta\calf(U)\lrta\calg(U)\lrta\calh(U)\lrta 0
+$$
+need not be exact.
+\end{exr}
+
+\begin{exr}
+Suppose $\calf$ is a sheaf of abelian groups on a topological space $X$. Show that $\phom(\calf,\cot) $ is a left-exct covariant functor $Ab_X\lrta Ab_X$. Show that $\phom(\cdot,\calf)$ is a left excat contravaiant functor $Ab_X\lrta Ab_X$
+\end{exr}
+
+\begin{exr}
+Show that given $(X,\calo_X)$ is a ringed space, then $\calo_X$-modules form an abelian category. 
+\end{exr}
+\begin{exr}\label{chap2exr:sheaf_section_functor_left_excact}
+\ \begin{enumerate}[label=(\alph*)]
+\item Suppose $\calo_X$ is a sheaf of rings on $X$. Define (categorically) what we should mean by \textbf{ tensor product of two $\calo_X$-modules.} Given an explicit construction, and show that it satisfies your categorical definition.
+\item Show that the tensor product of stlks is the stalk of the tensor product. (colimits commute with tensor products)
+\end{enumerate}
+\end{exr}
 \section{The inverse image sheaf}
