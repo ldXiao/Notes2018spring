@@ -85,6 +85,7 @@
 \renewcommand{\baselinestretch}{1.1}
 \renewcommand{\hom}{\text{ Hom}}
 \newcommand{\phom}{\mathpzc{Hom\,}}
+\newcommand{\pic}{\text{ Pic}}
 \newcommand{\spec}{\text{ Spec}\,}
 \newcommand{\Proj}{\mathsf{ Proj}}
 \newcommand{\res}{\text{ res}}
@@ -3475,7 +3476,7 @@ $$
 \end{prop}
 
 
-\subsection{May 11th: The twisting invertible sheaf on $\proj^n$}
+\subsection{May 11th: The twisting invertible sheaf $\calo(n)$ on $\proj^n$}
 
 Recall:
 $\calo_X$-modules, locally-free $\calo_X$-modules,
@@ -3483,7 +3484,7 @@ $\calo_X$-modules, locally-free $\calo_X$-modules,
 rank $1$ locally free $\Lrta$ invertible sheaves.
 
 \begin{prop}
-$Pic(X)=\{\text{iso. class of  invertible sheaves}\}$ is an abelian group with $\call_1\otimes \call_2$
+$\pic(X)=\{\text{iso. class of  invertible sheaves}\}$ is an abelian group with $\call_1\otimes \call_2$
 and $1=\calo_{X}$, $\call^{-1}=\phom(\call,\calo_X)$.
 \end{prop}
 \begin{proof}
@@ -3664,7 +3665,7 @@ B\supset M_{i,\left(\frac{X_j}{X_i}\right)}=M_{j,\left(\frac{X_i}{X_j}\right)}.
 \begin{thm}\label{thm:aut_Proj}
 $Aut_{\mathsf{Sch}}(\proj^n_K)\simeq PGL_{n+1}(K)=GL_{n+1}(K)/K^\times I_{n+1}$ given by
 $$
-g\longmapsto ([x_0:...:x_n]\lrta[\sum_j a_{0j}x_j:...:\sum_j a_{n_j} x_j]) 
+g\longmapsto ([x_0:...:x_n]\lrta[\sum_j a_{0j}x_j:...:\sum_j a_{nj} x_j]) 
 $$
 with $a_{ij}$ the entries of $g$.  
 \end{thm}
@@ -3682,27 +3683,24 @@ Aut(\proj^n_K)\lrta PGL_{n+1}(K)
 $$
 to the morphism in the statement of~\ref{thm:Hart_II_6.16}. 
 
-\underline{idea}: Any $\gamma:\proj^n_K\overset{\sim}{\lrta}\proj^n_K$ ``acts linearly on $\Gamma(\proj^n,\calo(1))\simeq K^{n+1}$''. Precisely: given $\gamma$ we get an induced isomorphism
+\underline{Idea}: Any automorphism $\gamma:\proj^n_K\overset{\sim}{\lrta}\proj^n_K$ ``acts linearly on $\Gamma(\proj^n,\calo(1))\simeq K^{n+1}$''. Precisely: As part of definition of morphism of scheme $\gamma$ we get an morphism of sheaves
 $$
-\gamma^*\calf\lrta \calf
+\gamma^*:\calf\lrta \gamma^*\calf
 $$
-where as a sheaf $\gamma^*\calf(U)=\calf(\gamma(U))$.
+where $\gamma^*$ is pullback functor, see chap 16 of Vakil for a definition.
+In particular, we get 
 $$
-\begin{aligned}
-\calf(\gamma(U)&\lrta \calf(U))\\
-s&\longmapsto [x\mapsto s(\gamma(x))]
-\end{aligned}
+\calo(1)\lrta\gamma^*\calo(1)
 $$
-in particular, we get 
-$$
-\gamma^* \calo(1)\lrta\calo(1)
-$$
-\underline{Key}: $\gamma^*\calo(1)\simeq \calo(1)$. Indeed, $\calo(1)\in Pic(\proj^n_K)\simeq Cl(\proj^n_K)\simeq \intg[H_0]$ corresponds to $[H_0]$, where $H_0$ means the hyperplane where $X_0=0$.
-$\gamma^*\calo(1)\in Pic(\proj^n_K)$ s therefore also a generator of $Pic(\proj^n_K)$. However, one checks 
+\underline{Key claim}: $\gamma^*\calo(1)\simeq \calo(1)$. {\color{red} we can not simply argue that $\gamma$ has an inverse $\delta^*$, say $\delta$ would imply $\calf\lrta\gamma^*\calf$ has an inverse. At best we can say $\delta^*\circ\gamma^*$ is naturally isomorphic to $id_{QCh_{\proj^n_K}}$ as functors. This does not guarantee that $\calf\lrta\gamma^*\calf$ is an isomorphism. We should be very lucky if it is true.} 
+However, by functorial property of $\gamma^*$, we know it induce well-defined morphism on the Picard group. When $\gamma$ is an automorphism, it induce isomorphism on the Picard group, it send generators to generators.
+
+Indeed, $\calo(1)\in \pic(\proj^n_K)\simeq Cl(\proj^n_K)\simeq \intg[H_0]$ corresponds to $[H_0]$, where $H_0$ means the hyperplane where $X_0=0$.
+$\gamma^*\calo(1)\in \pic(\proj^n_K)$ is therefore also a generator of $\pic(\proj^n_K)$. $\gamma^*\calo(1)$ can only be either $\calo(1)$ or $\calo(1)^{-1}$ However, one checks 
 $$
 \Gamma(\proj^n_K,\calo(1)^{-1})=\{0\}
 $$
-so that  $\gamma^*\calo(1)\simeq \calo(1)^{-1}$ is not possible, hence the key claim.
+so that  $\gamma^*\calo(1)\neq \calo(1)^{-1}$, hence the key claim is correct.
 
 So we get 
 $$
@@ -3712,7 +3710,7 @@ $\Lrta$ an isomorphism
 $$
 K^{n+1}\simeq\Gamma(\proj^n,\calo(1))\overset{\gamma\circ \varphi}{\lrta}\Gamma(\proj^n,\calo(1))\simeq K^{n+1}
 $$
-$K$-linear in $Gl_{n+1}(K)$. 
+$K$-linear in $GL_{n+1}(K)$. 
 
 $\varphi$ is only defined up to an automorphism of $\calo(1)$:
 $\calo(1)\simeq\calo(1)$
@@ -3744,8 +3742,611 @@ $$
 \end{enumerate}
 \end{ex}
 
+\subsection{May 15th-A: proof continued}
+Recall the theorem in last lecture:
+$$
+Aut_{\mathsf{Sch}}(\proj^n_K)\cong PGL_{n+1}(K)
+$$
+$$
+\left[[x_0:...:x_n]\mapsto [\sum_j a_{0j}x_j:...:\sum_j a_{nj}x_j]\right]\mapsfrom g=(a_{ij})
+$$
+\begin{proof}
+Construct an inverse, $Aut(\proj^n_K)\lrta PGL_{n+1}(K)$, by looking at the action of an automorphism $\gamma$ on $\Gamma(\proj^n_K,\calo(1))\cong K^{n+1}$.
+
+\underline{Key Claim}: let $\gamma^*\calo(1)$
+ by $U\mapsto \Gamma(\gamma(U),\calo(1))$, then $\gamma^*\calo(1)$ is a sheaf, isomorphic to $\calo(1)$
+\begin{proof}[Proof of the key claim]
+$\gamma^*\calo(1)\in \pic(\proj^n_K)\cong Cl(\proj^n_K)\cong \intg\cdot [H_0]$, where $H_0=\proj^n_K-U_0$.  Moreover, doing the same construction to other $\call\in \pic(\proj^n_K)$, we get that $\call\mapsto \gamma^*\call$ is a group isomorphism $\pic(\proj^n_K)\lrta \pic(\proj^n_K)$, so $\gamma^*\calo(1)$ is generator of $\pic(\proj^n_K)\cong \intg$, then we know $\gamma^*\calo(1)$ is either isomorphic to $\calo(1)$ or $\calo(1)^{-1}$, but by definition
+$$
+\Gamma(\proj^n_K,\gamma^*\calo(1)):=\Gamma(\proj^n_K,\calo(1))\not\cong \Gamma(\proj^n_K,\calo(1)^{-1})=\{0\}
+$$
+So the key claim must be correct.
+\end{proof}
+
+So we have an isomorphism $\sigma:\gamma^*\calo(1)\lrta \calo(1)$, $\Lrta \Gamma(\proj^n_K,\calo(1))\overset{\sigma|_{\proj^N_K}}{\lrta}\Gamma(\proj^n_K,\calo(1))$
+
+i.e. $\sigma|_{\proj^n_K}\in GL_{n+1}(K)$
+
+Remark: this depends on the choice of $\sigma$, which may be changed to $\tau\circ \sigma$ where $\tau\in Aut_{\calo-module}(\calo(1))$
+
+However, we have an isomorphism, $\hom_{\calo-mod}(\calo(1),\calo(1))\cong \hom_{\calo-mod}(\calo,\calo)$, $f\longmapsto f\otimes\calo(1)^{-1}$, the later is an automorphism on $\calo$.
+
+An $f:\calo\lrta\calo$, given $f|_{U_i}:\calo(U_i)\lrta\calo(U_i)$ is an  morphism of rings $B_i\lrta B_i:=K[X_0/X_i,....,X_n/X_i]$ this has to be $B_i$-linear, determined by $b_i=$image of $1$, compatible with restriction, $\Lrta \forall i,j b_i=b_j\in B=K[X_k^{\pm 1}, 0\leq k\leq n]$. $f$ has to be a common element in $\cap_{i} B_i$, and the only choice is $f\in K$.
+
+Therefore, we have $\hom_{\calo-mod}(\calo(1),\calo(1))\cong K$, so $\sigma$ is determined up to $K^\times$, so the image of $\gamma$ in $PGL_{n+1}(K)$ is well-defined, one checks that is an inverse to the morphism $PGL_{n+1}(K)\lrta Aut(\proj^n_K)$.
+ \end{proof}
+\section{Algebraic Curves}
+\subsection{May 15th-B: Preliminaries}
+\begin{dfn}
+An algebraic curve $C$ over a field $K$, is an integral $1$-dimensional scheme $C/K$
+
+A non-singular $C/K$ is a curve where every $\calo_{C,x}$ is regular, for $x$  being closed.
+
+A non-singular projective curve $C/K$ is  a one dimensional $K$-subscheme of $\proj^n_K$ and $C$ is non-singular.
+\end{dfn}
+\underline{Warning:} in general, smooth $\neq $non-singular. (NO problem if $K$ is algebraic closed.)
+
+\underline{Notation}: $K(C)$ if the function field of $C$, and  $K(C)/K$
+ is a field extension of transcendence degree $1$. 
+
+ \begin{ex}
+ $C=\proj^n_K$, non-singular projective curve, with $K(C)\cong K(T)$ moreover, any non-zero $f\in K(C)$ corresponds uniquely to a morphism $C\overset{\overline{f}}{\lrta}\proj^n_K$ as follows:
+ 
+ if $f\in \Gamma(U,\calo_C)$, where $U$ is maximal open set (such that $f$ is regular on $U$), then  $f\llrta f\in \Gamma(U,\calo_C)\cong \hom_{\mathsf{Sch}}(U,\affn^1_K))$. i.e.
+ $$
+f\llrta p\mapsto [f(p),1]
+ $$
+
+ so $\tilde{f}|_U:U\lrta \affn^1_K$ and maps $C-U$ to the infinity point $\{\infty\}=\proj^1_K-\affn^1_K$
+
+ For detailed discussion, see Silverman II.2.2
+ \end{ex}
+ \begin{prop}
+\begin{enumerate}[label=(\arabic*)]
+\item $C_1\overset{f}{\lrta}C_2$ a morphism of curves over $K$, then it is either constant or dominant ($f(C_1)$ dense)
+\item If $C_1$ and $C_2$ are both projective, $f$ is either constant or surjective. 
+\end{enumerate}
+ \end{prop}
+\underline{idea:} $(2)$ is a special case of 
+$$
+\begin{tikzcd}
+X \arrow[rd] \arrow[r, "f"] & Y \arrow[d] \\
+ & \spec K
+\end{tikzcd}
+$$
+if both $X,Y$ are projective $\Lrta f(X)$ is closed in $Y$. Because the only closed subset in a curve is either closed point or the whole set.
+
+\begin{ex}
+\begin{enumerate}[label=(\arabic*)]
+\item $\proj^1_K,\affn^1_K$
+\item $K=\cplx$, Riemann: 
+$$
+\{\text{non-singular projective curvs } C/\cplx \}\llrta\{\text{compact connected Riemann surfaces}\}
+$$
+e.g. if $\Gamma$ is a discrete subgroup of $SL_2(\reals)$, torsion-free, then $\Gamma\backslash \mathbb{H}$ is a Riemann-surface, for any such $\Gamma$'s, it is compact. Any ``hyperbolic'' compact Riemann surface has this form (Poincare-Koebe uniformization theorem)
+
+Riemann ``conjectured'' that the ``space'' of compact Riemann surfaces is a disjoint union of spaces homeomorphic to $\cplx^{3g-3}$.
+\item $K$ arbitrary, if $f\in K[X_1,X_2]$ is irreducible, non-constant, then $V(f)\subset \affn^2_K$ is a curve. It is non-singular, provided for any closed point x, the partial derivative of $f$ at $x$ are not all zero.
+\end{enumerate}
+\end{ex}
+\subsubsection{Hyperelliptic curve} $f\in K[X,Y]$. with $Char\ K\neq 2$. Let $f(X,Y)=Y^2-g(X)$ for $g\in K[X]$ and $g$ is square free. Then $f$ is  irreducible in $K[X,Y]$, and $V(f)$ is non-singular. consider the point $(x,y)$, solve $y^2=g(x)$ then $\pd_X f(x,y)=-g'(x)$ and $\pd_Y f(x,y)=2y$, if both are zero, then $y=0$. then $g(x)=g'(x)=0$, contradicts that $g$
+is square free.
+
+If $\deg(g)=3,$ we get a so called elliptic curve.
+
+Note: by varying $g$, we get many different hyperelliptic curves, in fact, if we fix $\deg(g)=d$, we have $d$ parameters. 
+\subsubsection{Artin-Schreier Curves}
+$K$ is an algebraically closed field and
+$Char(K)=p> 0$, $f(X,Y)=Y^p-Y-g(X)$
+Suppose, $\deg(g)< p$, then $f$ is irreducible, and non-singular $V(f)$.
+
+It is nonsingular  because $K=\overline{K}$
+$$
+\left\{
+\begin{aligned}
+& y^p-y=g(x)\\
+& \pd_Xf(x,y)=-g'(x)\\
+& \pd_Y= p y^p-1=-1\neq 0
+\end{aligned}
+\right.
+$$
+
+It is irreducible because $p\neq 2$. Assume $Y^p-Y-g=g_1g_2$ in $L[Y]$ where $L=K(X)$ assume that $g_1,g_2$ are monic, key observation:
+if $a\in \bbf_p\subset K$, $(y+a)^p-(y+a)-g=y^p+a^p-y-a-g=Y^p-Y-g=f$. By uniqueness of factorization either 
+$$
+g_1(Y+a)=\alpha g_1(Y)(**)
+$$
+or 
+$$
+g_1(Y+a)=\alpha g_2(Y)(*)
+$$
+where $\alpha=1$ because $g_i$ monic.
+
+
+Assume $a=1$ and $(*)$ occurs, then by iterating , $(**)$ happens for $a=2$. Then get $(**)$ for $a=1$ by iterating.
+$$
+g_1(Y)=Y^{d_1}+a_1Y^{d_1-1}+\cdots
+$$
+$$
+\begin{aligned}
+g_1(Y)&=g_1(Y+1)=(Y+1)^{d_1}+a_1 (Y+1)^{d_1-1}+\cdots\\
+&=Y^{d_1}+(d_1+a_1)Y^{d_1-1}+\cdots
+\end{aligned}
+$$
+so $a_1=a_1+d_1\Llrta d_1=0$. So $p\mid d_1\leq \deg(f)=p$
+so $d_1=0$ or $d_1=p$.
+
+In the case of $d_1=0$, we have $g_1$ is constant anf $g_2=f$, in the other case we have $g_1=f$ and $g_2$ is constant.
+
+
+\begin{rmk}
+If $\deg(g)\geq p$ the irreduciblility statement may fail.
+e.g. $y^p0Y-(X^p-X)=(Y-X)^p-(Y-X)=(Y-X)((Y-X)^{p-1}-1)$ is not irreducible.
+
+Consider $V(f)$, for $\deg(g)<p$.
+
+We have a morphism $V(f)\lrta \affn^1_K$ corresponding to
+ $$(X,Y)\longmapsto X$$
+ $$
+K[X]\inj K[X,Y]/(f)
+ $$
+ which is a ``covering'': every $x\in \overline{K}$, has $p$ distinct pre-image $y^p-y=g(x)$. it is connected $\pd_y=-1\Lrta $ no repeated roots.
+
+in the case $\cplx$, $\cplx\lrta \cplx$ is a unique connect covering.
+
+In the case $p>0$, $\affn^1_K$( or $\affn6n_K$) is very far from being simply connected.
+\end{rmk}
+ \subsection{May 18th:}
+\subsection{May 22nd:}
+
+\subsection{May 25th:}
+Recall:
+Riemann-Roch $C/K$ nonsingular projective curve over $K$ , $\exists g\geq 0,\exists K_C\in  \pic(C)$
+
+s.t. $\forall D\in Div(C)$
+$$
+\ell(D)-\ell (K_C-D)=deg(D)+1-g.
+$$
+We saw. 
+$$
+\deg(K_C)=2g-2
+$$
+$$
+\ell(K_C)=g
+$$
+$(3)$ in the case  $g=1$, $\deg(K_C)=0$ and $\ell(K_C)>0\Lrta K_C=0$ in $Cl(C)$ so that R-R
+implies
+$$
+\ell(D)-\ell(-D)=\deg(D).
+$$
+Denote $\pic^\circ(C)=\ker(\deg:Cl(C)\lrta\intg)$, where $Cl(C)\cong \pic (C)$
+\begin{thm}
+$K=\overline{K}$. Fix $\infty$ closed point of $C$, then 
+$$
+j:\left\{\begin{aligned}
+\{\text{closed point of $C$}\}&\lrta\pic^\circ(C)\\
+x & \longmapsto [x-\infty]
+\end{aligned}\right.
+$$
+is a bijection.
+
+\end{thm}
+\begin{rmk}
+\begin{enumerate}[label=(\arabic*)]
+\item $K=\overline{K}\Lrta $ we can identify \{ closed points of $C$\} with 
+$C(\overline{K})=\hom_{\mathsf{Sch}}(\spec(\overline{K}),C)$
+\item Cor: $(a)$: $\pic^\circ(C)$ has the structure of closed points of a scheme
+
+$(b)$ $C(\overline{K})$ has  a structure of an abelian group (with $\infty$ as neutral element)
+\end{enumerate}
+\end{rmk}
+Both of the facts generalize to curves of higher $g\geq 2$ (and in come form to higher dimensional schemes) $(1)$ is true but corresponding scheme $Jac(C)$ ``Jacobian(variety) of  $C$'' is a nonsingular projective scheme over $K$ of dimension $g$.
+
+$(2)$ $Jac(C)$ is a ``group scheme'' in the sense that it has agroup structure with operation given by morphisms. there are $Jac(C)\times Jac(C)\overset{m}{\lrta} Jac(C)$ and $Jac(C)\overset{j}{\lrta}Jac(C), 0\in Jac(C)$ s.t. the diagrams expressing associativity, neutral element, inverse, commutativity.
+>>>>>>>1
+
+\begin{dfn}
+ $C$ genus $1$ over $K$ $\infty$ closed point with reside field $K$ [$\llrta$ an  element of $C(K)$], $(C,\infty)$ is called an elliptic curve over $K$. $Ex$. $K=\ratl$ $S=\{3x^3+4y^3+5z^3=0\}\subset \proj^2_\ratl$  is of genus $1$, but $S(\ratl)=\empty$.
+\end{dfn}
+
+\begin{proof}[Proof of theorem]
+$j(x)=$ class of $x-\infty$
+\begin{enumerate}[label=(\arabic*)]
+\item \underline{Injectivity}: $j(x)=j(y)\Llrta x-\infty\sim y-\infty\Llrta x\sim y$. If $x\neq y$, we saw that $x\sim y$ implies that $C\simeq \proj^1_K$ which has genus $0$, so it is not possible.
+\item \underline{Surjectivity} Let $D\in Div(C)$ with $\deg(C)=0$, written $D=D_1-D_2$ where $D_i\geq 0$. We need to prove: $(*)D\sim x-\infty$ for some $x$ closed point of $C$. Write 
+$$
+D_1=\sum n_i x_i=\sum n_i(x_i-\infty)+(\sum n_i)\infty,
+$$
+with $n_i\geq 1$.
+Do  the same for $D_2$ and take $D_1-D_2:$
+$$
+D=\sum_{j\in J} m_j(y_j-\infty)+0
+$$
+for some $m_j\in \intg$ $y_j$ closed points. By induction on $Card(J)$ to prove $(*)$ it suffices to prove
+
+(1) $\forall x_1,x_2,$ $\exists x_3, x_1-\infty+x_2-\infty\sim x_3-\infty$.
+
+(2) $\forall x_1,\exists x_2, -(x_1-\infty)\simeq (x_2-\infty)$
+
+proof of $(1)$: Consider $E=x_1+x_2-\infty\in Div(C)$, $\deg(E)=1\Lrta \ell(-E)=0$
+
+R-R $\Lrta$ $\ell(E)=1$. So there exists a function $0\neq f \in \Gamma(C,\call(E))$
+, unique up to multiplication by $\lambda\in K^\times$. So $div(f)+ E\geq 0$.
+
+I.e. $E=x_1+x_2-\infty$, $f$ has at most a pole of order $1$ at $x_1$,  and vanishes at $\infty$. So $div(f)=k\infty -n x_1-m x_2+(\text{other zeros})$ where $k\geq 1, 0\leq n\leq 1, 0\leq m\leq 1$. If $n=0$, then $f\in \Gamma(C,\call(x_2-\infty))$  
+$\Lrta \ell(x_2-\infty)\geq 1$,
+ $\deg(x_2-\infty)=0$, $\Lrta x_2-\infty\sim 0$ $\Lrta C\simeq \proj^1_K$, so $n=1$, and similarly $m=1$. So $0=\deg(div(f))=-2+k+\deg(\text{other zeros})$ i.e. $k+\deg(\text{other zeros})=2$. So there is a unique $x_3$ closed point such that the zero of $f$ are $\infty +x_3$. This $x_3$ only depends on $x_1$ and  $x_2$, because $div(\lambda f)= div(f)$ if $\lambda \in K^\times$. So 
+ $div(f)=\infty+x_3-x_1-x_2$ so $\infty +x_3\sim x_1+x_2\Llrta x_1-\infty +x_2-\infty\sim x_3-\infty$
+
+ (2),  we should investigate 
+ $$
+\infty -x_1\overset{?}{\sim} x_2-\infty.
+ $$
+ Let $E=2\infty -x_1$ $\deg(E)=1$ $\Lrta 0\neq f \in \Gamma(C,\call(2\infty-x_1))$. $div(f)+2\infty -x_1\geq 0$. i.e. $f$ has at most pole of order $2$ at $\infty$ and a zero at $x$. $f$ can not have a pole of order $1$ at $\infty$. So $f$ has a pole of order $2$ so $f$ has two zeros with multiplicity so $div(f)=x_1+x_2-2\infty$ for some unique $x_2$
+ $$
+\Lrta x_1-\infty +x_2-\infty\sim 0
+ $$
+ $$
+\Llrta \infty -x_1\sim x_2-\infty
+ $$
+\end{enumerate}
+\end{proof}
 
 
 
+Now we use RR to find equation for $C$.  (Here $K$ is not necessarily algebraic closed) Fix again $\infty$ a closed point of $C$. (Might not exist if $K\neq \overline{K}$) Let $D_n=n\infty$ for $n\geq 1$, a divisor of degree $n$, so that $\ell(D_n)=n$. 
+
+$\ell(D_1)=1$, and $0\neq 1 \in \Gamma(C,\call(\infty))$ so $V(D_1)=K\cdot 1$ where $V(D_n)=\Gamma(C,\call(D_n))$
+
+$\ell(D_2)=2$; let $0\neq f$ in $V(D_2)$ be such that $V(D_2)=K\cdot 1+\oplus K\cdot f$. Note $div(f)=(zeros)-2\infty$
+
+$\ell(D_3)=3$; let $0\neq g$ in $V(D_3)$ not in $V(D_2)$ s.t. 
+$$
+V(D_3)=K\cdot 1\oplus K\cdot f\oplus K \cdot g.
+$$
+
+$\ell(D_4)=4$ so since $f^2\in V(D_4)$ and not to $V(D_3)$[because it has a pole of order $4$ at $\infty$]  we have 
+$$
+V(D_4)=K\cdot 1\oplus K\cdot f\oplus K \cdot g\oplus K f^2
+$$
+
+$\ell(D_5)=5$
+$$
+\Lrta V(D_5)=K\cdot 1\oplus K\cdot f\oplus K \cdot g\oplus K f^2\oplus Kfg
+$$
+
+$\ell(D_6)=6$
+since $f^3$ and $g^2$ both belong to $V(D_6)$ and not to $V(D_5) $ the set $\{1,f,g,f^2,fg,f^3,g^2\}$ is not linearly independent. So we have $\alpha_1,...\alpha_6,\beta_6$ with $\alpha_6\neq 0 $ and $\beta_6\neq 0$ s.t.
+$$
+0=\alpha_1+\alpha_2 f+\alpha_3 g+\alpha_4 f^2+\alpha_5 fg+\alpha_6 f^3+\beta_6 g^2
+$$
+in $K(C)$. So $\forall x\neq \infty$, we have $\alpha_1+\alpha_2 f(x)+...+\alpha_6 f(x)^3+\beta_6 g(x)^2=0$. Therefore, we have a map
+$$
+C(\overline{K})-\{\infty\}\lrta \affn^2_K(\overline{K})
+$$
+$$
+x\longmapsto (f(x),g(x))
+$$
+so that the  image is contained in the algebraic set
+$$
+\alpha_1+\alpha_2X+\alpha_3Y+\alpha_4XY+\alpha_5 X^2+\alpha_6 X^6+\beta_6 Y^2=0.
+$$
+One proves that this corresponds to a morphism
+$$
+C\lrta\tilde{C}
+$$
+where $\tilde{C}\subset \proj^2_K$ is the corresponding plane curve. This is surjective because not constant and is in fact an isomorphism. 
+
+\begin{rmk}
+By Careful choice of $f$ and $g$, one can find such an equation with $\alpha_3=\alpha_4=\alpha_5=0$ if the characteristic of $K$ is larger than $5$. So we have an equation like 
+$$
+Y^2=X^3+aX+b
+$$
+This is called the Weierstrasse equation of an elliptic curve. 
+\end{rmk}
+
+
+Now we look at a hyperelliptic  curve $C/K$ with equation
+$$
+ZY^2=X^3+aXZ^2+bZ^3, a, b\in K.
+$$
+with $X^3+aX+b$ without multiple roots 
+
+$C$ is nonsingular, projective, and has a unique point $\infty=[0:1:0]$ in $\proj^2_K-\affn^2_K$
+
+\begin{thm}$(C/K,\infty)$ is an elliptic curve over $K$ (i.e. has genus $1$) However, every elliptic curve over $K$ is isomorphic to one the this form if $Char(K)\geq 5$.
+\end{thm}
+
+\begin{ex}
+$Y^2=X^3-X$ and $Y^2+X^3+1$
+\end{ex}
+
+We will check 
+$$
+\ell(D_n)-\ell(-D_n)=\deg(D_n)=n
+$$
+for $D_n=n\infty,n\in \intg$. We can assume $n\geq 0$. We have $C-\{\infty\}=C\cap \affn^2_K=\{y^2-x^4-ax-b=0\}=\spec(K[X,Y]/(Y^2-X^3-aX-b))$
+
+
+So any  $f\in \Gamma(C,\call(D_n))$ is an element of $Frac(A)$ belonging to $\Gamma(C-\{\infty\},\calo_C)=A$.
+
+This means any such $f$ is a ``polynomial'' 
+$$
+f=f_1(x)+Yf_2(X). f_1,f_2\in K[X].
+$$
+The functions $X^i, YX^i, i\geq 0 $ form a basis of  $A=\cup_{n geq 0}\Gamma(C,\call(D_n))$
+
+\underline{Claim}: $X$ has divisor
+$$
+\sqrt{b}+(-\sqrt{b})-2(\infty)
+$$
+$Y$ has divisor
+$$
+(\text{zeros of  $f$}）-3(\infty)
+$$
+So $X^i$ has  polar divisor $2 i(\infty)$, $YX^i$ has polar divisor $3\infty+2j \infty=(3+2j)\infty$
+
+$X=0\Llrta Y^2=b$ so $\sqrt{b}+(-\sqrt{b})$ so $\deg(\text{polar part})=2$
+, $y=0\Llrta x^3+ax+b=0$ so $x_1+x_2+x_3$ ``zeros of cubic'' so $\deg(\text{polar part})=3$ 
+
+To check that $\ell(D_n)=n$ for all $n\geq 1$, it suffices to consider the pairs $i,j$ with
+$$
+\left\{\begin{aligned}
+& 0\leq 2i \leq n\\
+& 0\leq 3+2j\leq n
+\end{aligned}\right.
+$$
+
+\subsection{May 29th-A: Group law of elliptic curves.}
+Recall:
+$C/K:Y^2 Z=X^3+aXZ^2+bZ^3\subset \proj^2_K$
+non-singular proj: if $X^3+aX+b$ has $3$ distinct roots in $\overline{K}$
+
+$\infty=[0:1:0]$ the only point in $C-\affn^2_K$, $D_n=n\infty,n\in \intg$
+
+$\Lrta \ell(D_n)-\ell(-D_n)=\deg(D_n)=n$
+
+R-R: with $g=1$ and  $K_C=0$,
+
+Description of the group law on the set of closed points of $C$, with origin $[0:1:0]$,
+
+$K=\overline{K}$, we can give an illustration of $C(\reals)$.
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+\draw  (240.65,150.2) -- (474.65,150.2)(298.65,61) -- (298.65,238.2) (467.65,145.2) -- (474.65,150.2) -- (467.65,155.2) (293.65,68) -- (298.65,61) -- (303.65,68)  ;
+\draw    (263.65,145.2) .. controls (262.65,64.2) and (417.65,189.2) .. (416.65,28.2) ;
+
+
+\draw    (263.65,145.2) .. controls (258.65,240.2) and (413.65,112.2) .. (418.65,248.2) ;
+
+\end{tikzpicture}
+\end{center}
+$$
+C(\overline{K})\cong \{\text{closed points}\}\overset{f}{\lrta}\pic^\circ(C)
+$$
+$$
+x\longmapsto x-\infty
+$$
+gives a group isomorphism.
+
+Let $f=\alpha X+\beta Y+\gamma$ as element of $K(C)$, with $\alpha$ or $\beta$ non-zero.
+
+$$div(f)=(\text{zeros})-\left\{
+\begin{aligned}
+&3\infty, \beta\neq 0\\
+& 2\infty, \beta=0 
+\end{aligned}
+\right.$$
+so there are $3$ zeros with multiplicity, or two.
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+\draw  (240.65,150.2) -- (474.65,150.2)(298.65,61) -- (298.65,238.2) (467.65,145.2) -- (474.65,150.2) -- (467.65,155.2) (293.65,68) -- (298.65,61) -- (303.65,68)  ;
+\draw    (263.65,145.2) .. controls (262.65,64.2) and (417.65,189.2) .. (416.65,28.2) ;
+
+
+\draw    (263.65,145.2) .. controls (258.65,240.2) and (413.65,112.2) .. (418.65,248.2) ;
+
+
+\draw    (378.65,57.2) -- (381.65,227.2) ;
+
+
+\draw    (257,112) -- (435.65,244.2) ;
+
+
+
+\draw (267,104) node   {$x_{1}$};
+\draw (345,199) node   {$x_{2}$};
+\draw (434,221) node   {$x_{3}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+These are exactly the intersection points (with multiplicity for tangents) of $C\cap \affn^2_K\subset \affn^2_K$ with the line $f=0$.
+
+Suppose
+$div(f)=x_1+x_2+x_3-3\infty$, $\Lrta (x_1-\infty)+(x_2-\infty)+(x_3-\infty)=0$ in $\pic^\circ (C)$
+
+$\Llrta x_1+x_2+x_3=0$ in $\{\text{closed points}\}$
+
+Suppose $\beta=0$, $\Lrta div(f)=x_1+x_2-2\infty$ $\Llrta x_1-\infty+x_2-\infty=0$, $\Llrta x_1+_Cx_2=0$, $\Llrta X_2=-x_1$ in $\{\text{Closed points}\}$.
+
+If $x_1=(u_1,v_1)$ is a point on $C$, then $-x_1=(u_1,-v_1)$ is the inverse.
+
+To compute $x_1+_C x_2$:
+
+$(1a)$: if $x_1\neq x_2$, draw the unique line $L\subset \affn^2_K$ joining  $x_1,x_2$ say $L: f=0$.
+
+$(1a')$ if $L$ is not vertical, let $x_3$
+ be the third  intersection point $div(f)=x_1+x_2+x_3-3\infty$. Then $x_1+x_2$ is the symmetric with $x_3$ with $x$-axis.
+
+ $(1a'')$ if $L$ is vertical, $\Lrta x_1+x_2=0$
+
+$(2a)$ $x_1=x_2$, let $L$ be the tangent line to $C$ at $x_1$, 
+
+$(2a')$ if $L$ is not vertical, then $div(f)=2x_1+x_3-3\infty$ for some $x-3$ and $2x_1=-x_3$
+
+$(2a'')$
+ if $L$ is vertical, then $2x_1=0$.
+
+\begin{rmk}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item One can check directly that this geometric picture gives an Abelian group law on the set of closed points. Associativity is a famous theorem of euclidean geometry.
+\item Elliptic curve cryptography uses this group structure. Having cases leading to ``timing attacks''; often models of elliptic curves are used to avoid this, where all operation are carefully designed to take the same amount of time.
+\item Elliptic curves (surprisingly) important in modern arithmetic. (Silverman, the arithmetic of elliptic curves)
+\end{enumerate}
+\end{rmk}
+
+\subsection{May 29th-B: The Riemann hypothesis for curves over finite fields.}
+
+\underline{History:} A.Weil 1940s Great motivating problems for algebraic geometry from 1940s on, including generalizations
+(Weil conjectures) as motivating Grothendieck.
+
+Classical Riemann hypothesis
+$$
+\zeta(s)=\sum_{n=1}^\infty \frac{1}{n^s}
+$$
+is defined over the region $Re(s)>1$. Riemann showed this function has an analytic continuation to $\cplx$ with a simple pole at $s=1$. This showed $\zeta(-2k)=0$ for $k\geq 1$ integers. He conjectured all other zeros lies on the line of $Re(s)=\frac{1}{2}$.
+
+$$\Llrta\sum_{p\leq x, p\text{ prime}}1=\int^x_2\frac{dt}{\log(t)}+\calo(\sqrt{x}(\log(x)^2))$$
+
+
+\underline{Question}: Given a finite field $\bbf_q$  with $q$ elements and $C/\bbf_q$ curve. is there an $\bbf_q$-rational point? How many are there?
+
+(Note: if $C\inj \proj^n_{\bbf_q}$ then $|C(\bbf_q)|\leq |\proj^n_{\bbf_q}(\bbf_q|$) is finite, where the later equals
+$$
+\frac{q^{n+1}-1}{q-1}.
+$$
+\begin{ex}
+\begin{enumerate}[label=(\arabic*)]
+\item
+Fix $k\geq 2$, $x^k+y^k=z^k$? $x,y,z\in \bbf_q$ not all zero.
+ We will se that there are many situations if $p$ is large enough.
+ \item $a,b\in \bbf_q$, 
+ $$
+ \left|\{(x,y)\in \bbf_q^2\mid y^2=x^3+ax+b\}\right|?
+ $$
+We can find solution by taking any $x\in \bbf_q$ and computing $x^3+ax+b\in\bbf_q$ and asking if it is a square or not in $\bbf_q$. If $q$ is odd, there are
+$$
+1+\frac{q-1}{2}=\frac{q+1}{2}
+$$
+squares in $\bbf_1$
+$$
+\left\{
+\begin{aligned}
+& \bbf_q^\times\lrta\bbf_q^\times\\
+& x\longmapsto x^2
+\end{aligned}\right.
+$$
+has kernel $\{\pm 1\}$ so $|Im|=\frac{q-1}{2}$. One guesses that there is about half chance that $x^3+ax+b$ is a square, so altogether we might expect $\sim 2\cdot \frac{q}{2}=q$ solutions.
+
+\begin{thm}
+(Weil): $\bbf_q$ finite field $C/\bbf_q$ non-singular projective curve. Let $g\geq 0$ be its genus. Then $$\left||C(\bbf_q)|-(q+1)\right|\leq 2g \sqrt{q}$$
+\end{thm}
+
+N.B. 
+\begin{enumerate}
+\item 
+$C=\proj^1_{\bbf_q}$, $g=0$
+$$
+\left||C(\bbf_q)|-(q+1)\right|\leq 0
+$$
+$$
+\Lrta |\proj^1(\bbf_q)|=(q+1)
+$$
+\item In fact,  Weil proved there exist $\alpha_1,...,\alpha_{2g}$ in $\cplx, |\alpha_i|=\sqrt{q}$ such that for any $\nu\geq 1$
+$$
+|C(\bbf_{q^\nu})|=q^\nu+1-\sum_{i=1}^{2g}\alpha_i^\nu
+$$
+$$
+\Lrta ||C(\bbf_{q^\nu})|-(q^\nu+1)|\leq 2g \sqrt{q}.
+$$
+In fact, from earlier work of Hasse, Artin. Schmidt...such a formula was  knowen except that $|\alpha_i|=\sqrt{q}$, the $\alpha_i$ being zeros of a certain polynomial analogue of the zeta function. then $|\alpha_i|=\sqrt{q}$ plays the role of $Re(s)=1/2$
+\item Higher dimensional version were conjectured by Weil (1948) proved by Dwark, Grothendieck for the counting formula. and especially R-H by Deligne. For reference see the appendix in Hartshorne or a monograph by James Milne on his webpage.
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+We will prove the weaker-looking (though equivalent) statement 
+\begin{thm}
+(Stepanov 1969 Bombieri 1973)
+
+$C/\bbf_q$ nonsingular projective $q=p^{2\alpha}$, where $p$ prime, $\alpha\geq 1$. If $q> (g+1)^4$, then 
+$$
+C(\bbf_q)\leq q+1+(2g+2)\sqrt{q}
+$$
+\end{thm}
+
+\underline{Key idea}
+
+Recall $\bbf_q\subset \overline{\bbf}_q$ is the characterized as $\{x\in \overline{\bbf_q}|x^q=x\}$, which is the fixed point of the power morphism $\varphi_q:\overline{\bbf}_q\lrta\overline{\bbf}_q:x\longmapsto x^q$
+
+Give $C/\bbf_q$, there is a Frobenius automorphism
+$$
+\begin{aligned}
+\varphi_q:&C\lrta C\\
+& (x_i)\longmapsto (x_i^q)
+\end{aligned}
+$$
+Intuitively: $C$ is given as solution set of polynomial $f_i(x_1,...,x_m)$ where $f_i\in\bbf_q[X_1,...,X_m]$, then
+$$
+f_i(X_1^q,..,X_m^q)=f_i(X_1,..,X_m)^q
+$$
+so if $(x_1,...,x_m)$ are solution then so of $(x_1^q,...,x_m^q)$
+
+
+Rigorously, the above gives a well-defined 
+$$
+\varphi_q:\spec(A)\lrta \spec (A)\\
+$$
+where $A=\bbf_q[X_1,...,X_m]/(I)$ which satisfies the glueing.
+
+Then
+$$
+C(\bbf_q)\cong \{x\in C(\overline{\bbf}_q|\varphi_q(x)=x\}
+$$
+
+\underline{Ex}
+$f(x,y)=0$, $x,y$ is a solution in $\bbf_q^2$ $\Llrta $ it is a solution in $\overline{\bbf}_q^2$ and $(x,y)^q=(x^q,y^q)=(x,y)$
+
+\underline{Idea of Stepanov}
+Suppose we have 
+$$
+n\geq 1, m\geq 1 \text{ and } 0\neq f\in \overline{\bbf}_q(C)
+$$
+such that 
+\begin{enumerate}
+\item $f$ has at most $n$ poles with multiplicity
+\item every $x\in C(\bbf_q)$ is a zero of $f$ with multiplicity $\geq m$. Tenn $\deg(div(f))=0$ implies 
+$$
+m|C(\bbf_q)|\leq n
+$$
+$$
+\Llrta |C(\bbf_q)|\leq \frac{n}{m}.
+$$
+Such ideas exists also in transcendence theory from Thue's time $\sim$ 1910s cf. D. Masser ``Auxiliary polynomials in number theory''.
+\end{enumerate}
+\begin{proof}[Proof of Stepanov's theorem, following Bombieri]
+Let $x_0\in C(\bbf_q)$ fixed. (If $x_0$ does not exist, the result is true).
+Let $D_n=nx_0\in Div(C)$ and we will find  a suitable auxiliary function $f$ in $\Gamma(C,\call(D_n))$ for $n$ large enough. Such  a function certainly has poler divisor of degree $\leq n$. We will find $f=g^m$, with $g$ vanishing at all $x\in C(\bbf_q)-\{x_0\}$
+$$
+\Lrta m(|C(\bbf_q)|-1)\leq n
+$$
+$$
+|C(\bbf_q|\leq 1+\frac{n}{m}
+$$
+They key is to do this with $n$ as small as posible and $m$ as large as possible.
+\end{proof}
 \end{document}
 

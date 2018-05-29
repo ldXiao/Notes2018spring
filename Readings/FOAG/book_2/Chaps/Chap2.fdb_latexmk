@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1526224474 "Chap2.xdv" "Chap2.pdf" "Chap2" 1526224474
-  "Chap2.xdv" 1526224469 62212 86dab3168ca7190508f8908561c3d355 "xelatex"
+["xdvipdfmx"] 1526311721 "Chap2.xdv" "Chap2.pdf" "Chap2" 1526311721
+  "Chap2.xdv" 1526311717 62212 7ed0e3ff0da81a56fedb6e25f6600166 "xelatex"
   (generated)
   "Chap2.pdf"
-["xelatex"] 1526224468 "Chap2.tex" "Chap2.xdv" "Chap2" 1526224474
+["xelatex"] 1526311716 "Chap2.tex" "Chap2.xdv" "Chap2" 1526311721
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1480098701 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1480098701 1296 d77f431d10d47c8ea2cc18cf45346274 ""
@@ -13,8 +13,8 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "Chap2.aux" 1526134346 11678 e052ff8b60bbb444abe261746d668aa5 ""
-  "Chap2.tex" 1526224468 79229 894760447427f3aa3bfd78d9ffdc4064 ""
+  "Chap2.aux" 1526311544 11857 eee5635de6fa8c6202cddcf8b26dc4da ""
+  "Chap2.tex" 1526311715 79854 f84e0794a88bb4acb37cdfd6f7164751 ""
   (generated)
-  "Chap2.xdv"
   "Chap2.log"
+  "Chap2.xdv"

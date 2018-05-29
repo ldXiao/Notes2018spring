@@ -109,6 +109,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {11}Dimension}{181}{chapter.11}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.1}Dimension and codimension}{181}{section.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.2}Dimension, transcendence degree, and Noether normalization}{181}{section.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.3}Codimension one miracle, Krull's and Hartogs's Theorems}{181}{section.11.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.4}Dimensions of fibers of morphisms of Varieties}{181}{section.11.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.5}Proof of Krulls's Principal Ideal and Height Theorems}{181}{section.11.5}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {12}Regularity and smoothness}{183}{chapter.12}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {V}{Quasicoherent sheaves}}{185}{part.5}
@@ -119,19 +129,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {13.1}Vector bundles and locally free sheaves}{187}{section.13.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {14}Line bundles: Invertible sheaves and divisors}{195}{chapter.14}
+\contentsline {section}{\numberline {13.2}Quasicoherent sheaves}{195}{section.13.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {15}Quasicoherent sheaves and projective $A$-schemes}{197}{chapter.15}
+\contentsline {chapter}{\numberline {14}Line bundles: Invertible sheaves and divisors}{197}{chapter.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {16}Pushforwards and pullbacks of quasicoherent sheaves}{199}{chapter.16}
+\contentsline {chapter}{\numberline {15}Quasicoherent sheaves and projective $A$-schemes}{199}{chapter.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {VI}{More}}{201}{part.6}
+\contentsline {chapter}{\numberline {16}Pushforwards and pullbacks of quasicoherent sheaves}{201}{chapter.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.1}Introduction}{201}{section.16.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.2}Pushforward of quasicoherent sheaves}{201}{section.16.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.3}Pullbacks of quasicoherent sheaves}{201}{section.16.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.4}Line bundles and maps to projective spaces}{201}{section.16.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.5}The Curve-to-Projective Extension Theorem }{201}{section.16.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {VI}{More}}{203}{part.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{203}{chapter*.2}
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{205}{chapter*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{203}{section*.3}
+\contentsline {section}{Articles}{205}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{203}{section*.4}
+\contentsline {section}{Books}{205}{section*.4}
 \contentsfinish 

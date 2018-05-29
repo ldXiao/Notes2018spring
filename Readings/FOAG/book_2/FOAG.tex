@@ -108,7 +108,6 @@
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
-
 \include{Chaps/Chap1}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
@@ -618,7 +617,17 @@ Omitted.
 \chapter{Separated and proper schemes, varieties}
 \part{``Geometric'' properties: Dimension and smoothness}
 \chapter{Dimension}
-
+\section{Dimension and codimension}
+\section{Dimension, transcendence degree, and Noether normalization}
+\section{Codimension one miracle, Krull's and Hartogs's Theorems}
+\begin{exr}
+Show that an irreducible homogeneous polynomial in $n+1$ variables over a field $k$ describes an integral scheme of dimension $n-1$ in $\proj^n_k$ 
+\end{exr}
+\begin{proof}[Sol.]
+$S_\bullet=k[X_0,...,X_n]$ is an Noetherian integral domain. By Krull's principal ideal theorem. Suppose $f$ is an irreducible homogeneous polynomial in $S_\bullet$.
+\end{proof}
+\section{Dimensions of fibers of morphisms of Varieties}
+\section{Proof of Krulls's Principal Ideal and Height Theorems}
 \chapter{Regularity and smoothness}
 
 \part{Quasicoherent sheaves}
@@ -753,7 +762,7 @@ It is surjective. pick an $f\in \cale^{\vee\vee}(U_i)$ we want to find a $v\in \
 And the compatibility with restriction and cocycle relation is just routine.
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap13exr:tensor_product_of_invertible_sheaves}
 If $\calf$ and $\calg$ are locally free sheaves, show that $\calf\otimes \calg$ is a locally free sheaf.  If $\calf$ is an invertible sheaf, show that $\calf\otimes \calf^\vee\cong \calo_X$.
 \end{exr}
 \begin{proof}[Sol.]
@@ -785,25 +794,31 @@ $$
 (\call_1\otimes\call_2)|_U\simeq \calo_X|_U\otimes\calo_X|_U\simeq \calo_X|_U,
 $$ where the LHS is sheaf associated to presheaf, (given $V\subset U$) $V\longmapsto\call_1(V)\otimes\call_2(V)$ and the $\calo_X(V)\otimes \calo_X(V)\simeq \calo_X(V)$. As a presheaf it is isomorphic to the sheaf $\calo_{X}(V)$. So the LHS is the sheaf $V\longmapsto \calo_X(V)$ and $\call_1|_U\otimes \call_2|_U\simeq \calo|_U$ and therefore $\call_1\otimes \call_2$ is invertible.
 
-To prove $\calf\otimes \calf^\vee\cong \calo_X$, recall that in general the stalk of sheaf-hom is not the hom of stalks (Though in some coherent case this is true, but we don't want to use this result. See \href{https://mathoverflow.net/questions/642/stalks-of-sheaf-hom}{StackExchange} for a review).
+To prove $\call\otimes \call^\vee\cong \calo_X$, recall that in general the stalk of sheaf-hom is not the hom of stalks (Though in some coherent case this is true, but we don't want to use this result. See \href{https://mathoverflow.net/questions/642/stalks-of-sheaf-hom}{StackExchange} for a review).
 
 Instead,
-for any $U\subset X$ we have an isomorphism of modules
+\underline{Claim}: For any $U\subset X$, we have an isomorphism of modules, $\call^\vee(U)\cong \hom_{\calo_X(U)}(\call(U),\calo_X(U))$ as $\calo_X(U)$-modules.
+where 
 $$
-\calf(U)\otimes\calf^{-1}_{pre}(U)\overset{\sim}{\lrta}\calo_X(U)
+\begin{aligned}
+\call^\vee(U):=\hom_{\calo_X|_U-mod}(\call|_U,\calo_X|_U)&\lrta \hom_{\calo_X(U)-mod}(\call(U),\calo_X(U))\\
+\lambda&\longmapsto \lambda(U).
+\end{aligned}
 $$
-$$
-LHS=\calf(U)\otimes\hom_{\calo_X(U)}(\calf(U),\calo_X(U))
-$$
-$$
-(s,\lambda)\longmapsto \lambda(s).
-$$
-This isomorphism of presheaves induces an isomorphism of stalks.
-After sheafification, we get a morphism of sheaves
-$$
-\calf\otimes\calf^{-1}\lrta \calo_X
-$$
-which at stalks is an isomorphism. It is an isomorphism of sheaves.
+We can construct the inverse by mapping $\phi\in \hom_{\calo_X(U)-mod}(\call(U),\calo_X(U))$ to $\res_{U,V}(\phi)$ and identify all the data $\res_{U,V}(\phi)$ as $\lambda(V)$ of a morphism of sheaves $\lambda$.
+
+ If we further require $U$ is contained in some open set $V$, where $\call|_V\cong \calo_X|_V$
+ $$
+ \begin{aligned}
+ (\call\odot \call^\vee)(U)&\cong \call(U)\otimes\call^{\vee}(U)\cong \call(U)\otimes\hom_{\calo_X(U)-mod}(\call(U),\calo_X(U))\overset{(*)}{\lrta}\calo_X(U)\\
+  (s,\lambda)& \longmapsto (\lambda(U))(s),
+ \end{aligned}
+ $$
+ The last isomorphism $(*)$ is due to fact $\call(U)\otimes_{\calo(U)}(\call(U))^\vee\cong End_{\calo_X(U)}(\call(U))=\calo_X(U)$ because $\call(U)\cong \calo_X(U).$  
+
+ The above construction gives an isomorphism of presheaves on $U$. After sheafification, we get an morphism of sheaves on $U$, which induces isomorphism on stalks.
+
+ In the end, we have a collection of isomorphism on a base $\{U_i\}$ of topology. If or choice of base refines the defining chart of locally free sheaves $\call$, we can check the isomorphisms on base are compatible on intersections and we can glue it to an isomorphism of sheaves on $X$.
 \end{proof}
 
 \begin{exr}
@@ -903,17 +918,124 @@ $$
 $$
 If we choose the open cover refining the defining open cover of the locally free sheaf $\cale$, the compatibility condition is automatically satisfied.
 \end{proof}
-\begin{exr}
-Show that the invertible sheaves on $X$ up to isomorphism form an abelian group under product. This is called the \textbf{Picard group} of $X$, and is denoted $\text{Pic } X$. 
-\end{exr}
 
 \begin{exr}
-If $\pi:X\lrta Y$ is an isomorphism of ringed spaces, and $\calg$ is a locally free sheaf of rank $n$ on $Y$, figure out how to define a ``pull back'' locally free sheaf of rank $n$ on X, denoted $\pi^*\calg$. Then show that $Pic$ is a contravariant functor from the category of ringed spaces to the category $\mathsf{Ab}$ of abelian groups.
+Show that the invertible sheaves on $X$ up to isomorphism form an abelian group under product. This is called the \textbf{Picard group} of $X$, and is denoted $\pic X$. 
 \end{exr}
+\begin{proof}[Sol.]
+We only need to check 
+\begin{enumerate}[label=(\alph*)]
+\item $\call_1$ and $\call_2$ invertible sheaves $\Lrta \call_1\otimes\call_2$ is invertible.
+\item $\call_1\otimes\calo_X\cong \call_1$
+\item $\call_1\otimes\call_1^\vee\cong \calo_X$
+\item $\call_1\otimes \call_2\cong\call_2\otimes\call_1$
+\end{enumerate}
+$(a)$: If $\call_1|_U\cong \calo_X|_U$ and $\call_2|_U\cong\calo_X|_U$, we want 
+$$
+(\call_1\otimes\call_2)|_U \cong \calo_X|_U.
+$$
+To avoid confusion, we use $\calf\odot\calg$ to denote the presheaf generated by $[V\longmapsto \calf(V)\otimes\calg(V)]$. In this way $\call_1\otimes\call_2=(\call_1\odot\call_2)^{sh}$.
 
+Then we can check that as presheaves $(\call_1\odot\call_2)|_U\cong \calo_X|_U\odot \calo_X|_U\cong (\calo_X|_U)_{pre}$. Then the sheafification functor would send this isomorphism of presheaves to an isomorphism of sheaves
+$$
+(\call_1\otimes\call_2)|_U=((\call_1\odot\call_2)|_U)^{sh}\cong ((\calo_X|_U)_{pre})^{sh}\cong \calo_X|_U.
+$$
+$(b)$ For any $U\subset X$,
+ $$
+ \begin{aligned}
+ \call(U)\otimes\calo_X(U)&\overset{\simeq}{\lrta}\call(U)\\
+ (s,a)&\longmapsto as
+ \end{aligned}
+ $$
+ this induces an isomorphism of presheaves
+ $$
+ \call\odot \calo_X\lrta \call_{pre}.
+ $$
+ This induces a morphism of sheaves after sheafification. At the level of stalks,  it induces an isomorphism
+ $$
+\call_x\otimes_{\calo_{X,x}}\calo_{X,x}\lrta\call_x.
+ $$
+ $(c)$ is already proved in~\ref{chap13exr:tensor_product_of_invertible_sheaves}.\\
+$(d)$ We can check the isomorphism of the two presheaves, 
+ $$
+\call_1\odot \call_2 \cong \call_2\odot \call_1,
+ $$
+ where for any open  set $U\subset X$,
+ $$
+ (\call_1\odot \call_2) (U):=\call_1(U)\otimes\call_2(U) \cong \call_2(U)\otimes\call_1(U)=:  \call_2\odot \call_1(U).
+ $$
+We get the desired isomorphism of sheaves after sheafification.
+
+\end{proof}
+\begin{exr}
+If $\pi:X\lrta Y$ is a morphism of ringed spaces, and $\calg$ is a locally free sheaf of rank $n$ on $Y$, figure out how to define a ``pull back'' locally free sheaf of rank $n$ on X, denoted $\pi^*\calg$. Then show that $\pic$ is a contravariant functor from the category of ringed spaces to the category $\mathsf{Ab}$ of abelian groups.
+\end{exr}
+\begin{proof}[Sol.]
+In standard references, the pullback of quasi-coherent sheaf on ringed space is defined to be
+$$
+\pi^{-1}\calg\otimes_{\pi^{-1}\calo_Y}\calo_X.
+$$
+We first consider the simplest case where $\calg$ is chosen to be $\calo_Y$. Is $\pi^*\calo_Y$ a well defined locally free sheaf? In fact, we expect
+$$
+\pi^*\calo_Y\cong \calo_X.
+$$
+
+Recall the inverse image sheaf $\pi^{-1}\calo_Y$ on $X$
+$$
+\pi^{-1}_{pre}\calg (U):= \colim_{V\supset \pi(U)}\calg(V)
+$$
+and $\pi^{-1}\calg:=(\pi^{-1}_{pre}\calg)^{sh}$.
+
+\underline{Warning}: We can not use directly the definition of inverse image sheaf, which is in general not an $\calo_X$-module.
+
+\underline{Fact1}: $\calo_X$ is a $\pi^{-1}\calo_Y$-module.
+Given the morphism of ringed spaces $\pi=(\pi,\pi^\#)$, where $\pi^\#:\calo_Y\lrta \pi_*\calo_X$. If we apply the inverse image functor on it, we get a morphism of sheaves
+$$
+\pi^{-1}\calo_Y\overset{\pi^{-1}(\pi^\#)}{\lrta}\pi^{-1}\pi_{*}\calo_X
+$$
+By the adjoint relation between $\pi^{-1}$ and $\pi_*$ (c.f.~\ref{chap2exr:adjoint_inverse_image_direct_image}, we have a morphism
+$$
+\pi^{-1}\pi_{*}\calo_X\lrta\calo_X.
+$$
+Composite the above two morphisms of sheaves together, we get a morphism
+$$
+\pi^{-1}\calo_Y\lrta\calo_X.
+$$
+It is  a morphism of sheaves of rings, we know $\calo_X$ can be regarded as a $\pi^{-1}\calo_Y$-module. 
+
+On the other hand, for each point $y\in Y$, there is an open set $V\subset Y$ s.t. $\calg|_V\cong(\calo_Y|_V)^n$. Functors map isomorphisms to isomorphisms. We have
+$$
+(\pi^{-1}\calg)|_{\pi^{-1}(V)}\cong \left((\pi^{-1}\calo_Y)|_{\pi^{-1}(V)}\right)^n.
+$$
+Then, because of the algebraic fact
+$$
+B^n\otimes_B A\cong A^n
+$$
+where $A$ is a $B$-algebra.
+We can establish an isomorphism of presheaves, for $U\subset \pi^{-1}V$,
+$$
+(\pi^{-1}\calg\odot_{\pi^{-1}\calo_Y}\calo_X)|_U\lrta (\calo_X|_U)^n.
+$$
+
+We need to check $\pi^*$ is compatible with isomorphism class of invertible sheaves.
+If $\calg'\cong\calg$ are isomorphic sheaves on, we can check $\pi^*\calg'\cong\pi^*\calg$, which is guaranteed by the functorial property of $\pi^*$.
+$$
+\begin{tikzcd}
+X \ar[r, "\pi"] \ar[d, "\pic"] & Y \arrow[d, "\pic"] \\
+\text{Pic}\ X & \text{Pic}\ Y \arrow[l, "\pi^*"]
+\end{tikzcd}
+$$
+\end{proof}
 \begin{exr}
 Suppose $s$ is a section of locally free sheaf $\calf$ on a scheme $X$. Define the notion of the subscheme cut out by $s=0$, denoted $V(s)$. Be sure to check that your definition is independent of choices.
 \end{exr}
+\begin{proof}[Sol.]
+We have defined in Exercise~8.1.I what it means by a vanishing subscheme cut out be a global section in $\Gamma(X,\calo_X)$. In order to generalize this to the locally free sheaves, we don't have to use the affine chart, but only use the ``defining free chart'' of the locally free sheaf $\calf$. Take an open set  $U\subset X$ s.t. $\calf|_U\cong \calo_X^n|_U$. On $U$, $s$ can be expressed as a tuple of functions $s^i\in \Gamma(U,\calo_X|_U)$, we can then locally define $V_U(s):=\cap_i V_U(s^i) $ or the fibered product $V_U(s^1)\times_{U} V_U(s^2)\times_{U}\cdots\times_U V_U(s^n)$, where each $V_U(s^i)$ is already defined in Exercise~8.1.I. $V(s)$ is to be defined by gluing up $V_U(s)$. It is dependent of the choice of $U$, because for two intersecting free charts $x\in U_i\cap U_j$, $T_{ij}(x)s_i(x)=s_j(x)$, $s_i(x)=0\Llrta s_j(0)$, because $T_{ij}(x)\in GL(\calo_{X}(U_i\cap U_j)^n)$.
+
+This proof works for locally free sheaves of finite rank. For infinite rank case, we can not argue as $GL(\calo_{X}(U_i\cap U_j)^\infty)$, but just remember $T_{ij}$ is still an isomorphism.
+
+The coordinate-free proof is \textbf{TO BE ADDED}.
+\end{proof}
 \begin{exr}
 Show that locally free sheaves on locally Noetherian normal schemes satisfy ``Hartog's Lemma''. sections defined away from a set of codimension at least 2 extends over that set. 
 \end{exr}
@@ -924,9 +1046,38 @@ Suppose $s$ is a nonzero rational section of an invertible sheaf on a locally No
 \begin{exr}
 Omitted.
 \end{exr}
+\begin{exr}
+Omitted.
+\end{exr}
+
+\section{Quasicoherent sheaves}
+Given an $A$-module $M$, we define an $\calo_{\spec A}$-module $\tilde{M}$ on $\spec A$, where the sections over $D(f)$ were $M_f$.
+\begin{definition}
+If $X$ is a scheme, then an $\calo_X$-module $\calf$ is \textbf{quasicoherent} if for every affine open subset $\spec A\subset X$, $\calf|_{\spec A}\cong\tilde{M}$ for some $A$-module $M$. By theorem 13.2.1 It suffices to check on an affine open cover of $X$ due to Affine communication lemma.
+\end{definition}
+\begin{exr}
+(NOT every $\calo_X$-module is quasicoherent)
+\begin{enumerate}[label=(\alph*)]
+\item Suppose $X=\spec k[t]$. Let $\calf$ be the skyscrper sheaf supported at the origin $[(t)]$, with group $k(t)$ and the usual $k[t]$-module structure. Show that this is an $\calo_X$-module  but not quasicoherent sheaf.
+\item Suppose $X=\spec k[t]$. Let $\calf$ be the skyscraper sheaf supported at the generic point $[(0)]$, with group $k(t)$. Given this the structure of an $\calo_X$-module. Show that this is a quasicoherent sheaf. describe the restriction maps in the distinguished topology of $X$
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+\begin{enumerate}[label=(\alph*)]
+\item 
+\end{enumerate}
+\end{proof}
 \chapter{Line bundles: Invertible sheaves and divisors}
 \chapter{Quasicoherent sheaves and projective $A$-schemes}
 \chapter{Pushforwards and pullbacks of quasicoherent sheaves}
+\section{Introduction}
+\section{Pushforward of quasicoherent sheaves}
+\section{Pullbacks of quasicoherent sheaves}
+\section{Line bundles and maps to projective spaces}
+\section{The Curve-to-Projective Extension Theorem
+}
+\section{Ample and very ample line bundles}
+\section{The Grassmannian as a moduli space}
 \part{More}
 
 %----------------------------------------------------------------------------------------

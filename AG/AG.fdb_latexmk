@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1526067418 "AG.xdv" "AG.pdf" "AG" 1526130681
-  "AG.xdv" 1526067418 1025880 f41aa7d196872f71ab1c77623437fd60 "xelatex"
+["xdvipdfmx"] 1527605956 "AG.xdv" "AG.pdf" "AG" 1527605956
+  "AG.xdv" 1527605956 1193700 9e4446daf357559a8525419095278dd9 "xelatex"
   (generated)
   "AG.pdf"
-["xelatex"] 1526067415 "AG.tex" "AG.xdv" "AG" 1526130681
+["xelatex"] 1527605953 "AG.tex" "AG.xdv" "AG" 1527605956
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm" 1480098689 2160 cd316d9c599fb08dc58cdb63ea33eeb9 ""
@@ -219,17 +219,17 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1523901164 3678536 bfec1bfc7ed92f92e5a55b28fc83f1b6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "AG.aux" 1526067418 4314 c6049b5633fab2c4b014c3e10a44bce0 ""
-  "AG.out" 1526067418 2567 3b476052666ee97e9ef0ebcb9bbc9489 ""
-  "AG.tex" 1526067415 146460 f9252ba17623ecd95531fab54a7c9a2a ""
-  "AG.toc" 1526067418 2748 15134b3e01aa3caa10d72ba5390f3faf ""
+  "AG.aux" 1527605956 5420 fbcca6c88a5f7c7cba7ecd456ea99534 ""
+  "AG.out" 1527605956 3402 2ca80897fd815125db98c9a4f879b7ad ""
+  "AG.tex" 1527605952 171587 0ad212247534fd6e38e8ec1a991552d9 ""
+  "AG.toc" 1527605956 3673 a197f19d8945420ab4c381d1e0dd32d9 ""
   "Y^2-X^3.pdf" 1520887628 2522 61b009a465c215459b37f7f854fce86a ""
   "Y^2=X^3-X.pdf" 1520887612 3260 4eb11fe8d49a67f393f50df453fb40d5 ""
   "cocycles.pdf" 1524812910 77129 75cb255f71f19ea492f4fa5b6ddce0db ""
   "pic2Aprl27.pdf" 1524813743 78296 833e4befa7928cc1ff41720195dda336 ""
   (generated)
-  "AG.log"
   "AG.aux"
-  "AG.out"
   "AG.toc"
   "AG.xdv"
+  "AG.out"
+  "AG.log"

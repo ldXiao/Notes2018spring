@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  13 MAY 2018 21:35
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.16)  27 MAY 2018 00:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,23 +1252,23 @@ tly
 )
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 601.
+(hyperref)                setting the option has no effect on input line 602.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 601.
+(hyperref)                setting the option has no effect on input line 602.
 
 
 Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 601.
+(hyperref)                setting the option has no effect on input line 602.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 601.
-Package hyperref Info: Option `breaklinks' set `true' on input line 601.
+Package hyperref Info: Option `colorlinks' set `true' on input line 602.
+Package hyperref Info: Option `breaklinks' set `true' on input line 602.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 601.
+(hyperref)                setting the option has no effect on input line 602.
 
-Package hyperref Info: Option `bookmarksopen' set `false' on input line 601.
+Package hyperref Info: Option `bookmarksopen' set `false' on input line 602.
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -2318,6 +2318,23 @@ Package mdframed Info: mdframed works in twoside mode on input line 1307.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1307.
+Package mdframed Info: mdframed works in twoside mode on input line 1314.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1314.
+Missing character: There is no ’ in font ptmr8t!
+Package mdframed Info: mdframed works in twoside mode on input line 1322.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1322.
+Package mdframed Info: mdframed works in twoside mode on input line 1329.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1329.
+Package mdframed Info: mdframed works in twoside mode on input line 1333.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1333.
 ) [75] [76
 
 
@@ -3341,69 +3358,69 @@ Underfull \hbox (badness 3907) in paragraph at lines 94--94
 Chapter 6.
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 <use  "Pictures/structure_sheaf.jpg" >
-Package mdframed Info: mdframed works in twoside mode on input line 161.
+Package mdframed Info: mdframed works in twoside mode on input line 160.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 161.
-Package mdframed Info: mdframed works in twoside mode on input line 164.
+(mdframed)              on input line 160.
+Package mdframed Info: mdframed works in twoside mode on input line 163.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 164.
-Package mdframed Info: mdframed works in twoside mode on input line 179.
+(mdframed)              on input line 163.
+Package mdframed Info: mdframed works in twoside mode on input line 178.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 179.
+(mdframed)              on input line 178.
  [159
 
 ]
-Package mdframed Info: mdframed works in twoside mode on input line 205.
+Package mdframed Info: mdframed works in twoside mode on input line 204.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 205.
-Package mdframed Info: mdframed works in twoside mode on input line 219.
+(mdframed)              on input line 204.
+Package mdframed Info: mdframed works in twoside mode on input line 218.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 219.
+(mdframed)              on input line 218.
  [160]
-Package mdframed Info: mdframed works in twoside mode on input line 242.
+Package mdframed Info: mdframed works in twoside mode on input line 241.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 242.
-Package mdframed Info: mdframed works in twoside mode on input line 268.
+(mdframed)              on input line 241.
+Package mdframed Info: mdframed works in twoside mode on input line 267.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 268.
+(mdframed)              on input line 267.
  [161]
-Package mdframed Info: mdframed works in twoside mode on input line 280.
+Package mdframed Info: mdframed works in twoside mode on input line 279.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 280.
-Package mdframed Info: mdframed works in twoside mode on input line 322.
+(mdframed)              on input line 279.
+Package mdframed Info: mdframed works in twoside mode on input line 321.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 322.
-Package mdframed Info: Not enough space on this page on input line 324.
+(mdframed)              on input line 321.
+Package mdframed Info: Not enough space on this page on input line 323.
  [162]
-Package mdframed Info: Not enough space on this page on input line 324.
-Package mdframed Info: mdframed works in twoside mode on input line 333.
+Package mdframed Info: Not enough space on this page on input line 323.
+Package mdframed Info: mdframed works in twoside mode on input line 332.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 333.
-Package mdframed Info: mdframed works in twoside mode on input line 366.
+(mdframed)              on input line 332.
+Package mdframed Info: mdframed works in twoside mode on input line 365.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 366.
+(mdframed)              on input line 365.
 
-Overfull \hbox (16.56624pt too wide) in paragraph at lines 367--368
+Overfull \hbox (16.56624pt too wide) in paragraph at lines 366--367
 \T1/ptm/m/n/10.95 schemes by cut-ting up into affine open sets.) Make sense of 
 the fol-low-ing sen-tence: ``$\U/msb/m/n/10.95 A[]\OMS/ztmcm/m/n/10.95 nf\OT1/z
 tmcm/m/n/10.95 0\OMS/ztmcm/m/n/10.95 g [][]!
  []
 
 [163]
-Package mdframed Info: Not enough space on this page on input line 373.
+Package mdframed Info: Not enough space on this page on input line 372.
 
-Overfull \hbox (11.10022pt too wide) in paragraph at lines 399--400
+Overfull \hbox (11.10022pt too wide) in paragraph at lines 398--399
 \T1/ptm/m/n/10.95 Note that $\OML/ztmcm/m/it/10.95 D\OT1/ztmcm/m/n/10.95 (\OML/
 ztmcm/m/it/10.95 x[]\OT1/ztmcm/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 \ \OML/ztmcm/m/
 it/10.95 D\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 x[]\OT1/ztmcm/m/n/10.95 )
@@ -3415,47 +3432,47 @@ n/10.95 j[]$ \T1/ptm/m/n/10.95 and $\OML/ztmcm/m/it/10.95 f[]\OMS/ztmcm/m/n/10.
 95 j[]$
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 414.
+Package mdframed Info: mdframed works in twoside mode on input line 413.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 414.
+(mdframed)              on input line 413.
 [164]
-Package mdframed Info: mdframed works in twoside mode on input line 441.
+Package mdframed Info: mdframed works in twoside mode on input line 440.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 441.
-Package mdframed Info: mdframed works in twoside mode on input line 464.
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed works in twoside mode on input line 463.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 464.
+(mdframed)              on input line 463.
  [165]
-Package mdframed Info: mdframed works in twoside mode on input line 477.
+Package mdframed Info: mdframed works in twoside mode on input line 476.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 477.
-Package mdframed Info: mdframed works in twoside mode on input line 484.
+(mdframed)              on input line 476.
+Package mdframed Info: mdframed works in twoside mode on input line 483.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 484.
+(mdframed)              on input line 483.
  [166]
-Package mdframed Info: mdframed works in twoside mode on input line 519.
+Package mdframed Info: mdframed works in twoside mode on input line 518.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 519.
-Package mdframed Info: mdframed works in twoside mode on input line 544.
+(mdframed)              on input line 518.
+Package mdframed Info: mdframed works in twoside mode on input line 543.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 544.
+(mdframed)              on input line 543.
  [167]
-Package mdframed Info: mdframed works in twoside mode on input line 567.
+Package mdframed Info: mdframed works in twoside mode on input line 566.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 567.
+(mdframed)              on input line 566.
  [168]
-Package mdframed Info: mdframed works in twoside mode on input line 609.
+Package mdframed Info: mdframed works in twoside mode on input line 608.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 609.
+(mdframed)              on input line 608.
  [169] [170
 
 ]
@@ -3481,7 +3498,12 @@ File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 ] (./FOAG.ptc) [179] [180]
 Chapter 11.
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
-<use  "Pictures/structure_sheaf.jpg" > [181
+<use  "Pictures/structure_sheaf.jpg" >
+Package mdframed Info: mdframed works in twoside mode on input line 623.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 623.
+ [181
 
 ] [182
 
@@ -3494,153 +3516,176 @@ File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 Chapter 13.
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 <use  "Pictures/structure_sheaf.jpg" >
-Package mdframed Info: mdframed works in twoside mode on input line 627.
+Package mdframed Info: mdframed works in twoside mode on input line 636.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 627.
+(mdframed)              on input line 636.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 634.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 643.
 
-Package mdframed Info: mdframed works in twoside mode on input line 646.
+Package mdframed Info: mdframed works in twoside mode on input line 655.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 646.
+(mdframed)              on input line 655.
 [187
 
 ]
-Package mdframed Info: mdframed works in twoside mode on input line 685.
+Package mdframed Info: mdframed works in twoside mode on input line 694.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 685.
+(mdframed)              on input line 694.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 691.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 700.
 
 [188]
-Overfull \hbox (50.76625pt too wide) detected at line 737
+Overfull \hbox (50.76625pt too wide) detected at line 746
 [][]
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 756.
+Package mdframed Info: mdframed works in twoside mode on input line 765.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 756.
+(mdframed)              on input line 765.
 [189]
-Package mdframed Info: mdframed works in twoside mode on input line 809.
+Overfull \hbox (55.99037pt too wide) in paragraph at lines 799--802
+[]\T1/ptm/m/n/10.95 Instead, $[]$: For any $\OML/ztmcm/m/it/10.95 U \OMS/ztmcm/
+m/n/10.95 ^^Z \OML/ztmcm/m/it/10.95 X$\T1/ptm/m/n/10.95 , we have an iso-mor-ph
+ism of mod-ules, $\OMS/ztmcm/m/n/10.95 L[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it
+/10.95 U\OT1/ztmcm/m/n/10.95 ) [] [][](\OMS/ztmcm/m/n/10.95 L\OT1/ztmcm/m/n/10.
+95 (\OML/ztmcm/m/it/10.95 U\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 ; \OMS/z
+tmcm/m/n/10.95 O[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 U\OT1/ztmcm/m/n/1
+0.95 ))$
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 824.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 809.
-Package mdframed Info: mdframed works in twoside mode on input line 827.
+(mdframed)              on input line 824.
+[190]
+Package mdframed Info: mdframed works in twoside mode on input line 842.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 827.
- [190]
-Package mdframed Info: Not enough space on this page on input line 829.
+(mdframed)              on input line 842.
  [191]
-Package mdframed Info: mdframed works in twoside mode on input line 906.
+Package mdframed Info: mdframed works in twoside mode on input line 922.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 906.
-Package mdframed Info: mdframed works in twoside mode on input line 910.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 910.
-Package mdframed Info: mdframed works in twoside mode on input line 914.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 914.
-Package mdframed Info: mdframed works in twoside mode on input line 917.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 917.
-Package mdframed Info: mdframed works in twoside mode on input line 921.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 921.
-Package mdframed Info: mdframed works in twoside mode on input line 924.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 924.
-Package mdframed Info: Not enough space on this page on input line 926.
+(mdframed)              on input line 922.
  [192]
-Package mdframed Info: Not enough space on this page on input line 926.
- [193] [194
+Package mdframed Info: mdframed works in twoside mode on input line 970.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 970.
+ [193]
+Package mdframed Info: mdframed works in twoside mode on input line 1029.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1029.
+Package mdframed Info: mdframed works in twoside mode on input line 1039.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1039.
+Package mdframed Info: Not enough space on this page on input line 1041.
+ [194]
+Package mdframed Info: Not enough space on this page on input line 1041.
+Package mdframed Info: mdframed works in twoside mode on input line 1043.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1043.
+Package mdframed Info: mdframed works in twoside mode on input line 1046.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1046.
+Package mdframed Info: mdframed works in twoside mode on input line 1049.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1049.
+Package mdframed Info: mdframed works in twoside mode on input line 1055.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1055.
+Package mdframed Info: mdframed works in twoside mode on input line 1058.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1058.
+ [195] [196
 
 ]
 Chapter 14.
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
-<use  "Pictures/structure_sheaf.jpg" > [195] [196
+<use  "Pictures/structure_sheaf.jpg" > [197] [198
 
 ]
 Chapter 15.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 928.
+(hyperref)                removing `math shift' on input line 1071.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 928.
+(hyperref)                removing `math shift' on input line 1071.
 
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 <use  "Pictures/structure_sheaf.jpg" >
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 928.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1071.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <20.74> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 928.
-
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1071
+.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 928.
-
- [197] [198
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1071
+.
+ [199] [200
 
 ]
 Chapter 16.
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
-<use  "Pictures/structure_sheaf.jpg" > [199] [200
+<use  "Pictures/structure_sheaf.jpg" > [201] [202
 
-] (./FOAG.ptc) [201] [202]
+] (./FOAG.ptc) [203] [204]
 File: Pictures/structure_sheaf.jpg Graphic file (type QTm)
 
 <use  "Pictures/structure_sheaf.jpg" >
 
-Package biblatex Warning: Type 'article' not found on input line 943.
+Package biblatex Warning: Type 'article' not found on input line 1092.
 
 
-LaTeX Warning: Empty bibliography on input line 943.
+LaTeX Warning: Empty bibliography on input line 1092.
 
 
-Overfull \hbox (15.0033pt too wide) in paragraph at lines 949--949
+Overfull \hbox (15.0033pt too wide) in paragraph at lines 1098--1098
 []\T1/ptm/m/n/10.95 Ulrich Görtz and Torsten Wed-horn. \T1/ptm/m/it/10.95 Al-ge
 -braic ge-om-e-try\T1/ptm/m/n/10.95 . Springer, 2010 (cited on page [][]143[][]
 ). 
  []
 
-[203
+[205
 
-] [204
+] [206
 
 ] (./FOAG.ind)
 \tf@ptc=\write8
 \openout8 = `FOAG.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 963.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 963.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1112.
  (./FOAG.aux (./Chaps/Chap1.aux) (./Chaps/Chap2.aux)
 (./Chaps/Chap3.aux) (./Chaps/Chap4.aux) (./Chaps/Chap5.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 963.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 963.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1112.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1112.
 Package logreq Info: Writing requests to 'FOAG.run.xml'.
 \openout1 = `FOAG.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47384 strings out of 493005
- 944727 string characters out of 6134596
- 1294621 words of memory out of 5000000
- 50741 multiletter control sequences out of 15000+600000
+ 47443 strings out of 493005
+ 946058 string characters out of 6134596
+ 1294899 words of memory out of 5000000
+ 50800 multiletter control sequences out of 15000+600000
  151338 words of font info for 217 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,22n,84p,10507b,4640s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,22n,84p,10507b,4642s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on FOAG.xdv (204 pages, 2175924 bytes).
+Output written on FOAG.xdv (206 pages, 2209628 bytes).

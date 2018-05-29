@@ -154,6 +154,45 @@ $$
 \frac{\pd f_2}{\pd x^\mu}=-\frac{\pd f_1}{\pd y^{\mu}}
 $$
 \end{dfn}
+\begin{dfn}
+A $(1,1)$-tensor $J$ on a smooth (real) manifold $M$ which satisfies $J^2=-Id$ is called an \textbf{almost complex structure}.
+\end{dfn}
+Notationally, we denote the the eigenspace of $TM$ of $J$ with eigenvalue $i$ $T^{1,0}M$. And the $T^{0,1}M$ corresponds to $-i$.
+$$
+T^{1,0}M:=\{X-iJ X| X\in TM\}.
+$$
+and
+$$
+TM=T^{1,0}M\oplus T^{0,1}M.
+$$
+By definition $T^{1,0}M$ is a distribution of $TM$.
+
+Further, we define the following the dual notion on the cotangent bundle $\Lambda_\cplx M:=\Lambda^*\otimes_\reals \cplx$.  
+$$
+\Lambda^{1,0}:=\{\xi\in \Lambda^1_\cplx M|\xi(Z)=0,\forall Z\in T^{0,1}M\}
+$$
+We denote the $k$th exterior power of $\Lambda^{1,0}$ as $\Lambda^{k,0}$ and let $$
+\Lambda^{p,q}:=\Lambda^{p,0}\otimes\Lambda^{0,q}
+$$
+Because $\Lambda_\cplx^1M=\Lambda^{1,0}M\oplus \Lambda^{0,1}M$,  
+$$
+\Lambda^k_\cplx M\cong\bigoplus_{p+q=k} \Lambda^{p,q}M.
+$$
+\begin{prop}
+Let $J$ be an almost complex structure on a real even-dimensional manifold $M$. The followings are equivalent:
+\begin{enumerate}
+\item $J$ is a complex structure.
+\item $T^{0,1}M$ is an integrable distribution.
+\item $d(\Omega^{1,0})\subset \Omega^{2,0}M\oplus \Omega^{1,1}M$.
+\item $d(\Omega^{p,q}M)\subset \Omega^{p+1,q}M\oplus \Omega^{p,q+1}M,\forall 0\leq p,q\leq m$.
+\item Nijenhuis tensor $N^J$ vanishes, where 
+$$
+N^J(X,Y)=[X,Y]+J[JX,Y]+J[X,JY]-[JX,JY].
+$$
+\end{enumerate}
+\end{prop}
+
+
 
 \section{Spectral sequences}
 \begin{dfn}
