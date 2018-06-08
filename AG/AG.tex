@@ -117,6 +117,8 @@
 \newcommand{\caln}{{\cal N}}
 \newcommand{\calo}{{\cal O}}
 \newcommand{\calr}{{\cal R}}
+\renewcommand{\div}{\textnormal{div}}
+\newcommand{\Div}{\textnormal{Div}}
 \newcommand{\mathbold}{\bf}
 \newcommand{\cinf}{C^{\infty}}
 \newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
@@ -158,33 +160,33 @@ In this notes we mainly focus on the algebraically closed fields.
 \section{Classical varieties}
 \subsection{Feb 27th: Algebraic sets and morphisms}
 \href{https://imaginary.org/programs}{https://imaginary.org/programs}
-
+\subsubsection{Affine algebraic sets}
 Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
 \begin{dfn}
 Closed subspaces of $\affn^n$ are called \textbf{affine algebraic sets} and irreducible algebraic sets are called \textbf{affine algebraic varieties}
 \end{dfn}
 \begin{dfn}
-Given $Y$ an affine algebraic set in $\affn^n$, we define the \textbf{coordinate ring} $\calo(Y)$ as $K[X_1,...,X_n]/I(Y)$
+Given $Y$ an affine algebraic set in $\affn^n$, we define the \textbf{coordinate ring} $\calo(Y)$ as $K[X_1,...,X_n]/I(Y)$.
 \end{dfn}
 \begin{dfn}
 Let $X\subset \affn^m$ and $Y \subset \affn^n$ be affine algebraic sets. A \textbf{morphism} $X \lrta Y$ of affine algebraic sets is a map $f : X \lrta Y$ of the underlying sets such that there exist polynomials $f_1,...,f_n \in k[T_1,...,T_m]$ with $f(x) = (f_1(x),...,f_n(x))$ for all $x\in X$. 
 \end{dfn}
-We denote the category of affine algebraic sets over $K$ as $Alg_K$
+We denote the category of affine algebraic sets over $K$ as $\mathsf{Alg}_K$
 \begin{thm}\label{thm:equivalence_of_categories_algebraic_sets_K_algebras}
 Let $Y_1\subset \affn^n, X_1,...,X_n$, $Y_2\subset \affn^m, T_1,,..., T_m$ affine algebraic sets. There are bijections 
 
 $$
 \begin{aligned}
-&\hom_{K\text{-alg}}(\calo(Y_2),\calo(Y_1))
+&\hom_{K\mathsf{-Alg}}(\calo(Y_2),\calo(Y_1))
 \\
 &\overset{(*)}{\llrta}\{(f_1,...,f_m)\in K[X]^m|\forall x\in Y_1,(f_1(x),...,f_m(x))\in Y_2) \}\\
 &\overset{(**)}{\llrta} \{f:Y_1\lrta Y_2|\forall \varphi\in \calo(Y_2),\varphi\circ f\text{ is  in }  \calo(Y_1)\}\\
-&=\hom_{Alg_K}(Y_1,Y_2)
+&=\hom_{\mathsf{Alg}_K}(Y_1,Y_2)
 \end{aligned}
 $$
 \end{thm}
 \begin{proof}
-\underline{Key observation}
+\underline{Key observation}:
 
 To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$, which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
 $$
@@ -197,27 +199,29 @@ K[T] \arrow[r,"g_1"] \arrow[d,"\pi_2"]  & \calo(Y_1)  \\
    \calo(Y_2) \arrow[ur,"g"] & 
 \end{tikzcd}
 \]
-iff $g_1(I(Y_2))=0$, which means iff 
+iff $g_1(I(Y_2))=0$, which means 
 $$
 g_1(\varphi)=\text{ ``replace $T_i$ by $f_i$ in $\varphi$''}
 $$
-belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$, which means if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
+belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$.
+
+This condition is equivalent to if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
 
 
 For the bijection $(**)$, suppose 
 $$
 g:Y_1\overset{g}{\lrta} Y_2\overset{\varphi}{\lrta} K
 $$
-sends $\varphi(Y_2)$ to $\varphi\circ g\in\calo(Y_1)$. Then we get 
+sends $\varphi\in \calo(Y_2)$ to $\varphi\circ g\in\calo(Y_1)$. Then the map 
 $$
 \begin{aligned}
 & \calo(Y_2)\lrta \calo(Y_1)\\
 &\varphi\longmapsto \varphi\circ g,
 \end{aligned}
 $$
-which is a $K$-algebra morphism.
+is a $K$-algebra morphism.
 
-As for the reverse direction, given $g$. From $\calo(Y_2)\lrta \calo(Y_1)$ to get a $g:Y_1\lrta Y_2$. We get a $\tilde{g}:Y_1\lrta Y_2$ in the second set
+As for the reverse direction, given $g$ a $K$-algebra morphism $\calo(Y_2)\lrta \calo(Y_1)$, we get a $\tilde{g}:Y_1\lrta Y_2$ by the $(*)$ isomorphism.
 $$
 \tilde{g}(x)=(f_1(x),...,f_m(x))
 $$
@@ -225,15 +229,16 @@ then we have $\varphi\circ g\in\calo(Y_1)$ for $\varphi\in \calo(Y_2)$. One chec
 \end{proof}
 
 Define morphism $Y_1\lrta Y_2$ by the second(and third) set.  Composition in the obvious way and identity is a morphism.
-$\Lrta$ get a category $(Alg_K)$ of affine algebraic sets over $K$.
+$\Lrta$ get a category $(\mathsf{Alg}_K)$ of affine algebraic sets over $K$.
 
 \begin{cor}
-$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(Alg_K)\lrta (K\text{-Alg})^{opp}$.
+$Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(\mathsf{Alg}_K)\lrta (K\mathsf{-Alg})^{opp}$.
 \end{cor}
 
-\underline{Facts}: The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
+\begin{prop} The ``image'' of this functor is the category of finitely generated $K$-algebras which are reduced.
+\end{prop}
 \begin{proof}
-$A$ finitely generated reduced $K$-algebra. ($\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
+$A$ is  finitely generated reduced $K$-algebra. ( Because $A$ is finitely generated, $\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
 $\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
 \end{proof}
 
@@ -272,7 +277,7 @@ $$
 \end{enumerate}
 \end{prop}
 \begin{proof}
-(1) $I_x:=Ker(\calo(Y)\lrta K)$, $f\mapsto f(x)$, since the evaluation map is surjective $[1\mapsto 1]$, we get an isomorphism 
+(1) $I_x:=Ker(ev_x:\calo(Y)\lrta K)$, where $ev_x:f\mapsto f(x)$, since the evaluation map is surjective $[1\mapsto 1]$, we get an isomorphism 
 $$
 \calo(Y)/I_x\overset{\sim}{\lrta} K,
 $$
@@ -286,24 +291,24 @@ Since $I'\supset I(Y)$, we get $(x_1,..,x_n)\in Y$. Then we check that $\calo(Y)
 
 (2) We saw in~\ref{thm:equivalence_of_categories_algebraic_sets_K_algebras}, that there is a bijection between sets
 $$
-\hom_{Alg_k}(Y,\affn^1)\llrta \hom_{K-alg}(\calo(\affn^1),\calo(Y)).
+\hom_{\mathsf{Alg}_k}(Y,\affn^1)\llrta \hom_{K-\mathsf{Alg}}(\calo(\affn^1),\calo(Y)).
 $$
-But $\hom_{K-alg}(\calo(\affn^1),\calo(Y))=\hom_{K-alg}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
+But $\hom_{K-\mathsf{Alg}}(\calo(\affn^1),\calo(Y))=\hom_{K-\mathsf{Alg}}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
 \end{proof}
-\section*{Projective Algebraic sets}
+\subsubsection{Projective Algebraic sets: Introduction}
 
 Projective sets can have a good notion of ``compactness''.
 
-N.B. Any $Y\in (Alg_K)$ is \textbf{quasi-compact}( open cover have a finite subcover).
+N.B. Any $Y\in (\mathsf{Alg}_K)$ is \textbf{quasi-compact}( open cover have a finite subcover).
 
 \begin{dfn}
 $\proj^n_K=\proj^n$ can be either defined as 
 
-``the set of  lines in $\affn^{n+1}$ that pass through the origin''
+``\textbf{the set of  lines in $\affn^{n+1}$ that pass through the origin}''
 
 or
 
-``the equivalence classes of points in $K^{n+1}\backslash \{0\}$ with the equivalence relation $x\sim y$ iff $x=\lambda y$ for some $\lambda \in K$'' and we use the notion $[x_0:...:x_n]$ for the equivalence class of $(x_0,..,x_n)$
+``\textbf{the equivalence classes of points in $K^{n+1}\backslash \{0\}$ with the equivalence relation $x\sim y$ iff $x=\lambda y$ for some $\lambda \in K$}'' and we use the notion $[x_0:...:x_n]$ for the equivalence class of $(x_0,..,x_n)$
 \end{dfn}
 
 These two definitions are equivalent: 
@@ -362,7 +367,7 @@ Recall: $\proj^n_K=K^{n-1}-\{0\}/\sim$, and $H_i:=\{[x_0:...:x_n]|x_i\neq 0\}$ i
 
 More generally, we can define 
 $$
-V(I)=V(\text{homogeneous element of $I$=})=V(\cup_{d\geq 0} I_d)
+V(I)=V(\text{homogeneous element of $I$})=V(\cup_{d\geq 0} I_d\text{ as a set})
 $$
 where $I$ is an homogeneous ideal of $K[X_0,...,X_n]$ that is  $I=\oplus_{d\geq 0} I_d$, $I_d$ the the degree $d$ piece of $K[X_0,...,X_n]$.
 
@@ -371,16 +376,16 @@ $$
 I(S):=\text{ideal generated by homogeneous polynomials that vanishes on $S$}
 $$
 \begin{lemma}
-This is a homogeneous ideal
+This is indeed a homogeneous ideal. 
 \end{lemma}
 \begin{proof}
-$f\in I(s)\Lrta f=\sum_{i\in I}g_i f_i$, where $f_i$ is homogeneous and vanishes on $S$. We can expand each $g_i$ as $\sum_j g_{ij}$, where each $g_{ij}$ is homogeneous in $I(S)$. Then we know $f\in \otimes I(S)_d$ and the converse is clear.
+$f\in I(S)\Lrta f=\sum_{i\in I}g_i f_i$, where $f_i$ is homogeneous and vanishes on $S$. We can expand each $g_i$ as $\sum_j g_{ij}$, where each $g_{ij}$ is homogeneous in $I(S)$. Then we know $f\in \oplus I(S)_d$ and the converse is clear.
 \end{proof}
 \begin{lemma}
-The projective sets $V(I)$ where $I$ is homogeneous form the closed sets of a topology. It is called the Zariski topology (same name for the induced topology on projective sets).
+The projective sets $V(I)$ where $I$ is homogeneous form the closed sets of a topology. It is called the \textbf{Zariski topology} (same name for the induced topology on projective sets).
 \end{lemma}
 \begin{ex}
-$H_0\subset \proj^n$ and $\sigma: H_0\cong \affn^n$. Under this bijection, the Zariski topologies correspond $\sigma $ is a homeomorphism
+$H_0\subset \proj^n$ and $\sigma: H_0\cong \affn^n$. Under this bijection, with respect to the Zariski topologies, the  $\sigma $ is a homeomorphism.
 $$
 f\in K[X_0,...,X_n]\text{ homogeneous} \leadsto V(f)\subset \proj^n
 $$
@@ -390,10 +395,10 @@ $$
 and $\sigma(V(f))=V(\tilde{f})$.
 \end{ex}
 \begin{dfn}
-$Y\subset \proj^n$ projective $S(Y)=K[X_0,...,X_n]/I(Y)$, \textbf{homogeneous coordinate ring}
+$Y\subset \proj^n$ is  projective algebraic set,  $S(Y)=K[X_0,...,X_n]/I(Y)$ is called  \textbf{homogeneous coordinate ring}
 \end{dfn}
-\underline{Note} elements in $S(Y)$ are not functions on $Y$. The geometric meaning of $S(Y)$ will be explained latter with the language of schemes.
-
+\begin{rmk}: elements in $S(Y)$ are not functions on $Y$. The geometric meaning of $S(Y)$ will be explained latter with the language of schemes.
+\end{rmk}
 We now want to define morphisms of  projective algebraic sets. We have to look at it more carefully because we can not simply copy the affine definition.
 \begin{dfn}
 $Y\subset \proj^n$ projective, let $V\subset Y $ be an open subsets of $Y$.
@@ -3204,12 +3209,12 @@ $d=\nu_D(f)\geq 1$ means $f$ has a zero of order $d$ along $D$ ( has degree of v
 For 
 $f\in K(X)^\times$,
 $$
-div(f)=\sum_{D\text{ prime}} \nu_D(f) D \in \text{Div}(X)
+\div(f)=\sum_{D\text{ prime}} \nu_D(f) D \in \text{Div}(X)
 $$
 $$
 div:K(X)^\times\lrta \text{Div}(X)\text{ group morphism }
 $$
-The group of all $div(f) $ is called the group of principal divisors. The quotient
+The group of all $\div(f) $ is called the group of principal divisors. The quotient
 $$
 \text{Div}(X)/Im(div)=\text{Cl}(X)
 $$
@@ -3264,16 +3269,16 @@ $$
 Reminder:
  Let $X$ be a scheme, which is integral regular in codimension one, Noetherian, quasi-projective.
 
- We defined $Div(X):=$ free Abelian group with basis of the integral codimension 1 subschemes.
+ We defined $\Div(X):=$ free Abelian group with basis of the integral codimension 1 subschemes.
 
  $f\in K(X)^\times$
 
- $\Lrta div(f)=\sum_D \nu_D(f)D$
+ $\Lrta \div(f)=\sum_D \nu_D(f)D$
  
- $div$ gives a group morphism $K(X)^\times\lrta Div(X)$
+ $div$ gives a group morphism $K(X)^\times\lrta \Div(X)$
 
 \begin{dfn}
-$Cl(X)=Div(X)/Im div$ is called the divisor class group.
+$Cl(X)=\Div(X)/Im div$ is called the divisor class group.
 \end{dfn}
 \begin{ex}
 \begin{enumerate}[label=(\arabic*)]
@@ -3283,7 +3288,7 @@ $\Lrta$ prime divisors are closed points of $X$, an $f\in K(X)^\times$ can be se
 $$
 f:X\lrta \proj^1_K
 $$
-and $div(f)=$zero of $f$ with multiplicities or poles of $f$ with multiplicities.
+and $\div(f)=$zero of $f$ with multiplicities or poles of $f$ with multiplicities.
 
 $Cl(X)\llrta$ ``given points $x_1,...,x_m$ and$y_1,...,y_n$  with specified integers of $\nu_1,..,\nu_m\geq 1$ and $\mu_1,...,\mu_n\geq 1$''. Is there an 
 $$
@@ -3305,7 +3310,7 @@ Any prime divisor $D$ in $\affn^n_K$ is of the form $V((f))$ for $f\in A$ irredu
 D_i=\spec(A/(f_i))
  $$
  and let $f=\prod f_i^{n_i}\in K(T_1,...,T_n)^\times=K(\affn^n_K)$.
- Then recall how to compute $div(f)$: $D$ prime divisor, $D=\spec(A/(g))$
+ Then recall how to compute $\div(f)$: $D$ prime divisor, $D=\spec(A/(g))$
  $$
  \begin{aligned}
  \calo_{\affn^n_K,\tilde{\eta}_D}
@@ -3314,7 +3319,7 @@ D_i=\spec(A/(f_i))
  \end{aligned}
  $$
  is indeed a DVR with maximal ideal generated by $g$, and $\nu_D(f_1/f_2)=$ the exponent of $g$ $=k$ s.t. 
- $f_1/f_2=f^k u$, with $u\in A_{(g)}^\times$. So $div(f)=\sum n_i D_i=D$ so any $D$ is principal, therefore $Cl(\affn^n_K)=0$
+ $f_1/f_2=f^k u$, with $u\in A_{(g)}^\times$. So $\div(f)=\sum n_i D_i=D$ so any $D$ is principal, therefore $Cl(\affn^n_K)=0$
 
 \item $Cl(\spec K)=\{0\}$ has no prime divisors. Consider $L/\ratl$ finite extension. Let $A\subset L$ be the integral closure of $\intg$. Then $\spec(A)$ is regular of codimension one, so 
 $
@@ -3337,13 +3342,13 @@ How are $Cl(\spec A)$ distributed when $L/\ratl$ varies? (Cohen-Lenstra Heuristi
 
 \underline{Fact}: the prime divisors are the closed subschemes associated to a single homogeneous irreducible polynomials $f\in  K[X_0,..,X_n]$.
 \begin{thm}
-(II 6.4) Define a group morphism from the $\underline{deg}: Div(X)\lrta \intg$
+(II 6.4) Define a group morphism from the $\underline{deg}: \Div(X)\lrta \intg$
 $$
 D\longmapsto \underline{deg}(f)
 $$ 
 where $D$ is the subscheme associated to homogeneous polynomial $f$.
 \begin{enumerate}[label=(\alph*)]
-\item For all principal divisors $div(f), f\in K(X)$, we have $\underline{deg}(f)=0$.
+\item For all principal divisors $\div(f), f\in K(X)$, we have $\underline{deg}(f)=0$.
 \item The induced morphism from class groups to $\intg$ 
 $$
 Cl(X)\overset{\underline{deg}}{\lrta }\intg
@@ -3373,14 +3378,14 @@ $$
 with $n_i\geq 1, m_j \geq 1$
 Then 
 $$
-div(f)=\sum n_i D_i-\sum m_j E_j
+\div(f)=\sum n_i D_i-\sum m_j E_j
 $$
 and $D_i$ is the prime divisors of $h_i$, $E_j$ is the prime divisors of $k_j$. (Intuitively, it is clear, but we need a proof)
 
 $\Lrta$
 $$
 \begin{aligned}
-\underline{deg}(div(f))&=\sum n_i \underline{deg}(D_i-\sum m_j \underline{deg}(E_j)\\ 
+\underline{deg}(\div(f))&=\sum n_i \underline{deg}(D_i-\sum m_j \underline{deg}(E_j)\\ 
 &(\underline{deg}(D_i)=deg(h_i),\underline{deg}(E_j)=deg(k_j))\\
 &=deg(g_1)-deg(g_2)=0.
 \end{aligned}
@@ -3583,7 +3588,7 @@ $$
 
  Then $\call(D)$ is an invertible sheaf. This extends to a group morphism
  $$
-  Div(X)\lrta Pic(X).
+  \Div(X)\lrta Pic(X).
  $$
  \item The twisting sheaf on projective space. Let $K$ be a field. We define an important non-trivial invertible sheaf on $\proj^n_K$, $n\geq 1$, denoted 
  $$
@@ -3880,10 +3885,12 @@ In the case of $d_1=0$, we have $g_1$ is constant anf $g_2=f$, in the other case
 
 
 \begin{rmk}
+\begin{enumerate}[label=(\arabic*)]
+\item 
 If $\deg(g)\geq p$ the irreduciblility statement may fail.
 e.g. $y^p0Y-(X^p-X)=(Y-X)^p-(Y-X)=(Y-X)((Y-X)^{p-1}-1)$ is not irreducible.
 
-Consider $V(f)$, for $\deg(g)<p$.
+\item Consider $V(f)$, for $\deg(g)<p$.
 
 We have a morphism $V(f)\lrta \affn^1_K$ corresponding to
  $$(X,Y)\longmapsto X$$
@@ -3894,16 +3901,330 @@ K[X]\inj K[X,Y]/(f)
 
 in the case $\cplx$, $\cplx\lrta \cplx$ is a unique connect covering.
 
-In the case $p>0$, $\affn^1_K$( or $\affn6n_K$) is very far from being simply connected.
+In the case $p>0$, $\affn^1_K$( or $\affn^n_K$) is very far from being simply connected.
+\subsection{May 18th-A:Non-singular curves}
+\item If $0\neq f\in K[X,Y,Z]$, homogeneous, non-constant, irreducible, then $V(f)\subset \proj^2_K$ is an algebraic curve of $K$, integral.
+
+E.g. (Hyperelliptic) $g\in K[X,Z]$, homogeneous degree $d\geq 3$, $f=Y^2Z^{d-2}-g(X,Z)$, defines a plane projective hyperelliptic curve, if we look at the intersection with $\affn^2_K$ $=$ open pieces with $z\neq 0$ $(=\spec K[X/Z,Y/Z])$, then we recover $C_f=Y^2-g(X)=0$, if $g$ is square free and $Char K\neq 2$, $C_f$ is non-singular. To see whether  $V(f)$ is also non-singular, we compute the points at $\infty$ of $V(f)$ $[V(f)-C_f]$, we need to solve the equation. 
+$$
+Y^2 Z^{d-2}=g(X,Z) \text{ with } Z=0
+$$
+$g(X,Z)=a_d X^{d}+a_{d-1}X^{d-1}Z+\cdots$, then we get $0=a_d X^d$ assume $a_d\neq 0$ then we get $X=0$, $[0:1:0]$ at infinity on $V(f).$
+
+to check non-singularity:
+$$
+\left\{
+\begin{aligned}
+\frac{\pd f}{\pd X}(\infty)&=0-0=0\\
+\frac{\pd f}{\pd Y}(\infty)&=Z/Z^{d-2}(\infty)=0\\
+\frac{\pd f}{\pd Z}(\infty)&=(d-2)Z^{d-3}Y^2(\infty)-0&=\left\{
+\begin{aligned}
+&1, \ d=3\\
+&0 \ d\geq 4
+\end{aligned}
+\right.
+\end{aligned}
+\right.
+$$
+\end{enumerate}
+\underline{Conclusion}: (a) if $\deg_X g=3=\deg g$ and $g$ is square free, $Y^2Z-g(X,Z)=0$ defines a non-singular projective curve over $K$.
+
+(b), if $\deg g \geq 4$, the point at  $\infty $ is singular.
 \end{rmk}
- \subsection{May 18th:}
-\subsection{May 22nd:}
+
+
+Artin-Schreier over finite field: $Char\  K=p\geq 2$, $g$ homogensous polynomial of degree $d=\deg_X g=d\leq p$, $f=Y^p-YZ^{p-1}-Z^{p-d}g(X,Z)$.
+$V(f\cap \affn^2_K)$ is the Artin-Schreier non-singular curve $Y^p-Y=\tilde{g}(X)$ with $\tilde{g}(X)=g(X,1)$, at $\infty$, we solve with $z=0:Y^p=0$, $\Lrta \infty=[1:0:0]$
+
+$\bullet$ Moreover, $\frac{\pd f}{\pd X}(\infty)=0$, $\pd f/\pd Y(\infty)=(pY^{p-1}-Z^{p-1}-0)(\infty)=0$, 
+$$
+\begin{aligned}
+\frac{\pd f}{\pd Z}(\infty)
+&=[-(p-1)YZ^{p-2}-(p-d)Z^{p-d-1}g(X,Z)-Z^{p-dg_Z(X,Z)}](\infty)\\
+&= d_{neq 0} Z^{0-d-1} g(1,0)\left\{\begin{aligned}
+&a_d d \text{ if } d=p-1\\
+&0\text{ if } d< p-1
+\end{aligned}\right.
+\end{aligned}
+$$
+again, $\infty$ is often singular.
+
+To understand the projective non-singular curves, one has the following theorem
+\begin{thm}
+(Goertz-Wedhorn, 15.22), the functor
+$C\mapsto K(C)$, (non-constant $(f:C_1\lrta C_2)\lrta (f^*:K(C_2)\lrta K(C_1))$ is contravariant equivalence of categories between
+$$
+\left\{\begin{aligned}
+&\text{ normal proper integral curves over $K$}\\
+&\text{ with non-constant morphisms}
+\end{aligned}\right\}
+\llrta 
+\left\{\begin{aligned}
+&\text{Transcendental extension $L/K$}\\
+&\text{ finitely generated}\\ 
+&\text{and of transcendence degree $1$}
+\end{aligned}\right\}
+$$
+\end{thm}
+$\bullet$ Interpretation: Any field $L$ as in $RHS$ is the function field of a unique (up  to isomorphism) curve $C/K$ projective and non-singular, in particular, if $U/K$ is an integral geometric connected curve, then $K(U)$ is of this type, so ther eis a unique non-singular projective $C$ with $K(C)=K(U)$
+
+$\bullet$ Example: there are smooth projective $C/K$ with the same function field as non-singular, hyperelliptic (Or Artin-Schreier) affine curves.
+
+$\bullet$ A generic construction:
+$U\supset U_i =\spec A_i$ dense, let $B_i\subset K(U_i)=K(U)$, s.t. $f$ satisfies a monic polynomial equation with coefficients in $A_i$.
+
+$B_i\supset A_i$, using the algebraic properties of integral closure, we get a scheme $C$ by glueing the $\spec B_i$ and a morphism $C\lrta U$. One shows $(1)$ $C$ is a curve because $K(C)=K(U)$, $(2)$ $C$ is non-singular because local rings are integral, Noetherian, dimension $1$ and integrally closed.
+
+One shows that $C$ is quasi-projective and is projective if $U$ is.
+
+In the general picture: $\overline{C}:$
+$$
+\begin{tikzcd}
+ & \overline{C} \arrow[d] \arrow[r] & {\text{non-singular, projective}} \\
+U \arrow[r, "open", hook] \arrow[d,Subset] & \overline{U} \arrow[d,Subset] & K(\overline{C})=K(\overline{U})=K(U) \\
+\affn^n_K & \proj^n_K & 
+\end{tikzcd}
+$$
+If $U$ is non-singular, we have
+$$
+\begin{tikzcd}
+\pi^{-1}(U) \arrow[d, "\pi"] \arrow[r] & \overline{C} \arrow[d, "\pi--\text{desingularization  of } \overline{U}"] \\
+U \arrow[r] & \overline{U}
+\end{tikzcd}
+$$
+$\pi|_{\pi^{-1}(U)}$ is an isomorphism over $x$ singular, there are usually $\geq 2$ (non-singular) points of $\overline{C}$
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+\draw    (220.5,224.88) .. controls (101.5,157.88) and (101,259.77) .. (216.5,190.88) ;
+
+
+\draw    (210.5,136.88) .. controls (56.5,105.88) and (126.5,175.88) .. (179.5,139.88) ;
+
+
+\draw    (189.5,127.88) .. controls (219.5,100.88) and (197.5,121.88) .. (219.5,96.88) ;
+
+
+\draw    (163,161) -- (162.5,192.88) ;
+\draw [shift={(162.5,192.88)}, rotate = 270.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ]   (0,0) .. controls (3.31,-0.3) and (6.95,-1.4) .. (10.93,-3.29)(0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+\draw (275,214) node   {$\subset \mathbb{A}^{2}_{K}$};
+\draw (279,132) node   {$\subset \mathbb{A}^{3}_{K}$};
+
+\end{tikzpicture}
+\end{center}
+
+$\bullet$ Definition: $C_1\overset{f}{\lrta}{C_2}$, morphism of curves, if $f$ is non-constant, then it is associated to a unique $f^*:K(C_2)\inj K(C_1)$ an dit is a finite extension, one denotes $\deg(f)=[K(C_1):K(C_2)]$
+
+$\bullet$ Example: $C_g:Y^2=g(X)$, then $K(C_g)=K(X)(\sqrt{g})$, where $K(X)$ is the base field and $K(X)\sqrt{g}/K(X)$ is of transcendence degree $2$ if $g$ is square free.
+$$
+\begin{tikzcd}
+C_g \arrow[d, "\pi"] & {(x,g)} \arrow[d, maps to] \arrow[r] & K(X)\inj K(C_g) \\
+\affn^1 & x & \deg(\pi)=2
+\end{tikzcd}
+$$
+\subsection{May 18th-B: Riemann-Roch Theorem}
+$\bullet$ History: late $19$th century, and generalized by Serre Hirzebruch, Grothendieck. in 1960s.
+
+$\bullet$ This theorem computes dimensions of global sections of invertible sheaves on $C$, a non-singular projective curve.
+
+$\bullet$ Convnetion: curve$=$nonsingular projective curve (in this section)
+\begin{dfn} $C/K$ curve $D=\sum_i n_i [x_i], n_i\geq 1$, $x_i$ closed point, a Weil divisor.  $\call(D)$ invertible sheaf, and $\call(D)$ is defined as follows:
+$U\subset C$ open dense, if $U\cap \{x_i\}=\emptyset$, then $\Gamma(U,\call(D))=\Gamma(U,\calo_C)$ if $U\cap \{x_i\}=\{x_0\}$ then let $\pi_0\in K(C)$  be a uniformizer of $C$ at $x_0$.  ($\pi_0$ has zero of order $1$ at $x_0$), then $\Gamma(U,\call(D))=\pi_0^{-n_0}(\Gamma(U,\calo_C))$ where $n_0$ is the coefficient of $x_0$ in $D$.
+\end{dfn}
+\underline{Interpretation}: section of $\call(D)$ on $U$ has 
+$$
+\left\{
+\begin{aligned}
+&\bullet\text{ at most a pole of order $n_i$ at $x_i$, if $n_i\geq 1$}\\
+&\bullet\text{ at least a zero of order $-n_i$ at $x_i$, if $n_i\leq -1$}
+\end{aligned}\right.
+$$
+
+\underline{Fact}: $\call(D)$ is invertible, the map $D\lrta\call(D)$ induces a group morphism
+$$
+\Div(C)\lrta\pic(C)
+$$
+and $Cl(C)\overset{\sim}{\lrta}\pic(C)$
+\begin{dfn}
+$\ell(D)=\dim_K\Gamma(C,\call(D))$ (it is finite)
+\end{dfn}
+\begin{prop}
+$C$ curve over $K$. let $f\in K(C)^\times$ and let $\deg:\Div(C)\lrta \intg: x\longmapsto[K(x):K]$, then
+$$
+\deg(\div(f))=0
+$$
+It means $\div(f)$ has as many poles as zeros.
+\end{prop}
+\begin{proof}
+$(i)$ if $f\in K^\times$, the $\div(f)=0$, has degree $0$.
+
+$(ii)$ if $f\notin K^\times$, $f$ is transcendental over $K$, so $K\subset K(f)\subset K(C)$, so $K(C)/K(f)$ is finite and corresponds to a morphism
+$C\overset{\pi}{\lrta}\proj^1_K$, define 
+$$
+\pi^*: \Div(\proj^1_K)\lrta \Div(C)
+$$
+$$
+x\longmapsto \sum_{y\in \pi^{-1}(x), y\text{ closed in }C} v_y(\pi_x)y
+$$
+where $v_y$ is the valuation on the local ring of $C$ at $y$, $\pi_x\in K(f)\subset K(C)$ is a uniformizer at $x$.
+
+$\bullet$ Observe that: $\pi^*(\div(g))=\div(g\circ \pi)$, 
+$$
+\begin{tikzcd}
+C \arrow[r, "\pi"] \arrow[rr, "g\circ\pi"', bend right] & \proj^1_K \arrow[r, "g"] & \proj^1_K
+\end{tikzcd}
+$$
+So $\pi^*$ induces a group morphism $\intg[\infty]=\intg[0]\cong Cl(\proj^1_K)\overset{\pi^*}{\lrta}Cl(C)$, which must be $\pi^*(k)=k\pi^*([0])$, then check that $\div(f)=\pi^*([0]-[\infty])\Lrta \deg(\div(f))=\deg(k\pi^*([0]))-k\pi^*(\infty)=0$.
+
+(in fact: $\deg(\pi^(D))=\deg(\pi)\deg(D)$)
+\end{proof}
+\begin{thm}
+(Riemann-Roch,R-R) $C$ non-singular projective over $K$, then there exists $g\geq 0$ integer,(``genus of $C$'') and a divisor class $K_C$ (``canonical divisor of $C$'') on $C$, such that, for any divisor $D$ on $C$, $\ell(D)-\ell(K_C-D)=\deg(D)+1-g$.
+\end{thm}
+\subsection{May 22nd: The proof of Riemann-Roch}
+Recall: $\deg(\div(f))=0, f\in K(C)^\times$.
+\begin{proof}
+$\div(f)=f^*([0]-[\infty])$, where $f^*: \Div(\proj^1_K)\lrta \Div(C)$. One checks that $\deg(f^*D)=\deg (f)\deg(D)$
+$$
+\Lrta \deg(\div(f))=\deg(f)(\deg([0]-[\infty]))=0
+$$
+\end{proof}
+
+$\bullet$ Riemann-Roch Theorem: $K$ is a field, $C$ is a nonsingular projective curve over $K$, there exists an integer $g\geq 0$ and divisor class $K_C\in Cl(C)$ such that for any $D\in \Div(C)$.
+$$
+\ell(D)-\ell(K_C-D)=\deg(D)+1-g
+$$
+, where $\ell(D)=\dim_K\Gamma(C,\call(D))$
+
+$\bullet$ Interptation: $\Gamma(C,\call(D))=\{0\}\cup \{f\in K(C)^\times|f\text{ has at $x_i$ a pole of order $\leq n_i$ and a zero of order $\geq m_j$} \}$ for 
+$$
+D=\sum_{i\in I} n_i x_i-\sum_{j\in J} m_j y_j
+$$
+where $x_i,y_j$ are pairwise distinct closed point in $C$.
+
+$f\in K(C)^\times$ is in $\Gamma(C,\call(D))$, and $U_i$ is an open set containing $x_i$ and no other $x_k$ or $y_j$, then $f|_U=f$ must belong to $\pi_i^{-n_i}\Gamma(U,\calo_C)$, where $\pi_i$ is the uniformizer at $x_i$, so $f\pi_i^{n_i}\in \Gamma(U,\calo_C)$, so $v_{x_i}(f)\geq -n_i$, (which means pole of order $\leq n_i$)
+
+In other words: $f\in \call(D)\Llrta \div(f)+D\geq 0$, $\sum v_x(f)\cdot x+D\geq 0$
+
+\begin{cor}\ 
+\begin{enumerate}[label=(\arabic*)]
+\item if $\ell(D)\geq 1$, then $\deg(D)\geq 0$
+\item if $\ell(D)\geq 1$ and $\deg(D)=0$, then $D$ is principle ($0\in Cl(D)$) and $\ell(D)\geq 1$.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+\begin{enumerate}[label=(\arabic*)]
+\item if $0\neq f\in \call(D)$, $f$ exists $\ell(D)\geq 1$. We then have $\div(d)+D\geq 0$ $\Lrta 0+\deg(D)\geq 0$, $[\deg(\div(f))]=0$
+\item if $0\neq f\in \call(D)$, then $D+\div(f)\sim D$ in $Cl(C)$. So, if $\deg(D)=0$, $D$ is equivalent to $D+\deg(f)\geq 0$, which is effective of degree $0$, hence is the zero divisor.
+\end{enumerate}
+
+In particular, if $\deg(D)>\deg(K_C)$, $\ell(K_C-D)=0$ by part $(1)$ in the Corollary above. So R-R
+ gives $\ell(D)=\deg(D)+1-g$ in particular, if $\deg(D)>g-1$,  we have $\ell(D)\geq 1$. There exists $0\neq f$ ikn $K(C)$ with poles/zeros controlled by $D$.
+ \end{proof}
+
+ Moreover to say that $f$ has a zero at $x$ is a linear condition on $f$. Similarly for $f$ having  a pole at $x$ ($\Llrta V_f$ has a zero).
+
+ Recall that for $D=0$. $\Gamma(C,\call(D)=\Gamma(C,\calo_C))=K$ allowing a pole at $x$, gives intuitively one degree of free-dimension, for more poles, we get more and more possibilities.
+
+ $\Lrta$, intuitively, we expect $\leq \deg(D)$ posibilities, and hope this should be close to the truth, this i s what R-R ccomes from.
+
+ $\bullet$, Now for $D=D_1-D_2$, where $D_1,D_2\geq 0$, we get about $\deg(D_1)$ solutions by the above, and take at $\deg(D_2)$ by imposing extra linear conditions.
+
+ N.B. $\ell(D)\geq \deg(D)+1-g$,( by Riemann)
+
+ \begin{cor}
+\begin{enumerate}[label=(\arabic*)]
+\item $\ell(K_C)=g$
+\item $\deg(K_C)=2g-2$
+\item $K_C$ is unique, if $K_1.,K_2$ both satisfies R-R, we would know
+$$
+K_1\sim K_2\in Cl(C)
+$$
+\end{enumerate}
+ \end{cor}
+ \begin{proof}
+ \begin{enumerate}[label=\arabic*]
+ \item $D=0$ in R-R, $\ell(D)-\ell(K_C)=0+1-g$, $\Lrta \ell(K_C)=g$, because $\dim_K(C,\call([0]))=\dim_K(C,\calo_C)=1$
+ \item $D=K_C$ in R-R: $\ell(K_C)=\ell(0)=\deg(K_C)+1-g$
+ $$
+\Lrta \deg(K_C)=2g-2
+ $$
+\item $D=K_2$ in R-R for $K_1$, $\ell(K_2)-\ell(K_1-K_2)=\deg(K_2)+1-g=2g-2+1-g$
+$$
+\Lrta \ell(K_1-K_2)=1
+$$
+but $K_1-K_2$ has degree $0$, Then by part $(2)$ of Corollary above,know
+$K_1-K_2\sim 0$
+ \end{enumerate}
+ \end{proof}
+
+ \begin{ex}
+ \begin{enumerate}[label=(\arabic*)]
+\item $[g=0]$ $C=\proj^1_K$, we know that $Cl(C)\simeq  \intg$. say with $[\infty]$ as generator, (One we recovers this by noting that $\infty \neq x\sim \infty$ in $Cl(\proj^1)$, because $f=(T-X)$ has single $0$ at $x$ and a single pole at $\infty$)
+So $D=\sum n_i x_i\sim (\sum n_i)\infty$.  inparticular, if R-R holds, it means with $K_{\proj^1}\sim (2g-2)\infty$.
+
+\underline{Claim}: R-R holds with $g=0$, (hence $K_C=-2\infty$),
+
+$\bullet$ R-R: (enough to check that for $n\in \intg$, $(n\cdot \infty)-\ell((-2-n)\infty)=n+1$)
+
+$\bullet$ Assume $n\geq 0$,
+$$
+\begin{aligned}
+\Gamma(\proj^1,\call(n\infty))&=\{f\in K(T)\cap \Gamma(\affn^1_K,\calo_{\proj^1}|v_{\infty}(f)\geq -n\}\\
+&=\{f\in K[T]|\deg(f)\leq n\} (\text{ has dimension $n+1$})
+\end{aligned}
+$$
+Since $\ell(-(n+2)\infty)=0$, we get R-R in that case $\deg< \infty$.
+
+$n=-1$, $\ell(-\infty)-\ell(-\infty)\overset{?}{=}0$
+
+$n\leq -2$, $0-\ell(-(n+2)\infty)\overset{?}{=}n+1$, it is the case because $\ell(-(n+2)\infty)=-n-2+1$ by the derivation above.
+\item $[g=0,\text{ abstractly }]$ $K_1=\overline{K}$, 
+
+\underline{Claim}: if $C$ satisfies R-R with $g=0$, then $C$ is isomorphic to $\proj^1_K$.
+
+\underline{Step 1}: $Cl(C)\simeq \intg$, generated by any $x$ closed point of $C$
+
+\underline{proof}: $\deg: Cl(C)\lrta \intg$, is surjective, ( because $\deg(X)=1$ for a closed point) Let $D$ be a divisor with $\deg(D)=0$, apply R-R
+ to $D$:
+ $$
+\ell(D)-\ell(k_C-D)=0+1
+ $$
+ where $\deg(K_C-D)=\deg(K_C)-\deg(D)=-2-0< 0\Lrta \ell(K_C-D)=0$.
+
+ $\Lrta \ell(D)=1\Lrta D$ is principle.
+
+ \underline{Step 2}: Pick two distinct $x_0\neq x_1\in C$ (closed points), Consider $D=x_0-x_1$, by step 1, $D$ is principle, let $f\in K(C)^\times$ have divisor $D$, then $f$ has a single zero at $x_0$, single pole at $x_1$.
+
+Consider $\tilde{f}: C\lrta \proj^1_K$
+$$
+\left\{
+\begin{aligned}
+x_0&\longmapsto 0\\
+x_1&\longmapsto \infty
+\end{aligned}
+\right.
+$$
+this is an isomorphism.
+
+Augument $1$: $\tilde{f}$ is a bijection on closed points, hence a  homeomorphism for Zariski topology.
+
+Consider $y\in \proj^1_K-\{0,\infty\}$, closed point, consider g
+
+ \end{enumerate}
+ \end{ex}
 
 \subsection{May 25th:}
+
 Recall:
 Riemann-Roch $C/K$ nonsingular projective curve over $K$ , $\exists g\geq 0,\exists K_C\in  \pic(C)$
 
-s.t. $\forall D\in Div(C)$
+s.t. $\forall D\in \Div(C)$
 $$
 \ell(D)-\ell (K_C-D)=deg(D)+1-g.
 $$
@@ -3953,7 +4274,7 @@ $(2)$ $Jac(C)$ is a ``group scheme'' in the sense that it has agroup structure w
 $j(x)=$ class of $x-\infty$
 \begin{enumerate}[label=(\arabic*)]
 \item \underline{Injectivity}: $j(x)=j(y)\Llrta x-\infty\sim y-\infty\Llrta x\sim y$. If $x\neq y$, we saw that $x\sim y$ implies that $C\simeq \proj^1_K$ which has genus $0$, so it is not possible.
-\item \underline{Surjectivity} Let $D\in Div(C)$ with $\deg(C)=0$, written $D=D_1-D_2$ where $D_i\geq 0$. We need to prove: $(*)D\sim x-\infty$ for some $x$ closed point of $C$. Write 
+\item \underline{Surjectivity} Let $D\in \Div(C)$ with $\deg(C)=0$, written $D=D_1-D_2$ where $D_i\geq 0$. We need to prove: $(*)D\sim x-\infty$ for some $x$ closed point of $C$. Write 
 $$
 D_1=\sum n_i x_i=\sum n_i(x_i-\infty)+(\sum n_i)\infty,
 $$
@@ -3968,21 +4289,21 @@ for some $m_j\in \intg$ $y_j$ closed points. By induction on $Card(J)$ to prove 
 
 (2) $\forall x_1,\exists x_2, -(x_1-\infty)\simeq (x_2-\infty)$
 
-proof of $(1)$: Consider $E=x_1+x_2-\infty\in Div(C)$, $\deg(E)=1\Lrta \ell(-E)=0$
+proof of $(1)$: Consider $E=x_1+x_2-\infty\in \Div(C)$, $\deg(E)=1\Lrta \ell(-E)=0$
 
 R-R $\Lrta$ $\ell(E)=1$. So there exists a function $0\neq f \in \Gamma(C,\call(E))$
-, unique up to multiplication by $\lambda\in K^\times$. So $div(f)+ E\geq 0$.
+, unique up to multiplication by $\lambda\in K^\times$. So $\div(f)+ E\geq 0$.
 
-I.e. $E=x_1+x_2-\infty$, $f$ has at most a pole of order $1$ at $x_1$,  and vanishes at $\infty$. So $div(f)=k\infty -n x_1-m x_2+(\text{other zeros})$ where $k\geq 1, 0\leq n\leq 1, 0\leq m\leq 1$. If $n=0$, then $f\in \Gamma(C,\call(x_2-\infty))$  
+I.e. $E=x_1+x_2-\infty$, $f$ has at most a pole of order $1$ at $x_1$,  and vanishes at $\infty$. So $\div(f)=k\infty -n x_1-m x_2+(\text{other zeros})$ where $k\geq 1, 0\leq n\leq 1, 0\leq m\leq 1$. If $n=0$, then $f\in \Gamma(C,\call(x_2-\infty))$  
 $\Lrta \ell(x_2-\infty)\geq 1$,
- $\deg(x_2-\infty)=0$, $\Lrta x_2-\infty\sim 0$ $\Lrta C\simeq \proj^1_K$, so $n=1$, and similarly $m=1$. So $0=\deg(div(f))=-2+k+\deg(\text{other zeros})$ i.e. $k+\deg(\text{other zeros})=2$. So there is a unique $x_3$ closed point such that the zero of $f$ are $\infty +x_3$. This $x_3$ only depends on $x_1$ and  $x_2$, because $div(\lambda f)= div(f)$ if $\lambda \in K^\times$. So 
- $div(f)=\infty+x_3-x_1-x_2$ so $\infty +x_3\sim x_1+x_2\Llrta x_1-\infty +x_2-\infty\sim x_3-\infty$
+ $\deg(x_2-\infty)=0$, $\Lrta x_2-\infty\sim 0$ $\Lrta C\simeq \proj^1_K$, so $n=1$, and similarly $m=1$. So $0=\deg(\div(f))=-2+k+\deg(\text{other zeros})$ i.e. $k+\deg(\text{other zeros})=2$. So there is a unique $x_3$ closed point such that the zero of $f$ are $\infty +x_3$. This $x_3$ only depends on $x_1$ and  $x_2$, because $\div(\lambda f)= \div(f)$ if $\lambda \in K^\times$. So 
+ $\div(f)=\infty+x_3-x_1-x_2$ so $\infty +x_3\sim x_1+x_2\Llrta x_1-\infty +x_2-\infty\sim x_3-\infty$
 
  (2),  we should investigate 
  $$
 \infty -x_1\overset{?}{\sim} x_2-\infty.
  $$
- Let $E=2\infty -x_1$ $\deg(E)=1$ $\Lrta 0\neq f \in \Gamma(C,\call(2\infty-x_1))$. $div(f)+2\infty -x_1\geq 0$. i.e. $f$ has at most pole of order $2$ at $\infty$ and a zero at $x$. $f$ can not have a pole of order $1$ at $\infty$. So $f$ has a pole of order $2$ so $f$ has two zeros with multiplicity so $div(f)=x_1+x_2-2\infty$ for some unique $x_2$
+ Let $E=2\infty -x_1$ $\deg(E)=1$ $\Lrta 0\neq f \in \Gamma(C,\call(2\infty-x_1))$. $\div(f)+2\infty -x_1\geq 0$. i.e. $f$ has at most pole of order $2$ at $\infty$ and a zero at $x$. $f$ can not have a pole of order $1$ at $\infty$. So $f$ has a pole of order $2$ so $f$ has two zeros with multiplicity so $\div(f)=x_1+x_2-2\infty$ for some unique $x_2$
  $$
 \Lrta x_1-\infty +x_2-\infty\sim 0
  $$
@@ -3998,7 +4319,7 @@ Now we use RR to find equation for $C$.  (Here $K$ is not necessarily algebraic 
 
 $\ell(D_1)=1$, and $0\neq 1 \in \Gamma(C,\call(\infty))$ so $V(D_1)=K\cdot 1$ where $V(D_n)=\Gamma(C,\call(D_n))$
 
-$\ell(D_2)=2$; let $0\neq f$ in $V(D_2)$ be such that $V(D_2)=K\cdot 1+\oplus K\cdot f$. Note $div(f)=(zeros)-2\infty$
+$\ell(D_2)=2$; let $0\neq f$ in $V(D_2)$ be such that $V(D_2)=K\cdot 1+\oplus K\cdot f$. Note $\div(f)=(zeros)-2\infty$
 
 $\ell(D_3)=3$; let $0\neq g$ in $V(D_3)$ not in $V(D_2)$ s.t. 
 $$
@@ -4137,7 +4458,7 @@ gives a group isomorphism.
 
 Let $f=\alpha X+\beta Y+\gamma$ as element of $K(C)$, with $\alpha$ or $\beta$ non-zero.
 
-$$div(f)=(\text{zeros})-\left\{
+$$\div(f)=(\text{zeros})-\left\{
 \begin{aligned}
 &3\infty, \beta\neq 0\\
 & 2\infty, \beta=0 
@@ -4177,11 +4498,11 @@ so there are $3$ zeros with multiplicity, or two.
 These are exactly the intersection points (with multiplicity for tangents) of $C\cap \affn^2_K\subset \affn^2_K$ with the line $f=0$.
 
 Suppose
-$div(f)=x_1+x_2+x_3-3\infty$, $\Lrta (x_1-\infty)+(x_2-\infty)+(x_3-\infty)=0$ in $\pic^\circ (C)$
+$\div(f)=x_1+x_2+x_3-3\infty$, $\Lrta (x_1-\infty)+(x_2-\infty)+(x_3-\infty)=0$ in $\pic^\circ (C)$
 
 $\Llrta x_1+x_2+x_3=0$ in $\{\text{closed points}\}$
 
-Suppose $\beta=0$, $\Lrta div(f)=x_1+x_2-2\infty$ $\Llrta x_1-\infty+x_2-\infty=0$, $\Llrta x_1+_Cx_2=0$, $\Llrta X_2=-x_1$ in $\{\text{Closed points}\}$.
+Suppose $\beta=0$, $\Lrta \div(f)=x_1+x_2-2\infty$ $\Llrta x_1-\infty+x_2-\infty=0$, $\Llrta x_1+_Cx_2=0$, $\Llrta X_2=-x_1$ in $\{\text{Closed points}\}$.
 
 If $x_1=(u_1,v_1)$ is a point on $C$, then $-x_1=(u_1,-v_1)$ is the inverse.
 
@@ -4190,13 +4511,13 @@ To compute $x_1+_C x_2$:
 $(1a)$: if $x_1\neq x_2$, draw the unique line $L\subset \affn^2_K$ joining  $x_1,x_2$ say $L: f=0$.
 
 $(1a')$ if $L$ is not vertical, let $x_3$
- be the third  intersection point $div(f)=x_1+x_2+x_3-3\infty$. Then $x_1+x_2$ is the symmetric with $x_3$ with $x$-axis.
+ be the third  intersection point $\div(f)=x_1+x_2+x_3-3\infty$. Then $x_1+x_2$ is the symmetric with $x_3$ with $x$-axis.
 
  $(1a'')$ if $L$ is vertical, $\Lrta x_1+x_2=0$
 
 $(2a)$ $x_1=x_2$, let $L$ be the tangent line to $C$ at $x_1$, 
 
-$(2a')$ if $L$ is not vertical, then $div(f)=2x_1+x_3-3\infty$ for some $x-3$ and $2x_1=-x_3$
+$(2a')$ if $L$ is not vertical, then $\div(f)=2x_1+x_3-3\infty$ for some $x-3$ and $2x_1=-x_3$
 
 $(2a'')$
  if $L$ is vertical, then $2x_1=0$.
@@ -4208,7 +4529,7 @@ $(2a'')$
 \item Elliptic curves (surprisingly) important in modern arithmetic. (Silverman, the arithmetic of elliptic curves)
 \end{enumerate}
 \end{rmk}
-
+\section{Riemann hypothesis over finite fields}
 \subsection{May 29th-B: The Riemann hypothesis for curves over finite fields.}
 
 \underline{History:} A.Weil 1940s Great motivating problems for algebraic geometry from 1940s on, including generalizations
@@ -4328,7 +4649,7 @@ $$
 such that 
 \begin{enumerate}
 \item $f$ has at most $n$ poles with multiplicity
-\item every $x\in C(\bbf_q)$ is a zero of $f$ with multiplicity $\geq m$. Tenn $\deg(div(f))=0$ implies 
+\item every $x\in C(\bbf_q)$ is a zero of $f$ with multiplicity $\geq m$. Tenn $\deg(\div(f))=0$ implies 
 $$
 m|C(\bbf_q)|\leq n
 $$
@@ -4339,7 +4660,7 @@ Such ideas exists also in transcendence theory from Thue's time $\sim$ 1910s cf.
 \end{enumerate}
 \begin{proof}[Proof of Stepanov's theorem, following Bombieri]
 Let $x_0\in C(\bbf_q)$ fixed. (If $x_0$ does not exist, the result is true).
-Let $D_n=nx_0\in Div(C)$ and we will find  a suitable auxiliary function $f$ in $\Gamma(C,\call(D_n))$ for $n$ large enough. Such  a function certainly has poler divisor of degree $\leq n$. We will find $f=g^m$, with $g$ vanishing at all $x\in C(\bbf_q)-\{x_0\}$
+Let $D_n=nx_0\in \Div(C)$ and we will find  a suitable auxiliary function $f$ in $\Gamma(C,\call(D_n))$ for $n$ large enough. Such  a function certainly has poler divisor of degree $\leq n$. We will find $f=g^m$, with $g$ vanishing at all $x\in C(\bbf_q)-\{x_0\}$
 $$
 \Lrta m(|C(\bbf_q)|-1)\leq n
 $$
@@ -4348,5 +4669,310 @@ $$
 $$
 They key is to do this with $n$ as small as posible and $m$ as large as possible.
 \end{proof}
+
+\subsection{June 1st:}
+\underline{Goal:} $C/\bbf_q$ nonsingular projective curve with genus $g\geq 0$.
+$$
+||C(\bbf_q)|-(q+1|\leq 2g \sqrt{q}.
+$$
+\begin{thm}
+[Stepanov]
+$$
+|C(\bbf_q)|\leq q+1+(2g+1)\sqrt{q}
+$$
+if 
+$$
+\left\{\begin{aligned}
+&q> (g+1)^4\\
+&q \text{ is a square}
+\end{aligned}\right.
+$$
+\end{thm}
+
+Idea. constuct $f\in \bbf_q(C)$ non-zerp, wtih at most a pole of order $n\geq 1$ at some fixed  $x_0\in C(\bbf_q)$, and with zeros of multiplicity $\geq m$ at all $x\ni C(\bbf_q)-\{x_0\}$
+$$
+\Lrta |C(\bbf_q|\leq 1+\frac{n}{m}.
+$$
+Fix $x_0$ (if $C(\bbf_q)=\emptyset$, then theorem holds)
+
+$V_n=f(\Gamma(C\times \overline{\bbf}_q,\call(D_n)))$, $V_n$ is a finite  dimensional $\bbf_q$-vector space, where $D_n=n x_0$.
+
+We search for $f$ of the form 
+$$
+0\neq \sum_i g_i^{p^{\mu}}\cdot (f_i\circ \varphi_q)=f
+$$
+where $g_i\in V_n$, $f_i\in V_m$ for suitable $n,m,\mu$, we want
+$$
+\delta f=\sum_i g_i^{p^\mu} f_i
+=0$$
+in $\overline{\bbf}_q(C)$. If this is the case then $f(x)=0$ for all $x\in C(\bbf_q)-\{x_0\}$ because  for such an $x$ 
+$$
+\begin{aligned}
+f(x)&=\sum_i g_i(x)^{p^\mu} f_i (\varphi_q(x))\\
+&=\sum_i g_i(x)^{p^\mu}f_i(x)\\
+&=(\delta f)(x)=0.
+\end{aligned}
+$$
+If $p^\mu|q$ then $f$ is also a $p^\mu$-th power in $\overline{\bbf}_q(C)^x$:
+$$
+\begin{aligned}
+f&= \sum_i g_i^{p^\mu} f_i \circ \varphi_q\\
+&= \sum_i g_i^{p^\mu} \tilde{f}_i^{q}\\
+&=\sum_i (g_i \tilde{f}_i^{q/p^{\mu}})^{p^{\mu}}=\left(\sum_i g_i \tilde{f}_i^{q/p^\mu}\right)^{p^\mu}.
+\end{aligned}
+$$
+So the order of vanishing of $f$ at $x\in C(\bbf_q)-\{x_0\}$ is $\geq p^\mu$.
+(Why is $f_i\circ \varphi_q$ a $q$-th power?)
+
+\underline{Affine case}:
+$$
+f_i\in\overline{\bbf}_q[X_1,..,X_m]
+$$
+$$
+\begin{aligned}
+f_i\circ \varphi_q&=f_i(X_1^q,...,X_m^q)\\
+& =\sum_{I}\alpha_I X_1^{ q i_1}\cdots X_m^{q i_m}\\
+&= \left(\sum_I \beta_I X_i^{i_1}\cdots X_m^{i_m}\right)^q
+\end{aligned}
+$$
+where $\beta_I^q=\alpha_I$.
+
+$
+f=\sum_i g_i^{p^\mu}(f_i\circ \varphi_q)
+$, $\delta f$ is linear in $g_i,f_i$ but it could be that  whenever we get $\delta f=0$. we also have $f=0$.
+
+\underline{Define}:
+$$
+V_n^{(\mu)=\{g^{p^\mu}|g\in V_n\}}.
+$$ $V_n^{(\mu)}$ is an $\overline{\bbf}_q$-vector subspace of $V_{n p^\mu}$, $\dim V_n^{(\mu)}=\dim V)n=\ell(D_n)$.
+$$
+\tilde{V}_m=\{f\circ \varphi_q|f\in V_m\}
+$$
+is also an $\overline{\bbf}_q$-space, and 
+$$
+\tilde{V}_m\subset V_{q m},
+$$
+$$
+\dim (\tilde{V}_m)=\dim(V_m)=\ell(D_m).
+$$
+
+\begin{lemma}
+Assume $m\geq 1, n\geq 1,\mu\geq 1$, and
+$$
+np^\mu< q.
+$$
+Then the multiplication map
+$$
+\left\{
+\begin{aligned}
+&V_n^{(\mu)}\otimes_{\overline{\bbf}_q}\tilde{V}_m\lrta \overline{\bbf}_q(C)\\
+g^{p^\mu}\otimes(f\circ \varphi_q)\longmapsto g^{p^\mu}(f\circ \varphi_q)
+\end{aligned}
+\right.
+$$
+is surjective.
+$\Lrta $ the image has dimension $\ell(D_m)\ell(D_n)$.
+\end{lemma}
+\begin{proof}
+Let $d=\ell(D)_m$, let 
+$(f_1,...,f_d)$ be a basis of $V_m$, chosen so that 
+$$
+V_{X_0}(f_i)< V_{X_0}(f_{i+1})
+$$
+for $1\leq i\leq d-1$ such a bsisi exists because $\dim (V_{i+1}/V_i)\leq 1$ since if $f_1,f_2\in V_{i+1}$ have pole of order $i+1$, then some $\alpha f_1+\beta f_2$ has pole of order $\leq 1$.
+
+For example, $\proj^1$,  $x_0=\infty$ $V_\infty(f)=-\deg(f)$ for $f$ polynomial. $f_1=X^d$, $-d$, $f_2=X^{d_1}, -d+1$
+
+
+Any $f \in V_n^{(\mu)\otimes \tilde{V}_m}$ has an expansion
+$$
+\sum_{i=1}^{d}g_i^{p^\mu}\cdot(f_i\circ \varphi_q)
+$$
+for some $f_i\in V_m$ the tensor product is spanned by 
+$$
+\begin{aligned}
+&\sum_i \tilde{g}_j^{p^\mu}\otimes\left((\sum_i \alpha_{ij}f_i)\circ \varphi_q\right)\\
+&= \sum_i (\sum_j \alpha_{ij}\tilde{g}_{j}^{p^\mu})\otimes (f_i\circ \varphi_q)\\
+g_i---(\sum_i \beta_{ij}\tilde{g}_j)^{p^\mu}
+\end{aligned}
+$$
+Assume 
+$$
+\sum_{i=1}^d g_i^{p^\mu}(f_i\circ \varphi_1)=0,
+$$
+we will check that $f_i=0$ for all $i$, so that $f=0$. Assume
+ some $g_i\neq 0$, say $g_1=\cdots=g_{k-1}=0$ and $g_k\neq 0$
+  so
+  $$
+V_{x_0}(g_k^{p^\mu}f_k\circ \varphi_q)
+=V_{x_0}\left(\sum_{i\geq k} g_i^{p^\mu}(f_i\circ \varphi_q)\right).  $$
+The $LHS=p^\mu V_{x_0}(g_k)+qV_{x_0}(f_k)$, while the
+$$
+\begin{aligned}
+RHS&\geq \min_{i\ >k}V_{x_0}(g_i^{p^\mu}f_i\circ \varphi_q)\\
+&\geq -np^\mu+qV_{x_0}(f_i).
+\end{aligned}
+$$ 
+So we have
+$$
+p^\mu V_{x_0}(f_k)\geq -n p^\mu+ q(V_{x_0}(f_i)-V_{x_0}(f_k))\geq -n p^\mu+q\geq 1\text{ by assumption}
+$$
+where $V_{x_0}(f_i)-V_{x_0}(f_k)\geq 1$.
+Hence, $g_k$ is defined at $x_0$ (in fact vanishes at $x_0$) so $g_k\in \Gamma(C\times \overline{\bbf}_q,\calo_C)$ is constant, so equal to $0$. Contradiction!
+\end{proof}
+
+Let $W_{n,m}$ be the image  of this map. The lemma shows that if $n p^\mu<q$, the map 
+$$
+\delta:\left\{
+\begin{aligned}
+W_{n,m}&\lrta \overline{\bbf}_q(C)\\
+\sum_{i=1}^d
+g_i^{p^\mu}(f_i\circ \varphi_q)&
+\longmapsto \sum_{i=1}^d g_i^{p^\mu}f_i
+\end{aligned}\right.
+$$
+is a well-defined $\overline{\bbf}_q$-linear map. 
+$$
+\dim \ker(\delta)=\dim(W_{n,m})-\dim Im(\delta)=\ell(D_m)\ell(D_n)--\dim Im(\delta).
+$$
+But $Im_{\delta}\subset V_{np^\mu+m}$ so 
+$$
+\dim \ker(\delta)\geq \ell(D_n)\ell(D_m)-\ell(D_{np^\mu+m}).
+$$
+Conclusion:
+if $n,m,\mu\geq 1$ and 
+$p^\mu|q$, $np^\mu<q$ $\ell(D_n)\ell)D_m> \ell(D_{p^\mu n+m})$ then 
+$$
+|C(\bbf_q)|\leq 1+\frac{p^\mu n+ m q}{p^{\mu}}=1+n+\frac{mq}{p^\mu}
+$$
+(need $n,m$ as small as possible $\mu$ as large as possible)
+
+R-R:
+$$
+\ell(D)n
+-\ell(K_C-D_n)=n+1-g
+$$
+so $\ell(D_n)\geq n+1 -g$ $\ell(D_m)\geq m+1 -g$. and $\ell(D_{n p^\mu +m})=np^\mu+m+1-g$ if $np^\mu +m> 2g-2$. So we  get  non-trivial kernel if 
+$$
+(n+1-g)(m+1-g)> np^\mu+m+1-g
+$$
+and 
+$$
+np^\mu < q.
+$$
+Thinking that $g$ is fixed and small, we guess that we can take $m\sim p^\mu$, the bound becomes $1+n+q$. the bound becomes $1+n+q$. 
+
+Looking at the ``lower-order terms'', we see that the best possible choice is $m\sim n\sim p^\mu$. Then the best $\mu$ is when  $q=p^{2\mu}$ (so $q$ is a square) and $n$ just  a bit smaller. More precisely, the values below work
+$$
+q=p^{2\mu}
+$$
+$$
+m=p^\mu+2g=\sqrt{q}+2g
+$$
+$$
+n=\left\lfloor \frac{g}{g+1}p^\mu\right\rfloor +g+1
+$$
+
+and then
+$$
+|C(\bbf_q)|\leq 1+\frac{m q}{p^\mu}+n =1+q+2g p^\mu +g+1+ \left\lfloor \frac{g}{g+1}p^\mu\right\rfloor< 1+q+(2g+1)\sqrt{q}
+$$
+if $q > (g+1)^4$.  How to get the lower bound ? To get a lower bound 
+$$
+|C(\bbf_q)|\geq q- C\sqrt{q}
+$$
+for some $C\geq 1$, Stepanov(-Bambieri) use a trick from Galois theory.
+
+\begin{ex}
+Suppose $C:Y^d=g(X)$, $d\geq 2$ and $g$  is square free. 
+Idea: find $C_\alpha$ auxiliary curve $\alpha\in A$, s.t. 
+$$
+\sum_{\alpha\in A}|C_\alpha(\bbf_q)|=(simple)=|A|q
+$$
+and 
+$$
+|C_\alpha(\bbf_q|\leq q+ C\sqrt{q}
+$$
+then the sum of $C_\alpha(\bbf_q)$, $\alpha\neq 1$, cannot compensate a too small value of $|C_1(\bbf_q)|$.
+\end{ex}
+
+Hence $A=\bbf^\times_q/(\bbf^\times_q)^d$ is a cyclic group of order $d$ (since $d|q-1$). Let $A\subset \bbf^\times_q$ be a set of  representative of $\tilde{A}$, with $1\in A$.
+$C_\alpha:\alpha Y^d=g(x)$, one can check that $C_\alpha$ is still of genus $g$. So Stepanov derived 
+$\Lrta |C_\alpha(\bbf_q)|\leq q+1+C\sqrt{q}$ where $C$ is independent of $\alpha$.  But
+ $$
+ \begin{aligned}
+ \sum_{\alpha\in A}|C_\alpha(\bbf_q)|&=\sum_{\alpha\in A}\sum_{x,y\in \bbf_q, y^d=\alpha^{-1}g(x)}1\\
+ &=\sum_{x\in \bbf_q}\sum_{g(x)=\alpha y^d}1\\
+ &=(\text{ at most $\deg g$ zeros of $g$})+ d(q-\# \text{ of zeros of $g$} )\\
+ &= dq +O(\deg (g)).
+ \end{aligned}
+ $$
+ Last Step: from ``
+  $$
+  |C(\bbf_{q^{2\nu}})|=q^{2\nu}+O(q^\nu)
+  $$
+  for all $\nu$ large enough.''
+  to
+  $$
+||C(\bbf_{q^\nu})|-(q^\nu+1)|\leq 2g \sqrt{q^\nu}
+  $$
+We input 
+\begin{thm}
+[Hasse, Artin. Schmodt, 1930s]. There are $\alpha_1,...,\alpha_{2g}$ in $\cplx$ such that
+ $$|C(\bbf_{q^\nu}|=q^\nu+1\sum^{2g}_{i=1}\alpha_i^\nu, \nu \geq 1$$ 
+ and $q/\alpha_i$ is one of the $\alpha_j$'s
+\end{thm}
+and the proof uses Riemann-Roch again.
+
+Combining the above arguments, we get
+$\exists C\geq 0$, $|\sum_{i=1}^{2g}\alpha_i^{2\nu}|\leq C q^\nu$ for all $\nu \geq \nu_0$ in fact $\nu \geq 0$ by increasing $C$. 
+\begin{lemma}
+Suppose $\beta_1,...,\beta_r\in \cplx$, satisfy 
+$$
+|\sum_i^\nu \beta_i^r|\leq C B^\nu
+$$
+for $\nu \geq 0$. Then $|\beta_i|\leq B$. 
+\end{lemma}
+\begin{proof}[of Lemma]
+$$
+\begin{aligned}
+f(z)&=\sum_{\nu \geq 0}\left(\sum_{i=1}^r\beta_i^\nu\right)z^\nu\\
+&=\sum_{i=1}^r\sum_{\nu\geq 0}(\beta_i z)^\nu\\
+&=\sum^r_{i=1}\frac{1}{1-\beta_i z}
+\end{aligned}
+$$
+has poles at each $\frac{1}{\beta_i}$.
+
+Hypothesis $\Lrta$ $f$ converges for $|z|<\frac{1}{|B|}$ so we have
+$$
+\frac{1}{|\beta_i|}\geq \frac{1}{|B|}
+$$
+$\Lrta |\beta_i|\leq |B|$ for all $i$.
+\end{proof}
+
+\underline{Conclusion}
+$\beta_i=\alpha_i^2$, $B=q$
+
+$\Lrta |\alpha_i^2|\leq q$, $\Lrta |\alpha_i|\leq \sqrt{q}$
+
+$\Lrta ||C(\bbf_q|-(q+1)|\leq 2g\sqrt{q}$ but also 
+$\left|\frac{q}{\alpha_i}\right|\leq \sqrt{q}\Lrta |\alpha_i|\geq \sqrt{q}$. These give us the final result
+$$
+|\alpha_i|=\sqrt{q}
+$$
+which is equivalent to the Riemann-Hypothesis on finite field.
+
+
+Consider $C/\bbf_q$ elliptic curve
+
+\underline{Step 1}. $Z(T)=\exp\left(\sum_{\nu\geq 1}\frac{|C(\bbf_{q^\nu}|}{\nu} T^\nu\right)$. We have
+ $$
+ Z(T)=\prod_{x\text{ closed point of }C}(1- T^{\deg(x)})^{-1}
+ $$
+
+ \underline{Step 2}:
+ $$
+ Z(T)=\sum_{D\geq 0\text{ div of } C} T^{}\deg(D)=1+\sum_{d\geq }T^d \sum
+ $$
 \end{document}
 

@@ -1,0 +1,54 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.24)  25 MAR 2018 04:01
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**tufte-common.def
+(./tufte-common.def
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+File: tufte-common.def 2009/12/11 v3.5.0 Common code for the Tufte-LaTeX styles
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count79
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)
+
+/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty:62: Package xk
+eyval Error: xkeyval loaded before \documentclass.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...yval loaded before \protect\documentclass}
+                                                  %
+? 
+/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty:62: Emergency 
+stop.
+ ...                                              
+                                                  
+l.62 ...yval loaded before \protect\documentclass}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 208 strings out of 493089
+ 3275 string characters out of 6134842
+ 54132 words of memory out of 5000000
+ 3778 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 14i,0n,15p,164b,22s stack positions out of 5000i,500n,10000p,200000b,80000s
+/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty:62:  ==> Fatal
+ error occurred, no output PDF file produced!

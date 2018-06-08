@@ -1,0 +1,28 @@
+\contentsline {chapter}{Introduction}{5}{chapter*.2}
+\contentsline {chapter}{Lecture 1}{7}{chapter*.3}
+\contentsline {section}{Gromov-Witten Theory: an Overview}{7}{section*.4}
+\contentsline {subsection}{Smooth and etale morphisms}{8}{subsection*.5}
+\contentsline {section}{Lecture 4: Schemes and algebraic spaces II}{8}{section*.6}
+\contentsline {section}{Lecture 4 1/2: Complements on schemes and algebraic spaces}{8}{section*.7}
+\contentsline {chapter}{Stacks}{9}{chapter*.8}
+\contentsline {section}{Lecture 5: Stacks I}{9}{section*.9}
+\contentsline {section}{Lecture 6: Stacks II}{9}{section*.10}
+\contentsline {section}{Lecture 7: Stacks III}{9}{section*.11}
+\contentsline {section}{Lecture 8: Stacks IV}{9}{section*.12}
+\contentsline {section}{Lecture 9: Some exercises}{9}{section*.13}
+\contentsline {chapter}{On the Use of the tufte-book Document Class}{11}{chapter*.14}
+\contentsline {section}{Page Layout}{11}{section*.15}
+\contentsline {subsection}{Headings}{11}{subsection*.16}
+\contentsline {section}{Sidenotes}{12}{section*.17}
+\contentsline {section}{References}{12}{section*.18}
+\contentsline {section}{Figures and Tables}{13}{section*.19}
+\contentsline {section}{Captions}{15}{section*.20}
+\contentsline {paragraph}{Vertical alignment}{15}{paragraph*.21}
+\contentsline {paragraph}{Horizontal alignment}{15}{paragraph*.22}
+\contentsline {section}{Full-width text blocks}{16}{section*.23}
+\contentsline {section}{Typography}{16}{section*.24}
+\contentsline {subsection}{Typefaces}{16}{subsection*.25}
+\contentsline {subsection}{Letterspacing}{17}{subsection*.26}
+\contentsline {section}{Document Class Options}{17}{section*.27}
+\contentsline {chapter}{Index}{19}{chapter*.28}
+\contentsfinish 

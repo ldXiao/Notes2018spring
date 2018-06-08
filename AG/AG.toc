@@ -1,5 +1,7 @@
 \contentsline {section}{\numberline {1}Classical varieties}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Feb 27th: Algebraic sets and morphisms}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Affine algebraic sets}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Projective Algebraic sets: Introduction}{6}{subsubsection.1.1.2}
 \contentsline {subsection}{\numberline {1.2}Mar 2nd: Projective algebraic sets and regular functions}{7}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Mar 5th: Exercise class}{10}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Mar 6th: Rational/birational maps}{10}{subsection.1.4}
@@ -32,8 +34,11 @@
 \contentsline {subsection}{\numberline {7.1}May 15th-B: Preliminaries}{81}{subsection.7.1}
 \contentsline {subsubsection}{\numberline {7.1.1}Hyperelliptic curve}{82}{subsubsection.7.1.1}
 \contentsline {subsubsection}{\numberline {7.1.2}Artin-Schreier Curves}{83}{subsubsection.7.1.2}
-\contentsline {subsection}{\numberline {7.2}May 18th:}{84}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}May 22nd:}{84}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}May 25th:}{84}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}May 29th-A: Group law of elliptic curves.}{88}{subsection.7.5}
-\contentsline {subsection}{\numberline {7.6}May 29th-B: The Riemann hypothesis for curves over finite fields.}{90}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.2}May 18th-A:Non-singular curves}{84}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}May 18th-B: Riemann-Roch Theorem}{86}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}May 22nd: The proof of Riemann-Roch}{88}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}May 25th:}{91}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}May 29th-A: Group law of elliptic curves.}{95}{subsection.7.6}
+\contentsline {section}{\numberline {8}Riemann hypothesis over finite fields}{97}{section.8}
+\contentsline {subsection}{\numberline {8.1}May 29th-B: The Riemann hypothesis for curves over finite fields.}{97}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}June 1st:}{100}{subsection.8.2}

@@ -1,0 +1,150 @@
+\begin{theindex}
+
+  \item \texttt  {a4paper} class option, \hyperpage{17}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {allcaps}, 
+		\hyperpage{17}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {author}, 
+		\hyperpage{18}
+
+  \indexspace
+
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {bibliography}, 
+		\hyperpage{13}
+  \item \texttt  {bidi} class option, \hyperpage{17}
+  \item \texttt  {bidi} package, \hyperpage{17, 18}
+  \item \texttt  {booktabs} package, \hyperpage{14}
+
+  \indexspace
+
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {caption}, 
+		\hyperpage{13, 14}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {cite}, 
+		\hyperpage{12, 13}
+  \item class options, \hyperpage{17--18}
+    \subitem \texttt  {a4paper}, \hyperpage{17}
+    \subitem \texttt  {bidi}, \hyperpage{17}
+    \subitem \texttt  {debug}, \hyperpage{18}
+    \subitem \texttt  {justified}, \hyperpage{17}
+    \subitem \texttt  {nofonts}, \hyperpage{18}
+    \subitem \texttt  {nohyper}, \hyperpage{18}
+    \subitem \texttt  {nols}, \hyperpage{18}
+    \subitem \texttt  {notitlepage}, \hyperpage{18}
+    \subitem \texttt  {notoc}, \hyperpage{18}
+    \subitem \texttt  {oneside}, \hyperpage{17}
+    \subitem \texttt  {sfsidenotes}, \hyperpage{17}
+    \subitem \texttt  {symmetric}, \hyperpage{17}
+    \subitem \texttt  {titlepage}, \hyperpage{18}
+    \subitem \texttt  {twoside}, \hyperpage{17}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {clearpage}, 
+		\hyperpage{15}
+
+  \indexspace
+
+  \item \texttt  {debug} class option, \hyperpage{18}
+
+  \indexspace
+
+  \item environments
+    \subitem \texttt  {figure}, \hyperpage{13}
+    \subitem \texttt  {figure*}, \hyperpage{13}
+    \subitem \texttt  {fullwidth}, \hyperpage{16}
+    \subitem \texttt  {marginfigure}, \hyperpage{13}
+    \subitem \texttt  {margintable}, \hyperpage{13}
+    \subitem \texttt  {table*}, \hyperpage{13}
+    \subitem \texttt  {tabular}, \hyperpage{13}
+
+  \indexspace
+
+  \item \texttt  {figure} environment, \hyperpage{13}
+  \item \texttt  {figure*} environment, \hyperpage{13}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {FloatBarrier}, 
+		\hyperpage{15}
+  \item \texttt  {fontenc} package, \hyperpage{18}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {footnote}, 
+		\hyperpage{12}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {forcerectofloat}, 
+		\hyperpage{16}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {forceversofloat}, 
+		\hyperpage{16}
+  \item \texttt  {fullwidth} environment, \hyperpage{16}
+
+  \indexspace
+
+  \item headings, \hyperpage{11}
+  \item \texttt  {hyperref} package, \hyperpage{18}
+
+  \indexspace
+
+  \item \texttt  {justified} class option, \hyperpage{17}
+
+  \indexspace
+
+  \item \texttt  {letterspace} package, \hyperpage{18}
+  \item license, \hyperpage{2}
+
+  \indexspace
+
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {maketitle}, 
+		\hyperpage{18}
+  \item \texttt  {marginfigure} environment, \hyperpage{13}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {marginnote}, 
+		\hyperpage{12}
+  \item \texttt  {margintable} environment, \hyperpage{13}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {morefloats}, 
+		\hyperpage{14, 15}
+
+  \indexspace
+
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {newthought}, 
+		\hyperpage{11}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {nobibliography}, 
+		\hyperpage{13}
+  \item \texttt  {nofonts} class option, \hyperpage{18}
+  \item \texttt  {nohyper} class option, \hyperpage{18}
+  \item \texttt  {nols} class option, \hyperpage{18}
+  \item \texttt  {notitlepage} class option, \hyperpage{18}
+  \item \texttt  {notoc} class option, \hyperpage{18}
+
+  \indexspace
+
+  \item \texttt  {oneside} class option, \hyperpage{17}
+
+  \indexspace
+
+  \item packages
+    \subitem \texttt  {bidi}, \hyperpage{17, 18}
+    \subitem \texttt  {booktabs}, \hyperpage{14}
+    \subitem \texttt  {fontenc}, \hyperpage{18}
+    \subitem \texttt  {hyperref}, \hyperpage{18}
+    \subitem \texttt  {letterspace}, \hyperpage{18}
+    \subitem \texttt  {soul}, \hyperpage{18}
+
+  \indexspace
+
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {setfloatalignment}, 
+		\hyperpage{15}
+  \item \texttt  {sfsidenotes} class option, \hyperpage{17}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {sidenote}, 
+		\hyperpage{12}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {smallcaps}, 
+		\hyperpage{17}
+  \item \texttt  {soul} package, \hyperpage{18}
+  \item \texttt  {symmetric} class option, \hyperpage{17}
+
+  \indexspace
+
+  \item \texttt  {table*} environment, \hyperpage{13}
+  \item \texttt  {tabular} environment, \hyperpage{13}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {textsc}, 
+		\hyperpage{17}
+  \item \hangleft {\texttt  {\char '134\relax }}\texttt  {title}, 
+		\hyperpage{18}
+  \item \texttt  {titlepage} class option, \hyperpage{18}
+  \item \texttt  {twoside} class option, \hyperpage{17}
+  \item typefaces, \hyperpage{16}
+
+  \indexspace
+
+  \item \XeLaTeX , \hyperpage{18}
+
+\end{theindex}
