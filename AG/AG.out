@@ -9,36 +9,39 @@
 \BOOKMARK [2][-]{subsection.1.6}{Mar 13th-A: Continue and proofs}{section.1}% 9
 \BOOKMARK [1][-]{section.2}{Schemes}{}% 10
 \BOOKMARK [2][-]{subsection.2.1}{Mar 13th-B: Affine schemes}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.2}{Mar 16th: Affine schemes, examples and properties.}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.3}{Mar 20th: }{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.4}{Mar 23th: Sheaves and stalks}{section.2}% 14
-\BOOKMARK [2][-]{subsection.2.5}{Mar 27th: Morphism of schemes}{section.2}% 15
-\BOOKMARK [2][-]{subsection.2.6}{Apr 10th: }{section.2}% 16
-\BOOKMARK [2][-]{subsection.2.7}{Apr 13th-A: Continue, morphism to affine schemes }{section.2}% 17
-\BOOKMARK [1][-]{section.3}{Fibred product}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{Apr 13th-B: Categorical introduction of Fibred product}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{Apr 17th: Examples and Applications of the Fibred Product}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Apr 20th: absent}{section.3}% 21
-\BOOKMARK [1][-]{section.4}{Elementary geometry of schemes}{}% 22
-\BOOKMARK [2][-]{subsection.4.1}{Apr 23rd: Some basics of schemes}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.2}{Apr 27th: Projective space and schemes}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.3}{May 4th-A: Projective schemes continued}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{Divisors}{}% 26
-\BOOKMARK [2][-]{subsection.5.1}{May 4th-B: Weil divisors}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.2}{May 8th-A: Divisors continued}{section.5}% 28
-\BOOKMARK [1][-]{section.6}{Picard group}{}% 29
-\BOOKMARK [2][-]{subsection.6.1}{May 8th-B: Picard group, definitions}{section.6}% 30
-\BOOKMARK [2][-]{subsection.6.2}{May 11th: The twisting invertible sheaf O\(n\) on Pn}{section.6}% 31
-\BOOKMARK [2][-]{subsection.6.3}{May 15th-A: proof continued}{section.6}% 32
-\BOOKMARK [1][-]{section.7}{Algebraic Curves}{}% 33
-\BOOKMARK [2][-]{subsection.7.1}{May 15th-B: Preliminaries}{section.7}% 34
-\BOOKMARK [3][-]{subsubsection.7.1.1}{Hyperelliptic curve}{subsection.7.1}% 35
-\BOOKMARK [3][-]{subsubsection.7.1.2}{Artin-Schreier Curves}{subsection.7.1}% 36
-\BOOKMARK [2][-]{subsection.7.2}{May 18th-A:Non-singular curves}{section.7}% 37
-\BOOKMARK [2][-]{subsection.7.3}{May 18th-B: Riemann-Roch Theorem}{section.7}% 38
-\BOOKMARK [2][-]{subsection.7.4}{May 22nd: The proof of Riemann-Roch}{section.7}% 39
-\BOOKMARK [2][-]{subsection.7.5}{May 25th:}{section.7}% 40
-\BOOKMARK [2][-]{subsection.7.6}{May 29th-A: Group law of elliptic curves.}{section.7}% 41
-\BOOKMARK [1][-]{section.8}{Riemann hypothesis over finite fields}{}% 42
-\BOOKMARK [2][-]{subsection.8.1}{May 29th-B: The Riemann hypothesis for curves over finite fields.}{section.8}% 43
-\BOOKMARK [2][-]{subsection.8.2}{June 1st:}{section.8}% 44
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Motivations}{subsection.2.1}% 12
+\BOOKMARK [3][-]{subsubsection.2.1.2}{ SpecA as a topological space}{subsection.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.2}{Mar 16th: Affine schemes, examples and properties.}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Examples of \040SpecA}{subsection.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.3}{Mar 20th: }{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.4}{Mar 23th: Sheaves and stalks}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.5}{Mar 27th: Morphism of schemes}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.6}{Apr 10th: }{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.7}{Apr 13th-A: Continue, morphism to affine schemes }{section.2}% 20
+\BOOKMARK [1][-]{section.3}{Fibred product}{}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Apr 13th-B: Categorical introduction of Fibred product}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Apr 17th: Examples and Applications of the Fibred Product}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Apr 20th: absent}{section.3}% 24
+\BOOKMARK [1][-]{section.4}{Elementary geometry of schemes}{}% 25
+\BOOKMARK [2][-]{subsection.4.1}{Apr 23rd: Some basics of schemes}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.2}{Apr 27th: Projective space and schemes}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.3}{May 4th-A: Projective schemes continued}{section.4}% 28
+\BOOKMARK [1][-]{section.5}{Divisors}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{May 4th-B: Weil divisors}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.2}{May 8th-A: Divisors continued}{section.5}% 31
+\BOOKMARK [1][-]{section.6}{Picard group}{}% 32
+\BOOKMARK [2][-]{subsection.6.1}{May 8th-B: Picard group, definitions}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.2}{May 11th: The twisting invertible sheaf O\(n\) on Pn}{section.6}% 34
+\BOOKMARK [2][-]{subsection.6.3}{May 15th-A: proof continued}{section.6}% 35
+\BOOKMARK [1][-]{section.7}{Algebraic Curves}{}% 36
+\BOOKMARK [2][-]{subsection.7.1}{May 15th-B: Preliminaries}{section.7}% 37
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Hyperelliptic curve}{subsection.7.1}% 38
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Artin-Schreier Curves}{subsection.7.1}% 39
+\BOOKMARK [2][-]{subsection.7.2}{May 18th-A:Non-singular curves}{section.7}% 40
+\BOOKMARK [2][-]{subsection.7.3}{May 18th-B: Riemann-Roch Theorem}{section.7}% 41
+\BOOKMARK [2][-]{subsection.7.4}{May 22nd: The proof of Riemann-Roch}{section.7}% 42
+\BOOKMARK [2][-]{subsection.7.5}{May 25th:}{section.7}% 43
+\BOOKMARK [2][-]{subsection.7.6}{May 29th-A: Group law of elliptic curves.}{section.7}% 44
+\BOOKMARK [1][-]{section.8}{Riemann hypothesis over finite fields}{}% 45
+\BOOKMARK [2][-]{subsection.8.1}{May 29th-B: The Riemann hypothesis for curves over finite fields.}{section.8}% 46
+\BOOKMARK [2][-]{subsection.8.2}{June 1st:}{section.8}% 47
