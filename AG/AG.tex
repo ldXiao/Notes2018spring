@@ -1468,7 +1468,7 @@ $\eta_f$ specializes to the point $(x,y)$ on $C_f$.
 
 \end{ex}
 
-\subsection{Mar 20th: }
+\subsection{Mar 20th: Structure sheaf over affine scheme}
 
 \begin{ex}
 $A=\intg$, $\spec A=\{0\}\cup \{p\intg|p\text{ prime number}\}$.
@@ -1717,19 +1717,19 @@ $$
         $$
         is a sheaf and lastly for $X$ a complex manifold the following is a sheaf:
         $$
-        \mathcal H(U) = \{ f : U \longrightarrow U \text{ holomorphic}\}. 
+        \mathcal H(U) = \{ f : U \longrightarrow \cplx \text{ holomorphic}\}. 
         $$
         \item
         Let $X= \mathbb C^\times$. Then
         $$
         \calf(U) = \{f: U \longrightarrow \mathbb C \text{ holomorphic and } f= g^2 \text{ for some $g$ holomorphic} \}
         $$
-        is a pre-sheaf but not a sheaf. A holomorphic function might have a square root locally but not on all of U.
+        is a pre-sheaf but not a sheaf. A holomorphic function might have a square root locally but not on all of $U$. For example, we can take $U$ to be an annulus around the origin.
     \end{enumerate}
 \end{ex}
 
 \begin{dfn}
-    Let $\calf_1, \calf_2$ be $\calc$-pre-sheaves on $X$. A \textbf{morphism} $\calc : \calf_1 \longrightarrow \calf_2$ is a collection of morphisms $\varphi_U: \calf_1(U) \longrightarrow \calf_2(U)$ such that for any $V\subset U$ open we have a commutative square
+    Let $\calf_1, \calf_2$ be $\calc$-pre-sheaves on $X$. A \textbf{morphism} of $\calc$-pre-sheaves $ : \calf_1 \longrightarrow \calf_2$ is a collection of morphisms $\varphi_U: \calf_1(U) \longrightarrow \calf_2(U)$ such that for any $V\subset U$ open we have a commutative square
     $$
     \begin{tikzcd}
     \calf_1(U) \arrow[r, "\varphi_U"] \arrow[d, "res^U_V \text{ for } \calf_1"'] & \calf_2(U) \arrow[d, "res^U_V \text{ for } \calf_1"] \\
@@ -1744,7 +1744,7 @@ $$
 $$ 
 Thus we have now defined the category of $\calc$-pre-sheaves and sheaves.
 
-\begin{ex}
+\begin{ex}\ 
     \begin{enumerate}[label=(\arabic*)]
         \item 
         If $X$ is a complex manifold, there are morphisms
@@ -1766,7 +1766,7 @@ Thus we have now defined the category of $\calc$-pre-sheaves and sheaves.
 \end{ex}
 
 \begin{prop}
-    Suppose $\calf$ is a $\calc$-pre-sheaf on $X$. Then there is a unique, up to unique isomorphism, morphism $\sigma: \calf\longrightarrow \calf^\sigma$, (the ``sheafification'' of $\calf$) such that for any morphism of presheaves $\varphi: \calf \longrightarrow \mathcal Y$ there is a unique $\varphi^\sigma$ such that $\varphi = \varphi^\sigma \circ \sigma$. In particular $\hom (\calf, \mathcal Y) = \hom (\calf^\sigma, \mathcal Y)$.
+    Suppose $\calf$ is a $\calc$-pre-sheaf on $X$. Then there is a unique, up to unique isomorphism, morphism $\sigma: \calf\longrightarrow \calf^\sigma$, (the ``sheafification'' of $\calf$) such that for any morphism of presheaves $\varphi: \calf \longrightarrow \mathcal Y$ there is a unique $\varphi^\sigma$ such that $\varphi = \varphi^\sigma \circ \sigma$. In particular $\hom_{\mathsf{PSh}} (\calf, \mathcal Y) = \hom_{\mathsf{Sh}} (\calf^\sigma, \mathcal Y)$.
     $$
     \begin{tikzcd}
     \calf \arrow[r, "\varphi"] \arrow[d, "\sigma"'] & \mathcal Y  \\
@@ -1795,17 +1795,16 @@ $\calf^\sigma$ is called the sheaf associated to $\calf$. In order to prove the 
     \varphi
     \left\{
     \begin{aligned}
-    \calo_{A,p} & \longrightarrow A_p \\
-    (U,s) & \longmapsto s(p)
+    \calo_{A,\scp} & \longrightarrow A_\scp \\
+    (U,s) & \longmapsto s(\scp)
     \end{aligned}
     \right.
     $$
 \end{prop}
 
 \begin{proof}
-    It follows easily from the definitions that $\varphi$ is well defined. For surjectivity, let $a/f\in A_p$, $f\notin p$.  Then we can construct $s$ defined on $U_f$ such that $s(q) = a/f$ in $A_q$ for all $q \in U_f$.
-    
-    Next, suppose that $s(p)=0$ for some section $(U,s)$. Then we can write $s(q) = a/f$ for any $q\in V$ where $V$ is an open neighbourhood of $p$ in $V$. Since $s(p)=0$, we get $ha=0$ for some $h \notin p$. But then on $V \cap U_h$, $s\equiv 0$. 
+    It follows easily from the definitions that $\varphi$ is well defined. For surjectivity, let $a/f\in A_\scp$, $f\notin \scp$.  Then we can construct $s$ defined on $U_f$ such that $s(\scq) = a/f$ in $A_\scq$ for all $\scq \in U_f$.    
+    Next, suppose that $s(\scp)=0$ for some section $(U,s)$. Then we can write $s(\scq) = a/f$ for any $\scq\in V$ where $V$ is an open neighbourhood of $\scp$ in $U$. Since $s(p)=0$, we get $ha=0$ for some $h \notin p$. But then on $V \cap U_h$, $s\equiv 0$. 
 \end{proof}
 
 Now we get back to the construction of $\calf^\sigma$. Define
@@ -1841,9 +1840,9 @@ $$
     Given sheaves $\calf_1$, $\calf_2$ on $X$ and a morphism $\varphi: \calf_1 \longrightarrow \calf_2$, $\varphi$ is an isomorphism if and only if for every $x\in X$ the induced $\varphi_x: \calf_{1,x} \longrightarrow \calf_{2,x}$, $[(U,s)] \longmapsto [(U, \varphi_U(s))]$ is an isomorphism.
 \end{prop}
 
-We omit the proof, it can be found in Hartshorne or Eisenbud.
+We omit the proof, it can be found in either Hartshorne or Eisenbud.
 
-\begin{rmk}
+\begin{rmk}\ 
     \begin{enumerate}[label=(\arabic*)]
         \item 
         This only holds for sheaves not presheaves.
@@ -1855,7 +1854,7 @@ We omit the proof, it can be found in Hartshorne or Eisenbud.
 \end{rmk}
 
 \begin{dfn/thm}
-    Let $X,Y$ be topological spaces and $f_X\longrightarrow Y$ be continuous, $\calc$ be a category and $\calf$ be a $\calc$-presheaf on $X$. Define $(f_* \calf)(U)=\calf (f^{-1}(U))$ and $\res_V^U = \res_{f^{-1}(V)}^{f^{-1}(U)}$. Then $f_*\calf$ is a $\calc$-presheaf and is a sheaf is $\calf$ is one.
+    Let $X,Y$ be topological spaces and $f:X\longrightarrow Y$ be continuous, $\calc$ be a category and $\calf$ be a $\calc$-presheaf on $X$. Define $(f_* \calf)(U)=\calf (f^{-1}(U))$ and $\res_V^U = \res_{f^{-1}(V)}^{f^{-1}(U)}$. Then $f_*\calf$ is a $\calc$-presheaf and is a sheaf if $\calf$ is one.
     $f_*\calf$ is called the \textbf{direct image of $\calf$ on $Y$}.
 \end{dfn/thm}
 
@@ -1868,7 +1867,7 @@ We omit the proof, it can be found in Hartshorne or Eisenbud.
     $$
     s_\alpha|f^{-1}(U_\alpha)\cap f^{-1}(U_\beta) = s_\beta|f^{-1}(U_\alpha) \cap f^{-1}(U_\beta).
     $$
-    Since $f^{-1}(U) = \bigcup f^{-1}(U_\alpha)$ and $\calf$ is a sheaf, there is a unique $s\in\calf(f^{-1}(U))$ such that $s|f^{-1}(U_\alpha) = s_\alpha$. Hence $s \in (f_*\calf)(U)$, $s|U_\alpha = s_\alpha$. The uniqueness follows from the same kind reasoning.
+    Since $f^{-1}(U) = \bigcup f^{-1}(U_\alpha)$ and $\calf$ is a sheaf, there is a unique $s\in\calf(f^{-1}(U))$ such that $s|f^{-1}(U_\alpha) = s_\alpha$. Hence $s \in (f_*\calf)(U)$, $s|U_\alpha = s_\alpha$. The uniqueness follows from the same kind of reasoning.
 \end{proof}
 
 \subsection{Mar 27th: Morphism of schemes}
@@ -1907,8 +1906,9 @@ One checks that $t\in\calo_B(f^{-1}(U))$ if $s\in \calo_A(U)$. IN other words: $
 $$
 (\tilde{f},f^*): (\spec B,\calo_B)\lrta (\spec A,\calo_A)
 $$
+\subsubsection{Morphism of locally ringed spaces}
 \begin{dfn}
-A \textbf{ringed space} is $(X\calo_X)$, where $X$ is a topological space and $\calo_X$ is a sheaf of rings  on $X$. A \textbf{locally ringed space} is a ringed space where $\calo_{X,x}$ is a local ring for all $x\in X$. (e.g. $\calo_{A,\scp}=A_\scp$, where $A_\scp$ is a local ring with unique maximal ideal $\scp A_\scp$).
+A \textbf{ringed space} is $(X,\calo_X)$, where $X$ is a topological space and $\calo_X$ is a sheaf of rings  on $X$. A \textbf{locally ringed space} is a ringed space where $\calo_{X,x}$ is a local ring for all $x\in X$. (e.g. $\calo_{A,\scp}=A_\scp$, where $A_\scp$ is a local ring with unique maximal ideal $\scp A_\scp$).
 
 A morphism of ringed space $f:(X,\calo_X)\lrta (Y,\calo_Y)$ is a pair
 $$
@@ -1967,7 +1967,7 @@ $$
 $$
 is the desired morphism.
 \end{dfn}
-\begin{thm}
+\begin{thm}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item For any $f: A\lrta B$ the pair $(\tilde{f},\tilde{f}^*)$ is a morphism  of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$
 \item Conversely, any morphism of locally ringed spaces $(\spec B,\calo_B)\lrta (\spec A,\calo_A)$ is induced by a morphism of rings.
@@ -2000,6 +2000,7 @@ $$
 f(a/b)=\frac{f(a)}{f(b)}\in \scq\\
 $$
 $$
+\tiny
 \begin{tikzcd}
 \calo_{A,\tilde{f}(\scq)} \arrow[ddd, "\simeq"'] \arrow[rr] &  & (\tilde{f}^*_*\calo_B)_{\tilde{f}(\scq)} \arrow[rr] &  & \calo_{B,\scq} \arrow[ddd, "\simeq"] \\
  & (U,s) \arrow[d, maps to] \arrow[r, maps to] & (U,\tilde{f}^*_*(s)) \arrow[r, maps to] & (\tilde{f}^{-1}(U),\tilde{f}_*^*(s)) \arrow[d, maps to] &  \\
@@ -2068,7 +2069,7 @@ $(X,\calo_X)$ (locally)-ringed space. $U\subset X$ open set.  Define $\calo_U(V)
 A \textbf{scheme} $S$ is a locally ringed space $(S,\calo_S)$  which is locally isomorphic to affine schemes, i.e.
  $\forall x\in S\exists U\subset S$  open, $x\in U$, and a ring $A$ such that $(U,\calo_U)$ is isomorphic as locally ringed spaces to $(\spec A,\calo_A)$. We view category of schemes as a subcategory of locally ringed spaces.
 \end{dfn}
-\subsection*{ Examples of schemes/morphisms}
+\subsubsection{ Examples of schemes/morphisms}
 
 Let $K$ be a field. Let $S$ be a scheme with morphism $f:S\lrta \spec K$.
 
@@ -2135,11 +2136,11 @@ K_S(x)\lrta K.
 $$
 Concretely, ``the coordinates of $x$ are in $K^n$''
 
-\subsection{Apr 10th: }
-Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$,  $(\calo_{S,x})$ are local rings. s.t. $\forall x\in S$, exists an open set $U\in S$ $x\in U$ and a ring $A$ s.t. 
+\subsection{Apr 10th: Further examples }
+Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$, where $(\calo_{S,x})$ are local rings. s.t. $\forall x\in S$, exists an open set $U\in S$ $x\in U$ and a ring $A$ s.t. 
 $(U,\calo_{S}\mid_U)\simeq \spec A$.
 
-We will give some examples of morphism of schemes.
+We will give further some examples of morphism of schemes.
 \begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $A, B$ are rings. 
@@ -2560,14 +2561,15 @@ $$
 \end{ex}
 
 \begin{ex}
-$K$ a field, $X, Y$ schemes over $K$ $\dim X\times_K Y=\dim X+\dim Y$. But hte set of points of $X\times_K Y$ is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it true that $X(K)=\hom(\spec K, X)$
+$K$ a field, $X, Y$ schemes over $K$, then we have the identity
+ $$\dim X\times_K Y=\dim X+\dim Y.$$ But  set of points of $X\times_K Y$ is not the set is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it  is true for the $K$-valued points,  $X(K)=\hom(\spec K, X)$
 $$
 X\times_K Y(K)=X(K)\times Y(K)
 $$
 $$
 \hom_{\spec K}(\spec K, X\times_K Y)=\hom_{\spec K}(\spec K, X)\times \hom_{\spec K}(\spec K, Y)
 $$
-by the universal product of fibred products.
+by the universal property of fibred products.
 \end{ex}
 
 If $X$ is a scheme over $S$, $T$ is a scheme over S. We can define $X(T)$ as $\hom_S(T,X)$
@@ -2687,15 +2689,69 @@ $$
  we can think of $f':X\times_{S}T\lrta T$as some family with different parameter space/ base/
  This process is known as base change. $a\in T$ a point which mapsto $p\in S$
 \end{ex}
-\subsection{Apr 20th: absent}
+\subsection{Apr 20th: Application: a proof of Ax-Grothendieck Theorem}
+A theorem due to A. Grothendieck and James Ax
+\begin{thm}\label{thm:Ax-Grothendick}(Ax-Grothendieck Theorem)
+$K=\overline{K}$, $f: \affn^n_K\lrta \affn^n_K$, polynomial map. If $f:\affn^n_K\lrta \affn^n_K$ is injective, then it is surjective.
+\end{thm}
+This theorem generalizes to any algebraic variety over algebraic closed field.
 
+\begin{lemma}
+The case for $K$ being a finite field also holds. For any field $K$ that is itself finite or is the closure of a finite field, if a polynomial $P: K^n\lrta K^n$ is injective, then it is bijective.
+\end{lemma}
+\begin{proof}(of the lemma)
+If $K$ is a finite field, then $K^n$ is a finite vector space (as set). The theorem holds trivially because any injection of finite set to itself is a bijection. When $K$ is  the algebraic closure of a finite field, the result follows from Hilbert' Nullstellensatz.
+\end{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:Ax-Grothendick}]
+Let $f$ be such a map, fix $z\in \affn^n_K$, want $z\in Im(f)$.
+
+We define $A$ to be the subring of $K$ generated by the \{coefficients of $f$,  coordinates at $z$\}. 
+
+$A$ is a finitely generated ring over $\intg$, $\Lrta \forall \scm\subset A$, maximal ideals, $A/\scm$ is a finite field. The map $f:\affn^n_A\lrta\affn^n_A$ would induce  a map $\affn^n_{A/\scm}\overset{f}{\lrta}\affn^n_{A/\scm}$.
+
+\begin{lemma}
+$A$ is a Noetherian integral domain, $S\subset \affn^n_{A}$ is a locally closed subset. If  image of $S$ under $\affn^n_A\lrta \spec A$ is dense, it contains the generic point.
+\end{lemma}
+\begin{proof}[Proof of the lemma]
+\underline{Step1}: Consider the case where  $S$ is closed. $S=\spec R$ for some $R$, where $R$ is a finitely generated ring over $A$. Let $\scp_1,...,\scp_t$ to be minimal primes in $R$. Assume none of $\scp_1,..,\scp_t$ is mapped to the generic point. $\scp_i\cap A=\scq_i\neq 0$, $I:=\prod_{i=1}^{n}\scq_i\neq 0$.
+$$
+Im(\spec R)\subset V(I)\subset \spec (A).
+$$
+$V(I)$ is a proper closed subset of $\spec A$. Because each prime of $R$ contains one of $\scp_i$, its image is a prime containing $\scq_i$ thus included in $V(I)$. Then the image is not dense. 
+
+\underline{Step2}: $\overline{S}$ is the closure of $S$, $S=\spec R$, where $R$ is finitely generated ring over $A$. If $Im(S)$ is dense, so is  $Im(\overline{S})$, so $\exists \scp_j\in \overline{S}$ maps to the generic point. It suffices to show that $\scp_j\in S$.
+$$
+\overline{S}=\cup^t_{i=1}\spec R/\scp_i
+$$, assume $\scp_j\notin S$, $\overline{S}-S$ is closed. thus $\spec R/\scp_j\subset \overline{S}-S$,
+ $$
+\lrta S\subset \cup_{i\neq j}\spec (R/\scp_i)
+$$
+RHS is closed $\Lrta \overline{S}\subset \cup_{i\neq j}\spec (R/\scp_i)$.
+
+$\scp_1,..,\scp_t$ is minimal $\Lrta $ RHS doesn't contain $\scp_j$. We get the contradiction.
+\end{proof}
+
+Then we need another lemma
+\begin{lemma}
+
+
+$A\subset K$, with $ K=\overline{K}$, $S=\affn^n_A$ is locally closed. The followings are equivalent
+\begin{enumerate}[label=(\arabic*)]
+\item Image of $S$ is the projection to $\spec A$ containing the generic point.
+\item $S\times_{\spec A}\spec K$ is not empty.
+\item $S\times_{\spec A}\spec K$ has a $K$ point. 
+\end{enumerate}
+\end{lemma}
+
+Note: $S\times_{\spec A}\spec K$ is the inverse image of $S$ in $\affn^n_K$. This gives  $S$ a scheme structure, which allows us to take the fiber product.
+\end{proof}
 \section{Elementary geometry of schemes}
 \subsection{Apr 23rd: Some basics of schemes}
 \begin{dfn}
 $X$ is a scheme. It is called \textbf{connected} if it is connected as a topological space. It is \textbf{irreducible} if it is irreducible as a topological space (it can not be expressed as union of two closed non empty set.)
-
-\underline{Warning:} spearated does not mean $X$ is separated (Hausdorff) as topological space.
 \end{dfn}
+\underline{Warning:} separated does not mean $X$ is separated (Hausdorff) as topological space.
+
 \begin{dfn}
 The dimension of X, denoted $\dim(X)$ is the max number $n$ s.t. there is a chain of closed subsets
 $$
