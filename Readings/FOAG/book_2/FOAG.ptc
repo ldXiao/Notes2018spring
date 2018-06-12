@@ -95,13 +95,51 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.4}Maps of graded rings and maps of projective schemes}{169}{section.6.4}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}rational maps from reduced schemes}{169}{section.6.5}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Useful classes of morphisms}{171}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Closed embeddings}{173}{chapter.8}
+\contentsline {section}{\numberline {7.1}An example of a reasonable class of morphisms: open embeddings}{171}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Algebraic interlude: Lying over and Nakayama}{171}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}A gazillion finiteness conditions on morphisms}{171}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Images of morphisms: Chevalley's theorem and elimination theory}{171}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Closed embeddings and related notions}{173}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Closed embeddings and closed subschemes}{173}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}More projective geometry}{173}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}The (closed sub)scheme-theoretic image}{173}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}Effective Cartier divisors, regular sequences and regular embeddings}{173}{section.8.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {9}Fibered product of schemes}{175}{chapter.9}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}They exist}{175}{section.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Computing fibered product in practice}{175}{section.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Interpretations: Pulling back families, and fibers of morphisms}{175}{section.9.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.4}Properties preserved by base change}{175}{section.9.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.5}Properties not preserved by base change and how to fix them}{175}{section.9.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.6}Products of projective schemes: The Segre embedding}{175}{section.9.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.7}Normalization}{175}{section.9.7}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {10}Separated and proper schemes, varieties}{177}{chapter.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.1}Separated morphisms}{177}{section.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.2}Rational maps to separated schemes}{177}{section.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.3}Proper morphism}{177}{section.10.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {IV}{``Geometric'' properties: Dimension and smoothness}}{179}{part.4}
 \ttl@stoptoc {default@3}
@@ -132,6 +170,8 @@
 \contentsline {section}{\numberline {13.2}Quasicoherent sheaves}{195}{section.13.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {14}Line bundles: Invertible sheaves and divisors}{197}{chapter.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14.1}Some line bundles on projective space}{197}{section.14.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {15}Quasicoherent sheaves and projective $A$-schemes}{199}{chapter.15}
 \defcounter {refsection}{0}\relax 

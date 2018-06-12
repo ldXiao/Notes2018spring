@@ -1902,7 +1902,7 @@ f:&A_{f^{-1}(Q)}\lrta B_Q\\
 & \frac{a}{b}\longmapsto \frac{f(a)}{f(b)}
 \end{aligned}
 $$
-One checks that $t\in\calo_B(f^{-1}(U))$ if $s\in \calo_A(U)$. IN other words: $f:A\lrta B$ gives 
+One checks that $t\in\calo_B(f^{-1}(U))$ if $s\in \calo_A(U)$. In other words: $f:A\lrta B$ gives 
 $$
 (\tilde{f},f^*): (\spec B,\calo_B)\lrta (\spec A,\calo_A)
 $$
@@ -2073,16 +2073,21 @@ A \textbf{scheme} $S$ is a locally ringed space $(S,\calo_S)$  which is locally 
 
 Let $K$ be a field. Let $S$ be a scheme with morphism $f:S\lrta \spec K$.
 
+\begin{ex}
 \underline{Affine case}: $S=\spec A$
 $$
 f\llrta (K\lrta A)
 $$ 
 i.e. $f\llrta$ structure of $K$-algebra on $A$
-\begin{ex}
-$A=K[X_1,...,X_m]/I$ has  morphism $\spec A\lrta K$. 
+$A=K[X_1,...,X_m]/I$ has  morphism $\spec A\lrta\spec K$. 
 \end{ex}
+\begin{ex}
+\underline{Global case 1} Morphism to an affine scheme: 
 
-\underline{Global case}: 
+Morphisms $S\lrta \spec K$ are in bijection with ring morphism $K\lrta \Gamma(S,\calo_S)$.
+
+The statement also holds when we replace $K$ with a ring $A$.
+
 $$
 f\llrta\left\{\begin{aligned}
 & S\overset{continuous}{\lrta}\spec (K)=\eta=\{0\}\\
@@ -2100,7 +2105,7 @@ therefore
 $$
 \{S\lrta \spec K\}\llrta \{K\lrta \calo_S(S)\}.
 $$
-
+\end{ex}
 
 \begin{dfn}
 Let $B$ be a scheme, a scheme \textbf{over } $B$ is 
@@ -2116,10 +2121,12 @@ S_1 \arrow[rd, "f_1"] \arrow[rr, "g"] &  & S_2 \arrow[ld, "f_2"] \\
  & B & 
 \end{tikzcd}
 $$
-so that $f_2\circ g=f_1$.
+so that $f_2\circ g=f_1$. When $B=\spec K$, we call it \textbf{$K$-scheme}, when $B=\spec A$, it is called \textbf{$A$-scheme}, each is a well-defined category.
 \end{dfn}
+\begin{ex}
+\underline{Global case 2} Morphism from an affine schemes are not quite as simple as morphisms to an affine scheme, but some cases are worth pointing out:
 
-\underline{Global case2}: $K$ is a field , $f:\spec K\lrta S$ corresponds to a point $x=f(\eta)\in S$, $\calo_S\lrta f_*\calo_{\spec K}:$ $$
+ $K$ is a field , $f:\spec K\lrta S$ corresponds to a point $x=f(\eta)\in S$, $\calo_S\lrta f_*\calo_{\spec K}:$ $$
 \forall U,\calo_S(U)\lrta \calo_{\spec K}(f^{-1}(U))=\left\{\begin{aligned}
 &\{0\}\text{ if }x\notin U\\
 & K\text{ if } x\in U.
@@ -2132,9 +2139,10 @@ $$
 such that $g^{-1}(\{0\})=\scm_{\calo_{S,x}}$, i.e.
 $g$ passes to the quotient
 $$
-K_S(x)\lrta K.
+\kappa_S\lrta K.
 $$
-Concretely, ``the coordinates of $x$ are in $K^n$''
+Concretely, ``the coordinates of $x$ are in $K^n$'', which leads us to the notion of $K$-valued point and $A$-valued point in general. We will discuss this in the next lecture.
+\end{ex}
 
 \subsection{Apr 10th: Further examples }
 Recall: A scheme $S$ is a  locally ringed space $(S,\calo_S)$, where $(\calo_{S,x})$ are local rings. s.t. $\forall x\in S$, exists an open set $U\in S$ $x\in U$ and a ring $A$ s.t. 
@@ -2145,7 +2153,7 @@ We will give further some examples of morphism of schemes.
 \begin{enumerate}[label=(\arabic*)]
 \item $A, B$ are rings. 
 $$
-\hom_{Sch}(\spec A,\spec B)=\hom_{Rings}(B,A)
+\hom_{\mathsf{Sch}}(\spec A,\spec B)=\hom_{\mathsf{Rings}}(B,A)
 $$
 \item $K$ is a field.
 $$
@@ -2157,11 +2165,11 @@ $$
 $$
 s.t. $\ker(f^*)=\scm_{X,x}$ i.e. $\kappa(x)\inj K$.
 
-I.e. $\hom_{Sch}(\spec(K), X)\cong\{(x,i)|x\in X, i:\kappa(x)\inj K\}$. 
+I.e. $\hom_{\mathsf{Sch}}(\spec(K), X)\cong\{(x,i)|x\in X, i:\kappa(x)\inj K\}$. 
 
 In particular, take $X=\spec(K[X_1,...,X_n]/(f_1,...,f_m))$ then using $(1)$, we get 
 $$
-\hom_{Sch}(\spec K, X)\simeq \hom_{Rings}(K[X]/I, K).
+\hom_{\mathsf{Sch}}(\spec K, X)\simeq \hom_{\mathsf{Rings}}(K[X]/I, K).
 $$
 If we only consider morphism over $\spec K$,
 $$
@@ -2170,27 +2178,27 @@ $$
  & \spec K & ,
 \end{tikzcd}
 $$
-we look ar $\hom_{K-alg}(K[X]/I ,K)$
+we look at $\hom_{K-\mathsf{Alg}}(K[X]/I ,K)$
 
-$K$-linear $K[X]/I\lrta K$ $\Llrta $ giving $x=(x_1,...,x_n)\in K^n$ s.t. $f_1(x)=...=f_m(x)=0$ so
+$K$-linear maps: $K[X]/I\lrta K$ $\Llrta $ giving $x=(x_1,...,x_n)\in K^n$ s.t. $f_1(x)=...=f_m(x)=0$ so
 $$
-\hom_{Sch\ over\ K}(\spec K, X)
+\hom_{\mathsf{Sch}/ K}(\spec K, X)
 $$
 are the $K$-valued solutions of the equation defining $X$.
 
-\underline{Notation}: Any $S\overset{f}{\lrta }X$ is called an $S$-valued point of $X$.
+\underline{Notation}: Any $S\overset{f}{\lrta }X$ is called an $S$-\textbf{valued point} of $X$ and denoted $X(S)$
 \item  (restriction of morphisms)
 $$
 U\subset X\overset{f}{\lrta} Y
 $$
 where $U$ is open. We want to restrict $f$ to $U$, first $(U,\calo_X|_U)$ is a locally ringed space. (We will see that it is a scheme.)
 
-Let $f|U:(U,\calo_X\mid U)\lrta X$ be defined by 
+Let $f|_U:(U,\calo_X\mid U)\lrta X$ be defined by 
 $$
-(f|U)(x)=f(x)\forall x\in U
+(f|_U)(x)=f(x)\forall x\in U
 $$
-so $f| U$ is continuous and 
-$\calo_Y\overset{f|_U^*}{\lrta }(f|U)_*(\calo_X|U)$ defined by 
+so $f|_U$ is continuous and 
+$\calo_Y\overset{f|_U^*}{\lrta }(f|_U)_*(\calo_X|_U)$ defined by 
 $
 \forall V\in Y,\text{ open }
 $
@@ -2203,15 +2211,16 @@ $$
 $$
 This is a morphism of ringed spaces. Moreover, we can check that it is a morphism of schemes. On the stalks, the induced morphisms 
 $$
-\calo_{Y,(f|U)(x)=f(x)}\lrta \calo_{X,x}
+\calo_{Y,(f|_U)(x)=f(x)}\lrta \calo_{X,x}
 $$
 are the same as those from $f$ it self. 
 
-\underline{Check} $V\subset U\subset X\Lrta f|V=(f|U)|V$.
+\underline{Check} $V\subset U\subset X\Lrta f|_V=(f|_U)|_V$.
 \end{enumerate}
 \end{ex}
 \begin{prop}\label{prop:open_subscheme} Any $U\subset X$, where $X$ is a scheme, $U$ open , is a scheme. 
 \end{prop}
+\begin{rmk}
 \underline{Note}: in general, $U$ is not an affine  scheme even if $X$ is affine.
 
 E.g.
@@ -2226,8 +2235,9 @@ $$
 This phenomenon is an analogy \textbf{Hartog's Lemma} in complex geometry, which states that we can extend a holomorphic function defined on the complement of a set of codimension at least two on a complex manifold over the missing set~\footnote{This will work more generally in the algebraic setting: you can extend over points in codimension at least $2$ not only if they are ``smooth manifold'', but also if they are mildly singular what we will call normal and is called \boxed{Hartog's\  phenomenon} in general.}.
 
 If $U$ was affine, we would get $U\simeq X$ which is absurd.
+\end{rmk}
 \begin{proof}[Proof of Prop~\ref{prop:open_subscheme}]
-$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open neighborhood of $x\in U$, and is  open in $V=\spec A$ so it it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (Topologically, we already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
+$x\in U$, $X$ is a scheme, $\Lrta \exists x\in V\subset X$ open s.t. $V=\spec A$ is affine. Then $V\cap U$ is an open neighborhood of $x\in U$, and is  open in $V=\spec A$ so it suffices to check that an open subset of $\spec(A)$ is a scheme. Recall that the basic open subsets $U_f=\{\scp\in \spec A|f\notin \scp\}$ form a basis of the topology. So we reduces to showing that  $U_f$ is affine. Precisely, $U_f$ is canonically isomorphic to $\spec(A_f)$. (Topologically, we already constructed a homeomorphism $U_f\overset{i}{\lrta} \spec(A_f): \scp\mapsto \scp A_f$).
 
 To deduce the Proposition, it suffices to have an isomorphism of sheaves 
 $$
@@ -2250,13 +2260,13 @@ The morphism $g\mapsto \tilde{g}$ is given by $\tilde{g}(\scp)=g(\scp A_f)=g(i(\
 A discrete valuation ring (DVR) is a local ring $A$ with maximal ideal $\scm_A\subset A$ being a principal ideal generated by $\varpi\in A$ (``uniformizer'')\footnote{$A$ is a the local ring at a closed point of  a non-singular point of a curve}
 $A/\scm_A=k$ is the residue field. (Exercise. $A=\{a/b\in \ratl|p\nmid b,a\in \intg\}$, $\scm_A=(p),\varpi =p$ is an example of DVR)
 
-Consider a DVR $A$, $\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=(\varpi)=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$, $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
+Consider a DVR $A$, $\spec A=\{\eta=\{0\},s\}$, where $s$ is  the ``special point'' $s=(\varpi)=\scm_A$. The open sets are $\emptyset, \spec A, \{\eta\}$. $\{\eta\}$ is open because $\{s\}$ is closed. Structure sheaf
 $$
 \calo_A(\emptyset)=0,\calo_A(\spec A)=A, \calo_A(\{\eta\})\simeq A_\varpi=K=Frac(A)
 $$
-(since $A_\varpi=\{\frac{a}{\varpi^n}| a\in A, n\geq 0\}$ and any $b\notin (\varpi) $ is invertible)
+(since $A_\varpi=\{\frac{a}{\varpi^n}| a\in A, n\geq 0\}$ and any $b\notin (\varpi) $ is invertible because $(\varpi)$ is the only maximal ideal.)
 $$
-\kappa(s)=A/\scm_A=k
+\kappa(s)=A/\scm_A=K
 $$
 $$
 \kappa(\eta)=Frac(A/\{0\})=K
@@ -2295,7 +2305,7 @@ $\forall s\in X_s$, $\calo_A(\spec A)=A=\calo_{A,s}\lrta \calo_{X,x}$, where the
 \begin{lemma}
 For any scheme $X$, there is a unique morphism $X\lrta \spec(\intg)$. recall $\dim(\intg)=1$.
 \end{lemma}
-\begin{proof} adsfd
+\begin{proof}
 If $X=\spec A$, then
 $$
 \hom_{Sch}(\spec A,\spec \intg)=\hom_{Rings}(\intg, A)=\{1\mapsto 1\}
@@ -2338,8 +2348,8 @@ $$
 $f$ is local because $f_i^*$ is local.
 \end{proof}
 \end{proof}
-\subsection{Apr 13th-A: Continue, morphism to affine schemes }
-\begin{ex}
+\subsection{Apr 13th-A: Summary}
+
 \begin{prop}
 For any scheme $X$ and any ring $A$, there is a bijection
 $$
@@ -2352,12 +2362,14 @@ $$
 $$
 \Lrta \calo_A\overset{f^*}{\lrta} f_*\calo_X\Lrta A=\calo_{\spec A}(\spec A)\lrta \calo_X(f^{-1}\spec A)=\calo_X(X)
 $$
+\end{prop}
+\begin{ex}
 \underline{Ex}.\begin{enumerate}[label=(\arabic*)]
-\item $\hom_{Sch}(X,\spec K)\llrta K\inj c\calo_X(X)$
+\item $\hom_{Sch}(X,\spec K)\llrta K\inj \calo_X(X)$
 \item $\hom_{Sch}(X,\spec \intg)\simeq \hom(\intg,\calo_X(X))$ has a unique element. ($\spec \intg$ is the final object in $\mathsf{Sch}$) 
 \item $\hom_{Sch}(X,\affn^1_\intg)\simeq\hom(\intg[T],\calo_X(X))$
 \end{enumerate}
-\end{prop}
+\end{ex}
 \begin{proof}
 $$
 X=\cup_i U_i, U_i\cong\spec(A_i)\text{ open in } X
@@ -2378,7 +2390,7 @@ $$
 $$
 \underline{Ex}. $X=\proj^1_K$, $\Lrta \calo_X(X)=K$. If $A=K$, then $\hom_{rings}(K,K)=\{id\}$ but 
 $\hom(\spec \ratl,\proj^1_\ratl)$ has infinitely many elements.
-\end{ex}
+
 \section{Fibred product}
 \subsection{Apr 13th-B: Categorical introduction of Fibred product}
 This is a notion that makes sense in any category. (Though a specific fibred product may not exist)
@@ -2700,7 +2712,7 @@ This theorem generalizes to any algebraic variety over algebraic closed field.
 The case for $K$ being a finite field also holds. For any field $K$ that is itself finite or is the closure of a finite field, if a polynomial $P: K^n\lrta K^n$ is injective, then it is bijective.
 \end{lemma}
 \begin{proof}(of the lemma)
-If $K$ is a finite field, then $K^n$ is a finite vector space (as set). The theorem holds trivially because any injection of finite set to itself is a bijection. When $K$ is  the algebraic closure of a finite field, the result follows from Hilbert' Nullstellensatz.
+If $K$ is a finite field, then $K^n$ is a finite vector space (as set). The theorem holds trivially because any injection of finite set to itself is a bijection. When $K$ is  the algebraic closure of a finite field, the result follows from Hilbert' Nullstellensatz. (For reference, see~\href{https://terrytao.wordpress.com/2009/03/07/infinite-fields-finite-fields-and-the-ax-grothendieck-theorem/}{Tao's Blog})
 \end{proof}
 \begin{proof}[Proof of Theorem~\ref{thm:Ax-Grothendick}]
 Let $f$ be such a map, fix $z\in \affn^n_K$, want $z\in Im(f)$.
@@ -2708,7 +2720,7 @@ Let $f$ be such a map, fix $z\in \affn^n_K$, want $z\in Im(f)$.
 We define $A$ to be the subring of $K$ generated by the \{coefficients of $f$,  coordinates at $z$\}. 
 
 $A$ is a finitely generated ring over $\intg$, $\Lrta \forall \scm\subset A$, maximal ideals, $A/\scm$ is a finite field. The map $f:\affn^n_A\lrta\affn^n_A$ would induce  a map $\affn^n_{A/\scm}\overset{f}{\lrta}\affn^n_{A/\scm}$.
-
+{\color{red} The above version for finite field implies that the map $f:\affn^n_A\lrta\affn^n_A$ has dense image}
 \begin{lemma}
 $A$ is a Noetherian integral domain, $S\subset \affn^n_{A}$ is a locally closed subset. If  image of $S$ under $\affn^n_A\lrta \spec A$ is dense, it contains the generic point.
 \end{lemma}
@@ -2753,7 +2765,7 @@ $X$ is a scheme. It is called \textbf{connected} if it is connected as a topolog
 \underline{Warning:} separated does not mean $X$ is separated (Hausdorff) as topological space.
 
 \begin{dfn}
-The dimension of X, denoted $\dim(X)$ is the max number $n$ s.t. there is a chain of closed subsets
+The \textbf{dimension} of X, denoted $\dim(X)$ is the max number $n$ s.t. there is a chain of closed subsets
 $$
 Y_0\subsetneq Y_1\subsetneq ...\subsetneq Y_n \subset X.
 $$ with each $Y_i$irreducible (with induced topology from $X$).
@@ -2764,22 +2776,23 @@ $$
 [check that $V(I)\subset \spec R$ is irreducible $\Llrta I$ is prime] 
 
 \begin{dfn}
-A scheme $X$ is reduced if $\forall U\subset X$ open, $\calo_X(U)$ is reduced (no nilpotents)
+A scheme $X$ is \textbf{reduced} if $\forall U\subset X$ open, $\calo_X(U)$ is reduced (no nilpotents)
 
 And this is equivalent to 
 $$
 \forall x\in X,\ \  \calo_{X,x} \text{ is reduced.}
 $$
+This equivalence is left as an exercise.
 \end{dfn}
 
 \begin{dfn}
 A scheme $X$ is called \textbf{integral} if for all $U\subset X$ open, $\calo(U)$ is an integral domain.
 \end{dfn}
-Note that being integral scheme $\not \Llrta$ $\forall x\in X,\calo_{X,x} $ is integral domain.
+Note that being integral scheme $\not \Leftrightarrow$ $\forall x\in X,\calo_{X,x} $ is integral domain.
 \begin{lemma}
 $X$ integral $\Llrta$ $X$ is reduced and irreducible.
 \end{lemma}
-\begin{proof}
+\begin{proof}\ 
 \begin{itemize}
 \item In a scheme $X$ is integral, $\calo_X(U)$ is integral for all open subsets, hence $\calo_X(U)$ is also reduced because integral domain has no nonzero zero divisors.
 
@@ -2805,7 +2818,7 @@ Since $X$ is irreducible $\Lrta Z_s=U$ or $Z_t=U$. For instance, if $Z_s=U$, the
 \end{itemize}
 \end{proof}
 \begin{dfn}
-A scheme $X$ is \textbf{locally Noetherian} if there exists an affine open cover of $X$
+A scheme $X$ is \textbf{locally Noetherian} if there exists an affine open cover of $X$:
 $\cup_{i\in I} U_i=X$, $\spec A_i=U_i$, with $A_i$ Noetherian. $X$ is \textbf{Noetherian} if there is a  finite such cover.
 \end{dfn}
 Fact: Hartshone. prop II 3.2
@@ -2824,15 +2837,15 @@ corresponds to
 $$
 A_i\lrta B_{ij}
 $$
-which makes $B_{ij}$ an $A_i$-algebra of finite type.
+which makes $B_{ij}$ a finitely generated $A_i$-algebra.
 
-$X\lrta Y$ is of finite type if for every $i$ as above, there is a covering with only finitely many $j$.
+$X\lrta Y$ is \textbf{of finite type} if for every $i$ as above, there is a covering with only finitely many $j$.
 \end{dfn}
 \begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $K$ a field, $\spec K[X_1,..,X_n]/I$ is Noetherian, of finite type over $K$
 $$
-\Lrta \spec(K[X]/I)\lrta \spec(K) is of finite type.
+\Lrta \spec(K[X]/I)\lrta \spec(K) \text{is of finite type}.
 $$
 \item $\sqcup_{n\geq 0}\affn^n_K\lrta \spec K$ is locally of finite type, not of finite type(over $K$)
 \item $\spec (\intg[X_1,..,X_n]/I)\lrta\spec \intg$ is of finite type and Noetherian.
@@ -2844,7 +2857,7 @@ $$
 $X$ a scheme $U\subset X$ open $(U,\calo_X|U)$ is called an \textbf{open subscheme} of $X$, $j:U\inj  X$ is called an \textbf{open immersion}.
 \end{dfn}
 \begin{dfn}
-(Hartshorne p85) A morphism $Y\overset{f}{\lrta}X$ is a called a \textbf{closed morphism} if 
+(Hartshorne p85) A morphism $Y\overset{f}{\lrta}X$ is a called a \textbf{closed immersion} if 
 \begin{enumerate}[label=(\arabic*)]
 \item $f$ induces a homeomorphism $Y\lrta f(Y)\subset X$ where $f(Y)$  is closed.
 \item
@@ -2893,7 +2906,8 @@ Let $X=\spec (A)$ let $I\subset A$ be an  ideal and $\spec(A/I)\overset{f}{\lrta
 We saw that $\spec A/I\overset{\sim}{\lrta}V(I)\subset \spec(A)$ is a homeomorphism.
 $\forall \scp \in V(I)$ the morphism $\calo_{A,\scp}\lrta \calo_{A/I,\scp/I}$ is $A_\scp\lrta (A/I)_{\scp/I}$ which is surjective by elementary localization.
 \end{ex}
-\begin{prop}
+\begin{prop}\ 
+
 $(1)$
 $A$ is a ring. If 
 $$
@@ -3159,7 +3173,7 @@ Divisors are the first non-trivial geometric invariants of the schemes and have 
 
 In order to define Weil divisors, the scheme is required to be Noetherian and integral. We usually look at those schemes with nice enough properties so that we don't have to worry about Cartier divisors
 \begin{dfn}
-Let $X$ be scheme. $X$ is \textbf{regular in codimension one} if for any $x\in X$ where $\dim(\calo_{X,x})=1$, the local ring $\calo_{X,x}$ is regular ($\dim \scm/\scm^2=1$). i.e. each local ring $\calo_{X,x}$ of dimension one is regular.
+Let $X$ be scheme. $X$ is \textbf{regular in codimension one} if for any $x\in X$ where $\dim(\calo_{X,x})=1$, the local ring $\calo_{X,x}$ is regular ($\dim \scm/\scm^2=1$). i.e. each local ring $\calo_{X,x}$ of dimension one is regular. (It's point of codimension at most one is regular, where the codimension of a point is defined to be the codimension of its closure.)
 \end{dfn}
 
 In this section, we require the scheme to be Noetherian integral, separated scheme which is regular in codimension one.
@@ -3255,7 +3269,11 @@ $\calo_{X,\tilde{\eta}_D}$ is a DVR with fraction field $K(X)$
 \begin{proof}
 \underline{Affine Case}: $D=\spec(A/\scp)$ with $\scp$ prime ideal so that $A/\scp$ is integral. $\eta_D=\{0\}\subset A/\scp$ and $\tilde{\eta}_D=\scp\in \spec(A)$.
 
-$D$ has codimension $1$, $\Llrta$ $\text{ht}(\scp)=1\Llrta \dim \calo_{X,\tilde{\eta}_D}=\dim A_\scp=1$ so by regularity in codimension $1$, $A_\scp$ is a regular local ring of dimension $1$, Noetherian, i.e. it is a DVR $\Llrta $ [maximal ideal is principal. ] Then $K(X)=Frac(A)=Frac(A_\scp)$. 
+$D$ has codimension $1$, $\Llrta$ $\text{ht}(\scp)=1\Llrta \dim \calo_{X,\tilde{\eta}_D}=\dim A_\scp=1$. So, by regularity in codimension $1$, $A_\scp$ is a regular local ring of dimension $1$, Noetherian, i.e. it is a DVR $\Llrta $ [maximal ideal is principal. ] Then $K(X)=Frac(A)=Frac(A_\scp)$. 
+
+In general, we don't need to reduce other case to the affine case to argue it is a DVR. Because $D$ is irreducible and of codimension $1$, and $X$ is Noetherian integral scheme which is regular in codimension $1$. We know $\calo_{X,\tilde{\eta}_D}$ is regular local $1$-dimensional Noetherian domain. A theorem of commutative algebra says it is a DVR.
+
+This point $\tilde{\eta}_D$ is contained in some affine open $\spec A$, where $A$ is an integral domain, and we recall that any $Frac(A_\scp)=Frac(A)$ for every prime $\scp \subset A$. On the other hand $\spec A$ is dense in $X$, we have $Frac(A)=K(X)$. This works for any  integral scheme. (The residue field of each point in an integral scheme is the function field.)
 \end{proof}
 
 Now given $D$ a prime divisor, $f\in K(X)^{\times}$, we denote by $\nu_D(f)$ the valuation at $D$ of $f$, $f\in Frac(\calo_X,\tilde{\eta}_D)$. $(\scm_{X,\tilde{\eta}_D} =(\varpi))$ then $f\in Frac(\calo_{X,\tilde{\eta}_D})$ is of the form $\frac{a}{b}$, $a, b$ in $\calo_{X,\tilde{\eta}_D}$, 
@@ -3266,31 +3284,20 @@ $d=\nu_D(f)\geq 1$ means $f$ has a zero of order $d$ along $D$ ( has degree of v
 
 
 
-\begin{lemma}[Hartshorne II 6.1] If $f\in K(X)^\times$ then $\nu_D(f)=0$ for all but at most finitely many prime divisors $D$.
+\begin{lemma}[Hartshorne II 6.1]\label{lem:Hartshorne II.6.1} If $f\in K(X)^\times$ then $\nu_D(f)=0$ for all but at most finitely many prime divisors $D$.
 \end{lemma}
-\begin{dfn}
-For 
-$f\in K(X)^\times$,
-$$
-\div(f)=\sum_{D\text{ prime}} \nu_D(f) D \in \text{Div}(X)
-$$
-$$
-div:K(X)^\times\lrta \text{Div}(X)\text{ group morphism }
-$$
-The group of all $\div(f) $ is called the group of principal divisors. The quotient
-$$
-\text{Div}(X)/Im(div)=\text{Cl}(X)
-$$
-is the \textbf{divisor class group } of $X$
-\end{dfn}
-\begin{proof}[Proof of lemma immediately above]
+\begin{proof}[Proof of Lemma~\ref{lem:Hartshorne II.6.1}]
 Let $f\in K(X)^\times$, view it as $f\in \Gamma(U,\calo_X),$ where $\emptyset \neq U=\spec(A)$ is affine. Let $Z=X-U$, closed in $X$, with reduced subscheme structure.
 
 $\{D\text{ prime }\mid D\subset Z \}$ is finite because $X$ (hence $Z$) is  Noetherian.
 
-Example. $f=X^2+3X^2Y+Y^3/(XY)$, $Z=$ union of coordinate axes, each is prime. If $D$ is not in $Z$ then $U\cap D=D_U$ is non-empty, and hence dense in $D$. Claim. $U\cap D$ is a prime divisor in $U$. Then $\nu_{D\cap U}(f)[=\nu_D(f)]\geq 0$ since $f\in \Gamma(U,\calo_X)=A$ and to say that $\nu_{D\cap U}(f)\geq 1$ means $D\cap U\subset V(fA)$ proper closed in $U$. So again this happens for finitely many $D$.
+Example. $f=X^2+3X^2Y+Y^3/(XY)$, $Z=$ union of coordinate axes, each is prime. If $D$ is not in $Z$ then $U\cap D=D_U$ is non-empty, and hence dense in $D$.
 
-WHy is $U\cap D$ a prime divisors in $U$?
+ \underline{Claim}: $U\cap D$ is a prime divisor in $U$.
+
+  Then $\nu_{D\cap U}(f)[=\nu_D(f)]\geq 0$ since $f\in \Gamma(U,\calo_X)=A$ and to say that $\nu_{D\cap U}(f)\geq 1$ means $D\cap U\subset V(fA)$ proper closed in $U$. So again this happens for finitely many $D$.
+
+Why is $U\cap D$ a prime divisors in $U$?
 \begin{center}
 
 
@@ -3320,14 +3327,30 @@ WHy is $U\cap D$ a prime divisors in $U$?
 \end{center}
 $D\cap U$ is an open subscheme of $D$ then check that $D\cap U\simeq D\times_X U$, so $D\cap U\inj U$ is a closed immersion. Moreover $D\cap U$ is integral because $D$ is integral. One checks that $D\cap U$ is also of codimension $1$
 $$
-K(U)=k(X)
+K(U)=K(X)
 $$
 $$
-\Lrta \nu_{D\cap U}=\nu_D
+\Lrta \nu_{D\cap U}(f)=\nu_D(f).
 $$
 \end{proof}
+\begin{dfn}
+For 
+$f\in K(X)^\times$,
+$$
+\div(f)=\sum_{D\text{ prime}} \nu_D(f) D \in \text{Div}(X)
+$$
+$$
+div:K(X)^\times\lrta \text{Div}(X)\text{ group morphism }
+$$
+The group of all $\div(f) $ is called the group of \textbf{principal divisors}. The quotient
+$$
+\text{Div}(X)/Im(div)=\text{Cl}(X)
+$$
+is the \textbf{divisor class group } of $X$.
+\end{dfn}
 
-\subsection{May 8th-A: Divisors continued}
+
+\subsection{May 8th-A: Divisors class group}
 
 Reminder:
  Let $X$ be a scheme, which is integral regular in codimension one, Noetherian, quasi-projective.
@@ -3341,9 +3364,9 @@ Reminder:
  $div$ gives a group morphism $K(X)^\times\lrta \Div(X)$
 
 \begin{dfn}
-$Cl(X)=\Div(X)/Im div$ is called the divisor class group.
+$Cl(X)=\Div(X)/Im(div)$ is called the \textbf{divisor class group}.
 \end{dfn}
-\begin{ex}
+\begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item
 Let $X$ be  a smooth curve over a field $K$
@@ -3360,7 +3383,7 @@ $$
 s.t. $f$ has zeros at $x_i$ with multiplicities $\nu_i$ and poles at $y_j$ with multiplicities $\mu_j$
 
 $\leadsto$ \textbf{Riemann-Roch Theorem}
-\item $X=\affn^1_K=\spec(K[T])$. Prime divisors is in one to one correspondence with irreducible monic polynomials in $K[T]$ and divisor can be identifies to $f_1/f_2$, where $f_1,f_2$ are coprime monic polynomials. BY $\sum n_i D_i\mapsto \prod_i f_i^{n_i}$ 
+\item $X=\affn^1_K=\spec(K[T])$. Prime divisors is in one to one correspondence with irreducible monic polynomials in $K[T]$ and divisor can be identifies to $f_1/f_2$, where $f_1,f_2$ are coprime monic polynomials. By $\sum n_i D_i\mapsto \prod_i f_i^{n_i}$ 
 (This is historically one of the motivating cases)
 \item $X=\affn^n_K$ (or $\affn^n_\intg$)
 \underline{Claim}: $Cl(X)=0$.
@@ -3484,20 +3507,20 @@ Then let $f=\prod h_i ^{n_i}\prod k_j^{- m_j}\in K(X)^\times$, and as shown abov
 \end{proof}
 \item Further examples: 
 \begin{enumerate}[label=(\alph*)]
-\item $X\subset \proj^4_K$ cubic, where $K$ is an algebraic closed field. $X$ is a  surface, smooth, then $Pic(X)\simeq \intg^7$
+\item $X\subset \proj^4_K$ cubic, where $K$ is an algebraic closed field. $X$ is a  surface, smooth, then $\pic(X)\simeq \intg^7$
 \item $Y\subset \proj^2_K$ curve of degree $d$. Let $U\subset \proj^3_K-Y$ be the complements, then 
 $$
-CL(U)\simeq \intg/d\intg
+Cl(U)\simeq \intg/d\intg
 $$
 generated by $U\cap H_0$
 \end{enumerate}
 \end{enumerate}
 \end{ex}
 
-\section{Picard group}
+\section{Invertible sheaves and Picard group}
 \subsection{May 8th-B: Picard group, definitions}
 \begin{dfn}
-Let $(X,\calo_X)$ be a ringed space. A sheaf of $\calo_X-$ modules is a sheaf
+Let $(X,\calo_X)$ be a ringed space. A sheaf of $\calo_X$-modules is a sheaf
 $\calf$ on $X$ so that $\calf(U)$ is a $\calo_X(U)$-module for any open $U$ and for $V\subset U$
 $$
 \calf(U)\overset{\res}{\lrta}\calf(V)
@@ -3514,7 +3537,7 @@ One defines in an obvious way $\calo_X$-linear morphism of $\calo_X$-modules
 $n\geq 1$, $\calo_X^n:U\lrta \calo_X(U)^n$ is an $\calo_X(U)$-module. 
 \end{ex}
 \begin{dfn}
-An $\calo_X$-moduel $\calf$ is locally free of rank $n\geq 1$ is $\forall x\in X,\exists U $ open nbhd of $x $ s.t.
+An $\calo_X$-moduel $\calf$ is \textbf{locally free} of rank $n\geq 1$ is $\forall x\in X,\exists U $ open nbhd of $x $ s.t.
 $$
 \calf|_U\simeq \calo_U^u
 $$
@@ -3523,14 +3546,15 @@ as $\calo_U$-module.
 
 If $\call$ is  locally free of rank $1$, it is called an invertible sheaf.
 \begin{prop}
-The set $Pic(X)$ of isomorphism class of invertible sheaves on $X$ form s an abelian group with operation induced by 
+The set $\pic(X)$ of isomorphism class of invertible sheaves on $X$ form  an abelian group with operation induced by 
 $$
 (\call_1,\call_2)\longmapsto \call_1\otimes_{\calo_X}\call_2
 $$
-$1=$ class of $\calo_X$
-
-inverse
 $$
+\text{$1=$ class of $\calo_X$}
+$$
+$$
+\text{inverse }
 \call\longmapsto \hom_{\calo_X}(\call,\calo_X)
 $$
 N.B for $\calf_1,\calf_2$ $\calo_X$-modules, we define
@@ -3563,7 +3587,7 @@ What needs to be done (given commutativity/ Associativity of $\otimes$) is
 \item $\call\otimes \call^{-1}\cong \calo_X$.
 \end{enumerate}
 
-$(1)$: If $\call_1|_U\simeq \calo_X|_U$ and $\call_2|_U\simeq \calo_X|_U$,  $(\call_1\otimes\calo_X)|_U\simeq \calo_X|_U\otimes\calo_X|_U\simeq \calo_X|_U$, where the LHS is sheaf associated to presheaf, (given $V\subset U$) $V\longmapsto\call_1(V)\otimes\call_2(V)$ and the $\calo_X(V)\otimes \calo_X(V)\simeq \calo_X(V)$. So the LHS is the sheaf $V\longmapsto \calo_X(V)$ and $\call_1|_U\otimes \call_2|_U\simeq \calo|_U$ and therefore $\call_1\otimes \call_2$ is invertible.
+$(1)$: If $\call_1|_U\simeq \calo_X|_U$ and $\call_2|_U\simeq \calo_X|_U$,  $(\call_1\otimes\call_2)|_U\simeq \calo_X|_U\otimes\calo_X|_U\simeq \calo_X|_U$, where the LHS is sheaf associated to presheaf, (given $V\subset U$) $V\longmapsto\call_1(V)\otimes\call_2(V)$ and the $\calo_X(V)\otimes \calo_X(V)\simeq \calo_X(V)$. So the LHS is the sheaf $V\longmapsto \calo_X(V)$ and $\call_1|_U\otimes \call_2|_U\simeq \calo|_U$ and therefore $\call_1\otimes \call_2$ is invertible.
 
 \underline{Warning!} in general, $\call_1\otimes \call_2(U)\neq\call_1(U)\otimes\call_2(U)$.
 
@@ -3701,7 +3725,7 @@ B\supset M_{i,\left(\frac{X_j}{X_i}\right)}=M_{j,\left(\frac{X_i}{X_j}\right)}.
  \begin{prop}
  We have 
  $$
-\dim_K \Gamma(\proj^n_{K},\calo(1)=n+1)
+\dim_K \Gamma(\proj^n_{K},\calo(1))=n+1
  $$
  and $\dim_K\Gamma(\proj^n_K,\calo)=1$. (A basis of $\Gamma(\proj^n_K,\calo(1))$ is given by the ``homogeneous coordinates'')
  \end{prop}
@@ -3816,7 +3840,7 @@ $$
 Aut_{\mathsf{Sch}}(\proj^n_K)\cong PGL_{n+1}(K)
 $$
 $$
-\left[[x_0:...:x_n]\mapsto [\sum_j a_{0j}x_j:...:\sum_j a_{nj}x_j]\right]\mapsfrom g=(a_{ij})
+\left[[x_0:...:x_n]\mapsto \left[\sum_j a_{0j}x_j:...:\sum_j a_{nj}x_j\right]\right]\mapsfrom g=(a_{ij})
 $$
 \begin{proof}
 Construct an inverse, $Aut(\proj^n_K)\lrta PGL_{n+1}(K)$, by looking at the action of an automorphism $\gamma$ on $\Gamma(\proj^n_K,\calo(1))\cong K^{n+1}$.
@@ -3835,7 +3859,7 @@ So we have an isomorphism $\sigma:\gamma^*\calo(1)\lrta \calo(1)$, $\Lrta \Gamma
 
 i.e. $\sigma|_{\proj^n_K}\in GL_{n+1}(K)$
 
-Remark: this depends on the choice of $\sigma$, which may be changed to $\tau\circ \sigma$ where $\tau\in Aut_{\calo-module}(\calo(1))$
+Remark: this depends on the choice of $\sigma$, which may be changed to $\tau\circ \sigma$ where $\tau\in Aut_{\calo-\mathsf{Mod}}(\calo(1))$
 
 However, we have an isomorphism, $\hom_{\calo-mod}(\calo(1),\calo(1))\cong \hom_{\calo-mod}(\calo,\calo)$, $f\longmapsto f\otimes\calo(1)^{-1}$, the later is an automorphism on $\calo$.
 
@@ -3846,30 +3870,33 @@ Therefore, we have $\hom_{\calo-mod}(\calo(1),\calo(1))\cong K$, so $\sigma$ is 
 \section{Algebraic Curves}
 \subsection{May 15th-B: Preliminaries}
 \begin{dfn}
-An algebraic curve $C$ over a field $K$, is an integral $1$-dimensional scheme $C/K$
+An \textbf{algebraic curve} $C$ over a field $K$, is an integral $1$-dimensional scheme. Often denoted $C/K$
 
-A non-singular $C/K$ is a curve where every $\calo_{C,x}$ is regular, for $x$  being closed.
+A \textbf{non-singular} $C/K$ is a curve where every $\calo_{C,x}$ is regular, for $x$  being closed point.
 
-A non-singular projective curve $C/K$ is  a one dimensional $K$-subscheme of $\proj^n_K$ and $C$ is non-singular.
+A \textbf{non-singular projective curve} $C/K$ is  a one dimensional $K$-subscheme of $\proj^n_K$ for some $n\in \intg$ and $C$ is non-singular.
 \end{dfn}
 \underline{Warning:} in general, smooth $\neq $non-singular. (NO problem if $K$ is algebraic closed.)
 
-\underline{Notation}: $K(C)$ if the function field of $C$, and  $K(C)/K$
+\underline{Notation}: $K(C)$ is the function field of $C$, and  $K(C)/K$
  is a field extension of transcendence degree $1$. 
 
  \begin{ex}
- $C=\proj^n_K$, non-singular projective curve, with $K(C)\cong K(T)$ moreover, any non-zero $f\in K(C)$ corresponds uniquely to a morphism $C\overset{\overline{f}}{\lrta}\proj^n_K$ as follows:
+ $C=\proj^1_K$, non-singular projective curve, with $K(C)\cong K(T)$ moreover, any non-zero $f\in K(C)$ corresponds uniquely to a morphism of schemes $C\overset{\tilde{f}}{\lrta}\proj^n_K$ as follows:
  
- if $f\in \Gamma(U,\calo_C)$, where $U$ is maximal open set (such that $f$ is regular on $U$), then  $f\llrta f\in \Gamma(U,\calo_C)\cong \hom_{\mathsf{Sch}}(U,\affn^1_K))$. i.e.
+ If $f\in \Gamma(U,\calo_C)$, where $U$ is maximal open set (such that $f$ is regular on $U$), then  $f\llrta f\in \Gamma(U,\calo_C)\cong \hom_{\mathsf{Sch}}(U,\affn^1_K))$. i.e.
  $$
 f\llrta p\mapsto [f(p),1]
  $$
 
- so $\tilde{f}|_U:U\lrta \affn^1_K$ and maps $C-U$ to the infinity point $\{\infty\}=\proj^1_K-\affn^1_K$
+ so $\tilde{f}|_U:U\lrta \affn^1_K$ is defined as above and $\tilde{f}$ maps $C-U$ to the infinity point $\{\infty\}=\proj^1_K-\affn^1_K$.
+
+ Conversely, let $\phi: C\lrta \proj^1$ be a morphism of $K$-schemes. It is of the form
+ $\phi=[f,g]$, where both $f$ and $g$ are  
 
  For detailed discussion, see Silverman II.2.2
  \end{ex}
- \begin{prop}
+ \begin{prop}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $C_1\overset{f}{\lrta}C_2$ a morphism of curves over $K$, then it is either constant or dominant ($f(C_1)$ dense)
 \item If $C_1$ and $C_2$ are both projective, $f$ is either constant or surjective. 
@@ -3882,18 +3909,18 @@ X \arrow[rd] \arrow[r, "f"] & Y \arrow[d] \\
  & \spec K
 \end{tikzcd}
 $$
-if both $X,Y$ are projective $\Lrta f(X)$ is closed in $Y$. Because the only closed subset in a curve is either closed point or the whole set.
+if both $X,Y$ are projective $\Lrta f(X)$ is closed in $Y$\footnote{In modern terminology, we say ``morphisms of projective $K$-schemes are proper'', see theorem 10.3.5 of FOAG}. Because the only closed subset in a curve is either closed point or the whole set.
 
-\begin{ex}
+\begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $\proj^1_K,\affn^1_K$
-\item $K=\cplx$, Riemann: 
+\item $K=\cplx$, Riemann surfaces: 
 $$
-\{\text{non-singular projective curvs } C/\cplx \}\llrta\{\text{compact connected Riemann surfaces}\}
+\{\text{non-singular projective curves } C/\cplx \}\llrta\{\text{compact connected Riemann surfaces}\}
 $$
 e.g. if $\Gamma$ is a discrete subgroup of $SL_2(\reals)$, torsion-free, then $\Gamma\backslash \mathbb{H}$ is a Riemann-surface, for any such $\Gamma$'s, it is compact. Any ``hyperbolic'' compact Riemann surface has this form (Poincare-Koebe uniformization theorem)
 
-Riemann ``conjectured'' that the ``space'' of compact Riemann surfaces is a disjoint union of spaces homeomorphic to $\cplx^{3g-3}$.
+Riemann ``conjectured'' that the ``space''\footnote{Now called the moduli space} of compact Riemann surfaces is a disjoint union of spaces homeomorphic to $\cplx^{3g-3}$.
 \item $K$ arbitrary, if $f\in K[X_1,X_2]$ is irreducible, non-constant, then $V(f)\subset \affn^2_K$ is a curve. It is non-singular, provided for any closed point x, the partial derivative of $f$ at $x$ are not all zero.
 \end{enumerate}
 \end{ex}
@@ -3904,10 +3931,11 @@ If $\deg(g)=3,$ we get a so called elliptic curve.
 
 Note: by varying $g$, we get many different hyperelliptic curves, in fact, if we fix $\deg(g)=d$, we have $d$ parameters. 
 \subsubsection{Artin-Schreier Curves}
+\begin{prop}
 $K$ is an algebraically closed field and
 $Char(K)=p> 0$, $f(X,Y)=Y^p-Y-g(X)$
-Suppose, $\deg(g)< p$, then $f$ is irreducible, and non-singular $V(f)$.
-
+Suppose, $\deg(g)< p$, then $f$ is irreducible (thus $V(f)$ is irreducible), and $V(f)$ is non-singular.
+\end{prop}
 It is nonsingular  because $K=\overline{K}$
 $$
 \left\{
@@ -3947,11 +3975,11 @@ so $d_1=0$ or $d_1=p$.
 In the case of $d_1=0$, we have $g_1$ is constant anf $g_2=f$, in the other case we have $g_1=f$ and $g_2$ is constant.
 
 
-\begin{rmk}
+\begin{rmk}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item 
 If $\deg(g)\geq p$ the irreduciblility statement may fail.
-e.g. $y^p0Y-(X^p-X)=(Y-X)^p-(Y-X)=(Y-X)((Y-X)^{p-1}-1)$ is not irreducible.
+e.g. $(Y^p-Y)-(X^p-X)=(Y-X)^p-(Y-X)=(Y-X)((Y-X)^{p-1}-1)$ is not irreducible.
 
 \item Consider $V(f)$, for $\deg(g)<p$.
 
@@ -4029,7 +4057,7 @@ $$
 \end{aligned}\right\}
 $$
 \end{thm}
-$\bullet$ Interpretation: Any field $L$ as in $RHS$ is the function field of a unique (up  to isomorphism) curve $C/K$ projective and non-singular, in particular, if $U/K$ is an integral geometric connected curve, then $K(U)$ is of this type, so ther eis a unique non-singular projective $C$ with $K(C)=K(U)$
+$\bullet$ Interpretation: Any field $L$ as in $RHS$ is the function field of a unique (up  to isomorphism) curve $C/K$ projective and non-singular, in particular, if $U/K$ is an integral geometric connected curve, then $K(U)$ is of this type, so there is a unique non-singular projective $C$ with $K(C)=K(U)$.
 
 $\bullet$ Example: there are smooth projective $C/K$ with the same function field as non-singular, hyperelliptic (Or Artin-Schreier) affine curves.
 
@@ -4090,14 +4118,21 @@ C_g \arrow[d, "\pi"] & {(x,g)} \arrow[d, maps to] \arrow[r] & K(X)\inj K(C_g) \\
 \affn^1 & x & \deg(\pi)=2
 \end{tikzcd}
 $$
-\subsection{May 18th-B: Riemann-Roch Theorem}
+\subsection{May 18th-B: Invertible sheaf associated to Weil divisor}
+\ 
+
 $\bullet$ History: late $19$th century, and generalized by Serre Hirzebruch, Grothendieck. in 1960s.
 
 $\bullet$ This theorem computes dimensions of global sections of invertible sheaves on $C$, a non-singular projective curve.
 
 $\bullet$ Convnetion: curve$=$nonsingular projective curve (in this section)
-\begin{dfn} $C/K$ curve $D=\sum_i n_i [x_i], n_i\geq 1$, $x_i$ closed point, a Weil divisor.  $\call(D)$ invertible sheaf, and $\call(D)$ is defined as follows:
+\begin{dfn} $C/K$ curve $D=\sum_i n_i [x_i], n_i\geq 1$, where $x_i$'s are closed points,  is a Weil divisor.  We define an  invertible sheaf $\call(D)$\footnote{Some authors use the notion $\calo_C(D)$ instead} is as follows:
 $U\subset C$ open dense, if $U\cap \{x_i\}=\emptyset$, then $\Gamma(U,\call(D))=\Gamma(U,\calo_C)$ if $U\cap \{x_i\}=\{x_0\}$ then let $\pi_0\in K(C)$  be a uniformizer of $C$ at $x_0$.  ($\pi_0$ has zero of order $1$ at $x_0$), then $\Gamma(U,\call(D))=\pi_0^{-n_0}(\Gamma(U,\calo_C))$ where $n_0$ is the coefficient of $x_0$ in $D$.
+
+Or equivalently, we can define $\call(D)$ as
+$$
+\Gamma(U,\call(D))=\{t\in K(X)^\times| \div(t)|_U+D|_U \geq 0\}\cup \{0\}.
+$$
 \end{dfn}
 \underline{Interpretation}: section of $\call(D)$ on $U$ has 
 $$
@@ -4117,7 +4152,7 @@ and $Cl(C)\overset{\sim}{\lrta}\pic(C)$
 $\ell(D)=\dim_K\Gamma(C,\call(D))$ (it is finite)
 \end{dfn}
 \begin{prop}
-$C$ curve over $K$. let $f\in K(C)^\times$ and let $\deg:\Div(C)\lrta \intg: x\longmapsto[K(x):K]$, then
+$C$ curve over $K$. let $f\in K(C)^\times$ and let $\deg:\Div(C)\lrta \intg:$ which linearly extends $ x\longmapsto[K(x):K]$, then
 $$
 \deg(\div(f))=0
 $$
@@ -4144,12 +4179,12 @@ C \arrow[r, "\pi"] \arrow[rr, "g\circ\pi"', bend right] & \proj^1_K \arrow[r, "g
 $$
 So $\pi^*$ induces a group morphism $\intg[\infty]=\intg[0]\cong Cl(\proj^1_K)\overset{\pi^*}{\lrta}Cl(C)$, which must be $\pi^*(k)=k\pi^*([0])$, then check that $\div(f)=\pi^*([0]-[\infty])\Lrta \deg(\div(f))=\deg(k\pi^*([0]))-k\pi^*(\infty)=0$.
 
-(in fact: $\deg(\pi^(D))=\deg(\pi)\deg(D)$)
+(in fact: $\deg(\pi(D))=\deg(\pi)\deg(D)$)
 \end{proof}
 \begin{thm}
 (Riemann-Roch,R-R) $C$ non-singular projective over $K$, then there exists $g\geq 0$ integer,(``genus of $C$'') and a divisor class $K_C$ (``canonical divisor of $C$'') on $C$, such that, for any divisor $D$ on $C$, $\ell(D)-\ell(K_C-D)=\deg(D)+1-g$.
 \end{thm}
-\subsection{May 22nd: The proof of Riemann-Roch}
+\subsection{May 22nd: Riemann-Roch}
 Recall: $\deg(\div(f))=0, f\in K(C)^\times$.
 \begin{proof}
 $\div(f)=f^*([0]-[\infty])$, where $f^*: \Div(\proj^1_K)\lrta \Div(C)$. One checks that $\deg(f^*D)=\deg (f)\deg(D)$
@@ -4164,7 +4199,7 @@ $$
 $$
 , where $\ell(D)=\dim_K\Gamma(C,\call(D))$
 
-$\bullet$ Interptation: $\Gamma(C,\call(D))=\{0\}\cup \{f\in K(C)^\times|f\text{ has at $x_i$ a pole of order $\leq n_i$ and a zero of order $\geq m_j$} \}$ for 
+$\bullet$ Interptation: $\Gamma(C,\call(D))=\{0\}\cup \Gamma(U,\call(D))=\{t\in K(X)^\times| \div(t)|_U+D|_U \geq 0\}\cup \{0\}$ for 
 $$
 D=\sum_{i\in I} n_i x_i-\sum_{j\in J} m_j y_j
 $$
@@ -4180,7 +4215,7 @@ In other words: $f\in \call(D)\Llrta \div(f)+D\geq 0$, $\sum v_x(f)\cdot x+D\geq
 \item if $\ell(D)\geq 1$ and $\deg(D)=0$, then $D$ is principle ($0\in Cl(D)$) and $\ell(D)\geq 1$.
 \end{enumerate}
 \end{cor}
-\begin{proof}
+\begin{proof}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item if $0\neq f\in \call(D)$, $f$ exists $\ell(D)\geq 1$. We then have $\div(d)+D\geq 0$ $\Lrta 0+\deg(D)\geq 0$, $[\deg(\div(f))]=0$
 \item if $0\neq f\in \call(D)$, then $D+\div(f)\sim D$ in $Cl(C)$. So, if $\deg(D)=0$, $D$ is equivalent to $D+\deg(f)\geq 0$, which is effective of degree $0$, hence is the zero divisor.
@@ -4192,7 +4227,7 @@ In particular, if $\deg(D)>\deg(K_C)$, $\ell(K_C-D)=0$ by part $(1)$ in the Coro
 
  Moreover to say that $f$ has a zero at $x$ is a linear condition on $f$. Similarly for $f$ having  a pole at $x$ ($\Llrta V_f$ has a zero).
 
- Recall that for $D=0$. $\Gamma(C,\call(D)=\Gamma(C,\calo_C))=K$ allowing a pole at $x$, gives intuitively one degree of free-dimension, for more poles, we get more and more possibilities.
+ Recall that for $D=0$. $\Gamma(C,\call(D))=\Gamma(C,\calo_C)=K$ allowing a pole at $x$, gives intuitively one degree of free-dimension, for more poles, we get more and more possibilities.
 
  $\Lrta$, intuitively, we expect $\leq \deg(D)$ posibilities, and hope this should be close to the truth, this i s what R-R ccomes from.
 
@@ -4201,7 +4236,7 @@ In particular, if $\deg(D)>\deg(K_C)$, $\ell(K_C-D)=0$ by part $(1)$ in the Coro
  N.B. $\ell(D)\geq \deg(D)+1-g$,( by Riemann)
 
  \begin{cor}
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\arabic*)]\ 
 \item $\ell(K_C)=g$
 \item $\deg(K_C)=2g-2$
 \item $K_C$ is unique, if $K_1.,K_2$ both satisfies R-R, we would know
@@ -4282,7 +4317,7 @@ Consider $y\in \proj^1_K-\{0,\infty\}$, closed point, consider g
  \end{enumerate}
  \end{ex}
 
-\subsection{May 25th:}
+\subsection{May 25th: Application of Riemann-Roch}
 
 Recall:
 Riemann-Roch $C/K$ nonsingular projective curve over $K$ , $\exists g\geq 0,\exists K_C\in  \pic(C)$
@@ -4607,13 +4642,13 @@ is defined over the region $Re(s)>1$. Riemann showed this function has an analyt
 $$\Llrta\sum_{p\leq x, p\text{ prime}}1=\int^x_2\frac{dt}{\log(t)}+\calo(\sqrt{x}(\log(x)^2))$$
 
 
-\underline{Question}: Given a finite field $\bbf_q$  with $q$ elements and $C/\bbf_q$ curve. is there an $\bbf_q$-rational point? How many are there?
+\underline{Question}: Given a finite field $\bbf_q$  with $q$ elements and $C/\bbf_q$ curve. is there an $\bbf_q$-rational point ($\bbf_q$-valued point)? How many are there?
 
-(Note: if $C\inj \proj^n_{\bbf_q}$ then $|C(\bbf_q)|\leq |\proj^n_{\bbf_q}(\bbf_q|$) is finite, where the later equals
+(Note: if $C\inj \proj^n_{\bbf_q}$ then $|C(\bbf_q)|\leq |\proj^n_{\bbf_q}(\bbf_q)|$ is finite, where the later equals
 $$
 \frac{q^{n+1}-1}{q-1}.
 $$
-\begin{ex}
+\begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item
 Fix $k\geq 2$, $x^k+y^k=z^k$? $x,y,z\in \bbf_q$ not all zero.
@@ -4637,7 +4672,7 @@ $$
 has kernel $\{\pm 1\}$ so $|Im|=\frac{q-1}{2}$. One guesses that there is about half chance that $x^3+ax+b$ is a square, so altogether we might expect $\sim 2\cdot \frac{q}{2}=q$ solutions.
 
 \begin{thm}
-(Weil): $\bbf_q$ finite field $C/\bbf_q$ non-singular projective curve. Let $g\geq 0$ be its genus. Then $$\left||C(\bbf_q)|-(q+1)\right|\leq 2g \sqrt{q}$$
+(Hasse-Weil bound): $\bbf_q$ finite field $C/\bbf_q$ non-singular projective curve. Let $g\geq 0$ be its genus. Then $$\left||C(\bbf_q)|-(q+1)\right|\leq 2g \sqrt{q}$$
 \end{thm}
 
 N.B. 
@@ -4829,7 +4864,7 @@ $$
 \left\{
 \begin{aligned}
 &V_n^{(\mu)}\otimes_{\overline{\bbf}_q}\tilde{V}_m\lrta \overline{\bbf}_q(C)\\
-g^{p^\mu}\otimes(f\circ \varphi_q)\longmapsto g^{p^\mu}(f\circ \varphi_q)
+&g^{p^\mu}\otimes(f\circ \varphi_q)\longmapsto g^{p^\mu}(f\circ \varphi_q)
 \end{aligned}
 \right.
 $$
@@ -4981,8 +5016,8 @@ $\Lrta |C_\alpha(\bbf_q)|\leq q+1+C\sqrt{q}$ where $C$ is independent of $\alpha
   $$
 We input 
 \begin{thm}
-[Hasse, Artin. Schmodt, 1930s]. There are $\alpha_1,...,\alpha_{2g}$ in $\cplx$ such that
- $$|C(\bbf_{q^\nu}|=q^\nu+1\sum^{2g}_{i=1}\alpha_i^\nu, \nu \geq 1$$ 
+[Hasse, Artin. Schmidt, 1930s]. There are $\alpha_1,...,\alpha_{2g}$ in $\cplx$ such that
+ $$|C(\bbf_{q^\nu})|=q^\nu+1-\sum^{2g}_{i=1}\alpha_i^\nu, \nu \geq 1$$ 
  and $q/\alpha_i$ is one of the $\alpha_j$'s
 \end{thm}
 and the proof uses Riemann-Roch again.
@@ -4996,7 +5031,7 @@ $$
 $$
 for $\nu \geq 0$. Then $|\beta_i|\leq B$. 
 \end{lemma}
-\begin{proof}[of Lemma]
+\begin{proof}[Proof of Lemma]
 $$
 \begin{aligned}
 f(z)&=\sum_{\nu \geq 0}\left(\sum_{i=1}^r\beta_i^\nu\right)z^\nu\\
@@ -5028,14 +5063,15 @@ which is equivalent to the Riemann-Hypothesis on finite field.
 
 Consider $C/\bbf_q$ elliptic curve
 
-\underline{Step 1}. $Z(T)=\exp\left(\sum_{\nu\geq 1}\frac{|C(\bbf_{q^\nu}|}{\nu} T^\nu\right)$. We have
+\underline{Step 1}. $Z(T)=\exp\left(\sum_{\nu\geq 1}\frac{|C(\bbf_{q^\nu})|}{\nu} T^\nu\right)$. We have
  $$
  Z(T)=\prod_{x\text{ closed point of }C}(1- T^{\deg(x)})^{-1}
  $$
+ where $\deg(x:=[\kappa(x):\bbf_q])$
 
  \underline{Step 2}:
  $$
- Z(T)=\sum_{D\geq 0\text{ div of } C} T^{}\deg(D)=1+\sum_{d\geq }T^d \sum
+ Z(T)=\sum_{D\geq 0\text{, div of } C} T^{\deg(D)}=1+\sum_{d\geq }T^d \sum_{\deg(D)=d, D\geq 0} 1
  $$
 \end{document}
 

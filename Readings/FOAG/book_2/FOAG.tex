@@ -610,11 +610,41 @@ Omitted.
 \end{exr}
 
 \section{Maps of graded rings and maps of projective schemes}
+\begin{exr}
+Suppose that $\phi:S_\bullet\lrta R_\bullet$ is a morhpism of $\intg^{\geq 0}$-graded rings. (By \textbf{ map of graded rings}, we mean a map of rings that perserves the grading as a map of ``graded semigroups''). In other words, there is a $d> 0$ such that $S_n$ maps to $R_{dn}$ for all $n$. Show that this induces  a morphism of schemes
+$$
+(\Proj R_\bullet)\backslash V(\phi(S_+))\lrta \Proj S_\bullet.
+$$
+Hint:
+Define a map $D(\phi(f))\lrta D(f)$. Show that they glue together as $f$ runs over all homogeneous elements of $S_+$. Show that this deines a map from all of $\Proj R_\bullet\backslash V(\phi(S_+))$. In particular, if $V(\phi(S_+))=\emptyset$, then we have a morphism $\Proj R_\bullet\lrta \Proj S_\bullet$. 
+\end{exr}
+\begin{proof}[Sol.]
+\end{proof}
+
+\section{rational maps from reduced schemes}
 
 \chapter{Useful classes of morphisms}
-\chapter{Closed embeddings}
+\section{An example of a reasonable class of morphisms: open embeddings}
+\section{Algebraic interlude: Lying over and Nakayama}
+\section{A gazillion finiteness conditions on morphisms}
+\section{Images of morphisms: Chevalley's theorem and elimination theory}
+\chapter{Closed embeddings and related notions}
+\section{Closed embeddings and closed subschemes}
+\section{More projective geometry}
+\section{The (closed sub)scheme-theoretic image}
+\section{Effective Cartier divisors, regular sequences and regular embeddings}
 \chapter{Fibered product of schemes}
+\section{They exist}
+\section{Computing fibered product in practice}
+\section{Interpretations: Pulling back families, and fibers of morphisms}
+\section{Properties preserved by base change}
+\section{Properties not preserved by base change and how to fix them}
+\section{Products of projective schemes: The Segre embedding}
+\section{Normalization}
 \chapter{Separated and proper schemes, varieties}
+\section{Separated morphisms}
+\section{Rational maps to separated schemes}
+\section{Proper morphism}
 \part{``Geometric'' properties: Dimension and smoothness}
 \chapter{Dimension}
 \section{Dimension and codimension}
@@ -1068,6 +1098,61 @@ If $X$ is a scheme, then an $\calo_X$-module $\calf$ is \textbf{quasicoherent} i
 \end{enumerate}
 \end{proof}
 \chapter{Line bundles: Invertible sheaves and divisors}
+\section{Some line bundles on projective space}
+\begin{exr}
+Show that $\dim_K \Gamma(\proj^1,\calo(n))=n+1$ if $n\geq 0$ and $0$ otherwise.
+\end{exr}
+\begin{proof}[Sol.]
+A global section would be a polynomial  $f(x_{1/0})\in K(x_{1/0})$ and a polynomial $g(x_{0/1})\in K[x_{0/1}]$ such that $f(1/x_{0/1})x_{0/1}^n=g(x_{0/1})$. $f$ must be a polynomial of degree less than $n$
+$$
+f(x_{1/0})=a_{0}x_{1/0}^n+a_{1}x_{1/0}^{n-1}+\cdots+a_n
+$$
+where $a_i\in K$. Therefore, we know 
+$$
+\dim_K\Gamma(\proj^1_K,\calo(n))=n+1
+$$
+for $n\geq 0$.
+
+In the case where $n<0$, only such polynomial would be $f=g=0$. 
+\end{proof}
+\begin{exr}
+Show that if $m\neq n$, then $\calo(m)\neq \calo(n)$. Hence conclude that we have an injection of groups $\intg\inj \pic\proj^1_K$ given by $n\mapsto \calo(n)$.
+\end{exr}
+\begin{proof}[Sol.]
+For $m\neq n$,  we know $\calo(m)\not\cong \calo(n)$ because they have distinct transition functions.
+\end{proof}
+\begin{exr}
+Show that $\dim_K\Gamma(\proj^m_K,\calo_{\proj^m_K}(n))={m+n\choose m}$.
+\end{exr}
+\begin{proof}[Sol.]
+To find a global section of $\calo_{\proj^m(n)}$ means to find an $m+1$ polynomials
+$f_i\in K[x_{0/i},...,x_{m/i}]/(x_{i/i}-1)$ such that
+$$
+f_i(x_{0/j}\times x_{i/j}^{-1} ,...,x_{m/j}\times x_{i/j}^{-1} )\times x_{i/j}^{n}=f_j(x_{0/j},...,x_{m/j}).
+$$
+This means each $f_i$ has degree less than or equal to $n$. $f_0$ must be of the form
+$$
+\sum_{|J|\leq n} a_J x_J
+$$
+where $J$ is a $\intg^{m}$-valued vector such that $|J|=\sum J_k\leq n$. The degree of freedom sums as
+$$
+{n+m-1\choose m-1}+{n+m-2\choose m-1}+\cdots+{m-1\choose m-1}
+$$
+which equals
+$$
+{n+m\choose m}.
+$$
+This combinatorial equality can be proved by induction.
+\end{proof}
+\begin{exr}
+Show that every invertible sheaf on $\proj^1_K$ is of the form $\calo(n)$ for some $n$.
+\end{exr}
+\begin{proof}[Sol.]
+Exercise~13.2.C said that all invertible sheaves on $\affn^n_K$ is trivial. We know any invertible sheaf on $\proj^1_K$ when restricted to $U_0\cong \affn^1_K$ is trivial. It suffices to show that the possible transition function is of the form in the definition of $\calo(n)$.
+$U_0\cong \spec K[x_{1/0}]$ and $U_1\cong\spec K[x_{0/1}]$. There are only two open sets in the open cover, we hence know that the cocycle condition reduces to
+$T_{ij}=T_{ji}^{-1}$. Here, we don't require $T_{ij}$ to be ring homomorphism, but only $K$-linear  transformation. It is determined by $f(x_{1/0})\mapsto f(x_{0/1})\times \lambda x_{0/1}^n$ for $\lambda \in K^\times$, with an obvious inverse. For the isomorphism class of invertible sheaves, $\lambda$ is irrelevant.
+\end{proof}
+
 \chapter{Quasicoherent sheaves and projective $A$-schemes}
 \chapter{Pushforwards and pullbacks of quasicoherent sheaves}
 \section{Introduction}

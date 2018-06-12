@@ -19,7 +19,7 @@
 \BOOKMARK [3][-]{subsubsection.2.5.1}{Morphism of locally ringed spaces}{subsection.2.5}% 19
 \BOOKMARK [3][-]{subsubsection.2.5.2}{ Examples of schemes/morphisms}{subsection.2.5}% 20
 \BOOKMARK [2][-]{subsection.2.6}{Apr 10th: Further examples }{section.2}% 21
-\BOOKMARK [2][-]{subsection.2.7}{Apr 13th-A: Continue, morphism to affine schemes }{section.2}% 22
+\BOOKMARK [2][-]{subsection.2.7}{Apr 13th-A: Summary}{section.2}% 22
 \BOOKMARK [1][-]{section.3}{Fibred product}{}% 23
 \BOOKMARK [2][-]{subsection.3.1}{Apr 13th-B: Categorical introduction of Fibred product}{section.3}% 24
 \BOOKMARK [2][-]{subsection.3.2}{Apr 17th: Examples and Applications of the Fibred Product}{section.3}% 25
@@ -30,8 +30,8 @@
 \BOOKMARK [2][-]{subsection.4.3}{May 4th-A: Projective schemes continued}{section.4}% 30
 \BOOKMARK [1][-]{section.5}{Divisors}{}% 31
 \BOOKMARK [2][-]{subsection.5.1}{May 4th-B: Weil divisors}{section.5}% 32
-\BOOKMARK [2][-]{subsection.5.2}{May 8th-A: Divisors continued}{section.5}% 33
-\BOOKMARK [1][-]{section.6}{Picard group}{}% 34
+\BOOKMARK [2][-]{subsection.5.2}{May 8th-A: Divisors class group}{section.5}% 33
+\BOOKMARK [1][-]{section.6}{Invertible sheaves and Picard group}{}% 34
 \BOOKMARK [2][-]{subsection.6.1}{May 8th-B: Picard group, definitions}{section.6}% 35
 \BOOKMARK [2][-]{subsection.6.2}{May 11th: The twisting invertible sheaf O\(n\) on Pn}{section.6}% 36
 \BOOKMARK [2][-]{subsection.6.3}{May 15th-A: proof continued}{section.6}% 37
@@ -40,9 +40,9 @@
 \BOOKMARK [3][-]{subsubsection.7.1.1}{Hyperelliptic curve}{subsection.7.1}% 40
 \BOOKMARK [3][-]{subsubsection.7.1.2}{Artin-Schreier Curves}{subsection.7.1}% 41
 \BOOKMARK [2][-]{subsection.7.2}{May 18th-A:Non-singular curves}{section.7}% 42
-\BOOKMARK [2][-]{subsection.7.3}{May 18th-B: Riemann-Roch Theorem}{section.7}% 43
-\BOOKMARK [2][-]{subsection.7.4}{May 22nd: The proof of Riemann-Roch}{section.7}% 44
-\BOOKMARK [2][-]{subsection.7.5}{May 25th:}{section.7}% 45
+\BOOKMARK [2][-]{subsection.7.3}{May 18th-B: Invertible sheaf associated to Weil divisor}{section.7}% 43
+\BOOKMARK [2][-]{subsection.7.4}{May 22nd: Riemann-Roch}{section.7}% 44
+\BOOKMARK [2][-]{subsection.7.5}{May 25th: Application of Riemann-Roch}{section.7}% 45
 \BOOKMARK [2][-]{subsection.7.6}{May 29th-A: Group law of elliptic curves.}{section.7}% 46
 \BOOKMARK [1][-]{section.8}{Riemann hypothesis over finite fields}{}% 47
 \BOOKMARK [2][-]{subsection.8.1}{May 29th-B: The Riemann hypothesis for curves over finite fields.}{section.8}% 48
