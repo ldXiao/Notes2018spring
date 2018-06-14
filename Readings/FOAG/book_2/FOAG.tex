@@ -635,6 +635,55 @@ Define a map $D(\phi(f))\lrta D(f)$. Show that they glue together as $f$ runs ov
 \section{Effective Cartier divisors, regular sequences and regular embeddings}
 \chapter{Fibered product of schemes}
 \section{They exist}
+\begin{exr}
+Suppose $X$ and $Y$ are schemes. Let $X\coprod Y$ be the scheme whose underlying topological space is the disjoint union of the topological spaces of $X$ and $Y$, and with structure sheaf on $X$ given by $\calo_X$, and similarly for $Y$. Show that $X\coprod Y$ is the coproduct of $X$ and $Y$,
+\end{exr}
+\begin{proof}
+We only have to check the universal property of $X\coprod Y$.
+ Given a scheme $T$ with two morphisms $\alpha: X\lrta T$ and $\beta: Y\lrta T$.
+ $$
+\begin{tikzcd}
+T &  &  \\
+ & X\coprod Y \arrow[lu, "!", dotted] & Y \arrow[l, "i_Y"] \arrow[llu, "\beta"'] \\
+ & X \arrow[u, "i_X"'] \arrow[luu, "\alpha"] & 
+\end{tikzcd}
+ $$
+ At the level of topological spaces, there is indeed a unique continuous map $X\coprod Y\lrta T$, with $u(i_Y(y)):=\beta(y)$ and $u(i_X(x))=\alpha(x)$. It suffices to construct the corresponding $u^\#:\calo_T\lrta u_*\calo_{X\corpod Y}$. 
+ $$
+ \begin{aligned}
+ u_*(\calo_{X\coprod Y})(V)
+ &=\calo_{X\coprod Y}(u^{-1}(V))=\calo_{X\coprod Y}(\alpha^{-1}(V)\coprod\beta^{-1}(V))\\
+ &=\calo_{X\coprod Y}(\alpha^{-1}(V))\times\calo_{X\coprod Y}(\beta^{-1}(V))\\
+ &=\calo_X(\alpha^{-1}(V))\times\calo_Y(\beta^{-1}(V))\\
+ &=\alpha_*\calo_{X}(V)\times \beta_*\calo_{Y}(V) 
+ \end{aligned}
+ $$  
+ By the universal properties, there is indeed universal morphism from $\calo_T(V)$ to $\alpha_*\calo_{X}(V)\times \beta_*\calo_{Y}(V)$, denoted by $u^\#:=(\alpha^\#,\beta^\#)$. $(u,u^\#)$ together gives a unique morphism of schemes.
+We have proved the universal property of $X\coprod Y$ in the category $\mathsf{Sch}$.
+\end{proof}
+\begin{exr}
+Use the fact that
+$$
+\hom_{\mathsf{Sch}}(W,\spec A)=\hom_{\mathsf{Rings}}(A,\Gamma(W,\calo_W)) 
+$$
+to show that given ring maps $C\lrta A$ and $C\lrta B$
+$$
+\spec (A\otimes_C B)\cong \spec A\times_{\spec C}\spec B.
+$$
+Hence the fibered product of affine schemes exists in the category of schemes.
+\end{exr}
+\begin{proof}[Sol.]
+$A\otimes_C B$ is the fibered product in the category of Rings. We know $\spec$ gives a contravariant equivalence of categories from $\mathsf{Rings}$ to $\mathsf{AffSch}$, this would invert the arrows maps the fibered coproduct to the fibered product.
+Hence the fibered product of affine schemes exists and the subcategory $\mathsf{AffSch}$ is closed under taking fibered product in the category $\mathsf{Sch}$.
+\end{proof}
+
+\begin{exr}
+If $X$ and $Y$ are schemes, describe a bijection between morphisms of schemes $X\lrta Y$ and natural transformations of functors $h_X\lrta h_Y$. Hence show that the category of schemes is a fully faithful subcategory of the ``functor category'' (all contravariant functors $\mathsf{Sch}\lrta\mathsf{Sets}$).
+\end{exr}
+\begin{exr}
+If $X,Y\lrta Z$ are schemes, show that $h_X\times_{h_Z} h_Y$ is a Zariski sheaf.
+\end{exr}
+
 \section{Computing fibered product in practice}
 \section{Interpretations: Pulling back families, and fibers of morphisms}
 \section{Properties preserved by base change}
@@ -643,6 +692,28 @@ Define a map $D(\phi(f))\lrta D(f)$. Show that they glue together as $f$ runs ov
 \section{Normalization}
 \chapter{Separated and proper schemes, varieties}
 \section{Separated morphisms}
+Grothendieck taught us that one should try to define properties of morphisms, not of objects; then we can say that an object has that property if its morphism to the final object has that property.
+\begin{proposition}
+Let $\pi:X\lrta Y$ be a morphism of schemes. Then the diagonal morphism $\delta:X\lrta X\times_Y X$ is locally closed embedding.
+\end{proposition}
+\begin{definition}
+A morphism $\pi:X\lrta Y$ is \textbf{separated} if the diagonal morphism $\delta_\pi:X\lrta X\times_Y X$ is a closed embedding. An $A$-scheme $X$ is said to be separated over $A$ if the structure morphism $X\lrta \spec A$ is separated.
+\end{definition}
+When people talk about separated schemes, they are implicitly talking about schemes separated over some $\spec A$ or $\spec K$.
+\begin{exr}
+Show that a topological space $X$ is Hausdorff iff the diagonal is a closed subset of $X\times X$. 
+\end{exr}
+\begin{proof}[Sol.]
+First suppose that $X$ is Hausdorff. We show that $X\times X\backslash \Delta$ is open. Let $(x,y)\in  X\times X\backslash \Delta$, i.e. $x\neq y$. By assumption, there are open subsets $U_x$, $U_y$ in $X$ disjoint and contain $x,y$ respectively. Hence $U_x\times U_y$ is an opne subset of $X\times X$ with respect to the product topology. $U_x\times U_y \cap \Delta=\emptyset$.
+
+Conversely, assume that $\Delta\subset X\times X$ is closed and let $x,y\in X$ such that $x\neq y$. Then $(x,y)\notin \Delta$. Since $\Delta$ is closed, there are open sets $V_x, V_y$ containing $x,y$ respectively such that $V_x\times V_y\cap \Delta=\emptyset$. In other words, $V_x\cap V_y=\emptyset$, which means $X$ is Hausdorff.
+\end{proof}
+\begin{exr}
+Show locally closed embeddings (in particular open and closed embeddings) are separated. 
+\end{exr}
+\begin{proof}[Sol.]
+We first show that monomorphisms are separated.
+\end{proof}
 \section{Rational maps to separated schemes}
 \section{Proper morphism}
 \part{``Geometric'' properties: Dimension and smoothness}
@@ -657,9 +728,47 @@ Show that an irreducible homogeneous polynomial in $n+1$ variables over a field 
 $S_\bullet=k[X_0,...,X_n]$ is an Noetherian integral domain. By Krull's principal ideal theorem. Suppose $f$ is an irreducible homogeneous polynomial in $S_\bullet$.
 \end{proof}
 \section{Dimensions of fibers of morphisms of Varieties}
-\section{Proof of Krulls's Principal Ideal and Height Theorems}
+\section{Proof of Krull's Principal Ideal and Height Theorems}
 \chapter{Regularity and smoothness}
+\section{The Zariski tangent space}
+\begin{exr}
+Check any linear map $\scm/\scm^2\lrta \reals$ gives a derivation. In other words, verify that the Leibniz rule holds.
+\end{exr}
+\begin{proof}[Sol.]
+Given a linear map $\phi:\scm/\scm^2\lrta \reals$. We can define the derivation $\psi:\calo_p$
+$$
+\begin{aligned}
+\calo_p &\lrta \scm\overset{\pi}{\lrta}\scm/\scm^2\lrta\reals\\
+f&\longmapsto f-f(p)\longmapsto[f-f(p)]\longmapsto\phi([f-f(p)])
+\end{aligned}
+$$
+We only need to check the Leibniz rule. Indeed,
+$$
+\begin{aligned}
+\psi(fg)&=\phi([fg-f(p)g(p)])\\
+&=\phi([fg-f g(p)]+[f g(p)-f(p)g(p)])\\
+&=\phi([(f-f(p))(g- g(p))])+\phi([f(p)(g-g(p))]+\phi([f-f(p)])g(p)\text{ where $(f-f(p))(g- g(p))\in \scm^2$}\\
+&=f(p)\psi(g)+\psi(g)g(p)
+\end{aligned}
+$$
+which satisfies the Leibniz rule.
+\end{proof}
+\begin{exr}
+Suppose $A$ is a ring, and $\scm$ a maximal ideal. If $f\in \scm$, show that the Zariski tangent space of $A/(f)$ is cut out in the Zariski tangent space of $A$ by $f(\mod \scm^2)$. Hence the dimension of Zariski tangent space of $\spec A/(f)$ at $[\scm]$ is the dimension of the Zariski tangent space of $\spec A$ at $[\scm]$, or one less.
+\end{exr}
+\begin{proof}[Sol.]
+We denote the maximal ideal in the quotient ring as $\overline{\scm}$. We want to describe the dual of $\overline{\scm}/\overline{\scm}^2$. Consider a linear functional $\overline{\omega}$ on $\overline{\scm}/\overline{\scm}^2$. We can check that a linear functional $\omega$ on $\scm,/\scm^2$ which satisfies $\omega(f\mod \scm^2)$ would give rise to a desired $\overline{\omega}$ by defining $\overline{\omega}(\overline{v}):=\omega(v)+\omega(f)$. This map $\omega\lrta \overline{\omega}$ is injective and surjective. Hence we know the two vector spaces are isomorphic.
 
+If $f\not \in\scm^2$, the restriction $\omega(f\ \mod \scm^2)=0$ is not vacuous, the Zariski tangent space of $\spec A/(f)$ has one dimension less. Otherwise, they would have same dimensions.
+\end{proof}
+\section{Regularity and smoothness over a field}
+\section{Examples}
+\section{Bertini's theorem}
+\section{Another (co)dimension one miracle: discrete valuation rings}
+\section{Smooth (and {\'e}tale) morphisms (first definition)}
+\section{Valuative criterion for separatedness and properness}
+\section{More sophisticated facts about regular local rings}
+\section{Filtered rings and modules and Artin-Rees lemma}
 \part{Quasicoherent sheaves}
 \chapter{Quasicoherent and coherent sheaves}
 \section{Vector bundles and locally free sheaves}
@@ -1152,6 +1261,7 @@ Exercise~13.2.C said that all invertible sheaves on $\affn^n_K$ is trivial. We k
 $U_0\cong \spec K[x_{1/0}]$ and $U_1\cong\spec K[x_{0/1}]$. There are only two open sets in the open cover, we hence know that the cocycle condition reduces to
 $T_{ij}=T_{ji}^{-1}$. Here, we don't require $T_{ij}$ to be ring homomorphism, but only $K$-linear  transformation. It is determined by $f(x_{1/0})\mapsto f(x_{0/1})\times \lambda x_{0/1}^n$ for $\lambda \in K^\times$, with an obvious inverse. For the isomorphism class of invertible sheaves, $\lambda$ is irrelevant.
 \end{proof}
+\section{Line bundles and Weil divisors}
 
 \chapter{Quasicoherent sheaves and projective $A$-schemes}
 \chapter{Pushforwards and pullbacks of quasicoherent sheaves}

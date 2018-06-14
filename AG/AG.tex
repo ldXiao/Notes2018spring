@@ -158,7 +158,13 @@ Notes by Lin-Da Xiao and David Burgschweiger}
 \maketitle
 \tableofcontents
 \section*{About the notes}
-In this notes we mainly focus on the algebraically closed fields.
+This notes are based on a course in algebraic geometry given by Professor Emmanuel Kowalski in 2018 spring at ETH.
+These are our ``live-{\TeX}ed'' notes from the course. The \LaTeX package tikz and tikzcd were used to generate diagrams.
+
+Many big theorems in the lecture were stated without proof. We list the reference for most of them.
+These notes are not a faithful representation of the course, either in the mathematics itself or in the quotes, remarks; in particular the errors are our fault. By the same token, any virtues in the notes are to be credited to the lecturer and not the scribe.
+
+If you find any typos or mistakes, please send feedbacks to \href{mailto:xld704@gmail.com}{xld704@gmail.com}.
 \newpage
 \section{Classical varieties}
 \subsection{Feb 27th: Algebraic sets and morphisms}
@@ -2393,7 +2399,7 @@ $\hom(\spec \ratl,\proj^1_\ratl)$ has infinitely many elements.
 
 \section{Fibred product}
 \subsection{Apr 13th-B: Categorical introduction of Fibred product}
-This is a notion that makes sense in any category. (Though a specific fibred product may not exist)
+This is a notion that makes sense in any category. (Though a specific fibered product may not exist)
 \begin{dfn}
 $\calc$ a category, $X,Y$ objects of $\calc$, $S$ an object of $\calc$. Assume given
 $$
@@ -2409,7 +2415,7 @@ Z \arrow[r, "\pi_2"] \arrow[d, "\pi_1"'] & Y \arrow[d, "f_2"'] \\
 X \arrow[r, "f_1"] & S
 \end{tikzcd}
 $$
-makes the diagram commutes is a \textbf{fibred product} of $X,Y$ over $S$ if it has the universal property
+makes the diagram commutes is a \textbf{fibered product} of $X,Y$ over $S$ if it has the universal property
 $$
 \begin{tikzcd}
 T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
@@ -2420,9 +2426,9 @@ $$
 
 \underline{Notation}: $Z=X\times_S Y$
 \end{dfn}
-N.B. This notation is ambiguous because the fibred product depends on $f_1,f_2$. The fibred product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
+N.B. This notation is ambiguous because the fibered product depends on $f_1,f_2$. The fibered product is only suitably unique when it is specified with its two projections $\pi_1,\pi_2$.
 \begin{ex}
-In $\mathsf{Sets}$ fibred products exist and
+In $\mathsf{Sets}$ fibered products exist and
 $$
 X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
 $$
@@ -2440,16 +2446,16 @@ define $f(t)=(p_1(t),p_2(t))$, $f_1(p_1(t))=f_2(p_2(t))$, therefore $f(t)\in Z$.
 \end{enumerate}
 \underline{Note}: This construction/definition is a an example of ``universal'' object in the categorical sense. It is universal in the following sense.
 
-Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibred products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
+Given $X\overset{\pi_1}{\longleftarrow}Z_1\overset{\pi_2}{\lrta} Y$, $X\overset{\tilde{\pi}_1}{\longleftarrow}Z_2\overset{\tilde{\pi}_2}{\lrta} Y$ both fibered products over $S$ there is a unique isomorphism $j:Z_1\lrta Z_2$, s.t. $\tilde{\pi}_1=\pi_1\circ j^{-1}$ and $\tilde{\pi}_2=\pi_2\circ j^{-1}$.
 \end{proof}
 \begin{ex}
-If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibred product over $S$ is just the Cartesian product
+If $\calc=\mathsf{Sets}$, $S=\{*\}$ any 1 element set, the fibered product over $S$ is just the Cartesian product
 $$
 X\times_S Y=\{(x,y)\in X\times Y|f_1(x)=f_2(y)\}
 $$
-But the restriction on $f_i$ is just vacuous, the fibred product contains the usual Cartesian product.
+But the restriction on $f_i$ is just vacuous, the fibered product contains the usual Cartesian product.
 
-(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibred product is isomorphic to the intersection of $X,Y$
+(2) Let $X\overset{f_1}{\inj}S \overset{f_2}{\hookleftarrow} Y$ (inclusion of subsets) We can see that the fibered product is isomorphic to the intersection of $X,Y$
 $$
 \begin{tikzcd}
 X\cap Y \arrow[d, hook] \arrow[r, hook] & Y \arrow[d, hook] \\
@@ -2465,11 +2471,12 @@ X \arrow[r, "f_1", hook] & S
 $$
 \end{ex}
 \begin{thm}
-In the category $\mathsf{Sch}$ of schemes, arbitrary fibred product exists.
+In the category $\mathsf{Sch}$ of schemes, arbitrary fibered product exists.
 \end{thm}
 \underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
 
-\begin{proof}[Proof of theorem]
+\begin{proof}[Proof of theorem]\ \\
+
 \underline{Step 1} We prove this for affine schemes.
 
 Assume $X=\spec A$, $Y=\spec B$, $S=\spec R$. Given  a diagram
@@ -2512,6 +2519,7 @@ $$
 
 \underline{N.B.} $\spec (A\otimes_R B)$ is not easy to describe as a set.
 
+For example $\affn^1_K\times \affn^1_K\cong \affn^2_K$, but topologically $\affn^2_K$ is not the product space of $\affn^1$ with $\affn^1$. It contains more points which is not parallel axes in the later.
 
 \underline{Step 2} Uniqueness of $X\times_S Y$, when it  exists, is formal.
 
@@ -2522,33 +2530,29 @@ $$
 U \arrow[r, hook] & X \arrow[r] & S
 \end{tikzcd}
 $$
-\underline{Step 4} $U_i$ affine. If for each $i$, $U-i\times_S Y$ exists, then so does $X\times_S Y$
-$$
-\begin{tikzcd}
- & Y \arrow[d, "f_2"] \\
-\cup_i U_i=X \arrow[r, "f_1"] & S
-\end{tikzcd}
-$$
-If for each $i$, $U_i\times_S Y$ exists, then so does $X\times_S Y$.
+We can routinely check the universal property of $\pi_1^{-1}(U)$. The left square is a fibered product by definition $\pi_1^{-1}(U)=U\times_X(X\times_S Y)$ and  composition of squares of fibered products makes the outer square a fibered product.
 
-Define $V_{i,j}=\pi_{1,i}^{-1}(U_i\cap U_j)\subset U_i\times_S Y$ open. Check that $V_{i,j}=(U_i\cap U_j)\times_S Y$
->>>>>>>>>2
+Especially, it works for $S,Y$ affine case. 
 
-One can glue  the $U_i\times_S Y$ along the isomorphisms. 
+\underline{Step 4}. fibered product of affine with arbitrary over affine exists. If $Y$ and $S$ are affine and $X$ is arbitrary.
 
-\underline{Check} This scheme is $X\times_S Y$
+Consider two affine open subset $U_i$ and $U_j$ of $X$, denote their intersection $U_i\cap U_j=U_{i,j}$.  $U_i\times_S Y$ exists by the affine case. We call it $W_i$. Also $X\times_S U_{i,j}$ exists by Step 3. and comes with a canonical open embeddings into $W_j$ and $W_i$. Then we can glue $W_i$ and $W_j$ along $W_{i,j}$; call this resulting scheme $W$.
 
-\underline{Step 5.}
+We need to check that the result is the fibered product by verifying that it satisfies the universal property. Suppose we have maps $\alpha'':V\lrta X$, and $\beta'':V\lrta Y$ that compose to the same map $V\lrta Z$. We construct a unique map $\gamma:V\lrta W$ so that $\alpha'\circ \gamma=\beta''$ and $\beta'\circ \alpha''$. DEfine $V_i=(\beta'')^{-1}(Y_i)$ and $V_{ij}:(\beta'')^{-1}(Y_{ij})=V_i\cap V_j$. Then there is a unique map $V_i\lrta W_i$ such that the composed maps $V_{ij}\lrta X$ and $V_{ij}\lrta Y$ are as desired, hence a unique map $\gamma_i:V_i\lrta W$. Similarly, there is a unique map $\gamma_{ij}:V_{ij}\lrta W$ such that the composed maps $V_{ij}\lrta X$ and $V_{ij}\lrta Y$ are as desired. BUt the restriction of $\gamma_{i}$ and $\gamma_{j}$ agree on $V_{ij}$. Thus the $\gamma_i$ glue together to a unique map $\gamma:V\lrta W$. We have shown existence and uniqueness of the desired $\gamma$, completing the step.
 
-step 1+ step 4.
+\underline{Step 5}. Now consider the case where $S$ is affine and $X, Y$ are arbitrary. 
 
-$Y,S$ affine $\Lrta X\times_S Y$ exists.
+Step 3 + Step 4.
+
+\underline{Step 6.} $S$ is an open subset of an affine scheme $S'$ and $X,Y$ arbitrary. Notices that $S\inj S‘$ is a monomorphism (because it is an open embedding). See for example Exercise 1.3.X in FOAG. (With solution \href{https://ldxiao.github.io/images/FOAG.pdf}{here})
+
+\underline{Step 7.} In the general case, $\alpha:X\lrta S$ and $\beta:Y\lrta S$. Consider an affine open covering of $S$, still denoted with $U_i$. Let $X_i:=\alpha^{-1}(U_i)$ and $Y_i:=\beta^{-1}(U_i)$. Define $U_{ij}:=U_i\cap U_j$ and $X_{ij}:=\alpha^{-1}(U_{ij})$ and $Y_{ij}:=\beta^{-1}(U_{ij})$. Then $W_i:=X_i\times_{U_i}Y_i$ exists for all $i$ by step 5 and $W_{ij}:=X_{ij}\times_{U_{ij}}Y_{ij}$ exists for all $i,j$ by Step 6. Again we glue it up and check the universal property as in Step 4.
 \end{proof}
 
 \subsection{Apr 17th: Examples and Applications of the Fibred Product}
 Recall.
 If we have maps
- $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fibred product of $X\lrta S\longleftarrow Y$ if it has the universal property
+ $X\lrta S$, $Y\lrta S$, a space $Z$ with maps $Z\lrta X, Z\lrta Y$ if the fibered product of $X\lrta S\longleftarrow Y$ if it has the universal property
  $$
 \begin{tikzcd}
 T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
@@ -2556,7 +2560,7 @@ T \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!", dashed] &  &  \\
  & X \arrow[r] & S
 \end{tikzcd}
  $$
- $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fibred product of schemes.
+ $X=\spec A, Y=\spec B, S=\spec R$. The contravariant functor $\spec$ would invert the fiber coproduct of rings to fibered product of schemes.
  $$
 X\times_S Y=\spec( A\otimes_R B)
  $$
@@ -2564,7 +2568,7 @@ X\times_S Y=\spec( A\otimes_R B)
 
 \begin{ex}
 Why not product?
-For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fibred product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
+For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fibered product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
 
 $X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y\neq\spec \intg[T,V]$ Krull dimension $3$.
 $$
@@ -2581,7 +2585,7 @@ $$
 $$
 \hom_{\spec K}(\spec K, X\times_K Y)=\hom_{\spec K}(\spec K, X)\times \hom_{\spec K}(\spec K, Y)
 $$
-by the universal property of fibred products.
+by the universal property of fibered products.
 \end{ex}
 
 If $X$ is a scheme over $S$, $T$ is a scheme over S. We can define $X(T)$ as $\hom_S(T,X)$
@@ -2755,7 +2759,7 @@ $A\subset K$, with $ K=\overline{K}$, $S=\affn^n_A$ is locally closed. The follo
 \end{enumerate}
 \end{lemma}
 
-Note: $S\times_{\spec A}\spec K$ is the inverse image of $S$ in $\affn^n_K$. This gives  $S$ a scheme structure, which allows us to take the fiber product.
+Note: $S\times_{\spec A}\spec K$ is the inverse image of $S$ in $\affn^n_K$. This gives  $S$ a scheme structure, which allows us to take the fibered product.
 \end{proof}
 \section{Elementary geometry of schemes}
 \subsection{Apr 23rd: Some basics of schemes}

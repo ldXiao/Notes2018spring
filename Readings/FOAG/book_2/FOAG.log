@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.16)  12 JUN 2018 22:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.16)  14 JUN 2018 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1802,7 +1802,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.tex
 Chapter 1.
-<Pictures/orange_cat.jpg, id=379, 1923.185pt x 1045.9075pt>
+<Pictures/orange_cat.jpg, id=409, 1923.185pt x 1045.9075pt>
 File: Pictures/orange_cat.jpg Graphic file (type jpg)
 <use Pictures/orange_cat.jpg>
 Package pdftex.def Info: Pictures/orange_cat.jpg used on input line 2.
@@ -1819,7 +1819,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
-<Pictures/Groupoid.png, id=380, 366.61969pt x 192.72pt>
+<Pictures/Groupoid.png, id=410, 366.61969pt x 192.72pt>
 File: Pictures/Groupoid.png Graphic file (type png)
 <use Pictures/Groupoid.png>
 Package pdftex.def Info: Pictures/Groupoid.png used on input line 19.
@@ -2131,7 +2131,7 @@ Overfull \hbox (16.74698pt too wide) in paragraph at lines 1790--1791
 
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.tex
 Chapter 2.
-<Pictures/sheaves.jpg, id=654, 1824.8175pt x 951.555pt>
+<Pictures/sheaves.jpg, id=684, 1824.8175pt x 951.555pt>
 File: Pictures/sheaves.jpg Graphic file (type jpg)
 <use Pictures/sheaves.jpg>
 Package pdftex.def Info: Pictures/sheaves.jpg used on input line 2.
@@ -2542,7 +2542,7 @@ LaTeX Font Info:    Font shape `T1/pag/m/it' in size <10> not available
 
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap3.tex
 Chapter 3.
-<Pictures/scheme.jpg, id=960, 903.375pt x 447.17062pt>
+<Pictures/scheme.jpg, id=990, 903.375pt x 447.17062pt>
 File: Pictures/scheme.jpg Graphic file (type jpg)
 <use Pictures/scheme.jpg>
 Package pdftex.def Info: Pictures/scheme.jpg used on input line 2.
@@ -2973,7 +2973,7 @@ Package mdframed Info: mdframed detected package amsthm
 
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.tex
 Chapter 4.
-<Pictures/structure_sheaf.jpg, id=1227, 1820.8025pt x 891.33pt>
+<Pictures/structure_sheaf.jpg, id=1257, 1820.8025pt x 891.33pt>
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
 Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 2.
@@ -3598,27 +3598,66 @@ File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
 Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 636.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-[175] [176
+Package mdframed Info: mdframed works in twoside mode on input line 638.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 638.
+! Undefined control sequence.
+l.651 ...ing $u^\#:\calo_T\lrta u_*\calo_{X\corpod
+                                                   Y}$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-]
+Package mdframed Info: mdframed works in twoside mode on input line 664.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 664.
+[175]
+Package mdframed Info: Not enough space on this page on input line 674.
+Package mdframed Info: mdframed works in twoside mode on input line 680.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 680.
+Package mdframed Info: mdframed works in twoside mode on input line 683.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 683.
+[176]
 Chapter 10.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 644.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 693.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-[177] [178
+Package mdframed Info: mdframed works in twoside mode on input line 699.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 699.
+Package mdframed Info: mdframed works in twoside mode on input line 703.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 703.
+Package mdframed Info: mdframed works in twoside mode on input line 711.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 711.
+[177
 
-] (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.ptc) [179] [1
-80]
+] [178] (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.ptc) [1
+79
+
+] [180]
 Chapter 11.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 649.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 720.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-Package mdframed Info: mdframed works in twoside mode on input line 653.
+Package mdframed Info: mdframed works in twoside mode on input line 724.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 653.
+(mdframed)              on input line 724.
 [181
 
 ] [182
@@ -3627,49 +3666,62 @@ Package mdframed Info: mdframed detected package amsthm
 Chapter 12.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 661.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 732.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-[183] [184
-
-] (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.ptc) [185] [1
-86]
-Chapter 13.
-File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
-<use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 664.
-(pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-Package mdframed Info: mdframed works in twoside mode on input line 666.
+Package mdframed Info: mdframed works in twoside mode on input line 734.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 666.
+(mdframed)              on input line 734.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 673.
-
-Package mdframed Info: mdframed works in twoside mode on input line 685.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 685.
-[187
-
-]
-Package mdframed Info: mdframed works in twoside mode on input line 724.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 724.
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 730.
-
-[188]
-Overfull \hbox (50.76625pt too wide) detected at line 776
+Overfull \hbox (68.32346pt too wide) detected at line 753
 [][]
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 795.
+Package mdframed Info: mdframed works in twoside mode on input line 756.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 795.
+(mdframed)              on input line 756.
+[183] [184] (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.ptc
+) [185
+
+] [186]
+Chapter 13.
+File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
+<use Pictures/structure_sheaf.jpg>
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 773.
+(pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
+Package mdframed Info: mdframed works in twoside mode on input line 775.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 775.
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 782.
+
+Package mdframed Info: mdframed works in twoside mode on input line 794.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 794.
+[187
+
+]
+Package mdframed Info: mdframed works in twoside mode on input line 833.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 833.
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 839.
+
+[188]
+Overfull \hbox (50.76625pt too wide) detected at line 885
+[][]
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 904.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 904.
 [189]
-Overfull \hbox (51.56847pt too wide) in paragraph at lines 829--832
+Overfull \hbox (51.56847pt too wide) in paragraph at lines 938--941
 []\T1/ptm/m/n/10.95 (-20) Instead, $[]$: For any $\OML/ztmcm/m/it/10.95 U \OMS/
 ztmcm/m/n/10.95 ^^Z \OML/ztmcm/m/it/10.95 X$\T1/ptm/m/n/10.95 (-20) , we have a
 n iso-mor-phism of mod-ules, $\OMS/ztmcm/m/n/10.95 L[]\OT1/ztmcm/m/n/10.95 (\OM
@@ -3679,84 +3731,84 @@ tmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 U\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10
 /ztmcm/m/n/10.95 ))$
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 854.
+Package mdframed Info: mdframed works in twoside mode on input line 963.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 854.
+(mdframed)              on input line 963.
 [190]
-Package mdframed Info: mdframed works in twoside mode on input line 872.
+Package mdframed Info: mdframed works in twoside mode on input line 981.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 872.
+(mdframed)              on input line 981.
 [191]
-Package mdframed Info: mdframed works in twoside mode on input line 952.
+Package mdframed Info: mdframed works in twoside mode on input line 1061.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 952.
+(mdframed)              on input line 1061.
 [192]
-Package mdframed Info: mdframed works in twoside mode on input line 1000.
+Package mdframed Info: mdframed works in twoside mode on input line 1109.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1000.
+(mdframed)              on input line 1109.
 [193]
-Package mdframed Info: mdframed works in twoside mode on input line 1059.
+Package mdframed Info: mdframed works in twoside mode on input line 1168.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1059.
-Package mdframed Info: mdframed works in twoside mode on input line 1069.
+(mdframed)              on input line 1168.
+Package mdframed Info: mdframed works in twoside mode on input line 1178.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1069.
-Package mdframed Info: Not enough space on this page on input line 1071.
+(mdframed)              on input line 1178.
+Package mdframed Info: Not enough space on this page on input line 1180.
 [194]
-Package mdframed Info: Not enough space on this page on input line 1071.
-Package mdframed Info: mdframed works in twoside mode on input line 1073.
+Package mdframed Info: Not enough space on this page on input line 1180.
+Package mdframed Info: mdframed works in twoside mode on input line 1182.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1073.
-Package mdframed Info: mdframed works in twoside mode on input line 1076.
+(mdframed)              on input line 1182.
+Package mdframed Info: mdframed works in twoside mode on input line 1185.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1076.
-Package mdframed Info: mdframed works in twoside mode on input line 1079.
+(mdframed)              on input line 1185.
+Package mdframed Info: mdframed works in twoside mode on input line 1188.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1079.
-Package mdframed Info: mdframed works in twoside mode on input line 1085.
+(mdframed)              on input line 1188.
+Package mdframed Info: mdframed works in twoside mode on input line 1194.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1085.
-Package mdframed Info: mdframed works in twoside mode on input line 1088.
+(mdframed)              on input line 1194.
+Package mdframed Info: mdframed works in twoside mode on input line 1197.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1088.
+(mdframed)              on input line 1197.
 [195] [196
 
 ]
 Chapter 14.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1100.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1209.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
-Package mdframed Info: mdframed works in twoside mode on input line 1102.
+Package mdframed Info: mdframed works in twoside mode on input line 1211.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1102.
-Package mdframed Info: mdframed works in twoside mode on input line 1118.
+(mdframed)              on input line 1211.
+Package mdframed Info: mdframed works in twoside mode on input line 1227.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1118.
-Package mdframed Info: mdframed works in twoside mode on input line 1124.
+(mdframed)              on input line 1227.
+Package mdframed Info: mdframed works in twoside mode on input line 1233.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1124.
+(mdframed)              on input line 1233.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1125.
+(amsmath)                 on input line 1234.
 
 
-Overfull \hbox (5.10394pt too wide) in paragraph at lines 1128--1130
+Overfull \hbox (5.10394pt too wide) in paragraph at lines 1237--1239
 []\T1/ptm/m/n/10.95 (-20) To find a global sec-tion of $\OMS/ztmcm/m/n/10.95 O[
 ]$ \T1/ptm/m/n/10.95 (-20) means to find an $\OML/ztmcm/m/it/10.95 m \OT1/ztmcm
 /m/n/10.95 + 1$ \T1/ptm/m/n/10.95 (-20) poly-no-mi-als $\OML/ztmcm/m/it/10.95 f
@@ -3766,31 +3818,31 @@ mcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 x[] \OMS/ztmcm/m/n/10.95 ^^@
  []
 
 [197]
-Package mdframed Info: mdframed works in twoside mode on input line 1147.
+Package mdframed Info: mdframed works in twoside mode on input line 1256.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1147.
+(mdframed)              on input line 1256.
 [198]
 Chapter 15.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1156.
+(hyperref)                removing `math shift' on input line 1266.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1156.
+(hyperref)                removing `math shift' on input line 1266.
 
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1156.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1266.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1156.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1266.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <20.74> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1156
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1266
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1156
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1266
 .
 [199
 
@@ -3800,7 +3852,7 @@ LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <14.4> not available
 Chapter 16.
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1157.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1267.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 [201] [202
 
@@ -3808,13 +3860,13 @@ Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1157.
 04]
 File: Pictures/structure_sheaf.jpg Graphic file (type jpg)
 <use Pictures/structure_sheaf.jpg>
-Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1172.
+Package pdftex.def Info: Pictures/structure_sheaf.jpg used on input line 1282.
 (pdftex.def)             Requested size: 597.50787pt x 292.49414pt.
 
-Package biblatex Warning: Type 'article' not found on input line 1179.
+Package biblatex Warning: Type 'article' not found on input line 1289.
 
 
-LaTeX Warning: Empty bibliography on input line 1179.
+LaTeX Warning: Empty bibliography on input line 1289.
 
 [205
 
@@ -3824,28 +3876,28 @@ LaTeX Warning: Empty bibliography on input line 1179.
 \tf@ptc=\write8
 \openout8 = `FOAG.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1199.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1199.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1309.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1309.
 (/Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOAG.aux (/Users/vec
 tor_cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap1.aux) (/Users/vector
 _cat/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap2.aux) (/Users/vector_ca
 t/Dropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap3.aux) (/Users/vector_cat/D
 ropbox/2018spring/Readings/FOAG/book_2/Chaps/Chap4.aux) (/Users/vector_cat/Drop
 box/2018spring/Readings/FOAG/book_2/Chaps/Chap5.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1199.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1199.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1309.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1309.
 Package logreq Info: Writing requests to 'FOAG.run.xml'.
 \openout1 = `FOAG.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46536 strings out of 492995
- 933792 string characters out of 6132704
- 1284565 words of memory out of 5000000
- 48240 multiletter control sequences out of 15000+600000
- 225070 words of font info for 490 fonts, out of 8000000 for 9000
+ 46623 strings out of 492995
+ 935456 string characters out of 6132704
+ 1283804 words of memory out of 5000000
+ 48301 multiletter control sequences out of 15000+600000
+ 225690 words of font info for 494 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,22n,84p,10565b,2722s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,23n,84p,10565b,2722s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.5} has been referenced but does not exis
 t, replaced by a fixed one
 
@@ -3877,10 +3929,10 @@ symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/symbol/usyr
 live/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on /Users/vector_cat/Dropbox/2018spring/Readings/FOAG/book_2/FOA
-G.pdf (206 pages, 2865695 bytes).
+G.pdf (206 pages, 2879949 bytes).
 PDF statistics:
- 2687 PDF objects out of 2984 (max. 8388607)
- 2238 compressed objects within 23 object streams
- 848 named destinations out of 1000 (max. 500000)
- 99112 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2785 PDF objects out of 2984 (max. 8388607)
+ 2315 compressed objects within 24 object streams
+ 868 named destinations out of 1000 (max. 500000)
+ 99192 words of extra memory for PDF output out of 106986 (max. 10000000)
 
