@@ -616,20 +616,643 @@ $$
 (\Proj R_\bullet)\backslash V(\phi(S_+))\lrta \Proj S_\bullet.
 $$
 Hint:
-Define a map $D(\phi(f))\lrta D(f)$. Show that they glue together as $f$ runs over all homogeneous elements of $S_+$. Show that this deines a map from all of $\Proj R_\bullet\backslash V(\phi(S_+))$. In particular, if $V(\phi(S_+))=\emptyset$, then we have a morphism $\Proj R_\bullet\lrta \Proj S_\bullet$. 
+Define a map $D(\phi(f))\lrta D(f)$. Show that they glue together as $f$ runs over all homogeneous elements of $S_+$. Show that this defines a map from all of $\Proj R_\bullet\backslash V(\phi(S_+))$. In particular, if $V(\phi(S_+))=\emptyset$, then we have a morphism $\Proj R_\bullet\lrta \Proj S_\bullet$. 
 \end{exr}
 \begin{proof}[Sol.]
 \end{proof}
 
 \section{rational maps from reduced schemes}
+\begin{definition}
+A \textbf{rational map } $\pi:X\dashrightarrow Y$, is a morphism on a dense open set, with the equivalence relation $(\alpha:U\lrta Y)\sim (\beta:V\lrta Y)$ iff there is a dense open set $Z\subset U\cap V$ such that $\alpha|_Z=\beta|_Z$
 
+A rational map $\pi:X\dashrightarrow Y$ is \textbf{dominant} if for some (hence every) representative $U\lrta Y$, the image is dense in $Y$. A morphism is a \textbf{dominant morphism} if it is  dominant as a rational map.
+\end{definition}
+\begin{exr}\label{chap6exr:dominant_rational_map_generic_points}
+Show that a rational map $\pi:X\dashrightarrow Y$ of irreducible schemes is dominant if and only if $\pi$ sends the generic point of $X$ to the generic point of $Y$.
+\end{exr}
+\begin{proof}[Sol.]
+Let $\pi:X\drta Y$ be a rational map between irreducible schemes with generic point $\eta_X,\eta_Y$ respectively. If $\pi(\eta_X)=\eta_Y$,  we know $\overline{\pi(X)}\supset \overline{\pi(\eta_X)}=\overline{\eta_Y}=Y$, which means the image is dense in $Y$ and this means $\pi$ is dominant.
+
+On the other hand, if $\pi$ is dominant, we have
+$$
+\pi(X)=\pi(\overline{\eta_X})\subset \overline{\pi(\eta_X)}
+$$
+Recall a topology fact that the image of closure is always contained in the closure of image for any continuous function. We know $f(\eta_X)$ is a point whose image is $Y$ and we can verify that $\pi(\eta_X)=\eta_Y$ because \textbf{irreducible scheme has a unique generic point}.
+
+Let $Z$ be an irreducible closed subset of $X$. $U\subset Z$ be an open affine set such that $Z\cap U\neq \emptyset$. Then any point $z\in Z$ dense in $Z$ must be also in $Z\cap U$ and a point $z\in Z\cap U$ whose closure contains $Z\cap U$ is also dense in $Z$. (This is because open subset in an irreducible topological space is dense by Exercise~\ref{chap3exr:irreducible_subset_dense_open_irreducible_closure}) Therefore it suffices to prove the theorem for closed subset $Z\cap U$ and this is guaranteed by Exercise~\ref{chap3exr:bijection_closed_subsets_points_affine}. 
+\end{proof}
+\begin{exr}
+Show that dominant rational maps of integral schemes give morphisms of function fields in the opposite direction.
+\end{exr}
+\begin{proof}[Sol.]
+Given a dominant rational map $\pi:X\drta Y$, assume it has a representative, $U\lrta Y$. $\pi$ induces a morphism of schemes $U\lrta Y$, $\pi^\#:\calo_Y\lrta \pi_*\calo_U$.
+
+We then have a morphism of rings, $\calo_{Y,\eta_Y}\lrta (\pi_*\calo_{U})_{\eta_Y}$, where by Exercise~\ref{chap5exr:generic_point_integral_scheme_function_field}, we know both stalks are fields.
+
+Also because $\pi$ is dominant, it maps the generic point $\eta_X$ of $X$ to the generic point $\eta_Y$ of $Y$ by Exercise~\ref{chap6exr:dominant_rational_map_generic_points}. There is a natural morphism
+$$
+(\pi_*\calo_{U})_{\eta_Y}\lrta\calo_{U,\eta_X}.
+$$
+Also by Exercise~\ref{chap5exr:generic_point_integral_scheme_function_field}, we know we can define the function fields of integral scheme $X$ over any dense open subsets.
+\end{proof}
 \chapter{Useful classes of morphisms}
 \section{An example of a reasonable class of morphisms: open embeddings}
+\begin{exr}
+Verify that the class of open embeddings satisfies properties (i) and (ii) of \S 7.1.1.
+\end{exr}
+\begin{proof}[Sol.]
+Given $\pi:X\lrta Y $ an open embedding of schemes. It factorizes as
+$$
+(X,\calo_X)\overset{\rho}{\lrta}(U,\calo_Y|_U)\overset{\tau}{\inj}(Y,\calo_Y)
+$$
+where $\rho$ is an isomorphism and $\tau:U\inj Y$ is an inclusion of an open set.
+
+Check (i.a). Given an open subset $V$ of $U$, which is automatically an open subscheme of $Y$. $\pi^{-1}V$ gives an open subscheme of $X$. Restriction of an homeomorphism also gives a homeomorphism. Restriction of sheaf isomorphisms also gives a sheaf isomorphism. Then we get an isomorphism of schemes
+$$
+(\pi^{-1}V,\calo_{X}|_{\pi^{-1}V})\cong (V,\calo_Y|_V).
+$$
+
+Check $(i.b)$. Given an open cover of $\{V_i\}$ of $Y$ for which each restricted morphism $\pi^{-1}(V_i)\lrta V_i$ is open embedding.
+$$
+\pi^{-1}V_i\cong U_i\inj Y.
+$$
+$U:=\cup U_i$ is an open subset in $Y$,  we claim $(X,\calo_X)\cong(U,\calo_Y|_U)$.
+
+In topology, it is not true that homeomorphism on open cover would glue to a homeomorphism, we only know $\{\pi|_{\pi^{-1}V_i}\}$ glue up to a continuous map. There is continuous maps $\pi:X\lrta U$. What we need is to show that the local inverses  $\{\sigma_i:=(\pi|_{\pi^{-1}V_i})^{-1}\}$ are also compatible.
+
+$\sigma_i:U_i\lrta \pi^{-1}V_i$ is an isomorphism of schemes. We want to prove $\sigma_{i}|_{U_i\cap U_j}=\sigma_{j}|_{U_i\cap U_j}$, which is true because their inverse $\pi_i$ are compatible on intersections and restriction of homeomorphism is homeomorphism.
+
+Then $\sigma_i:U\lrta X$ glue up to a global inverse of $\pi:X\lrta U$. This means $\pi$ is an open embedding.
+
+To check $(ii)$.
+$\pi:X\lrta Y$ factors as $X\overset{\sigma}{\lrta} U\overset{\tau}{\inj} Y$. and $\rho:Y\lrta Z$ factors as $Y\overset{\sigma'}{\lrta}V\overset{\tau'}{\inj}Z$. We can check that $X\overset{\sigma}{\lrta} U\overset{\rho|_U}{\lrta}\rho\circ \pi(X)$. The restriction of homeomorphism is again a homeomorphism onto its image. Then we know $\rho\circ \pi:X\lrta Z$ factors as $X\lrta \rho\circ \pi(X)\inj Z$ and $\rho\circ \pi(X)$ is an open set in $Z$ because homeomorphisms are open maps.
+\end{proof}
+\begin{exr}
+Verify that the class of open embeddings satisfies property $(iii)$ of \S 7.1.1. More specifically: suppose $i:U\lrta Z$ is an open embedding, and $\rho:Y\lrta Z$ is any morphism. Show that $U\times_Z Y$ exists and $U\times_Z Y\lrta Y$ is an open embedding. 
+\end{exr}
+\begin{proof}[Sol.]
+As pointed out in the hint, $U\times_Z Y$ is just $(\rho^{-1}(U),\calo_Y|_{\rho^{-1}(U)})$. Now we check $(\rho^{-1}(U),\calo_Y|_{\rho^{-1}(U)})$ satisfies the universal property of fibered product $U\times_Z Y$.
+
+There is a morphism from $\rho':(\rho^{-1}(U),\calo_Y|_{\rho^{-1}(U)})\lrta U$. $\rho^{-1}(U)$ is an open set in $Y$. By property $i.a$ in \S 7.1.1. We know $\rho':=\rho|_{\rho^{-1}(U)}$ is again an open embedding. The morphism $i':(\rho^{-1}(U),\calo_Y|_{\rho^{-1}(U)})\inj Y$ is just the plain injection. Consider another scheme $W$, with two morphism that makes the the outer diagram commute.
+$$
+\begin{tikzcd}
+W \arrow[rdd, "f"'] \arrow[rrd, "g"] \arrow[rd, "?", dashed] &  &  \\
+ & {(\rho^{-1}(U),\calo_Y|_{\rho^{-1}U})} \arrow[d, "i'"] \arrow[r, "\rho'"] & U \arrow[d, "i"] \\
+ & Y \arrow[r, "\rho"] & Z
+\end{tikzcd}
+$$
+$i\circ g=\rho\circ f$. We know $\im \rho\circ f\subset \im i=U $ $\im f\subset \rho^{-1}(U)$. The desired dashed arrow is just $f$ itself. (Or we can directly use the fact in chap 9 that arbitrary fibered product in $\mathsf{Sch}$ exists.)
+\end{proof}
+\begin{exr}
+Suppose $\pi:X\lrta Y$ is an open embedding. Show that if $Y$ is locally Noetherian, then $X$ is too. Show that if $Y$ is Noetherian, then $X$ is too. However, show that if $Y$ is quasicompact, $X$ need not be.
+\end{exr}
+\begin{proof}[Sol.]
+Assume $X\lrta Y$ factors as $X\lrta U\inj Y$.
+If $Y$ is locally Noetherian, the  open subscheme $U$ of $Y$ is always locally Noetherian. (Given an affine open $V=\spec A$  where $A$ is Noetherian and $x\in U\cap V$, we have seen in the solution of Exercise~\ref{chap4exr:open_subscheme} that there is a an affine open  such that $x\in \spec A_f\subset U\cap V$, and recall that localizations of Noetherian ring is still Noetherian.) Then $U$ is locally Noetherian, which implies $X$ is also locally Noetherian.
+
+To prove the case of Noetherian schemes. We need only recall that affine opens are quasicompact and open subset of Noetherian topological space is quasicompact. We can find finite affine cover $\spec A_f$ of $U$, which means $U\cong X$ is Noetherian.
+
+In exercise~\ref{chap3exr:affine_scheme_quasicompact}.b, we have seen that $\spec A$ can have non-quasicompact open subsets, and this already give the counter example.  
+\end{proof}
+
+\begin{exr}
+Show that the notion of ``open embedding'' is not \textbf{local on the source}. When we say local on the source, it mean property $P$ of morphism $\pi:X\lrta Y$ can be checked on any open cover $\{U_i\}$ of $X$.
+\end{exr}
+\begin{proof}[Sol.]
+For counter example, consider covering maps like $\affn^1\sqcup \affn^1\lrta \affn^1$.
+\end{proof}
 \section{Algebraic interlude: Lying over and Nakayama}
+\begin{exr}\label{chap7exr:integral_affine-local_on_target}
+Show that if $\phi:B\lrta A$ is a a ring morphism, $(b_1,...,b_n)\ni 1$ in $B$, and $B_{b_i}\lrta A_{\phi(b_i)}$ is integral for all $i$, then $\phi$ is integral.
+\end{exr}
+\begin{proof}[Sol.]
+Ring morphism $\phi:B\lrta A$ would factor as $B\lrta \phi(B)\inj A$, where the later is an inclusion of rings. Clearly, $B\lrta \phi(B)$ is integral by definition. 
+
+Claim: if $x\in A$ is integral over $B$ $\Lrta x$ is integral over $\phi(B)$.
+
+This is basically nonsense because $x$ integral over $B$ means $x$ satisfies a monic polynomial equation with coefficients in $\phi(B)$.
+
+Then we reduce to the case where $B$ is a subring of $A$. Suppose $a\in A$. $B_{b_i}\lrta A_{b_i}$ is integral for all $i$. $a/1\in A_{b_i}$ satisfies some monic polynomial equation with coefficients in $B_{b_i}$. There is some $t_i$ and $m_i$ such that $b^{t_i}a^{m_i}\in B+B+a+\cdots +Ba^{m_i-1}$. This works for each $i$, we can choose maximal $t,m$ so that they do not depends on $i$.
+
+Then by partition of unit argument $1=(\sum_i b'_i\times b_i)^N $, if we choose $N$ larger than $n\times m+1$. We have
+$$
+a^m=(\sum_i b'_i\times b_i)^Na^m\in B+B+a+\cdots +Ba^{m_i-1} 
+$$
+ \end{proof}
+ \begin{exr}\ 
+ \begin{enumerate}[label=(\alph*)]
+ \item Show that the property of a homomorphism $\phi:B\lrta A$ being integral is always preserved by localization and quotient of $B$ and quotient of $A$, but not localization of $A$.
+ \item Show that the property of $\phi$ being an integral extension is preserved by localization of $B$ but not localization or quotient of $A$.
+ \item In fact the property of $\phi$ being an integral extension is not preserved by taking quotients of $B$ either.
+\end{enumerate}
+ \end{exr}
 \section{A gazillion finiteness conditions on morphisms}
+\begin{exr}
+Show that the composition of two quasicompact morphism is quasicompact.
+\end{exr}
+\begin{proof}[Sol.]
+$\pi:X\lrta Y$ and $\rho:Y\lrta Z$ are quasicompact morphisms. For every open affine subset $U$ of $Z$, $\rho^{-1}(U)$ is quasicompact in $Y$. It can be covered by finitely many affine opens, denoted by $V_i$, and each $\pi^{-1}(V_i)$ is quasicompact in $X$.
+
+Note that $\cup_i \pi^{-1}(V_i)=(\rho\circ \pi)^{-1}(U)$. Finite union of quasicompact sets is still quasicompact. Then we know composition of quasicompact morphisms is quasicompact.
+\end{proof}
+\begin{exr}\label{chap7exr:7.3.B}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Show that any morphism from a Noetherian scheme is quasicompact.
+\item Show that any morphism from a quasiseparated scheme is quasiseparated. Thus by Exercise~\ref{chap5exr:locally_Notherian_implies_quasiseparated}, any morphism from a locally Noetherian scheme is quasiseparated. Thus readers working only with locally Noetherian schemes may take quasiseparatedness as a standing hypothesis.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+For $(a)$, just recall every open subscheme of Noetherian scheme is Noetherian and Noetherian schemes are quasicompact.
+
+For $(b)$, Let $V\subset Y$ be an affine open. Let $U_1,U_2\subset X$ be affine opens in $\pi^{-1}(V)$. Then $U_1\cap U_2$ is a finite union of affine opens $X$ is separated. Affine opens in $X$ is also affine opens in $\pi^{-1}(V)$. (In fact  we have proved open subsets in quasiseparated scheme is quasiseparated.) By Exercise~\ref{chap5exr:characterization_quasiseparatedness}, we know $\pi^{-1}(V)$ is quasiseparated, which implies that $\pi$ is quasiseparated.
+\end{proof}
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item  (quasicompactness is affine-local on the target) Show that a morphism $\pi:X\lrta Y$ is quasicompact if there is a cover of $Y$ by affine open sets $U_i $such that each $\pi^{-1}(U_i)$ is quasicompact.
+\item (quasiseparatedness is affine-local on the target) Show that a morphism $\pi: X \lrta Y$ is quasiseparated if there is a cover of $Y$ by affine open sets $U_i$ such that $\pi^{-1}(U_i)$ is quasiseparated.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+The obvious hint for both parts is the affine communication lemma.
+
+$(a)$, We need to firstly show that ``having quasicompact preimage'' is  a property that satisfies the conditions in affine communication lemma.
+
+In other words, we want to show:
+
+$(i)$ if $\pi^{-1}(\spec A)$ is quasicompact, then so is $\pi^{-1}(\spec A_f)$ for each $f\in A$.
+
+$(ii)$ if $A=(f_1,...,f_n)$ and each $\pi^{-1}(\spec A_{f_i})$ is quasicompact, then so is $\pi^{-1}(\spec A)$.
+
+For $(i)$, since $\pi^{-1}(\spec A)$ is quasicompact, we can find a finite affine cover of it. Assume $\pi^{-1}(\spec A)=\cup^t_{s=1} W_s$, with each $W_s$ an affine open in $X$. Now we have $\pi^{-1}(\spec A_f)=\cup_{s=1}^t\pi^{-1}((\spec A_f)\cap W_s)$.
+
+Key observation: $\pi^{-1}(\spec A_f)\cap W_s$ is a distinguished open in $W_s$. Assume $W_s\cong \spec B$ for some ring $B$, then there is a morphism of schemes $g:\spec B\lrta \spec A$ in our setting. There is a corresponding ring morphism $G:A\lrta B$. The inverse image $g^{-1}(\spec A_f)$ is just $D(G(f))\cong \spec B_{G(f)}\subset \spec B$. $\pi|_{W_s}$ would give such a morphism of affine schemes and the intersection $\pi^{-1}(\spec A_f)\cap W_s$ is an affine open in $W_s$. We know it is quasicompact.
+
+Then because $\pi^{-1}(\spec A_f)$ is finite union of quasicompact set, it is quasicompact.
+
+$(ii)$ is relatively easier, $\pi^{-1}(\spec A)$ is has a finite cover $\pi^{-1}(\spec A_{f_i})$, if each $\pi^{-1}(\spec A_{f_i})$ is quasicompact, we know $\pi^{-1}(\spec A)$ is quasicompact.
+
+$(b)$: Similarly, we want to prove
+
+$(i)$: if $\pi^{-1}(\spec A)$ is quasiseparated, then so is $\pi^{-1}(\spec A_f)$ for each $f\in A$.
+
+$(ii)$ if $A=(f_1,...,f_n)$ and each $\pi^{-1}(\spec A_{f_i})$ is quasicompact, then so is $\pi^{-1}(\spec A)$.
+
+$(i)$ is easier, any open subset of quasiseparated scheme is quasiseparated, which has been proved in Exercise~\ref{chap7exr:7.3.B}.
+
+For $(ii)$, suppose $U$ and $V$ are two quasicompact open subsets of $\pi^{-1}(\spec A)$. We note that $U,V$ are covered by finitely many $\pi^{-1}(\spec A_{f_i})$.
+Then we use the same trick
+$$
+U\cap V=(\cup_{i}(\spec A_{f_i})\cap U)\cap (\cup_{j}\pi^{-1}(\spec A_{f_j})\cap V)
+$$
+Note that $\spec A_{f_j})\cap V=D(\pi^\#(f_j))$ is affine as we have argued above, so $U\cap V$ is union of finitely many quasicompact sets.
+\end{proof}
+\begin{exr}
+Show that affine morphisms are quasicompact and quasiseparated.
+\end{exr}
+\begin{proof}[Sol.]
+Because affine scheme is both quasicompact (Exercise~\ref{chap3exr:affine_scheme_quasicompact}.a) and quasiseparated~\ref{chap5exr:affine_schemes_quasiseparated}.
+\end{proof}
+\begin{exr}
+What is  the natural map $\Gamma(X,\calo_X)_s\lrta \Gamma(X_s,\calo_X)$ of the Qcqs lemma 7.3.5?
+\end{exr}
+\begin{proof}[Sol.]
+By definition, $X_s$ is the locus on $X$ where $s$ does not vanish.
+
+There is a natural restriction map from $\Gamma(X,\calo_X)\lrta \Gamma(X_s,\calo_X)$. In order to apply the universal property of localization. We only need to show that $\res(s)$ is invertible in $\Gamma(X_s,\calo_X)$. See Exercise~\ref{chap3exr:locally_ringed_space_function_value}, we know $\res(s)$ does not vanish on $X_s$ and is thus invertible. Then we deduce by universal property of localization, there is a natural map from $\Gamma(X,\calo_X)_s$ to $\Gamma(X_s,\calo_X)$. 
+\end{proof}
+\begin{exr}
+Suppose $Z$ is closed subset of an affine scheme $\spec A$ locally cut out by one equation. Show that the complement $Y$ of $Z$ is affine.
+\end{exr}
+\begin{proof}[Sol.]
+$Z$ is locally cut out by one equation, which means there is affine open cover $\spec B_i$ of $\spec A$ such that $Z\cap \spec B_i$ is of the form $\spec B_i-\spec (B_i)_{f_i}$. Consider the morphism from $Y\inj \spec A$. We know there is an affine open cover $\{V_i\}$ of $\spec A$ such that each $\pi^{-1}(V_i)$ is affine. We know by proposition that affine morphism is  an affine-local property.
+\end{proof}
+\begin{exr}\label{chap7exr:finiteness_is_affin-local_on_target}
+Show that a morphism $\pi:X\lrta Y$ is finite if there is a cover of $Y$ by affine open sets $\spec A$ such that $\pi^{-1}(\spec A)$ is the spectrum of a finite $A$-algebra.
+\end{exr}
+\begin{proof}[Sol.]
+We would still use the Affine communication lemma and need to check the following two points.
+
+$(i)$ if $\pi^{-1}(\spec A)\lrta \spec A$ is a finite morphism, the induced map $\pi^{-1}(\spec A_f)\lrta \spec A_f$ is also a finite morphism for each $f\in A$.
+
+$(ii)$ if $A=(f_1,...,f_n)$ and each $\pi^{-1}(\spec A_{f_i})$ is finite over $\spec A_{f_i}$, then the morphism $\pi^{-1}(\spec A)\lrta \spec A$ is finite.
+
+For $(i)$, it is true because given $\pi^{-1}(\spec A)\cong \spec B$, we have the correspondence $\pi^{-1}(\spec A_f)\cong \spec B_{\pi^\#(f)}$. 
+$$
+\pi:\spec B\lrta \spec A
+$$
+$$
+\pi^\#:A\lrta B
+$$
+
+If $B$ is a finite $A$ algebra, $B_{\pi^\#(f)}$ is also finite over $A_f$. (which is true for arbitrary finitely generated module  and localization for general multiplication set because $S^{-1}M=M\otimes_A S^{-1}A$)
+
+For $(ii)$, we know from Proposition above that affine morphism is affine-local on target. Then condition of $(ii)$ already implies that $\pi$ is an affine morphism. Then we know $A=(f_1,..,f_n)$ and $B_{\pi^\#(f_i)}$  is a finite $A_{f_i}$-algebra and these morphisms are induced by $\pi^\#:A\lrta B$. 
+
+Then \textbf{claim}: $B$ is a finite $A$-algebra, which is just \cite[\href{https://stacks.math.columbia.edu/tag/02JL}{Lemma 02JL}]{stacks-project} and can be proved in a same fashion as Exercise~\ref{chap7exr:integral_affine-local_on_target}.
+
+Let $b\in B$, $b/1\in B_{\pi^\#(f_i)}$ can be expressed as linear combination with coefficients in $A_{f_i}$. If we eliminate the denominator,
+$$
+f_i^{t_i}b=\sum_{k=1}^{m_i}a_k b_k.
+$$
+Again, we engineer the powers of $f_i$ to get coefficient $1$, and this would give a finite expansion of $b$. This proves $B$ is a finite $A$-algebra.
+\end{proof}
+\begin{exr}\label{chap7exr:finite_morphisms_to_specK}
+Show that if $X\lrta \spec k$ is a finite morphism, then $X$ is a finite union of points with the discrete topology, each point with residue field a finite extension of $k$. 
+\end{exr}
+\begin{proof}[Sol.]
+We know $X=\pi^{-1}(\spec k)$, which which must be affine. Assume then $X=\spec A$, by the definition of finite morphism, $A$ is a finite $k$-algebra. 
+
+We follow the hint to prove it step by step. Given a primes ideal $\scp\subset A$, we have $A/\scp$ is a finite $k$-algebra, We already know from Exercise~\ref{exr:chap3_fin-dim_k_domain_is_field} that a integral domain which is also a finite dimensional $k$-vector space must be a field. Then we know $A/\scp$ is a field and thus all prime ideals in $A$ are maximal. The topological space $X$ contains only closed point. In particular, it means all minimal primes ideals are maximal, which implies each irreducible component is a closed point.
+
+Recall that connected component is union of irreducible components that intersect. We know now each connected component is a closed point. $X$ has discrete topology.
+
+Also recall $\spec A$ is quasicompact, it has to be finite if it is discrete.
+
+There is an induced morphism from to $k$ to $\kappa(\scp)$ , which is again finite as we have argued in 7.3.G. $\kappa(\scp)/k$ is a finite field extension.
+\end{proof}
+\begin{exr}
+Show that the composition of two finite morphism is also finite.
+\end{exr}
+\begin{proof}[Sol.]
+Consider $X\lrta Y\lrta Z$, consider an affine open $\spec C\subset Z$ the preimage $\spec B\subset Y$ and again the preimage of $\spec B$ in $X$ is $\spec A$. We find a composition of  finite ring morphisms
+$$
+C\lrta B\lrta A.
+$$
+$A$ is a finite $C$-algebra.
+\end{proof}
+\begin{exr}
+If $R$ is an $A$-algebra, define a graded ring $S_\bullet$ by $S_0=A$ and $S_n=R$ for $n>0$. Describe an isomorphism  $\Proj S_\bullet\cong \spec R$. Show that if $R$ is a finite $A$-algebra then $S_\bullet$ is a finitely generated graded ring over $A$, and hence that $\spec R$ is a projective $A$-scheme.
+\end{exr}
+\begin{proof}[Sol.]
+$S_\bullet=A\oplus R \oplus R\cdots \oplus R\cdots$.
+The product structure of $S_\bullet$ is quite clear,  $S_{0}\times S_i=A\times R\lrta S_i =R$ and $S_{i}\times S_{j}\lrta S_{i+j}=R$.
+
+Recall that $\Proj S_\bullet$ is covered by affine charts $D(f)=\spec ((S_\bullet)_f)_0$ for each homogeneous element $f\in S_+$, where $((S_\bullet)_f)_0$ is the zero price of the localization $(S_\bullet)_f$.
+
+In our specific case, $f$ can be regarded as an ordinary element in $R$. We claim:
+$$
+((S_\bullet)_f)_0\cong R_f.
+$$ 
+$(S_\bullet)_f$ is a graded ring and $\deg(1/f)=-\deg(f)$. A general term of its degree $0$ piece is $r_{n \deg(f)}/f^{n}$, where $r_{n \deg(f)}\in S_{n \deg(f)}$. We can naturally regard it as a copy of $R_f$. (In fact general degree $k$ piece of $(S_{\bullet})_f$ is a copy of $R_f$, though they are not rings.) 
+
+Then we can glue up these isomorphisms on an affine open cover to the whose scheme, we have $\Proj S_\bullet\cong \spec R$.
+
+If $R$ is a \textbf{finite} $A$-algerbra, finitely generated as an $A$-module, $S_\bullet$ is a finitely generated $A$-algebra. Choose an $A$-base of $S_1=R$, say $\{m_i\}$. $1=\sum_i a_i m_i$. The $\{m_{i,S_2}\}$ in $S_2$ can be expressed as $1_{S_1}\times m_{i,S_1}$, which is a polynomial in $m_{i,S_1}$. We can express any homogeneous element in $S_\bullet$ as polynomial  in $A[m_1,..,m_n]$, which means $S_\bullet$ is a finitely generated graded $A$-algebra.
+
+As a result, we know when $R$ is a finite $A$-algebra, $\spec R$ is a projective $A$-scheme.
+\end{proof}
+\begin{exr}
+Show that finite morphisms have finite fibers. By fibers, we mean $\pi^{-1}(q)\in X$ given $\pi:X\lrta Y$ and $q\in Y$.
+\end{exr}
+\begin{proof}[Sol.]
+Still, we follow the hint and prove it step by step. Consider the case both $X=\spec A$ and $Y=\spec B$ are affine and now we have a ring morphism $\pi^\#:B\lrta A$ and $q=[\scq]$, then $\pi^{-1}(\overline{q})$ in fact means prime ideals in $A$ whose preimage under $\pi^\#$ contains (as ideal) $\scq$. And this this preimage is precisely $\spec A/\pi^\#_*(\scq)$.
+
+We have reduced to the morphism $\spec A'=\spec A/\pi^\#_*(\scq)\lrta \spec B/\scq=\spec B'$, which is still finite and in this case $B'$ is integral domain. We denote the induced ting morphism $\sigma:B'\lrta A'$.
+
+The $\spec A'=\spec A/\pi^\#_*(\scq)$ is isomorphic to $\pi^{-1}(\overline{\scq})$ as we mentioned above. It still contains some primes in $A$ whose image contains $\scq$. This time , we want to throw out the point that is contained in $\overline{\scq}$ (the primes that contains $\scq$). Recall that localization at $\scp$ would induce a bijection between prime ideals in $B_\scq$ and primes in $B$ that is contained in $\scq$. If we localize at $[(0)]$ for $(0)\subset B'$ this time, we would get an induced  ring morphism
+$$
+\sigma':K([0])=B'_{(0)}\lrta (\sigma(B-(0)))^{-1}A',
+$$
+which is the functorial property of localization and $K([0])\lrta (\sigma(B'-(0)))^{-1}A'$ is still a finite morphism by a similar argument in 7.3.G and 7.2.A.
+
+The points in $\spec (\sigma(B'-(0)))^{-1}A'$ one-to-one correspond to primes in $A'$ that does not intersects $\sigma(B'-(0))$, i.e., those primes $\scp \subset A'$ such that $\sigma^{-1}(\scq)\subset (0)$. $\spec (\sigma(B'-(0)))^{-1}A'\cong \pi^{-1}(\scq)$.
+
+And this problem has been reduced to Exercise~\ref{chap7exr:finite_morphisms_to_specK} and we are done.
+\end{proof}
+\begin{exr}
+Show that the open embedding $\affn^1_\cplx-\{0\}\lrta \affn^1_\cplx$ has finite fibers and is affine, but is not finite.
+\end{exr}
+\begin{proof}
+It is a simple injection and indeed has finite fibers. It is not finite morphism because it is not even an affine morphism.
+$\pi^{-1}(\affn^1_\cplx)$ is not an affine scheme.
+\end{proof}
+\begin{exr}
+Prove that integral morphisms are closed, i.e., that the image of closed subsets are closed. (Hence finite morphisms are closed.)
+\end{exr}
+\begin{proof}[Sol.]
+Consider an integral morphism $\pi:X\lrta Y$ and a closed set $U\subset X$. The affine opens in $X$ has the induced topology, hence $U\cap \spec A$ is closed in $\spec A$. consider an affine open in $Y$, similarly $\pi(U)$ is closed in $Y$ iff $\pi(U)\cap\spec B$ is closed in $\spec B$ for any affine open in $Y$. We have reduced to the affine case. If $\pi^\#:B\lrta A$ is a ring map, inducing the integral morphism $\pi:\spec A\lrta \spec B$, then suppose $I\subset A$ cuts out a closed set of $\spec A$ and $J=(\pi^{\#})^{-1}(I)$, then note that $B/J\subset A/I$ and $A/I$ is integral over $B/J$.
+
+Let $x+I\in A/I$. Write the monic polynomial of $x$ with coefficients in $\pi^\#(B)$ and then mod the equation by $I$, it becomes an equation of $x+I$ with coefficients in $\pi(B/J)$.
+
+At the level of closed sets, we have $\pi(\spec A/I)\subset \spec(B/J)$. By the lying-over theorem 7.2.5, we know it is surjective. each primes ideal in $B/J$ has a prime ideal in $A/I$ that lies over it. In other words, it has closed image. 
+\end{proof}
+\begin{exr}
+Suppose $B\lrta A$ is integral. Show that for any ring homomorphism $B\lrta C$, the induced map $C\lrta A\otimes_B C$ is integral.
+\end{exr}
+\begin{proof}[Sol.]
+We want to show that any $\sum_{i=1}^n a_i\otimes c_i$ is integral over $C$. We firstly realize that a single $a\otimes c$ is integral over $C$.  On the other hand, we recall that integral elements form a subalgebra, which means each $\sum_i a_i\otimes c_i$ is integral over $C$.
+\end{proof}
+\begin{exr}
+Show that a morphism $\pi:X\lrta Y$ is locally of finite type if there is a cover of $Y$ by affine open sets $\spec B_i$ such that $\pi^{-1}(\spec B_i)$ is locally finite type over $B_i$.
+\end{exr}
+\begin{proof}[Sol.]
+We still use the affine communication lemma and need to prove the following two points.
+
+$(i)$ If $\pi^{-1}(\spec B)\lrta \spec B$ is (locally) of finite type, the the induced map $\pi^{-1}\spec B_f\lrta \spec B_f$ is also (locally) of finite type.
+
+$(ii)$ If $(f_1,..,f_n)=B$ and each $\pi^{-1}(\spec B_f)\lrta\spec B_f$ is (locally) of finite type, then the morphism $\pi^{-1}(\spec B)\lrta \spec B$ is also (locally) of finite type.
+
+For point  $(i)$, if $\pi^{-1}(\spec B)$ can be covered by (finite many) affine opens $\spec A_i$ so that each $\sigma_i^\#:B\lrta A_i$ express $A_i$ as a finitely generated $B$-algebra. Then for a given $f\in B$, we we have $\pi^{-1}(\spec B_f)\cap \spec A_i$ is affine in $\spec A_i$ and of the form $\spec A_{i,\sigma_i^\#(f)}$. By Proposition 5.3.3, we know each $A_{i,\sigma_i^\#(f)}$  is a finitely generated $B_f$-algebra. (assume $A$ is finitely generated over $B$ by $r_1,..,r_n$, then $A_{\sigma^\#(f)}$ is generated over $B_f$ by $r_1/1,..,r_n/1$). Then $\pi^{-1}(\spec B_f)$ is covered by $\spec A_{i,\sigma_i^\#(f)}$ and the finiteness of of number of covering affine opens is not affected.
+
+As for point $(ii)$, assume $(f_1,..,f_n)=B$ and each induce $\pi^{\spec B_{f_k}}$ can be covered by finitely many affine opens $\spec A_{k,i}$ and each $A_{k,i}$ is a finitely generated $B_{f_k}$-algebra. Then $\pi^{-1}(\spec B)$ is covered by all the $\spec A_{k,i}$ and each $A_{k,i}$ is a finitely generated $B$-algebra ($B_{f_k}$ is a finitely generated $B$-algebra by $1/f_{k}$ and composition of finitely generated morphism is again finitely generated.) There are only finitely many $A_{k,i}$ if each $\pi^{-1}(\spec B_{f_k})$ is over finite type over $\spec B_{f_k}$.
+\end{proof}
+\begin{exr}\label{chap7exr:finite=integral+finite_type}
+\ 
+\begin{enumerate}[label=(\alph*)]
+\item Show that finite morphism are of finite type.
+\item Show that a morphism  is finite  if and only if it is integral and of finite type.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+$(a)$ Finite $A$-algebra, by definition is a finitely generated $A$-algebra and  by definition of finite morphism, given an affine open $\spec A$ in $Y$, $\pi^{-1}(\spec A)$ is an affine open $\spec B$ itself is a finite covering.
+
+$(b)$ {\color{red}In fact, we can loose the condition to locally of finite type.} See \cite[\href{https://stacks.math.columbia.edu/tag/01WJ}{Lemma 01WJ}]{stacks-project}. One direction is easy. Given a finite morphism, it is of finite type as has been proved in $(a)$ and we know from Corollary 7.2.2 that given $B\lrta A$, where $A$ is a finite $B$-algebra, then $B\lrta A$ is an integral homomorphism.
+
+Conversely, given an integral and locally-finite-type morphism $\pi:X\rta Y$. For every affine open $\spec B$ of $Y$, $\pi^{-1}(\spec B)$ can be covered with a possibly infinite number of affine opens $\spec A_i$ so that the induced morphism $B\lrta A_i$ expresses $A_i$ as a finitely generated $B$-algebra. Moreover $\pi:X\lrta Y$ is integral, then in fact $\pi^{-1}(\spec B)$ should be affine. Because the properties are affine-local on the target as we have proved in many different exercises above, the restriction $\pi^{-1}(\spec B)\lrta \spec B$ should be both integral and locally of finite type. We have reduced to the case $\spec A\lrta \spec B$.
+
+The morphism $\spec A\lrta \spec B$ is integral iff $A$ is  integral over $B$ and it is locally of finite type iff $A$ is a finitely generated $B$-algebra by the first definition of \textbf{locally of finite type}. 
+
+Then see \cite[\href{https://stacks.math.columbia.edu/tag/02JJ}{Lemma 02JJ}]{stacks-project} or Lemma 7.7 in \href{https://github.com/ldXiao/Notes2017fall/blob/master/CA/CA.pdf}{this notes}. We know $A$ must be a finite $B$-algebra, which means $\spec A=\pi^{-1}(\spec B)\lrta \spec B$ is a finite morphism. We  have choose $\spec B$ arbitrarily, we can find a cover of $Y$ with $\spec B_i$ such that  each $\pi^{-1}(\spec B_i)\lrta \spec B_i$ is finite morphism and then $X\lrta Y$ is a finite morphism by affine-locality of finite morphism.
+ \end{proof}
+ \begin{exr}
+ \ 
+ \begin{enumerate}[label=(\alph*)]
+\item Show that every open embedding is locally of finite type, and hence that every quasicompact open embedding is of finite type. Show that every open embedding into a locally Noetherian scheme is of finite type.
+\item Show that the composition of two morphisms locally of finite type is locally of finite type. ( Hence as the composition of two quaiscompact morphisms is quasi compact, in exercise 7.3.A, the composition of two morphisms of finite type is of finite type.)
+\item Suppose $\pi:X\lrta Y$ is locally of finite type, and $Y$ is locally Noetherian. Show that $X$ is also locally Noetherian. If $\pi:X\lrta Y$ is  a morphism of finite type, and $Y$ is Noetherian, show that $X$ is Noetherian. 
+ \end{enumerate}
+ \end{exr}
+ \begin{proof}[Sol.]
+ $(a)$ Given an open embedding, $X\cong U\inj Y$. Consider an affine open cover $\spec B_i$ of $U$, add some more affine opens to get an affine open $\spec C_j$ cover of $Y$. The preimage $\pi^{-1}(\spec B)$ is an affine open in $X$ and isomorphic to $\spec B$, $B$ is a finitely generated $B$-algebra. $\pi^{-1}(\spec C_j)$ is of the form $\cup_i(\spec B_i)\cap \spec C_j$ union of open subsets in $\spec B_i\cap \spec C_j$.  By proposition 5.3.1, we know is can be covered by simultaneously distinguished open subschemes of $\spec B_i$ and $\spec C_j$, i.e., $\pi^{-1}(\spec C_j)$ can be covered by affine opens like $\spec C_{j,f}$ and $C_{j,f}$ is finitely generated $C_j$-algebra.
+
+Then by affine-locality of locally of finite type morphisms, we know the open embedding $\pi:X\lrta Y$ is locally of finite type.
+
+
+We have to in addition show that open embedding into a locally Noetherian scheme is quasicompact. We only need to check $\pi^{-1}(\spec C_j)$ is quasicompact. We modify the proof above but this time $B_i$ and $C_j$ are Noetherian rings. $\pi^{-1}(\spec C_j)\cong \cup_i(\spec B_i\cap \spec C_j)$. $\spec B_i\cap \spec C_j$ is a subset of a Noetherian topological space which is quasicompact. It can be covered by finitely many $\spec C_{j,f}$. Moreover because $U\cap \spec C_j$ is also a subset of Noetherian space, it is also quasicompact, thus covered by only finitely many $\spec B_i$. We know $\pi^{-1}(\spec C_j)$ can be expressed as a finite union of quasicompact set.  By the affine-locality of quasicompact morphism, we know open embeddings into  a locally Noetherian scheme is of finite type.
+
+$(b)$, we only need to check the affine case, given $\spec A\lrta \spec B\lrta \spec C$,  each is locally of finite type, i.e., $A$ is a finitely generated $B$-algebra and $B$ is a finitely generated $C$-algebra.
+Assume $A=B[r_1,..,r_n]$ and $B=C[g_1,..,g_m]$, then given an element $a\in A$, it can expressed as $\sum_i b_I r^I$ and we can express the coefficients $b_I$ as polynomials in $g_1,..,g_m$. $A$ is finitely generated over $C$ by $r_1,..,r_n, \pi^{\#}(g_1),...,\pi^{\#}(g_m)$.
+
+$(c)$, $\pi:X\lrta Y$ is locally of finite type, and $Y$ is locally Noetherian. Given a point $x\in X$, which maps to $y\in Y$, there is an affine Noetherian open nbhd of $y$ in $Y$, say $\spec B\subset Y$, the preimage $\pi^{-1}(\spec B)$ can be expressed as union of affine opens $\spec A_i$, where each $A_i$ is a finitely generated $B$-algebra. Each $A_i$ is a Noetherian ring by Hilbert basis theorem. Then we know $X$ is also locally Noetherian. 
+
+If $\pi:X\lrta Y$ is of finite type and $Y$ is Noetherian, we can cover $Y$ by finitely many affine open $\spec B_i$ where each $B_i$ is Noetherian. $\pi^{-1}(\spec B_i)$ is a finite cover of $X$ and each $\pi^{-1}(\spec B_i)$ is cover by finitely many affine opens $\spec A_{i,k}$, where $A_{i,k}$ is finitely generated ring over $B_i$. They are Noetherian by Hilbert basis theorem. We then know $X$ is covered by finite many $\spec A_{i,k}$ where $A_{i,k}$ are Noetherian. Hence $X$ is Noetherian. 
+ \end{proof}
+\begin{exr}
+Suppose $p$ is prime and $r\in \intg^+$. Let $q=p^r$ and $k=\bbf_q$. Define $\phi:k[x_1,..,x_n]\lrta l[x_1,..,x_n] $ by $\phi(x_i)=x_i^p$ for each $i$, and let $F:\affn^n_k\lrta \affn^n_k$ be the map of schemes corresponding to $\phi$.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $F^r$ is the identity on the level of sets, but is not the identity morphism.
+\item Show that $F$ is bijection but is not an isomorphism of schemes.
+\item If $K=\overline{F}_p$, show that the morphism $F:\affn^n_K\lrta \affn^n_K$ of $K$-schemes corresponding to $x_i\mapsto x_i^p$ is a bijection, but no power of $F$ is the identity on the level of sets.
+\end{enumerate}
+\end{exr}
+\begin{exr}
+Suppose $X$ is a scheme over $\bbf_p$. Explain how to define an endomorphism $F:X\lrta X$ such that for each affine open subset $\spec A\subset X$, $F$ corresponds to th emap $A\lrta A$ given by $f\mapsto f^p$ for all $f\in A$. (The morphism $F$ is called the \textbf{absolute Frobenius morphism}.)
+\end{exr}
 \section{Images of morphisms: Chevalley's theorem and elimination theory}
 \chapter{Closed embeddings and related notions}
 \section{Closed embeddings and closed subschemes}
+\begin{exr}\label{chap8exr:8.1.A}
+Show that a closed embedding identifies the topological space of $X$ with a closed subset of the topological space of $Y$. 
+\end{exr}
+\begin{proof}
+We need to find a closed subset $W\subset Y$ and construct an homeomorphism between $X$ and the $W$. The canonical choice is $W=\pi(X)$. Given an affine open cover $\{\spec B_i\}$ of $Y$ (, which also covers $\pi(X)$). Each corresponds to a preimage $\pi^{-1}(\spec B_i)=:\spec A_i$. Where $A_i$ is of the form $B_i/J_i$, where $J_i$ is an ideal in $B_i$. Suppose $\pi$ is not surjective topologically, select a point $p\in Y-\pi(X)$, which is contained in an affine set $B_i$. and we denote $p=\scp\in \spec B_i$. In other words, $\scp\in \spec B_i-\pi(\spec A_i)$. We know $B_i\lrta A_i$ is of the form $B_i\lrta B_i/J_i$, which leads to an isomorphism $\spec A_i\cong \spec B_i/J_i$ (as schemes). And topologically $\pi(\spec A_i)$ is homeomorphic to $\spec B_i/J_i$ which is a closed subset of $\spec B_i$. There is an open subset of $Y$ that contains $p$ and disjoint with $\pi(X)$. This means $\pi(X)$ is closed subset of $Y$.
+
+Obviously, $X$ is locally homeomorphic to $\pi(X)$. We only need to $\overline{\pi}:X\lrta \pi(X)$ is bijective. By definition $\overline{\pi}$ is surjective. We only need to show that it is injective. This is true because of the explicit local form $\spec A_i\cong \pi(\spec A_i)\cong \spec B_i$.
+\end{proof}
+\begin{exr}\label{chap8exr:closed_embeddings_finite}
+Show that closed embeddings are finite morphisms, hence of finite type.
+\end{exr}
+\begin{proof}[Sol.]
+Given an affine open subset $\spec B\subset Y$, the preimage $\pi^{-1}(\spec B)$ is affine open $\spec A\subset X$.  And $B\lrta A$ is  of the form $B\lrta B/I$ for some ideal $I\subset B$. $B/I$ is finite  $B$-module over $1\in B/I$. Hence by definition, closed morphisms are finite and of finite type.
+\end{proof}
+\begin{exr}
+Show that composition of two closed embeddings is a closed embedding.
+\end{exr}
+\begin{proof}[Sol.]
+Composition of affine morphism is affine. We only need to consider $\spec A\lrta \spec B\lrta\spec C $, where $B=C/I$ and $A=B/J$. Ideals in $B$ is of the form $J'/I$, where $J'$ is an ideal in $C$ that contains $I$. We  have an isomorphism $A=B/J=(C/I)/(J'/I)\cong C/J'$. Then we know composition of closed embeddings is still closed embedding.
+\end{proof}
+\begin{exr}
+Show that the property of being a closed embedding is affine-local on the target.
+\end{exr}
+\begin{proof}[Sol.]
+It is easy to show that restrictions of closed embeddings are still closed embeddings. We still use the affine communication lemma to show the remaining part. The two following points need to be checked.
+
+$(i)$. Given an affine open $\spec B\subset Y$ where $\pi^{-1}(\spec B)\lrta \spec B$ is a closed embedding, then $\pi^{-1}(\spec B_f)\lrta \spec B_{f}$ is closed embedding.
+
+$(ii)$. Assume $(f_1,...,f_n)=B$ and consider the morphism $\pi^{-1}(\spec B)\lrta \spec B$. If each $\pi^{-1}(\spec B_{f_i})\lrta \spec B_{f_i}$ is closed embedding, then so is $\pi^{-1}(\spec B)\lrta \spec B$. 
+
+$(i)$ closed embedding is affine and assume $\spec A\cong \pi^{-1}(\spec B)$. Then we know $\pi^{-1}(\spec B_f)\cong \spec A_{\pi^\#(f)}$. The induced ring morphism $B_f\lrta A_{\pi^\#(f)}$ is still surjective, $b/f^n\mapsto \pi^\#(b)/\pi^{\#}(f)^n$. For any affine open subset in $\spec B_{f}$, they can be regarded as affine opens in $\spec B$ and the corresponding ring morphism is still surjection.
+
+$(ii)$ Assume $(f_1,...,f_n)=B$ and consider the morphism $\pi^{-1}(\spec B)\lrta \spec B$. Each $\pi^{-1}(B_{f_i})$ is affine, say isomorphic to $\spec A_i$. According to Proposition 7.3.4, we know $X=\pi^{-1}(\spec B)$ is also affine say $\spec A$.
+
+We need to relate the $A_i$ to $A_{\pi^\#(f_i)}$. Because we know $\spec A_i\lrta \spec B$ is induced by $\pi:\spec A\lrta \spec B$, we know $\pi^{-1}(\spec B_{f_i})\cong \spec (A_{\pi^{\#}(f_i)})$. We have $A_i\cong A_{\pi^\#(f_i)}$.
+
+Now claim: $\pi^\#:B\lrta A$ and $(f_1,..,f_n)=B$, if each induces maps $B_{f_i}\lrta A_{\pi^{\#}(f_i)}$ is surjective, so is $\pi^\#$.
+
+The above is a variant of ``local property'' but localize at some elements instead of prime ideals. Assume $a\in A$, for $a/1\in A_{\pi^{\#}(f_i)}$, it can be expressed as $\pi^\#(b_i)/\pi^\#(f_i)^{n_i}$. It means
+ $$a*\pi^\#(f_{i})^{m_i}= \pi^\#(b_i f_{i}^{N_i})$$.
+
+Again, we engineer the powers of $f_i$ to get a coefficient $1$, using the fact $(f_1,..,f_n)=B$. Then we know $a=\pi(\text{ some polynomials in $f_i$})$. Then $B\lrta A$ is surjective.
+\end{proof}
+\begin{exr}
+Suppose $B\lrta A$ is a surjection of rings. Show that the induced morphism $\spec A\lrta \spec B$ is a closed embedding.
+\end{exr}
+\begin{proof}[Sol.]
+We can check that ``induces surjective ring morphism'' is a property that satisfies the conditions in affine communication lemma. 
+
+Given a ring morphism $\pi^\#:B\lrta A$, we have $B_{f}\lrta A_{\pi^\#(f)}$ is also a surjective morphism of ring for each $f\in B$. Then by affine communication lemma, we know for each affine open subset $\spec C\subset\spec B$, then inverse image is affine and the ring morphism is surjective.
+\end{proof}
+\begin{exr}
+Let $X=\spec k[x]_{(x)}$, the germ of the affine line at the origin, which has two points, then closed point and the generic point $\eta$. DEfine $\calj(X)=\{0\}\subset \calo_X(X)=k[x]_{(x)}$, and $\calj(\eta)=k(x)=\calo_X(\eta)$. Show that this sheaf of ideals does not correspond to a closed subscheme. 
+\end{exr}
+\begin{proof}[Sol.]
+We directly use  the result of Exercise 8.1.G.
+
+$\eta$ is an affine open in $X$ because it is the complement of the closed point $\scm=[(x)k[x]_{(x)}]=V(x)$. $\{\eta\}=D(x)$. And we know $D(x)=\spec (k[x]_{(x)})_x=\spec k(x)$. But in this definition 
+$I(\spec k[x]_{(x)})_x\neq I(\spec (k[x]_{(x)})_x )$.
+\end{proof}
+\begin{exr}
+Suppose $\calj_{X/Y}$ is a sheaf of ideals corresponding to a closed embedding $X\inj Y$. Suppose $\spec B\inj Y$ is an affine open subscheme, and $f\in B$. Show that the natural map $I(B)_f\lrta I(B_f)$ is an isomorphism. 
+\end{exr}
+\begin{proof}[Sol.]
+We have an exact sequence of $\calo_Y$-modules.
+$$
+0\lrta \calj_{X/Y}\lrta \calo_Y
+\lrta \pi_*\calo_X\lrta 0.
+$$
+By exercise~\ref{chap2exr:left_exact_global_section}, we know taking sections of is left exact, but by the definition of closed embeddings, we know the map $\calo_Y(\spec B)\lrta  \pi_*\calo_X(\spec B)$ is a surjection. Hence, we have 
+$$
+0\lrta I(B)\lrta \calo_Y(\spec B)\lrta  \pi_*\calo_X(\spec B)\lrta 0
+$$
+is exact sequence of $B$-modules. It is still exact after taking localizations
+$$
+0\lrta I(B)_f\lrta \calo_Y(\spec B)_f\lrta  \pi_*\calo_X(\spec B)_f\lrta 0
+$$
+Check that $I(B_f)$ would satisfies the same exact sequence because $\pi_*\calo_X(\spec B)_f\cong  \pi_*\calo_X(\spec B_f)$ and $ \calo_Y(\spec B)_f\cong  \calo_Y(\spec B_f)$.
+
+This means  $I(B)_f\cong I(B_f)$ as $B_f$-modules.
+\end{proof}
+\begin{exr}\label{chap8exr:criterion_closed_subscheme}
+Suppose $Y$ is a scheme, and for each affine open subset $\spec B$ of $Y$, $I(B)\subset B$ is an ideal. Suppose further that for each affine open subset $\spec B\inj Y$ and each $f\in B$, restriction fo functions from $B\lrta B_f$ induces an isomorphism $I(B_f)\cong I(B_f)$. Show that these data rise from a (unique) closed subscheme $X\inj Y$ by the above construction.  In other words, the closed embeddings $\spec B/I\inj \spec B$ glue together in a well-defined manner to obtain a closed embedding $X\inj Y$.
+\end{exr}
+\begin{proof}[Sol.]
+In FOAG, we all provided 3 different approaches with hints. I choose to follow approach $2$.
+
+First, we observe that $\spec B_f$ form a base of $\spec B$, the data of $I(B_f)$ gives a sheaf on base on $\spec B$ and there is a unique sheaf on $\spec B$ that compatible with the sheaf on base.
+
+$Y$  has an affine open cover, say $\spec B_i$. We want to check the sheaves $\calj_i$ on $\spec B_i$, satisfies the cocycle condition. 
+
+Recall that intersections of affine schemes still has the base of common distinguished opens and the sections on theses common distinguished opens are fixed by the predefined $I(B)$ data. The sheaf isomorphism $\calj_i|_{\spec B_i\cap \spec B_j}\lrta \calj_j|_{\spec B_i\cap \spec_j}$ is just identity, which must satisfy the cocycle relation. We get a unique sheaf $\calj$ on $Y$ that satisfies $\calj|_{\spec B_i}=\calj_i$.
+
+Assume now we have another affine open $\spec B$ which is not among the defining covering $\{\spec B_i\}$. Adding $\spec B$ into the original $\{\spec B_i\}$, still form an cover. We will get another sheaf $\calj'$ on $X$, but when restricting to $\spec B_i$, it is the same as $\calj$. By the uniqueness, $\calj'=\calj$ and hence 
+$$
+\calj(\spec B)=\calj'(\spec B)=I(B).
+$$
+
+Finally, we need to check the quotient sheaf $\calo_Y/\calj(\spec B)$ is indeed $B/I(B)$.
+$\calo/\calj$ is the sheafification of the following presheaf
+$$
+\calh:U\mapsto \calo(U)/\calj(U).
+$$
+
+By definition 
+$$
+\calh^{sh}(U):=\left\{(f_p\in\calh_p)_{p\in U}:\begin{aligned}
+\text{ for all $p \in U$, there exists an open nbhd $V$ of $p$},\\
+  \text{contained in $U$ and $s\in \calh(V)$ with $s_q=f_q$ for all $q\in  V$} 
+  \end{aligned}
+ \right\}
+$$
+In the special case where $U=\spec B$, each point $p=[\scp]$ for some ideal and 
+$\calh_\scp=B_\scp/I_\scp$. The compatible germ condition amounts to say all $f_\scp$ is localized from a single $f\in B/I(B)$. There is an obvious isomorphism between $B/I(B)$ and $\calh^{sh}(\spec B)$.
+\end{proof}
+\begin{exr}
+\ \begin{enumerate}[label=(\alph*)]
+\item Suppose $Y$  is a scheme, and $s\in \Gamma(Y,\calo_Y).$ Define the closed subscheme cut out by $s$, We call this the vanishing scheme $V(s)$ of $s$, as it is the scheme-theoretic version of out earlier (set-theoretic) version of $V(s)$. 
+\item If $u$ is an invertible function, show that $V(s)=V(su)$
+\item If $S$ is a set of functions define $V(S)$.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+$(a)$ According to the hint, we need to first define the ideal sheaf corresponding to the closed subscheme. 
+
+On an affine open $\spec B$, we give
+$$
+I(B):= (s_B)
+$$
+where $(s_B)$ is the ideal generated by the restriction  $s_B$. For each $f\in B$, we do have
+$$
+I(B_f)=(s_{B_f})\cong(s_B)_f=I(B)_f
+$$
+
+By 8.1.H, we know this would give an ideal sheaf that corresponding to a closed embedding.
+
+$(b)$ If $u$ is an invertible function. We can check $u_B\in B$ is still invertible (because $1$ always restrict to $1$). Hence $(s_B u_B)=(s_B)$. They corresponds to a same ideal sheaf and thus corresponds to a same closed embedding.
+$(c)$, If $S$ is a set of functions, denote the ideal generated by the restrictions of elements in $S$ by $\lgl S_B\rgl$, and we define 
+$$
+I(B)=\lgl S_B\rgl.
+$$
+\end{proof}
+\begin{exr}
+\ 
+\begin{enumerate}[label=(\alph*)]
+\item In analogy with closed subsets, define the notion of \textbf{finite union of closed subschemes } of $X$, and arbitrary \textbf{intersection of closed subschemes} of $X$.
+\item Describe the scheme-theoretic intersection of $V(y-x^2)$ and $V(y)$ in $\affn^2$.
+\item Show that the underlying set of finite union of closed subschemes is the finite union of the underlying sets, and similarly for arbitrary intersections.
+\item Describe the scheme-theoretic intersection of $V(y^2-x^2)$ and $V(y)$ in $\affn^2$. Draw a picture. Hence show that if $X,Y$ and $Z$ are closed subschemes of $W$, then $(X\cap Z)\cup (Y\cap Z)\neq (X\cup Y)\cap Z$ in general. In particular, not all properties of intersection and union carry over from  sets to schemes.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+$(a)$, we hope it locally behaves in a same way as closed sets in affine schemes.
+
+Recall $V(I_1)\cup V(I_2)=V(I_1\cap I_2)=V(I_1\cdot I_2)$, and we choose $V(I_1\cap I_2)$ because we hope the union of $V(I)$ with it self is still $V(I)$.
+
+Assume $Y,Z$ are subschemes of $X$, $\pi_1:Y\inj X$ and $\pi_2:Z\inj X$, for an affine open subset $\spec B$ in $X$, the inverse images are $\pi_1^{-1}(\spec B)=\spec B/I_1$ and $\pi_2^{-1}(\spec B)=\spec B/I_2$. WE define the ideal sheaf of $Y\cup Z$ by the local data $I(B):=I_1\cap I_2$. We need to check it is a well defined closed subscheme. By Exercise~\ref{chap8exr:criterion_closed_subscheme}, we only need to check
+$$
+(I_1\cap I_2)_f=I_{1,f}\cap I_{2,f},
+$$
+which is true because localization commutes with finite intersections.
+
+In order to define the \textbf{arbitrary intersection of closed subschemes}, we define the ideal sheaf of $Y_1\cap\cdots\cap Y_i\cdots $ locally as 
+$$
+I(B):=\sum I_i
+$$
+and 
+$$
+(\sum I_i)_f=\sum I_{i,f}
+$$
+by exercise~\ref{chap1exr:localization_commutes}.
+
+$(b)$, $V(y-x^2)\cap V(y)\subset \affn^2$ is defined to be $\spec k[x,y]/(y-x^2)\cap \spec k[x,y]/(y)=\spec k[x,y]/((y-x^2)+(y))$.
+$(y-x^2)+(y)=(y,x^2)$.
+
+$(c)$. We need to describe the underlying topological space of union of subschemes. It suffices to check on an affine open of $X$.
+
+Given an affine open $\spec B\subset X$, on each affine open, we need to check $(\spec B\cap \pi_1(Y))\cup (\spec B\cap \pi_2(Z))=(\spec B\cap \pi(Y\cup Z))$, where used implicitly both topological union and scheme theoretical union. The above equality is true by our previsous definition of scheme theoretical union. And this argument also works for arbitrary intersections.
+
+$(d)$, $V(y^2-x^2)\cap V(y)\subset \affn^2$ is defined to be $\spec k[x,y]/(y^2-x^2)\cap \spec k[x,y]/(y)=\spec k[x,y]/((y^2-x^2)+(y))=\spec k[x,y]/((y^2-x^2)+(y))=\spec k[x,y]/(y,x^2)$. (They have multiplicity $2$).
+
+The above calculation reveals  not all properties of intersection and union carry over from sets to schemes.
+
+$\spec k[x,y]/(y^2-x^2)=\spec k[x,y]/(x+y)\cup \spec k[x,y]/(x-y)$, and infact
+$$
+\begin{aligned}
+&(\spec k[x,y]/(x+y)\cup \spec k[x,y]/(x-y))\cap \spec k[x,y]/(y)\\
+&\neq \spec k[x,y]/(x+y)\cap \spec k[x,y]/(y))\cup (\spec k[x,y]/(x-y)\cap \spec k[x,y]/(y))
+\end{aligned}
+$$
+\end{proof}
+\begin{exr} 
+IN the literaturem the usual definition of a closed embedding is a is a morphism $\pi:X\lrta Y$ such that $\pi$ induces a homeomorphism of the underlying topological space of $X$ onto a closed subset of the topolofical space of $Y$ and the induced map $\pi^\#:\calo_Y\lrta \pi_*\calo_X$ of sheaves on $Y$ is surjective. Show that this definition agrees with the one given above.
+\end{exr}
+\begin{proof}[Sol.]
+For one direction, we want to check this new definition implies our previous definition. Our proof basically follows \href{https://math.stackexchange.com/a/1722514/286862}{this StackExchange answer}
+
+Topologically, it is a homeomorphism onto a closed subset of topological space of $Y$, which is what we mean by ``closed embedding'' in topology. Given an affine open $\spec B$ in $Y$, $Y\cap \pi(X)$ is also a closed subset in $\spec B$.  $\pi^{-1}(\spec B)=\pi^{-1}(\spec B\cap \pi(X))$ is homeomorphic to the closed subset in $\spec B$ and is of the form $\spec B/I'$. (topologically true, but we still need to prove $\pi^{-1}(\spec B\cap \pi(X))$ is affine.)
+
+The above discussion is purely topological and says nothing of the the morphisms of structure sheaf. Because the $\pi:^\#:\calo_Y\lrta \pi_*\calo_X$ is surjective on $Y$.  $\pi^{-1}(\spec B\cap \pi(X))$ is an open subscheme of $X$ and we have a morphism from it to an affine scheme $\spec B$. WE temporarily denote $\pi^{-1}(\spec B)$ as $Z$. We know restriction of surjective morphism  of sheaves is still surjective (not taking sections)
+$$
+\calo_{\spec B}\lrta \pi_*(\calo_{X}|_{Z}).
+$$ 
+
+We have reduced to the affine case, consider the morphism $\pi:Z\lrta \spec(B)$, it is determined by a ring map $\pi^\#(B):B\lrta \Gamma(Z,\calo_Z)$, by exercise~\ref{chap6exr:morphism_of_schemes_bijection_morphisms_of_global_sections}. Let $I$ be the kernel of the map, so that $\pi$ factors as $\rho\circ \sigma:X\lrta\spec(B/I)\lrta \spec(B)$. We only need to show that $\sigma$ is in fact an isomorphism. 
+
+Both $\pi$ and $\rho$ are closed embeddings in new definition, we have 
+$$
+\pi_p:B_{\pi(p)}\lrta (B/I)_{\rho(p)}\lrta \calo_{Z,p}
+$$
+is surjective and so is
+$$
+\sigma_p:(B/I)_{\rho(p)}\lrta \calo_{Z,p}.
+$$
+
+Then it suffices to check the sheaf morphism $\sigma^\#$  is injective. Let $\cali=ker(\rho^\#)$ and $\calj=\ker(\pi^\#)$ be the ideal sheaf for this two closed embeddings. 
+On the distinguished open subset $D(f)$, $\cali(D(f)):=\ker(B\lrta \Gamma(Z,\calo_Z))_{f}=I_f$ and $\calj(D(f))=J_f$ is the kernel of $\pi^\#(D(f)):A_f\lrta \Gamma(\pi^{-1}(D(f)),\calo_Z)$. We need to show $I_f=J_f$.  
+
+The key step now is to notice that $Z$ is quasicompact and quasiseparated (qcqs), since it is homeomorphic to a closed subset of an affine scheme.
+
+We know by the qcqs lemma 
+$$
+\Gamma(Z,\calo_Z)_{\pi^\#(f)}\cong \Gamma(Z_{\pi^\#(f)},\calo_Z)
+$$ 
+and note that $Z_{\pi^\#(f)}=\pi^{-1}(D(f))$. We know 
+$$
+J_f=\ker(\pi^\#(D(f)))=\ker(B_f\lrta \Gamma(Z_{\pi^\#(f)},\calo_Z))=\ker(B_f\lrta \Gamma(Z,\calo_Z)_{\pi^\#(f)})=\ker(B\lrta \Gamma(Z,\calo_Z))_{f}=I_f.
+$$
+The two sheaves $\calj$ and $\cali$ have same sections on a base of topology and thus have isomorphic stalks,  we know they are isomorphic, hence $\sigma$ is a injective. 
+
+The other direction is easier. Given  the definition in FOAG. We know $\pi(X)$ can be regarded as a closed subset in $Y$ by Exercise~\ref{chap8exr:8.1.A}. Moreover
+$$
+\calo_Y\lrta \pi_*(\calo_X)
+$$
+is surjective in terms of sections on a base of topology. The morphism of sheaves is surjective by Exercise~\ref{chap2exr:surjectivity_morphism_of_sheaves_checked_on_base}.
+\end{proof}
+\begin{exr}
+Show that locally closed embeddings are locally of finite type.
+\end{exr}
+\begin{proof}[Sol.]
+Compare exercise~\ref{chap8exr:closed_embeddings_finite}.
+\end{proof}
 \section{More projective geometry}
 \section{The (closed sub)scheme-theoretic image}
 \section{Effective Cartier divisors, regular sequences and regular embeddings}
@@ -648,7 +1271,7 @@ T &  &  \\
  & X \arrow[u, "i_X"'] \arrow[luu, "\alpha"] & 
 \end{tikzcd}
  $$
- At the level of topological spaces, there is indeed a unique continuous map $X\coprod Y\lrta T$, with $u(i_Y(y)):=\beta(y)$ and $u(i_X(x))=\alpha(x)$. It suffices to construct the corresponding $u^\#:\calo_T\lrta u_*\calo_{X\corpod Y}$. 
+ At the level of topological spaces, there is indeed a unique continuous map $X\coprod Y\lrta T$, with $u(i_Y(y)):=\beta(y)$ and $u(i_X(x))=\alpha(x)$. It suffices to construct the corresponding $u^\#:\calo_T\lrta u_*\calo_{X\coprod Y}$. 
  $$
  \begin{aligned}
  u_*(\calo_{X\coprod Y})(V)
@@ -685,6 +1308,66 @@ If $X,Y\lrta Z$ are schemes, show that $h_X\times_{h_Z} h_Y$ is a Zariski sheaf.
 \end{exr}
 
 \section{Computing fibered product in practice}
+\begin{exr}
+Show that $A\otimes_B B[t]\cong A[t]$, so the following is a fibered diagram.
+$$
+\begin{tikzcd}
+\spec A[t]\ar[r]\ar[d] & \spec B[t]\ar[d] \\
+\spec A\ar[r]&\spec B 
+\end{tikzcd}
+ $$ 
+\end{exr}
+\begin{proof}[Sol.]
+Recall~\ref{chap1exr:fibered_coproduct_tensor_product}, we know fibered coproduct in $B-\mathsf{Alg}$ is  just the tensor product. We need to check $A[t]$ satisfies the universal properties of fibered coproduct.
+
+$$
+\begin{tikzcd}
+C &  &  \\
+ & {A[t]} \arrow[lu, "?", dashed] & {B[t]} \arrow[l, "q"] \arrow[llu, "g"'] \\
+ & A \arrow[luu, "f"] \arrow[u, "p"'] & B \arrow[u, "\varphi"'] \arrow[l, "\phi"]
+\end{tikzcd}
+$$
+First note that there is a pair of morphisms $p:A\lrta A[t]$ and $B[t]\lrta A[t]$ that makes the inner square commute, where $p$ is the simple injection and there is a $q$ that makes the inner square commute because of the universal property of polynomial ring. Explicitly, $p:\sum b_i t^i\mapsto \sum \phi(b_i) t^i$. 
+
+Given a ring $C$ together with two morphisms making the outer diagram commute. We know $f\circ \phi=g|_{B}$. 
+
+There exists a unique map $T:A[t]\lrta C$ that maps $t$ to $g(t)$, which is guaranteed by universal property of polynomial ring $A[t]$. $T:\sum a_j t^i\mapsto\sum f(a_j)g(t)^j$. Thus defined $T$ indeed makes the diagram commute. It is unique by the universal property of polynomial ring $A[t]$ again.
+\end{proof}
+\begin{exr}
+Suppose $\phi:B\lrta A$ is a ring morphism, and $I\subset B$ is an ideal. Let $I^e:=\lgl \phi(i)\rgl_{i\in I}\subset A$ be the extension of $I$ to $A$. Describe a natural isomorphism $A/I^e\cong A\otimes_{B}(B/I)$.
+\end{exr}
+\begin{proof}[Sol.]
+Follow the hint. Consider the exact sequence of $B$-modules
+$$
+I\lrta B\lrta B/I\lrta 0.
+$$
+And recall that $\otimes_B A$ is right exact. We can construct another exact sequence of $B$-modules.
+$$
+I\otimes_B A\lrta A\lrta A\otimes_B(B/I)\lrta 0.
+$$
+Claim: that as $B$-module, $I^e\cong A\otimes_B I$. Note that later is automatically an $A$-module, we only need to check each $\phi(i)=1_A\otimes_B i$ and both ideals are generated by $\phi(i)$.
+
+There is a $B$-bilinear map from $A\times I$ to $I^e$. The kernel of this module morphism contains the kernel of the defining map $A\times I\lrta A\otimes_B I$. Hence, we know $I^e\subset A\otimes_B I$
+$$
+a\otimes i\mapsto a\phi(i).
+$$
+As $A$-module $A\otimes_B I$ is generated by $1\otimes i$ while $I^e$ is generated by $\phi(i)$.
+
+Now assume $\phi(i-j)=0$, we know $i-j\in \ker \phi\Lrta 1_A\otimes_B(i-j)=\phi(i-j)\otimes 1_B=0$. At the level of generating set, there is a one to one correspondence. We can now say $I^e\cong A\otimes_B I$ as $A$-modules.
+
+And we go back to the exact sequence, it has the form $I^e\lrta A\lrta A\otimes_B(B/I)$ now, which gives us the desired isomorphism $A/I^e\cong A\otimes_B (B/I)$.
+\end{proof}
+When we translate the above exercise into schemes, it means $\spec A/I^e\cong \spec A\times_{\spec B}\spec (B/I)$. ``closed embeddings are preserved by base change''.
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Interpret the intersection of two closed embeddings into $X$ as their fibered product over $X$.
+\item Show that ``locally closed embeddings'' are preserved by base change.
+\item Define the intersection of $n$ locally closed embeddings $X_i\inj Z(i\leq i\leq n)$ by the fibered product of the $X_i$ over $Z$. Show that the intersection of finite many locally closed embeddings is also a locally closed embedding.
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+$(a)$, 
+\end{proof}
 \section{Interpretations: Pulling back families, and fibers of morphisms}
 \section{Properties preserved by base change}
 \section{Properties not preserved by base change and how to fix them}
@@ -761,10 +1444,73 @@ We denote the maximal ideal in the quotient ring as $\overline{\scm}$. We want t
 
 If $f\not \in\scm^2$, the restriction $\omega(f\ \mod \scm^2)=0$ is not vacuous, the Zariski tangent space of $\spec A/(f)$ has one dimension less. Otherwise, they would have same dimensions.
 \end{proof}
+\begin{exr}
+Suppose $Y$ and $Z$ are closed subschemes of $X$, both containing the point $p\in X$.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $T_{Z,p}$ is naturally a sub $\kappa(p)$-vector space of $T_{X,p}$
+\item Show that $T_{Y\cap Z,p}=T_{Y,p}\cap T_{Z,p}$ where the first intersection is in scheme theoretic intersection.
+\item Show that $T_{Y\cup Z,p}$ contains the span of $T_{Y,p}$ and $T_{Z,p}$ where the first $\cup$ is scheme theoretic union.
+\item Show that $T_{Y\cup Z,p}$ can be strictly larger than the space of $T_{Y,p}$ and $T_{Z,p}$ 
+\end{enumerate}
+\end{exr}
 \section{Regularity and smoothness over a field}
 \section{Examples}
 \section{Bertini's theorem}
 \section{Another (co)dimension one miracle: discrete valuation rings}
+\begin{exr}
+Suppose $(A, \scm)$ is a Noetherian dimension $1$ local ring. Show that (a)–(c) above are equivalent to:
+
+$(d)$: $A$ is a principal ideal domain.
+\end{exr}
+\begin{exr}
+Describe the valuation ring in the above three examples.
+\end{exr}
+\begin{exr}
+Show that $\{0\}\cup\{x \in K^\times :v(x)>0\}$ is the unique maximal ideal of the valuation ring.
+\end{exr}
+\begin{exr}
+Show that the above $v$ is a discrete valuation.
+\end{exr}
+\begin{exr}
+ Conversely, suppose $(A,\scm)$is a discrete valuation ring. Show that $(A, \scm)$ is a Noetherian regular local ring of dimension $1$.
+\end{exr}
+\begin{exr}
+Show that there is only one discrete valuation on a discrete
+valuation ring.
+\end{exr}
+\begin{exr}
+Suppose $X$ is an integral Noetherian scheme, and $f\in K(X)^\times$ is a nonzero element of its function field. Show that $f$ has a finite number of zeros and poles.
+\end{exr}
+\begin{proof}[Sol.]
+Since $X$ is Noetherian, it can be covered by finite many  $\spec A$ where $A$ is Noetherian ring. Take $f$ as $f_1/f_2$, where $f_i\in \Gamma(U,\calo_X)=A$. 
+
+Saying $f_i$ has finite many zeros in $\spec A$ amounts to saying $(f_i)$is contained in finitely many $\scp\subset A$ such that $ht(\scp)=1$ and $\scp\supset (f_i)$. Quotient the ring $A$ by $(f_i)$, we then focus on the minimal prime ideals in $A/(f_i)$.
+
+\underline{Claim}: A Noetherian ring $B$ has only finitely many minimal prime ideals.
+
+Recall that minimal prime ideals corresponds to irreducible components of the topological space $\spec B$. (Exercise~\ref{chap3exr:irreducible_components_minimal_pirmes_bij})
+
+Then check that Noetherian topological space has only finitely many irreducible components and this fact in proved in proposition 3.6.15 by Noetherian induction.
+
+
+\end{proof}
+\begin{exr}
+If $f$ is a nonzero rational function on a locally Noetherian normal scheme, and $f$ has no poles, show that $f$ is regular.
+\end{exr}
+\begin{proof}[Sol.]
+Follow the hint, see the algebraic Hartog's lemma.
+
+$X$ is covered by some Noetherian affine opens $\spec A$. For $X$ normal, we know further $A$ is integrally closed Noetherian domain. 
+
+$f\in K(A)$ has no poles in $\spec A$, which means $v_{\scp}(f)\geq 0$ and $f\in A_\scp$ for all $\scp$ with codimension $1$. 
+
+Recall the algebraic Hartog's lemma.
+For an integrally closed Noetherian domain $A$
+$$
+A=\cap_{\scp \text{codimension}\  1} A_\scp
+$$
+This means $f|_{\spec A}$ is in $\Gamma(\spec A,\calo_X)$, by the sheaf gluability condition, we know $f\in \Gamma(X,\calo_X)$ and is regular.
+\end{proof}
 \section{Smooth (and {\'e}tale) morphisms (first definition)}
 \section{Valuative criterion for separatedness and properness}
 \section{More sophisticated facts about regular local rings}
@@ -907,7 +1653,7 @@ If $\calf$ and $\calg$ are locally free sheaves, show that $\calf\otimes \calg$ 
 \begin{proof}[Sol.]
 Note the the tensor of sheaves over abelian category requires sheafification. We can try proving this at the level of stalks. Recall Exercise 2.6.J that taking stalks commutes with tensoring, we have
 $$
-\calf_{x}\otimes\call_{x}\cong (\calf\otimes \calg)_{x},
+\calf_{x}\otimes\calg_{x}\cong (\calf\otimes \calg)_{x},
 $$
 $$
 \calf_{U,x}\cong\calo_{U,x}^n,
@@ -1157,7 +1903,7 @@ $$
 $$
 
 We need to check $\pi^*$ is compatible with isomorphism class of invertible sheaves.
-If $\calg'\cong\calg$ are isomorphic sheaves on, we can check $\pi^*\calg'\cong\pi^*\calg$, which is guaranteed by the functorial property of $\pi^*$.
+If $\calg'\cong\calg$ are isomorphic sheaves on $X$, we can check $\pi^*\calg'\cong\pi^*\calg$, which is guaranteed by the functorial property of $\pi^*$.
 $$
 \begin{tikzcd}
 X \ar[r, "\pi"] \ar[d, "\pic"] & Y \arrow[d, "\pic"] \\
@@ -1228,7 +1974,7 @@ In the case where $n<0$, only such polynomial would be $f=g=0$.
 Show that if $m\neq n$, then $\calo(m)\neq \calo(n)$. Hence conclude that we have an injection of groups $\intg\inj \pic\proj^1_K$ given by $n\mapsto \calo(n)$.
 \end{exr}
 \begin{proof}[Sol.]
-For $m\neq n$,  we know $\calo(m)\not\cong \calo(n)$ because they have distinct transition functions.
+For $m\neq n$ with one of them non-negative,  we know $\dim_K \Gamma(\proj^1_K,\calo(m))\neq \dim_K \Gamma(\proj^1_K,\calo(n))$ by 14.1.A, thus they can not be isomorphic. On the other hand, the if both of them are negative. We can derive by the fact $\cale^{\vee\vee}\cong \cale$. $\cale^\vee\cong\cale'^\vee$ iff $\cale\cong \cale'$.
 \end{proof}
 \begin{exr}
 Show that $\dim_K\Gamma(\proj^m_K,\calo_{\proj^m_K}(n))={m+n\choose m}$.
@@ -1241,9 +1987,9 @@ f_i(x_{0/j}\times x_{i/j}^{-1} ,...,x_{m/j}\times x_{i/j}^{-1} )\times x_{i/j}^{
 $$
 This means each $f_i$ has degree less than or equal to $n$. $f_0$ must be of the form
 $$
-\sum_{|J|\leq n} a_J x_J
+\sum_{|J|\leq n} a_J x^J
 $$
-where $J$ is a $\intg^{m}$-valued vector such that $|J|=\sum J_k\leq n$. The degree of freedom sums as
+where $J$ is a $\intg_+^{m}$-valued vector such that $|J|=\sum J_k\leq n$. The degree of freedom sums as
 $$
 {n+m-1\choose m-1}+{n+m-2\choose m-1}+\cdots+{m-1\choose m-1}
 $$
@@ -1257,16 +2003,167 @@ This combinatorial equality can be proved by induction.
 Show that every invertible sheaf on $\proj^1_K$ is of the form $\calo(n)$ for some $n$.
 \end{exr}
 \begin{proof}[Sol.]
+This is Cor 6.17 in Hartshorne, where he used the natural isomorphism of $Cl(X)\cong \pic X$ on Noetherian integral separated locally factorial schemes. 
+
+In this exercise, we will rather use a brutal force method as hinted in FOAG.
 Exercise~13.2.C said that all invertible sheaves on $\affn^n_K$ is trivial. We know any invertible sheaf on $\proj^1_K$ when restricted to $U_0\cong \affn^1_K$ is trivial. It suffices to show that the possible transition function is of the form in the definition of $\calo(n)$.
 $U_0\cong \spec K[x_{1/0}]$ and $U_1\cong\spec K[x_{0/1}]$. There are only two open sets in the open cover, we hence know that the cocycle condition reduces to
-$T_{ij}=T_{ji}^{-1}$. Here, we don't require $T_{ij}$ to be ring homomorphism, but only $K$-linear  transformation. It is determined by $f(x_{1/0})\mapsto f(x_{0/1})\times \lambda x_{0/1}^n$ for $\lambda \in K^\times$, with an obvious inverse. For the isomorphism class of invertible sheaves, $\lambda$ is irrelevant.
+$T_{ij}=T_{ji}^{-1}$, where $T_{ij}\in GL_1(\calo(U_i\cap U_j))$.
+
+Recall that 
+$$
+GL_1(\calo(U_i\cap U_j))=GL_1(\calo(U_0\cap U_1))=GL_1(\calo(U_0)_{x_{1/0}})=GL_1(K[x_{1/0}]_{x_{1/0}})
+$$
+$GL_1(K[x_{1/0}]_{x_{1/0}})$ contains all the invertible elements in $K[x_{1/0}]_{x_{1/0}}$. The general invertible element in it is of the form
+$\lambda\times x_{1/0}^n$, where $\lambda\in K^\times$ and $n\in \intg$.
+
+Now, we \underline{claim}, with these transition functions, the invertible sheaf is isomorphic to $\calo(n)$. In other words, $\lambda$ is irrelevant. 
+$$
+\begin{tikzcd}
+\calo(n)(U_0) \arrow[d,red] \arrow[r,red] & \calo(n)(U_0\cap U_1) \arrow[d, bend left,blue,"v"] \arrow[d, bend right, red,"u"] & \calo(n)(U_1) \arrow[d,blue] \arrow[l,blue] \\
+\calo(U_0) \arrow[r,red] & \calo(U_0\cap U_1) & \calo(U_1) \arrow[l,blue] \\
+\call(U_0) \arrow[u,red] \arrow[r,red] & \call(U_0\cap U_1) \arrow[u, bend left,red,"w"] \arrow[u, bend right,blue,"z"] & \call(U_1) \arrow[u,blue] \arrow[l,blue]
+\end{tikzcd}
+$$
+In the above diagram, each vertical arrow is an isomorphism and each horizontal one is restriction map. Compositions like $u\circ v^{-1} $ give the transition functions. Arrows in a same color are commutative. Our task is to construct an isomorphism between $\calo(n)(U_0\cap U_1)$ and $\call(U_0\cap U_1)$ such that commutes with both red and blue arrows.
 \end{proof}
 \section{Line bundles and Weil divisors}
+\begin{exr}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Verify that on $\affn^1_K$, $\div(x^3/(x+1))=3[(x)]-[x+1]$ or $=3[0]-[-1]$.
+\item On $\proj^1_K$, there is a rational section of $\calo(1)$ corresponding to $x^2/(x+y)$. Figure out what this means, and calculate $\div(x^2/(x+y))$
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+\begin{enumerate}[label=(\alph*)]
+\item The field associated all the DVRs is the function field $k(x)$. In $\affn^1_k=\spec k[x]$, each divisor $D$ corresponds to a height $1$ prime ideal $\scp_D$ as its generic point $\eta_D$.
+Check that $\calo_{X,\eta_D}=A_\scp$.
+ 
+Then we can check that $v_D(f/g)\neq 0$ iff $\scp_D\supset (f)$ or $\scp_D\supset (g)$. In this  case $\scp_D$ must be $(x)$ or $(x+1)$. Then we have $v_{\overline{\{(x)\}}}(x^3/(x+1))=3=3v_{\overline{\{(x)\}}}(x)$ and similarly,$v_{\overline{\{(x+1)\}}}(x^3/(x+1))=-1=-1v_{\overline{\{(x+1)\}}}(x+1)$.
+\item $\proj^1_k=\Proj k[x,y]$. Consider a ration section defined away from the point $[1:1]$. On $U_0$, it is defined away from the point $x_{1/0}=-1$. On $U_1$, it is defined away from the point $x_{0/1}=-1$. Consider 
+$$
+f(x_{1/0})=\frac{x_{1/0}}{1+x_{1/0}}\in \Gamma(U_0-{x_{1/0}=-1},\calo(1))
+$$
+We can extend it to $U_1-{x_{0/1}=-1}$, recall the transition function
+$$
+f(x_{1/0})\mapsto f(x_{0/1}^{-1})\times x_{0/1}^1=\frac{x_{0/1}}{1+x_{0/1}}.
+$$
+In this sense we say on $\proj^1_k-\{[1:-1]\}$, there is a rational section corresponds to $\frac{x^2}{(x+y)}$.
+\end{enumerate}
+\end{proof}
+\begin{exr}
+Generalize the definition of $\calo_X(D)$ to the case when $X$ is not necessarily irreducible.
+\end{exr}
+\begin{proof}[Sol.]
+In the case where $X$ is not reduced, we don't have in general a function field. (or the function field is not really a  field.) 
 
+In FOAG, it is called total fraction ring of $X$ as described in 5.5.7.
+
+We denote the the total fraction ring of $X$ as $\mathcal{K}(X)$. Its elements are rational functions on the Noetherian scheme $X$.
+
+By Exercise~\ref{chap5exr:Noetherian_scheme_finite_irreducible_compoenents}, Noetherian scheme has finite number of irreducible components.
+
+Locally each irreducible component is a Noetherian integral subscheme. Each prime divisor is contained in one of the irreducible component. Hence the local ring $\calo_{X,\eta_D}$ is still a DVR, we can still define the valuation $v_D$ for each prime divisor.
+
+For a rational function $t$, a general open set $U$,
+$$
+\div|_U(t):=\sum v_D(t) D
+$$ 
+where $v_D$ is defined for the irreducible component containing $D$.
+\end{proof}
+\begin{exr}
+Verify that $\calo_X(D)$ is a quasicoherent sheaf.
+\end{exr}
+\begin{proof}[Sol.]
+As the hint indicated, we use the result of Exercise 13.3.D directly. We need to check the natural morphism
+$$
+\Gamma(\spec A,\calo_X(D))_f\lrta\Gamma(\spec A_f,\calo_X(D))
+$$
+is an isomorphism.
+$$
+\Gamma(\spec A,\calo_X(D)):=\{t\in K^\times(X):\div|_{\spec A}t+D|_{\spec A}\geq 0\}\cup \{0\}
+$$
+Recall that 
+$$
+\div|_U t=\sum_{Y\cap U\neq \emptyset} v_Y(t)[Y\cap U],
+$$
+where each $Y$ is prime divisor.
+
+Assume $D_i$ is a prime divisor in $D$.
+$D_i\cap \spec A\cap \spec A_f=\emptyset$ iff $D_i\cap \spec A$ is an irreducible component of $V(f)=\spec A-\spec A_f$. In this case we delete all the $D_i$ in both $\div|_{\spec A_f}$ and $D|_{\spec A_f}$ and the inequality 
+$$
+\div|_{\spec A_f}t+D|_{\spec A_f}\geq 0
+$$ 
+still holds.
+
+This means $\Gamma(\spec A,\calo_X(D))\subset \Gamma(\spec A_f,\calo_X(D))$. Furthermore, for a $t\in \Gamma9\spec A,\calo_X(D))$, consider $t/f^n$, check that 
+$$
+\div|_{\spec A_f}(t/f^n)=\div|_{\spec A_f}(t)-n\div|_{\spec A_f}(f)
+$$
+where
+$$
+\div|_{\spec A_f}(f)=\sum_{\spec A_f\cap Y\neq \emptyset}v_Y(f)[Y\cap \spec A_f]
+$$
+whenever $v_Y(f)\neq 0$, we have $Y\cap \spec A_f=0$. In the end the extra term contribute nothing.
+
+In this way we know $\Gamma(\spec A,\calo_X(D))_f\subset\Gamma(\spec A_f,\calo_X(D))$.
+
+For the reverse inclusion, consider an element $q\in \Gamma(\spec A_f,\calo_X(D))$.
+
+In general
+we have
+$$
+\div|_{\spec A} (q)=``\div|_{\spec A_f}(q)''+v_{V(f)}(q)[V(f)]
+$$
+where in term in the ``'' means preserve only the divisors that intersects $\spec A_f$.
+
+In the same spirit, we have 
+$$
+\div|_{\spec A} (q)+D|_{\spec A}=``\div|_{\spec A_f}(q)''+``D_{\spec A_f}''+(v_{V(f)}(q)+1)[V(f)]
+= ``\div|_{\spec A_f}(q)''+``D_{\spec A_f}''+\div|_{\spec A}(f^{(v_{V(f)}(q)+1)})
+$$
+where $V(f)$ is a union of some divisors in $\spec A$.
+
+We have $``\div|_{\spec A_f}(q)''+``D_{\spec A_f}''\geq 0$, there is a $t\in \Gamma(\spec A,\calo_X(D))$ corresponding to it.
+
+By Proposition 14.2.1 we know for normal Noetherian scheme, $\div$ is injective. We have
+$$
+q=t/f^n
+$$
+for some $n$.
+\end{proof}
+\begin{exr}
+\begin{enumerate}[label=(\alph*)]
+\item Show that any global section of $\calo_{\affn^1_k}(-2[(x)]+[(x-1)]+[(x-2)])$ is a $k[x]$-mutiple of $x^2/(x-1)(x-2)$.
+\item Extend the argument of $(a)$ to give an isomorphism
+$
+\calo_{\affn^1_k}(-2[(x)]+[(x-1)]+[(x-2)])\cong \calo_{\affn^1_k}
+$ 
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.]
+$(a)$ Any global section in $\calo_{\affn^1_k}$ is in $K(\affn^1_k)^\times$, which is in $k(x)$. 
+$$
+\div(t)+D\geq 0
+$$
+means $t$ has poles at $1$ and $2$, with at most order $1$ and vanishes at $0$ with degree at least $2$. This means 
+$$
+t\times \frac{(x-1)(x-2)}{x^2}
+$$
+has no poles.
+By Exercise~12.5.H, a nonzero rational function on a locally Noetherian normal scheme has no poles iff it is regular. In this case
+we know $t$ is a $k[x]$-multiple of $x^2/(x-1)(x-2).$
+\end{proof}
 \chapter{Quasicoherent sheaves and projective $A$-schemes}
 \chapter{Pushforwards and pullbacks of quasicoherent sheaves}
 \section{Introduction}
 \section{Pushforward of quasicoherent sheaves}
+\begin{exr}
+Let $\pi:\spec A\lrta \spec B$ be a morphism of affine schemes, and suppose $M$ is an $A$-module, so $\tilde{M}$ is  a quasicoherent sheaf on $\spec A$. Give an isomorphism $\pi_*\tilde{M}\lrta \tilde{M_B}$.
+\end{exr}
+\begin{proof}[Sol.]
+
+\end{proof}
 \section{Pullbacks of quasicoherent sheaves}
 \section{Line bundles and maps to projective spaces}
 \section{The Curve-to-Projective Extension Theorem

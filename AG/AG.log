@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.16)  14 JUN 2018 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.16)  8 AUG 2018 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,7 +919,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 36.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 37.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
@@ -957,17 +957,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 602--603
 
  []
 
-[14] [15]
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 738
+[14] [15] [16]
+LaTeX Font Info:    Try loading font information for OMS+pplx on input line 741
 .
-LaTeX Font Info:    No file OMSpplx.fd. on input line 738.
+LaTeX Font Info:    No file OMSpplx.fd. on input line 741.
 
 LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 738.
+(Font)              for symbol `textbullet' on input line 741.
 
-[16] [17]
-Overfull \hbox (5.37599pt too wide) in paragraph at lines 805--806
+[17]
+Overfull \hbox (5.37599pt too wide) in paragraph at lines 810--811
 []$[]$\T1/pplx/m/n/10.95 : Need $[] \OMS/zplm/m/n/10.95 2 \OML/zplm/m/it/10.95 
 K\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X[]\OT1/pplx/m/n/10.95 , ..., \OML/z
 plm/m/it/10.95 X[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 T\OT1/zplm/m/n/10.
@@ -977,36 +977,31 @@ m/n/10.95 [\OML/zplm/m/it/10.95 T\OT1/zplm/m/n/10.95 ] =[]\OMS/zplm/m/n/10.95 )
 
  []
 
-[18] <Y^2-X^3.pdf, id=416, 270.00874pt x 270.00874pt>
+[18] [19] <Y^2-X^3.pdf, id=429, 270.00874pt x 270.00874pt>
 File: Y^2-X^3.pdf Graphic file (type pdf)
 <use Y^2-X^3.pdf>
-Package pdftex.def Info: Y^2-X^3.pdf used on input line 872.
+Package pdftex.def Info: Y^2-X^3.pdf used on input line 876.
 (pdftex.def)             Requested size: 135.00403pt x 135.00403pt.
-[19] <Y^2=X^3-X.pdf, id=425, 266.9975pt x 266.9975pt>
+<Y^2=X^3-X.pdf, id=430, 266.9975pt x 266.9975pt>
 File: Y^2=X^3-X.pdf Graphic file (type pdf)
 <use Y^2=X^3-X.pdf>
-Package pdftex.def Info: Y^2=X^3-X.pdf used on input line 886.
+Package pdftex.def Info: Y^2=X^3-X.pdf used on input line 890.
 (pdftex.def)             Requested size: 133.49841pt x 133.49841pt.
-
-Overfull \hbox (44.18596pt too wide) detected at line 908
+[20 </Users/vector_cat/Dropbox/2018spring/AG/Y^2-X^3.pdf>]
+Overfull \hbox (44.18596pt too wide) detected at line 912
 [][]
  []
 
-[20 </Users/vector_cat/Dropbox/2018spring/AG/Y^2-X^3.pdf> </Users/vector_cat/Dr
-opbox/2018spring/AG/Y^2=X^3-X.pdf
-
-pdfTeX warning: pdflatex (file /Users/vector_cat/Dropbox/2018spring/AG/Y^2=X^3-
-X.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (6.78256pt too wide) in paragraph at lines 963--964
-[][]\T1/pplx/b/n/10.95 Remark 1.46. []\T1/pplx/m/n/10.95 One can show $[][] \U/
+[21 </Users/vector_cat/Dropbox/2018spring/AG/Y^2=X^3-X.pdf>]
+Overfull \hbox (6.78256pt too wide) in paragraph at lines 967--968
+[][]\T1/pplx/b/n/10.95 Remark 1.47. []\T1/pplx/m/n/10.95 One can show $[][] \U/
 euf/m/n/10.95 m[]\OT1/zplm/m/n/10.95 /\U/euf/m/n/10.95 m[] \OMS/zplm/m/n/10.95 
 ^^U []\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 )$ \T1/ppl
 x/m/n/10.95 so the ques-tion is whether
  []
 
-[21] [22]
-Overfull \hbox (20.57434pt too wide) in paragraph at lines 1003--1006
+[22]
+Overfull \hbox (20.57434pt too wide) in paragraph at lines 1007--1010
 \T1/pplx/m/n/10.95 We al-ready es-tab-lished that the RHS is $\OML/zplm/m/it/10
 .95 n$ \T1/pplx/m/n/10.95 hence $\OML/zplm/m/it/10.95 x$ \T1/pplx/m/n/10.95 is 
 non-singular iff $\OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 = [][] \OML/zplm/m
@@ -1014,35 +1009,51 @@ non-singular iff $\OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 = [][] \OML/zplm/m
 
  []
 
-
-Overfull \hbox (12.06827pt too wide) in paragraph at lines 1040--1041
-[][]\T1/pplx/b/n/10.95 Theorem 1.47. []\T1/pplx/m/n/10.95 Let $\OML/zplm/m/it/1
+[23]
+Overfull \hbox (12.06827pt too wide) in paragraph at lines 1044--1045
+[][]\T1/pplx/b/n/10.95 Theorem 1.48. []\T1/pplx/m/n/10.95 Let $\OML/zplm/m/it/1
 0.95 Y \OMS/zplm/m/n/10.95 ^^Z \U/fplmbb/m/n/10.95 A[]$ \T1/pplx/m/n/10.95 affi
 ne va-ri-ety. Then $\OML/zplm/m/it/10.95 Y[] \OT1/zplm/m/n/10.95 = \OMS/zplm/m/
 n/10.95 f\OML/zplm/m/it/10.95 x \OMS/zplm/m/n/10.95 2 \OML/zplm/m/it/10.95 Y \O
 MS/zplm/m/n/10.95 j \OML/zplm/m/it/10.95 Y[]x\OMS/zplm/m/n/10.95 g$
  []
 
-[23] [24] [25]
+[24] [25]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <8> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1136.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1140.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <6> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1136.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1140.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1136.
+(hyperref)                removing `math shift' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 1136.
+(hyperref)                removed on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1136.
+(hyperref)                removing `math shift' on input line 1140.
 
 [26]
-Overfull \hbox (25.8923pt too wide) in paragraph at lines 1202--1203
+Overfull \hbox (3.90741pt too wide) detected at line 1201
+\OML/zplm/m/it/10.95 ^^Y[]V\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 S\OT1/zplm
+/m/n/10.95 ) = \OMS/zplm/m/n/10.95 f\OT1/zplm/m/n/10.95 [\U/euf/m/n/10.95 p\OT1
+/zplm/m/n/10.95 ] \OMS/zplm/m/n/10.95 2 [] \OML/zplm/m/it/10.95 A \OT1/zplm/m/n
+/10.95 : \OML/zplm/m/it/10.95 ^^^[]\OT1/zplm/m/n/10.95 (\U/euf/m/n/10.95 p\OT1/
+zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ^^[ \OML/zplm/m/it/10.95 S\OMS/zplm/m/n/10
+.95 g \OT1/zplm/m/n/10.95 = \OMS/zplm/m/n/10.95 f\OT1/zplm/m/n/10.95 [\U/euf/m/
+n/10.95 p\OT1/zplm/m/n/10.95 ] \OMS/zplm/m/n/10.95 2 [] \OML/zplm/m/it/10.95 A 
+\OT1/zplm/m/n/10.95 : \U/euf/m/n/10.95 p \OMS/zplm/m/n/10.95 ^^[ \OML/zplm/m/it
+/10.95 ^^^\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 S\OT1/zplm/m/n/10.95 )\OMS/
+zplm/m/n/10.95 g \OT1/zplm/m/n/10.95 = \OML/zplm/m/it/10.95 V\OT1/zplm/m/n/10.9
+5 (\OML/zplm/m/it/10.95 ^^^\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 S\OT1/zplm
+/m/n/10.95 ))\OT1/pplx/m/n/10.95 .
+ []
+
+[27]
+Overfull \hbox (25.8923pt too wide) in paragraph at lines 1216--1217
 []\T1/pplx/m/n/10.95 Indeed, let $\OML/zplm/m/it/10.95 V\OT1/zplm/m/n/10.95 (\O
 ML/zplm/m/it/10.95 I\OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ^^Z [] \OML/zplm/
 m/it/10.95 A$ \T1/pplx/m/n/10.95 be closed,, then $\OT1/zplm/m/n/10.95 (\OML/zp
@@ -1055,19 +1066,19 @@ lm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 )[](\OML/zplm/m/it/10.95 V\OT1/zplm/m/n/10
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1207.
+(hyperref)                removing `math shift' on input line 1221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 1207.
+(hyperref)                removed on input line 1221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1207.
+(hyperref)                removing `math shift' on input line 1221.
 
-[27] [28] [29]
-Overfull \hbox (9.01447pt too wide) in paragraph at lines 1356--1357
+[28] [29] [30]
+Overfull \hbox (9.01447pt too wide) in paragraph at lines 1371--1372
 [][]\T1/pplx/b/n/10.95 Example 2.15. []$\OML/zplm/m/it/10.95 K$ \T1/pplx/m/n/10
 .95 is a field, not nec-es-sar-ily al-ge-braically closed. Let $\OML/zplm/m/it/
 10.95 J \OMS/zplm/m/n/10.95 ^^Z \OML/zplm/m/it/10.95 K\OT1/zplm/m/n/10.95 [\OML
@@ -1075,8 +1086,8 @@ Overfull \hbox (9.01447pt too wide) in paragraph at lines 1356--1357
 /m/n/10.95 ]$
  []
 
-[30]
-Overfull \hbox (27.91531pt too wide) in paragraph at lines 1370--1371
+
+Overfull \hbox (27.91531pt too wide) in paragraph at lines 1385--1386
 [][]\T1/pplx/b/n/10.95 Definition 2.16. []\T1/pplx/m/n/10.95 Let $\OML/zplm/m/i
 t/10.95 A$ \T1/pplx/m/n/10.95 be any ring. The \T1/pplx/b/n/10.95 affine $\OML/
 zplm/m/it/10.95 n$\T1/pplx/b/n/10.95 -space $\U/fplmbb/m/n/10.95 A[]$ \T1/pplx/
@@ -1085,8 +1096,8 @@ t/10.95 A\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X[]\OT1/pplx/m/n/10.95 , ...
 , \OML/zplm/m/it/10.95 X[]\OT1/zplm/m/n/10.95 ]$\T1/pplx/m/n/10.95 . 
  []
 
-[31]
-Overfull \hbox (2.04214pt too wide) in paragraph at lines 1480--1482
+[31] [32]
+Overfull \hbox (2.04214pt too wide) in paragraph at lines 1495--1497
 [][]\T1/pplx/b/n/10.95 Example 2.20. []$\OML/zplm/m/it/10.95 A \OT1/zplm/m/n/10
 .95 = \U/fplmbb/m/n/10.95 Z$\T1/pplx/m/n/10.95 , $[] \OML/zplm/m/it/10.95 A \OT
 1/zplm/m/n/10.95 = \OMS/zplm/m/n/10.95 f\OT1/pplx/m/n/10.95 0\OMS/zplm/m/n/10.9
@@ -1095,8 +1106,8 @@ m/m/it/10.95 p[]\OMS/zplm/m/n/10.95 g$\T1/pplx/m/n/10.95 . Re-call $[]\OT1/zplm
 /m/n/10.95 (\U/fplmbb/m/n/10.95 Z\OT1/zplm/m/n/10.95 ) =
  []
 
-[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (42.22026pt too wide) in paragraph at lines 1979--1980
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
+Overfull \hbox (42.22026pt too wide) in paragraph at lines 1994--1995
 []\T1/pplx/m/n/10.95 Conversely, any mor-phism of lo-cally ringed spaces $\OT1/
 zplm/m/n/10.95 ([] \OML/zplm/m/it/10.95 B\OT1/pplx/m/n/10.95 , \OMS/zplm/m/n/10
 .95 O[]\OT1/zplm/m/n/10.95 ) [][]\OMS/zplm/m/n/10.95 ! \OT1/zplm/m/n/10.95 ([] 
@@ -1105,15 +1116,16 @@ n/10.95 )$
  []
 
 
-Overfull \hbox (25.05618pt too wide) detected at line 1983
+Overfull \hbox (25.05618pt too wide) detected at line 1998
 [] [] []
  []
 
+[43]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 2009.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 2024.
 
-[43] [44]
-Overfull \hbox (7.44514pt too wide) in paragraph at lines 2072--2073
+[44]
+Overfull \hbox (7.44514pt too wide) in paragraph at lines 2087--2088
 [][]\T1/pplx/b/n/10.95 Definition 2.40. []$\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/
 10.95 X\OT1/pplx/m/n/10.95 , \OMS/zplm/m/n/10.95 O[]\OT1/zplm/m/n/10.95 )$ \T1/
 pplx/m/n/10.95 (locally)-ringed space. $\OML/zplm/m/it/10.95 U \OMS/zplm/m/n/10
@@ -1122,8 +1134,8 @@ pplx/m/n/10.95 (locally)-ringed space. $\OML/zplm/m/it/10.95 U \OMS/zplm/m/n/10
 =
  []
 
-
-Overfull \hbox (6.877pt too wide) in paragraph at lines 2093--2094
+[45]
+Overfull \hbox (6.877pt too wide) in paragraph at lines 2108--2109
 []\T1/pplx/m/n/10.95 Morphisms $\OML/zplm/m/it/10.95 S [][]\OMS/zplm/m/n/10.95 
 ! [] \OML/zplm/m/it/10.95 K$ \T1/pplx/m/n/10.95 are in bi-jec-tion with ring mo
 r-phism $\OML/zplm/m/it/10.95 K [][]\OMS/zplm/m/n/10.95 ! \OT1/zplm/m/n/10.95 ^
@@ -1131,8 +1143,8 @@ r-phism $\OML/zplm/m/it/10.95 K [][]\OMS/zplm/m/n/10.95 ! \OT1/zplm/m/n/10.95 ^
 /m/n/10.95 )$\T1/pplx/m/n/10.95 . 
  []
 
-[45] [46] [47] [48] [49] [50]
-Overfull \hbox (6.72427pt too wide) in paragraph at lines 2341--2343
+[46] [47] [48] [49] [50]
+Overfull \hbox (6.72427pt too wide) in paragraph at lines 2356--2358
 []$[]$\T1/pplx/m/n/10.95 : we need $\OMS/zplm/m/n/10.95 O[] [][]! \OML/zplm/m/i
 t/10.95 f[]\OMS/zplm/m/n/10.95 O[]$\T1/pplx/m/n/10.95 : $\OMS/zplm/m/n/10.95 8\
 OML/zplm/m/it/10.95 V \OMS/zplm/m/n/10.95 ^^Z \OML/zplm/m/it/10.95 Y$\T1/pplx/m
@@ -1143,12 +1155,12 @@ OT1/zplm/m/n/10.95 ) [] \OMS/zplm/m/n/10.95 O[]\OT1/zplm/m/n/10.95 (\OML/zplm/m
  []
 
 [51]
-Overfull \hbox (26.5552pt too wide) detected at line 2391
+Overfull \hbox (26.5552pt too wide) detected at line 2406
 [][]
  []
 
 [52] [53] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 2478--2479
+Underfull \hbox (badness 10000) in paragraph at lines 2493--2494
 
  []
 
@@ -1157,7 +1169,7 @@ Missing character: There is no â in font pplr9t!
 Missing character: There is no € in font pplr9t!
 Missing character: There is no ˜ in font pplr9t!
 [57]
-Overfull \hbox (1.39069pt too wide) detected at line 2587
+Overfull \hbox (1.39069pt too wide) detected at line 2602
 [][]\OT1/zplm/m/n/10.95 ([] \OML/zplm/m/it/10.95 K\OT1/pplx/m/n/10.95 , \OML/zp
 lm/m/it/10.95 X \OMS/zplm/m/n/10.95 ^^B[] \OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/1
 0.95 ) = [][]([] \OML/zplm/m/it/10.95 K\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.
@@ -1167,91 +1179,91 @@ OML/zplm/m/it/10.95 K\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/
  []
 
 [58]
-Overfull \hbox (8.3672pt too wide) detected at line 2634
+Overfull \hbox (8.3672pt too wide) detected at line 2649
 [][]
  []
 
-
-Overfull \hbox (18.67209pt too wide) in paragraph at lines 2678--2681
-[] \U/fplmbb/m/n/10.95 Z\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 T\OT1/zplm/m/
-n/10.95 ]/\OML/zplm/m/it/10.95 T\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 T \OT
-1/zplm/m/n/10.95 + \OT1/pplx/m/n/10.95 2\OT1/zplm/m/n/10.95 )$ \T1/pplx/m/n/10.
-95 has no nilpo-tents (is ``re-duced'' scheme) but $[] \U/fplmbb/m/n/10.95 F[]\
-OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 T\OT1/zplm/m/n/10.95 ]/\OML/zplm/m/it/
-10.95 Y\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 T \OT1/zplm/m/n/10.95 +
+[59]
+Overfull \hbox (88.98053pt too wide) in paragraph at lines 2697--2699
+[]\T1/pplx/m/n/10.95 Suppose $\OML/zplm/m/it/10.95 X \OT1/zplm/m/n/10.95 = [] \
+U/fplmbb/m/n/10.95 Z\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/
+10.95 , ..., \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 ]/(\OML/zplm/m/it/10.9
+5 f[]\OT1/pplx/m/n/10.95 , ..., \OML/zplm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 )$\
+T1/pplx/m/n/10.95 , then $\OML/zplm/m/it/10.95 X \OMS/zplm/m/n/10.95 ^^B[] [] \
+U/fplmbb/m/n/10.95 F[] \OT1/zplm/m/n/10.95 = [] \U/fplmbb/m/n/10.95 F[]\OT1/zpl
+m/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 , ..., \OML/zplm/m/it/
+10.95 x[]\OT1/zplm/m/n/10.95 ]/(\OML/zplm/m/it/10.95 f[]\OT1/pplx/m/n/10.95 , .
+., \OML/zplm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 )$\T1/pplx/m/n/10.95 .
  []
 
-[59] [60] [61] [62] [63] [64] [65]
+[60] [61] [62] [63] [64] [65] [66]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 2954.
+(Font)              scaled to size 15.0049pt on input line 2973.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 2954.
+(Font)              scaled to size 10.42007pt on input line 2973.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 2954.
+(Font)              scaled to size 15.0049pt on input line 2973.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 2954.
-[66]
-Overfull \hbox (21.8977pt too wide) detected at line 2978
+(Font)              scaled to size 10.42007pt on input line 2973.
+
+Overfull \hbox (21.8977pt too wide) detected at line 2997
 \OMS/zplm/m/n/10.95 O[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 U\OT1/zplm/m/n
 /10.95 ) = [] \OT1/pplx/m/n/10.95 ,
  []
 
 
-Overfull \hbox (37.91446pt too wide) in paragraph at lines 2978--2980
+Overfull \hbox (37.91446pt too wide) in paragraph at lines 2997--2999
 \T1/pplx/m/n/10.95 where $\OML/zplm/m/it/10.95 A[] \OT1/zplm/m/n/10.95 = \OMS/z
 plm/m/n/10.95 f[]g$ 
  []
 
-<cocycles.pdf, id=800, 845.1575pt x 597.23125pt>
+[67] <cocycles.pdf, id=813, 845.1575pt x 597.23125pt>
 File: cocycles.pdf Graphic file (type pdf)
 <use cocycles.pdf>
-Package pdftex.def Info: cocycles.pdf used on input line 3023.
+Package pdftex.def Info: cocycles.pdf used on input line 3042.
 (pdftex.def)             Requested size: 77.3334pt x 54.64156pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[67] <pic2Aprl27.pdf, id=809, 845.1575pt x 597.23125pt>
+[68 </Users/vector_cat/Dropbox/2018spring/AG/cocycles.pdf, page is rotated 90 d
+egrees>] <pic2Aprl27.pdf, id=832, 845.1575pt x 597.23125pt>
 File: pic2Aprl27.pdf Graphic file (type pdf)
 <use pic2Aprl27.pdf>
-Package pdftex.def Info: pic2Aprl27.pdf used on input line 3040.
+Package pdftex.def Info: pic2Aprl27.pdf used on input line 3059.
 (pdftex.def)             Requested size: 116.00307pt x 81.97145pt.
-[68 </Users/vector_cat/Dropbox/2018spring/AG/cocycles.pdf, page is rotated 90 d
-egrees> </Users/vector_cat/Dropbox/2018spring/AG/pic2Aprl27.pdf, page is rotate
-d 90 degrees>] [69] [70] [71] [72]
+[69 </Users/vector_cat/Dropbox/2018spring/AG/pic2Aprl27.pdf, page is rotated 90
+ degrees>] [70] [71] [72]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 18.00587pt on input line 3242.
+(Font)              scaled to size 18.00587pt on input line 3261.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 18.00587pt on input line 3242.
-[73] [74] [75]
-Overfull \hbox (17.2997pt too wide) in paragraph at lines 3392--3395
+(Font)              scaled to size 18.00587pt on input line 3261.
+[73] [74] [75] [76]
+Overfull \hbox (17.2997pt too wide) in paragraph at lines 3411--3414
 \T1/pplx/m/n/10.95 is, in-te-gral do-main and in-te-grally closed , then $\OML/
 zplm/m/it/10.95 A$ \T1/pplx/m/n/10.95 is $\OML/zplm/m/it/10.95 UFD$ $\OMS/zplm/
 m/n/10.95 ([]) \OML/zplm/m/it/10.95 Cl\OT1/zplm/m/n/10.95 ([] (\OML/zplm/m/it/1
 0.95 A\OT1/zplm/m/n/10.95 )) =
  []
 
-[76]
-Overfull \hbox (0.79788pt too wide) in paragraph at lines 3424--3426
+
+Overfull \hbox (0.79788pt too wide) in paragraph at lines 3443--3445
 \T1/pplx/m/n/10.95 where $\OMS/zplm/m/n/10.95 f[]g ' []$
  []
 
 
-Overfull \hbox (6.16118pt too wide) in paragraph at lines 3429--3430
+Overfull \hbox (6.16118pt too wide) in paragraph at lines 3448--3449
 []\T1/pplx/m/n/10.95 How are $\OML/zplm/m/it/10.95 Cl\OT1/zplm/m/n/10.95 ([] \O
 ML/zplm/m/it/10.95 A\OT1/zplm/m/n/10.95 )$ \T1/pplx/m/n/10.95 dis-tributed when
  $\OML/zplm/m/it/10.95 L\OT1/zplm/m/n/10.95 /\U/fplmbb/m/n/10.95 Q$ \T1/pplx/m/
 n/10.95 varies? (Cohen-Lenstra Heuris-
  []
 
-
-Overfull \hbox (0.94406pt too wide) in paragraph at lines 3435--3436
+[77]
+Overfull \hbox (0.94406pt too wide) in paragraph at lines 3454--3455
 [][]\T1/pplx/b/n/10.95 Theorem 5.11. []\T1/pplx/m/n/10.95 (II 6.4) De-fine a gr
 oup mor-phism from the $[] \OT1/zplm/m/n/10.95 : [](\OML/zplm/m/it/10.95 X\OT1/
 zplm/m/n/10.95 ) [][]\OMS/zplm/m/n/10.95 !
  []
 
 
-Overfull \hbox (55.64726pt too wide) in paragraph at lines 3459--3462
+Overfull \hbox (55.64726pt too wide) in paragraph at lines 3478--3481
 \T1/pplx/m/n/10.95 where $\OML/zplm/m/it/10.95 U[] \OT1/zplm/m/n/10.95 = [] (\O
 ML/zplm/m/it/10.95 K\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X[]\OT1/zplm/m/n/
 10.95 /\OML/zplm/m/it/10.95 X[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 X[]\O
@@ -1265,7 +1277,7 @@ x/m/n/10.95 , ..., \OML/zplm/m/it/10.95 X[]\OT1/zplm/m/n/10.95 /\OML/zplm/m/it/
  []
 
 
-Overfull \hbox (2.57266pt too wide) in paragraph at lines 3459--3462
+Overfull \hbox (2.57266pt too wide) in paragraph at lines 3478--3481
 \T1/pplx/m/n/10.95 So $\OML/zplm/m/it/10.95 f \OMS/zplm/m/n/10.95 2 \OML/zplm/m
 /it/10.95 K\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 )[]$ 
 \T1/pplx/m/n/10.95 is of the form $\OML/zplm/m/it/10.95 f \OT1/zplm/m/n/10.95 =
@@ -1277,8 +1289,8 @@ t/10.95 K\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X[]\OT1/zplm/m/n/10.95 /\OML
 
  []
 
-[77] [78]
-Overfull \hbox (35.61443pt too wide) in paragraph at lines 3538--3540
+[78] [79]
+Overfull \hbox (35.61443pt too wide) in paragraph at lines 3557--3559
 []\T1/pplx/m/n/10.95 One de-fines in an ob-vi-ous way $\OMS/zplm/m/n/10.95 O[]$
 \T1/pplx/m/n/10.95 -linear mor-phism of $\OMS/zplm/m/n/10.95 O[]$\T1/pplx/m/n/1
 0.95 -modules [$\OMS/zplm/m/n/10.95 8\OML/zplm/m/it/10.95 U\OT1/pplx/m/n/10.95 
@@ -1286,43 +1298,43 @@ Overfull \hbox (35.61443pt too wide) in paragraph at lines 3538--3540
 /n/10.95 ) [][]\OMS/zplm/m/n/10.95 !
  []
 
-[79]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3575.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3575.
+(hyperref)                removing `math shift' on input line 3594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3575.
+(hyperref)                removing `math shift' on input line 3594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 3575.
+(hyperref)                removing `math shift' on input line 3594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3575.
+(hyperref)                removing `superscript' on input line 3594.
 
-LaTeX Font Info:    Try loading font information for OT1+pzc on input line 3584
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3594.
+
+[80]
+LaTeX Font Info:    Try loading font information for OT1+pzc on input line 3603
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2001/06/04 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3584
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3603
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <8> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3584
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3603
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <6> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3584
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3603
 .
-[80] [81] [82] [83] [84] [85]
-Overfull \hbox (31.38478pt too wide) in paragraph at lines 3868--3869
+[81] [82] [83] [84] [85] [86]
+Overfull \hbox (31.38478pt too wide) in paragraph at lines 3887--3888
 []\T1/pplx/m/n/10.95 However, we have an iso-mor-phism, $[][]\OT1/zplm/m/n/10.9
 5 (\OMS/zplm/m/n/10.95 O\OT1/zplm/m/n/10.95 (\OT1/pplx/m/n/10.95 1\OT1/zplm/m/n
 /10.95 )\OT1/pplx/m/n/10.95 , \OMS/zplm/m/n/10.95 O\OT1/zplm/m/n/10.95 (\OT1/pp
@@ -1331,7 +1343,7 @@ lx/m/n/10.95 1\OT1/zplm/m/n/10.95 )) [] [][](\OMS/zplm/m/n/10.95 O\OT1/pplx/m/n
  []
 
 
-Overfull \hbox (9.01257pt too wide) in paragraph at lines 3870--3871
+Overfull \hbox (9.01257pt too wide) in paragraph at lines 3889--3890
 \OML/zplm/m/it/10.95 B[] [][]\OMS/zplm/m/n/10.95 ! \OML/zplm/m/it/10.95 B[] \OT
 1/zplm/m/n/10.95 := \OML/zplm/m/it/10.95 K\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/1
 0.95 X[]\OT1/zplm/m/n/10.95 /\OML/zplm/m/it/10.95 X[]\OT1/pplx/m/n/10.95 , ....
@@ -1341,24 +1353,24 @@ pplx/m/n/10.95 -linear, de-ter-mined by $\OML/zplm/m/it/10.95 b[] \OT1/zplm/m/n
 /10.95 =$\T1/pplx/m/n/10.95 image
  []
 
-[86] [87]
+[87]
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <9> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3916
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3935
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <7> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3916
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3935
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <5> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3916
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 3935
 .
 
-Overfull \hbox (47.985pt too wide) detected at line 3924
+Overfull \hbox (47.985pt too wide) detected at line 3943
 \OMS/zplm/m/n/10.95 f[]\OML/zplm/m/it/10.95 C\OT1/zplm/m/n/10.95 /\U/fplmbb/m/n
 /10.95 C\OMS/zplm/m/n/10.95 g  []! f[]g
  []
 
 [88] [89]
-Overfull \hbox (5.16289pt too wide) in paragraph at lines 4001--4002
+Overfull \hbox (5.16289pt too wide) in paragraph at lines 4022--4023
 []\T1/pplx/m/n/10.95 If $\OT1/pplx/m/n/10.95 0 \OMS/zplm/m/n/10.95 6\OT1/zplm/m
 /n/10.95 = \OML/zplm/m/it/10.95 f \OMS/zplm/m/n/10.95 2 \OML/zplm/m/it/10.95 K\
 OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/
@@ -1369,7 +1381,7 @@ zplm/m/n/10.95 ^^Z
  []
 
 
-Overfull \hbox (2.51462pt too wide) in paragraph at lines 4003--4004
+Overfull \hbox (2.51462pt too wide) in paragraph at lines 4024--4025
 []\T1/pplx/m/n/10.95 E.g. (Hy-per-el-lip-tic) $\OML/zplm/m/it/10.95 g \OMS/zplm
 /m/n/10.95 2 \OML/zplm/m/it/10.95 K\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 X\
 OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 Z\OT1/zplm/m/n/10.95 ]$\T1/pplx/m/n/1
@@ -1379,19 +1391,19 @@ OT1/pplx/m/n/10.95 3$\T1/pplx/m/n/10.95 , $\OML/zplm/m/it/10.95 f \OT1/zplm/m/n
  []
 
 [90]
-Overfull \hbox (12.34276pt too wide) detected at line 4062
+Overfull \hbox (12.34276pt too wide) detected at line 4083
 [] \OMS/zplm/m/n/10.95  []! []
  []
 
 [91] [92]
-Overfull \hbox (18.0986pt too wide) in paragraph at lines 4128--4129
+Overfull \hbox (18.0986pt too wide) in paragraph at lines 4149--4150
 []$\OMS/zplm/m/n/10.95 ^^O$ \T1/pplx/m/n/10.95 His-tory: late $\OT1/pplx/m/n/10
 .95 19$\T1/pplx/m/n/10.95 th cen-tury, and gen-er-al-ized by Serre Hirze-bruch,
  Grothendieck.
  []
 
 [93]
-Overfull \hbox (0.52638pt too wide) in paragraph at lines 4168--4170
+Overfull \hbox (0.52638pt too wide) in paragraph at lines 4192--4194
 []$\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 ii\OT1/zplm/m/n/10.95 )$ \T1/pplx/
 m/n/10.95 if $\OML/zplm/m/it/10.95 f [] K[]$\T1/pplx/m/n/10.95 , $\OML/zplm/m/i
 t/10.95 f$ \T1/pplx/m/n/10.95 is tran-scen-den-tal over $\OML/zplm/m/it/10.95 K
@@ -1403,20 +1415,24 @@ m/it/10.95 C\OT1/zplm/m/n/10.95 )$\T1/pplx/m/n/10.95 , so $\OML/zplm/m/it/10.95
 it/10.95 K\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95 )$
  []
 
-
-Overfull \hbox (23.18602pt too wide) in paragraph at lines 4183--4185
-\T1/pplx/m/n/10.95 must be $\OML/zplm/m/it/10.95 ^^Y[]\OT1/zplm/m/n/10.95 (\OML
-/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 ) = \OML/zplm/m/it/10.95 k^^Y[]\OT1/zplm/
-m/n/10.95 ([\OT1/pplx/m/n/10.95 0\OT1/zplm/m/n/10.95 ])$\T1/pplx/m/n/10.95 , th
-en check that $[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95
- ) = \OML/zplm/m/it/10.95 ^^Y[]\OT1/zplm/m/n/10.95 ([\OT1/pplx/m/n/10.95 0\OT1/
-zplm/m/n/10.95 ] \OMS/zplm/m/n/10.95 ^^@ \OT1/zplm/m/n/10.95 [\OMS/zplm/m/n/10.
-95 1\OT1/zplm/m/n/10.95 ]) =[]\OMS/zplm/m/n/10.95 ) []\OT1/zplm/m/n/10.95 ([](\
-OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95 )) =
+[94] [95] [96] [97]
+Overfull \hbox (41.3642pt too wide) in paragraph at lines 4392--4394
+[]$\OML/zplm/m/it/10.95 K \OT1/zplm/m/n/10.95 = [] =[]\OMS/zplm/m/n/10.95 )$ \T
+1/pplx/m/n/10.95 we can iden-tify { closed points of $\OML/zplm/m/it/10.95 C$\T
+1/pplx/m/n/10.95 } with $\OML/zplm/m/it/10.95 C\OT1/zplm/m/n/10.95 ([]) = [][](
+[] ([])\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 C\OT1/zplm/m/n/10.95 )$ 
  []
 
-[94] [95] [96] [97] [98] [99] [100]
-Overfull \hbox (18.80049pt too wide) in paragraph at lines 4494--4495
+
+Overfull \hbox (24.31256pt too wide) in paragraph at lines 4399--4400
+\T1/pplx/m/n/10.95 di-men-sional schemes) $\OT1/zplm/m/n/10.95 (\OT1/pplx/m/n/1
+0.95 1\OT1/zplm/m/n/10.95 )$ \T1/pplx/m/n/10.95 is true but cor-re-spond-ing sc
+heme $\OML/zplm/m/it/10.95 Jac\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 C\OT1/z
+plm/m/n/10.95 )$ \T1/pplx/m/n/10.95 ``Ja-co-bian(variety)
+ []
+
+[98] [99] [100] [101]
+Overfull \hbox (18.80049pt too wide) in paragraph at lines 4541--4542
 []\T1/pplx/m/n/10.95 So any $\OML/zplm/m/it/10.95 f \OMS/zplm/m/n/10.95 2 \OT1/
 zplm/m/n/10.95 ^^@(\OML/zplm/m/it/10.95 C\OT1/pplx/m/n/10.95 , \OMS/zplm/m/n/10
 .95 L\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 D[]\OT1/zplm/m/n/10.95 ))$ \T1/p
@@ -1429,31 +1445,31 @@ plx/m/n/10.95 is an el-e-ment of $\OML/zplm/m/it/10.95 Frac\OT1/zplm/m/n/10.95
 Missing character: There is no ï in font pplr9t!
 Missing character: There is no ¼ in font pplr9t!
 Missing character: There is no ‰ in font pplr9t!
-[101] [102] [103]
-Overfull \hbox (9.89162pt too wide) in paragraph at lines 4637--4639
+[102] [103] [104]
+Overfull \hbox (9.89162pt too wide) in paragraph at lines 4684--4686
 \T1/pplx/m/n/10.95 1940s on, in-clud-ing gen-er-al-iza-tions (Weil con-jec-ture
 s) as mo-ti-vat-ing Grothendieck. 
  []
 
-[104] [105] [106] [107] [108] [109] [110] [111] [112] [113]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5080.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5080.
+[105] [106] [107] [108] [109] [110] [111] [112] [113] [114]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5127.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5127.
 (/Users/vector_cat/Dropbox/2018spring/AG/AG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5080.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5080.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5127.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5127.
 
 Package rerunfilecheck Info: File `AG.out' has not changed.
-(rerunfilecheck)             Checksum: D80C57E37AD78AE1A5268F2AB660DC4C;3987.
+(rerunfilecheck)             Checksum: 9FC13C035E68BF00E84B3A23E7A1CCF3;4079.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5080.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5127.
  ) 
 Here is how much of TeX's memory you used:
- 31514 strings out of 492995
- 744896 string characters out of 6132704
- 881082 words of memory out of 5000000
- 33951 multiletter control sequences out of 15000+600000
+ 31567 strings out of 492995
+ 746286 string characters out of 6132704
+ 882019 words of memory out of 5000000
+ 33999 multiletter control sequences out of 15000+600000
  96933 words of font info for 234 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,96p,988b,1181s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1478,11 +1494,11 @@ ve/2017/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /Users/vector_cat/Dropbox/2018spring/AG/AG.pdf (113 pages, 70
-8942 bytes).
+Output written on /Users/vector_cat/Dropbox/2018spring/AG/AG.pdf (114 pages, 71
+7385 bytes).
 PDF statistics:
- 1328 PDF objects out of 1440 (max. 8388607)
- 1173 compressed objects within 12 object streams
- 517 named destinations out of 1000 (max. 500000)
- 425 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1348 PDF objects out of 1440 (max. 8388607)
+ 1192 compressed objects within 12 object streams
+ 522 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

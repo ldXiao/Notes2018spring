@@ -1,15 +1,15 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'FOAG.blg'
-[55] biber-darwin:303> INFO - === Mon May 14, 2018, 23:00:05
-[87] Biber.pm:359> INFO - Reading 'FOAG.bcf'
-[193] Biber.pm:835> INFO - Found 4 citekeys in bib section 0
-[209] Biber.pm:3670> INFO - Processing section 0
-[232] Biber.pm:3840> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[234] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[242] bibtex.pm:1292> INFO - Found BibTeX data source 'bibliography.bib'
-[302] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[302] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[302] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[303] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
-[317] bbl.pm:608> INFO - Writing 'FOAG.bbl' with encoding 'UTF-8'
-[319] bbl.pm:712> INFO - Output to FOAG.bbl
+[45] biber-darwin:303> INFO - === Mon Jul 30, 2018, 15:33:11
+[68] Biber.pm:359> INFO - Reading 'FOAG.bcf'
+[160] Biber.pm:835> INFO - Found 4 citekeys in bib section 0
+[173] Biber.pm:3670> INFO - Processing section 0
+[187] Biber.pm:3840> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[189] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[194] bibtex.pm:1292> INFO - Found BibTeX data source 'bibliography.bib'
+[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[212] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[212] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[218] bbl.pm:608> INFO - Writing 'FOAG.bbl' with encoding 'UTF-8'
+[219] bbl.pm:712> INFO - Output to FOAG.bbl

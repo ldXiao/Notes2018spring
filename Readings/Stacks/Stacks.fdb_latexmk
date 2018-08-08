@@ -1,5 +1,5 @@
 # Fdb version 3
-["bibtex Stacks"] 1523464249 "Stacks.aux" "Stacks.bbl" "Stacks" 1523464686
+["bibtex Stacks"] 1523464249 "Stacks.aux" "Stacks.bbl" "Stacks" 1530266069
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "Stacks.aux" 1523464685 11148 1f72a1b6afe9c079e415394949f0a558 ""
   "Stacks.bcf" 0 -1 0 ""
@@ -7,12 +7,12 @@
   (generated)
   "Stacks.bbl"
   "Stacks.blg"
-["makeindex Stacks.idx"] 1523436522 "Stacks.idx" "Stacks.ind" "Stacks" 1523464686
+["makeindex Stacks.idx"] 1523436522 "Stacks.idx" "Stacks.ind" "Stacks" 1530266069
   "Stacks.idx" 1523464685 10186 f837cc654b8e60e3a4b56653e1c238d5 ""
   (generated)
   "Stacks.ilg"
   "Stacks.ind"
-["pdflatex"] 1523464682 "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf" "Stacks" 1523464686
+["pdflatex"] 1523464682 "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf" "Stacks" 1530266069
   "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.aux" 1523464685 11148 1f72a1b6afe9c079e415394949f0a558 ""
   "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.tex" 1523464682 91497 55a7e12b2cd71baa3f556f007eb120ad ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -332,11 +332,11 @@
   "tufte-book.cls" 1521943763 2113 41a3c8515d682f1ce08c4dc70e975e7f ""
   "tufte-common.def" 1521943278 66831 c9522ca528108e53dd70064f9ea605ee ""
   (generated)
-  "Stacks.toc"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf"
-  "Stacks.idx"
-  "Stacks.aux"
-  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.log"
   "Stacks.pdf"
-  "Stacks.log"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.pdf"
   "Stacks.out"
+  "Stacks.toc"
+  "Stacks.log"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks/Stacks.log"
+  "Stacks.aux"
+  "Stacks.idx"

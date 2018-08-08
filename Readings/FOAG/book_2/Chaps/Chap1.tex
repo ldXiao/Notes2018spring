@@ -283,7 +283,7 @@ f\left(\frac{m}{s}\times s\right)=s f\left(\frac{m}{1}\right)=\alpha(m)
 $$
 $\Lrta f(m/s)=s^{-1}\circ \alpha(m)$.
 \end{proof}
-\begin{exr}\ 
+\begin{exr}\label{chap1exr:localization_commutes}\ 
 \begin{enumerate}[label=(\alph*)]
 \item Show that localization commutes with finite products, or equivalently, with
 finite direct sums. In other words, if $M_1,...,M_n$ are $A$-modules, describe an isomorphism (of $A$-modules, and of $S^{-1}A$-modules) $S^{-1}(M_1 \times\cdot\cdot\cdot\times M_n) \lrta S^{-1}M_1 \times
@@ -797,7 +797,7 @@ P &  &  \\
 $X\inj X\coprod Y$ and $Y\inj X\coprod Y$. Given an object $P$ such that there is morphism  $f:x\lrta P$ and $g:Y\lrta P$. There exists a morphism $u: X\coprod Y\lrta P$ such that $u(x)=f(x),u(y)=g(y)$. This morphism makes the diagram commute and for the diagram to commute, the morphism has to be defined value-wisely, hence is unique.
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap1exr:fibered_coproduct_tensor_product}
 Suppose $A\lrta B$ and $A\lrta C$ are two ring morphisms, so in particular $B$ and $C$ are $A$-modules. Recall that $B \otimes_A C$ has a ring structure. Show that there is a natural morphism $B \lrta B \otimes_A C$ given by $b  \mapsto b\otimes 1 $. (This is not necessarily an inclusion; see Exercise 1.3.G.) Similarly, there is a natural morphism $C \otimes_A C$. Show that this gives a fibered coproduct on rings.
 \end{exr}
 \begin{proof}
@@ -907,7 +907,7 @@ $$
 $$
 u\longmapsto u\circ f
 $$
-by composition: given a map from $C$ to $A$, we get a map from $B$ to $A$ by precomposing with $f : B \lrta C$. Hence this gives a contravariant functor $h_A : \calc \lrta \textit{Sets}$. Yoneda?s Lemma states that the functor $h_A$ determines $A$ up to unique isomorphism. More precisely:
+by composition: given a map from $C$ to $A$, we get a map from $B$ to $A$ by precomposing with $f : B \lrta C$. Hence this gives a contravariant functor $h_A : \calc \lrta \textit{Sets}$. Yoneda?s Lemma states that the functor $h_A$ determines $A$ up to unique isomorphism.
 \begin{exr}\label{chap1exr:Yoneda}\ 
 \begin{enumerate}[label=(\alph*)]
 \item 

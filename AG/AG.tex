@@ -161,7 +161,7 @@ Notes by Lin-Da Xiao and David Burgschweiger}
 This notes are based on a course in algebraic geometry given by Professor Emmanuel Kowalski in 2018 spring at ETH.
 These are our ``live-{\TeX}ed'' notes from the course. The \LaTeX package tikz and tikzcd were used to generate diagrams.
 
-Many big theorems in the lecture were stated without proof. We list the reference for most of them.
+Many big theorems in the lecture were stated without proof. We list the reference for most of them. One notable exception is Riemann-Roch theorem, which is used only in application level in this lecture, and we don not want to introduce Serre duality or cohomology in the notes.
 These notes are not a faithful representation of the course, either in the mathematics itself or in the quotes, remarks; in particular the errors are our fault. By the same token, any virtues in the notes are to be credited to the lecturer and not the scribe.
 
 If you find any typos or mistakes, please send feedbacks to \href{mailto:xld704@gmail.com}{xld704@gmail.com}.
@@ -175,7 +175,7 @@ Recall: $V(I)\subset \affn^n =\{x|\forall f\in I, f(x)=0\}$.
 Closed subspaces of $\affn^n$ are called \textbf{affine algebraic sets} and irreducible algebraic sets are called \textbf{affine algebraic varieties}
 \end{dfn}
 \begin{dfn}
-Given $Y$ an affine algebraic set in $\affn^n$, we define the \textbf{coordinate ring} $\calo(Y)$ as $K[X_1,...,X_n]/I(Y)$.
+Given $Y$ an affine algebraic set in $\affn^n_K$, we define the \textbf{coordinate ring} $\calo(Y)$ as $K[X_1,...,X_n]/I(Y)$.
 \end{dfn}
 \begin{dfn}
 Let $X\subset \affn^m$ and $Y \subset \affn^n$ be affine algebraic sets. A \textbf{morphism} $X \lrta Y$ of affine algebraic sets is a map $f : X \lrta Y$ of the underlying sets such that there exist polynomials $f_1,...,f_n \in k[T_1,...,T_m]$ with $f(x) = (f_1(x),...,f_n(x))$ for all $x\in X$. 
@@ -197,7 +197,7 @@ $$
 \begin{proof}
 \underline{Key observation}:
 
-To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$, which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
+To give $(f_1,...,f_m)\in K[X]^m$ is ``the same '' as giving a ring morphism $g_0:K[T]\lrta K[X]: T_i\mapsto f_i$ (By universal property of polynomial ring), which gives by composition $g_1=\pi_1\circ g_0$, where $\pi_1: K[X]\lrta \calo(Y_1)$ is the canonical projection.
 $$
 g_1: K[T]\lrta \calo(Y_1)
 $$
@@ -208,13 +208,13 @@ K[T] \arrow[r,"g_1"] \arrow[d,"\pi_2"]  & \calo(Y_1)  \\
    \calo(Y_2) \arrow[ur,"g"] & 
 \end{tikzcd}
 \]
-iff $g_1(I(Y_2))=0$, which means 
+iff $g_1(I(Y_2))=0$ (by universal property of quotient rings), which means 
 $$
 g_1(\varphi)=\text{ ``replace $T_i$ by $f_i$ in $\varphi$''}
 $$
 belongs to $I(Y_1)$ if $\varphi\in I(Y_2)$.
 
-This condition is equivalent to if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from $K[T]\lrta \calo(Y_1)$ s.t. it vanishes on $I(Y_2)$.
+This condition is equivalent to if $x\in Y_1$, then $g_1(\varphi)(x)=0$. That means $\varphi(f_1(x),...,f_m(x))=0$ for $\varphi\in I(Y_2),$ i.e., $(f_1(x),...,f_m(x))\in Y_2$. If $x\in Y_1$. In the statement, this gives the $(*)$ bijection. Any $k$-algebra morphism $\calo(Y_1)\lrta\calo(Y_2)$  comes from a ring morphism $K[T]\lrta \calo(Y_1)$ that vanishes on $I(Y_2)$.
 
 
 For the bijection $(**)$, suppose 
@@ -248,13 +248,13 @@ $Y\mapsto \calo(Y)$, $g\mapsto [\varphi\mapsto \varphi\circ g]$ is a functor: $(
 \end{prop}
 \begin{proof}
 $A$ is  finitely generated reduced $K$-algebra. ( Because $A$ is finitely generated, $\exists n\geq 1$, so that $K[X_1,...,X_n]/I\cong A$). Then ``$A$ is reduced''$\Llrta$ $I$ is radical ideal.
-$\Lrta A=\calo(V(I))$, where $V(I)\subset \affn^n$.
+$\Lrta A=\calo(V(I))$ (by Hilbert's Nullstellensatz), where $V(I)\subset \affn^n$.
 \end{proof}
 
 \begin{cor}
 There is a equivalence of categories between 
 $$
-(\text{Algebraic sets over $K$})\llrta (\text{finitely generated reduced } K\text{-Algebras}.)
+(\text{ Affine algebraic sets over $K$})\llrta (\text{finitely generated reduced } K\text{-Algebras}.)
 $$
 \end{cor}
 
@@ -300,7 +300,7 @@ Since $I'\supset I(Y)$, we get $(x_1,..,x_n)\in Y$. Then we check that $\calo(Y)
 
 (2) We saw in~\ref{thm:equivalence_of_categories_algebraic_sets_K_algebras}, that there is a bijection between sets
 $$
-\hom_{\mathsf{Alg}_k}(Y,\affn^1)\llrta \hom_{K-\mathsf{Alg}}(\calo(\affn^1),\calo(Y)).
+\hom_{\mathsf{Alg}_K}(Y,\affn^1)\llrta \hom_{K-\mathsf{Alg}}(\calo(\affn^1),\calo(Y)).
 $$
 But $\hom_{K-\mathsf{Alg}}(\calo(\affn^1),\calo(Y))=\hom_{K-\mathsf{Alg}}(K[X],\calo(Y))\cong \calo(Y)$ (by $g:\calo(\affn^1)\lrta \calo(Y)$, $g\mapsto g(X)$)
 \end{proof}
@@ -413,11 +413,11 @@ We now want to define morphisms of  projective algebraic sets. We have to look a
 \begin{dfn}
 $Y\subset \proj^n$ projective, let $V\subset Y $ be an open subsets of $Y$.
 \begin{enumerate}[label=(\arabic*)]
-\item $f: V\lrta K$ continuous is called \textbf{regular} on $Y$ if $\forall x\in Y$, $\exists U$ open $x\in U$, $\exists f_1,f_2\in K[X_0,...,X_n]$ homogeneous of same degree such that $f_2(x)\neq 0$ for all $x\in U$ and $f(x)=\frac{f_1(x)}{f_2(x)}$ for $x\in U\cap Y$
+\item A continuous function $f: V\lrta K$  is called \textbf{regular} on $Y$ if $\forall x\in Y$, $\exists U$ open $x\in U$, $\exists f_1,f_2\in K[X_0,...,X_n]$ homogeneous of same degree such that $f_2(x)\neq 0$ for all $x\in U$ and $f(x)=\frac{f_1(x)}{f_2(x)}$ for $x\in U\cap Y$
 \item $Y_1,Y_2$ are projective sets in $\proj^n,\proj^m$, $f: Y_1\lrta Y_2$ is a \textbf{morphism} if $f$ is continuous and for any $U\subset Y_1$ open and any $\varphi:U\lrta K$ regular, the composite $\varphi\circ f: f^{-1}(U)\lrta K$ is regular.
 \end{enumerate}
 \end{dfn}
-\underline{Note}: IN $(2)$, one can not restrict to $\varphi$ regular on $Y_2$ because often the space of such function is reduced to $K$
+\underline{Note}: In $(2)$, one can not restrict the condition to ``$\varphi$ regular on $Y_2$'' because often the space of such global regular function is reduced to $K$. But obviously, a restriction of regular function is still regular.
 \begin{prop}
 For $\proj^n$, the space of regular functions on $\proj^n$ is $K$.
 \end{prop}
@@ -509,11 +509,11 @@ $\Llrta$ $\exists U_1\subset Y_1$ open dense subset and $\exists U_2\subset Y_2$
 \begin{dfn}
 (Quasi-affine  and quasi-projective) varieties)
 \begin{enumerate}%[label=(\arabic*)]
-  \item \textbf{quasi-affine variety} $V$ is an open subset $V\subset Y$, where $Y\subset \affn^n$ is an affine variety. $[V\neq \emptyset\Lrta V\text{ dense in } Y\Lrta V\text{ irreducible }]$. It is given by the Zariski's topology from $Y$.\\
+  \item \textbf{Quasi-affine variety} $V$ is an open subset $V\subset Y$, where $Y\subset \affn^n$ is an affine variety. $[V\neq \emptyset\Lrta V\text{ dense in } Y\Lrta V\text{ irreducible }]$. It is given by the Zariski's topology from $Y$.\\
   (1') $V\subset Y\subset \proj^n$ where $V$ is an open subset of $Y$ is \textbf{quasi-projective}, where $Y$ is projective variety.
-  \item A regular function $f:V\lrta K=\affn^1$, where $V$ is quasi-affine is an $f$ such that for all $x\in V$, $\exists U\subset V$ open containing $x$ s.t., $\forall x\in V$, $f(x)=\frac{f_1(x)}{f_2(x)}$ where $f_1,f_2\in\calo(\affn^n)$ and $f_2(x)\neq 0$ on $U$.\\
+  \item A \textbf{regular function} $f:V\lrta K=\affn^1$, where $V$ is quasi-affine is an $f$ such that for all $x\in V$, $\exists U\subset V$ open containing $x$ s.t., $\forall x\in V$, $f(x)=\frac{f_1(x)}{f_2(x)}$ where $f_1,f_2\in\calo(\affn^n)$ and $f_2(x)\neq 0$ on $U$.\\
   (2') $V$ is quasi-projective variety a regular function $f$ is $\frac{f_1(x)}{f_2(x)}$ $f_i$ homogeneous of same degrees.
-  \item If $V_1,V_2$ are \underline{Varieties} (of any of the four types), then $f:V_1\lrta V_2$ is a \textbf{morphism} if for al open $U\subset V_2$ all $\varphi:U\lrta K$ regular, the composition $\varphi\circ f: f^{-1}U\lrta K$ is also regular.
+  \item If $V_1,V_2$ are \underline{Varieties} (of any of the four types), then $f:V_1\lrta V_2$ is a \textbf{morphism} if for all open $U\subset V_2$ and  all $\varphi:U\lrta K$ regular, the composition $\varphi\circ f: f^{-1}(U)\lrta K$ is also regular.
   \end{enumerate}
 \end{dfn}
 
@@ -595,17 +595,17 @@ $$
 $$
 \begin{prop}
 $Y$ is quasi-affine, $U\subset Y$ open nonempty.
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*)]
 \item $\calo(Y)\inj\calo(U)\inj K(Y)$\\
 $f\longmapsto f|_U\mapsto (U,f)$
 \item $K(Y)$ is a field, and identifies with the fraction field of $\calo(Y)$ and of $\calo(U)$.
 \item if $Y$ is an affine variety, then $\calo(Y)$ as defined above coincides with $\calo(Y)=K[X_1,...,X_n]/I(Y)$ as defined in previous sections.\\
 
-(3') If $Y=U_f$ for $0\neq f$ in $\calo(\affn^n)$, then $\calo(Y)=\{f_1/f^d|f_1\in \calo(\affn^n, d\geq 0\}=\calo(\affn^n)_f$ the localization at $f$.
+(3') If $Y=U_f$ for $0\neq f$ in $\calo(\affn^n)$, then $\calo(Y)=\{f_1/f^d|f_1\in \calo(\affn^n), d\geq 0\}=\calo(\affn^n)_f$ the localization at $f$.
 \end{enumerate}
 \end{prop}
-\begin{proof}
-(1), The morphism $\calo(Y)\lrta \calo(U)\lrta K(Y)$ are injective because any $U\subset Y,\neq \emptyset$ is dense.
+\begin{proof}\ 
+(1), The morphism $\calo(Y)\lrta \calo(U)\lrta K(Y)$ are injective because any nonempty open subset $U\subset Y$ is dense and any two regular functions agree on a dense subset would be identical.
 
 (2) Let $(U,f)\neq 0$ in $K(Y)$, then $\exists x_0\in U$, $f(x_0)\neq 0$ in a $V\subset U$, $x_0\in V$
 $$
@@ -629,13 +629,13 @@ So $$
 &=\calo'(Y)
 \end{aligned}
 $$
-the second equality from Nullstellensatz and the third from commutative algebra.
+the second equality from Nullstellensatz and the third is a theorem for integral domain from commutative algebra.
 
 (3') Similarly, using characterization of maximal ideals in $A_f, f\neq 0$
 \end{proof}
 
 \begin{dfn}
-K(Y) is called the fraction or function field of $Y$
+$K(Y)$ is called the fraction or \textbf{function field} of $Y$, we will give a more general definition in terms of schemes in the next chapter.
 \end{dfn}
 
 \begin{ex}
@@ -655,6 +655,7 @@ $f:Y_1\dashrightarrow Y_2$ is a \textbf{dominant} if its image $\tilde{f}(U)\sub
 \end{dfn}
 
 \begin{ex}\ 
+
 (1) there is a bijection $\{Y\dashrightarrow \affn^1\}=K(Y)$
 $$
 \begin{matrix}
@@ -677,7 +678,7 @@ x&\longmapsto [f_1(x):f_2(x):f_2(x)]
 $$
 defined on $\{x|f_i (x) \text{ are not all zero}\}$, which is open if any of the $3$ sections is non-zero.
 \end{ex}
-\begin{thm}
+\begin{thm}\label{chap1thm:dominant_rational_map_bij_morphism_of_function_fields}
 $Y_1,Y_2$ varieties
 
 $\exists \{Y_1\overset{f}{\dashrightarrow} Y_2|f \text{ dominant}\}$
@@ -686,7 +687,9 @@ $\overset{bij}{\llrta}$
 
 $K(Y_2)\lrta K(Y_1)$
 \end{thm}
-
+\begin{rmk}
+In general this theorem works for integral separated $k$-scheme of finite type.
+\end{rmk}
 \begin{cor}
 $Y_1, Y_2$ varieties. $Y_1$ and $Y_2$ are birational 
 
@@ -699,7 +702,8 @@ $\exists V\subset Y_2$, open $\neq \emptyset$ so that $U$ and $V$ are isomorphic
 \begin{cor}
 Any variety $Y$ of dimension $d\geq 0$ is birational to a hypersurface $V\subset \proj^{d+1}$
 \end{cor}
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{chap1thm:dominant_rational_map_bij_morphism_of_function_fields}]\ 
+
 (1) Given $Y_1\overset{f}{\dashrightarrow}Y_2$ dominant, we want a morphism
 $K(Y_2)\lrta K(Y_1)$.
 
@@ -722,13 +726,12 @@ f_j =i (X_j)\in K(Y_1)
  $$
 x\longmapsto (\tilde{f}_1(x),...,\tilde{f}_n(x)).
  $$
-This is a rational map $Y_1\dashrightarrow Y_2$
-
+This is a rational map $Y_1\dashrightarrow Y_2$.
 \end{proof}
 
-\subsection{Mar 9th: Continue and Nonsingular varieties}
+\subsection{Mar 9th-A: Rational/birational maps continue}
 
-Recall
+Recall~\ref{chap1thm:dominant_rational_map_bij_morphism_of_function_fields}
 \begin{thm} $Y_1,Y_2$ varieties
 $$\{ \text{dominant }Y_1\dashrightarrow Y_2\}\llrta\{K(Y_2)\inj K(Y_1)\}$$
 \end{thm}
@@ -740,7 +743,9 @@ $Y_1$  and $Y_2$ are birational \item the function field $K(Y_1)$ and $K(Y_2)$ a
 \end{itemize}
 \end{cor}
 \begin{proof}
-The last condition implies the second because $K(Y_1)=Frac(\calo(U))\cong Frac(\calo(V))=K(Y_2)$. Assume we have rational maps 
+The last condition implies the second because $K(Y_1)=Frac(\calo(U))\cong Frac(\calo(V))=K(Y_2)$. 
+
+Assume we have rational maps 
 $$
 Y_1\overset{f_2}{\drta}Y_2\overset{f_2}{\drta} Y_1
 $$
@@ -766,7 +771,7 @@ Let $y=\tilde{f}_1(x)\in V'$ so $\tilde{f}_2(y)=\tilde{f}_2(\tilde{f}_1(x))=x$ s
 \end{proof}
 
 \begin{dfn}
-A \textbf{rational variety} $Y$ is a variety $Y$ birational to $\proj^n$ for some $n$ (or to $\affn^n$). BY the theorem above we know $\exists n, K(Y)\cong K(X_1,...,X_n)$. 
+A \textbf{rational variety} $Y$ is a variety $Y$ birational to $\proj^n$ for some $n$ (or to $\affn^n$). By the theorem above we know $\exists n, K(Y)\cong K(X_1,...,X_n)$. 
 
 A \textbf{unirational variety} $Y$ is a variety s.t. there is a dominant $\proj^n\drta Y$ for some $n$, by theorem above $\exists n, K(Y)\inj K(X_1,...,X_n)$
 We obviously have
@@ -818,7 +823,7 @@ $$
 so the fraction field $K(\tilde{Y})$ injects into $K(Y)$. The image of $K(\tilde{Y})$ contains $X_1,...,X_d$ and $\alpha$ hence it contains $E(\alpha)$, i.e., $K(\tilde{Y})=K(Y)$
 \end{proof}
 
-\section*{Nonsingular varieties}
+\subsection{Mar 9th-B: Nonsingular varieties}
 Concrete geometric definition:
 \begin{dfn}
 $Y\subset \affn^n$ affine variety $\dim Y=d$, $x\in Y$. We say $Y$ is \textbf{nonsingular} at $x$ if for any generating set $\underline{f}:=(f_1,...,f_m)$ of $I(Y)$, the Jacobian matrix at $x$
@@ -827,23 +832,22 @@ J_{\underline{f}}(x)=\left(\frac{\pd f_i(x)}{\pd x_j}\right)_{1\leq i\leq m, 1\l
 $$
 has rank $n-d$. If this holds for all $x$, then we say $Y$ is nonsingular.
 \end{dfn}
-\underline{Key fact}: It suffices to check the rank of $J_F(x)$ for some generating set. 
+\underline{Key fact}: It suffices to check the rank of $J_F(x)$ for one generating set $F$. 
 
 Indeed suppose $\underline{h}=(h_1,..,h_k)$ also generate $I(Y)$ so
 $$
 f_i = \sum^k_{\ell=1} g_{i\ell} h_\ell,
 $$
-where $g_{i\ell}\in \calo(\affn^n)$, $\frac{\pd f_i}{\pd x_j}=\sum^k_{\ell=1}\frac{\pd g_{i\ell}}{\pd x_j}h_\ell+\sum^k_{\ell=1}g_{i\ell}\frac{h_\ell}{x_j}$
+where $g_{i\ell}\in \calo(\affn^n)$, $\frac{\pd f_i}{\pd x_j}=\sum^k_{\ell=1}\frac{\pd g_{i\ell}}{\pd x_j}h_\ell+\sum^k_{\ell=1}g_{i\ell}\frac{\pd h_\ell}{\pd x_j}$
 
 At $x$ where $h_\ell(x)=0$, we get 
 $$
-\frac{\pd f_i}{x_j}(x)=\sum^k_{\ell=1}\frac{\pd g_{i\ell}}{\pd x_j}h_\ell
+\frac{\pd f_i}{\pd x_j}(x)=\sum^k_{\ell=1}\frac{\pd g_{i\ell}}{\pd x_j}h_\ell
 $$
 $$
 \Lrta J_{\underline{f}}(x)=M J_{\underline{h}}(x)
 $$
-so rank $J_{\underline{f}}(x)\leq \text{rank } J_{\underline{h}}(x)$. Exchanging $\underline{f},\underline{h}$, we get the equality.
-
+so rank $J_{\underline{f}}(x)\leq \min{\text{rank } M, \text{rank } J_{\underline{h}}(x)}$ and in particular $J_{\underline{f}}(x)\leq  \text{rank } J_{\underline{h}}(x)$. Exchanging $\underline{f},\underline{h}$, we get the equality.
 \begin{ex}
 
 \end{ex}\ 
@@ -920,7 +924,7 @@ $$
 where $\scm_{Y,x}\subset \calo_{Y,x}$ is the maximal ideal 
 \end{dfn}
 \begin{rmk}
-$\calo_{Y,x}$ is a local ring, it has a unique maximal ideal $\scm$ which is $\calo_x\calo_{Y,x}$ in the affine case. Moreover $\calo_{Y,x}/\scm=K$ by $f\mapsto f(x)$.
+$\calo_{Y,x}$ is a local ring, it has a unique maximal ideal $\scm$ which is $\scm_x\calo_{Y,x}$ in the affine case. Moreover $\calo_{Y,x}/\scm=K$ by $f\mapsto f(x)$.
 \end{rmk}
 
 N.B. Intuitively,  the Taylor expansion of $f\in \calo_{Y,x}$ about $x\in\scm_{Y,x}$ is
@@ -943,7 +947,7 @@ $$
 where $k=\calo/\scm$ is the residue field.
 \end{dfn}
 
-\subsection{Mar 13th-A: Continue and proofs}
+\subsection{Mar 13th-A: Nonsingular variety continue}
 %Recall:
 %$x\in Y\subset \affn^n$, $d=\dim(Y)$ affine variety,  and $Y$ is non-singular at $x$ iff 
 %$$
@@ -1050,7 +1054,7 @@ $(1)$ $S$ is closed in $Y$, indeed fixing $(f_1,...,f_m)$ generating $I(Y)$
 $$
 S=\{x\mid rank\  J_{\underline{f}}(x)\neq n-d\} 
 $$
-One can show that $rank\ J_{\underline{f}}(x\leq n-d)$. So
+One can show that $rank\ J_{\underline{f}}(x)\leq n-d$. So
 $$
 \begin{aligned}
 S&=\{x\mid rank\  J_{\underline{f}}(x)< n-d\}\\
@@ -1067,11 +1071,11 @@ If $S=Y$, then by the theorem of Zariski, the set of non-singular points in an o
 V(f)\supset S=\left\{x\in \affn^{d+1}|0=f(x=\frac{\pd f}{x_1}(x)=...=\frac{\pd f}{x_d}(x)\right\}
  $$
  so if $S=V(f)$, $\frac{\pd f}{\pd x_1}\in I(V(f))=f\calo(\affn^{d+1})=f K[X_1,..,X_{d+1}]$
- $$
-\Lrta \text{ in char }=0, \text{ comparing degrees, we have contradiction}
- $$
- $\Lrta$ in chat $p\neq 0$, we get $\frac{\pd f}{\pd x_i}=0$ for $1\leq i\leq d$,
- $\Lrta f\in K[x_1^p,..,X_d^{p}]\Lrta f=g^p$, contradicting the irreducibility.
+
+ $\Lrta$If char $0$, comparing degrees, we have contradiction.
+
+ $\Lrta$If char $=p\neq 0$, we get $\frac{\pd f}{\pd x_i}=0$ for $1\leq i\leq d$,
+ $\Lrta f\in K[X_1^p,..,X_d^{p}]\Lrta f=g^p$ because  $\text{char }K=0$ , and this is contradicting the irreducibility.
 \end{proof}
 \section{Schemes}
 In this chapter we will mainly follow chap 2 of Hartshorne and chap 1 of Eisenbud-Harris.
@@ -1079,7 +1083,7 @@ In this chapter we will mainly follow chap 2 of Hartshorne and chap 1 of Eisenbu
 \subsubsection{Motivations}
 Serious problems with classical approach occurred in late 1950's
 \begin{enumerate}[label=(\arabic*)]
-\item Intrinsic definitions (Without embeddings in $\affn^n$ or $\proj^n$)
+\item Intrinsic definitions (Without embeddings into $\affn^n$ or $\proj^n$)
 \item Construction of various algebraic varieties especially Jacobian variety of a curve, especially w.r.t. base field (is the Jacobian of a curve given by equation with coefficients in the same field?)
 \item Reduction modulo $p$ of a variety given by equation in $\intg[X_1,..,X_n]$
 \end{enumerate}
@@ -1113,7 +1117,7 @@ $$
 $\spec A:=\{\text{ prime ideals $\scp\subset A$ }\}$
 \end{dfn}
 
-\underline{Fact}: If $f: A_1\lrta A_2$ is a ring morphism then $\scp\mapsto f^{-1}\scp$ gives map of sets
+\underline{Fact}: If $f: A_1\lrta A_2$ is a ring morphism then $\scp\mapsto f^{*}\scp$ gives map of sets
 $$
 \spec A_2\lrta \spec A_1
 $$
@@ -1122,12 +1126,12 @@ $$A_1\overset{f}{\lrta}A_2/\scp$$
 $$f^{-1}\scp\mapsto 0$$
  leads to an injective map
  $$
-A_1/f^{-1}\scp\inj A_2/\scp,
+A_1/f^{*}\scp\inj A_2/\scp,
 $$ then $A/f^{-1}\scp$ is an integral domain and $f^*(\scp)$ is therefore a prime ideal.
 \end{proof}
 
 \begin{dfn}
-If $\scp\in\spec A$. the fraction field of $A/\scp$ is called the residue field at $\scp$, denoted $\kappa(\scp)$. 
+If $\scp\in\spec A$. the fraction field of $A/\scp$ is called the \textbf{residue field} at $\scp$, denoted $\kappa(\scp)$. 
 \end{dfn}
 If $a\in A$, then $a$ defines a function
 $\tilde{a}:\spec A\lrta\coprod_{\scp\in \spec(A)}\kappa(\scp)$, $\scp\mapsto a\mod \scp$
@@ -1146,7 +1150,7 @@ For any set $S\subset A$, let $V(S)=\{\scp\in\spec(A)|S\subset \scp\}$:
 
 \begin{lemma}\ 
 \begin{enumerate}[label=(\arabic*)]
-\item The sets $V(I)$, $I$ ideal in $A$, from  the closed set s of a topology on $\spec A$ (called the \textbf{Zariski topology}).
+\item The sets $V(I)$, $I$ ideal in $A$, from  the closed sets of a topology on $\spec A$ (called the \textbf{Zariski topology}).
 \item $V(I)\subset V(J)\Llrta \sqrt{J}\subset \sqrt{I}$
 \item If $f: A_1\lrta A_2$ is a ring morphism, then 
 $$
@@ -1185,7 +1189,17 @@ then if $V(J)\subset V(I)$, we get $\sqrt{I}\subset \sqrt{J}$.
 Conversely, if $\sqrt{I}\subset \sqrt{J}$ then for $\scp\in V(J)$, then
 $I\subset \sqrt{I}\subset\sqrt{J}\subset \scp\Lrta \scp\in V(I)$.
 
-(3)
+(3) Assume $S$ is a subset in $B$. Consider a closed set $V(S)$ in $\spec B$, we will verify that $\pi^{-1}V(S)$ is also closed.
+$$
+\pi^{-1}V(S)=\{[\scp]\in \spec A: \pi(\scp)\supset S\}=\{[\scp]\in \spec A: \phi^*(\scp)\supset S\}
+$$
+\underline{Claim}: $\pi^{-1}V(S)=V(\phi(S))$
+
+In fact $\scp\supset \phi(S)\Llrta \phi^{-1}(\scp)\supset S$, therefore,
+$$
+\pi^{-1}V(S)=\{[\scp]\in \spec A: \phi^*(\scp)\supset S\}=\{[\scp]\in \spec A: \scp\supset \phi(S)\}=V(\phi(S)).
+$$
+The preimage of a closed set is always closed. $\pi$ is continuous.
 \end{proof}
 
 \subsection{Mar 16th: Affine schemes, examples and properties.}
@@ -1222,7 +1236,7 @@ Y^{sc}=\spec (K[X_1,...,X_n]/I(Y)=:A).
 $$
 Maximal ideals of $\calo(Y)$ are in bijection with points of $Y$ by 
 $$
-x\mapsto \scm_x=\{f\in\calo(Y|f(x)=0\}
+x\mapsto \scm_x=\{f\in\calo(Y)|f(x)=0\}
 $$
 so we get an injective map
 $$
@@ -1292,6 +1306,7 @@ So:
 \item $\overline{\{\eta_A\}}=\spec A$ if $A$ is an integral domain.
 \item $\{\scp\}$ is closed iff $\scp$ is maximal.
 \end{enumerate}
+There is a one to one correspondence between prime ideals in $A$ and irreducible closed subsets in $\spec A$.
 \end{ex}
 
 \begin{dfn}
@@ -1497,8 +1512,8 @@ $$
 $$
 $$
 \intg\overset{i}{\inj} \ratl\llrta \begin{aligned}
-&\spec (\bbf_p)\overset{i^*}{\lrta} \spec (\intg)\\
-& \{0\}\in\bbf_p\mapsto  \eta
+&\spec (\ratl)\overset{i^*}{\lrta} \spec (\intg)\\
+& \{0\}\in\ratl\mapsto  \eta
 \end{aligned}.
 $$
 In particular, the image of $i^*$ is dense in $\spec \intg$.
@@ -1644,9 +1659,9 @@ So $h^{n_\alpha}_\alpha=c_\alpha g_\alpha$, Now for $\scp\in U_{h_\alpha}$
 $$
 \frac{a_\alpha}{g_\alpha}=\frac{a_\alpha c_\alpha }{g_\alpha c_\alpha}=\frac{a_\alpha c_\alpha}{h_\alpha^{n_\alpha}}\in A_\scp
 $$
-Replacing $a_\alpha$ by $a_\alpha c_\alpha$, $g_\alpha$ by $h^{n_\alpha}{\alpha}$, Using $U_{h_\alpha^{n_\alpha}}=U_{h_\alpha}$, we reduce to the case where $g_\alpha=h_\alpha$ for all $\alpha$.
+Replacing $a_\alpha$ by $a_\alpha c_\alpha$, $g_\alpha$ by $h^{n_\alpha}_{\alpha}$, Using $U_{h_\alpha^{n_\alpha}}=U_{h_\alpha}$, we reduce to the case where $g_\alpha=h_\alpha$ for all $\alpha$.
 
-On $U_{h_\alpha}\cap U_{h_\beta}=U_{h_\alpha h_\beta}$, we have
+By $U_{h_\alpha}\cap U_{h_\beta}=U_{h_\alpha h_\beta}$, we have
 $$
 \forall \scp \in U_{h_\alpha h_\beta}, \frac{a_\alpha}{h_\alpha}=\frac{a_\beta}{h_\beta}\text{  in } A_\scp
 $$
@@ -1748,7 +1763,7 @@ Note that $\operatorname{Id}_{\calf(U)}: \calf(U) \longrightarrow \calf(U)$ give
 $$
 (\varphi \circ \psi)_U = \varphi_U \circ \psi_U.
 $$ 
-Thus we have now defined the category of $\calc$-pre-sheaves and sheaves.
+Thus we have defined the category of $\calc$-pre-sheaves and sheaves.
 
 \begin{ex}\ 
     \begin{enumerate}[label=(\arabic*)]
@@ -1772,7 +1787,7 @@ Thus we have now defined the category of $\calc$-pre-sheaves and sheaves.
 \end{ex}
 
 \begin{prop}
-    Suppose $\calf$ is a $\calc$-pre-sheaf on $X$. Then there is a unique, up to unique isomorphism, morphism $\sigma: \calf\longrightarrow \calf^\sigma$, (the ``sheafification'' of $\calf$) such that for any morphism of presheaves $\varphi: \calf \longrightarrow \mathcal Y$ there is a unique $\varphi^\sigma$ such that $\varphi = \varphi^\sigma \circ \sigma$. In particular $\hom_{\mathsf{PSh}} (\calf, \mathcal Y) = \hom_{\mathsf{Sh}} (\calf^\sigma, \mathcal Y)$.
+    Suppose $\calf$ is a $\calc$-pre-sheaf on $X$. Then there is a unique, up to unique isomorphism, morphism $\sigma: \calf\longrightarrow \calf^\sigma$, (the \textbf{``sheafification''} of $\calf$) such that for any morphism of presheaves $\varphi: \calf \longrightarrow \mathcal Y$ there is a unique $\varphi^\sigma$ such that $\varphi = \varphi^\sigma \circ \sigma$. In particular $\hom_{\mathsf{PSh}} (\calf, \mathcal Y) = \hom_{\mathsf{Sh}} (\calf^\sigma, \mathcal Y)$.
     $$
     \begin{tikzcd}
     \calf \arrow[r, "\varphi"] \arrow[d, "\sigma"'] & \mathcal Y  \\
@@ -1839,7 +1854,7 @@ Then $\calf^\sigma$ is a presheaf and $\sigma$ is a morphism. One checks that $\
 
 Given $\calf$ and $\calf^\sigma$, we obtain an isomorphism for all $x$, $\sigma: \calf_x \longrightarrow \calf^\sigma_x$ by
 $$
-[(U,x)] \longmapsto [(U,\varphi^\sigma_U(s))].
+[(U,s)] \longmapsto [(U,\varphi^\sigma_U(s))].
 $$
 
 \begin{prop}
@@ -1853,7 +1868,7 @@ We omit the proof, it can be found in either Hartshorne or Eisenbud.
         \item 
         This only holds for sheaves not presheaves.
         \item
-        The ismorphism $\varphi_x$ need to come from a ``global'' map $\varphi: \calf_1 \longrightarrow \calf_2$.
+        The ismorphism $\varphi_x$ need to come from a ``global'' map $\varphi: \calf_1 \longrightarrow \calf_2$. (We can not say that two sheaves are isomorphic if they have isomorphic stalks.)
         \item
         One checks that $\varphi: \calf_1 \longrightarrow \calf_2$ is and isomorphism iff $\varphi_U: \calf_1(U) \longrightarrow \calf_2(U)$ are all isomorphisms. One can define $\varphi$ to be injective if $\varphi_U$ is injective for all $U$. However, the correct definition of surjectivity for $\varphi$ is not equivalent to saying that $\varphi_U$ is surjective for all $U$.
     \end{enumerate}
@@ -1865,7 +1880,7 @@ We omit the proof, it can be found in either Hartshorne or Eisenbud.
 \end{dfn/thm}
 
 \begin{proof}
-    We check that $f_*\calf$ is a sheaf. Let $U\subset Y$ be open, $U \bigcup U_\alpha$ be and open cover for $U$ and let $s_\alpha \in (f_* \calf)(U_\alpha)$ be such that 
+    We check that $f_*\calf$ is a sheaf. Let $U\subset Y$ be open, $\bigcup U_\alpha$ be and open cover for $U$ and let $s_\alpha \in (f_* \calf)(U_\alpha)$ be such that 
     $$
     s_\alpha|U_\alpha\cap U_\beta = s_\beta|U_\alpha \cap U_\beta.
     $$
@@ -1935,19 +1950,19 @@ $$
 $$
 has composition
 $$
-(g\circ g,g_*(f^*)\circ g^*)
+(g\circ f,g_*(f^*)\circ g^*)
 $$
-where $g_*(f^*)$ is the direct image $\calf\lrta g_*\calf$ is a functor from (pre)sheaves on $Y$ to sheaves on $Z$
+where $g_*$ is the direct image $\calf\lrta g_*\calf$ is a functor from (pre)sheaves on $Y$ to sheaves on $Z$
 .
-(Any morphism of sheaves $\varphi:\calf_1\lrta \calf_2$ gives a morphism $g_*\calf_1\lrta g_*\calf_2$)
+(Any morphism of sheaves $\varphi:\calf_1\lrta \calf_2$ gives a morphism $g_*(\varphi):g_*\calf_1\lrta g_*\calf_2$)
 
-A morphism of locally ringed space $(X,\calo_X)\lrta (Y,\calo_Y)$
- is $(f,f^*)$ $f:X\lrta Y$ is continuous and $\calo_Y\overset{f^*}{\lrta}f_*\calo_X$ such that $f^*$ induces for each $x\in X$ a \underline{local} morphism 
+A \textbf{morphism of locally ringed spaces} $(X,\calo_X)\lrta (Y,\calo_Y)$
+ is a morphism of ringed space $(f,f^*)$ $f:X\lrta Y$ is continuous and $\calo_Y\overset{f^*}{\lrta}f_*\calo_X$ such that $f^*$ induces for each $x\in X$ a \underline{local} morphism 
 $\calo_{Y,f(x)}\lrta\calo_{X,x}$.
 
 Recall that $A,B$ are local rings. $f: A\lrta B$ is \underline{local} iff $f^{-1}(\scm_B)=\scm_A$. 
 
-\underline{Note}: $f^{-1}(\scm_B)\subset \scm_A$ because if $f(a)\in \scm_B$ $a\notin A^\times\Lrta a\in \scm_A$. So the condition to be local is 
+\underline{Note}: $f^{-1}(\scm_B)\subset \scm_A$ for general ring morphism, because if $f(a)\in \scm_B$ $a\notin A^\times\Lrta a\in \scm_A$. So the condition to be local is 
 $$
 \scm_A\subset f^{-1}(\scm_B)\Llrta f(\scm_A)\subset \scm_B
 $$
@@ -2145,7 +2160,7 @@ $$
 such that $g^{-1}(\{0\})=\scm_{\calo_{S,x}}$, i.e.
 $g$ passes to the quotient
 $$
-\kappa_S\lrta K.
+\kappa(x)\lrta K.
 $$
 Concretely, ``the coordinates of $x$ are in $K^n$'', which leads us to the notion of $K$-valued point and $A$-valued point in general. We will discuss this in the next lecture.
 \end{ex}
@@ -2534,7 +2549,7 @@ We can routinely check the universal property of $\pi_1^{-1}(U)$. The left squar
 
 Especially, it works for $S,Y$ affine case. 
 
-\underline{Step 4}. fibered product of affine with arbitrary over affine exists. If $Y$ and $S$ are affine and $X$ is arbitrary.
+\underline{Step 4}. fibered product of affine scheme with arbitrary scheme over affine scheme exists, i.e. if $Y$ and $S$ are affine and $X$ is arbitrary, then $Y\times_S X$ exists.
 
 Consider two affine open subset $U_i$ and $U_j$ of $X$, denote their intersection $U_i\cap U_j=U_{i,j}$.  $U_i\times_S Y$ exists by the affine case. We call it $W_i$. Also $X\times_S U_{i,j}$ exists by Step 3. and comes with a canonical open embeddings into $W_j$ and $W_i$. Then we can glue $W_i$ and $W_j$ along $W_{i,j}$; call this resulting scheme $W$.
 
@@ -2570,7 +2585,7 @@ X\times_S Y=\spec( A\otimes_R B)
 Why not product?
 For $X,Y$ and schemes, each have a unique map to $\spec \intg$. The fibered product $X\times_\intg Y$ depends only on $X$ and $Y$. ($\spec \intg$ is the final object in $\mathsf{Schemes}$)
 
-$X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y\neq\spec \intg[T,V]$ Krull dimension $3$.
+$X=\spec \intg[T]$, Krull dimension $2$, $Y=\spec \intg[V]$, dimension $2$. $X\times_\intg Y=\spec \intg[T,V]$ Krull dimension $3$.
 $$
 \dim X\times_\intg Y\neq \dim X+\dim Y.
 $$
@@ -2578,7 +2593,7 @@ $$
 
 \begin{ex}
 $K$ a field, $X, Y$ schemes over $K$, then we have the identity
- $$\dim X\times_K Y=\dim X+\dim Y.$$ But  set of points of $X\times_K Y$ is not the set is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it  is true for the $K$-valued points,  $X(K)=\hom(\spec K, X)$
+ $$\dim X\times_K Y=\dim X+\dim Y.$$ But  set of points of $X\times_K Y$ is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it  is true for the $K$-valued points,  $X(K)=\hom(\spec K, X)$
 $$
 X\times_K Y(K)=X(K)\times Y(K)
 $$
@@ -2644,8 +2659,8 @@ $X=\spec \intg[x,y,z]/(x^3+y^3+z^2)$. The set of solutions is $X(\intg)$
 \end{ex}
 
 \begin{ex}
-$f:X\lrta S$, $\scp$ a point of $S$
-$K(\scp)$ residue field of $\scp$. $\spec K(\scp)\lrta S$. Define$K(\scp)\times_S X$ as the fiber of $f$ over $\scp$
+$f:X\lrta S$, $\scp$ a point of $S$,
+$K(\scp)$ residue field of $\scp$. $\spec K(\scp)\lrta S$. Define $\spec K(\scp)\times_S X$ as the \textbf{fiber} of $f$ over $\scp$
 $$
 \begin{tikzcd}
  & X \arrow[d] \\
@@ -2654,7 +2669,7 @@ $$
 $$
 \end{ex}
 \begin{lemma}
-The set of points of the fiber is the inverse image of $\scp$ where $f$ is the set of points of $X$. The underlying set of $K(\scp)\times_SX$ maps to the underlying set of $X$.
+The set of points of the fiber is the inverse image of $\scp$ in the  set of points of $X$. The underlying set of $K(\scp)\times_SX$ maps to the underlying set of $X$.
 
 
 \end{lemma}
@@ -2664,9 +2679,11 @@ The set of points of the fiber is the inverse image of $\scp$ where $f$ is the s
 $y^2=x^3-3x-t$ viewed as a family of algebraic sets in $\affn^2$ with coordinates $X,Y$ parameter $t$. For each %t
 , we get an equation in $X,Y$, this defines a curve in $\affn^2$. Consider the morphism
 $$
-f:\spec k[x,y,t]/(y^2-x^3-3x+t)\lrta \spec K[t].
+f:\spec k[x,y,t]/(y^2-x^3-3x+t)\lrta \spec k[t],
 $$
-The fibers of $f$ over closed points are curves in the family.
+where $f$ corresponds to the ring morphism $k[t]\inj k[x,y,t]\lrta k[x,y,t]/(y^2-x^3-3x-t)$.
+
+The fibers of $f$ over closed points $(t-\alpha)x$ are curves in the family.
 
 \underline{Idea from Grothendieck}: view any morphism as a family where elements are the fiber. $\affn^3\cup pt\Lrta \affn^1$, $\affn^3$ to $0$ $pt$ to $1$. Not all maps make  nice families but this point of view is helpfull in general, why?
 \begin{itemize}
@@ -2675,8 +2692,9 @@ The fibers of $f$ over closed points are curves in the family.
 \end{itemize}
 
 \begin{ex}
-Reduction $\mod p$. $X$ is a scheme over $\intg$. $X\times_\intg \spec \bbf_p$ is a scheme over $\bbf_p$. ``reduction $\mod p$'' of $X$
-$X=\spec \intg[x_1,...,x_n]/(f_1,...,f_m)$
+(Reduction $\mod p$) $X$ is a scheme over $\intg$. $X\times_\intg \spec \bbf_p$ is a scheme over $\bbf_p$, which is called \textbf{``reduction $\mod p$'' of $X$}.
+
+Suppose $X=\spec \intg[x_1,...,x_n]/(f_1,...,f_m)$, then
 $X\times_\intg\spec \bbf_p=\spec \bbf_p[x_1,...,x_n]/(f_1,..,f_m)$. This can be tricky, for example $\spec \intg[T]/T(T+2)$ has no nilpotents (is ``reduced'' scheme) but $\spec \bbf_2[T]/Y(T+2)=\spec \bbf_2[T]/T^2$ has nilpotent. 
 \end{ex}
 \begin{ex}
@@ -2753,7 +2771,7 @@ Then we need another lemma
 
 $A\subset K$, with $ K=\overline{K}$, $S=\affn^n_A$ is locally closed. The followings are equivalent
 \begin{enumerate}[label=(\arabic*)]
-\item Image of $S$ is the projection to $\spec A$ containing the generic point.
+\item Image of $S$ via the projection to $\spec A$ containing the generic point.
 \item $S\times_{\spec A}\spec K$ is not empty.
 \item $S\times_{\spec A}\spec K$ has a $K$ point. 
 \end{enumerate}
@@ -2801,9 +2819,9 @@ $X$ integral $\Llrta$ $X$ is reduced and irreducible.
 \item In a scheme $X$ is integral, $\calo_X(U)$ is integral for all open subsets, hence $\calo_X(U)$ is also reduced because integral domain has no nonzero zero divisors.
 
 \item An integral scheme should be irreducible. Assume contrarily $X$ is reducible, and can be written as union of two closed subsets $X=Y\cup Z$. Define the complements $U:=X-Y$ and $V=X-Z$, we know $U,V$ are nonempty opens and their have empty intersection. The structure sheaf $\calo_X(U\cup V)=\calo_X(U)\times \calo_X(V)$ which is not integral in general.
-\item Conversely: $X$ reduced + irreducible. Let $U\subset X$ be a open, and assume $\calo_X(U)$ is not integral. (exists $s,tin\calo_X(U)$ such that $st=0$.)
+\item Conversely: $X$ reduced + irreducible. Let $U\subset X$ be a open, and assume $\calo_X(U)$ is not integral. (exists $s,t\in\calo_X(U)$ such that $st=0$.)
 
-Let $Z_s=\{x\in U| s(x)\in\scm_{X,x}\subset \calo_{X,x}\}$, $Z_t=\{X\in U|t(x\\in\scm_{X,x}\subset \calo_{X,x}$
+Let $Z_s=\{x\in U| s(x)\in\scm_{X,x}\subset \calo_{X,x}\}$, $Z_t=\{X\in U|t(x)\in\scm_{X,x}\subset \calo_{X,x}$
 
 \underline{Claim}: $Z_t,Z_s$ are closed in $X$. (If $U=\spec A$ is affine, then $s$ corresponds to an element $a\in A$ and
 $$
@@ -2816,7 +2834,7 @@ $$
 
 In the general case, it follows that $Z_s\cap \spec A$ is closed for any $\spec A\subset U$ open affine $\Lrta Z_s$ is closed.)
 
-Since $st=0$, we have $s(x)t(x)\in\scm_{X,x}$ for every $x$, so $x\in Z_s\cup Z_t$ for every $x$. $Z_t\cup Z_s=U$.
+Since $st=0$, we have $s(x)t(x)\in\scm_{X,x}$ for every $x$, so $x\in Z_s\cup Z_t$ for every $x$. $Z_t\cup Z_s\supset U$.
 
 Since $X$ is irreducible $\Lrta Z_s=U$ or $Z_t=U$. For instance, if $Z_s=U$, then $s|V=0$ nilpotent for every affine $\spec B=V\subset U$ (because $s|V$ corresponds to $a\in A$ which has $U_a=V-V(a)$ is empty set $\Lrta \sqrt{(a)}=\{0\}\Lrta a$ is nilpotent). Since $X$ (hence $U$) is reduced, we get $s|V=0$ for every $V\subset U$ open affine, so by the (sheaf condition) we have $s=0$.
 \end{itemize}
@@ -2942,9 +2960,10 @@ $n\geq 1$, $\spec K[X]/(X^n)\inj \spec(K[X])$ all have the same image $XK[X]$. I
 \end{prop}
 
 \begin{prop}
->>>>>>>1
+$X$ is a scheme, $Y$ is a subset of  the topological space of $X$. There is a canonical closed subscheme structure on $Y$. This closed subscheme is universal in the sense that given another closed subscheme $Y'$ with  the same underlying set. The closed embedding factor through $Y$.
 \end{prop}
-If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the reduced induced scheme structure on $Y$.]
+If $V(I)=Y\subset X=\spec A$, take $\spec A/\sqrt{I}$ which is a reduced closed subscheme with image $V(I)$. [This is called the \textbf{reduced subscheme structure} on $Y$ (Or sometimes called reduced induced subscheme structure).]
+For detailed explanation, see Hartshorne example II.3.2.6 and Exercise 3.11.
 
 \subsection{Apr 27th: Projective space and schemes}
 \begin{dfn}
@@ -2988,7 +3007,7 @@ $$
 U_i\overset{\sim}{}\lrta 
 \spec(\intg[Y_1,...,Y_n])\simeq \affn^n_\intg$$
 \end{enumerate}
-\item ``Glueing''
+\item ``Gluing''
 
         
 
@@ -3159,7 +3178,7 @@ In $\proj^2_\intg$, we have a closed subscheme defined by
 $$
 Y^2Z-X^3-XZ^2
 $$
-and on $U_2=\spec(\intg[X/Z,Y/Z,1])$ it is isomorphic to the closed subscheme of $\affn^2_n=\spec(\intg[U,V])$
+and on $U_2=\spec(\intg[X/Z,Y/Z,1])$ it is isomorphic to a closed subscheme of $\affn^2_n=\spec(\intg[U,V])$
 $$
 \left(\frac{Y}{Z}\right)^2-\left(\frac{X}{Z}\right)^3-\left(\frac{X}{Z}\right)=V^2-U^3-U.
 $$
@@ -3184,7 +3203,7 @@ In this section, we require the scheme to be Noetherian integral, separated sche
 (In general a Noetherian local ring $(A,\scm)$, with $k=A/\scm$ is called regular if the dimension of $A$ is equal to the $\dim_k \scm/\scm^2$  this means $X$ has some minimal ``smoothness'')
 \begin{ex}
 \ \begin{enumerate}[label=(\arabic*)]
-\item Assume, a scheme $X$ if of finite type over a filed $K$, then $X$ is regular in codimension one  if $X$ is ``non-singular'' in the sense analogue of definition of non-singular varieties.
+\item Assume, a scheme $X$ is of finite type over a filed $K$, then $X$ is regular in codimension one  if $X$ is ``non-singular'' in the sense analogue of definition of non-singular varieties.
 \item $X=\affn_K^n=\spec(K[X_1,..,X_n])$. To say that $\scp\in X$ has dimension one means $\dim \calo_{X,\scp}=1\Llrta $ height of $\scp$ is equal to $1$. Because
 $$
 \calo_{X,\scp}=K[X_1,...,X_m]_{\scp} 
@@ -3261,7 +3280,7 @@ It is denoted $\text{Div}(X)$. A divisor $D=\sum_i n_i D_i$ is effective if all 
 \end{dfn}
 \begin{dfn}
 The \textbf{function field} of $X$ is the residue field/local ring at the generic point $\eta$ of $X$. An element $f$ of $K(X)$ is therefore the equivalence class of $(U,s)$ where $U$ is 
-an open set $\emptyset \neq U\subset X$ and $s\in \Gamma(U,\calo_X)$.
+an open set $\emptyset \neq U\subset X$ and $s\in \Gamma(U,\calo_X)$, $(U,s)\sim (V,t)$ iff $s|_{U\cap V}=t|_{U\cap V}$.
 \end{dfn}
 \begin{ex}
 $K(\affn^n_K)=K(X_1,...,X_n)=K(\proj^n_K)$
@@ -3434,11 +3453,11 @@ How are $Cl(\spec A)$ distributed when $L/\ratl$ varies? (Cohen-Lenstra Heuristi
 \begin{thm}
 (II 6.4) Define a group morphism from the $\underline{deg}: \Div(X)\lrta \intg$
 $$
-D\longmapsto \underline{deg}(f)
+D\longmapsto deg(f)
 $$ 
 where $D$ is the subscheme associated to homogeneous polynomial $f$.
 \begin{enumerate}[label=(\alph*)]
-\item For all principal divisors $\div(f), f\in K(X)$, we have $\underline{deg}(f)=0$.
+\item For all principal divisors $\div(f), f\in K(X)$, we have $\underline{deg}(\div f)=0$.
 \item The induced morphism from class groups to $\intg$ 
 $$
 Cl(X)\overset{\underline{deg}}{\lrta }\intg
@@ -3461,7 +3480,7 @@ where $U_0=\spec(K[X_0/X_0,X_1/X_0,..,X_n/X_0])$. So $K(X)=K(X_0/X_0,...,X_n/X_0
 So $f\in K(X)^\times$ is of the form $f=f_1/f_2$ where $f_i \in K[X_0/X_0,..,X_n/X_0]$. 
 
 \underline{Key fact}: 
-$f$ us also $f=g_1/g_2$ where $g_i$ is homogeneous of degree $deg g_1=deg g_2$ in $K[X_0,..,X_n]$. Then factor $g_1,g_2$ in irreducibles in $K[X_0,..X_n]$, there are homogeneous, say 
+We can also express $f=g_1/g_2$ where $g_i$ is homogeneous of degree $deg g_1=deg g_2$ in $K[X_0,..,X_n]$. Then factor $g_1,g_2$ in irreducibles in $K[X_0,..X_n]$, there are homogeneous, say 
 $$
 f=\prod_i h_i^{n_i}\prod_j k_j^{-m_j}
 $$
@@ -3505,7 +3524,7 @@ $D_1=\sum n_i E_i$, where $E_i$ is prime divisors associated to $h_i$.
 $D_2=\sum m_j F_j$, where $F_j$ is prime divisors associated to $k_j$. 
 
 
-Then let $f=\prod h_i ^{n_i}\prod k_j^{- m_j}\in K(X)^\times$, and as shown above $dic(f)=D_1-D_2=D$ so $D$ is  $0$ in $Cl(X)$.
+Then let $f=\prod h_i ^{n_i}\prod k_j^{- m_j}\in K(X)^\times$, and as shown above $\div(f)=D_1-D_2=D$ so $D$ is  $0$ in $Cl(X)$.
 \item the proof can be found in Hartshorne
 \end{enumerate}
 \end{proof}
@@ -3524,7 +3543,7 @@ generated by $U\cap H_0$
 \section{Invertible sheaves and Picard group}
 \subsection{May 8th-B: Picard group, definitions}
 \begin{dfn}
-Let $(X,\calo_X)$ be a ringed space. A sheaf of $\calo_X$-modules is a sheaf
+Let $(X,\calo_X)$ be a ringed space. A \textbf{sheaf of $\calo_X$-modules} is a sheaf
 $\calf$ on $X$ so that $\calf(U)$ is a $\calo_X(U)$-module for any open $U$ and for $V\subset U$
 $$
 \calf(U)\overset{\res}{\lrta}\calf(V)
@@ -3673,7 +3692,7 @@ In practice, $\tilde{M}$ is an invertible sheaf iff $M$ is projective, locally o
 
 \item If $X$ has the usual regularity properties, and $D$ is a prime divisor, there is a naturally associated invertible sheaf $\call(D):$ Let $U\subset X$ open small enough, so that $D\cap U$ is given by $f=0$ on $U$, then
 $$
-\call(D)(U)=\{s\in Frac(\calo_X(U)| s=f^{-1}t, t\in \Gamma(U, \calo_X)\}
+\call(D)(U)=\{s\in Frac(\calo_X(U))| s=f^{-1}t, t\in \Gamma(U, \calo_X)\}
 $$
  One checks that this is well-defined (it is independent on the choice of $f$)
 
@@ -3765,7 +3784,7 @@ g\longmapsto ([x_0:...:x_n]\lrta[\sum_j a_{0j}x_j:...:\sum_j a_{nj} x_j])
 $$
 with $a_{ij}$ the entries of $g$.  
 \end{thm}
-This uses
+This uses an important fact that we won't prove.
 \begin{thm}[Hartshorne II6.16]
 \label{thm:Hart_II_6.16}$X$ Noetherian, integral, quasi-projective, every local ring is regular
 $\Lrta$ the map $D\longmapsto \call(D)$ gives an isomorphism 
@@ -3792,7 +3811,7 @@ $$
 However, by functorial property of $\gamma^*$, we know it induce well-defined morphism on the Picard group. When $\gamma$ is an automorphism, it induce isomorphism on the Picard group, it send generators to generators.
 
 Indeed, $\calo(1)\in \pic(\proj^n_K)\simeq Cl(\proj^n_K)\simeq \intg[H_0]$ corresponds to $[H_0]$, where $H_0$ means the hyperplane where $X_0=0$.
-$\gamma^*\calo(1)\in \pic(\proj^n_K)$ is therefore also a generator of $\pic(\proj^n_K)$. $\gamma^*\calo(1)$ can only be either $\calo(1)$ or $\calo(1)^{-1}$ However, one checks 
+$\gamma^*\calo(1)\in \pic(\proj^n_K)$ is therefore also a generator of $\pic(\proj^n_K)$. $\gamma^*\calo(1)$ can only be either $\calo(1)$ or $\calo(1)^{-1}$. However, one checks 
 $$
 \Gamma(\proj^n_K,\calo(1)^{-1})=\{0\}
 $$
@@ -3874,7 +3893,7 @@ Therefore, we have $\hom_{\calo-mod}(\calo(1),\calo(1))\cong K$, so $\sigma$ is 
 \section{Algebraic Curves}
 \subsection{May 15th-B: Preliminaries}
 \begin{dfn}
-An \textbf{algebraic curve} $C$ over a field $K$, is an integral $1$-dimensional scheme. Often denoted $C/K$
+An \textbf{algebraic curve} $C$ over a field $K$, is an integral $1$-dimensional $K$-scheme. Often denoted $C/K$
 
 A \textbf{non-singular} $C/K$ is a curve where every $\calo_{C,x}$ is regular, for $x$  being closed point.
 
@@ -3885,8 +3904,8 @@ A \textbf{non-singular projective curve} $C/K$ is  a one dimensional $K$-subsche
 \underline{Notation}: $K(C)$ is the function field of $C$, and  $K(C)/K$
  is a field extension of transcendence degree $1$. 
 
- \begin{ex}
- $C=\proj^1_K$, non-singular projective curve, with $K(C)\cong K(T)$ moreover, any non-zero $f\in K(C)$ corresponds uniquely to a morphism of schemes $C\overset{\tilde{f}}{\lrta}\proj^n_K$ as follows:
+ \begin{ex}\label{chap7ex:correspondence+rational functions_maps_to_proj_lilne}
+  non-singular projective curve, with $K(C)\cong K(T)$ moreover, any non-zero $f\in K(C)$ corresponds uniquely to a morphism of schemes $C\overset{\tilde{f}}{\lrta}\proj^1_K$ as follows:
  
  If $f\in \Gamma(U,\calo_C)$, where $U$ is maximal open set (such that $f$ is regular on $U$), then  $f\llrta f\in \Gamma(U,\calo_C)\cong \hom_{\mathsf{Sch}}(U,\affn^1_K))$. i.e.
  $$
@@ -3896,7 +3915,7 @@ f\llrta p\mapsto [f(p),1]
  so $\tilde{f}|_U:U\lrta \affn^1_K$ is defined as above and $\tilde{f}$ maps $C-U$ to the infinity point $\{\infty\}=\proj^1_K-\affn^1_K$.
 
  Conversely, let $\phi: C\lrta \proj^1$ be a morphism of $K$-schemes. It is of the form
- $\phi=[f,g]$, where both $f$ and $g$ are  
+ $\phi=[f,g]$, where both $f$ and $g$ are regular functions.  
 
  For detailed discussion, see Silverman II.2.2
  \end{ex}
@@ -3913,7 +3932,7 @@ X \arrow[rd] \arrow[r, "f"] & Y \arrow[d] \\
  & \spec K
 \end{tikzcd}
 $$
-if both $X,Y$ are projective $\Lrta f(X)$ is closed in $Y$\footnote{In modern terminology, we say ``morphisms of projective $K$-schemes are proper'', see theorem 10.3.5 of FOAG}. Because the only closed subset in a curve is either closed point or the whole set.
+if both $X,Y$ are projective $\Lrta f(X)$ is closed in $Y$\footnote{In modern terminology, we say ``morphisms of projective $K$-schemes are proper and proper morphisms are universally closed'', see theorem 10.3.5 of FOAG}. Because the only closed subset in a curve is either closed point or the whole set.
 
 \begin{ex}\ 
 \begin{enumerate}[label=(\arabic*)]
@@ -3935,6 +3954,8 @@ If $\deg(g)=3,$ we get a so called elliptic curve.
 
 Note: by varying $g$, we get many different hyperelliptic curves, in fact, if we fix $\deg(g)=d$, we have $d$ parameters. 
 \subsubsection{Artin-Schreier Curves}
+
+When considering hyperelliptic curve as subschemes of $\proj^2_K$, we can check that for $d\geq 4$, it has a singularity at infinity. 
 \begin{prop}
 $K$ is an algebraically closed field and
 $Char(K)=p> 0$, $f(X,Y)=Y^p-Y-g(X)$
@@ -4011,7 +4032,7 @@ $$
 \left\{
 \begin{aligned}
 \frac{\pd f}{\pd X}(\infty)&=0-0=0\\
-\frac{\pd f}{\pd Y}(\infty)&=Z/Z^{d-2}(\infty)=0\\
+\frac{\pd f}{\pd Y}(\infty)&=2YZ^{d-2}(\infty)=0\\
 \frac{\pd f}{\pd Z}(\infty)&=(d-2)Z^{d-3}Y^2(\infty)-0&=\left\{
 \begin{aligned}
 &1, \ d=3\\
@@ -4045,7 +4066,7 @@ $$
 again, $\infty$ is often singular.
 
 To understand the projective non-singular curves, one has the following theorem
-\begin{thm}
+\begin{thm}\label{chap7thm:equivalence_0f_categories_normal_proper_integral_curves_over_K}
 (Goertz-Wedhorn, 15.22), the functor
 $C\mapsto K(C)$, (non-constant $(f:C_1\lrta C_2)\lrta (f^*:K(C_2)\lrta K(C_1))$ is contravariant equivalence of categories between
 $$
@@ -4113,9 +4134,9 @@ $\pi|_{\pi^{-1}(U)}$ is an isomorphism over $x$ singular, there are usually $\ge
 \end{tikzpicture}
 \end{center}
 
-$\bullet$ Definition: $C_1\overset{f}{\lrta}{C_2}$, morphism of curves, if $f$ is non-constant, then it is associated to a unique $f^*:K(C_2)\inj K(C_1)$ an dit is a finite extension, one denotes $\deg(f)=[K(C_1):K(C_2)]$
+$\bullet$ Definition: $C_1\overset{f}{\lrta}{C_2}$, morphism of curves, if $f$ is non-constant, then it is associated to a unique $f^*:K(C_2)\inj K(C_1)$ and it is a finite extension, one denotes $\deg(f)=[K(C_1):K(C_2)]$
 
-$\bullet$ Example: $C_g:Y^2=g(X)$, then $K(C_g)=K(X)(\sqrt{g})$, where $K(X)$ is the base field and $K(X)\sqrt{g}/K(X)$ is of transcendence degree $2$ if $g$ is square free.
+$\bullet$ Example: $C_g:Y^2=g(X)$, then $K(C_g)=K(X)(\sqrt{g})$, where $K(X)$ is the base field and $K(X)(\sqrt{g})/K(X)$ is of transcendence degree $2$ if $g$ is square free.
 $$
 \begin{tikzcd}
 C_g \arrow[d, "\pi"] & {(x,g)} \arrow[d, maps to] \arrow[r] & K(X)\inj K(C_g) \\
@@ -4155,6 +4176,9 @@ and $Cl(C)\overset{\sim}{\lrta}\pic(C)$
 \begin{dfn}
 $\ell(D)=\dim_K\Gamma(C,\call(D))$ (it is finite)
 \end{dfn}
+The fact global section is finite dimensional, is a special case of the deep fact:
+
+For any coherent sheaf $\calf$ on a projective $A$-scheme $X$, where $A$ is Noetherian, $H^i(X,\calf)$ is a coherent $A$-module. (See FOAG theorem 18.1.4)
 \begin{prop}
 $C$ curve over $K$. let $f\in K(C)^\times$ and let $\deg:\Div(C)\lrta \intg:$ which linearly extends $ x\longmapsto[K(x):K]$, then
 $$
@@ -4165,25 +4189,34 @@ It means $\div(f)$ has as many poles as zeros.
 \begin{proof}
 $(i)$ if $f\in K^\times$, the $\div(f)=0$, has degree $0$.
 
-$(ii)$ if $f\notin K^\times$, $f$ is transcendental over $K$, so $K\subset K(f)\subset K(C)$, so $K(C)/K(f)$ is finite and corresponds to a morphism
-$C\overset{\pi}{\lrta}\proj^1_K$, define 
+$(ii)$ if $f\notin K^\times$, $f$ is transcendental over $K$, so $K\subset K(f)\subset K(C)$, so $K(C)/K(f)$ is finite (Because both of them are of transcendence degree $1$ over $K$) and corresponds to a morphism
+$C\overset{\pi}{\lrta}\proj^1_K$ due to Theorem~\ref{chap7thm:equivalence_0f_categories_normal_proper_integral_curves_over_K} define 
 $$
 \pi^*: \Div(\proj^1_K)\lrta \Div(C)
 $$
 $$
-x\longmapsto \sum_{y\in \pi^{-1}(x), y\text{ closed in }C} v_y(\pi_x)y
+x\longmapsto \sum_{y\in \pi^{-1}(x), y\text{ closed in }C} v_y(\pi^{\#}(t_x))y
 $$
-where $v_y$ is the valuation on the local ring of $C$ at $y$, $\pi_x\in K(f)\subset K(C)$ is a uniformizer at $x$.
+where $v_y$ is the valuation on the local ring of $C$ at $y$, $t_x\in K(f)\subset K(C)$ is a uniformizer at $x$. We also haved used $\pi^\#$ to denote the field extension $K(T)\inj K(C)$ induced by the morphism of curves
 
-$\bullet$ Observe that: $\pi^*(\div(g))=\div(g\circ \pi)$, 
+$\bullet$ Observe that: $\pi^*(\div(g))=\div(g\circ \pi)$, where interpret the rational function $g$ and $g\circ \pi$ as a morphism from the curve to $\proj^1_K$ due to  Example~\ref{chap7ex:correspondence+rational functions_maps_to_proj_lilne}
 $$
 \begin{tikzcd}
 C \arrow[r, "\pi"] \arrow[rr, "g\circ\pi"', bend right] & \proj^1_K \arrow[r, "g"] & \proj^1_K
 \end{tikzcd}
 $$
-So $\pi^*$ induces a group morphism $\intg[\infty]=\intg[0]\cong Cl(\proj^1_K)\overset{\pi^*}{\lrta}Cl(C)$, which must be $\pi^*(k)=k\pi^*([0])$, then check that $\div(f)=\pi^*([0]-[\infty])\Lrta \deg(\div(f))=\deg(k\pi^*([0]))-k\pi^*(\infty)=0$.
+So $\pi^*$ induces a group morphism $\intg[\infty]=\intg[0]\cong Cl(\proj^1_K)\overset{\pi^*}{\lrta}Cl(C)$, which must be $\pi^*(k)=k\pi^*([0])$, then check $\div(f)=f^*([0]-[\infty])\Lrta \deg(\div(f))=\deg(kf^*([0])-kf^*([\infty]))=0$.
 
-(in fact: $\deg(\pi(D))=\deg(\pi)\deg(D)$)
+$$
+f^*([0]-[\infty])=\sum_{f(y)=0}v_y(f^\# (t_0))[y]-\sum_{f(y)=\infty} v_y(f^\#(t_\infty))[y]\overset{?}{=}\div f
+$$
+In order to prove the equality under question mark, we have to prove
+$$
+v_y(f^\#(t_0))=v_y(f).
+$$
+
+In fact, we have $f^\#(t)=f$, where on LHS $f$ is interpreted as morphism of curves and on RHS $f$ is a rational function.
+
 \end{proof}
 \begin{thm}
 (Riemann-Roch,R-R) $C$ non-singular projective over $K$, then there exists $g\geq 0$ integer,(``genus of $C$'') and a divisor class $K_C$ (``canonical divisor of $C$'') on $C$, such that, for any divisor $D$ on $C$, $\ell(D)-\ell(K_C-D)=\deg(D)+1-g$.
@@ -4191,7 +4224,7 @@ So $\pi^*$ induces a group morphism $\intg[\infty]=\intg[0]\cong Cl(\proj^1_K)\o
 \subsection{May 22nd: Riemann-Roch}
 Recall: $\deg(\div(f))=0, f\in K(C)^\times$.
 \begin{proof}
-$\div(f)=f^*([0]-[\infty])$, where $f^*: \Div(\proj^1_K)\lrta \Div(C)$. One checks that $\deg(f^*D)=\deg (f)\deg(D)$
+$\div(f)=f^*([0]-[\infty])$, where $f^*: \Div(\proj^1_K)\lrta \Div(C)$. One checks that $\deg(f^*D)=\deg (f)\deg(D)$, where $\deg f$ means the degree of field extension of $K(C)/K(\proj^1_k)$.
 $$
 \Lrta \deg(\div(f))=\deg(f)(\deg([0]-[\infty]))=0
 $$
@@ -4207,26 +4240,26 @@ $\bullet$ Interptation: $\Gamma(C,\call(D))=\{0\}\cup \Gamma(U,\call(D))=\{t\in 
 $$
 D=\sum_{i\in I} n_i x_i-\sum_{j\in J} m_j y_j
 $$
-where $x_i,y_j$ are pairwise distinct closed point in $C$.
+where $x_i,y_j$ are pairwise distinct closed points in $C$. ($x_i$ can be equal to $x_j$ though)
 
 $f\in K(C)^\times$ is in $\Gamma(C,\call(D))$, and $U_i$ is an open set containing $x_i$ and no other $x_k$ or $y_j$, then $f|_U=f$ must belong to $\pi_i^{-n_i}\Gamma(U,\calo_C)$, where $\pi_i$ is the uniformizer at $x_i$, so $f\pi_i^{n_i}\in \Gamma(U,\calo_C)$, so $v_{x_i}(f)\geq -n_i$, (which means pole of order $\leq n_i$)
 
 In other words: $f\in \call(D)\Llrta \div(f)+D\geq 0$, $\sum v_x(f)\cdot x+D\geq 0$
 
-\begin{cor}\ 
+\begin{cor}\label{chap7cor:principal_divisor_length1_deg0}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item if $\ell(D)\geq 1$, then $\deg(D)\geq 0$
-\item if $\ell(D)\geq 1$ and $\deg(D)=0$, then $D$ is principle ($0\in Cl(D)$) and $\ell(D)\geq 1$.
+\item if $\ell(D)\geq 1$ and $\deg(D)=0$, then $D$ is principal ($0\in Cl(D)$)
 \end{enumerate}
 \end{cor}
 \begin{proof}\ 
 \begin{enumerate}[label=(\arabic*)]
-\item if $0\neq f\in \call(D)$, $f$ exists $\ell(D)\geq 1$. We then have $\div(d)+D\geq 0$ $\Lrta 0+\deg(D)\geq 0$, $[\deg(\div(f))]=0$
+\item if $0\neq f\in \call(D)$, $f$ exists $\ell(D)\geq 1$. We then have $\div(f)+D\geq 0$ $\Lrta 0+\deg(D)\geq 0$ because $\deg(\div(f))=0$
 \item if $0\neq f\in \call(D)$, then $D+\div(f)\sim D$ in $Cl(C)$. So, if $\deg(D)=0$, $D$ is equivalent to $D+\deg(f)\geq 0$, which is effective of degree $0$, hence is the zero divisor.
 \end{enumerate}
 
 In particular, if $\deg(D)>\deg(K_C)$, $\ell(K_C-D)=0$ by part $(1)$ in the Corollary above. So R-R
- gives $\ell(D)=\deg(D)+1-g$ in particular, if $\deg(D)>g-1$,  we have $\ell(D)\geq 1$. There exists $0\neq f$ ikn $K(C)$ with poles/zeros controlled by $D$.
+ gives $\ell(D)=\deg(D)+1-g$ in particular, if $\deg(D)>g-1$,  we have $\ell(D)\geq 1$. There exists $0\neq f$ in $K(C)$ with poles/zeros controlled by $D$.
  \end{proof}
 
  Moreover to say that $f$ has a zero at $x$ is a linear condition on $f$. Similarly for $f$ having  a pole at $x$ ($\Llrta V_f$ has a zero).
@@ -4249,8 +4282,8 @@ K_1\sim K_2\in Cl(C)
 $$
 \end{enumerate}
  \end{cor}
- \begin{proof}
- \begin{enumerate}[label=\arabic*]
+ \begin{proof}\ 
+ \begin{enumerate}[label=(\arabic*)]
  \item $D=0$ in R-R, $\ell(D)-\ell(K_C)=0+1-g$, $\Lrta \ell(K_C)=g$, because $\dim_K(C,\call([0]))=\dim_K(C,\calo_C)=1$
  \item $D=K_C$ in R-R: $\ell(K_C)=\ell(0)=\deg(K_C)+1-g$
  $$
@@ -4260,12 +4293,12 @@ $$
 $$
 \Lrta \ell(K_1-K_2)=1
 $$
-but $K_1-K_2$ has degree $0$, Then by part $(2)$ of Corollary above,know
+but $K_1-K_2$ has degree $0$, Then by part $(2)$ of Corollary~\ref{chap7cor:principal_divisor_length1_deg0},know
 $K_1-K_2\sim 0$
  \end{enumerate}
  \end{proof}
 
- \begin{ex}
+ \begin{ex}\ 
  \begin{enumerate}[label=(\arabic*)]
 \item $[g=0]$ $C=\proj^1_K$, we know that $Cl(C)\simeq  \intg$. say with $[\infty]$ as generator, (One we recovers this by noting that $\infty \neq x\sim \infty$ in $Cl(\proj^1)$, because $f=(T-X)$ has single $0$ at $x$ and a single pole at $\infty$)
 So $D=\sum n_i x_i\sim (\sum n_i)\infty$.  inparticular, if R-R holds, it means with $K_{\proj^1}\sim (2g-2)\infty$.
@@ -4299,9 +4332,9 @@ $n\leq -2$, $0-\ell(-(n+2)\infty)\overset{?}{=}n+1$, it is the case because $\el
  $$
  where $\deg(K_C-D)=\deg(K_C)-\deg(D)=-2-0< 0\Lrta \ell(K_C-D)=0$.
 
- $\Lrta \ell(D)=1\Lrta D$ is principle.
+ $\Lrta \ell(D)=1\Lrta D$ is principal.
 
- \underline{Step 2}: Pick two distinct $x_0\neq x_1\in C$ (closed points), Consider $D=x_0-x_1$, by step 1, $D$ is principle, let $f\in K(C)^\times$ have divisor $D$, then $f$ has a single zero at $x_0$, single pole at $x_1$.
+ \underline{Step 2}: Pick two distinct $x_0\neq x_1\in C$ (closed points), Consider $D=x_0-x_1$, by step 1, $D$ is principal, let $f\in K(C)^\times$ have divisor $D$, then $f$ has a single zero at $x_0$, single pole at $x_1$.
 
 Consider $\tilde{f}: C\lrta \proj^1_K$
 $$
@@ -4343,8 +4376,8 @@ $$
 \ell(D)-\ell(-D)=\deg(D).
 $$
 Denote $\pic^\circ(C)=\ker(\deg:Cl(C)\lrta\intg)$, where $Cl(C)\cong \pic (C)$
-\begin{thm}
-$K=\overline{K}$. Fix $\infty$ closed point of $C$, then 
+\begin{thm}\label{chap7thm:correspondence_closed_point_Pic0} In the case of $g=1$,
+$K=\overline{K}$. Fix $\infty$ a closed point of $C$, then 
 $$
 j:\left\{\begin{aligned}
 \{\text{closed point of $C$}\}&\lrta\pic^\circ(C)\\
@@ -4354,7 +4387,7 @@ $$
 is a bijection.
 
 \end{thm}
-\begin{rmk}
+\begin{rmk}\ 
 \begin{enumerate}[label=(\arabic*)]
 \item $K=\overline{K}\Lrta $ we can identify \{ closed points of $C$\} with 
 $C(\overline{K})=\hom_{\mathsf{Sch}}(\spec(\overline{K}),C)$
@@ -4363,20 +4396,33 @@ $C(\overline{K})=\hom_{\mathsf{Sch}}(\spec(\overline{K}),C)$
 $(b)$ $C(\overline{K})$ has  a structure of an abelian group (with $\infty$ as neutral element)
 \end{enumerate}
 \end{rmk}
-Both of the facts generalize to curves of higher $g\geq 2$ (and in come form to higher dimensional schemes) $(1)$ is true but corresponding scheme $Jac(C)$ ``Jacobian(variety) of  $C$'' is a nonsingular projective scheme over $K$ of dimension $g$.
+Both  facts generalize to curves of higher $g\geq 2$ (and in some form to higher dimensional schemes) $(1)$ is true but corresponding scheme $Jac(C)$ ``Jacobian(variety) of  $C$'' is a nonsingular projective scheme over $K$ of dimension $g$.
 
 $(2)$ $Jac(C)$ is a ``group scheme'' in the sense that it has agroup structure with operation given by morphisms. there are $Jac(C)\times Jac(C)\overset{m}{\lrta} Jac(C)$ and $Jac(C)\overset{j}{\lrta}Jac(C), 0\in Jac(C)$ s.t. the diagrams expressing associativity, neutral element, inverse, commutativity.
->>>>>>>1
+$$
+\begin{tikzcd}
+ & Jac(C)\times Jac(C)\times Jac(C) \arrow[ld, "Id\times m"'] \arrow[rd, "m\times Id"] &  \\
+Jac(C)\times Jac(C) \arrow[rd, "m"'] &  & Jac(C)\times Jac(C) \arrow[ld, "m"] \\
+ & Jac(C) & 
+\end{tikzcd}
+$$
 
 \begin{dfn}
- $C$ genus $1$ over $K$ $\infty$ closed point with reside field $K$ [$\llrta$ an  element of $C(K)$], $(C,\infty)$ is called an elliptic curve over $K$. $Ex$. $K=\ratl$ $S=\{3x^3+4y^3+5z^3=0\}\subset \proj^2_\ratl$  is of genus $1$, but $S(\ratl)=\empty$.
+ $C$ genus $1$ over $K$, $\infty$ closed point with reside field $K$ [$\llrta$ an  element of $C(K)$], $(C,\infty)$ is called an \textbf{elliptic curve} over $K$. $Ex$. $K=\ratl$ $S=\{3x^3+4y^3+5z^3=0\}\subset \proj^2_\ratl$  is of genus $1$, but $S(\ratl)=\emptyset$.
 \end{dfn}
+\begin{lemma}
+A smooth projective curve  $C$ is isomorphic to $\proj^1_k$ if and only if there exists two distinct closed points $x,y\in X$ with $x\sim y$.
+\end{lemma}
+\begin{proof}
+One direction is trivial.
 
-\begin{proof}[Proof of theorem]
-$j(x)=$ class of $x-\infty$
+We assume there exist such two distinct closed points. $x\sim y$ means $[x]-[y]$ is principal, there exists a rational function $f\in K(C)$ such that $\div f=[x]-[y]$.  This already gives a rational map from $C$ to $\proj^1_k$. Check that $f^*([0])=[x]$, so $f$ must be a morphism of degree $1$. This means the field extension $K(C)/K(\proj^1_k)$ is in fact degree $1$. This means $C$ is birational to $\proj^1_k$. In fact two smooth projective  curves are birational iff they are isomorphic.
+\end{proof}
+\begin{proof}[Proof of theorem~\ref{chap7thm:correspondence_closed_point_Pic0}] Set
+$j(x)=$ class of $x-\infty$.
 \begin{enumerate}[label=(\arabic*)]
 \item \underline{Injectivity}: $j(x)=j(y)\Llrta x-\infty\sim y-\infty\Llrta x\sim y$. If $x\neq y$, we saw that $x\sim y$ implies that $C\simeq \proj^1_K$ which has genus $0$, so it is not possible.
-\item \underline{Surjectivity} Let $D\in \Div(C)$ with $\deg(C)=0$, written $D=D_1-D_2$ where $D_i\geq 0$. We need to prove: $(*)D\sim x-\infty$ for some $x$ closed point of $C$. Write 
+\item \underline{Surjectivity}: Let $D\in \Div(C)$ with $\deg(D)=0$, written $D=D_1-D_2$ where $D_i\geq 0$. We need to prove: $(*)D\sim x-\infty$ for some $x$ closed point of $C$. Write 
 $$
 D_1=\sum n_i x_i=\sum n_i(x_i-\infty)+(\sum n_i)\infty,
 $$
@@ -4385,15 +4431,15 @@ Do  the same for $D_2$ and take $D_1-D_2:$
 $$
 D=\sum_{j\in J} m_j(y_j-\infty)+0
 $$
-for some $m_j\in \intg$ $y_j$ closed points. By induction on $Card(J)$ to prove $(*)$ it suffices to prove
+for some $m_j\in \intg$ $y_j$ closed points. There are no extra $\infty$ because $\deg(D)=0$. By induction on $Card(J)$ to prove $(*)$ it suffices to prove
 
 (1) $\forall x_1,x_2,$ $\exists x_3, x_1-\infty+x_2-\infty\sim x_3-\infty$.
 
 (2) $\forall x_1,\exists x_2, -(x_1-\infty)\simeq (x_2-\infty)$
 
-proof of $(1)$: Consider $E=x_1+x_2-\infty\in \Div(C)$, $\deg(E)=1\Lrta \ell(-E)=0$
+proof of $(1)$: Consider $E=x_1+x_2-\infty\in \Div(C)$, $\deg(E)=1\Lrta \deg (-E)=-1 \ell(-E)=0$ by ~\ref{chap7cor:principal_divisor_length1_deg0}
 
-R-R $\Lrta$ $\ell(E)=1$. So there exists a function $0\neq f \in \Gamma(C,\call(E))$
+Then by R-R $\Lrta$ $\ell(E)=1$. So there exists a function $0\neq f \in \Gamma(C,\call(E))$
 , unique up to multiplication by $\lambda\in K^\times$. So $\div(f)+ E\geq 0$.
 
 I.e. $E=x_1+x_2-\infty$, $f$ has at most a pole of order $1$ at $x_1$,  and vanishes at $\infty$. So $\div(f)=k\infty -n x_1-m x_2+(\text{other zeros})$ where $k\geq 1, 0\leq n\leq 1, 0\leq m\leq 1$. If $n=0$, then $f\in \Gamma(C,\call(x_2-\infty))$  
@@ -4405,7 +4451,7 @@ $\Lrta \ell(x_2-\infty)\geq 1$,
  $$
 \infty -x_1\overset{?}{\sim} x_2-\infty.
  $$
- Let $E=2\infty -x_1$ $\deg(E)=1$ $\Lrta 0\neq f \in \Gamma(C,\call(2\infty-x_1))$. $\div(f)+2\infty -x_1\geq 0$. i.e. $f$ has at most pole of order $2$ at $\infty$ and a zero at $x$. $f$ can not have a pole of order $1$ at $\infty$. So $f$ has a pole of order $2$ so $f$ has two zeros with multiplicity so $\div(f)=x_1+x_2-2\infty$ for some unique $x_2$
+ Let $E=2\infty -x_1$ $\deg(E)=1$ $\Lrta 0\neq f \in \Gamma(C,\call(2\infty-x_1))$. $\div(f)+2\infty -x_1\geq 0$. i.e. $f$ has at most pole of order $2$ at $\infty$ and a zero at $x$. {\color{red} $f$ can not have a pole of order $1$ at $\infty$. Because if it does, we can find $f^2$ also in $\Gamma(C,\call(2\infty-x_1))$ which contradict the fact that $\ell(2\infty-x_1)=2$.}  So $f$ has a pole of order $2$ so $f$ has two zeros with multiplicity so $\div(f)=x_1+x_2-2\infty$ for some unique $x_2$
  $$
 \Lrta x_1-\infty +x_2-\infty\sim 0
  $$
@@ -4421,12 +4467,13 @@ Now we use RR to find equation for $C$.  (Here $K$ is not necessarily algebraic 
 
 $\ell(D_1)=1$, and $0\neq 1 \in \Gamma(C,\call(\infty))$ so $V(D_1)=K\cdot 1$ where $V(D_n)=\Gamma(C,\call(D_n))$
 
-$\ell(D_2)=2$; let $0\neq f$ in $V(D_2)$ be such that $V(D_2)=K\cdot 1+\oplus K\cdot f$. Note $\div(f)=(zeros)-2\infty$
+$\ell(D_2)=2$; let $0\neq f$ in $V(D_2)$ be such that $V(D_2)=K\cdot 1\oplus K\cdot f$. Note $\div(f)=(zeros)-2\infty$. Because if there were an $f$ such that $\div (f)=(zero)-1\infty$, we would have $f^2\in V(D_2)$ and this would contradict the fact that $\ell(D_2)=2$
 
 $\ell(D_3)=3$; let $0\neq g$ in $V(D_3)$ not in $V(D_2)$ s.t. 
 $$
 V(D_3)=K\cdot 1\oplus K\cdot f\oplus K \cdot g.
 $$
+With the same reasoning, we know $g$ has a pole of exact order $3$ at $\infty$.
 
 $\ell(D_4)=4$ so since $f^2\in V(D_4)$ and not to $V(D_3)$[because it has a pole of order $4$ at $\infty$]  we have 
 $$
@@ -4507,7 +4554,7 @@ $Y$ has divisor
 $$
 (\text{zeros of  $f$}）-3(\infty)
 $$
-So $X^i$ has  polar divisor $2 i(\infty)$, $YX^i$ has polar divisor $3\infty+2j \infty=(3+2j)\infty$
+So $X^i$ has  polar divisor $2 i(\infty)$, $YX^j$ has polar divisor $3\infty+2j \infty=(3+2j)\infty$
 
 $X=0\Llrta Y^2=b$ so $\sqrt{b}+(-\sqrt{b})$ so $\deg(\text{polar part})=2$
 , $y=0\Llrta x^3+ax+b=0$ so $x_1+x_2+x_3$ ``zeros of cubic'' so $\deg(\text{polar part})=3$ 

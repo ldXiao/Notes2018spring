@@ -105,7 +105,7 @@ $$
 If each $U_i\cap V_j$ can be written as finite union of affine open subsets, $Y\cap Z$ can be written as finite union of affine open subsets, which is equivalent to $Y\cap Z$ is quasicompact by~\ref{chap5exr:quasicompact_scheme_union_affine_subschemes}
 \end{proof}
 
-\begin{exr}
+\begin{exr}\label{chap5exr:affine_schemes_quasiseparated}
 Show that affine schemes are quasiseparated.
 \end{exr}
 \begin{proof}
@@ -308,7 +308,7 @@ If $X$ is a quasicompact scheme, show that it suffices to check reducedness at c
 \begin{proof}
 Follow the hint, we prove the contrapositive: If a quasicompact scheme is not reduced then at least one of its closed points has non-reduced stalk.
 
-By definition, we know if $X$ is not reduced then at least one of its stalk is not reduced by~\ref{chap5exr:reducedness_stalk_local}. Denote this non-reduced point by $p$, then there is a closed point $z\in \overline{\{p\}}$ by~\ref{chap5exr:quasicompact_scheme_have_closed_points}. (I suppose the hint in the body of this problem is wrong). The stalk $\calo_{X,p}$ is a localization of the stalk $\calo_{X,z}$ at closed point. $\calo_{X,p}$ is not reduced, therefore $\calo_{X,z}$ is also non-reduced.
+By definition, we know if $X$ is not reduced then at least one of its stalk is not reduced by~\ref{chap5exr:reducedness_stalk_local}. Denote this non-reduced point by $p$, because $X$ is quasicompact, there is a closed point $z\in \overline{\{p\}}$ by~\ref{chap5exr:quasicompact_scheme_have_closed_points}. (I suppose the hint in the body of this problem is wrong). The stalk $\calo_{X,p}$ is a localization of the stalk $\calo_{X,z}$ at closed point. $\calo_{X,p}$ is not reduced, therefore $\calo_{X,z}$ is also non-reduced.
 \end{proof}
 
 
@@ -385,7 +385,7 @@ We have prove both questions.
 \end{proof}
 
 \section{Properties of schemes that can be checked ``affine-locally''}
-\begin{exr}
+\begin{exr}\label{chap5exr:locally_Notherian_implies_quasiseparated}
 Show that locally Noetherian schemes are quasiseparated.
 \end{exr}
 \begin{proof}
@@ -1122,4 +1122,51 @@ Choose $\scq$ to the associated point corresponding to the irreducible component
 
 The reverse inclusion is easier because assume
 $\sca\in \cup\overline{[\scp_i]}$, this means some $A_\scp$ is a further localization of $A_\sca$, where $A_\scp$ is nonreduced. We then know $A_\sca$ is nonreduced because we have shown before that localization of a reduced ring is reduced in Exercise~\ref{chap5exr:reduced_ring_reduced_affine_scheme}.
+\end{proof}
+\begin{exr}
+Show that the definition in \textbf{(A)} of associated primes/points behaves well with respect to localizing: if $S$ is a multiplicative subset of $A$, then the associated primes/points of $S^{-1}M$ are precisely those associated primes/points of $M$ that lie in $\spec S^{-1}A$, i.e., associated primes of $M$ that do not meet $S$.
+\end{exr}
+\begin{proof}[Sol.]
+By the definition \textbf{(A)}, the associated points of $S^{-1}M$ are  generic points of irreducible components of the support of some element of $S^{-1}M$ (over $\spec S^{-1}A$). 
+
+Assume $\scp\in S^{-1}A$ is an associated point of $S^{-1}M$, say it's closure is  an irreducible component of $\supp m/s$.
+
+There is a corresponding prime ideal $\iota^{*}(\scp)\in A$, we can check that $\iota^{*}(\scp)$ is an associated point of $M$ in definition \textbf{(A)} and  it's closure is  an irreducible component of $\supp m$.
+
+TO BE ADDED, check \href{https://math.stackexchange.com/questions/1155567/exercise-5-5-f-on-ravi-vakils-notes-related-to-associated-points}{this question} and \href{https://math.stackexchange.com/questions/1518007/for-a-noetherian-ring-r-we-have-textass-rs-1m-textass-rm-cap}{this question}
+
+\end{proof}
+\begin{exr}
+Assuming the above properties of associated points, show that if $X$ is a locally Noetherian scheme, then for any open subset $U\subset X$, the natural map
+$$
+\Gamma(U,\calo_X)\lrta \prod_{\text{associated }\scp\text{ in $U$}} \calo_{X,\scp}
+$$
+is injective.
+\end{exr}
+\begin{proof}[Sol.]
+Compare it with equation 5.3.3.1.
+
+Consider an element $f\in \Gamma(U,\calo_X)$ has germs $0$ at each associated point in $U$. So its support contains no associated points. It is supported on a closed subset of $U$, which by \textbf{(A)} must be union of closure of associated points in $U$. This means $f$ is supported nowhere in $U$.
+\end{proof}
+\begin{exr}
+Assume the properties \textbf{(A)-(C)} of associated points. Suppose $X=\spec \cplx[x,y]/I$, and that the associated points of $X$ are $[(y-x^2)],[(x-1,y-1)]$ and $[(x-2,y-2)]$.
+\begin{enumerate}[label=(\alph*)]
+\item Sketch $X$ as a subset of $\affn^2_\cplx$, including fuzz.
+\item Do you have enough information to know if $X$ is reduced?
+\item Do you have enough information to know if $x+y-2$ is a zero divisor? How about $x+y-3$? How about $y-x^2$
+\end{enumerate}
+\end{exr}
+\begin{proof}[Sol.] 
+\end{proof}
+\begin{exr}
+Assume the properties \textbf{(A)-(C)} of associated points. If $f\in k[x_1,...,x_n]$ is nonzero, show that $A:=k[x_1,..,x_n]/(f)$ has no embedded points.
+\end{exr}
+\begin{proof}[Sol.]
+Suppose $\overline{g}\in A$ is a zerodivisor, choose a lift $g\in k[x_1,..,x_n]$ of $\overline{g}$. Check that $g v\in (f)$ for some $v\in k[x_1,..,x_m]-(f)$. 
+$$
+gv=ft
+$$
+$g$ has a common factor $f_1$ with $f$. $g=f_1 u$. Thne the generic point of $g$ corresponds to irreducible components of $\spec A$ that are in $\supp f_1$.
+
+For those non-zerodivisors, they are supported on the whole $X$.
 \end{proof}

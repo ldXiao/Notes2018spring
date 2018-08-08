@@ -1,5 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1521940061 "Stacks.tex" "Stacks.pdf" "Stacks" 1521940063
+["pdflatex"] 1521940061 "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks.tex" "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks.pdf" "Stacks" 1530264482
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks.tex" 1521940060 18887 02b2c0ff4683de5b0a391edfe7f037ff ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -201,8 +202,10 @@
   "Stacks.tex" 1521940060 18887 02b2c0ff4683de5b0a391edfe7f037ff ""
   "Stacks.toc" 1521940062 455 0b70b387d0c19b5cf6debd9c1ea03b25 ""
   (generated)
-  "Stacks.pdf"
-  "Stacks.aux"
-  "Stacks.out"
-  "Stacks.toc"
   "Stacks.log"
+  "Stacks.out"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks.log"
+  "/Users/vector_cat/Dropbox/2018spring/Readings/Stacks.pdf"
+  "Stacks.aux"
+  "Stacks.pdf"
+  "Stacks.toc"
