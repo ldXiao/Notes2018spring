@@ -157,11 +157,13 @@ Notes by Lin-Da Xiao and David Burgschweiger}
 \begin{document}
 \maketitle
 \tableofcontents
+\newpage
 \section*{About the notes}
 This notes are based on a course in algebraic geometry given by Professor Emmanuel Kowalski in 2018 spring at ETH.
-These are our ``live-{\TeX}ed'' notes from the course. The \LaTeX package tikz and tikzcd were used to generate diagrams.
+These are our ``live-{\TeX}ed'' notes from the course. The \LaTeX\ package tikz and tikzcd were used to generate diagrams. Special thanks go to the online editor \href{https://www.mathcha.io/editor}{mathcha.io}. The elegant and efficient tool allows us to catch up with the lecture while drawing some of the complicated tikz diagrams.
 
-Many big theorems in the lecture were stated without proof. We list the reference for most of them. One notable exception is Riemann-Roch theorem, which is used only in application level in this lecture, and we don not want to introduce Serre duality or cohomology in the notes.
+Many big theorems in the lecture were stated without proof. We list the reference for most of them. One notable exception is Riemann-Roch theorem, which is used as black-box in application in this lecture, and we do not want to introduce Serre duality or cohomology in these notes. Also, an explicit definition of pullback of quasicoherent is absent. (Luckily, we used it only for line bundles). The last chapter of Riemann hypothesis over finite field is not fully revised, yet.
+
 These notes are not a faithful representation of the course, either in the mathematics itself or in the quotes, remarks; in particular the errors are our fault. By the same token, any virtues in the notes are to be credited to the lecturer and not the scribe.
 
 If you find any typos or mistakes, please send feedbacks to \href{mailto:xld704@gmail.com}{xld704@gmail.com}.
@@ -2488,7 +2490,7 @@ $$
 \begin{thm}
 In the category $\mathsf{Sch}$ of schemes, arbitrary fibered product exists.
 \end{thm}
-\underline{Note} This is false in the category of affine algebraic sets over $K$, with $K$ algebraically closed.
+\underline{Note} This is false in the category of affine algebraic sets over $K$, but it holds when $K$ algebraically closed. (See Proposition 5.17 in \href{http://www.jmilne.org/math/CourseNotes/AG.pdf}{Milne's online notes})
 
 \begin{proof}[Proof of theorem]\ \\
 
@@ -3051,15 +3053,15 @@ X=\left(\sqcup_{i\in I}X_i\right)/\sim,
 $$
 where the equivalence relation is each $x\in X_i$ is identified with $\varphi_{ij}(x)\in X_{j}$ for $j\neq i$ if $x\in U_{ij}$, with the quotient topology. The quotient map $\sqcup X_i\overset{f}{\lrta} X$ is open, in particular $f(X_i)\subset X$ is open).
 
-Note: $\sim$ is an equivalence relation because of the cocycle relation: if $y=\varphi_{ij}(x)$, then $x=\varphi_{ij}^{-1}(y)=\varphi_{ji}(y)$. If $y=\varphi_{ij}(x),x\in U_{ij},z=\varphi_{jk}(y), y\in U_{jk}$ and $x\in U_{ik}$, then $\varphi_{ik}(x)=\varphi_{jk}\circ \varphi_{ij}(y)$ so $x\sim y\sim z\Lrta X\sim z$ and with structure sheaf
+Note: $\sim$ is an equivalence relation because of the cocycle relation: if $y=\varphi_{ij}(x)$, then $x=\varphi_{ij}^{-1}(y)=\varphi_{ji}(y)$. If $y=\varphi_{ij}(x),x\in U_{ij},z=\varphi_{jk}(y), y\in U_{jk}$ and $x\in U_{ik}$, then $\varphi_{ik}(x)=\varphi_{jk}\circ \varphi_{ij}(y)=z$ so $x\sim y\sim z\Lrta x\sim z$ and with structure sheaf
 $$
-\calo_X(U)=\{(s_i)_{i\in I}|s_i\in \calo_{X_i}(U\cap X_i) \text{ s.t. } \varphi_{ij}^{\alpha}(s_{j}|U\cap U_{ji}=s_i|U\cap U_{ij}\},
+\calo_X(U)=\{(s_i)_{i\in I}|s_i\in \calo_{X_i}(U\cap X_i) \text{ s.t. } \varphi_{ij}^{\#}(s_{j}|U\cap U_{ji})=s_i|U\cap U_{ij}\},
 $$
 \begin{figure*}[h]
 \includegraphics[width=0.3\textwidth]{pic2Aprl27.pdf}
 \end{figure*}
 we want
-$\varphi_j(y)=\varphi_i(\varphi_{ij}^{-1}(y))$
+$s_j(y)=s_i(\varphi_{ij}^{-1}(y))$
 \end{prop}
 Note that the projection 
 $$
@@ -3087,7 +3089,7 @@ $$
 &\frac{X_n}{X_i}\mapsto Y_n
 \end{aligned}
 $$
-Let $X_i=\spec(A_i)$ ($\simeq \affn^n_\intg$), ($0\leq i \leq n$). Let $U_{ij}\subset X_i$ be $\spec(A_i,\frac{X_j}{X_j})=\spec (\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j})$ is an open subset in $X_i$.
+Let $X_i=\spec(A_i)$ ($\simeq \affn^n_\intg$), ($0\leq i \leq n$). Let $U_{ij}\subset X_i$ be $\spec\left((A_i)_{\frac{X_j}{X_j}}\right)=\spec (\intg[\frac{X_0}{X_i},...,\frac{X_n}{X_i},\frac{X_i}{X_j}])$ is an open subset in $X_i$.
 
 Note that $B_{ij}=B_{ji}$, the identity $B_{ij}\lrta B_{ji}$ corresponds to an isomorphism 
 $$
@@ -3099,7 +3101,7 @@ $\proj^n_\intg$ is the glued scheme in that case
 i.e. covered by $n+1$ open subschemes $\simeq \affn^n_\intg$, it is of finite type, Noetherian, integral ...
 \end{dfn}
 \begin{dfn}
-$S$ is a  scheme, A projective $S-$scheme
+$S$ is a  scheme, A \textbf{projective $S-$scheme}
 $$
 X\overset{f}{\lrta} S
 $$
@@ -4678,7 +4680,7 @@ $(2a'')$
 \item Elliptic curves (surprisingly) important in modern arithmetic. (Silverman, the arithmetic of elliptic curves)
 \end{enumerate}
 \end{rmk}
-\section{Riemann hypothesis over finite fields}
+\section{Riemann hypothesis over finite fields*}
 \subsection{May 29th-B: The Riemann hypothesis for curves over finite fields.}
 
 \underline{History:} A.Weil 1940s Great motivating problems for algebraic geometry from 1940s on, including generalizations
