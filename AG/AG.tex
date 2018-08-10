@@ -162,7 +162,14 @@ Notes by Lin-Da Xiao and David Burgschweiger}
 This notes are based on a course in algebraic geometry given by Professor Emmanuel Kowalski in 2018 spring at ETH.
 These are our ``live-{\TeX}ed'' notes from the course. The \LaTeX\ package tikz and tikzcd were used to generate diagrams. Special thanks go to the online editor \href{https://www.mathcha.io/editor}{mathcha.io}. The elegant and efficient tool allows us to catch up with the lecture while drawing some of the complicated tikz diagrams.
 
-Many big theorems in the lecture were stated without proof. We list the reference for most of them. One notable exception is Riemann-Roch theorem, which is used as black-box in application in this lecture, and we do not want to introduce Serre duality or cohomology in these notes. Also, an explicit definition of pullback of quasicoherent is absent. (Luckily, we used it only for line bundles). The last chapter of Riemann hypothesis over finite field is not fully revised, yet.
+Many big theorems in the lecture were stated without proof. We list the reference for most of them. One notable exception is Riemann-Roch theorem, which is used as black-box in application in this lecture, and we do not want to introduce Serre duality or cohomology in these notes. Also, an explicit definition of pullback of quasicoherent is absent. (Luckily, we used it only for line bundles). The last chapter of Riemann hypothesis over finite field is not fully revised, yet. 
+
+We did not use standard quotation format but only give a dictionary here:
+\begin{itemize}
+\item ``Vakil'' or ``FOAG'' $\llrta$ Foundations of Algebraic Geometry, Ravi Vakil, Version 1817.
+\item ``Hartshorne'' $\llrta$ Algebraic Geometry, Robin Hartshorne
+\item ``Silverman'' $\llrta$ The Arithmetic of Elliptic Curves 2nd ed, Joseph H. Silverman  
+	\end{itemize}
 
 These notes are not a faithful representation of the course, either in the mathematics itself or in the quotes, remarks; in particular the errors are our fault. By the same token, any virtues in the notes are to be credited to the lecturer and not the scribe.
 
@@ -1141,7 +1148,7 @@ $\tilde{a}:\spec A\lrta\coprod_{\scp\in \spec(A)}\kappa(\scp)$, $\scp\mapsto a\m
 
 \subsubsection{$\spec A$ as a topological space}
 \begin{dfn}
-For any set $S\subset A$, let $V(S)=\{\scp\in\spec(A)|S\subset \scp\}$:
+For any set $S\subset A$, let $V(S)=\{\scp\in\spec(A)|S\subset \scp\}$, the set of point $\scp$ where each element in $S$ vanishes.
 \end{dfn}
 \underline{Note}: 
 \begin{enumerate}[label=(\arabic*)]
@@ -1312,7 +1319,7 @@ There is a one to one correspondence between prime ideals in $A$ and irreducible
 \end{ex}
 
 \begin{dfn}
-If $\scp\in\overline{\{Q\}}$, we say that $\scp$ is a \textbf{specialization} of $Q$, and that $Q$ \textbf{specializes to} $\scp$.
+If $\scp\in\overline{\{Q\}}$, we say that $\scp$ is a \textbf{specialization} of $Q$, and that $Q$ \textbf{specializes to} $\scp$. In the case of affine scheme $\scp\in \overline{\scq}$ iff $\scp\in V(\scq)\Llrta \scp\supset \scq$.
 \end{dfn}
 
 \begin{ex}
@@ -1390,7 +1397,7 @@ $Y=\spec (K{X})=\affn^1_K$.
 	
 
 
-What is $\affn^1_L\lrta \affn^1_K$?
+What is $\affn^1_L\lrta \affn^1_K$? (induced by $K[X]\lrta L[X]$)
 $$
 \begin{aligned}
 \affn^1_K&=\{\scp\subset K[X]\text{ prime}\}\\
@@ -1439,12 +1446,16 @@ $$
 f^{*}(\spec B)\subset \spec A
 $$ is  dense. The proof is left as an exercise.
 
+
+If $A\overset{f}{\lrta} B$ is injective,  we have $f^{*}(\eta_B)=\eta_A$, it maps the generic point to the generic point, therefore the image is dense because $f^*(\spec B)\ni \eta_A$. 
+
+Conversely, if $f^{*}(\spec B)$ is dense in $\spec A$, we know $f^{*}(\eta_B)$ is dense in $\spec A$ and the only possibility is that it maps the generic point to the generic point, which means the ring morphism is injective.
 \end{ex}
 
 \begin{ex}
 $K=\overline{K}$, 
 
-$Y^{sc}$ for $Y=\{(x,y)\in K^2 \mid (xy)=0\}$. ($Y$ is not a variety in this case.)
+$Y^{sc}$ for $Y=\{(x,y)\in K^2 \mid (xy)=0\}$. ($Y$ is not a variety in this case but only an algebraic set.)
 $$
 \affn^2_K\supset V(xy)\cong Y^{sc}=\spec(K[X,Y]/(XY))
 $$
@@ -1538,7 +1549,7 @@ A=K[X]/(X^n), n\geq 1
 $$
 ($K$ is a field). We have $\spec A=\{XK[X]\}$, independent of $K$ and $n$. We need to remember what is $K$ and  what is $n$.
 
-We deal with that by defining ``regular functions''
+We deal with this non-reduced ``fuzz'' by defining ``regular functions''
 \begin{dfn}
 $A$ is a ring. For $U\subset \spec A$ open, we define the ring $\calo(U)$ of ``regular functions on $U$'' by 
 $$
@@ -2593,7 +2604,7 @@ $$
 $$
 \end{ex}
 
-\begin{ex}
+\begin{ex}(Prop 5.37 in Goertz-Wedhorn)
 $K$ a field, $X, Y$ schemes over $K$, then we have the identity
  $$\dim X\times_K Y=\dim X+\dim Y.$$ But  set of points of $X\times_K Y$ is not simply a topological product. For example, $X=\affn^1_K, Y=\affn^1_K$, $X\times_K Y=\affn^2_K$, but it  is true for the $K$-valued points,  $X(K)=\hom(\spec K, X)$
 $$
@@ -2704,10 +2715,14 @@ $X$ a scheme over $\intg$
 $X\times_\intg \spec \ratl$ (or $X\times_\intg \spec \overline{\ratl}$). Given $Y$ over $\spec \ratl$, can we find $X$ over $\spec \intg$ with $X\otimes_\intg \spec \ratl=Y$? If so $X\times_{\spec \intg} \spec \bbf_p$ will give some perspective on $Y$.
 \end{ex}
 \begin{lemma}
-If $Y$ in $\bbf^n_\ratl$ is the vanishing scheme of $f_1,..,f_m$ then this is possible.
+If $Y$ in $\affn^n_\ratl$ is the vanishing scheme of $f_1,..,f_m$ then this is possible.
 \end{lemma}
 \begin{proof}
-$Y=\spec \ratl[T_1,..,T_n]/(f_1,..,f_m)$, where $f_i$ are polynomials with rational coefficients. We can find $c_1,..,c_m$ positive integes where $c_if_i$ has integer coefficients for all $i$. $X=\spec \intg[T_1,...,T_n]/(c_1f_1,...,c_mf_m)$. Because $c_i^{-1}$ exists in $\ratl$, it produces the same scheme over $\ratl$. 
+$Y=\spec \ratl[T_1,..,T_n]/(f_1,..,f_m)$, where $f_i$ are polynomials with rational coefficients. We can find $c_1,..,c_m$ positive integes where $c_if_i$ has integer coefficients for all $i$. Choose $X=\spec \intg[T_1,...,T_n]/(c_1f_1,...,c_mf_m)$ and we will have
+ $$
+Y=X\otimes_\intg \spec \ratl=\spec \ratl[T_1,...,T_n]/(c_1f_1,...,c_mf_m).
+ $$
+ Because $c_i^{-1}$ exists in $\ratl$, it produces the same scheme over $\ratl$. 
 
 \end{proof}
 However, this is not unique. For example, $Y=\spec \ratl[T]/(T^2/2+1)$. We can take $c=2$ to get $\intg[T]/T^2+2$ and $c=4$ to get $\intg[T]/2T^2+4$. These are not isomorphic fibers over $2$, in fact, they are distinct
@@ -2722,8 +2737,8 @@ X\times_S T \arrow[d, "f'"'] \arrow[r] & X \arrow[d, "f"] \\
 T \arrow[r] & S
 \end{tikzcd}
 $$
- we can think of $f':X\times_{S}T\lrta T$as some family with different parameter space/ base/
- This process is known as base change. $a\in T$ a point which mapsto $p\in S$
+ we can think of $f':X\times_{S}T\lrta T$ as some family with different parameter space/ base.
+ This process is known as base change. $a\in T$ a point which maps to $p\in S$
 \end{ex}
 \subsection{Apr 20th: Application: a proof of Ax-Grothendieck Theorem}
 A theorem due to A. Grothendieck and James Ax
@@ -2784,7 +2799,7 @@ Note: $S\times_{\spec A}\spec K$ is the inverse image of $S$ in $\affn^n_K$. Thi
 \section{Elementary geometry of schemes}
 \subsection{Apr 23rd: Some basics of schemes}
 \begin{dfn}
-$X$ is a scheme. It is called \textbf{connected} if it is connected as a topological space. It is \textbf{irreducible} if it is irreducible as a topological space (it can not be expressed as union of two closed non empty set.)
+$X$ is a scheme. It is called \textbf{connected} if it is connected as a topological space. It is \textbf{irreducible} if it is irreducible as a topological space (it can not be expressed as union of two closed non empty set.) It is called \textbf{separated} $A$-scheme if the diagonal map $\delta_X:X\lrta X\times_{\spec A} X$ is a closed embedding which is analogue to the definition of Hausdorff topological space.
 \end{dfn}
 \underline{Warning:} separated does not mean $X$ is separated (Hausdorff) as topological space.
 
@@ -3271,7 +3286,7 @@ Regular codimension $1$ $\Lrta$ any such subscheme is a union of irreducible pie
 
 \begin{dfn}
 \ \begin{enumerate}[label=(\arabic*)]
-\item  A \textbf{prime (Weil) divisor} $D$ in $X$ is an integral closed subscheme of codimension $1$. (there is no intermediate closed subscheme between $D$ and $X$)
+\item  A \textbf{prime (Weil) divisor} $D$ in $X$ is an integral closed subscheme of codimension $1$. (there is no intermediate closed subscheme between $D$ and $X$)~\footnote{In some reference, it is also defined to be irreducible closed subscheme of codimension $1$ only, but recall that there is always a reduced subscheme structure on closed subset}
 \item The \textbf{group of Weil divisors} on $X$ is the free abelian group generated by  prime divisors.
 $$
 \sum_{i\in I, finite} n_i D_i
@@ -3281,7 +3296,7 @@ It is denoted $\text{Div}(X)$. A divisor $D=\sum_i n_i D_i$ is effective if all 
 \end{enumerate}
 \end{dfn}
 \begin{dfn}
-The \textbf{function field} of $X$ is the residue field/local ring at the generic point $\eta$ of $X$. An element $f$ of $K(X)$ is therefore the equivalence class of $(U,s)$ where $U$ is 
+The \textbf{function field} of an integral scheme $X$ is the residue field/local ring at the generic point $\eta$ of $X$. An element $f$ of $K(X)$ is therefore the equivalence class of $(U,s)$ where $U$ is 
 an open set $\emptyset \neq U\subset X$ and $s\in \Gamma(U,\calo_X)$, $(U,s)\sim (V,t)$ iff $s|_{U\cap V}=t|_{U\cap V}$.
 \end{dfn}
 \begin{ex}
@@ -3430,7 +3445,7 @@ D_i=\spec(A/(f_i))
  \end{aligned}
  $$
  is indeed a DVR with maximal ideal generated by $g$, and $\nu_D(f_1/f_2)=$ the exponent of $g$ $=k$ s.t. 
- $f_1/f_2=f^k u$, with $u\in A_{(g)}^\times$. So $\div(f)=\sum n_i D_i=D$ so any $D$ is principal, therefore $Cl(\affn^n_K)=0$
+ $f_1/f_2=g^k u$, with $u\in A_{(g)}^\times$. So $\div(f)=\sum n_i D_i=D$ so any $D$ is principal, therefore $Cl(\affn^n_K)=0$
 
 \item $Cl(\spec K)=\{0\}$ has no prime divisors. Consider $L/\ratl$ finite extension. Let $A\subset L$ be the integral closure of $\intg$. Then $\spec(A)$ is regular of codimension one, so 
 $
@@ -3527,7 +3542,7 @@ $D_2=\sum m_j F_j$, where $F_j$ is prime divisors associated to $k_j$.
 
 
 Then let $f=\prod h_i ^{n_i}\prod k_j^{- m_j}\in K(X)^\times$, and as shown above $\div(f)=D_1-D_2=D$ so $D$ is  $0$ in $Cl(X)$.
-\item the proof can be found in Hartshorne
+\item follows from $(a)$ and $(b)$ and the fact that $\underline{deg}(H_i)=deg(x_i)=1$
 \end{enumerate}
 \end{proof}
 \item Further examples: 
@@ -3566,7 +3581,7 @@ An $\calo_X$-moduel $\calf$ is \textbf{locally free} of rank $n\geq 1$ is $\fora
 $$
 \calf|_U\simeq \calo_U^u
 $$
-as $\calo_U$-module.
+as sheaves of $\calo_U$-module.
 \end{dfn}
 
 If $\call$ is  locally free of rank $1$, it is called an invertible sheaf.
@@ -3593,7 +3608,7 @@ $$
 \end{prop}
 
 
-\subsection{May 11th: The twisting invertible sheaf $\calo(n)$ on $\proj^n$}
+\subsection{May 11th: The twisting invertible sheaf $\calo(m)$ on $\proj^n$}
 
 Recall:
 $\calo_X$-modules, locally-free $\calo_X$-modules,
@@ -3768,7 +3783,7 @@ B\supset M_{i,\left(\frac{X_j}{X_i}\right)}=M_{j,\left(\frac{X_i}{X_j}\right)}.
  $K[X_0/X_i,...,X_n/X_i]$ are allowed.) Let $s\in \bigcap X_iB_i$,
  $$
  \begin{aligned}
- \forall i, s&=X_i g_i(X_0/X_i,...,X_n/X_i)\in A\\
+ \forall i, s&=X_i g_i(X_0/X_i,...,X_n/X_i)\in Frac(A)\\
  &=\frac{f_i(X_0,...,X_n)}{X_i^{d_i}}
  \end{aligned}
  $$
@@ -3777,8 +3792,22 @@ B\supset M_{i,\left(\frac{X_j}{X_i}\right)}=M_{j,\left(\frac{X_i}{X_j}\right)}.
  X_i^{-d_i}f_i=X_j^{-d_j}f_j
  $$
  for all $j$,
- $x_j^{d_j} f_i=X_i^{d_i}f_j$, $\forall i,j;$ since $X_k\nmid f_j, d_i=0$ $\Lrta i,j$ $f_i=f_j$ but $f_i$ is homogeneous of degree $d_{i}+1=1$, so $s\llrta (f)\in$ homogeneous degree $1$. Conversely, any $f$ homogeneous of degree $1$ is in $\bigcap X_i B_i$ $X_i=X_i\cdot 1=X_j\cdot \frac{X_i}{X_j}$ so $\Gamma(\proj^n_K,\calo(1))\overset{\sim}{\lrta}$\{ homogeneous polynomials of degree $1$ in $A$\} $\cong K^{n+1}$ as $K$-vector spaces. 
+ $X_j^{d_j} f_i=X_i^{d_i}f_j$, $\forall i,j;$ since $X_k\nmid f_j, d_i=0$ $\Lrta i,j$ $f_i=f_j$ but $f_i$ is homogeneous of degree $d_{i}+1=1$, so $s\llrta (f)\in$ homogeneous degree less than $1$. Conversely, any $f$ homogeneous of degree $1$ is in $\bigcap X_i B_i$ $X_i=X_i\cdot 1=X_j\cdot \frac{X_i}{X_j}$ so $\Gamma(\proj^n_K,\calo(1))\overset{\sim}{\lrta}$\{ homogeneous polynomials of degree $1$ in $A$\} $\cong K^{n+1}$ as $K$-vector spaces. 
  \end{proof}
+
+ \begin{rmk}
+ Analogously, we can define $\calo(m):=\otimes^m\calo(1)$ and locally 
+ $$
+\Gamma(U_i,\calo(m))\cong X_i^m B_i.
+ $$
+ Check that in this case, the global section of $\calo(m)$ on $\proj^n$, is isomorphic to the set \{homogeneous polynomials of degree $1$ in $A$\}. 
+
+ In general, we have
+ $$
+\dim_K(\proj^n_K,\calo(m))= {{n+m}\choose{n}}
+ $$
+ combinatorically, it means we put $m$ balls in to $n+1$ distinguished boxes.
+ \end{rmk}
 \begin{thm}\label{thm:aut_Proj}
 $Aut_{\mathsf{Sch}}(\proj^n_K)\simeq PGL_{n+1}(K)=GL_{n+1}(K)/K^\times I_{n+1}$ given by
 $$
@@ -3916,7 +3945,7 @@ f\llrta p\mapsto [f(p),1]
 
  so $\tilde{f}|_U:U\lrta \affn^1_K$ is defined as above and $\tilde{f}$ maps $C-U$ to the infinity point $\{\infty\}=\proj^1_K-\affn^1_K$.
 
- Conversely, let $\phi: C\lrta \proj^1$ be a morphism of $K$-schemes. It is of the form
+ Conversely, let $\phi: C\lrta \proj^1_K$ be a morphism of $K$-schemes. It is of the form
  $\phi=[f,g]$, where both $f$ and $g$ are regular functions.  
 
  For detailed discussion, see Silverman II.2.2
@@ -4059,7 +4088,7 @@ $$
 \begin{aligned}
 \frac{\pd f}{\pd Z}(\infty)
 &=[-(p-1)YZ^{p-2}-(p-d)Z^{p-d-1}g(X,Z)-Z^{p-dg_Z(X,Z)}](\infty)\\
-&= d_{neq 0} Z^{0-d-1} g(1,0)\left\{\begin{aligned}
+&= d_{\neq 0} Z^{0-d-1} g(1,0)=\left\{\begin{aligned}
 &a_d d \text{ if } d=p-1\\
 &0\text{ if } d< p-1
 \end{aligned}\right.
@@ -4180,7 +4209,7 @@ $\ell(D)=\dim_K\Gamma(C,\call(D))$ (it is finite)
 \end{dfn}
 The fact global section is finite dimensional, is a special case of the deep fact:
 
-For any coherent sheaf $\calf$ on a projective $A$-scheme $X$, where $A$ is Noetherian, $H^i(X,\calf)$ is a coherent $A$-module. (See FOAG theorem 18.1.4)
+For any coherent sheaf $\calf$ on a projective $A$-scheme $X$, where $A$ is Noetherian, $H^i(X,\calf)$ is a coherent $A$-module. (See FOAG theorem 18.1.4) Also for Noetherian scheme, the locally coherent sheaf is indeed coherent.
 \begin{prop}
 $C$ curve over $K$. let $f\in K(C)^\times$ and let $\deg:\Div(C)\lrta \intg:$ which linearly extends $ x\longmapsto[K(x):K]$, then
 $$
